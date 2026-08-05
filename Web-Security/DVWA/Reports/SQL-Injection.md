@@ -37,11 +37,11 @@ An attacker can manipulate application input fields to modify database queries a
 
 ## DVWA Module
 
-Target:
+**Target:**
 
 SQL Injection
 
-Security Level:
+**Security Level:**
 
 Low
 
@@ -65,9 +65,90 @@ Testing process:
 
 # 5. Evidence Collection
 
+The vulnerability was successfully demonstrated using the DVWA SQL Injection module.
+
 ## Normal Request
 
 A normal request was submitted using:
 
-```text
 1
+
+Screenshot:
+
+Web-Security/DVWA/Screenshots/sql-injection-normal.png
+
+---
+
+## SQL Injection Payload
+
+The following SQL injection payload was submitted:
+
+1' OR '1'='1
+
+Result:
+
+The application returned multiple database records, confirming that the input field was vulnerable to SQL Injection.
+
+Screenshot:
+
+Web-Security/DVWA/Screenshots/sql-injection-success.png
+
+---
+
+# 6. Impact Assessment
+
+Successful SQL Injection exploitation may allow an attacker to:
+
+- Retrieve unauthorized database records
+- Access sensitive information
+- Bypass authentication controls
+- Modify or delete database data
+- Compromise confidentiality and integrity of application data
+
+**Risk Rating: High**
+
+---
+
+# 7. Remediation Recommendations
+
+Recommended security improvements:
+
+- Use prepared statements and parameterized queries
+- Implement strict input validation
+- Sanitize user-controlled input
+- Apply least privilege database permissions
+- Avoid displaying database errors to users
+- Perform regular vulnerability assessments
+- Conduct secure code reviews
+
+---
+
+# 8. Lessons Learned
+
+This lab provided practical experience in:
+
+- Identifying SQL Injection vulnerabilities
+- Understanding insecure database interactions
+- Performing controlled exploitation testing
+- Collecting security evidence
+- Writing professional vulnerability reports
+- Recommending remediation actions
+
+---
+
+# 9. Evidence Files
+
+The following evidence was collected:
+
+| Evidence | Location |
+|---|---|
+| Normal SQL Injection page | Web-Security/DVWA/Screenshots/sql-injection-normal.png |
+| Successful SQL Injection result | Web-Security/DVWA/Screenshots/sql-injection-success.png |
+
+---
+
+# Conclusion
+
+The DVWA SQL Injection assessment demonstrated how improper handling of user input can expose web applications to database attacks.
+
+This controlled laboratory exercise provided practical experience in vulnerability identification, exploitation analysis, evidence collection, and professional security documentation.
