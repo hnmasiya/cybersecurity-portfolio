@@ -12,9 +12,9 @@
 
 # 1. Vulnerability Description
 
-Command Injection is a web application vulnerability that occurs when an application executes operating system commands using user-controlled input without proper validation or sanitization.
+Command Injection is a vulnerability that occurs when a web application executes operating system commands using user-controlled input without proper validation.
 
-An attacker can manipulate input fields to execute unauthorized system commands on the underlying server.
+An attacker may manipulate application input to execute unauthorized operating system commands on the underlying server.
 
 ---
 
@@ -37,42 +37,37 @@ An attacker can manipulate input fields to execute unauthorized system commands 
 
 ## DVWA Module
 
-Target:
+**Target:**
 
 Command Injection
 
-Security Level:
+**Security Level:**
 
 Low
 
-The Command Injection module was selected because it intentionally contains insecure handling of user input for cybersecurity training and vulnerability assessment practice.
+The Command Injection module was selected because it intentionally contains insecure command execution functionality for cybersecurity training.
 
 ---
 
 # 4. Testing Methodology
 
-The vulnerability was tested using the DVWA Command Injection module.
+The vulnerability was tested through the DVWA Command Injection module.
 
 Testing process:
 
 1. Accessed the Command Injection page.
-2. Identified the vulnerable input parameter.
-3. Submitted a normal command request.
-4. Submitted a modified command payload.
-5. Observed command execution results.
-6. Captured evidence screenshots.
+2. Submitted a normal input request.
+3. Submitted a modified command payload.
+4. Observed the server response.
+5. Documented the security impact.
 
 ---
 
 # 5. Evidence Collection
 
-The vulnerability was demonstrated by injecting operating system commands into the vulnerable input field.
-
 ## Normal Request
 
-Command submitted:
-
-ping -c 1 127.0.0.1
+A normal request was submitted to the application.
 
 Screenshot:
 
@@ -80,15 +75,9 @@ Web-Security/DVWA/Screenshots/command-injection-normal.png
 
 ---
 
-## Command Injection Payload
+## Successful Command Injection
 
-Payload submitted:
-
-127.0.0.1 && whoami
-
-Result:
-
-The application executed the additional operating system command and returned the server username, confirming Command Injection.
+A modified command was submitted, demonstrating that user input was executed by the server.
 
 Screenshot:
 
@@ -100,15 +89,13 @@ Web-Security/DVWA/Screenshots/command-injection-success.png
 
 Successful Command Injection exploitation may allow an attacker to:
 
-- Execute arbitrary operating system commands
-- Access sensitive server information
-- Modify system files
-- Escalate privileges
-- Compromise the underlying server
+- Execute unauthorized commands
+- Access server information
+- Modify files
+- Compromise application confidentiality and integrity
+- Gain further access to the system
 
-Risk Rating:
-
-High
+**Risk Rating: High**
 
 ---
 
@@ -117,11 +104,11 @@ High
 Recommended security improvements:
 
 - Avoid executing system commands from user input
-- Implement strict input validation
-- Use allowlists for accepted input values
+- Use secure APIs instead of shell commands
+- Validate and restrict user input
 - Apply least privilege permissions
-- Sanitize all user-controlled data
-- Monitor application logs for suspicious activity
+- Implement application security testing
+- Monitor suspicious command execution
 
 ---
 
@@ -130,10 +117,10 @@ Recommended security improvements:
 This lab provided practical experience in:
 
 - Understanding operating system command execution risks
-- Identifying insecure input handling
-- Performing controlled exploitation testing
+- Identifying insecure application behaviour
+- Performing controlled vulnerability testing
 - Collecting security evidence
-- Writing professional vulnerability reports
+- Writing professional security reports
 
 ---
 
@@ -141,13 +128,13 @@ This lab provided practical experience in:
 
 | Evidence | Location |
 |---|---|
-| Normal command execution | Web-Security/DVWA/Screenshots/command-injection-normal.png |
+| Normal command request | Web-Security/DVWA/Screenshots/command-injection-normal.png |
 | Successful command injection | Web-Security/DVWA/Screenshots/command-injection-success.png |
 
 ---
 
 # Conclusion
 
-The DVWA Command Injection assessment demonstrated how insecure handling of user input can allow attackers to execute unauthorized operating system commands.
+The DVWA Command Injection assessment demonstrated how unsafe handling of user input can allow attackers to execute operating system commands through a vulnerable web application.
 
-This exercise provided practical experience in vulnerability identification, exploitation analysis, evidence collection, and security remediation.
+This exercise provided practical experience in vulnerability discovery, exploitation analysis, evidence collection, and remediation recommendations.
