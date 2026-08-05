@@ -28,3 +28,6 @@ Cybersecurity professional building practical defensive and offensive security s
 - Git
 - Linux
 
+## Projects
+
+This portfolio contains practical cybersecurity labs, security assessments, documentation, and technical reports.
