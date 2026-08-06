@@ -24,6 +24,7 @@ Information disclosure vulnerabilities can expose:
 - Configuration information
 - Sensitive resources
 - Development-related information
+- Application structure details
 
 ---
 
@@ -61,6 +62,10 @@ Testing activities included:
 
 ### Resource Tested
 
+
+http://localhost:3000/robots.txt
+
+
 ### Observation
 
 The robots.txt file was publicly accessible and revealed application paths that could assist attackers during reconnaissance activities.
@@ -69,15 +74,23 @@ Attackers may use information contained within robots.txt files to identify hidd
 
 ### Security Impact
 
-Exposure of application paths may assist attackers in mapping the application structure and identifying additional areas for testing.
+Exposure of application paths may assist attackers in mapping the application structure and identifying additional areas for security testing.
 
 ### Evidence
+
+
+Web-Security/Juice-Shop/Screenshots/robots-txt.png
+
 
 ---
 
 ## 4.2 Security.txt Information Disclosure
 
 ### Resource Tested
+
+
+http://localhost:3000/.well-known/security.txt
+
 
 ### Observation
 
@@ -87,15 +100,23 @@ Although security.txt files are commonly used for responsible vulnerability disc
 
 ### Security Impact
 
-Publicly available application information may assist attackers during reconnaissance activities.
+Publicly available application information may assist attackers during reconnaissance activities and provide additional knowledge about the application's security processes.
 
 ### Evidence
+
+
+Web-Security/Juice-Shop/Screenshots/security-txt.png
+
 
 ---
 
 ## 4.3 Exposed File Resources
 
 ### Resource Tested
+
+
+http://localhost:3000/ftp/
+
 
 ### Observation
 
@@ -107,7 +128,18 @@ This demonstrates insufficient access restrictions on sensitive resources and ma
 
 Attackers may download exposed files and use the information obtained for further attacks.
 
+Potential risks include:
+
+- Disclosure of sensitive files
+- Exposure of application information
+- Improved attacker reconnaissance capability
+- Increased attack surface
+
 ### Evidence
+
+
+Web-Security/Juice-Shop/Screenshots/exposed-files.png
+
 
 ---
 
@@ -137,7 +169,8 @@ Recommended security improvements:
 - Apply proper authorization controls
 - Avoid exposing internal application information
 - Secure configuration files and resources
-- Perform regular vulnerability assessments
+- Regularly review publicly accessible content
+- Perform vulnerability assessments regularly
 - Conduct security reviews before deployment
 
 ---
@@ -161,7 +194,8 @@ This lab provided practical experience in:
 - Reviewing publicly accessible resources
 - Understanding attacker information gathering techniques
 - Collecting security evidence
-- Writing professional vulnerability assessment reports
+- Documenting vulnerabilities professionally
+- Writing vulnerability assessment reports
 
 ---
 
@@ -170,3 +204,5 @@ This lab provided practical experience in:
 The OWASP Juice Shop Sensitive Data Exposure assessment demonstrated how publicly accessible resources can reveal information that may assist attackers during reconnaissance and exploitation activities.
 
 This controlled laboratory exercise provided hands-on experience in vulnerability identification, evidence collection, impact assessment, and security remediation recommendations.
+
+The assessment improved practical understanding of web application security testing, information disclosure risks, and secure application configuration practices.
