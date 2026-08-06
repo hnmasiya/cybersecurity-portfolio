@@ -17,6 +17,14 @@ Sensitive Data Exposure occurs when an application unintentionally reveals infor
 
 Exposed files, directories, application metadata, or configuration information may allow attackers to gather intelligence about the application and prepare further attacks.
 
+Information disclosure vulnerabilities can expose:
+
+- Hidden application paths
+- Internal files
+- Configuration information
+- Sensitive resources
+- Development-related information
+
 ---
 
 # 2. Testing Environment
@@ -24,7 +32,7 @@ Exposed files, directories, application metadata, or configuration information m
 | Component | Details |
 |---|---|
 | Application | OWASP Juice Shop |
-| Vulnerability | Sensitive Data Exposure |
+| Vulnerability | Sensitive Data Exposure / Information Disclosure |
 | Deployment | Docker Container |
 | Operating System | Zorin OS |
 | Web Server | Node.js Application Server |
@@ -41,8 +49,9 @@ Testing activities included:
 1. Accessing the Juice Shop application.
 2. Reviewing publicly accessible resources.
 3. Testing common information disclosure locations.
-4. Capturing evidence screenshots.
-5. Documenting security impact and remediation recommendations.
+4. Capturing screenshots as evidence.
+5. Documenting security impact.
+6. Providing remediation recommendations.
 
 ---
 
@@ -50,37 +59,55 @@ Testing activities included:
 
 ## 4.1 robots.txt Information Disclosure
 
-**Resource Tested:**
+### Resource Tested
 
-**Observation:**
+### Observation
 
 The robots.txt file was publicly accessible and revealed application paths that could assist attackers during reconnaissance activities.
 
-Attackers may use information from robots.txt files to identify hidden directories and potential attack targets.
+Attackers may use information contained within robots.txt files to identify hidden directories and potential attack targets.
 
-**Evidence:**
+### Security Impact
+
+Exposure of application paths may assist attackers in mapping the application structure and identifying additional areas for testing.
+
+### Evidence
 
 ---
 
 ## 4.2 Security.txt Information Disclosure
 
-**Resource Tested:**
+### Resource Tested
 
-**Observation:**
+### Observation
 
-The security.txt file was accessible and provided publicly available information about the application security contact process.
+The security.txt file was publicly accessible and provided information related to the application's security contact process.
 
-While security.txt files are commonly used for responsible disclosure, unnecessary information exposure should be reviewed.
+Although security.txt files are commonly used for responsible vulnerability disclosure, exposed information should be reviewed to ensure unnecessary details are not revealed.
 
-**Evidence:**
+### Security Impact
 
-**Observation:**
+Publicly available application information may assist attackers during reconnaissance activities.
+
+### Evidence
+
+---
+
+## 4.3 Exposed File Resources
+
+### Resource Tested
+
+### Observation
 
 The application exposed files through a publicly accessible directory.
 
-This demonstrates insufficient access restrictions on sensitive resources and could allow attackers to download files that should not be publicly available.
+This demonstrates insufficient access restrictions on sensitive resources and may allow unauthorized users to access files that should not be publicly available.
 
-**Evidence:**
+### Security Impact
+
+Attackers may download exposed files and use the information obtained for further attacks.
+
+### Evidence
 
 ---
 
@@ -92,8 +119,8 @@ Successful exploitation of sensitive data exposure vulnerabilities may allow an 
 - Identify hidden resources and directories
 - Discover application structure
 - Collect information useful for further attacks
-- Increase the effectiveness of exploitation attempts
-- Access files that should not be publicly available
+- Access publicly exposed files
+- Increase the effectiveness of future exploitation attempts
 
 **Risk Rating: Medium**
 
@@ -105,10 +132,11 @@ Recommended security improvements:
 
 - Remove unnecessary publicly accessible files
 - Restrict access to sensitive directories
+- Disable unnecessary directory listing
 - Review web server configuration
 - Apply proper authorization controls
 - Avoid exposing internal application information
-- Disable directory listing where unnecessary
+- Secure configuration files and resources
 - Perform regular vulnerability assessments
 - Conduct security reviews before deployment
 
@@ -130,7 +158,7 @@ This lab provided practical experience in:
 
 - Identifying information disclosure vulnerabilities
 - Performing web application reconnaissance
-- Reviewing exposed application resources
+- Reviewing publicly accessible resources
 - Understanding attacker information gathering techniques
 - Collecting security evidence
 - Writing professional vulnerability assessment reports
