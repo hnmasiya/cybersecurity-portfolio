@@ -1,0 +1,24 @@
+# Secrets
+.env
+*.key
+*.pem
+*.pfx
+*.secret
+
+# Credentials
+passwords.txt
+credentials.txt
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Virtual machines
+*.ova
+*.iso
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
