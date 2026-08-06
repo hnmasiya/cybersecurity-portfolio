@@ -1,0 +1,139 @@
+# DVWA Weak Session ID Vulnerability Report
+
+## Lab Overview
+
+**Project:** Web Application Security Testing Lab  
+**Application:** Damn Vulnerable Web Application (DVWA)  
+**Vulnerability:** Weak Session ID  
+**Category:** Web Application Security Testing  
+**Testing Environment:** Local Cybersecurity Home Lab
+
+---
+
+# 1. Vulnerability Description
+
+Weak Session ID vulnerabilities occur when a web application generates predictable or insufficiently random session identifiers.
+
+If session IDs can be guessed or predicted, an attacker may hijack another user's authenticated session without knowing their credentials.
+
+---
+
+# 2. Testing Environment
+
+| Component | Details |
+|---|---|
+| Application | DVWA |
+| Vulnerability | Weak Session ID |
+| Security Level | Low |
+| Operating System | Zorin OS |
+| Web Server | Apache 2.4.58 (Ubuntu) |
+| Database | MariaDB 10.11.14 |
+| PHP Version | PHP 8.3.6 |
+| Testing Tools | Browser |
+
+---
+
+# 3. Vulnerable Application Component
+
+## DVWA Module
+
+**Target:**
+
+Weak Session IDs
+
+**Security Level:**
+
+Low
+
+The Weak Session ID module intentionally generates predictable session identifiers for security awareness and testing purposes.
+
+---
+
+# 4. Testing Methodology
+
+The vulnerability was tested using the DVWA Weak Session ID module.
+
+Testing process:
+
+1. Opened the Weak Session ID module.
+2. Generated multiple session identifiers.
+3. Observed the generated values.
+4. Compared the identifiers for predictability.
+5. Documented the security implications.
+
+---
+
+# 5. Evidence Collection
+
+The vulnerability was demonstrated by generating multiple session identifiers.
+
+## Weak Session ID Page
+
+Screenshot:
+
+Web-Security/DVWA/Screenshots/weak-session-page.png
+
+---
+
+## Session ID Analysis
+
+Multiple generated session IDs followed a predictable pattern, demonstrating weak randomness.
+
+Screenshot:
+
+Web-Security/DVWA/Screenshots/weak-session-analysis.png
+
+---
+
+# 6. Impact Assessment
+
+Weak session identifiers may allow an attacker to:
+
+- Predict valid session IDs
+- Hijack authenticated user sessions
+- Access sensitive application data
+- Bypass authentication controls
+
+**Risk Rating: Medium**
+
+---
+
+# 7. Remediation Recommendations
+
+Recommended security improvements:
+
+- Use cryptographically secure random session identifiers
+- Regenerate session IDs after successful authentication
+- Configure secure and HttpOnly cookies
+- Enable the SameSite cookie attribute
+- Expire inactive sessions after a defined timeout
+- Monitor for suspicious session activity
+
+---
+
+# 8. Lessons Learned
+
+This lab provided practical experience in:
+
+- Understanding session management vulnerabilities
+- Identifying predictable session identifiers
+- Assessing authentication security
+- Collecting security evidence
+- Writing professional vulnerability reports
+
+---
+
+# 9. Evidence Files
+
+| Evidence | Location |
+|---|---|
+| Weak Session ID page | Web-Security/DVWA/Screenshots/weak-session-page.png |
+| Session ID analysis | Web-Security/DVWA/Screenshots/weak-session-analysis.png |
+
+---
+
+# Conclusion
+
+The DVWA Weak Session ID assessment demonstrated how predictable session identifiers can weaken authentication security and increase the risk of session hijacking.
+
+This controlled laboratory exercise provided practical experience in identifying session management weaknesses, analyzing their security impact, collecting evidence, and documenting findings using industry-standard reporting practices.
