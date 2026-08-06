@@ -5,74 +5,112 @@
 **Project:** Web Application Security Testing Lab  
 **Application:** OWASP Juice Shop  
 **Vulnerability:** Sensitive Data Exposure / Information Disclosure  
-**Testing Tool:** Browser and Burp Suite Community Edition  
-**Environment:** Local Cybersecurity Home Lab  
+**Category:** Web Application Security Testing  
+**Testing Environment:** Local Cybersecurity Home Lab  
+**Testing Tools:** Browser, Burp Suite Community Edition  
 
 ---
 
 # 1. Vulnerability Description
 
-Sensitive Data Exposure occurs when an application unintentionally exposes confidential information through publicly accessible files, directories, APIs, or application resources.
+Sensitive Data Exposure occurs when an application unintentionally reveals information that should not be publicly accessible.
 
-Attackers may use exposed information to identify weaknesses or gather intelligence about the application.
-
----
-
-# 2. Testing Methodology
-
-Testing steps:
-
-1. Accessed Juice Shop application.
-2. Tested common sensitive file locations.
-3. Reviewed exposed application resources.
-4. Documented information disclosure findings.
-5. Captured evidence screenshots.
+Exposed files, directories, application metadata, or configuration information may allow attackers to gather intelligence about the application and prepare further attacks.
 
 ---
 
-# 3. Testing Performed
+# 2. Testing Environment
 
-The following locations were tested:
+| Component | Details |
+|---|---|
+| Application | OWASP Juice Shop |
+| Vulnerability | Sensitive Data Exposure |
+| Deployment | Docker Container |
+| Operating System | Zorin OS |
+| Web Server | Node.js Application Server |
+| Testing Tools | Browser, Burp Suite Community Edition |
 
 ---
 
-# 4. Findings
+# 3. Testing Methodology
 
-The application exposed information that could assist attackers during reconnaissance.
+The assessment was performed against the OWASP Juice Shop application running in a local Docker environment.
 
-Examples of exposed information include:
+Testing activities included:
 
-- Application structure details
-- Public files
-- Configuration information
-- Internal resource references
+1. Accessing the Juice Shop application.
+2. Reviewing publicly accessible resources.
+3. Testing common information disclosure locations.
+4. Capturing evidence screenshots.
+5. Documenting security impact and remediation recommendations.
+
+---
+
+# 4. Vulnerability Testing and Evidence Collection
+
+## 4.1 robots.txt Information Disclosure
+
+**Resource Tested:**
+
+**Observation:**
+
+The robots.txt file was publicly accessible and revealed application paths that could assist attackers during reconnaissance activities.
+
+Attackers may use information from robots.txt files to identify hidden directories and potential attack targets.
+
+**Evidence:**
+
+---
+
+## 4.2 Security.txt Information Disclosure
+
+**Resource Tested:**
+
+**Observation:**
+
+The security.txt file was accessible and provided publicly available information about the application security contact process.
+
+While security.txt files are commonly used for responsible disclosure, unnecessary information exposure should be reviewed.
+
+**Evidence:**
+
+**Observation:**
+
+The application exposed files through a publicly accessible directory.
+
+This demonstrates insufficient access restrictions on sensitive resources and could allow attackers to download files that should not be publicly available.
+
+**Evidence:**
 
 ---
 
 # 5. Impact Assessment
 
-Information disclosure may allow attackers to:
+Successful exploitation of sensitive data exposure vulnerabilities may allow an attacker to:
 
-- Perform better reconnaissance
-- Identify application technologies
-- Discover sensitive resources
-- Plan further attacks
+- Perform application reconnaissance
+- Identify hidden resources and directories
+- Discover application structure
+- Collect information useful for further attacks
+- Increase the effectiveness of exploitation attempts
+- Access files that should not be publicly available
 
-Risk Rating:
-
-Medium
+**Risk Rating: Medium**
 
 ---
 
 # 6. Remediation Recommendations
 
-Recommended improvements:
+Recommended security improvements:
 
-- Remove unnecessary exposed files
+- Remove unnecessary publicly accessible files
 - Restrict access to sensitive directories
 - Review web server configuration
-- Avoid exposing application metadata
-- Perform regular security assessments
+- Apply proper authorization controls
+- Avoid exposing internal application information
+- Disable directory listing where unnecessary
+- Perform regular vulnerability assessments
+- Conduct security reviews before deployment
 
 ---
 
@@ -80,15 +118,27 @@ Recommended improvements:
 
 | Evidence | Location |
 |---|---|
-| robots.txt disclosure | Screenshots/robots-txt.png |
-| Security.txt disclosure | Screenshots/security-txt.png |
-| Exposed files | Screenshots/exposed-files.png |
+| robots.txt disclosure | Web-Security/Juice-Shop/Screenshots/robots-txt.png |
+| Security.txt review | Web-Security/Juice-Shop/Screenshots/security-txt.png |
+| Exposed files | Web-Security/Juice-Shop/Screenshots/exposed-files.png |
+
+---
+
+# 8. Lessons Learned
+
+This lab provided practical experience in:
+
+- Identifying information disclosure vulnerabilities
+- Performing web application reconnaissance
+- Reviewing exposed application resources
+- Understanding attacker information gathering techniques
+- Collecting security evidence
+- Writing professional vulnerability assessment reports
 
 ---
 
 # Conclusion
 
-This assessment demonstrated how publicly accessible resources can reveal information useful to attackers.
+The OWASP Juice Shop Sensitive Data Exposure assessment demonstrated how publicly accessible resources can reveal information that may assist attackers during reconnaissance and exploitation activities.
 
-The exercise provided practical experience in reconnaissance, information disclosure analysis, and security documentation.
-
+This controlled laboratory exercise provided hands-on experience in vulnerability identification, evidence collection, impact assessment, and security remediation recommendations.
