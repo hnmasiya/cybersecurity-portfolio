@@ -93,3 +93,27 @@ Unauthorized access to restricted resources.
 # Conclusion
 
 The assessment demonstrated practical understanding of OWASP Top 10 testing methodologies.
+---
+
+# Evidence
+
+Screenshots:
+
+- Authentication testing
+- SQL Injection testing
+- Access control testing
+
+Example:
+
+![Juice Shop Testing](../Screenshots/sql-injection-success.png)
+
+---
+
+# Testing Methodology
+
+Testing followed:
+
+- OWASP Top 10
+- Manual verification
+- Browser inspection
+- Proxy analysis
