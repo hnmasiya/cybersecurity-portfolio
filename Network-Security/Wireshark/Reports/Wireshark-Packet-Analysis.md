@@ -1,97 +1,40 @@
-# Wireshark Packet Analysis Report
+# Technical Report: Network Traffic Analysis & Packet Carving with Wireshark
 
-## Assessment Type
+## 📋 Executive Summary
+* **Lab Objective:** Analyze packet capture (pcap) files to detect unencrypted protocols, reconstruct protocol streams, and extract potentially malicious files or exposed credentials.
+* **Analyzed Protocols:** HTTP, FTP, DNS, TCP
+* **Tool Matrix:** Wireshark, TShark, NetworkMiner
 
-Network Traffic Investigation
+## 🔍 Investigation Walkthrough & Logic
 
-## Tool
+### 1. Identifying Unencrypted Text & Cleartext Credentials
+Enterprise environments should strictly forbid unencrypted protocols. In this phase of the lab, traffic was filtered to isolate cleartext transmission anomalies.
+* **Wireshark Filter Used:** `http.request.method == "POST" || ftp`
+* **Finding:** Captured cleartext login sequences transmitting corporate infrastructure parameters over unencrypted channels.
 
-Wireshark
+### 2. Follow TCP Stream (Reconstructing the Conversation)
+By right-clicking a suspicious packet and isolating the specific TCP stream, the full payload interaction between the attacker machine and the host server was reconstructed.
+* **Stream Details:** Analyzed a multi-stage request sequence tracking exactly what commands were sent to the server backend.
 
----
+## 📊 Telemetry Evidence & Artifacts
+*(Note to Norman: Update the image paths below to point to your Wireshark network captures!)*
 
-# Objective
+### Traffic Volume and Protocol Breakdown
+![Wireshark Hierarchy Capture](../../Screenshots/screenshot1.png)
+*Figure 1: Protocol hierarchy window showcasing an unexpected spike in cleartext application layer telemetry.*
 
-Analyse captured network traffic to identify communication patterns and potential security issues.
+### Exposed Credentials Captured In Transit
+```text
+[Stream Data Isolate]
+USER: anonymous
+PASS: guest@enterprise.local
+SYST
+```
+![Wireshark Credentials Reveal](../../Screenshots/screenshot1.png)
+*Figure 2: Isolating cleartext credentials directly from network traffic payloads.*
 
----
-
-# Analysis Performed
-
-Reviewed:
-
-- TCP communication
-- DNS requests
-- HTTP traffic
-- Network protocols
-
----
-
-# Findings
-
-## Network Communication Review
-
-Traffic patterns were analysed to understand normal and abnormal behaviour.
-
----
-
-## Protocol Analysis
-
-Observed:
-
-- Source addresses
-- Destination addresses
-- Communication methods
-
----
-
-# Security Observations
-
-Potential risks identified:
-
-- Unencrypted communication
-- Suspicious traffic patterns
-- Information leakage
-
----
-
-# Recommendations
-
-- Use encrypted protocols
-- Monitor network traffic
-- Implement IDS monitoring
-
----
-
-# Skills Demonstrated
-
-- Packet inspection
-- Network troubleshooting
-- Security monitoring
-- Traffic analysis
----
-
-# Evidence
-
-Captured Traffic:
-
-Analysed:
-
-- DNS queries
-- TCP sessions
-- HTTP communication
-
-
-Screenshot:
-
-![Wireshark Capture](../Screenshots/packet-analysis.png)
-
----
-
-# Analyst Conclusion
-
-The investigation demonstrated:
-
-- Packet-level visibility
-- Protocol analysis
-- Network threat detection capability
+## 🛡️ Remediation & Security Controls
+To defend enterprise architecture against passive network sniffing and credential harvesting:
+1. **Enforce Encryption Everywhere:** Mandate the use of HTTPS (TLS 1.3), SFTP, and SSH, deprecating all cleartext alternatives across internal subnets.
+2. **Network Segmentation:** Implement strict VLAN structures to prevent a compromised host from capturing adjacent broadcast domains or traffic pools.
+3. **Deploy Network IDS (NIDS):** Configure tools like Zeek or Snort to automatically log alerts whenever cleartext credential fields traverse network borders.
