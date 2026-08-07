@@ -114,3 +114,36 @@ The alert demonstrated the importance of SIEM monitoring and authentication even
 The investigation followed a standard SOC workflow:
 
 Detection → Investigation → Analysis → Response
+---
+
+# Evidence
+
+## Screenshots
+
+![Wazuh Alert](../Screenshots/wazuh-alert.png)
+
+## Investigation Notes
+
+Evidence collected:
+
+- Alert timestamp
+- Source IP address
+- Username involved
+- Authentication failure count
+- Wazuh rule triggered
+
+---
+
+# Analyst Decision
+
+Classification:
+
+Security Event
+
+Risk Level:
+
+Medium
+
+Recommended Action:
+
+Continue monitoring and investigate repeated authentication failures.

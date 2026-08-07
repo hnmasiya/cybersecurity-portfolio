@@ -60,3 +60,33 @@ Recommendations:
 - Port scanning
 - Service identification
 - Risk assessment
+---
+
+# Evidence
+
+Scan Output:
+
+Example:
+nmap -sV -sC target
+
+
+Captured information:
+
+- Open ports
+- Service versions
+- Potential risks
+
+
+Screenshot:
+
+![Nmap Scan](../Screenshots/nmap-scan.png)
+
+---
+
+# Analyst Recommendation
+
+Reduce attack surface by:
+
+- Closing unused ports
+- Updating exposed services
+- Restricting access

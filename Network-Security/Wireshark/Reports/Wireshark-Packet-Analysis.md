@@ -69,3 +69,29 @@ Potential risks identified:
 - Network troubleshooting
 - Security monitoring
 - Traffic analysis
+---
+
+# Evidence
+
+Captured Traffic:
+
+Analysed:
+
+- DNS queries
+- TCP sessions
+- HTTP communication
+
+
+Screenshot:
+
+![Wireshark Capture](../Screenshots/packet-analysis.png)
+
+---
+
+# Analyst Conclusion
+
+The investigation demonstrated:
+
+- Packet-level visibility
+- Protocol analysis
+- Network threat detection capability
