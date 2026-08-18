@@ -25,3 +25,5 @@ Thumbs.db
 # Local SOC report remediation working files
 REPORT-BACKUPS/
 UPGRADED-SOC-REPORT-DRAFTS/
+__pycache__/
+*.pyc
