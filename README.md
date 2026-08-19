@@ -194,3 +194,9 @@ https://hnmasiya.github.io/cybersecurity-portfolio/
 The GitHub repository remains the authoritative source for the underlying reports, scripts and evidence.
 
 ---
+
+### 🧭 SOC Analyst Evidence Map
+
+A recruiter-focused mapping of SOC capabilities to the specific labs, scripts and evidence that demonstrate them.
+
+[View the SOC Analyst Evidence Map](./SOC-ANALYST-EVIDENCE-MAP.md)
