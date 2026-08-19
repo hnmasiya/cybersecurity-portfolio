@@ -1,3 +1,66 @@
+# DVWA — Weak Session IDs
+
+## Objective
+Demonstrate identification and exploitation of the Weak Session IDs vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+## Skills & Tools
+DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+## Architecture
+DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
+
+## Topology
+Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
+
+## Execution
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Walkthrough
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Attack Simulation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Detection
+Detection relies on statistical analysis of issued session identifiers for predictability, and monitoring for session reuse across unrelated source IPs.
+
+## Triage
+Prioritize based on the sensitivity of the account/session data reachable once a session is hijacked.
+
+## Investigation
+An investigation would review session logs for concurrent use of the same session ID from different IP addresses or user agents.
+
+## Evidence
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Findings
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Impact
+Predictable session identifiers allow an attacker to guess or forge a valid session and hijack another user's authenticated session.
+
+## Root Cause
+Session identifiers are generated using a predictable algorithm rather than a cryptographically secure random source.
+
+## MITRE ATT&CK
+T1539 Steal Web Session Cookie (Credential Access)
+
+## Remediation
+Generate session identifiers using a cryptographically secure random number generator with sufficient entropy, and rotate the session ID on login.
+
+## Validation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Lessons Learned
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Recommendations
+Beyond the remediation above, set the Secure and HttpOnly flags on session cookies to reduce exposure.
+
+---
+
+## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
+
 # DVWA Weak Session ID Vulnerability Report
 
 ## Lab Overview

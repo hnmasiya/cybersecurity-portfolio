@@ -1,3 +1,66 @@
+# DVWA — SQL Injection
+
+## Objective
+Demonstrate identification and exploitation of the SQL Injection vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+## Skills & Tools
+DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+## Architecture
+DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
+
+## Topology
+Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
+
+## Execution
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Walkthrough
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Attack Simulation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Detection
+Detection relies on WAF/IDS signatures for SQL metacharacters and keywords in request parameters, plus monitoring for anomalous database query patterns.
+
+## Triage
+Prioritize as critical — successful exploitation can expose or modify the full contents of the database.
+
+## Investigation
+An investigation would review database and web server logs for anomalous queries and confirm the scope of any data actually accessed.
+
+## Evidence
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Findings
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Impact
+Successful SQLi can expose the full contents of the database, including credentials, and in some configurations allow data modification or deletion.
+
+## Root Cause
+User input is concatenated directly into a SQL query string instead of being passed as a parameterized value.
+
+## MITRE ATT&CK
+T1190 Exploit Public-Facing Application (Initial Access)
+
+## Remediation
+Use parameterized queries or prepared statements exclusively; never concatenate user input into SQL strings.
+
+## Validation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Lessons Learned
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Recommendations
+Beyond the remediation above, apply least-privilege database accounts so a compromised web app account cannot read unrelated tables.
+
+---
+
+## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
+
 # DVWA SQL Injection Vulnerability Report
 
 ## Lab Overview

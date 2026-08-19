@@ -1,3 +1,66 @@
+# DVWA — Command Injection
+
+## Objective
+Demonstrate identification and exploitation of the Command Injection vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+## Skills & Tools
+DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+## Architecture
+DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
+
+## Topology
+Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
+
+## Execution
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Walkthrough
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Attack Simulation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Detection
+Detection relies on WAF/IDS signatures for shell metacharacters in request parameters and monitoring for unexpected child processes spawned by the web server.
+
+## Triage
+Prioritize as critical — successful exploitation typically grants direct command execution on the host.
+
+## Investigation
+An investigation would review web server and process logs for unexpected command execution and trace any resulting outbound connections.
+
+## Evidence
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Findings
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Impact
+Successful exploitation gives the attacker arbitrary command execution on the underlying server, equivalent to a full host compromise.
+
+## Root Cause
+User-supplied input is passed to a system shell command without sanitization or use of a safe execution API.
+
+## MITRE ATT&CK
+T1190 Exploit Public-Facing Application (Initial Access)
+
+## Remediation
+Avoid passing user input to shell commands entirely; where unavoidable, use parameterized system calls, strict allow-lists, and least-privilege service accounts.
+
+## Validation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Lessons Learned
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Recommendations
+Beyond the remediation above, run the web application with a least-privilege service account and enable process-level monitoring.
+
+---
+
+## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
+
 # DVWA Command Injection Vulnerability Report
 
 ## Lab Overview

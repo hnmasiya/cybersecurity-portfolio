@@ -1,3 +1,66 @@
+# DVWA — File Upload
+
+## Objective
+Demonstrate identification and exploitation of the File Upload vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+## Skills & Tools
+DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+## Architecture
+DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
+
+## Topology
+Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
+
+## Execution
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Walkthrough
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Attack Simulation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Detection
+Detection relies on monitoring uploaded file types and extensions against policy and alerting on script files landing in web-accessible directories.
+
+## Triage
+Prioritize as critical — a successfully uploaded and executed web shell typically grants persistent remote command execution.
+
+## Investigation
+An investigation would review the upload directory for unexpected file types and check web server logs for requests to any newly uploaded files.
+
+## Evidence
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Findings
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Impact
+A successfully uploaded and executed web shell gives the attacker persistent remote command execution on the server.
+
+## Root Cause
+Uploaded file type and content are not validated before being stored in a web-accessible, script-executable location.
+
+## MITRE ATT&CK
+T1505.003 Server Software Component: Web Shell (Persistence)
+
+## Remediation
+Validate file type by content (not extension), store uploads outside the web root, disable script execution in the upload directory, and rename files on upload.
+
+## Validation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Lessons Learned
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Recommendations
+Beyond the remediation above, scan uploaded files with anti-malware tooling before making them available.
+
+---
+
+## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
+
 # DVWA File Upload Vulnerability Report
 
 ## Lab Overview

@@ -1,3 +1,66 @@
+# DVWA — Brute Force
+
+## Objective
+Demonstrate identification and exploitation of the Brute Force vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+## Skills & Tools
+DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+## Architecture
+DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
+
+## Topology
+Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
+
+## Execution
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Walkthrough
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Attack Simulation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Detection
+Detection relies on monitoring for a high rate of failed authentication attempts against a single account or from a single source within a short window.
+
+## Triage
+Prioritize based on whether the targeted account has elevated privileges and whether the login endpoint is internet-facing.
+
+## Investigation
+An investigation would review authentication logs for the volume and timing of failed attempts and cross-reference the source IP against known scanning infrastructure.
+
+## Evidence
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Findings
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Impact
+A successful brute force yields valid credentials, giving the attacker the same access as the legitimate account holder.
+
+## Root Cause
+The application does not implement any control to slow or block repeated authentication attempts against the same account.
+
+## MITRE ATT&CK
+T1110 Brute Force (Credential Access)
+
+## Remediation
+Implement account lockout or exponential backoff after repeated failed attempts, add CAPTCHA after a threshold, and enforce multi-factor authentication.
+
+## Validation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Lessons Learned
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Recommendations
+Beyond the remediation above, consider multi-factor authentication and alerting on failed-login thresholds.
+
+---
+
+## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
+
 # DVWA Brute Force Vulnerability Report
 
 ## Lab Overview
