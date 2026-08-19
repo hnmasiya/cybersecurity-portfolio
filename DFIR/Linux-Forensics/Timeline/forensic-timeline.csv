@@ -1,0 +1,8 @@
+timestamp,event_type,source,user,description
+2026-08-19T09:14:02Z,AUTH_FAILURE,10.10.20.45,admin,Invalid user authentication failure
+2026-08-19T09:14:05Z,AUTH_FAILURE,10.10.20.45,admin,Repeated SSH authentication failure
+2026-08-19T09:14:08Z,AUTH_FAILURE,10.10.20.45,admin,Repeated SSH authentication failure
+2026-08-19T09:14:12Z,AUTH_SUCCESS,10.10.20.10,analyst,Successful analyst SSH authentication
+2026-08-19T09:18:41Z,PRIVILEGED_COMMAND,10.10.20.10,analyst,Read /etc/passwd using sudo
+2026-08-19T09:21:17Z,AUTH_FAILURE,10.10.20.45,root,Failed root authentication
+2026-08-19T09:21:20Z,AUTH_FAILURE,10.10.20.45,root,Repeated failed root authentication
