@@ -43,7 +43,7 @@ jobs:
 
       - name: Public secret assignment scan
         run: |
-          if git grep -nEI             'INDEXER_PASSWORD=|API_PASSWORD=|DASHBOARD_PASSWORD='             -- ':!REPORT-BACKUPS/*' ':!UPGRADED-SOC-REPORT-DRAFTS/*' ':!Documentation-Archive/*'; then
+          if git grep -nEI             'INDEXER_PASSWORD=|API_PASSWORD=|DASHBOARD_PASSWORD='             --             ':!.github/workflows/portfolio-quality.yml'             ':!Scripts/portfolio_quality_check.py'             ':!REPORT-BACKUPS/*'             ':!UPGRADED-SOC-REPORT-DRAFTS/*'             ':!Documentation-Archive/*'; then
             echo "Potential credential assignment found"
             exit 1
           fi
