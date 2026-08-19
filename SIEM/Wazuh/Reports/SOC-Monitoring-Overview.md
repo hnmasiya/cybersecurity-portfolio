@@ -27,12 +27,6 @@
 
 ---
 
-## Evidence
-
-Screenshots:
-
-SIEM/Wazuh/Screenshots/
-
 ---
 
 ## Conclusion
