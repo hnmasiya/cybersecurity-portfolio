@@ -17,7 +17,6 @@ An automated high-severity alert triggered on the centralized Wazuh Manager dash
 *(Note to Norman: Update the image paths below to point to your 5 screenshots!)*
 
 ### 1. Dashboard Alert Overview
-![Wazuh Alert Banner](../../Screenshots/screenshot1.png)
 *Figure 1: Initial alert visibility on the Wazuh indexer dashboard showcasing an elevated alert spike.*
 
 ### 2. Log Analysis & Attacker Footprint
@@ -25,7 +24,6 @@ An automated high-severity alert triggered on the centralized Wazuh Manager dash
 Feb 07 05:30:11 ubuntu-server sshd[2841]: Failed password for invalid user admin from 192.168.1.45 port 49210 ssh2
 Feb 07 05:30:13 ubuntu-server sshd[2843]: Failed password for invalid user root from 192.168.1.45 port 49212 ssh2
 ```
-![Log Breakdown](../../Screenshots/screenshot2.png)
 *Figure 2: Raw syslog parsing showing rapid authentication failures from an internal subnet IP.*
 
 ## 🛡️ Containment & Mitigation Actions

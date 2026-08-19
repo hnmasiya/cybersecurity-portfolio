@@ -120,7 +120,6 @@ Detection → Investigation → Analysis → Response
 
 ## Screenshots
 
-![Wazuh Alert](../Screenshots/wazuh-alert.png)
 
 ## Investigation Notes
 

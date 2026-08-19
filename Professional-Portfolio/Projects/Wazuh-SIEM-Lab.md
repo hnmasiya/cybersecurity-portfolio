@@ -144,7 +144,6 @@ Add screenshots:
 Example:
 
 
-![Wazuh Alert](../../Evidence/SOC/wazuh-alert.png)
 
 
 # 🧠 Key Takeaways & Lessons Learned
@@ -164,4 +163,3 @@ Future improvements:
 - Add custom detection rules
 - Integrate threat intelligence feeds
 - Automate response actions
-
