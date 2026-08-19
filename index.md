@@ -58,6 +58,23 @@ I combine enterprise IT support experience with hands-on cybersecurity work cove
 
 [View PCAP Analysis](./Network-Security/PCAP-Analysis/README.md)
 
+### 🖥️ Windows / Sysmon Endpoint Detection Engineering
+
+**Evidence-backed offline detection engineering project**
+
+* Synthetic Windows and Sysmon-style endpoint telemetry
+* PowerShell execution detection
+* Failed Windows authentication detection
+* PowerShell network-connection detection
+* Suspicious parent/child process detection
+* Deterministic Python validation
+* JSON and CSV evidence
+* MITRE ATT&CK contextual mapping
+
+**Current status:** Offline/synthetic validation. A live Windows/Sysmon endpoint is not currently claimed as repository evidence.
+
+[View Windows / Sysmon Detection Lab](./Endpoint-Security/Windows-Sysmon-Detection-Lab/README.md)
+
 ### 📊 Wazuh Detection Engineering
 
 **Evidence-backed offline validation project**
