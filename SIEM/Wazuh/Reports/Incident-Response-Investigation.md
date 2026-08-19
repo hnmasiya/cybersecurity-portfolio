@@ -67,7 +67,6 @@ Recommended actions:
 
 Screenshots:
 
-SIEM/Wazuh/Screenshots/incident-investigation.png
 
 ---
 
@@ -90,73 +89,73 @@ The Wazuh incident response investigation demonstrated how SIEM platforms suppor
 
 Document the actual security domains and tools used in this lab.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Architecture
 
 Describe the actual laboratory architecture using only verified information.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Topology
 
 Document the actual traffic/data flow between assessment host, target and monitoring components.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Execution
 
 Document the actual steps performed during the exercise.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Walkthrough
 
 Provide a chronological analyst walkthrough from preparation through evidence collection.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Attack Simulation
 
 Document the controlled security activity actually performed.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Triage
 
 Explain initial validation, scope assessment and severity determination.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Impact
 
 Document demonstrated confidentiality, integrity, availability or access-control impact.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Root Cause
 
 Identify the underlying weakness or configuration responsible.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## MITRE ATT&CK
 
 Map only techniques directly supported by the observed activity.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Remediation
 
 Document corrective actions appropriate to the demonstrated weakness.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Validation
 
 Document retest requirements and actual results only when verified.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Wazuh laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Evidence Verification
 
