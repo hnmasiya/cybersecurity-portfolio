@@ -1,5 +1,19 @@
 # PCAP Network Security Monitoring & Incident Investigation
 
+## Synthetic Laboratory Scope
+
+This packet capture was generated exclusively within the controlled cybersecurity laboratory on the local workstation.
+
+All observed traffic used the loopback interface and was exchanged between `127.0.0.1` endpoints. The hostname `malicious.example.test` is a synthetic laboratory hostname used to represent suspicious infrastructure; it does not indicate a real external attacker or production system.
+
+The suspicious requests were intentionally generated to exercise SOC detection logic for:
+
+- command-execution patterns;
+- SQL-injection-like input; and
+- sensitive-file access patterns.
+
+These indicators demonstrate the analysis workflow only. They must not be interpreted as evidence of a real-world compromise.
+
 ## Objective
 Analyze a controlled packet capture generated in the local cybersecurity laboratory and demonstrate a repeatable SOC workflow covering packet capture, protocol analysis, suspicious-activity detection, IOC extraction, triage, investigation, and reporting.
 
