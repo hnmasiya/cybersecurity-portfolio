@@ -1,0 +1,131 @@
+{
+  "summary": {
+    "total": 5,
+    "escalate": 3,
+    "investigate": 1,
+    "monitor": 1
+  },
+  "alerts": [
+    {
+      "timestamp": "2026-08-18T02:14:01.000+0000",
+      "rule_id": "5720",
+      "rule_description": "Multiple authentication failures",
+      "rule_level": 10,
+      "severity": "HIGH",
+      "priority": "P2",
+      "disposition": "ESCALATE",
+      "agent": "web01",
+      "iocs": {
+        "ipv4": [
+          "203.0.113.55"
+        ],
+        "domains": [],
+        "sha256": []
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1110",
+          "name": "Brute Force",
+          "tactic": "Credential Access"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-18T02:40:12.000+0000",
+      "rule_id": "31151",
+      "rule_description": "Known malware signature detected in web request",
+      "rule_level": 13,
+      "severity": "CRITICAL",
+      "priority": "P1",
+      "disposition": "ESCALATE",
+      "agent": "app02",
+      "iocs": {
+        "ipv4": [
+          "198.51.100.23"
+        ],
+        "domains": [
+          "malicious-c2-domain.net",
+          "upload.php"
+        ],
+        "sha256": [
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ]
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1190",
+          "name": "Exploit Public-Facing Application",
+          "tactic": "Initial Access"
+        },
+        {
+          "technique": "T1204",
+          "name": "User Execution",
+          "tactic": "Execution"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-18T09:16:02.000+0000",
+      "rule_id": "5402",
+      "rule_description": "Successful sudo to ROOT executed",
+      "rule_level": 9,
+      "severity": "HIGH",
+      "priority": "P2",
+      "disposition": "ESCALATE",
+      "agent": "web01",
+      "iocs": {
+        "ipv4": [],
+        "domains": [],
+        "sha256": []
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1548",
+          "name": "Abuse Elevation Control Mechanism",
+          "tactic": "Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-18T11:05:44.000+0000",
+      "rule_id": "1002",
+      "rule_description": "Generic system notification",
+      "rule_level": 3,
+      "severity": "LOW",
+      "priority": "P4",
+      "disposition": "MONITOR",
+      "agent": "db01",
+      "iocs": {
+        "ipv4": [],
+        "domains": [],
+        "sha256": []
+      },
+      "mitre_attack": []
+    },
+    {
+      "timestamp": "2026-08-18T13:22:09.000+0000",
+      "rule_id": "40101",
+      "rule_description": "Port scan detected",
+      "rule_level": 7,
+      "severity": "MEDIUM",
+      "priority": "P3",
+      "disposition": "INVESTIGATE",
+      "agent": "fw01",
+      "iocs": {
+        "ipv4": [
+          "10.0.0.0",
+          "192.0.2.44"
+        ],
+        "domains": [],
+        "sha256": []
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1595",
+          "name": "Active Scanning",
+          "tactic": "Reconnaissance"
+        }
+      ]
+    }
+  ]
+}

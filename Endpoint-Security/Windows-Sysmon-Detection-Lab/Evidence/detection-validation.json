@@ -1,0 +1,48 @@
+[
+  {
+    "event_id": "EP-001",
+    "detections": [
+      "EDR-001"
+    ],
+    "expected": "PowerShell execution",
+    "status": "PASS"
+  },
+  {
+    "event_id": "EP-002",
+    "detections": [
+      "EDR-001"
+    ],
+    "expected": "Suspicious PowerShell execution",
+    "status": "PASS"
+  },
+  {
+    "event_id": "EP-003",
+    "detections": [
+      "EDR-003"
+    ],
+    "expected": "Failed authentication",
+    "status": "PASS"
+  },
+  {
+    "event_id": "EP-004",
+    "detections": [
+      "EDR-002"
+    ],
+    "expected": "PowerShell network connection",
+    "status": "PASS"
+  },
+  {
+    "event_id": "EP-005",
+    "detections": [
+      "EDR-004"
+    ],
+    "expected": "Suspicious child process",
+    "status": "PASS"
+  },
+  {
+    "event_id": "EP-006",
+    "detections": [],
+    "expected": "No alert",
+    "status": "PASS"
+  }
+]

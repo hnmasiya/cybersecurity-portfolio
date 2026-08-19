@@ -1,0 +1,7 @@
+event_id,source,host,event_type,user,image,detections,expected_detection,status
+EP-001,Sysmon-Synthetic,WIN-LAB-01,Sysmon:1,analyst,powershell.exe,EDR-001,PowerShell execution,PASS
+EP-002,Sysmon-Synthetic,WIN-LAB-01,Sysmon:1,analyst,powershell.exe,EDR-001,Suspicious PowerShell execution,PASS
+EP-003,Windows-Synthetic,WIN-LAB-01,Windows:4625,administrator,,EDR-003,Failed authentication,PASS
+EP-004,Sysmon-Synthetic,WIN-LAB-01,Sysmon:3,analyst,powershell.exe,EDR-002,PowerShell network connection,PASS
+EP-005,Windows-Synthetic,WIN-LAB-01,Windows:4688,analyst,cmd.exe,EDR-004,Suspicious child process,PASS
+EP-006,Windows-Synthetic,WIN-LAB-01,Windows:4624,analyst,,,No alert,PASS
