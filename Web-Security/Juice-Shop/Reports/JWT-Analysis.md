@@ -55,7 +55,6 @@ The authentication response returned a JWT token containing:
 Screenshots:
 
 - jwt-login-response.png
-- jwt-decoded-token.png
 
 Location:
 

@@ -1,220 +1,153 @@
 # Nmap Network Reconnaissance Report
 
-## Assessment Type
+## Objective
 
-Network Discovery and Service Enumeration
-
-## Tool
-
-Nmap
-
----
-
-# Objective
-
-Identify available hosts, open ports, and exposed services within the authorised laboratory environment.
-
----
-
-# Commands Used
-
-Example:
-
-nmap -sV -sC <target>
-
----
-
-# Findings
-
-## Host Discovery
-
-Identified active hosts within the testing network.
-
----
-
-## Service Enumeration
-
-Collected information about:
-
-- Open ports
-- Running services
-- Service versions
-
----
-
-# Security Analysis
-
-Exposed services increase attack surface.
-
-Recommendations:
-
-- Disable unnecessary services
-- Patch outdated software
-- Restrict network access
-
----
-
-# Skills Demonstrated
-
-- Network reconnaissance
-- Port scanning
-- Service identification
-- Risk assessment
----
-
-# Evidence
-
-Scan Output:
-
-Example:
-nmap -sV -sC target
-
-
-Captured information:
-
-- Open ports
-- Service versions
-- Potential risks
-
-
-Screenshot:
-
-![Nmap Scan](../Screenshots/nmap-scan.png)
-
----
-
-# Analyst Recommendation
-
-Reduce attack surface by:
-
-- Closing unused ports
-- Updating exposed services
-- Restricting access
+Document an authorized Nmap network-reconnaissance methodology and clearly distinguish verified repository evidence from planned testing activity.
 
 ## Skills & Tools
 
-Document the actual security domains and tools used in this lab.
-
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+- Nmap
+- Network reconnaissance
+- Host discovery
+- Port scanning
+- Service enumeration
+- Network security assessment
+- Evidence preservation
+- Risk assessment
+- Git
 
 ## Architecture
 
-Describe the actual laboratory architecture using only verified information.
-
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+The repository identifies this as a local cybersecurity laboratory exercise. The current active Nmap project does not contain a captured scan output, target inventory, packet capture, or screenshot from an executed Nmap scan.
 
 ## Topology
 
-Document the actual traffic/data flow between assessment host, target and monitoring components.
+A definitive laboratory topology is not asserted because no scan evidence or topology artifact is currently stored in the active Nmap project.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+The documented assessment concept is:
+
+`Authorized assessment host -> Nmap -> authorized laboratory target(s)`
 
 ## Execution
 
-Document the actual steps performed during the exercise.
+The report documents the intended Nmap workflow:
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+1. Identify the authorized target or target range.
+2. Perform host discovery where appropriate.
+3. Enumerate TCP/UDP ports according to the assessment scope.
+4. Identify services and versions where authorized.
+5. Preserve raw Nmap output.
+6. Analyse exposed services and associated attack surface.
+7. Retest after remediation where applicable.
+
+No completed scan result is claimed by this report because the repository currently contains no raw Nmap output.
 
 ## Walkthrough
 
-Provide a chronological analyst walkthrough from preparation through evidence collection.
+The active repository contains the reconnaissance methodology but does not contain sufficient execution evidence to reconstruct a specific completed scan chronologically.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+A future evidence-backed execution record should preserve the command used, target scope, timestamp, raw output, and analyst interpretation.
 
 ## Attack Simulation
 
-Document the controlled security activity actually performed.
+No specific simulated attack or production attack is claimed.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+Nmap reconnaissance is treated here as an authorized assessment activity intended to identify hosts, ports, and services within a controlled environment.
 
 ## Detection
 
-Explain what observable event, response, alert or traffic indicated the security condition.
-
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+Nmap activity can be observable through firewall, IDS/IPS, endpoint, and network-monitoring telemetry. Specific detection events are not claimed here because no corresponding Nmap execution telemetry is stored in this project.
 
 ## Triage
 
-Explain initial validation, scope assessment and severity determination.
+A reconnaissance event should be assessed using source, destination, scan scope, rate, targeted ports, and whether the activity matches an authorized security-testing window.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+No real incident triage result is claimed in this report.
 
 ## Investigation
 
-Explain how evidence was correlated and analysed.
+A completed evidence-backed investigation would correlate Nmap output with asset inventory, firewall logs, IDS/IPS alerts, service inventories, and vulnerability-management records.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+The current repository does not contain those artifacts for a completed Nmap scan.
+
+## Evidence
+
+Current active Nmap evidence inventory:
+
+- `Evidence/` contains no raw Nmap scan output.
+- `Screenshots/` contains no Nmap screenshot.
+- `Reports/` contains this methodology/evidence-bounded report.
+
+The repository therefore does not currently provide a verified host, port, service, version, or scan-result dataset.
+
+## Findings
+
+The verified finding is limited to the existence of an Nmap reconnaissance exercise/documentation area.
+
+No specific host, port, service, software version, vulnerability, or exposure is reported as observed because those details are not supported by stored Nmap evidence.
 
 ## Impact
 
-Document demonstrated confidentiality, integrity, availability or access-control impact.
+Network reconnaissance can help identify externally or internally reachable services and therefore contributes to attack-surface discovery.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+The impact of any specific exposed service cannot be determined from the current repository evidence.
 
 ## Root Cause
 
-Identify the underlying weakness or configuration responsible.
+This is a documentation/evidence limitation rather than a confirmed security weakness.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+The active Nmap project was documented without preserving the underlying scan result artifacts required to substantiate specific reconnaissance findings.
 
 ## MITRE ATT&CK
 
-Map only techniques directly supported by the observed activity.
+Potential contextual mapping:
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+- **T1046 — Network Service Scanning**
+
+This is a technique-context mapping for the documented Nmap activity and is not a claim of malicious activity or attribution.
 
 ## Remediation
 
-Document corrective actions appropriate to the demonstrated weakness.
+For future evidence-backed Nmap assessments:
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+- Preserve raw Nmap output.
+- Record the authorized target scope.
+- Record assessment date/time.
+- Preserve XML output when structured analysis is required.
+- Store screenshots only when they provide meaningful supporting evidence.
+- Correlate discovered services with asset and vulnerability inventories.
+- Restrict unnecessary exposed services after validation.
 
 ## Validation
 
-Document retest requirements and actual results only when verified.
+No remediation retest is claimed because no completed Nmap scan result is currently stored.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+A future validation cycle should repeat the original scan and compare the resulting host/port/service inventory against the baseline.
 
 ## Lessons Learned
 
-Summarise practical security and analyst lessons.
+A reconnaissance report is substantially stronger when the raw scan output is preserved alongside the analyst's interpretation.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+Evidence should be collected at the time of testing rather than reconstructed later from methodology notes.
 
 ## Evidence Verification
 
-Before publication, verify all technical claims against the repository evidence:
+Before a specific reconnaissance finding is published, verify:
 
+- Authorized target scope
+- Scan command
+- Date/time
 - IP addresses
-- Hostnames
-- Ports
-- Event IDs
-- Alert levels
-- Payloads
-- Vulnerability identifiers
-- Packet characteristics
-- MITRE ATT&CK mappings
-- Remediation results
-- Validation/retest results
+- Open ports
+- Service names
+- Service versions
+- Script findings
+- Raw Nmap output
+- Screenshots, where applicable
+- Remediation and retest results
 
-Unsupported details must not be presented as observed findings.
+Unsupported technical details must not be presented as observed findings.
 
-
-## SOC Documentation Upgrade
-
-This draft was generated from the existing repository evidence. Existing technical content was preserved. Unsupported technical details are explicitly marked for verification.
-
-<!-- FINAL-CORRECTION-NMAP-2026 -->
 ## Recommendations
 
-Based on the reconnaissance results, recommended defensive actions include:
-
-- Remove unnecessary exposed services.
-- Restrict management services to trusted administrative networks.
-- Apply host-based firewall rules where appropriate.
-- Maintain an accurate network and service inventory.
-- Investigate unexpected or unauthorized listening services.
-- Correlate discovered services with vulnerability-management results.
-- Repeat the scan after remediation to verify that the exposed attack surface has changed as expected.
-
-Recommendations should be adjusted according to the actual services and ports observed by the scan evidence.
+Create a future evidence-backed Nmap run using an explicitly authorized laboratory target and preserve the raw output in a dedicated evidence directory.

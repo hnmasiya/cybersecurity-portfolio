@@ -10,7 +10,7 @@ Web Application Penetration Testing
 
 ---
 
-# Objective
+## Objective
 
 Identify and document common OWASP Top 10 vulnerabilities.
 
@@ -24,7 +24,7 @@ Identify and document common OWASP Top 10 vulnerabilities.
 
 ---
 
-# Findings
+## Findings
 
 ## Authentication Weaknesses
 
@@ -81,7 +81,7 @@ Unauthorized access to restricted resources.
 
 ---
 
-# Recommendations
+## Recommendations
 
 - Implement strong authentication controls
 - Apply secure coding practices
@@ -122,79 +122,79 @@ Testing followed:
 
 Document the actual security domains and tools used in this lab.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Architecture
 
 Describe the actual laboratory architecture using only verified information.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Topology
 
 Document the actual traffic/data flow between assessment host, target and monitoring components.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Execution
 
 Document the actual steps performed during the exercise.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Walkthrough
 
 Provide a chronological analyst walkthrough from preparation through evidence collection.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Attack Simulation
 
 Document the controlled security activity actually performed.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Detection
 
 Explain what observable event, response, alert or traffic indicated the security condition.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Triage
 
 Explain initial validation, scope assessment and severity determination.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Investigation
 
 Explain how evidence was correlated and analysed.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Root Cause
 
 Identify the underlying weakness or configuration responsible.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## MITRE ATT&CK
 
 Map only techniques directly supported by the observed activity.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Remediation
 
 Document corrective actions appropriate to the demonstrated weakness.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Lessons Learned
 
 Summarise practical security and analyst lessons.
 
-> **VERIFICATION REQUIRED:** Add exact technical details only when supported by the existing lab evidence.
+**Evidence status:** This section is limited to information supported by the existing Juice Shop laboratory documentation and screenshots. No additional technical detail is asserted without matching repository evidence.
 
 ## Evidence Verification
 
