@@ -1,26 +1,27 @@
 # Threat Hunting Case Reports
 
-## Objectives
+## Current Status
 
-Develop practical threat hunting investigations.
+This area documents the threat-hunting case-report structure used by the portfolio.
 
-## Planned Cases
+The current evidence-backed hunting implementation is available in:
 
-1. Suspicious Authentication Activity
+`Threat-Hunting/Detection-Validation-Lab/`
 
-2. Malware Behaviour Analysis
+## Case Workflow
 
-3. Persistence Detection
+A completed hunt case should document:
 
-4. Privilege Escalation Investigation
+- Hypothesis
+- Data sources
+- Query or analytic logic
+- Observed evidence
+- Triage
+- Investigation
+- MITRE ATT&CK context
+- Findings
+- Impact
+- Remediation
+- Validation
 
-5. Network Threat Detection
-
-
-## Evidence
-
-Threat-Hunting/Screenshots/
-
-## Status
-
-Pending Investigation
+No specific live threat-hunting incident is claimed here without corresponding stored telemetry.
