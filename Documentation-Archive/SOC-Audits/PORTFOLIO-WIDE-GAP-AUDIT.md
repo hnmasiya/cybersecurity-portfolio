@@ -1,5 +1,8 @@
 # PORTFOLIO-WIDE GAP & JOB-READINESS AUDIT
 
+> **Snapshot note:** Reflects repo state as of 18 Aug 2026 (07:31–07:37 CAT), before the 19 Aug DVWA cleanup and Wireshark/PCAP/Nmap report updates. Historical only — see live reports for current status.
+
+
 Generated automatically from the current repository.
 
 ## Executive Summary
@@ -1596,4 +1599,3 @@ Improve README navigation, project summaries, architecture diagrams, skills mapp
 ## Recommended Next Action
 
 **Do not modify the repository automatically from this audit.** Review the identified gaps first, then build the highest-value missing project based on evidence and reproducibility.
-

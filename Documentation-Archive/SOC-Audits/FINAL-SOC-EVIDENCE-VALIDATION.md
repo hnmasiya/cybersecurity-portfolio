@@ -1,5 +1,8 @@
 # FINAL SOC REPORT — EVIDENCE VALIDATION
 
+> **Snapshot note:** Reflects repo state as of 18 Aug 2026 (07:31–07:37 CAT), before the 19 Aug DVWA cleanup and Wireshark/PCAP/Nmap report updates. Historical only — see live reports for current status.
+
+
 This audit checks whether the upgraded drafts contain evidence-backed material.
 It does NOT modify the original reports or drafts.
 

@@ -1,5 +1,8 @@
 # Deep SOC Report Audit
 
+> **Snapshot note:** Reflects repo state as of 18 Aug 2026 (07:31–07:37 CAT), before the 19 Aug DVWA cleanup and Wireshark/PCAP/Nmap report updates. Historical only — see live reports for current status.
+
+
 **Repository:** /home/normann/cybersecurity-portfolio  
 **Date:** Tue 18 Aug 2026 07:31:58 CAT  
 
@@ -571,4 +574,3 @@ The following files may overlap with the five canonical reports:
 - Improve diagrams
 - Standardise headings
 - Improve executive summaries
-
