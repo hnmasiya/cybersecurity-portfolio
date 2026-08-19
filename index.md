@@ -15,15 +15,26 @@ title: "Enterprise Cybersecurity & SOC Operations Portfolio"
 
 ## 👤 About Me
 
-**IT Support Specialist pivoting into Tier 1 SOC Analyst operations.**
+I am a **CompTIA Security+ certified IT professional with 9+ years of enterprise IT experience**, building on that foundation with a strong hands-on cybersecurity focus across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.
 
-I combine enterprise IT support experience with hands-on cybersecurity work covering SIEM monitoring, detection engineering, incident investigation, network analysis, automation, vulnerability assessment, and evidence-driven security reporting.
+My professional background includes supporting **enterprise sites and business-critical IT infrastructure**, with experience across Windows Server, Active Directory, endpoint security, networking, access control, system hardening, patch management, troubleshooting, and infrastructure operations.
 
-* 📍 **Location:** Zimbabwe
-* 💼 **Current Role:** IT Support Specialist
-* 🎯 **Target Position:** Junior SOC Analyst / Tier 1 Incident Responder
+Alongside my professional IT experience, I have built and documented a practical cybersecurity portfolio demonstrating hands-on capability across:
 
----
+- **SOC & SIEM:** Wazuh, security monitoring, log analysis, alert investigation, custom detection engineering, and File Integrity Monitoring (FIM)
+- **DFIR:** Linux forensic investigation, evidence preservation, SHA-256 verification, timeline reconstruction, IOC extraction, and privileged activity analysis
+- **Network Security:** Wireshark, PCAP analysis, Nmap, network reconnaissance, and enterprise SD-WAN
+- **Web Security:** Burp Suite, OWASP Top 10, SQL injection, XSS, CSRF, JWT analysis, DVWA, and OWASP Juice Shop
+- **Security Automation:** Python, Bash, and PowerShell for IOC extraction, log anomaly detection, alert enrichment, file integrity monitoring, and detection validation
+- **Threat Hunting & Detection:** MITRE ATT&CK mapping, investigation workflows, detection validation, and security-focused automation
+
+My approach combines **enterprise IT operations experience with practical cybersecurity investigation, detection, and infrastructure security skills**. I focus on understanding security events, validating evidence, documenting findings, and developing repeatable security workflows.
+
+I am targeting opportunities as a **SOC Analyst, Cybersecurity Analyst, Security Operations Analyst, or Information Security Administrator**, where I can apply my enterprise infrastructure experience while contributing to security monitoring, investigation, detection, and incident response.
+
+### Portfolio Evidence
+
+This portfolio contains documented evidence of hands-on work, including **security reports, forensic artifacts, screenshots, detection rules, investigation workflows, scripts, automation tooling, PCAP analysis, and validation utilities**.
 
 ## 🛠️ Technical Competency & Tool Stack
 
