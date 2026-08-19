@@ -107,14 +107,6 @@ The Wazuh SIEM environment supports:
 
 # 7. Evidence
 
-Screenshots:
-
-
-SIEM/Wazuh/Screenshots/wazuh-dashboard.png
-SIEM/Wazuh/Screenshots/wazuh-containers.png
-SIEM/Wazuh/Screenshots/wazuh-alerts.png
-
-
 ---
 
 # 8. Lessons Learned

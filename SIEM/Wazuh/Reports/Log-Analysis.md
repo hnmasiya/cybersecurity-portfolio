@@ -67,10 +67,6 @@ The analysis demonstrated how Wazuh can:
 
 # 6. Evidence
 
-Screenshots:
-
-SIEM/Wazuh/Screenshots/log-analysis.png
-
 ---
 
 # 7. Lessons Learned

@@ -51,10 +51,6 @@ Custom rules can detect:
 
 # 5. Evidence
 
-Screenshots:
-
-SIEM/Wazuh/Screenshots/custom-rule-alert.png
-
 ---
 
 # 6. Lessons Learned

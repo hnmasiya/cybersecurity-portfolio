@@ -65,9 +65,6 @@ Recommended actions:
 
 # 6. Evidence
 
-Screenshots:
-
-
 ---
 
 # 7. Lessons Learned
@@ -191,12 +188,8 @@ Detection conclusions are limited to information supported by the repository evi
 
 The following repository artifacts provide supporting evidence for the Wazuh investigation:
 
-- `SIEM/Wazuh/Screenshots/agent-status.png`
-- `SIEM/Wazuh/Screenshots/alerts.png`
-- `SIEM/Wazuh/Screenshots/custom-rule-alert.png`
-- `SIEM/Wazuh/Screenshots/dashboard.png`
 
-These artifacts demonstrate agent status, alert visibility, custom-rule activity and the Wazuh dashboard. Exact values visible in the screenshots should be verified before publication.
+The repository currently contains supporting Wazuh investigation documentation and laboratory artifacts. Historical screenshot placeholders were removed because they contained no image data. Agent status, dashboard visibility, alert details, and other live telemetry are not claimed as visual evidence unless a corresponding verifiable artifact is present in the repository.
 
 ## Objective
 
