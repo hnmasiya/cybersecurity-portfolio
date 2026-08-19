@@ -27,3 +27,4 @@ REPORT-BACKUPS/
 UPGRADED-SOC-REPORT-DRAFTS/
 __pycache__/
 *.pyc
+*.backup-*
