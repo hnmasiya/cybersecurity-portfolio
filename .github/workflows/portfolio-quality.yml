@@ -27,6 +27,11 @@ jobs:
         run: |
           python -m compileall -q             Endpoint-Security             Security-Automation             SIEM             Threat-Hunting             Scripts
 
+      - name: Remove Python runtime artifacts
+        run: |
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f \( -name '*.pyc' -o -name '*.pyo' \) -delete
+
       - name: Portfolio quality
         run: python Scripts/portfolio_quality_check.py
 
