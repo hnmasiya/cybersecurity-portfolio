@@ -58,6 +58,23 @@ I combine enterprise IT support experience with hands-on cybersecurity work cove
 
 [View PCAP Analysis](./Network-Security/PCAP-Analysis/README.md)
 
+### 🎯 Threat Hunting & Detection Validation
+
+**Evidence-backed offline threat-hunting project**
+
+* Hypothesis-driven suspicious-login hunting
+* Repeated failed-authentication analysis
+* Encoded PowerShell hunting
+* PowerShell network-activity hunting
+* Synthetic Windows and endpoint telemetry
+* Deterministic Python hunt validation
+* JSON and CSV evidence
+* MITRE ATT&CK contextual mapping
+
+**Current status:** Offline/synthetic validation. Live enterprise telemetry is not claimed as repository evidence.
+
+[View Threat Hunting Detection Validation](./Threat-Hunting/Detection-Validation-Lab/README.md)
+
 ### 🖥️ Windows / Sysmon Endpoint Detection Engineering
 
 **Evidence-backed offline detection engineering project**
