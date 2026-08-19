@@ -1,87 +1,23 @@
 # DVWA — Command Injection
 
 ## Objective
-Demonstrate identification and exploitation of the Command Injection vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+Assess the DVWA Command Injection module to determine whether user-controlled input can influence operating-system command execution.
 
 ## Skills & Tools
-DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+- DVWA
+- Browser
+- Burp Suite Community Edition
+- HTTP request analysis
+- Linux
+- Command execution analysis
+- Git
+- Security evidence collection
 
 ## Architecture
-DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
 
-## Topology
-Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
-
-## Execution
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Walkthrough
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Attack Simulation
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Detection
-Detection relies on WAF/IDS signatures for shell metacharacters in request parameters and monitoring for unexpected child processes spawned by the web server.
-
-## Triage
-Prioritize as critical — successful exploitation typically grants direct command execution on the host.
-
-## Investigation
-An investigation would review web server and process logs for unexpected command execution and trace any resulting outbound connections.
-
-## Evidence
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Findings
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Impact
-Successful exploitation gives the attacker arbitrary command execution on the underlying server, equivalent to a full host compromise.
-
-## Root Cause
-User-supplied input is passed to a system shell command without sanitization or use of a safe execution API.
-
-## MITRE ATT&CK
-T1190 Exploit Public-Facing Application (Initial Access)
-
-## Remediation
-Avoid passing user input to shell commands entirely; where unavoidable, use parameterized system calls, strict allow-lists, and least-privilege service accounts.
-
-## Validation
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Lessons Learned
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Recommendations
-Beyond the remediation above, run the web application with a least-privilege service account and enable process-level monitoring.
-
----
-
-## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
-
-# DVWA Command Injection Vulnerability Report
-
-## Lab Overview
-
-**Project:** Web Application Security Testing Lab  
-**Application:** Damn Vulnerable Web Application (DVWA)  
-**Vulnerability:** Command Injection  
-**Category:** Web Application Security Testing  
-**Testing Environment:** Local Cybersecurity Home Lab  
-
----
-
-# 1. Vulnerability Description
-
-Command Injection is a vulnerability that occurs when a web application executes operating system commands using user-controlled input without proper validation.
-
-An attacker may manipulate application input to execute unauthorized operating system commands on the underlying server.
-
----
-
-# 2. Testing Environment
+The assessment was performed in a controlled local cybersecurity laboratory on Zorin OS.
 
 | Component | Details |
 |---|---|
@@ -91,113 +27,119 @@ An attacker may manipulate application input to execute unauthorized operating s
 | Operating System | Zorin OS |
 | Web Server | Apache 2.4.58 (Ubuntu) |
 | Database | MariaDB 10.11.14 |
-| PHP Version | PHP 8.3.6 |
+| PHP | 8.3.6 |
 | Testing Tools | Browser, Burp Suite Community Edition |
 
----
+## Topology
 
-# 3. Vulnerable Application Component
+Testing was performed against the locally hosted DVWA application within the isolated laboratory environment.
 
-## DVWA Module
+## Execution
 
-**Target:**
+The Command Injection module was accessed and first tested with normal input. A controlled modified input was then supplied to determine whether application input was incorporated into an operating-system command.
 
-Command Injection
+## Walkthrough
 
-**Security Level:**
+1. Accessed the Command Injection module.
+2. Submitted a normal request.
+3. Observed the expected application response.
+4. Submitted a controlled modified input.
+5. Compared the resulting response.
+6. Confirmed that user-controlled input influenced command execution.
+7. Collected evidence.
 
-Low
+## Attack Simulation
 
-The Command Injection module was selected because it intentionally contains insecure command execution functionality for cybersecurity training.
+The test simulated an attacker manipulating a vulnerable application parameter to influence an operating-system command.
 
----
+Testing was restricted to the local DVWA laboratory.
 
-# 4. Testing Methodology
+## Detection
 
-The vulnerability was tested through the DVWA Command Injection module.
+Defensive monitoring should identify:
 
-Testing process:
+- Suspicious shell metacharacters
+- Unexpected command parameters
+- Web-server processes spawning unusual child processes
+- Unexpected outbound connections
+- Abnormal process trees involving Apache/PHP
 
-1. Accessed the Command Injection page.
-2. Submitted a normal input request.
-3. Submitted a modified command payload.
-4. Observed the server response.
-5. Documented the security impact.
+## Triage
 
----
+This finding should be treated as high risk because successful command injection can result in unauthorized operating-system command execution.
 
-# 5. Evidence Collection
+## Investigation
 
-## Normal Request
+Review:
 
-A normal request was submitted to the application.
+- Web-server access logs
+- Application logs
+- Process creation telemetry
+- Child processes spawned by Apache/PHP
+- Outbound network connections
+- Files created or modified following exploitation
 
-Screenshot:
+## Evidence
 
-Web-Security/DVWA/Screenshots/command-injection-normal.png
+The following repository evidence files match this assessment:
 
----
+- `Web-Security/DVWA/Screenshots/command-injection-normal.png`
+- `Web-Security/DVWA/Screenshots/command-injection-success.png`
 
-## Successful Command Injection
+## Findings
 
-A modified command was submitted, demonstrating that user input was executed by the server.
+The DVWA Command Injection module intentionally allows user-controlled input to reach command execution functionality.
 
-Screenshot:
+The controlled assessment demonstrated that modified input could influence server-side command execution.
 
-Web-Security/DVWA/Screenshots/command-injection-success.png
+**Finding:** OS command execution is insufficiently separated from user input.
 
----
+**Risk Rating:** High
 
-# 6. Impact Assessment
+## Impact
 
-Successful Command Injection exploitation may allow an attacker to:
+Successful exploitation may allow an attacker to:
 
 - Execute unauthorized commands
-- Access server information
+- Read system information
 - Modify files
-- Compromise application confidentiality and integrity
-- Gain further access to the system
+- Access application resources
+- Establish further access to the system
 
-**Risk Rating: High**
+## Root Cause
 
----
+User-controlled input is incorporated into an operating-system command without sufficient validation or safe command execution mechanisms.
 
-# 7. Remediation Recommendations
+## MITRE ATT&CK
 
-Recommended security improvements:
+**T1059 — Command and Scripting Interpreter**
 
-- Avoid executing system commands from user input
-- Use secure APIs instead of shell commands
-- Validate and restrict user input
-- Apply least privilege permissions
-- Implement application security testing
-- Monitor suspicious command execution
+The vulnerability can provide a pathway to command execution depending on the privileges of the affected web-server process.
 
----
+## Remediation
 
-# 8. Lessons Learned
+- Avoid shell execution where possible.
+- Use safe APIs instead of shell commands.
+- Apply strict allow-list validation.
+- Separate user input from command arguments.
+- Run the application with least privilege.
+- Monitor process creation from web applications.
 
-This lab provided practical experience in:
+## Validation
 
-- Understanding operating system command execution risks
-- Identifying insecure application behaviour
-- Performing controlled vulnerability testing
-- Collecting security evidence
-- Writing professional security reports
+After remediation:
 
----
+1. Submit legitimate input.
+2. Confirm expected functionality.
+3. Submit invalid/metacharacter input.
+4. Confirm it is rejected or safely handled.
+5. Verify that no unintended child process is created.
+6. Review application and system logs.
 
-# 9. Evidence Files
+## Lessons Learned
 
-| Evidence | Location |
-|---|---|
-| Normal command request | Web-Security/DVWA/Screenshots/command-injection-normal.png |
-| Successful command injection | Web-Security/DVWA/Screenshots/command-injection-success.png |
+The exercise demonstrated the importance of separating untrusted input from operating-system functionality and reinforced the value of controlled exploitation and evidence-driven reporting.
 
----
+## Recommendations
 
-# Conclusion
-
-The DVWA Command Injection assessment demonstrated how unsafe handling of user input can allow attackers to execute operating system commands through a vulnerable web application.
-
-This exercise provided practical experience in vulnerability discovery, exploitation analysis, evidence collection, and remediation recommendations.
+Use secure command-execution APIs, strict allow-lists, least-privilege service accounts, application logging, and endpoint/process monitoring.

@@ -1,87 +1,21 @@
-# DVWA — CSRF
+# DVWA — Cross-Site Request Forgery (CSRF)
 
 ## Objective
-Demonstrate identification and exploitation of the CSRF vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+Assess the DVWA CSRF module to determine whether an authenticated user's session can be abused to perform an unauthorized state-changing action.
 
 ## Skills & Tools
-DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+- DVWA
+- Browser
+- HTTP request analysis
+- Authentication/session analysis
+- Git
+- Security evidence collection
 
 ## Architecture
-DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
 
-## Topology
-Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
-
-## Execution
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Walkthrough
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Attack Simulation
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Detection
-Detection relies on monitoring for state-changing requests that arrive without an expected anti-CSRF token or with a mismatched Origin/Referer header.
-
-## Triage
-Prioritize based on the sensitivity of the action the forged request can trigger, such as a password or email change.
-
-## Investigation
-An investigation would review the referring page and headers of the state-changing request and confirm whether token validation was actually enforced.
-
-## Evidence
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Findings
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Impact
-A successful CSRF attack can change account credentials or settings on the victim's behalf, potentially locking them out or enabling account takeover.
-
-## Root Cause
-State-changing requests are not bound to a per-session token, so the server cannot distinguish a legitimate request from a forged one.
-
-## MITRE ATT&CK
-T1190 Exploit Public-Facing Application (Initial Access)
-
-## Remediation
-Implement per-session anti-CSRF tokens on all state-changing forms and validate the Origin/Referer header server-side.
-
-## Validation
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Lessons Learned
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Recommendations
-Beyond the remediation above, apply the SameSite cookie attribute to reduce cross-site request exposure.
-
----
-
-## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
-
-# DVWA CSRF Vulnerability Report
-
-## Lab Overview
-
-**Project:** Web Application Security Testing Lab  
-**Application:** Damn Vulnerable Web Application (DVWA)  
-**Vulnerability:** Cross-Site Request Forgery (CSRF)  
-**Category:** Web Application Security Testing  
-**Testing Environment:** Local Cybersecurity Home Lab  
-
----
-
-# 1. Vulnerability Description
-
-Cross-Site Request Forgery (CSRF) is a vulnerability where an attacker tricks an authenticated user into performing an unwanted action without their knowledge.
-
-The attack abuses the user's active session and sends unauthorized requests to the vulnerable application.
-
----
-
-# 2. Testing Environment
+The assessment was performed in a controlled local cybersecurity laboratory on Zorin OS.
 
 | Component | Details |
 |---|---|
@@ -91,99 +25,118 @@ The attack abuses the user's active session and sends unauthorized requests to t
 | Operating System | Zorin OS |
 | Web Server | Apache 2.4.58 (Ubuntu) |
 | Database | MariaDB 10.11.14 |
-| PHP Version | PHP 8.3.6 |
-| Testing Tools | Browser |
+| PHP | 8.3.6 |
+| Testing Tool | Browser |
 
----
+## Topology
 
-# 3. Vulnerable Application Component
+Testing was performed against the local DVWA application using an authenticated browser session.
 
-## DVWA Module
+## Execution
 
-Target:
+The CSRF module was accessed and a normal password-change request was performed first. The request structure was then reviewed to determine whether an anti-CSRF token or equivalent server-side validation was present.
 
-CSRF
+A controlled forged request was subsequently tested in the laboratory.
 
-Security Level:
-
-Low
-
-The CSRF module was selected because it intentionally lacks CSRF protection mechanisms for security training.
-
----
-
-# 4. Testing Methodology
-
-Testing steps:
+## Walkthrough
 
 1. Accessed the DVWA CSRF module.
-2. Changed the password normally.
-3. Observed the password change request.
-4. Created a malicious request containing password parameters.
-5. Confirmed that the application accepted unauthorized requests.
+2. Performed a normal password change.
+3. Observed the resulting request.
+4. Reviewed the request parameters and security controls.
+5. Constructed a controlled unauthorized request.
+6. Submitted the request while authenticated.
+7. Confirmed that the application accepted the state-changing request.
+8. Collected evidence.
 
----
+## Attack Simulation
 
-# 5. Evidence Collection
+The simulation represented a situation in which an attacker causes an authenticated user to submit a malicious state-changing request.
 
-## Normal Password Change
+Testing remained confined to the local DVWA environment.
 
-Screenshot:
+## Detection
 
-Web-Security/DVWA/Screenshots/csrf-normal.png
+Defensive indicators include:
 
+- State-changing requests without valid CSRF tokens
+- Invalid or missing Origin/Referer headers
+- Unexpected password or account-setting changes
+- Requests originating from unusual navigation contexts
 
----
+## Triage
 
-## Successful CSRF Test
+Prioritize according to the sensitivity of the affected action.
 
-Screenshot:
+Password changes and account-management actions should receive higher priority because successful exploitation may contribute to account takeover.
 
-Web-Security/DVWA/Screenshots/csrf-success.png
+## Investigation
 
+Review:
 
----
+- Authentication logs
+- State-changing requests
+- Origin and Referer headers
+- CSRF token validation
+- Account changes occurring without normal user interaction
 
-# 6. Impact Assessment
+## Evidence
 
-Successful CSRF attacks may allow attackers to:
+The following repository evidence files match this assessment:
 
-- Change user account settings
+- `Web-Security/DVWA/Screenshots/csrf-success.png`
+
+## Findings
+
+The DVWA CSRF module intentionally lacks effective CSRF protection.
+
+The assessment demonstrated that an authenticated state-changing request could be accepted without adequate protection against forged cross-site requests.
+
+**Finding:** Missing or insufficient CSRF protection.
+
+**Risk Rating:** Medium/High
+
+## Impact
+
+Successful CSRF exploitation may allow an attacker to:
+
+- Change account settings
 - Modify sensitive information
-- Perform unauthorized actions
-- Compromise user accounts
+- Change credentials
+- Perform unauthorized actions using the victim's authenticated session
 
-Risk Rating:
+## Root Cause
 
-Medium/High
+The application does not adequately bind state-changing requests to a server-generated anti-CSRF token or equivalent request-origin validation.
 
----
+## MITRE ATT&CK
 
-# 7. Remediation Recommendations
+**T1185 — Browser Session Cookie**
 
-Recommended fixes:
+CSRF primarily abuses an authenticated browser session to cause unintended actions.
 
-- Implement CSRF tokens
-- Validate request origin
-- Use SameSite cookie attributes
-- Require user confirmation for sensitive actions
-- Apply secure session management
+## Remediation
 
----
+- Implement unpredictable per-session or per-request CSRF tokens.
+- Validate tokens server-side.
+- Validate Origin/Referer where appropriate.
+- Configure SameSite cookies.
+- Require additional confirmation for high-risk actions.
 
-# 8. Lessons Learned
+## Validation
 
-This lab provided practical experience in:
+Verify that:
 
-- Understanding CSRF attacks
-- Testing authenticated web applications
-- Identifying missing security controls
-- Documenting vulnerabilities professionally
+1. Legitimate requests with valid tokens succeed.
+2. Requests without tokens fail.
+3. Invalid tokens fail.
+4. Cross-origin requests are rejected where appropriate.
+5. Sensitive actions require appropriate confirmation.
 
----
+## Lessons Learned
 
-# Conclusion
+The exercise demonstrated how browser authentication state can be abused when applications fail to distinguish legitimate state-changing requests from forged requests.
 
-The DVWA CSRF assessment demonstrated how missing request validation can allow unauthorized actions to be performed using an authenticated user's session.
+## Recommendations
 
-The exercise provided practical experience in vulnerability discovery, testing, evidence collection, and remediation recommendations.
+Use CSRF tokens as the primary application-level control and complement them with secure cookie configuration, origin validation, and appropriate re-authentication for sensitive operations.

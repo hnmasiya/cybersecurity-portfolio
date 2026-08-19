@@ -1,210 +1,171 @@
 # DVWA — Brute Force
 
 ## Objective
-Demonstrate identification and exploitation of the Brute Force vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+Assess the DVWA Brute Force module to determine whether repeated authentication attempts can be performed without effective protective controls, and document the security impact using a professional vulnerability-assessment format.
 
 ## Skills & Tools
-DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+- Damn Vulnerable Web Application (DVWA)
+- Browser
+- Burp Suite Community Edition
+- HTTP request analysis
+- Authentication security testing
+- Linux
+- Git
+- Evidence collection and technical reporting
 
 ## Architecture
-DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
 
-## Topology
-Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
-
-## Execution
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Walkthrough
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Attack Simulation
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Detection
-Detection relies on monitoring for a high rate of failed authentication attempts against a single account or from a single source within a short window.
-
-## Triage
-Prioritize based on whether the targeted account has elevated privileges and whether the login endpoint is internet-facing.
-
-## Investigation
-An investigation would review authentication logs for the volume and timing of failed attempts and cross-reference the source IP against known scanning infrastructure.
-
-## Evidence
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Findings
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Impact
-A successful brute force yields valid credentials, giving the attacker the same access as the legitimate account holder.
-
-## Root Cause
-The application does not implement any control to slow or block repeated authentication attempts against the same account.
-
-## MITRE ATT&CK
-T1110 Brute Force (Credential Access)
-
-## Remediation
-Implement account lockout or exponential backoff after repeated failed attempts, add CAPTCHA after a threshold, and enforce multi-factor authentication.
-
-## Validation
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Lessons Learned
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Recommendations
-Beyond the remediation above, consider multi-factor authentication and alerting on failed-login thresholds.
-
----
-
-## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
-
-# DVWA Brute Force Vulnerability Report
-
-## Lab Overview
-
-**Project:** Web Application Security Testing Lab  
-**Application:** Damn Vulnerable Web Application (DVWA)  
-**Vulnerability:** Brute Force Attack  
-**Category:** Authentication Security Testing  
-**Testing Environment:** Local Cybersecurity Home Lab  
-
----
-
-# 1. Vulnerability Description
-
-A Brute Force vulnerability occurs when an application does not properly protect authentication mechanisms against repeated login attempts.
-
-An attacker may repeatedly submit username and password combinations until valid credentials are discovered.
-
-Common weaknesses include:
-
-- No account lockout mechanism
-- No login attempt limitation
-- Weak password policies
-- Missing multi-factor authentication controls
-
----
-
-# 2. Testing Environment
+The DVWA application was assessed in a controlled local cybersecurity laboratory running on Zorin OS.
 
 | Component | Details |
 |---|---|
-| Application | DVWA |
+| Application | Damn Vulnerable Web Application (DVWA) |
 | Vulnerability | Brute Force |
 | Security Level | Low |
 | Operating System | Zorin OS |
 | Web Server | Apache 2.4.58 (Ubuntu) |
 | Database | MariaDB 10.11.14 |
-| PHP Version | PHP 8.3.6 |
+| PHP | 8.3.6 |
+| Target | Local DVWA instance |
 | Testing Tools | Browser, Burp Suite Community Edition |
 
----
+## Topology
 
-# 3. Vulnerable Application Component
+The assessment was performed against the locally hosted DVWA application. Testing was isolated to the user's cybersecurity laboratory environment.
 
-## DVWA Module
+## Execution
 
-**Target:**
+The Brute Force module was accessed and its authentication behaviour was reviewed. Incorrect credentials were submitted repeatedly to determine whether the application enforced meaningful controls such as rate limiting, account lockout, CAPTCHA, or other protections against repeated authentication attempts.
 
-Brute Force
+## Walkthrough
 
-**Security Level:**
-
-Low
-
-The Brute Force module was selected because it intentionally contains weak authentication controls for cybersecurity training and vulnerability assessment practice.
-
----
-
-# 4. Testing Methodology
-
-The vulnerability was tested using the DVWA Brute Force module.
-
-Testing process:
-
-1. Accessed the Brute Force page.
+1. Accessed the DVWA Brute Force module.
 2. Reviewed the login functionality.
 3. Submitted incorrect credentials.
-4. Tested repeated authentication attempts.
-5. Identified the absence of effective brute force protection.
-6. Documented the security impact.
+4. Repeated authentication attempts within the controlled laboratory.
+5. Observed the application's responses.
+6. Confirmed that effective brute-force protections were absent or insufficient.
+7. Documented the result and collected supporting evidence.
 
----
+## Attack Simulation
 
-# 5. Evidence Collection
+The controlled test simulated an attacker repeatedly submitting username/password combinations against the authentication endpoint.
 
-The vulnerability testing evidence was collected using screenshots.
+The purpose of the simulation was to determine whether the application would slow, block, challenge, or otherwise detect repeated failed authentication attempts.
 
-## Brute Force Page
+A successful authentication during testing demonstrated that valid credentials could be accepted by the application without an effective brute-force prevention control.
 
-Screenshot:
+## Detection
 
-Web-Security/DVWA/Screenshots/brute-force-page.png
+Useful defensive indicators include:
 
----
+- High volumes of failed authentication attempts
+- Repeated attempts against one account
+- Authentication attempts from a single source in a short period
+- Distributed login attempts across multiple accounts
+- Sudden successful authentication following multiple failures
 
-## Successful Authentication
+## Triage
 
-A valid username and password combination was discovered during testing, demonstrating weak authentication controls.
+Prioritize the finding based on:
 
-Screenshot:
+- Privilege level of the targeted account
+- Exposure of the authentication endpoint
+- Number of failed attempts
+- Whether valid credentials were obtained
+- Whether MFA is enabled
 
-Web-Security/DVWA/Screenshots/brute-force-success.png
+## Investigation
 
----
+Review authentication logs for:
 
-# 6. Impact Assessment
+- Source IP addresses
+- Usernames targeted
+- Timestamp patterns
+- Failed versus successful authentication attempts
+- User-agent information
+- Geographic or network anomalies where applicable
 
-Successful brute force attacks may allow an attacker to:
+Correlate successful authentication with preceding failed attempts.
+
+## Evidence
+
+The following repository evidence files match this assessment:
+
+- `Web-Security/DVWA/Screenshots/brute-force-failed.png`
+- `Web-Security/DVWA/Screenshots/brute-force-page.png`
+- `Web-Security/DVWA/Screenshots/brute-force-success.png`
+- `Web-Security/DVWA/Screenshots/brute-force-success1.png`
+
+## Findings
+
+The DVWA Brute Force module intentionally lacks effective controls to prevent repeated authentication attempts.
+
+The assessment demonstrated that repeated credential attempts can be performed against the authentication mechanism without adequate throttling or account protection.
+
+**Finding:** Brute-force protection is insufficient.
+
+**Risk Rating:** High
+
+## Impact
+
+Successful brute-force attacks may allow an attacker to:
 
 - Gain unauthorized account access
 - Compromise user accounts
 - Access sensitive application information
-- Perform further attacks using valid credentials
+- Use valid credentials for further attacks
 
-**Risk Rating: High**
+## Root Cause
 
----
+The authentication mechanism does not enforce adequate controls against repeated failed login attempts.
 
-# 7. Remediation Recommendations
+Contributing weaknesses include insufficient rate limiting, lack of account lockout controls, and absence of additional authentication challenges.
 
-Recommended security improvements:
+## MITRE ATT&CK
 
-- Implement account lockout policies
-- Add login attempt rate limiting
-- Use multi-factor authentication
-- Enforce strong password policies
-- Monitor failed login attempts
-- Implement CAPTCHA after repeated failures
+**T1110 — Brute Force**
 
----
+T1110 falls under the Credential Access tactic and covers techniques involving repeated attempts to obtain valid authentication credentials.
 
-# 8. Lessons Learned
+## Remediation
 
-This lab provided practical experience in:
+Implement:
 
-- Understanding authentication weaknesses
-- Testing login security controls
-- Identifying brute force risks
+- Authentication rate limiting
+- Progressive delays or exponential backoff
+- Account lockout or temporary account suspension
+- CAPTCHA after repeated failures
+- Multi-factor authentication
+- Strong password policies
+- Authentication monitoring and alerting
+
+## Validation
+
+After remediation, verify that:
+
+1. Repeated failed attempts trigger the configured control.
+2. Authentication requests are rate limited.
+3. CAPTCHA or equivalent challenge appears where configured.
+4. Account lockout behaves as designed.
+5. Legitimate users can recover access safely.
+6. Security monitoring generates appropriate alerts.
+
+## Lessons Learned
+
+This assessment provided practical experience in:
+
+- Authentication security testing
+- Identifying missing brute-force controls
+- Analysing authentication behaviour
 - Collecting security evidence
-- Writing vulnerability reports
+- Assessing business impact
+- Writing professional vulnerability reports
 
----
+## Recommendations
 
-# 9. Evidence Files
+Implement layered authentication protection rather than relying on a single control.
 
-| Evidence | Location |
-|---|---|
-| Brute Force page | Web-Security/DVWA/Screenshots/brute-force-page.png |
-| Successful authentication | Web-Security/DVWA/Screenshots/brute-force-success.png |
-
----
-
-# Conclusion
-
-The DVWA Brute Force assessment demonstrated how weak authentication controls can expose applications to unauthorized access attempts.
-
-This controlled laboratory exercise provided practical experience in authentication testing, vulnerability identification, evidence collection, and security remediation.
+Recommended controls include rate limiting, MFA, strong passwords, CAPTCHA, centralized authentication logging, and alerting on abnormal login activity.
