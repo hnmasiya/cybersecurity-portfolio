@@ -1,5 +1,8 @@
 # Final SOC Report Remediation Checklist
 
+> **Snapshot note:** Reflects repo state as of 18 Aug 2026 (07:31–07:37 CAT), before the 19 Aug DVWA cleanup and Wireshark/PCAP/Nmap report updates. Historical only — see live reports for current status.
+
+
 Generated: 2026-08-18T07:37:21.468555
 
 > This checklist evaluates the upgraded drafts against the required professional SOC report structure. Original reports have not been modified.
