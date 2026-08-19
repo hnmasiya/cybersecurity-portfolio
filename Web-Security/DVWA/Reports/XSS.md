@@ -1,142 +1,79 @@
-# DVWA Cross-Site Scripting (XSS) Vulnerability Report
+# DVWA — Cross-Site Scripting (XSS)
 
-## Lab Overview
+## Objective
+Assess the DVWA Cross-Site Scripting functionality at the Low security level and document the risks associated with insufficient input handling and output encoding.
 
-**Project:** Web Application Security Testing Lab  
-**Application:** Damn Vulnerable Web Application (DVWA)  
-**Vulnerability:** Cross-Site Scripting (XSS)  
-**Category:** Web Application Security Testing  
-**Testing Environment:** Local Cybersecurity Home Lab  
+## Skills & Tools
+- DVWA
+- Zorin OS
+- Apache 2.4.58
+- PHP 8.3.6
+- MariaDB 10.11.14
+- Web browser
+- Burp Suite Community Edition
+- HTTP request analysis
+- Git
 
----
+## Architecture
+DVWA is deployed in the controlled local cybersecurity laboratory on Zorin OS. The browser communicates with DVWA through Apache/PHP, with MariaDB providing database services where required.
 
-# 1. Vulnerability Description
+## Topology
+Security Testing Workstation -> Web Browser -> DVWA -> Apache/PHP -> MariaDB
 
-Cross-Site Scripting (XSS) is a web application vulnerability that occurs when an application accepts untrusted user input and displays it in a browser without proper validation or output encoding.
+Testing was restricted to the local DVWA laboratory.
 
-An attacker can inject malicious scripts that execute in another user's browser session.
+## Execution
+The DVWA XSS functionality was accessed at Low security. Controlled input was submitted and the resulting browser behaviour was observed and documented.
 
----
-
-# 2. Testing Environment
-
-| Component | Details |
-|---|---|
-| Application | DVWA |
-| Vulnerability | Cross-Site Scripting (XSS) |
-| Security Level | Low |
-| Operating System | Zorin OS |
-| Web Server | Apache 2.4.58 (Ubuntu) |
-| Database | MariaDB 10.11.14 |
-| PHP Version | PHP 8.3.6 |
-| Testing Tools | Browser, Burp Suite Community Edition |
-
----
-
-# 3. Vulnerable Application Component
-
-## DVWA Module
-
-Target:
-
-Cross-Site Scripting (XSS)
-
-Security Level:
-
-Low
-
-The XSS module was selected because it intentionally contains weak input validation for security training and vulnerability assessment practice.
-
----
-
-# 4. Testing Methodology
-
-The vulnerability was tested using the DVWA XSS module.
-
-Testing process:
-
-1. Accessed the XSS vulnerability page.
-2. Identified the vulnerable input field.
-3. Submitted a JavaScript payload.
-4. Observed browser execution.
+## Walkthrough
+1. Opened the DVWA XSS functionality.
+2. Reviewed normal behaviour.
+3. Submitted controlled test input.
+4. Observed the response and browser behaviour.
 5. Captured evidence screenshots.
+6. Documented impact and remediation.
 
----
+## Attack Simulation
+A controlled XSS assessment was performed against the intentionally vulnerable DVWA application. No production or third-party systems were targeted.
 
-# 5. Evidence Collection
+## Detection
+Monitor suspicious script-like input, encoded payloads, abnormal request parameters, unexpected rendered content, WAF alerts, and application/web-server logs.
 
-The vulnerability was demonstrated by injecting JavaScript code into the vulnerable input field.
+## Triage
+Determine the affected endpoint, parameter, XSS type, execution context, affected users, and whether sensitive authenticated functionality is exposed.
 
-## XSS Payload
+## Investigation
+Review HTTP requests/responses, input validation, output encoding, Content Security Policy, session controls, and application/web-server logs.
 
-Payload submitted:
+## Evidence
+Relevant evidence currently present includes:
+- Screenshots/xss-payload.png
+- Screenshots/xss-success.png
+- Screenshots/xss-reflected-page.png
+- Screenshots/xss-reflected-success.png
+- Screenshots/xss-stored-persisted.png
+- Screenshots/xss-dom-success.png
 
-<script>alert('XSS')</script>
+## Findings
+The assessment identified insufficient protection against user-controlled content being interpreted by the browser within the intentionally vulnerable DVWA environment.
 
-Result:
+## Impact
+Successful XSS exploitation may allow client-side script execution, content manipulation, actions in the application context, targeting authenticated users, and browser-based social engineering.
 
-The JavaScript payload executed successfully in the browser, confirming the presence of a Cross-Site Scripting vulnerability.
+## Root Cause
+The root cause is insufficient handling of untrusted user input before it is rendered or processed by the browser.
 
-Screenshots:
+## MITRE ATT&CK
+T1189 — Drive-by Compromise. The exact mapping depends on the broader attack chain.
 
-Web-Security/DVWA/Screenshots/xss-payload.png
+## Remediation
+Apply context-aware output encoding, appropriate input validation, secure templating, a strong Content Security Policy, safe DOM APIs, secure cookies, and regular application security testing.
 
-Web-Security/DVWA/Screenshots/xss-success.png
+## Validation
+Repeat the controlled XSS tests after remediation and confirm that previously successful payloads no longer execute while legitimate functionality remains intact.
 
----
+## Lessons Learned
+The assessment reinforced secure input handling, context-aware output encoding, browser security controls, evidence collection, and professional security reporting.
 
-# 6. Impact Assessment
-
-Successful XSS exploitation may allow an attacker to:
-
-- Execute malicious scripts in a victim's browser
-- Steal session cookies
-- Perform actions on behalf of users
-- Redirect users to malicious websites
-- Capture sensitive information
-
-Risk Rating:
-
-Medium to High
-
----
-
-# 7. Remediation Recommendations
-
-Recommended security improvements:
-
-- Implement proper input validation
-- Encode output before displaying user data
-- Use Content Security Policy (CSP)
-- Sanitize user-controlled input
-- Avoid directly inserting user input into HTML responses
-- Conduct regular web application security testing
-
----
-
-# 8. Lessons Learned
-
-This lab provided practical experience in:
-
-- Identifying XSS vulnerabilities
-- Understanding client-side attacks
-- Testing insecure input handling
-- Collecting security evidence
-- Documenting vulnerabilities professionally
-
----
-
-# 9. Evidence Files
-
-| Evidence | Location |
-|---|---|
-| XSS payload submission | Web-Security/DVWA/Screenshots/xss-payload.png |
-| Successful XSS execution | Web-Security/DVWA/Screenshots/xss-success.png |
-
----
-
-# Conclusion
-
-The DVWA Cross-Site Scripting assessment demonstrated how improper handling of user input can allow malicious scripts to execute in a user's browser.
-
-This exercise provided practical experience in vulnerability discovery, exploitation analysis, evidence collection, and security remediation.
+## Recommendations
+Maintain XSS testing in the secure development lifecycle through secure coding, code review, automated testing, and penetration testing.

@@ -1,101 +1,22 @@
 # DVWA — File Inclusion (LFI/RFI)
 
 ## Objective
-Demonstrate identification and exploitation of the File Inclusion (LFI/RFI) vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+Assess the DVWA File Inclusion module to determine whether untrusted file parameters can be manipulated to access unintended local or remote files.
 
 ## Skills & Tools
-DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+- DVWA
+- Browser
+- Burp Suite Community Edition
+- HTTP parameter analysis
+- Linux
+- Git
+- Security evidence collection
 
 ## Architecture
-DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
 
-## Topology
-Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
-
-## Execution
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Walkthrough
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Attack Simulation
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Detection
-Detection relies on monitoring for path traversal sequences, PHP wrapper strings, or unexpected remote URLs in file-parameter values.
-
-## Triage
-Prioritize as high to critical depending on whether remote file inclusion is possible, since RFI can lead directly to code execution.
-
-## Investigation
-An investigation would review web server logs for the specific parameter values submitted and check for any files written to the server as a result.
-
-## Evidence
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Findings
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Impact
-LFI can expose sensitive local files; RFI can lead to remote code execution if the included file contains attacker-controlled code.
-
-## Root Cause
-A filename parameter is passed directly to a file-inclusion function without validation against an allow-list.
-
-## MITRE ATT&CK
-T1190 Exploit Public-Facing Application (Initial Access)
-
-## Remediation
-Validate filenames against a strict allow-list, avoid passing user input to include/require statements, and disable remote file inclusion at the PHP configuration level.
-
-## Validation
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Lessons Learned
-_Content for this section should be merged in from the Original Write-Up below._
-
-## Recommendations
-Beyond the remediation above, disable dangerous PHP configuration options such as allow_url_include.
-
----
-
-## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
-
-# DVWA File Inclusion Vulnerability Report
-
-## Lab Overview
-
-**Project:** Web Application Security Testing Lab  
-**Application:** Damn Vulnerable Web Application (DVWA)  
-**Vulnerability:** File Inclusion (LFI/RFI)  
-**Category:** Web Application Security Testing  
-**Testing Environment:** Local Cybersecurity Home Lab  
-
----
-
-# 1. Vulnerability Description
-
-File Inclusion vulnerabilities occur when a web application allows users to include files through untrusted input parameters without proper validation.
-
-Two common types include:
-
-## Local File Inclusion (LFI)
-
-LFI allows an attacker to access files stored locally on the web server.
-
-Examples of potentially exposed files:
-
-- Configuration files
-- System files
-- Application source code
-
-## Remote File Inclusion (RFI)
-
-RFI occurs when an application allows external files from remote locations to be included and executed.
-
----
-
-# 2. Testing Environment
+The assessment was performed in a controlled local cybersecurity laboratory on Zorin OS.
 
 | Component | Details |
 |---|---|
@@ -105,113 +26,122 @@ RFI occurs when an application allows external files from remote locations to be
 | Operating System | Zorin OS |
 | Web Server | Apache 2.4.58 (Ubuntu) |
 | Database | MariaDB 10.11.14 |
-| PHP Version | PHP 8.3.6 |
+| PHP | 8.3.6 |
 | Testing Tools | Browser, Burp Suite Community Edition |
 
----
+## Topology
 
-# 3. Vulnerable Application Component
+Testing was performed against the local DVWA File Inclusion module.
 
-## DVWA Module
+## Execution
 
-**Target:**
+The file parameter was reviewed and tested using controlled path manipulation. Application responses were compared to determine whether files outside the intended application resources could be processed.
 
-File Inclusion
+## Walkthrough
 
-**Security Level:**
+1. Accessed the File Inclusion module.
+2. Reviewed the file parameter.
+3. Submitted the normal application request.
+4. Tested controlled file-path manipulation.
+5. Observed application responses.
+6. Determined whether unintended files could be processed.
+7. Collected evidence.
 
-Low
+## Attack Simulation
 
-The File Inclusion module was selected because it intentionally contains insecure file handling functionality for cybersecurity training and vulnerability assessment practice.
+The simulation represented an attacker manipulating a file parameter to access files outside the intended application content.
 
----
+Testing was restricted to the local laboratory.
 
-# 4. Testing Methodology
+## Detection
 
-The vulnerability was tested using the DVWA File Inclusion module.
+Monitor for:
 
-Testing process:
+- Path traversal sequences
+- Unexpected file parameters
+- PHP stream wrappers
+- Remote URLs in file parameters
+- Requests for sensitive system/application files
 
-1. Accessed the File Inclusion page.
-2. Reviewed the file parameter used by the application.
-3. Tested file path manipulation.
-4. Observed application responses.
-5. Documented the security impact.
+## Triage
 
----
+Severity depends on the demonstrated capability.
 
-# 5. Evidence Collection
+LFI may expose sensitive files, while RFI can potentially lead to code execution where the application and PHP configuration permit it.
 
-The vulnerability testing evidence was collected using screenshots.
+## Investigation
 
-## File Inclusion Page
+Review web-server logs for:
 
-Screenshot:
+- Suspicious file parameters
+- Path traversal attempts
+- Remote file references
+- Repeated inclusion attempts
 
-Web-Security/DVWA/Screenshots/file-inclusion-page.png
+Also determine whether sensitive files were successfully accessed.
 
----
+## Evidence
 
-## Successful File Inclusion
+The following repository evidence files match this assessment:
 
-A manipulated file path was processed by the application, demonstrating insufficient input validation.
+- `Web-Security/DVWA/Screenshots/file-inclusion-page.png`
+- `Web-Security/DVWA/Screenshots/file-inclusion-success-page.png`
 
-Screenshot:
+## Findings
 
-Web-Security/DVWA/Screenshots/file-inclusion-success.png
+The DVWA File Inclusion module intentionally lacks sufficient validation of the file parameter.
 
----
+The controlled assessment demonstrated that manipulated file paths could be processed by the application.
 
-# 6. Impact Assessment
+**Finding:** Untrusted file input is insufficiently validated.
 
-Successful File Inclusion exploitation may allow an attacker to:
+**Risk Rating:** High
 
-- Access sensitive server files
-- Read application configuration files
-- Expose credentials and secrets
-- Execute unauthorized files (depending on configuration)
-- Compromise application confidentiality
+## Impact
 
-**Risk Rating: High**
+Potential impacts include:
 
----
+- Disclosure of sensitive local files
+- Exposure of configuration data
+- Disclosure of credentials or secrets
+- Application source-code exposure
+- Remote code execution in vulnerable configurations
 
-# 7. Remediation Recommendations
+## Root Cause
 
-Recommended security improvements:
+User-controlled file input is passed into file-processing functionality without a strict allow-list restricting the permitted resources.
 
-- Avoid using user input directly in file paths
-- Implement strict allow-list validation
-- Disable remote file inclusion settings
-- Use secure file handling methods
-- Restrict application permissions
-- Perform regular security testing
+## MITRE ATT&CK
 
----
+**T1190 — Exploit Public-Facing Application**
 
-# 8. Lessons Learned
+The vulnerability can provide an application-level path to unauthorized file access or further compromise.
 
-This lab provided practical experience in:
+## Remediation
 
-- Understanding file path security risks
-- Identifying insecure file inclusion behaviour
-- Performing controlled vulnerability testing
-- Collecting security evidence
-- Writing professional vulnerability reports
+- Avoid direct use of user-controlled filenames.
+- Use strict allow-lists.
+- Map user selections to predefined server-side resources.
+- Disable unnecessary remote file inclusion.
+- Apply least-privilege permissions.
+- Keep sensitive files outside web-accessible locations.
 
----
+## Validation
 
-# 9. Evidence Files
+Test:
 
-| Evidence | Location |
-|---|---|
-| File Inclusion page | Web-Security/DVWA/Screenshots/file-inclusion-page.png |
-| Successful File Inclusion result | Web-Security/DVWA/Screenshots/file-inclusion-success.png |
+1. Legitimate file selections.
+2. Invalid filenames.
+3. Path traversal attempts.
+4. Remote file references where applicable.
+5. Unexpected PHP wrappers.
 
----
+All unauthorized file references should be rejected.
 
-# Conclusion
+## Lessons Learned
 
-The DVWA File Inclusion assessment demonstrated how improper handling of file paths can expose web applications to unauthorized file access.
+The assessment demonstrated the importance of strict file-resource validation and showed how apparently simple filename parameters can create significant application-security exposure.
 
-This controlled laboratory exercise provided practical experience in vulnerability discovery, exploitation analysis, evidence collection, and remediation recommendations.
+## Recommendations
+
+Disable dangerous PHP configuration options where unnecessary, including remote file inclusion functionality, and perform regular application security testing.
