@@ -1,60 +1,17 @@
-# Cybersecurity Portfolio Lab Index
+# Cybersecurity Lab Index
 
-## SOC Operations
+| Project | Focus | Status |
+|---|---|---|
+| DVWA | Web Security | Complete |
+| OWASP Juice Shop | Web Security | Complete |
+| PCAP Monitoring | Network Security | Complete |
+| Wazuh | SIEM / Detection Engineering | Complete |
+| Security Automation | Automation | Complete |
+| Windows / Sysmon | Endpoint Detection | Offline/Synthetic |
+| Threat Hunting | Threat Detection | Offline/Synthetic |
+| Nmap | Network Reconnaissance | Evidence-Bounded |
+| Wireshark | Packet Analysis | Evidence-Bounded |
+| Incident Response | SOC Investigation | Complete |
 
-| Lab | Skills Demonstrated |
-|---|---|
-| Wazuh SIEM Deployment | SIEM installation, monitoring, alerts |
-| Alert Investigation | Incident triage |
-| Detection Engineering | Custom detection rules |
-| Threat Hunting | IOC investigation |
-
----
-
-## Network Security
-
-| Lab | Skills |
-|---|---|
-| Nmap | Reconnaissance |
-| Wireshark | Packet Analysis |
-| TCP Analysis | Network Investigation |
-
----
-
-## Web Security
-
-| Lab | Skills |
-|---|---|
-| DVWA | Vulnerability testing |
-| OWASP Juice Shop | OWASP Top 10 |
-| PortSwigger Labs | Web exploitation concepts |
-
----
-
-## Vulnerability Management
-
-| Tool | Skills |
-|---|---|
-| OpenVAS | Vulnerability scanning |
-| Nmap NSE | Security assessment |
-
----
-
-## Security Automation
-
-| Technology | Skills |
-|---|---|
-| Python | Log analysis |
-| Bash | Security automation |
-| PowerShell | Windows security automation |
-
----
-
-## Career Focus
-
-Target Roles:
-
-- Junior SOC Analyst
-- Security Analyst
-- Information Security Analyst
-- IT Security Administrator
+## Evidence Principle
+The portfolio distinguishes live infrastructure, controlled labs, synthetic datasets and methodology-only documentation.

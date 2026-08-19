@@ -1,58 +1,25 @@
-# Security Assessment Reports
-
-This directory contains professional cybersecurity investigation reports demonstrating practical security skills.
-
----
-
-## SOC Operations
-
-### Wazuh Alert Investigation
-
-Demonstrates:
-
-- SIEM monitoring
-- Alert triage
-- Log analysis
-- Incident response
-
----
+# Professional Cybersecurity Portfolio
 
 ## Web Security
+- DVWA
+- OWASP Juice Shop
 
-### DVWA Assessment
+## Security Operations
+- Wazuh
+- Threat Hunting
+- Incident Response
+- SOC Alert Triage
 
-Demonstrates:
-
-- OWASP Top 10 testing
-- Vulnerability identification
-- Risk reporting
-
-
-### OWASP Juice Shop Assessment
-
-Demonstrates:
-
-- Web application testing
-- Authentication analysis
-- Access control testing
-
----
+## Endpoint Security
+- Windows / Sysmon Detection Engineering
 
 ## Network Security
+- PCAP Monitoring
+- Nmap
+- Wireshark
 
-### Nmap Reconnaissance
-
-Demonstrates:
-
-- Host discovery
-- Service enumeration
-- Attack surface analysis
-
-
-### Wireshark Analysis
-
-Demonstrates:
-
-- Packet inspection
-- Protocol analysis
-- Network monitoring
+## Security Automation
+- IOC extraction
+- Log anomaly detection
+- File integrity monitoring
+- Wazuh alert enrichment

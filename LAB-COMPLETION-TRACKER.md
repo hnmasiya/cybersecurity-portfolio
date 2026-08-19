@@ -1,15 +1,17 @@
-# Cybersecurity Portfolio Lab Tracker
+# Cybersecurity Lab Completion Tracker
 
-| Area | Documentation | Labs | Screenshots |
-|---|---|---|---|
-| Web Security | Complete | Partial | Complete |
-| Wazuh SIEM | Complete | Pending Evidence | Pending |
-| Network Security | Complete | Pending | Pending |
-| Threat Hunting | Complete | Pending | Pending |
-| Incident Response | Complete | Pending | Pending |
-| Linux Security | Created | Pending | Pending |
-| Active Directory | Created | Pending | Pending |
-| Docker Security | Created | Pending | Pending |
-| Cloud Security | Created | Pending | Pending |
-| PortSwigger | Created | Pending | Pending |
+| Lab | Status | Limitation |
+|---|---|---|
+| DVWA | Complete | None |
+| OWASP Juice Shop | Complete | None |
+| PCAP Monitoring | Complete | Synthetic lab |
+| Wazuh | Complete | Live server; no Windows endpoint |
+| Security Automation | Complete | Local/sample validation |
+| Windows / Sysmon | Complete | Live endpoint pending |
+| Threat Hunting | Complete | Offline/synthetic |
+| Incident Response | Complete | Evidence-driven lab |
+| Nmap | Evidence-Bounded | Live execution evidence pending |
+| Wireshark | Evidence-Bounded | Live execution evidence pending |
 
+## Remaining External Dependency
+Windows + Sysmon + Wazuh Agent + live telemetry + live screenshots require access to a Windows endpoint.
