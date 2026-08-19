@@ -64,10 +64,6 @@ Validation included:
 
 # 6. Evidence
 
-Screenshots:
-
-SIEM/Wazuh/Screenshots/agent-status.png
-
 ---
 
 # 7. Lessons Learned

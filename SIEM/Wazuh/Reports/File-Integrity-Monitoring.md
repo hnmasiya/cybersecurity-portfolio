@@ -186,14 +186,6 @@ Without FIM monitoring, unauthorized modifications may remain unnoticed.
 
 # 10. Evidence
 
-Screenshots:
-
-```
-SIEM/Wazuh/Screenshots/fim-alert.png
-SIEM/Wazuh/Screenshots/fim-file-change.png
-SIEM/Wazuh/Screenshots/fim-dashboard.png
-```
-
 ---
 
 # 11. Recommendations

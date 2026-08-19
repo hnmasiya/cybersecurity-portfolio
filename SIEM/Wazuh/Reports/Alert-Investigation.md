@@ -14,7 +14,6 @@ An automated high-severity alert triggered on the centralized Wazuh Manager dash
 * **Log Source:** `/var/log/auth.log`
 
 ## 🛠️ Evidence & Artifact Analysis
-*(Note to Norman: Update the image paths below to point to your 5 screenshots!)*
 
 ### 1. Dashboard Alert Overview
 *Figure 1: Initial alert visibility on the Wazuh indexer dashboard showcasing an elevated alert spike.*
