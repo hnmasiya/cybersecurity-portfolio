@@ -1,3 +1,66 @@
+# DVWA — File Inclusion (LFI/RFI)
+
+## Objective
+Demonstrate identification and exploitation of the File Inclusion (LFI/RFI) vulnerability in DVWA, and document the finding to professional pentest-report standard.
+
+## Skills & Tools
+DVWA, web browser developer tools, manual HTTP request crafting, Linux, Git.
+
+## Architecture
+DVWA is a deliberately vulnerable PHP/MySQL web application, run here via Docker Compose on a Zorin OS lab host, used to safely practice identifying and exploiting common web vulnerabilities.
+
+## Topology
+Target: DVWA at http://localhost:8081, part of the local Docker-based cyberlab environment.
+
+## Execution
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Walkthrough
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Attack Simulation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Detection
+Detection relies on monitoring for path traversal sequences, PHP wrapper strings, or unexpected remote URLs in file-parameter values.
+
+## Triage
+Prioritize as high to critical depending on whether remote file inclusion is possible, since RFI can lead directly to code execution.
+
+## Investigation
+An investigation would review web server logs for the specific parameter values submitted and check for any files written to the server as a result.
+
+## Evidence
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Findings
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Impact
+LFI can expose sensitive local files; RFI can lead to remote code execution if the included file contains attacker-controlled code.
+
+## Root Cause
+A filename parameter is passed directly to a file-inclusion function without validation against an allow-list.
+
+## MITRE ATT&CK
+T1190 Exploit Public-Facing Application (Initial Access)
+
+## Remediation
+Validate filenames against a strict allow-list, avoid passing user input to include/require statements, and disable remote file inclusion at the PHP configuration level.
+
+## Validation
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Lessons Learned
+_Content for this section should be merged in from the Original Write-Up below._
+
+## Recommendations
+Beyond the remediation above, disable dangerous PHP configuration options such as allow_url_include.
+
+---
+
+## Original Write-Up (preserved as-is — merge relevant details into the sections above, then remove this section)
+
 # DVWA File Inclusion Vulnerability Report
 
 ## Lab Overview
