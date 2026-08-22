@@ -21,7 +21,7 @@ fi
 echo ""
 echo "[*] Auditing repository for unredacted hardcoded credentials or API keys..."
 grep -riE '(api_key|aws_secret|private_key|bearer [a-z0-9_-]+)' . \
-    --exclude-dir={.git,.venv} || echo "[+] No hardcoded secrets or sensitive keys detected."
+    --exclude-dir={.git,.venv} --exclude="run-audit.sh" || echo "[+] No hardcoded secrets or sensitive keys detected."
 
 echo ""
 echo "=========================================================================="
