@@ -214,5 +214,5 @@ A recruiter-focused mapping of SOC capabilities to the specific labs, scripts an
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* feat: add Cloud Security Posture Management and IAM audit lab (10 seconds ago)
+* feat: add AppSec, Offensive Security, and Enterprise AD security labs (9 seconds ago)
 <!-- END_SECTION:activity -->
