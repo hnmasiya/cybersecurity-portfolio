@@ -214,5 +214,5 @@ A recruiter-focused mapping of SOC capabilities to the specific labs, scripts an
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* lab: automated portfolio update [2026-08-22 21:50] (42 seconds ago)
+* docs: add Windows memory forensics incident report and evidence (9 seconds ago)
 <!-- END_SECTION:activity -->
