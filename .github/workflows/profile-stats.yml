@@ -1,0 +1,46 @@
+name: Dynamic Lab Activity Updater
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Every night at midnight
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  update-readme-activity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Activity Section
+        run: |
+          python3 -c "
+          import subprocess, re
+
+          # Get last 5 commit logs
+          cmd = 'git log -n 5 --pretty=format:\"* %s (%cr)\"'
+          log_output = subprocess.check_output(cmd, shell=True).decode('utf-8')
+
+          with open('README.md', 'r') as f:
+              content = f.read()
+
+          start_marker = '<!-- START_SECTION:activity -->'
+          end_marker = '<!-- END_SECTION:activity -->'
+          
+          if start_marker in content and end_marker in content:
+              new_section = f'{start_marker}\n### Recent Lab & Security Updates\n{log_output}\n{end_marker}'
+              pattern = re.compile(f'{re.escape(start_marker)}.*?{re.escape(end_marker)}', re.DOTALL)
+              updated_content = pattern.sub(new_section, content)
+              with open('README.md', 'w') as f:
+                  f.write(updated_content)
+          "
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md || true
+          git diff-index --quiet HEAD || git commit -m "auto: update dynamic lab activity feed [skip ci]"
+          git push
