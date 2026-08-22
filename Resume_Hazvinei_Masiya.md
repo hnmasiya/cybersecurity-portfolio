@@ -6,7 +6,7 @@
 ---
 
 ## PROFESSIONAL SUMMARY
-CompTIA Security+ certified specialist with 9+ years in system administration, Active Directory, and network infrastructure. Specializing in threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in isolating lateral movement, authoring detection rules, and building infrastructure-as-code security models.
+CompTIA Security+ certified specialist with 12+ years of enterprise IT infrastructure, systems administration, and network security experience. Specializing in SOC analysis, threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in isolating lateral movement, authoring custom XML detection rules, and building infrastructure-as-code security models.
 
 ---
 
@@ -41,10 +41,31 @@ CompTIA Security+ certified specialist with 9+ years in system administration, A
 
 ## PROFESSIONAL EXPERIENCE
 
-**Systems & Security Administrator** | *Enterprise Infrastructure & IT Services* (2015 – Present)
-* Administer multi-site network infrastructure utilizing Dell Versa SD-WAN and Sophos XG firewall appliances.
-* Enforce Active Directory Group Policies (GPO), RBAC, and multi-factor authentication across enterprise users.
-* Lead daily security log reviews, incident response triage, and server fleet patch management.
+**Information Technology Support Specialist** | *Netvantage Partners* (Jan 2025 – Present)
+* Delivered 1st and 2nd line IT support across client environments, including secure endpoint deployment, desktop diagnostics, and hardened onboarding processes.
+* Supported vulnerability mitigation through structured patch management, maintaining compliant and up-to-date systems across client networks.
+* Investigated and resolved security incidents, including malware alerts, unauthorized access attempts, and connectivity disruptions.
+* Developed IT support documentation and incident-handling procedures to standardize response consistency and reduce resolution time.
+
+**Information Technology Support Specialist (Contract & Consulting)** | *Zuetech Technology Solutions* (Jan 2021 – Present)
+* Administered enterprise infrastructure, Active Directory access control, RBAC, and least-privilege policies across multi-tenant environments.
+* Configured Dell Versa SD-WAN deployments, Versa Operating System (VOS) upgrades, and live SD-WAN device onboardings and migrations.
+* Managed endpoint protection, patch deployments, and vulnerability mitigations while monitoring network telemetry for anomalous activity.
+* Monitored system logs for security-relevant anomalies, applying security-analyst triage principles to identify and escalate potential threats.
+
+**Desktop Support Technician** | *Raising Dawn Investment* (Jan 2019 – Dec 2020)
+* Administered user accounts, permissions, and security groups for 120+ users within Active Directory.
+* Monitored Sophos Endpoint Protection and Sophos Firewall telemetry, escalating security anomalies and unauthorized access events.
+* Supported backup, recovery, business continuity execution, and technical operational documentation.
+
+**Information Technology Support Technician** | *Compusys Technology* (Jan 2016 – Dec 2018)
+* Delivered desktop, network, and infrastructure support across multi-client environments.
+* Managed user access controls, permissions, applied security patches, and supported vulnerability remediation.
+* Investigated authentication and access-control issues to maintain system compliance.
+
+**Help Desk Support Technician** | *Sherman IT* (Mar 2014 – Dec 2015)
+* Provided remote and onsite technical support for 200+ users across multiple business locations.
+* Troubleshot hardware, software, networking, and authentication issues within defined SLAs.
 
 ---
 
