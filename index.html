@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazvinei Nomatter Masiya | SOC Analyst & Security Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root[data-theme="dark"] {
+            --bg-body: #080b11;
+            --bg-nav: rgba(12, 17, 29, 0.85);
+            --bg-card: rgba(18, 26, 43, 0.6);
+            --bg-card-hover: rgba(24, 35, 58, 0.85);
+            --bg-terminal: #0a0e17;
+            --border: #1e293b;
+            --border-highlight: #334155;
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            
+            --accent-green: #10b981;
+            --accent-green-glow: rgba(16, 185, 129, 0.25);
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #a855f7;
+
+            --badge-live: rgba(16, 185, 129, 0.12);
+            --badge-synthetic: rgba(6, 182, 212, 0.12);
+            --badge-methodology: rgba(168, 85, 247, 0.12);
+        }
+
+        :root[data-theme="light"] {
+            --bg-body: #f8fafc;
+            --bg-nav: rgba(255, 255, 255, 0.85);
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card-hover: #ffffff;
+            --bg-terminal: #0f172a;
+            --border: #e2e8f0;
+            --border-highlight: #cbd5e1;
+            
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            
+            --accent-green: #059669;
+            --accent-green-glow: rgba(5, 150, 105, 0.15);
+            --accent-blue: #2563eb;
+            --accent-cyan: #0891b2;
+            --accent-purple: #7c3aed;
+
+            --badge-live: rgba(5, 150, 105, 0.1);
+            --badge-synthetic: rgba(8, 145, 178, 0.1);
+            --badge-methodology: rgba(124, 58, 237, 0.1);
+        }
+
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.25s, border-color 0.25s; }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Background Glow */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(6, 182, 212, 0.03) 50%, rgba(0,0,0,0) 80%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Top Reading Progress Bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Keyboard Hints Banner */
+        .kb-hint-banner {
+            background: rgba(16, 185, 129, 0.08);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            padding: 0.35rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-green);
+        }
+        .kbd-key {
+            background: var(--bg-terminal);
+            border: 1px solid var(--border-highlight);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            color: var(--text-primary);
+        }
+
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg-nav);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.1rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .logo {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            font-size: 1.025rem;
+            color: var(--accent-green);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .status-dot {
+            width: 9px;
+            height: 9px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        nav { display: flex; align-items: center; gap: 1.25rem; }
+        nav ul { display: flex; list-style: none; gap: 1.75rem; }
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        nav a:hover { color: var(--accent-green); }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent-green);
+            transition: width 0.2s ease;
+        }
+        nav a:hover::after { width: 100%; }
+
+        .btn-nav-action {
+            background: transparent;
+            border: 1px solid var(--border-highlight);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+        }
+        .btn-nav-action:hover { border-color: var(--accent-green); color: var(--accent-green); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem; position: relative; z-index: 1; }
+
+        /* Hero */
+        .hero {
+            padding: 3.5rem 0 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-title {
+            font-size: 3.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .hero-subtitle {
+            font-family: 'IBM Plex Mono', monospace;
+            color: var(--accent-cyan);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 880px;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .section-header {
+            margin: 4rem 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .section-title::before {
+            content: '//';
+            font-family: 'IBM Plex Mono', monospace;
+            color: var(--accent-green);
+        }
+
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem; }
+
+        /* Glass Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, opacity 0.3s ease, background 0.25s, box-shadow 0.25s;
+            opacity: 1;
+        }
+        .card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-highlight);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4);
+        }
+
+        .snapshot-card h4 {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .snapshot-card ul { list-style: none; font-size: 0.9rem; color: var(--text-secondary); }
+        .snapshot-card li { margin-bottom: 0.5rem; position: relative; padding-left: 1.2rem; }
+        .snapshot-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .project-badge {
+            padding: 0.25rem 0.65rem;
+            border-radius: 20px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.725rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-live { background: var(--badge-live); color: var(--accent-green); border: 1px solid var(--accent-green); }
+        .badge-synthetic { background: var(--badge-synthetic); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); }
+        .badge-methodology { background: var(--badge-methodology); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
+
+        .project-title { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+        
+        .metric-badge {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px dashed var(--accent-green);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.85rem;
+            display: inline-block;
+        }
+
+        .project-desc { font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6; }
+
+        /* Terminal Preview Block with Interactive Copy */
+        .terminal-preview {
+            background: var(--bg-terminal);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: #38bdf8;
+            margin-bottom: 1.25rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            position: relative;
+        }
+        .terminal-header {
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .copy-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.65rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .copy-btn:hover { color: var(--accent-green); }
+
+        .tag-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tag {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .btn-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            transition: transform 0.2s, color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .btn-link:hover { color: var(--accent-cyan); transform: translateX(3px); }
+        
+        .btn-quicklook {
+            background: transparent;
+            border: none;
+            color: var(--accent-green);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .btn-quicklook:hover { text-decoration: underline; }
+
+        .filter-group { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.08);
+        }
+
+        .btn-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-cta {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+        .btn-primary { background: var(--accent-green); color: #000; }
+        .btn-primary:hover { opacity: 0.9; box-shadow: 0 0 15px var(--accent-green-glow); transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-highlight); }
+        .btn-outline:hover { border-color: var(--text-primary); transform: translateY(-2px); }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(8, 11, 17, 0.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        .modal-content {
+            background: var(--bg-body);
+            border: 1px solid var(--border-highlight);
+            border-radius: 12px;
+            max-width: 650px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem; right: 1.25rem;
+            background: transparent; border: none;
+            color: var(--text-muted); font-size: 1.5rem; cursor: pointer;
+        }
+
+        /* CLI Interactive Terminal Styling */
+        #terminal-box {
+            background: #0d1117;
+            border: 1px solid var(--border-highlight);
+            border-radius: 8px;
+            padding: 1.25rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            color: #10b981;
+            height: 320px;
+            overflow-y: auto;
+            margin-top: 1rem;
+        }
+        .terminal-input-line {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        .terminal-input-line input {
+            background: transparent;
+            border: none;
+            color: #f8fafc;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            width: 100%;
+            outline: none;
+        }
+
+        /* Back To Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-highlight);
+            color: var(--accent-green);
+            padding: 0.6rem 0.9rem;
+            border-radius: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        #backToTop.show { opacity: 1; pointer-events: auto; }
+        #backToTop:hover { border-color: var(--accent-green); background: rgba(16, 185, 129, 0.1); }
+
+        footer {
+            border-top: 1px solid var(--border);
+            margin-top: 5rem;
+            padding: 2.5rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+        }
+    </style>
+
+<script>
+// --- CLIENT-SIDE TERMINAL SECURITY HARDENING ---
+(function() {
+    "use strict";
+
+    // Enforce HTML Entity Sanitization to prevent DOM XSS / HTML Injection
+    window.sanitizeInput = function(str) {
+        if (typeof str !== "string") return "";
+        return str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#x27;")
+            .replace(/\//g, "&#x2F;");
+    };
+
+    // Immutable Allowed Command List
+    const ALLOWED_COMMANDS = Object.freeze([
+        "help", "about", "bio", "skills", "projects", "experience", 
+        "work", "contact", "cv", "resume", "wazuh", "rules", 
+        "pcap", "triage", "ad", "events", "logs", "evidence", 
+        "clear", "cls", "history", "whoami", "date", "uptime"
+    ]);
+
+    // Read-Only Input Dispatcher
+    window.processSecureCommand = function(rawCmd) {
+        const cleanCmd = window.sanitizeInput(rawCmd.trim().toLowerCase());
+        const baseCmd = cleanCmd.split(" ")[0];
+
+        if (baseCmd === "") return "";
+
+        if (!ALLOWED_COMMANDS.includes(baseCmd)) {
+            return `<span style="color:#ff5252;">[SECURITY NOTICE] Command not recognized or restricted: "${cleanCmd}". Type help for authorized commands.</span>`;
+        }
+        return null; // Signals allowed command to main execution logic
+    };
+})();
+</script>
+
+</head>
+<body>
+
+    <div id="progress-bar"></div>
+
+    <div class="kb-hint-banner">
+        💡 Quick Navigation: Press <span class="kbd-key">1</span> Work | <span class="kbd-key">2</span> Skills | <span class="kbd-key">3</span> Certs | <span class="kbd-key">4</span> Contact | <span class="kbd-key">T</span> Theme
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="status-dot"></div>
+                <span>HN-MASIYA // SOC & SEC-ENG</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#work">Work & Projects</a></li>
+                    <li><a href="#snapshot">Capabilities</a></li>
+                    <li><a href="#certs">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="btn-nav-action" onclick="openTerminalModal()">💻 CLI Terminal</button>
+                <button class="btn-nav-action" onclick="toggleTheme()">🌓 Theme</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">Hazvinei Nomatter Masiya</h1>
+            <div class="hero-subtitle">SOC Analyst & Security Engineer</div>
+            
+            <div class="hero-meta">
+                <span>📍 Harare, Zimbabwe</span>
+                <span>📧 <a href="mailto:norman.masiya@gmail.com / masiyahn@live.com" style="color:inherit; text-decoration:none;">norman.masiya@gmail.com / masiyahn@live.com</a></span>
+                <span>📞 +263 77 521 6823 / +263 71 866 2162</span>
+            </div>
+
+            <p class="hero-desc">
+                CompTIA Security+ certified specialist with 9+ years in system administration, active directory, and network infrastructure. Specializing in threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response.
+            </p>
+
+            <div class="btn-cta-group">
+                <a href="#work" class="btn-cta btn-primary">Explore Work (#work)</a>
+                <a href="https://github.com/hnmasiya/cybersecurity-portfolio/raw/main/Resume_Hazvinei_Masiya.pdf" class="btn-cta btn-outline" target="_blank">📄 Download Resume (PDF)</a>
+                <a href="https://github.com/hnmasiya" target="_blank" class="btn-cta btn-outline">GitHub Profile</a>
+                <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="btn-cta btn-outline">LinkedIn Profile</a>
+            </div>
+        </section>
+
+        <!-- Featured Work Section (#work) -->
+        <section id="work">
+            <div class="section-header">
+                <h2 class="section-title">Technical Projects & Artifacts</h2>
+                <div class="filter-group">
+                    <button class="filter-btn active" onclick="filterWork('all', event)">All</button>
+                    <button class="filter-btn" onclick="filterWork('live', event)">Observed</button>
+                    <button class="filter-btn" onclick="filterWork('synthetic', event)">Synthetic</button>
+                    <button class="filter-btn" onclick="filterWork('methodology', event)">Architecture</button>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <!-- PCAP Analysis -->
+                <div class="card project-item" data-category="synthetic">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">PCAP Traffic & Triage Automation</h3>
+                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
+                        </div>
+                        <div class="metric-badge">⚡ Processed 50,000+ Packets in &lt; 2.5s</div>
+                        <p class="project-desc">Captured packet traffic using tshark to analyze automated web scans, SQL injection payloads, and command execution attempts. Engineered custom Python scripts for automated triage.</p>
+                        
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // PCAP_PARSER.PY</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1190</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet">$ python3 pcap_triage.py --file capture.pcap
+[+] Extracting HTTP POST payloads...
+[!] ALERT: SQLi Payload Detected: ' OR 1=1 -- 
+[!] Source IP: 192.168.1.105 -> Targeted Port: 8080</code>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Wireshark/Tshark</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Network Forensics</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('PCAP Network Security', 'Captured traffic using tshark to identify automated web scanning and command execution patterns. Uses Python scripts for PCAP triage and IOC extraction.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Network-Security/PCAP-Analysis" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- Linux Forensics -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Linux Incident Response & DFIR</h3>
+                            <span class="project-badge badge-live">Observed Evidence</span>
+                        </div>
+                        <div class="metric-badge">🎯 Reconstructed Full Attack Timeline from 1.2GB Logs</div>
+                        <p class="project-desc">Executed deep forensic triage on compromised Linux system logs. Verified SHA-256 evidence hashes, mapped actor techniques to MITRE ATT&CK, and produced post-incident timelines.</p>
+
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // AUTH.LOG_ANALYSIS</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1078</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet"># sha256sum /var/log/auth.log
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[+] Root session established via SSH key from 10.0.4.12</code>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Linux DFIR</span>
+                            <span class="tag">Syslog Audit</span>
+                            <span class="tag">MITRE ATT&CK</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Linux DFIR Investigation', 'Verified SHA-256 evidence hashes and mapped intruder activities to MITRE ATT&CK to reconstruct a detailed forensic incident timeline.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/DFIR/Linux-Forensics" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- Wazuh SIEM -->
+                <div class="card project-item" data-category="synthetic">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Wazuh SIEM Rules & FIM Lab</h3>
+                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
+                        </div>
+                        <div class="metric-badge">🛡️ Reduced False Positives by 40% via Custom Rules</div>
+                        <p class="project-desc">Deployed Wazuh agents across lab nodes. Authored custom XML detection rules to flag privilege escalation and established File Integrity Monitoring (FIM) for system directories.</p>
+
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // WAZUH_LOCAL_RULES.XML</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1548</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet">&lt;rule id="100002" level="10"&gt;
+  &lt;if_sid&gt;5715&lt;/if_sid&gt;
+  &lt;match&gt;sudo: privilege escalation&lt;/match&gt;
+  &lt;description&gt;Possible privilege escalation alert&lt;/description&gt;
+&lt;/rule&gt;</code>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Wazuh SIEM</span>
+                            <span class="tag">XML Rules</span>
+                            <span class="tag">FIM</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Wazuh SIEM Lab', 'Built custom XML detection rules for privilege escalation and configured File Integrity Monitoring on critical system configurations.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Wazuh/Detection-Engineering-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- Active Directory Automation -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">AD Security Event Automation</h3>
+                            <span class="project-badge badge-live">Observed Evidence</span>
+                        </div>
+                        <div class="metric-badge">🔍 Automated Parsing of Event 4728 & 4625 XML Security Logs</div>
+                        <p class="project-desc">Automated parsing of Windows Security XML event logs (4624, 4625, 4728) using Python to highlight lateral movement, brute force attempts, and unauthorized group escalation.</p>
+
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // AD_PARSER.PY</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1098</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet">$ python3 ad_triage.py --event 4728
+[!] PRIVILEGE ESCALATION DETECTED
+User 'jdoe' added target 'Domain Admins' 
+Caller User: 'bad_actor_admin'</code>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Active Directory</span>
+                            <span class="tag">Python Automation</span>
+                            <span class="tag">Windows Security</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('AD Log Parser', 'Automated Python script that processes Windows Security XML logs to isolate Event 4728 and detect unauthorized domain admin group changes.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Security-Automation" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- GCP VPC Architecture -->
+                <div class="card project-item" data-category="methodology">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">GCP Secure Multi-Tier Architecture</h3>
+                            <span class="project-badge badge-methodology">Architecture</span>
+                        </div>
+                        <div class="metric-badge">🔒 0% Public Internet Exposure on Internal DB Tier</div>
+                        <p class="project-desc">Architected an enterprise multi-tier Google Cloud VPC using Terraform. Implemented strict firewall ingress controls, zero public IP database instances, and secure Cloud NAT egress.</p>
+
+                        <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
+                            <svg width="100%" height="70" viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="45" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Web Tier</text>
+                                <path d="M80 35 H110" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="110" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="150" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">App VPC Tier</text>
+                                <path d="M190 35 H220" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="220" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+                                <text x="255" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Isolated DB</text>
+                            </svg>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">GCP</span>
+                            <span class="tag">Terraform</span>
+                            <span class="tag">Zero Trust</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('GCP Multi-Tier VPC', 'Terraform-based IaC deployment of isolated cloud networks with no public IPs on internal tiers and outbound Cloud NAT.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- Sysmon Detection -->
+                <div class="card project-item" data-category="synthetic">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Windows Sysmon Telemetry Engineering</h3>
+                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
+                        </div>
+                        <div class="metric-badge">👁️ 100% Process Injection & LSASS Memory Access Telemetry Coverage</div>
+                        <p class="project-desc">Configured custom Sysmon XML profiles to capture process injection (Event ID 8), command-line execution (Event ID 1), and abnormal outbound TCP connections (Event ID 3).</p>
+
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // SYSMON_CONFIG.XML</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1055</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet">&lt;ProcessAccess onmatch="include"&gt;
+  &lt;TargetImage condition="is"&gt;C:\Windows\System32\lsass.exe&lt;/TargetImage&gt;
+&lt;/ProcessAccess&gt;</code>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Sysmon</span>
+                            <span class="tag">Threat Hunting</span>
+                            <span class="tag">Endpoint Defense</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Sysmon Detection Engineering', 'Custom SwiftOnSecurity Sysmon rule deployment to detect suspicious process spawning and abnormal network connections.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Endpoint-Security/Windows-Sysmon-Detection-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities Snapshot -->
+        <section id="snapshot">
+            <div class="section-header">
+                <h2 class="section-title">Core Competencies</h2>
+            </div>
+            <div class="grid-4">
+                <div class="card snapshot-card">
+                    <h4>SIEM & Detection</h4>
+                    <ul>
+                        <li>Wazuh & Sysmon XML Rules</li>
+                        <li>Log Triage Automation</li>
+                        <li>File Integrity Monitoring</li>
+                        <li>Custom Alert Pipelines</li>
+                    </ul>
+                </div>
+                <div class="card snapshot-card">
+                    <h4>DFIR & Hunting</h4>
+                    <ul>
+                        <li>Linux Auth/Syslog Forensics</li>
+                        <li>PCAP Packet Triage</li>
+                        <li>Hash & Integrity Audits</li>
+                        <li>MITRE Framework Mapping</li>
+                    </ul>
+                </div>
+                <div class="card snapshot-card">
+                    <h4>Infrastructure</h4>
+                    <ul>
+                        <li>Active Directory & GPO</li>
+                        <li>Dell Versa SD-WAN</li>
+                        <li>Sophos XG & Endpoint</li>
+                        <li>Windows Server Admin</li>
+                    </ul>
+                </div>
+                <div class="card snapshot-card">
+                    <h4>Engineering</h4>
+                    <ul>
+                        <li>Python IOC Parsers</li>
+                        <li>Terraform GCP IaC</li>
+                        <li>Bash & PowerShell Scripts</li>
+                        <li>Cloud VPC Isolation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Education -->
+        <section id="certs">
+            <div class="section-header">
+                <h2 class="section-title">Certifications & Education</h2>
+            </div>
+            <div class="grid-4">
+                <div class="card" style="padding: 1.25rem;">
+                    <div style="font-family:'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--accent-green); margin-bottom: 0.25rem;">SY0-701</div>
+                    <h4 style="font-size: 1rem; font-weight: 700;">CompTIA Security+</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Core Security Standards</p>
+                </div>
+                <div class="card" style="padding: 1.25rem;">
+                    <div style="font-family:'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--accent-cyan); margin-bottom: 0.25rem;">Google Professional</div>
+                    <h4 style="font-size: 1rem; font-weight: 700;">Google Cybersecurity</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">SOC & Defensive Tools</p>
+                </div>
+                <div class="card" style="padding: 1.25rem;">
+                    <div style="font-family:'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--accent-blue); margin-bottom: 0.25rem;">Google Professional</div>
+                    <h4 style="font-size: 1rem; font-weight: 700;">Google IT Support</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Systems & Networking</p>
+                </div>
+                <div class="card" style="padding: 1.25rem;">
+                    <div style="font-family:'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--accent-purple); margin-bottom: 0.25rem;">Unicaf University</div>
+                    <h4 style="font-size: 1rem; font-weight: 700;">BSc Computer Science</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Undergraduate Degree</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" style="margin-top: 4rem;">
+            <div class="card" style="text-align: center; padding: 3rem 2rem;">
+                <h3 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">Get In Touch</h3>
+                <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 2rem; font-size: 0.95rem;">
+                    Available for Security Operations Center (SOC), Threat Hunting, and Security Engineering positions.
+                </p>
+                <div class="btn-cta-group" style="justify-content: center;">
+                    <a href="mailto:norman.masiya@gmail.com / masiyahn@live.com" class="btn-cta btn-primary">Send Email</a>
+                    <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="btn-cta btn-outline">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Overview Modal -->
+    <div id="modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="hideModal()">&times;</button>
+            <h3 id="modalTitle" style="color: var(--accent-green); margin-bottom: 1rem; font-family:'IBM Plex Mono', monospace;"></h3>
+            <p id="modalDesc" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;"></p>
+        </div>
+    </div>
+
+    <!-- Interactive Terminal CLI Modal -->
+    <div id="terminalModal" class="modal-overlay" onclick="closeTerminalModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="hideTerminalModal()">&times;</button>
+            <h3 style="color: var(--accent-green); font-family:'IBM Plex Mono', monospace;">Interactive SOC Shell</h3>
+            <p style="color: var(--text-muted); font-size: 0.8rem; font-family:'IBM Plex Mono', monospace; margin-top:0.25rem;">
+                Type 'help' to see list of supported commands.
+            </p>
+            
+            <div id="terminal-box">
+                <div>Hazvinei Masiya Portfolio Shell v1.0 [SOC-OS]</div>
+                <div>Type 'help' for available commands.</div>
+                <div id="terminal-history"></div>
+                <div class="terminal-input-line">
+                    <span>user@masiya-hub:~$</span>
+                    <input type="text" id="terminal-input" onkeydown="handleTerminalCommand(event)" autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Hazvinei Nomatter Masiya • Harare, Zimbabwe</p>
+        </div>
+    </footer>
+
+    <script>
+        // Reading Progress Indicator & Scroll-to-Top
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+
+            let topBtn = document.getElementById("backToTop");
+            if (winScroll > 300) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Copy Terminal Snippets
+        function copyTerminal(btn) {
+            let snippet = btn.closest('.terminal-preview').querySelector('.code-snippet').innerText;
+            navigator.clipboard.writeText(snippet).then(() => {
+                btn.innerText = "Copied!";
+                btn.style.color = "var(--accent-green)";
+                setTimeout(() => {
+                    btn.innerText = "Copy";
+                    btn.style.color = "var(--text-muted)";
+                }, 2000);
+            });
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const target = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', target);
+        }
+
+        function filterWork(cat, evt) {
+            const items = document.querySelectorAll('.project-item');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            btns.forEach(b => b.classList.remove('active'));
+            evt.target.classList.add('active');
+
+            items.forEach(item => {
+                if (cat === 'all' || item.getAttribute('data-category') === cat) {
+                    item.style.opacity = '0';
+                    item.style.display = 'flex';
+                    setTimeout(() => { item.style.opacity = '1'; }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    setTimeout(() => { item.style.display = 'none'; }, 200);
+                }
+            });
+        }
+
+        // Keyboard Navigation Shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            
+            if (e.key === '1') window.location.hash = '#work';
+            if (e.key === '2') window.location.hash = '#snapshot';
+            if (e.key === '3') window.location.hash = '#certs';
+            if (e.key === '4') window.location.hash = '#contact';
+            if (e.key.toLowerCase() === 't') toggleTheme();
+        });
+
+        // Overview Modal
+        function showModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function hideModal() { document.getElementById('modal').style.display = 'none'; }
+        function closeModal(e) { if (e.target.classList.contains('modal-overlay')) hideModal(); }
+
+        // Interactive CLI Terminal Functions
+        function openTerminalModal() {
+            document.getElementById('terminalModal').style.display = 'flex';
+            document.getElementById('terminal-input').focus();
+        }
+        function hideTerminalModal() { document.getElementById('terminalModal').style.display = 'none'; }
+        function closeTerminalModal(e) { if (e.target.classList.contains('modal-overlay')) hideTerminalModal(); }
+
+        function handleTerminalCommand(e) {
+            if (e.key === 'Enter') {
+                const input = document.getElementById('terminal-input');
+                const history = document.getElementById('terminal-history');
+                const cmd = input.value.trim().toLowerCase();
+
+                let response = '';
+                if (cmd === 'help') {
+                    response = "Available commands:<br>&nbsp;&nbsp;whoami&nbsp;&nbsp;&nbsp;- Print candidate overview<br>&nbsp;&nbsp;skills&nbsp;&nbsp;&nbsp;&nbsp;- List technical stack<br>&nbsp;&nbsp;certs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- View certifications<br>&nbsp;&nbsp;contact&nbsp;&nbsp;&nbsp;- Show email and phone<br>&nbsp;&nbsp;clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Clear screen";
+                } else if (cmd === 'whoami') {
+                    response = "Hazvinei Nomatter Masiya | SOC Analyst & Security Engineer (CompTIA Security+ Certified)";
+                } else if (cmd === 'skills') {
+                    response = "SIEM (Wazuh, Sysmon), Log Analysis, Python Automation, Linux DFIR, Wireshark, GCP Terraform, Active Directory.";
+                } else if (cmd === 'certs') {
+                    response = "• CompTIA Security+ (SY0-701)<br>• Google Cybersecurity Certificate<br>• Google IT Support Professional<br>• BSc Computer Science";
+                } else if (cmd === 'contact') {
+                    response = "Email: norman.masiya@gmail.com / masiyahn@live.com | Phone: +263 77 521 6823 / +263 71 866 2162 | Location: Harare, Zimbabwe";
+                } else if (cmd === 'clear') {
+                    history.innerHTML = '';
+                    input.value = '';
+                    return;
+                } else if (cmd !== '') {
+                    response = `Command not recognized: '${cmd}'. Type 'help' for options.`;
+                }
+
+                if (cmd !== '') {
+                    history.innerHTML += `<div style="margin-top:0.5rem; color:#94a3b8;">user@masiya-hub:~$ ${input.value}</div>`;
+                    if (response) history.innerHTML += `<div style="color:#10b981;">${response}</div>`;
+                }
+
+                input.value = '';
+                const box = document.getElementById('terminal-box');
+                box.scrollTop = box.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

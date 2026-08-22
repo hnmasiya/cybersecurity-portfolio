@@ -1,0 +1,64 @@
+./SIEM/Wazuh/Reports/Agent-Deployment.md:69:SIEM/Wazuh/Screenshots/agent-status.png
+./SIEM/Wazuh/Reports/Incident-Response-Investigation.md:70:SIEM/Wazuh/Screenshots/incident-investigation.png
+./SIEM/Wazuh/Reports/Environment-Setup.md:113:SIEM/Wazuh/Screenshots/wazuh-dashboard.png
+./SIEM/Wazuh/Reports/Environment-Setup.md:114:SIEM/Wazuh/Screenshots/wazuh-containers.png
+./SIEM/Wazuh/Reports/Environment-Setup.md:115:SIEM/Wazuh/Screenshots/wazuh-alerts.png
+./SIEM/Wazuh/Reports/Custom-Detection-Rule.md:56:SIEM/Wazuh/Screenshots/custom-rule-alert.png
+./SIEM/Wazuh/Reports/Alert-Investigation.md:1:# Wazuh SIEM Environment Setup Report ## Lab Overview **Project:** Security Information and Event Management (SIEM) Lab **Platform:** Wazuh SIEM **Category:** Security Monitoring and Detection Engineering **Environment:** Local Cybersecurity Home Lab **Deployment:** Docker Container Environment **Operating System:** Zorin OS **Testing Tools:** Wazuh Dashboard, Docker, Linux Terminal --- # 1. Introduction Wazuh is an open-source Security Information and Event Management (SIEM) platform used for security monitoring, threat detection, log analysis, vulnerability detection, file integrity monitoring, and incident response. This laboratory exercise focuses on deploying and validating a Wazuh monitoring environment within a local cybersecurity home lab. --- # 2. Lab Objectives The objectives of this lab were: - Deploy a functional Wazuh SIEM environment - Configure the Wazuh dashboard - Verify Wazuh services - Understand SIEM architecture components - Prepare the environment for security monitoring exercises --- # 3. Environment Details | Component | Details | |---|---| | SIEM Platform | Wazuh | | Deployment Method | Docker Compose | | Host Operating System | Zorin OS | | Container Platform | Docker | | Dashboard | Wazuh Dashboard | | Data Storage | Wazuh Indexer | | Manager | Wazuh Manager | --- # 4. Wazuh Architecture The Wazuh platform consists of: ## Wazuh Manager Responsible for: - Receiving security events - Applying detection rules - Generating alerts - Managing agents ## Wazuh Indexer Responsible for: - Storing security events - Searching collected data - Supporting dashboard queries ## Wazuh Dashboard Provides: - Security visualization - Alert investigation - Compliance monitoring - Threat analysis --- # 5. Deployment Validation The deployment was validated by checking running Docker containers. Validation activities: - Confirmed Wazuh containers were running - Accessed the Wazuh dashboard - Verified communication between components - Reviewed system status --- # 6. Security Monitoring Capabilities The Wazuh SIEM environment supports: - Log collection - Intrusion detection - File integrity monitoring - Vulnerability detection - Security configuration assessment - Threat intelligence integration - Incident investigation --- # 7. Evidence Screenshots: SIEM/Wazuh/Screenshots/wazuh-dashboard.png SIEM/Wazuh/Screenshots/wazuh-containers.png SIEM/Wazuh/Screenshots/wazuh-alerts.png --- # 8. Lessons Learned This lab provided practical experience with: - SIEM deployment - Security monitoring architecture - Log management concepts - Alert investigation workflows - Enterprise security monitoring technologies --- # Conclusion The Wazuh SIEM deployment successfully established a security monitoring platform within the cybersecurity home lab. The environment provides a foundation for future exercises involving threat detection, log analysis, alert investigation, and incident response.
+./SIEM/Wazuh/Reports/SOC-Monitoring-Overview.md:34:SIEM/Wazuh/Screenshots/
+./SIEM/Wazuh/Reports/Log-Analysis.md:72:SIEM/Wazuh/Screenshots/log-analysis.png
+./SIEM/Wazuh/Reports/File-Integrity-Monitoring.md:192:SIEM/Wazuh/Screenshots/fim-alert.png
+./SIEM/Wazuh/Reports/File-Integrity-Monitoring.md:193:SIEM/Wazuh/Screenshots/fim-file-change.png
+./SIEM/Wazuh/Reports/File-Integrity-Monitoring.md:194:SIEM/Wazuh/Screenshots/fim-dashboard.png
+./Threat-Hunting/Reports/Threat-Hunting-Cases.md:22:Threat-Hunting/Screenshots/
+./Cloud-Security/Reports/Cloud-Security-Fundamentals.md:20:Cloud-Security/Screenshots/
+./Web-Security/PortSwigger/Reports/PortSwigger-Academy-Progress.md:20:Web-Security/PortSwigger/Screenshots/
+./Web-Security/Juice-Shop/Reports/Sensitive-Data-Exposure.md:82:Web-Security/Juice-Shop/Screenshots/robots-txt.png
+./Web-Security/Juice-Shop/Reports/Sensitive-Data-Exposure.md:108:Web-Security/Juice-Shop/Screenshots/security-txt.png
+./Web-Security/Juice-Shop/Reports/Sensitive-Data-Exposure.md:141:Web-Security/Juice-Shop/Screenshots/exposed-files.png
+./Web-Security/Juice-Shop/Reports/Sensitive-Data-Exposure.md:182:| robots.txt disclosure | Web-Security/Juice-Shop/Screenshots/robots-txt.png |
+./Web-Security/Juice-Shop/Reports/Sensitive-Data-Exposure.md:183:| Security.txt review | Web-Security/Juice-Shop/Screenshots/security-txt.png |
+./Web-Security/Juice-Shop/Reports/Sensitive-Data-Exposure.md:184:| Exposed files | Web-Security/Juice-Shop/Screenshots/exposed-files.png |
+./Web-Security/Juice-Shop/Reports/Authentication-Assessment.md:50:| Login page | Web-Security/Juice-Shop/Screenshots/login-page.png |
+./Web-Security/Juice-Shop/Reports/Authentication-Assessment.md:51:| Registration page | Web-Security/Juice-Shop/Screenshots/register-page.png |
+./Web-Security/Juice-Shop/Reports/Authentication-Assessment.md:52:| Successful login | Web-Security/Juice-Shop/Screenshots/login-success.png |
+./Web-Security/Juice-Shop/Reports/Authentication-Assessment.md:53:| Failed login | Web-Security/Juice-Shop/Screenshots/login-failed.png |
+./Web-Security/Juice-Shop/Reports/Burp-Proxy.md:47:Web-Security/Juice-Shop/Screenshots/burp-http-history.png
+./Web-Security/Juice-Shop/Reports/Environment-Setup.md:76:| Juice Shop Homepage | Web-Security/Juice-Shop/Screenshots/juice-shop-home.png |
+./Web-Security/DVWA/Reports/Command-Injection.md:74:Web-Security/DVWA/Screenshots/command-injection-normal.png
+./Web-Security/DVWA/Reports/Command-Injection.md:84:Web-Security/DVWA/Screenshots/command-injection-success.png
+./Web-Security/DVWA/Reports/Command-Injection.md:131:| Normal command request | Web-Security/DVWA/Screenshots/command-injection-normal.png |
+./Web-Security/DVWA/Reports/Command-Injection.md:132:| Successful command injection | Web-Security/DVWA/Screenshots/command-injection-success.png |
+./Web-Security/DVWA/Reports/CSRF.md:70:Web-Security/DVWA/Screenshots/csrf-normal.png
+./Web-Security/DVWA/Reports/CSRF.md:79:Web-Security/DVWA/Screenshots/csrf-success.png
+./Web-Security/DVWA/Reports/Environment-Setup.md:190:Web-Security/DVWA/Screenshots/dvwa-login.png
+./Web-Security/DVWA/Reports/SQL-Injection.md:78:Web-Security/DVWA/Screenshots/sql-injection-normal.png
+./Web-Security/DVWA/Reports/SQL-Injection.md:94:Web-Security/DVWA/Screenshots/sql-injection-success.png
+./Web-Security/DVWA/Reports/SQL-Injection.md:145:| Normal SQL Injection page | Web-Security/DVWA/Screenshots/sql-injection-normal.png |
+./Web-Security/DVWA/Reports/SQL-Injection.md:146:| Successful SQL Injection result | Web-Security/DVWA/Screenshots/sql-injection-success.png |
+./Web-Security/DVWA/Reports/File-Upload.md:74:Web-Security/DVWA/Screenshots/file-upload-page.png
+./Web-Security/DVWA/Reports/File-Upload.md:85:Web-Security/DVWA/Screenshots/file-upload-success.png
+./Web-Security/DVWA/Reports/File-Upload.md:133:| File Upload page | Web-Security/DVWA/Screenshots/file-upload-page.png |
+./Web-Security/DVWA/Reports/File-Upload.md:134:| Successful upload result | Web-Security/DVWA/Screenshots/file-upload-success.png |
+./Web-Security/DVWA/Reports/Weak-Session-ID.md:74:Web-Security/DVWA/Screenshots/weak-session-page.png
+./Web-Security/DVWA/Reports/Weak-Session-ID.md:84:Web-Security/DVWA/Screenshots/weak-session-analysis.png
+./Web-Security/DVWA/Reports/Weak-Session-ID.md:130:| Weak Session ID page | Web-Security/DVWA/Screenshots/weak-session-page.png |
+./Web-Security/DVWA/Reports/Weak-Session-ID.md:131:| Session ID analysis | Web-Security/DVWA/Screenshots/weak-session-analysis.png |
+./Web-Security/DVWA/Reports/XSS.md:82:Web-Security/DVWA/Screenshots/xss-payload.png
+./Web-Security/DVWA/Reports/XSS.md:84:Web-Security/DVWA/Screenshots/xss-success.png
+./Web-Security/DVWA/Reports/XSS.md:133:| XSS payload submission | Web-Security/DVWA/Screenshots/xss-payload.png |
+./Web-Security/DVWA/Reports/XSS.md:134:| Successful XSS execution | Web-Security/DVWA/Screenshots/xss-success.png |
+./Web-Security/DVWA/Reports/Brute-Force.md:82:Web-Security/DVWA/Screenshots/brute-force-page.png
+./Web-Security/DVWA/Reports/Brute-Force.md:92:Web-Security/DVWA/Screenshots/brute-force-success.png
+./Web-Security/DVWA/Reports/Brute-Force.md:138:| Brute Force page | Web-Security/DVWA/Screenshots/brute-force-page.png |
+./Web-Security/DVWA/Reports/Brute-Force.md:139:| Successful authentication | Web-Security/DVWA/Screenshots/brute-force-success.png |
+./Web-Security/DVWA/Reports/File-Inclusion.md:88:Web-Security/DVWA/Screenshots/file-inclusion-page.png
+./Web-Security/DVWA/Reports/File-Inclusion.md:98:Web-Security/DVWA/Screenshots/file-inclusion-success.png
+./Web-Security/DVWA/Reports/File-Inclusion.md:145:| File Inclusion page | Web-Security/DVWA/Screenshots/file-inclusion-page.png |
+./Web-Security/DVWA/Reports/File-Inclusion.md:146:| Successful File Inclusion result | Web-Security/DVWA/Screenshots/file-inclusion-success.png |
+./Docker-Labs/Reports/Docker-Security-Assessment.md:25:Docker-Labs/Screenshots/
+./Active-Directory/Reports/Active-Directory-Lab.md:28:Active-Directory/Screenshots/
+./Linux-Security/Reports/Linux-Hardening.md:29:Linux-Security/Screenshots/
+./Network-Security/Reports/Wireshark-Traffic-Analysis.md:27:Network-Security/Wireshark/Screenshots/
+./Network-Security/Reports/Nmap-Network-Discovery.md:28:Network-Security/Nmap/Screenshots/
+./Network-Security/Reports/Network-Security-Assessment.md:25:Network-Security/Screenshots/
