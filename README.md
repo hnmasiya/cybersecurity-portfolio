@@ -214,5 +214,5 @@ A recruiter-focused mapping of SOC capabilities to the specific labs, scripts an
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* ci: add automated weekly and trigger-based repository audit workflow (8 seconds ago)
+* feat: add interactive post-lab commit and pipeline trigger script (10 seconds ago)
 <!-- END_SECTION:activity -->
