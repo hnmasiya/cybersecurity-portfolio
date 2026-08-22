@@ -520,6 +520,47 @@
             font-size: 0.85rem;
         }
     </style>
+
+<script>
+// --- CLIENT-SIDE TERMINAL SECURITY HARDENING ---
+(function() {
+    "use strict";
+
+    // Enforce HTML Entity Sanitization to prevent DOM XSS / HTML Injection
+    window.sanitizeInput = function(str) {
+        if (typeof str !== "string") return "";
+        return str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#x27;")
+            .replace(/\//g, "&#x2F;");
+    };
+
+    // Immutable Allowed Command List
+    const ALLOWED_COMMANDS = Object.freeze([
+        "help", "about", "bio", "skills", "projects", "experience", 
+        "work", "contact", "cv", "resume", "wazuh", "rules", 
+        "pcap", "triage", "ad", "events", "logs", "evidence", 
+        "clear", "cls", "history", "whoami", "date", "uptime"
+    ]);
+
+    // Read-Only Input Dispatcher
+    window.processSecureCommand = function(rawCmd) {
+        const cleanCmd = window.sanitizeInput(rawCmd.trim().toLowerCase());
+        const baseCmd = cleanCmd.split(" ")[0];
+
+        if (baseCmd === "") return "";
+
+        if (!ALLOWED_COMMANDS.includes(baseCmd)) {
+            return `<span style="color:#ff5252;">[SECURITY NOTICE] Command not recognized or restricted: "${cleanCmd}". Type help for authorized commands.</span>`;
+        }
+        return null; // Signals allowed command to main execution logic
+    };
+})();
+</script>
+
 </head>
 <body>
 
