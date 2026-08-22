@@ -25,6 +25,7 @@
             </div>
             <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-400">
                 <a href="#summary" class="hover:text-emerald-400 transition">Profile</a>
+                <a href="#about" class="hover:text-emerald-400 transition">About Me</a>
                 <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
                 <a href="#experience" class="hover:text-emerald-400 transition">Experience</a>
                 <a href="#skills" class="hover:text-emerald-400 transition">Toolkit</a>
@@ -85,7 +86,20 @@
             <div id="log-feed" class="space-y-2 font-mono text-xs max-h-48 overflow-y-auto pr-2"></div>
         </section>
 
-        <!-- Section 3: Selected Cybersecurity Projects -->
+        <!-- Section 3: About Me -->
+        <section id="about" class="terminal-box p-6 space-y-4">
+            <h2 class="text-lg font-bold text-slate-100 uppercase tracking-wider code-font border-b border-slate-800 pb-2">About Me</h2>
+            <div class="text-xs text-slate-300 leading-relaxed space-y-3">
+                <p>
+                    I am an IT Security Specialist and SOC Analyst based in Harare, Zimbabwe, open to international opportunities. Over the past 9+ years, I have built a deep foundational background in enterprise IT infrastructure, Active Directory domain security, network engineering, and desktop support across diverse industry sectors.
+                </p>
+                <p>
+                    My practical cybersecurity approach centers on proactive threat detection, security log analysis, and automated investigation workflows. By pairing practical hands-on labs (covering Wazuh SIEM, Wireshark DFIR, Burp Suite, and Python automation) with my formal Computer Science studies (BSc Honours Candidate) and CompTIA Security+ certification, I specialize in bridging systems administration with modern Security Operations (SecOps).
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Selected Cybersecurity Projects -->
         <section id="projects" class="space-y-4">
             <h2 class="text-lg font-bold text-slate-100 uppercase tracking-wider code-font border-b border-slate-800 pb-2">Selected Cybersecurity Projects & Labs</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -112,7 +126,7 @@
             </div>
         </section>
 
-        <!-- Section 4: Professional Experience -->
+        <!-- Section 5: Professional Experience -->
         <section id="experience" class="space-y-4">
             <h2 class="text-lg font-bold text-slate-100 uppercase tracking-wider code-font border-b border-slate-800 pb-2">Professional Experience</h2>
             <div class="space-y-4">
@@ -150,7 +164,7 @@
             </div>
         </section>
 
-        <!-- Section 5: Technical Toolkit & Certifications -->
+        <!-- Section 6: Technical Toolkit & Certifications -->
         <section id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="terminal-box p-6 space-y-3">
                 <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider border-b border-slate-800 pb-2">Certifications & Education</h3>
@@ -174,18 +188,18 @@
             </div>
         </section>
 
-        <!-- Section 6: Interactive Terminal -->
+        <!-- Section 7: Interactive Terminal -->
         <section id="terminal" class="terminal-box p-6 space-y-3">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-terminal text-emerald-400 mr-2"></i>SOC Sandbox CLI v2.4</span>
                 <span class="text-xs text-slate-500">Type "help"</span>
             </div>
             <div id="terminal-output" class="font-mono text-xs text-slate-300 space-y-1 min-h-[140px] max-h-[200px] overflow-y-auto">
-                <div>Type <span class="text-emerald-400 font-bold">"help"</span> to see available commands.</div>
+                <div>Type <span class="text-emerald-400 font-bold">help</span> to see available commands.</div>
             </div>
             <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
                 <span class="text-emerald-400 font-mono text-xs">visitor@masiya-hub:~$</span>
-                <input type="text" id="terminal-input" class="bg-transparent text-xs font-mono text-white flex-1 focus:outline-none" placeholder="Try running "skills", "projects", or "clear"...">
+                <input type="text" id="terminal-input" class="bg-transparent text-xs font-mono text-white flex-1 focus:outline-none" placeholder="Try running help, skills, or projects...">
             </div>
         </section>
 
@@ -243,7 +257,7 @@
                     output.innerHTML = "";
                     return;
                 } else {
-                    res = `Command not recognized: "${cmd}". Type "help" for options.`;
+                    res = "Command not recognized: "" + cmd + "". Type "help" for options.";
                 }
 
                 const resLine = document.createElement("div");
