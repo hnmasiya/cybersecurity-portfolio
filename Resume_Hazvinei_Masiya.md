@@ -70,12 +70,12 @@ CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT 
   <span class="job-title">Senior IT Infrastructure & Security Specialist</span> | <span class="company">Enterprise Infrastructure, Network & Client Services</span>
 </div>
 <ul>
-  <li><b>Enterprise Security Operations & Triage:</b> Lead daily security log reviews, incident response triage, malware containment, and patch management across client networks. Apply security-analyst principles to monitor Sophos Endpoint/Firewall telemetry for anomalous activity.</li>
-  <li><b>Active Directory & Access Control:</b> Administer accounts, GPOs, RBAC, least-privilege policies, and multi-factor authentication (MFA) across multi-tenant client environments (120+ to 500+ users).</li>
-  <li><b>SD-WAN & Network Deployments:</b> Physically deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, and validate IP connectivity.</li>
-  <li><b>Mastercard Zimbabwe Network Upgrade (Netvantage):</b> Decommissioned legacy Cisco switches, controllers, and APs; racked and deployed new Aruba controllers, switches, and sensor LAN cabling to optimize network performance.</li>
-  <li><b>Ericsson Zimbabwe IT Deployment (Compusys):</b> Re-imaged laptop fleets to corporate security baselines, joined endpoints to Active Directory domains, deployed M365 email access, and installed network switches/APs.</li>
-  <li><b>Enterprise Migrations & Infrastructure Upgrades (AJP Group / Abbeydale Group / ShermanIT):</b> Executed server migrations, HP switch upgrades, VoIP phone rollouts, PC re-imaging, PoE IP camera integrations, and secure legacy hardware decommissioning.</li>
+  <li>Lead daily security log reviews, incident response triage, malware containment, and structured patch management across multi-tenant environments; apply security-analyst principles to monitor Sophos Endpoint and firewall telemetry for anomalous activity.</li>
+  <li>Administer accounts, Active Directory Group Policies (GPOs), RBAC, least-privilege access models, and multi-factor authentication (MFA) across client environments (120+ to 500+ users).</li>
+  <li>Physically deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, IP configuration, and live connectivity validation.</li>
+  <li>Decommissioned legacy Cisco switches, APs, and controllers during the Mastercard Zimbabwe network upgrade, racking and installing new Aruba controllers, switches, and sensor LAN cabling.</li>
+  <li>Re-imaged laptop fleets to corporate security baselines during the Ericsson Zimbabwe deployment, joined endpoints to Active Directory domains, configured M365 email access, and installed core switches/APs.</li>
+  <li>Executed server migrations, HP switch deployments, VoIP phone rollouts, PC re-imaging, PoE IP camera integrations, and secure legacy hardware decommissioning across AJP Group, Abbeydale Group, and ShermanIT projects.</li>
 </ul>
 
 <h2>Certifications & Education</h2>
