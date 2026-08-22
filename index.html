@@ -3,575 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hazvinei Nomatter Masiya | Cybersecurity & SOC Engineering Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <title>Hazvinei Nomatter Masiya | SOC & Detection Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg-dark: #090d16;
-            --card-bg: rgba(18, 26, 43, 0.6);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --accent-cyan: #00f2fe;
-            --accent-blue: #3b82f6;
-            --accent-green: #10b981;
-            --accent-yellow: #f59e0b;
-            --accent-red: #ef4444;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: "Inter", sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-bottom: 60px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            border-bottom: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            background: rgba(9, 13, 22, 0.85);
-            z-index: 100;
-        }
-
-        .logo { font-family: "JetBrains Mono", monospace; font-weight: 700; color: var(--accent-cyan); font-size: 1.1rem; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 20px; transition: 0.3s; font-size: 0.95rem; }
-        .nav-links a:hover { color: var(--accent-cyan); }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        .hero { text-align: center; padding: 50px 0 30px; }
-        .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 12px; background: linear-gradient(135deg, #fff, var(--accent-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 25px; }
-
-        .action-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-            font-size: 0.95rem;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #000;
-        }
-        .btn-secondary {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: #fff;
-        }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        /* Interactive Terminal Styling */
-        .terminal-container {
-            background: #0d1117;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            overflow: hidden;
-            max-width: 850px;
-            margin: 0 auto 40px;
-            text-align: left;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-        }
-
-        .terminal-header {
-            background: #161b22;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
-        .dot-red { background: var(--accent-red); }
-        .dot-yellow { background: var(--accent-yellow); }
-        .dot-green { background: var(--accent-green); }
-        .terminal-title { font-family: "JetBrains Mono", monospace; font-size: 0.8rem; color: var(--text-muted); margin-left: auto; margin-right: auto; }
-
-        .terminal-body {
-            padding: 20px;
-            font-family: "JetBrains Mono", monospace;
-            font-size: 0.88rem;
-            height: 300px;
-            overflow-y: auto;
-            color: var(--text-main);
-        }
-
-        .term-out { margin-bottom: 10px; white-space: pre-wrap; word-break: break-word; }
-        .term-prompt-line { display: flex; align-items: center; margin-top: 5px; }
-        .term-prompt { color: var(--accent-cyan); font-weight: 600; margin-right: 10px; }
-        .term-input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #fff;
-            font-family: "JetBrains Mono", monospace;
-            font-size: 0.88rem;
-            flex-grow: 1;
-        }
-
-        /* Challenge Builder Styling */
-        .builder-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 40px;
-        }
-
-        .builder-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            text-align: left;
-        }
-
-        .form-group label {
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            font-weight: 600;
-            font-family: "JetBrains Mono", monospace;
-        }
-
-        .form-control {
-            background: #0d1117;
-            border: 1px solid var(--border-color);
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 6px;
-            font-family: "JetBrains Mono", monospace;
-            font-size: 0.9rem;
-            outline: none;
-        }
-
-        .code-output-box {
-            background: #0d1117;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 18px;
-            font-family: "JetBrains Mono", monospace;
-            font-size: 0.85rem;
-            color: #a7f3d0;
-            white-space: pre-wrap;
-            text-align: left;
-            position: relative;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-        .stat-card h3 { font-size: 1.8rem; color: var(--accent-cyan); margin-bottom: 5px; }
-        .stat-card p { color: var(--text-muted); font-size: 0.9rem; }
-
-        .section-title { font-size: 1.8rem; margin: 50px 0 25px; border-left: 4px solid var(--accent-cyan); padding-left: 15px; text-align: left; }
-
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 28px;
-            transition: transform 0.3s, border-color 0.3s;
-            text-align: left;
-        }
-        .project-card:hover { transform: translateY(-5px); border-color: var(--accent-cyan); }
-        .project-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
-        .project-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
-
-        .tag {
-            display: inline-block;
-            background: rgba(0, 242, 254, 0.1);
-            color: var(--accent-cyan);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 6px;
-            margin-bottom: 10px;
-            font-family: "JetBrains Mono", monospace;
-        }
-
-        .edu-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        footer { text-align: center; margin-top: 80px; color: var(--text-muted); font-size: 0.9rem; }
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; color: #e2e8f0; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        .terminal-box { background: #070a12; border: 1px solid #1e293b; border-radius: 8px; }
+        .glow-green { text-shadow: 0 0 8px rgba(34, 197, 94, 0.4); }
     </style>
 </head>
-<body>
 
-    <nav>
-        <div class="logo">hnmasiya@soc-node:~#</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#terminal">Terminal Console</a>
-            <a href="#builders">Detection Builder</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="https://github.com/hnmasiya" target="_blank">GitHub</a>
+<body class="min-h-screen flex flex-col">
+    <!-- Header Navigation -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="h-3 w-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                <span class="font-bold text-lg text-slate-100 code-font">MASIYA-SOC // SEC_OPS</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-400">
+                <a href="#summary" class="hover:text-emerald-400 transition">Profile</a>
+                <a href="#tracker" class="hover:text-emerald-400 transition">Live Intel</a>
+                <a href="#terminal" class="hover:text-emerald-400 transition">Interactive Terminal</a>
+                <a href="#resume" class="hover:text-emerald-400 transition">Resume PDF</a>
+            </nav>
+            <a href="Hazvinei_Masiya_Resume.pdf" download class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider transition flex items-center gap-2">
+                <i class="fa-solid fa-download"></i> Download CV
+            </a>
         </div>
-    </nav>
+    </header>
 
-    <div class="container">
-        <section class="hero" id="about">
-            <h1>Hazvinei Nomatter Masiya</h1>
-            <p>Cybersecurity Analyst | Security Operations & Threat Detection Engineer</p>
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-10">
 
-            <div class="action-buttons">
-                <a href="Hazvinei_Masiya_Resume.pdf" download class="btn btn-primary">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"></path></svg>
-                    Download PDF Resume
-                </a>
-                <a href="https://github.com/hnmasiya" target="_blank" class="btn btn-secondary">
-                    View GitHub Repositories &rarr;
-                </a>
+        <!-- Hero Section -->
+        <section id="summary" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 terminal-box p-6 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <span class="text-xs text-emerald-400 code-font">[SYSTEM_STATUS: OPERATIONAL]</span>
+                    <span class="text-xs text-slate-500">Node: Zimbabwe (CAT)</span>
+                </div>
+                <h1 class="text-3xl font-extrabold text-white">Hazvinei Nomatter Masiya</h1>
+                <p class="text-emerald-400 font-semibold text-sm">Cybersecurity Analyst & Threat Detection Engineer</p>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    IT professional with <strong>9+ years of enterprise infrastructure experience</strong> transitioning into dedicated Security Operations (SOC). Currently pursuing a <strong>BSc in Computer Science</strong>, bringing hands-on expertise across Windows Enterprise Administration, Active Directory security, Log Analysis, and automated detection rule engineering.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">SIEM (Wazuh/Splunk)</span>
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Wireshark DFIR</span>
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Python Automation</span>
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Terraform IaC</span>
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">CompTIA Security+</span>
+                </div>
             </div>
 
-            <!-- Interactive Terminal -->
-            <div class="terminal-container" id="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-dot dot-red"></div>
-                    <div class="terminal-dot dot-yellow"></div>
-                    <div class="terminal-dot dot-green"></div>
-                    <div class="terminal-title">interactive-soc-shell v1.0.4</div>
+            <!-- Contact & Quick Info Card -->
+            <div class="terminal-box p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Verified Credentials</h3>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-emerald-400"></i> <span>BSc Computer Science (Candidate)</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-certificate text-emerald-400"></i> <span>CompTIA Security+ Certified</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-brands fa-google text-emerald-400"></i> <span>Google Cybersecurity Professional</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-emerald-400"></i> <a href="https://masiya-hub.org" class="text-emerald-400 hover:underline">masiya-hub.org</a></li>
+                    </ul>
                 </div>
-                <div class="terminal-body" id="termBody">
-                    <div class="term-out" style="color: var(--accent-cyan);">=== SOC Interactive Shell Active ===</div>
-                    <div class="term-out">Type <b style="color: var(--accent-green);">help</b> to view available threat hunting commands (spl, yara, pcap, stats, clear).</div>
-                    <div class="term-prompt-line">
-                        <span class="term-prompt">hnmasiya@soc-shell:~$</span>
-                        <input type="text" class="term-input" id="termInput" autofocus placeholder="Try typing 'spl' or 'yara'...">
-                    </div>
+                <div class="pt-4 border-t border-slate-800 mt-4">
+                    <a href="https://github.com/hnmasiya" target="_blank" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs py-2 rounded font-mono text-center block transition">
+                        <i class="fa-brands fa-github mr-1"></i> github.com/hnmasiya
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Splunk & YARA Builders -->
-        <h2 class="section-title" id="builders">Interactive Splunk & YARA Rule Generator</h2>
-        <div class="builder-card">
-            <div class="builder-grid">
-                <div class="form-group">
-                    <label for="detectionType">Detection Framework</label>
-                    <select id="detectionType" class="form-control" onchange="generateDetection()">
-                        <option value="spl">Splunk Query (SPL)</option>
-                        <option value="yara">YARA Rule Logic</option>
-                    </select>
+        <!-- Live Threat Feed Stream (Live Tracker) -->
+        <section id="tracker" class="terminal-box p-6">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
+                <div class="flex items-center gap-2">
+                    <div class="h-2 w-2 rounded-full bg-red-500 animate-ping"></div>
+                    <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider">Live Security Incident Log Feed</h2>
                 </div>
+                <span class="text-xs font-mono text-slate-500">Real-time Stream Engine</span>
+            </div>
+            <div id="log-feed" class="space-y-2 font-mono text-xs max-h-48 overflow-y-auto pr-2">
+                <!-- Javascript auto-injects live telemetry logs here -->
+            </div>
+        </section>
 
-                <div class="form-group">
-                    <label for="targetEvent">Threat Scenario Target</label>
-                    <select id="targetEvent" class="form-control" onchange="generateDetection()">
-                        <option value="ad_priv">Active Directory Privilege Escalation</option>
-                        <option value="brute">Brute Force Authentication Attempt</option>
-                        <option value="webshell">Obfuscated Web Shell Detection</option>
-                    </select>
-                </div>
+        <!-- Interactive Terminal Emulator -->
+        <section id="terminal" class="terminal-box p-6 space-y-3">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-terminal text-emerald-400 mr-2"></i>SOC Sandbox CLI v2.4</span>
+                <span class="text-xs text-slate-500">Type 'help' or 'projects'</span>
+            </div>
+            <div id="terminal-output" class="font-mono text-xs text-slate-300 space-y-1 min-h-[140px] max-h-[200px] overflow-y-auto">
+                <div>Type <span class="text-emerald-400 font-bold">'help'</span> to see available cybersecurity commands.</div>
+            </div>
+            <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
+                <span class="text-emerald-400 font-mono text-xs">visitor@masiya-hub:~$</span>
+                <input type="text" id="terminal-input" class="bg-transparent text-xs font-mono text-white flex-1 focus:outline-none" placeholder="Try running 'skills', 'projects', or 'clear'..." autofocus>
+            </div>
+        </section>
 
-                <div class="form-group">
-                    <label for="severity">Alert Severity Level</label>
-                    <select id="severity" class="form-control" onchange="generateDetection()">
-                        <option value="critical">Critical / High Response</option>
-                        <option value="medium">Medium / Monitor</option>
-                    </select>
-                </div>
+        <!-- Embedded Resume PDF Previewer -->
+        <section id="resume" class="terminal-box p-6 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider">Official Curriculum Vitae (PDF)</h2>
+                <a href="Hazvinei_Masiya_Resume.pdf" target="_blank" class="text-xs text-emerald-400 hover:underline flex items-center gap-1">
+                    Open Fullscreen <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
             </div>
+            <div class="w-full h-[600px] rounded border border-slate-800 bg-slate-900 overflow-hidden">
+                <iframe src="Hazvinei_Masiya_Resume.pdf" class="w-full h-full"></iframe>
+            </div>
+        </section>
 
-            <div class="code-output-box" id="ruleOutput">
-                <!-- Dynamically filled by JS -->
-            </div>
-        </div>
+    </main>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>9+ Years</h3>
-                <p>Enterprise Infrastructure</p>
-            </div>
-            <div class="stat-card">
-                <h3>BSc CS</h3>
-                <p>Degree Candidate</p>
-            </div>
-            <div class="stat-card">
-                <h3>CompTIA</h3>
-                <p>Security+ Certified</p>
-            </div>
-            <div class="stat-card">
-                <h3>SOC / DFIR</h3>
-                <p>SIEM & Network Analysis</p>
-            </div>
-        </div>
-
-        <h2 class="section-title" id="projects">Featured Security Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Active Directory Security Log Parser</h3>
-                <p>Automated Python security parser for detecting privileged group changes and Event ID anomalies in enterprise AD environments.</p>
-                <div>
-                    <span class="tag">Python</span>
-                    <span class="tag">Active Directory</span>
-                    <span class="tag">SIEM</span>
-                </div>
-                <a href="https://github.com/hnmasiya/ad-security-log-parser" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">View Repository &rarr;</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Wazuh SIEM Detection Engineering</h3>
-                <p>Custom detection rules mapped to the MITRE ATT&CK framework with automated active response integrations.</p>
-                <div>
-                    <span class="tag">Wazuh</span>
-                    <span class="tag">MITRE ATT&CK</span>
-                    <span class="tag">Detection</span>
-                </div>
-                <a href="https://github.com/hnmasiya/wazuh-siem-detection-lab" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">View Repository &rarr;</a>
-            </div>
-
-            <div class="project-card">
-                <h3>GCP Secure Multi-Tier VPC</h3>
-                <p>Terraform Infrastructure as Code enforcing strict IAM policies, network isolation, and firewall perimeter defense.</p>
-                <div>
-                    <span class="tag">GCP</span>
-                    <span class="tag">Terraform</span>
-                    <span class="tag">Cloud Security</span>
-                </div>
-                <a href="https://github.com/hnmasiya/gcp-terraform-secure-vpc" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">View Repository &rarr;</a>
-            </div>
-        </div>
-
-        <h2 class="section-title" id="education">Education & Credentials</h2>
-        <div class="edu-card">
-            <div>
-                <h4 style="color: #fff;">Bachelor of Science (BSc) in Computer Science</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Ongoing Candidate</p>
-            </div>
-            <span class="tag" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green);">In Progress</span>
-        </div>
-
-        <div class="edu-card">
-            <div>
-                <h4 style="color: #fff;">Diploma in Information Technology</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Macmaine School of Computing</p>
-            </div>
-            <span class="tag">Completed</span>
-        </div>
-
-        <div class="edu-card">
-            <div>
-                <h4 style="color: #fff;">CompTIA Security+ Certified</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">CompTIA</p>
-            </div>
-            <span class="tag">Certified</span>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; Hazvinei Nomatter Masiya. Powered by GitHub Pages.</p>
+    <footer class="border-t border-slate-800 bg-slate-950 py-4 text-center text-xs text-slate-500 font-mono">
+        © 2026 Hazvinei Nomatter Masiya // Domain: masiya-hub.org // Hosted on GitHub Pages
     </footer>
 
+    <!-- Interactive JS Functionality -->
     <script>
-        // --- Terminal JS Logic ---
-        const input = document.getElementById("termInput");
-        const body = document.getElementById("termBody");
+        // Live Threat Stream Simulator
+        const logs = [
+            { type: "CRITICAL", msg: "Event ID 4728: Account 'j.doe' added to Domain Admins by 'UNKNOWN_SID'" },
+            { type: "WARNING",  msg: "Wazuh Alert Rule 100201: Outbound connection to suspicious IP 185.220.101.5" },
+            { type: "INFO",     msg: "Splunk SPL: Executed successful scheduled search 'Privileged Logon Sweeps'" },
+            { type: "NOTICE",   msg: "YARA Scanner: Shellcode signature match in /tmp/mem_dump.raw (Rule: Webshell_PHP)" },
+            { type: "INFO",     msg: "Terraform IaC: VPC Security Group sync completed successfully" }
+        ];
 
-        const commands = {
-            help: `Available Commands:
-  • spl      : Run a simulated Splunk search query for AD privilege escalation.
-  • yara     : Execute custom YARA rule against webshell payloads.
-  • pcap     : Analyze Wireshark PCAP for cleartext credentials & port scans.
-  • stats    : Show current system monitoring status.
-  • clear    : Clear the console screen.`,
+        function pushLog() {
+            const feed = document.getElementById('log-feed');
+            const item = logs[Math.floor(Math.random() * logs.length)];
+            const timestamp = new Date().toISOString().split('T')[1].slice(0, 8);
+            const color = item.type === 'CRITICAL' ? 'text-red-400' : item.type === 'WARNING' ? 'text-amber-400' : 'text-emerald-400';
             
-            spl: `[+] EXECUTING SPL QUERY:
-index=winlogbeat EventCode=4728 OR EventCode=4732 | stats count by TargetUserName, SecurityGroup
------------------------------------------------------------------------------------------
-TIMESTAMP            EVENT  TARGET_USER        GROUP               ACTION
-2026-08-22 10:14:02  4728   svc_backup         Domain Admins       MEMBER_ADDED [CRITICAL]
-2026-08-22 10:14:05  4732   sec_admin_temp     Administrators      MEMBER_ADDED
+            const div = document.createElement('div');
+            div.className = "flex items-start gap-2 border-b border-slate-900 pb-1";
+            div.innerHTML = `<span class="text-slate-600">[${timestamp}]</span> <span class="font-bold ${color}">${item.type}</span> <span class="text-slate-300">${item.msg}</span>`;
+            
+            feed.prepend(div);
+            if (feed.children.length > 8) feed.removeChild(feed.lastChild);
+        }
+        setInterval(pushLog, 3000);
+        pushLog();
 
-[ALERT] High-severity privilege escalation detected! AD Parser triggered alert notification.`,
+        // Terminal Emulator Script
+        const input = document.getElementById('terminal-input');
+        const output = document.getElementById('terminal-output');
 
-            yara: `[+] RUNNING YARA SIGNATURE EVALUATION...
-rule Webshell_PHP_Obfuscated {
-    strings:
-        $s1 = "eval(base64_decode"
-        $s2 = "system($_GET"
-    condition:
-        any of ($s*)
-}
------------------------------------------------------------------------------------------
-SCAN RESULTS: /var/www/html/uploads/cache_session.php -> MATCHED [Webshell_PHP_Obfuscated]
-ACTION: File isolated to quarantine directory /var/log/quarantine/`,
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const cmd = this.value.trim().toLowerCase();
+                this.value = '';
+                
+                const cmdLine = document.createElement('div');
+                cmdLine.innerHTML = `<span class="text-emerald-400">visitor@masiya-hub:~$</span> ${cmd}`;
+                output.appendChild(cmdLine);
 
-            pcap: `[+] PARSING NETWORK PCAP FILE (capture_0912.pcap)...
-Packet 0104: 192.168.1.105:49152 -> 10.0.0.50:80 [HTTP POST] 
-[WARNING] Plaintext password exposed in POST body: "username=admin&password=REDACTED_SYNTHETIC_PASSWORD"
-Packet 0150-0220: TCP SYN Scan targeting Ports 21, 22, 80, 445, 3389 originating from 192.168.1.105.
-ACTION: Perimeter firewall rule dynamically generated to block host 192.168.1.105.`,
-
-            stats: `[+] SYSTEM & CANDIDATE METRICS:
-  • Primary Role   : Cybersecurity Analyst / SOC Engineer
-  • Academic Status: BSc Computer Science Candidate
-  • Enterprise Exp : 9+ Years Systems & Network Administration
-  • Core Stack     : Splunk, Wazuh, Python, Wireshark, GCP, Terraform, Linux`
-        };
-
-        input.addEventListener("keydown", function(e) {
-            if (e.key === "Enter") {
-                const cmd = input.value.trim().toLowerCase();
-                const promptLine = input.parentElement;
-
-                const executedLine = document.createElement("div");
-                executedLine.className = "term-out";
-                executedLine.innerHTML = `<span style="color: var(--accent-cyan); font-weight:600;">hnmasiya@soc-shell:~$</span> ${input.value}`;
-                body.insertBefore(executedLine, promptLine);
-
-                if (cmd === "clear") {
-                    const outputs = body.querySelectorAll(".term-out");
-                    outputs.forEach(el => el.remove());
-                } else if (commands[cmd]) {
-                    const responseLine = document.createElement("div");
-                    responseLine.className = "term-out";
-                    responseLine.style.color = "#a7f3d0";
-                    responseLine.innerText = commands[cmd];
-                    body.insertBefore(responseLine, promptLine);
-                } else if (cmd !== "") {
-                    const errorLine = document.createElement("div");
-                    errorLine.className = "term-out";
-                    errorLine.style.color = "var(--accent-red)";
-                    errorLine.innerText = `Command not recognized: '${cmd}'. Type 'help' for available commands.`;
-                    body.insertBefore(errorLine, promptLine);
+                let res = '';
+                if (cmd === 'help') {
+                    res = "Available commands: <span class='text-emerald-400'>skills</span>, <span class='text-emerald-400'>projects</span>, <span class='text-emerald-400'>certifications</span>, <span class='text-emerald-400'>clear</span>";
+                } else if (cmd === 'skills') {
+                    res = "SIEM (Wazuh, Splunk) | Python Automation | Wireshark DFIR | Windows Server & AD Security | Terraform IaC";
+                } else if (cmd === 'projects') {
+                    res = "1. Active Directory Security Log Parser (Python)<br>2. Wazuh SIEM Detection Engineering Lab<br>3. GCP Secure Multi-Tier VPC (Terraform)";
+                } else if (cmd === 'certifications') {
+                    res = "CompTIA Security+ | Google Cybersecurity Professional | Google IT Support Professional";
+                } else if (cmd === 'clear') {
+                    output.innerHTML = '';
+                    return;
+                } else {
+                    res = `Command not recognized: '${cmd}'. Type 'help' for options.`;
                 }
 
-                input.value = "";
-                body.scrollTop = body.scrollHeight;
+                const resLine = document.createElement('div');
+                resLine.className = "text-slate-400 pl-4 border-l border-emerald-500/50 mb-2";
+                resLine.innerHTML = res;
+                output.appendChild(resLine);
+                output.scrollTop = output.scrollHeight;
             }
         });
-
-        // --- Challenge Builder JS Logic ---
-        function generateDetection() {
-            const type = document.getElementById("detectionType").value;
-            const scenario = document.getElementById("targetEvent").value;
-            const severity = document.getElementById("severity").value;
-            const out = document.getElementById("ruleOutput");
-
-            let result = "";
-
-            if (type === "spl") {
-                if (scenario === "ad_priv") {
-                    result = `// Splunk SPL - Active Directory Privilege Escalation Detection
-index=windows EventCode=4728 OR EventCode=4732 OR EventCode=4756
-| eval Severity="${severity.toUpperCase()}"
-| stats count min(_time) as first_seen max(_time) as last_seen by TargetUserName, TargetDomainName, SecurityGroup, user
-| where count >= 1
-| table first_seen, last_seen, TargetUserName, SecurityGroup, user, Severity`;
-                } else if (scenario === "brute") {
-                    result = `// Splunk SPL - Failed Logon Brute Force Detection
-index=wineventlog EventCode=4625
-| eval Severity="${severity.toUpperCase()}"
-| stats count by src_ip, TargetUserName
-| where count > 10
-| sort - count`;
-                } else {
-                    result = `// Splunk SPL - Web Shell Execution Detection
-index=web_logs (method="POST" AND uri_path="*.php") OR (body="*eval(*" OR body="*system(*")
-| eval Severity="${severity.toUpperCase()}"
-| stats count by src_ip, uri_path, user_agent`;
-                }
-            } else {
-                if (scenario === "ad_priv") {
-                    result = `// YARA Rule - Suspicious PowerShell AD Modification Command
-rule Detect_AD_PrivEsc_Script {
-    meta:
-        description = "Detects PowerShell commands attempting AD group manipulation"
-        severity = "${severity}"
-        author = "Hazvinei Nomatter Masiya"
-    strings:
-        $p1 = "Add-ADGroupMember" nocase
-        $p2 = "-Members" nocase
-        $p3 = "Domain Admins" nocase
-    condition:
-        all of ($p*)
-}`;
-                } else if (scenario === "brute") {
-                    result = `// YARA Rule - Automated Brute Force Tool Strings
-rule Detect_BruteForce_Tooling {
-    meta:
-        description = "Detects brute force credential spray binaries and scripts"
-        severity = "${severity}"
-        author = "Hazvinei Nomatter Masiya"
-    strings:
-        $b1 = "hydra" nocase
-        $b2 = "patator" nocase
-        $b3 = "LOGON32_LOGON_NETWORK" nocase
-    condition:
-        any of ($b*)
-}`;
-                } else {
-                    result = `// YARA Rule - Obfuscated PHP WebShell Payload
-rule Detect_PHP_Webshell_Obfuscated {
-    meta:
-        description = "Detects obfuscated PHP webshell executions"
-        severity = "${severity}"
-        author = "Hazvinei Nomatter Masiya"
-    strings:
-        $w1 = "eval(base64_decode(" nocase
-        $w2 = "gzinflate(base64_decode(" nocase
-        $w3 = "shell_exec(" nocase
-    condition:
-        1 of ($w*)
-}`;
-                }
-            }
-
-            out.innerText = result;
-        }
-
-        // Initialize default view
-        generateDetection();
     </script>
 </body>
 </html>
