@@ -214,5 +214,5 @@ A recruiter-focused mapping of SOC capabilities to the specific labs, scripts an
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* lab: automated portfolio update [2026-08-22 21:27] (10 seconds ago)
+* lab: fix audit self-exclusion and update pre-commit hook (8 seconds ago)
 <!-- END_SECTION:activity -->
