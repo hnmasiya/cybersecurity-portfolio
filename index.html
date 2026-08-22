@@ -13,6 +13,8 @@
             --accent-cyan: #00f2fe;
             --accent-blue: #3b82f6;
             --accent-green: #10b981;
+            --accent-yellow: #f59e0b;
+            --accent-red: #ef4444;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
         }
@@ -45,22 +47,57 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        .hero { text-align: center; padding: 80px 0 50px; }
+        .hero { text-align: center; padding: 60px 0 40px; }
         .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 12px; background: linear-gradient(135deg, #fff, var(--accent-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 30px; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 25px; }
 
-        .terminal-box {
+        /* Interactive Terminal Styling */
+        .terminal-container {
             background: #0d1117;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: left;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+
+        .terminal-header {
+            background: #161b22;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: var(--accent-red); }
+        .dot-yellow { background: var(--accent-yellow); }
+        .dot-green { background: var(--accent-green); }
+        .terminal-title { font-family: "JetBrains Mono", monospace; font-size: 0.8rem; color: var(--text-muted); margin-left: auto; margin-right: auto; }
+
+        .terminal-body {
             padding: 20px;
             font-family: "JetBrains Mono", monospace;
-            font-size: 0.9rem;
-            color: var(--accent-green);
-            text-align: left;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            font-size: 0.88rem;
+            height: 320px;
+            overflow-y: auto;
+            color: var(--text-main);
+        }
+
+        .term-out { margin-bottom: 10px; white-space: pre-wrap; word-break: break-word; }
+        .term-prompt-line { display: flex; align-items: center; margin-top: 5px; }
+        .term-prompt { color: var(--accent-cyan); font-weight: 600; margin-right: 10px; }
+        .term-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.88rem;
+            flex-grow: 1;
         }
 
         .stats-grid {
@@ -138,6 +175,7 @@
         <div class="logo">hnmasiya@soc-node:~#</div>
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#terminal">Terminal Console</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
             <a href="https://github.com/hnmasiya" target="_blank">GitHub</a>
@@ -149,12 +187,21 @@
             <h1>Hazvinei Nomatter Masiya</h1>
             <p>Cybersecurity Analyst | Security Operations & Threat Detection Engineer</p>
 
-            <div class="terminal-box">
-                <div>$ status --check</div>
-                <div style="color: #3b82f6;">[+] 9+ Years Enterprise IT & Infrastructure</div>
-                <div style="color: #10b981;">[+] BSc Computer Science Candidate (Ongoing)</div>
-                <div style="color: #00f2fe;">[+] CompTIA Security+ & Google Certified</div>
-                <div>$ ready_for_soc_triage --yes</div>
+            <div class="terminal-container" id="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                    <div class="terminal-title">interactive-soc-shell v1.0.4</div>
+                </div>
+                <div class="terminal-body" id="termBody">
+                    <div class="term-out" style="color: var(--accent-cyan);">=== SOC Interactive Shell Active ===</div>
+                    <div class="term-out">Type <b style="color: var(--accent-green);">help</b> to view available threat hunting commands (spl, yara, pcap, stats, clear).</div>
+                    <div class="term-prompt-line">
+                        <span class="term-prompt">hnmasiya@soc-shell:~$</span>
+                        <input type="text" class="term-input" id="termInput" autofocus placeholder="Try typing 'spl' or 'yara'...">
+                    </div>
+                </div>
             </div>
 
             <a href="https://github.com/hnmasiya" class="btn" target="_blank">View GitHub Profile</a>
@@ -219,7 +266,7 @@
         <div class="edu-card">
             <div>
                 <h4 style="color: #fff;">Bachelor of Science (BSc) in Computer Science</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Higher Education Institution</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Ongoing Candidate</p>
             </div>
             <span class="tag" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green);">In Progress</span>
         </div>
@@ -244,5 +291,86 @@
     <footer>
         <p>&copy; Hazvinei Nomatter Masiya. Powered by GitHub Pages.</p>
     </footer>
+
+    <script>
+        const input = document.getElementById("termInput");
+        const body = document.getElementById("termBody");
+
+        const commands = {
+            help: `Available Commands:
+  • spl      : Run a simulated Splunk search query for AD privilege escalation.
+  • yara     : Execute custom YARA rule against webshell payloads.
+  • pcap     : Analyze Wireshark PCAP for cleartext credentials & port scans.
+  • stats    : Show current system monitoring status.
+  • clear    : Clear the console screen.`,
+            
+            spl: `[+] EXECUTING SPL QUERY:
+index=winlogbeat EventCode=4728 OR EventCode=4732 | stats count by TargetUserName, SecurityGroup
+-----------------------------------------------------------------------------------------
+TIMESTAMP            EVENT  TARGET_USER        GROUP               ACTION
+2026-08-22 10:14:02  4728   svc_backup         Domain Admins       MEMBER_ADDED [CRITICAL]
+2026-08-22 10:14:05  4732   sec_admin_temp     Administrators      MEMBER_ADDED
+
+[ALERT] High-severity privilege escalation detected! AD Parser triggered alert notification.`,
+
+            yara: `[+] RUNNING YARA SIGNATURE EVALUATION...
+rule Webshell_PHP_Obfuscated {
+    strings:
+        $s1 = "eval(base64_decode"
+        $s2 = "system($_GET"
+    condition:
+        any of ($s*)
+}
+-----------------------------------------------------------------------------------------
+SCAN RESULTS: /var/www/html/uploads/cache_session.php -> MATCHED [Webshell_PHP_Obfuscated]
+ACTION: File isolated to quarantine directory /var/log/quarantine/`,
+
+            pcap: `[+] PARSING NETWORK PCAP FILE (capture_0912.pcap)...
+Packet 0104: 192.168.1.105:49152 -> 10.0.0.50:80 [HTTP POST] 
+[WARNING] Plaintext password exposed in POST body: "username=admin&password=REDACTED_SYNTHETIC_PASSWORD"
+Packet 0150-0220: TCP SYN Scan targeting Ports 21, 22, 80, 445, 3389 originating from 192.168.1.105.
+ACTION: Perimeter firewall rule dynamically generated to block host 192.168.1.105.`,
+
+            stats: `[+] SYSTEM & CANDIDATE METRICS:
+  • Primary Role   : Cybersecurity Analyst / SOC Engineer
+  • Academic Status: BSc Computer Science Candidate
+  • Enterprise Exp : 9+ Years Systems & Network Administration
+  • Core Stack     : Splunk, Wazuh, Python, Wireshark, GCP, Terraform, Linux`
+        };
+
+        input.addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
+                const cmd = input.value.trim().toLowerCase();
+                const promptLine = input.parentElement;
+
+                // Add old prompt line as static text
+                const executedLine = document.createElement("div");
+                executedLine.className = "term-out";
+                executedLine.innerHTML = `<span style="color: var(--accent-cyan); font-weight:600;">hnmasiya@soc-shell:~$</span> ${input.value}`;
+                body.insertBefore(executedLine, promptLine);
+
+                // Process command
+                if (cmd === "clear") {
+                    const outputs = body.querySelectorAll(".term-out");
+                    outputs.forEach(el => el.remove());
+                } else if (commands[cmd]) {
+                    const responseLine = document.createElement("div");
+                    responseLine.className = "term-out";
+                    responseLine.style.color = "#a7f3d0";
+                    responseLine.innerText = commands[cmd];
+                    body.insertBefore(responseLine, promptLine);
+                } else if (cmd !== "") {
+                    const errorLine = document.createElement("div");
+                    errorLine.className = "term-out";
+                    errorLine.style.color = "var(--accent-red)";
+                    errorLine.innerText = `Command not recognized: '${cmd}'. Type 'help' for available commands.`;
+                    body.insertBefore(errorLine, promptLine);
+                }
+
+                input.value = "";
+                body.scrollTop = body.scrollHeight;
+            }
+        });
+    </script>
 </body>
 </html>
