@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os
+import datetime
 import subprocess
 import sys
 
@@ -12,43 +12,32 @@ def run_cmd(cmd):
     return result.stdout.strip()
 
 def main():
-    print("==========================================================================")
-    print("           AUTOMATED CYBERSECURITY LAB COMMIT & CI/CD TRIGGER             ")
-    print("==========================================================================")
-    
-    lab_name = input("[?] Enter Lab Name / Focus (e.g., Wazuh Lateral Movement Detection): ").strip()
-    if not lab_name:
-        print("[-] Lab name cannot be empty.")
-        sys.exit(1)
+    # Check if there are changes to commit
+    status = run_cmd("git status --porcelain")
+    if not status:
+        print("[+] Working tree clean. Nothing to commit.")
+        sys.exit(0)
 
-    mitre_id = input("[?] Enter MITRE ATT&CK Technique ID (e.g., T1110.001) [Optional]: ").strip()
-    
-    commit_type = input("[?] Commit Type (lab / feat / docs / fix) [default: lab]: ").strip().lower() or "lab"
-    
-    # Format Commit Message
-    if mitre_id:
-        commit_msg = f"{commit_type}: {lab_name} [{mitre_id}]"
-    else:
-        commit_msg = f"{commit_type}: {lab_name}"
+    # Auto-generate timestamped commit message
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    commit_msg = f"lab: automated portfolio update [{timestamp}]"
 
-    print("\n[*] Staging all changes...")
+    print("[*] Pulling latest remote changes (--rebase)...")
+    run_cmd("git pull --rebase origin main")
+
+    print("[*] Staging all files...")
     run_cmd("git add .")
 
-    print(f"[*] Executing commit: '{commit_msg}'...")
-    print("[*] Pre-commit hook active: Sanitizing raw logs in evidence-logs/...")
+    print(f"[*] Committing: '{commit_msg}'...")
+    print("[*] Running local pre-commit log sanitizer...")
     commit_output = run_cmd(f'git commit -m "{commit_msg}"')
     print(commit_output)
 
-    print("\n[*] Pushing to origin/main to trigger automated DevSecOps pipelines...")
+    print("[*] Pushing to origin/main...")
     push_output = run_cmd("git push origin main")
     print(push_output)
 
-    print("\n[+] SUCCESS! Lab committed and pushed.")
-    print("[+] CI/CD Pipelines triggered on GitHub Actions:")
-    print("    - TruffleHog Secret Scanning")
-    print("    - Bandit / Yamllint SAST")
-    print("    - Dynamic README Activity Updater")
-    print("    - Portfolio System Audit")
+    print("\n[+] SUCCESS! All changes committed and pushed automatically.")
 
 if __name__ == "__main__":
     main()
