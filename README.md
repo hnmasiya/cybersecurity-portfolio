@@ -213,4 +213,6 @@ A recruiter-focused mapping of SOC capabilities to the specific labs, scripts an
 [View the SOC Analyst Evidence Map](./SOC-ANALYST-EVIDENCE-MAP.md)
 
 <!-- START_SECTION:activity -->
+### Recent Lab & Security Updates
+* feat: implement 4 DevSecOps automations (secret scan, activity feed, log sanitizer, link checker) (11 seconds ago)
 <!-- END_SECTION:activity -->
