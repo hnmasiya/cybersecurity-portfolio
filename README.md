@@ -214,5 +214,5 @@ A recruiter-focused mapping of SOC capabilities to the specific labs, scripts an
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* feat: add Advanced Threat Operations master lab (Linux DFIR, Malware, Threat Hunting) (12 seconds ago)
+* feat: add Cloud Security Posture Management and IAM audit lab (10 seconds ago)
 <!-- END_SECTION:activity -->
