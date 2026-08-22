@@ -211,3 +211,6 @@ The GitHub repository remains the authoritative source for the underlying report
 A recruiter-focused mapping of SOC capabilities to the specific labs, scripts and evidence that demonstrate them.
 
 [View the SOC Analyst Evidence Map](./SOC-ANALYST-EVIDENCE-MAP.md)
+
+<!-- START_SECTION:activity -->
+<!-- END_SECTION:activity -->
