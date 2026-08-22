@@ -1,35 +1,39 @@
 <style>
-  @page { size: letter; margin: 0.45in; }
-  body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; line-height: 1.35; color: #1a1a1a; }
-  h1 { font-size: 18pt; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 1px; color: #0f172a; }
-  .subtitle { font-size: 11pt; font-weight: bold; color: #2563eb; margin-bottom: 4px; }
-  .contact { font-size: 8.5pt; color: #475569; margin-bottom: 10px; border-bottom: 1.5px solid #0f172a; padding-bottom: 6px; }
-  h2 { font-size: 10.5pt; text-transform: uppercase; color: #0f172a; border-bottom: 1px solid #cbd5e1; margin: 10px 0 4px 0; padding-bottom: 2px; letter-spacing: 0.5px; }
-  p, ul { margin: 0 0 4px 0; }
-  ul { padding-left: 14px; }
-  li { margin-bottom: 2px; }
-  .job-title { font-weight: bold; font-size: 10pt; color: #0f172a; }
+  @page { size: letter; margin: 0.35in; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 8.8pt; line-height: 1.22; color: #0f172a; margin: 0; }
+  .header { text-align: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 3px; margin-bottom: 4px; }
+  h1 { font-size: 15pt; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a; }
+  .subtitle { font-size: 9.5pt; font-weight: bold; color: #2563eb; margin-top: 1px; }
+  .contact { font-size: 8pt; color: #334155; margin-top: 2px; }
+  h2 { font-size: 9pt; text-transform: uppercase; color: #0f172a; border-bottom: 1px solid #cbd5e1; margin: 5px 0 2px 0; padding-bottom: 1px; letter-spacing: 0.5px; }
+  p, ul { margin: 0 0 2px 0; }
+  ul { padding-left: 12px; }
+  li { margin-bottom: 1px; }
+  .job-header { margin-top: 2px; font-size: 9pt; }
+  .job-title { font-weight: bold; color: #0f172a; }
   .company { font-style: italic; color: #334155; }
-  .date { float: right; font-weight: bold; color: #475569; }
-  .project-title { font-weight: bold; color: #1e293b; font-size: 9.5pt; margin-top: 4px; }
+  .date { float: right; font-weight: bold; color: #2563eb; }
+  .project-title { font-weight: bold; color: #1e293b; font-size: 8.8pt; margin-top: 2px; }
 </style>
 
-<h1>HAZVINEI NOMATTER MASIYA</h1>
-<div class="subtitle">SOC Analyst & Security Engineer</div>
-<div class="contact">
-  📍 Harare, Zimbabwe &nbsp;|&nbsp; 📧 norman.masiya@gmail.com / masiyahn@live.com &nbsp;|&nbsp; 📞 +263 77 521 6823 / +263 71 866 2162<br>
-  <b>GitHub:</b> github.com/hnmasiya &nbsp;|&nbsp; <b>Portfolio:</b> masiya-hub.org &nbsp;|&nbsp; <b>LinkedIn:</b> linkedin.com/in/hazvinei-masiya
+<div class="header">
+  <h1>HAZVINEI NOMATTER MASIYA</h1>
+  <div class="subtitle">SOC Analyst & Security Engineer</div>
+  <div class="contact">
+    📍 Harare, Zimbabwe &nbsp;|&nbsp; 📧 norman.masiya@gmail.com / masiyahn@live.com &nbsp;|&nbsp; 📞 +263 77 521 6823 / +263 71 866 2162<br>
+    <b>GitHub:</b> https://github.com/hnmasiya &nbsp;|&nbsp; <b>Portfolio:</b> https://masiya-hub.org &nbsp;|&nbsp; <b>LinkedIn:</b> https://www.linkedin.com/in/hazvinei-masiya/
+  </div>
 </div>
 
 <h2>Professional Summary</h2>
-CompTIA Security+ certified specialist with 14+ years of enterprise IT infrastructure, systems administration, network engineering, and security operations experience. Specializing in SOC analysis, threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in executing enterprise network migrations, authoring custom XML detection rules, and isolating lateral movement.
+CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT infrastructure, systems administration, network engineering, and security operations experience. Specializing in SOC analysis, threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in executing enterprise network migrations, authoring custom XML detection rules, and isolating lateral movement.
 
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
   <li><b>SIEM & Detection Engineering:</b> Wazuh SIEM, Sysmon XML Rules, Custom Alert Pipelines, FIM (File Integrity Monitoring)</li>
-  <li><b>DFIR & Threat Hunting:</b> Linux Auth/Syslog Forensics, PCAP Analysis (Tshark/Wireshark), Hash Verification, MITRE ATT&CK</li>
+  <li><b>DFIR & Threat Hunting:</b> Linux Auth/Syslog Forensics, PCAP Packet Analysis (Tshark/Wireshark), Hash Verification, MITRE ATT&CK Mapping</li>
   <li><b>Security Automation & Scripting:</b> Python (Automated IOC & Log Parsers), Bash, PowerShell, YAML</li>
-  <li><b>Network & Systems Security:</b> Active Directory (GPO, Event Log Analysis), Dell Versa SD-WAN, Sophos XG, Aruba/Cisco Racking</li>
+  <li><b>Network & Systems Security:</b> Active Directory (GPO, Event Log Analysis), Dell Versa SD-WAN, Sophos XG, Aruba/Cisco Racking & VOS Upgrades</li>
   <li><b>Cloud & DevSecOps:</b> GCP Multi-Tier Architecture (Terraform IaC, Cloud NAT, Zero Public IP DB Tier), GitHub Actions CI/CD</li>
 </ul>
 
@@ -61,17 +65,17 @@ CompTIA Security+ certified specialist with 14+ years of enterprise IT infrastru
 
 <h2>Professional Experience</h2>
 
-<div>
+<div class="job-header">
   <span class="date">Jul 2012 – Present</span>
   <span class="job-title">Senior IT Infrastructure & Security Specialist</span> | <span class="company">Enterprise Infrastructure, Network & Client Services</span>
 </div>
 <ul>
-  <li><b>SOC Operations & Incident Triage:</b> Lead daily security log reviews, incident response triage, malware containment, and patch compliance; monitor Sophos Endpoint and firewall telemetry to isolate security threats.</li>
-  <li><b>Identity & Access Management:</b> Administer Active Directory, Group Policies (GPOs), RBAC, least-privilege models, and MFA enforcement across multi-tenant environments (120+ to 500+ users).</li>
-  <li><b>SD-WAN & Network Engineering:</b> Deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, and validate core IP connectivity.</li>
-  <li><b>Mastercard Zimbabwe Infrastructure Upgrade:</b> Decommissioned legacy Cisco switches, APs, and controllers; racked and integrated new Aruba controllers, switches, and sensor LAN cabling.</li>
-  <li><b>Ericsson Zimbabwe Enterprise Deployment:</b> Re-imaged laptop fleets to corporate security baselines, joined endpoints to domain environments, deployed M365 access, and installed core network switches.</li>
-  <li><b>Systems Migrations & Upgrades (AJP & Abbeydale Groups):</b> Executed server migrations, HP switch deployments, VoIP rollouts, PC re-imaging, PoE IP camera integrations, and secure hardware decommissioning.</li>
+  <li><b>Enterprise Security Operations & Triage:</b> Lead daily security log reviews, incident response triage, malware containment, and patch management across client networks. Apply security-analyst principles to monitor Sophos Endpoint/Firewall telemetry for anomalous activity.</li>
+  <li><b>Active Directory & Access Control:</b> Administer accounts, GPOs, RBAC, least-privilege policies, and multi-factor authentication (MFA) across multi-tenant client environments (120+ to 500+ users).</li>
+  <li><b>SD-WAN & Network Deployments:</b> Physically deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, and validate IP connectivity.</li>
+  <li><b>Mastercard Zimbabwe Network Upgrade (Netvantage):</b> Decommissioned legacy Cisco switches, controllers, and APs; racked and deployed new Aruba controllers, switches, and sensor LAN cabling to optimize network performance.</li>
+  <li><b>Ericsson Zimbabwe IT Deployment (Compusys):</b> Re-imaged laptop fleets to corporate security baselines, joined endpoints to Active Directory domains, deployed M365 email access, and installed network switches/APs.</li>
+  <li><b>Enterprise Migrations & Infrastructure Upgrades (AJP Group / Abbeydale Group / ShermanIT):</b> Executed server migrations, HP switch upgrades, VoIP phone rollouts, PC re-imaging, PoE IP camera integrations, and secure legacy hardware decommissioning.</li>
 </ul>
 
 <h2>Certifications & Education</h2>
