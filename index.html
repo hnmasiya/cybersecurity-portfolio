@@ -8,152 +8,174 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap");
-        body { font-family: "Inter", sans-serif; background-color: #0b0f19; color: #e2e8f0; }
+        body { font-family: "Inter", sans-serif; background-color: #0b0f19; color: #e2e8f0; scroll-behavior: smooth; }
         .code-font { font-family: "Fira Code", monospace; }
         .terminal-box { background: #070a12; border: 1px solid #1e293b; border-radius: 8px; }
-        .tab-btn.active { border-bottom: 2px solid #10b981; color: #10b981; }
     </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
-    <!-- Navigation Header -->
+
+    <!-- Header Navigation -->
     <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <div class="h-3 w-3 rounded-full bg-emerald-500 animate-pulse"></div>
                 <span class="font-bold text-lg text-slate-100 code-font">MASIYA-SOC // SEC_OPS</span>
             </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-400">
+                <a href="#summary" class="hover:text-emerald-400 transition">Profile</a>
+                <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
+                <a href="#experience" class="hover:text-emerald-400 transition">Experience</a>
+                <a href="#skills" class="hover:text-emerald-400 transition">Toolkit</a>
+                <a href="#terminal" class="hover:text-emerald-400 transition">Terminal</a>
+            </nav>
             <a href="Hazvinei_Masiya_Resume.pdf" download class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider transition flex items-center gap-2">
                 <i class="fa-solid fa-download"></i> Download CV
             </a>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-10">
 
-        <!-- Header Profile Summary -->
-        <section class="terminal-box p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="md:col-span-2 space-y-3">
-                <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <!-- Section 1: Hero & Profile Summary -->
+        <section id="summary" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 terminal-box p-6 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
                     <span class="text-xs text-emerald-400 code-font">[SYSTEM_STATUS: OPERATIONAL]</span>
                     <span class="text-xs text-slate-500">Harare, Zimbabwe</span>
                 </div>
                 <h1 class="text-3xl font-extrabold text-white">Hazvinei Nomatter Masiya</h1>
                 <p class="text-emerald-400 font-semibold text-sm">Cybersecurity Analyst | SOC Analyst | IT Security Specialist</p>
-                <p class="text-slate-300 text-xs leading-relaxed">
-                    CompTIA Security+ certified IT professional with over 9 years of experience supporting enterprise Windows environments, core infrastructure, endpoints, and business-critical IT operations. Combines extensive systems and infrastructure experience with hands-on cybersecurity capabilities across Wazuh SIEM, Python automation, Wireshark DFIR, and network security.
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    CompTIA Security+ certified IT professional with over 9 years of experience supporting enterprise Windows environments, core infrastructure, endpoints, and business-critical IT operations. Combines extensive systems and infrastructure experience with hands-on cybersecurity capabilities demonstrated through practical SOC, SIEM, DFIR, network security, web security, and security automation laboratories.
                 </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Wazuh SIEM</span>
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Wireshark DFIR</span>
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Python Automation</span>
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Sophos Telemetry</span>
+                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">CompTIA Security+</span>
+                </div>
             </div>
-            <div class="flex flex-col justify-between border-t md:border-t-0 md:border-l border-slate-800 pt-4 md:pt-0 md:pl-6 text-xs space-y-2">
-                <div><strong class="text-slate-400">Email:</strong> <span class="text-slate-200">norman.masiya@gmail.com</span></div>
-                <div><strong class="text-slate-400">Phone:</strong> <span class="text-slate-200">+263 77 521 6823</span></div>
-                <div><strong class="text-slate-400">LinkedIn:</strong> <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="text-emerald-400 hover:underline">hazvinei-masiya</a></div>
-                <div><strong class="text-slate-400">GitHub:</strong> <a href="https://github.com/hnmasiya" target="_blank" class="text-emerald-400 hover:underline">hnmasiya</a></div>
-                <div><strong class="text-slate-400">Domain:</strong> <a href="https://masiya-hub.org" target="_blank" class="text-emerald-400 hover:underline">masiya-hub.org</a></div>
+
+            <div class="terminal-box p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Contact & Verified Links</h3>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-emerald-400"></i> <span>norman.masiya@gmail.com</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-emerald-400"></i> <span>+263 77 521 6823 / +263 71 866 2162</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-brands fa-linkedin text-emerald-400"></i> <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="text-emerald-400 hover:underline">linkedin.com/in/hazvinei-masiya</a></li>
+                        <li class="flex items-center gap-2"><i class="fa-brands fa-github text-emerald-400"></i> <a href="https://github.com/hnmasiya" target="_blank" class="text-emerald-400 hover:underline">github.com/hnmasiya</a></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-emerald-400"></i> <a href="https://masiya-hub.org" target="_blank" class="text-emerald-400 hover:underline">masiya-hub.org</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Live Threat Feed Tracker -->
-        <section class="terminal-box p-4">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-2 mb-3">
+        <!-- Section 2: Live Threat Telemetry Stream -->
+        <section id="tracker" class="terminal-box p-6">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
                 <div class="flex items-center gap-2">
                     <div class="h-2 w-2 rounded-full bg-red-500 animate-ping"></div>
-                    <h2 class="text-xs font-bold text-slate-200 uppercase tracking-wider">Live Security Incident Log Feed</h2>
+                    <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider">Live Security Incident Log Feed</h2>
                 </div>
-                <span class="text-xs font-mono text-slate-500">SOC Telemetry Stream</span>
+                <span class="text-xs font-mono text-slate-500">Real-time Telemetry Engine</span>
             </div>
-            <div id="log-feed" class="space-y-1.5 font-mono text-xs max-h-36 overflow-y-auto pr-2"></div>
+            <div id="log-feed" class="space-y-2 font-mono text-xs max-h-48 overflow-y-auto pr-2"></div>
         </section>
 
-        <!-- Tabbed Navigation Bar -->
-        <div class="border-b border-slate-800 flex space-x-6 text-sm font-semibold text-slate-400 font-mono">
-            <button onclick="switchTab("projects")" id="tab-projects" class="tab-btn active pb-2">Hands-On Projects</button>
-            <button onclick="switchTab("experience")" id="tab-experience" class="tab-btn pb-2">Professional Experience</button>
-            <button onclick="switchTab("skills")" id="tab-skills" class="tab-btn pb-2">Technical Toolkit & Certs</button>
-            <button onclick="switchTab("terminal")" id="tab-terminal" class="tab-btn pb-2">Interactive Terminal</button>
-            <button onclick="switchTab("resume")" id="tab-resume" class="tab-btn pb-2">View Full Resume (PDF)</button>
-        </div>
-
-        <!-- TAB CONTENT 1: Projects -->
-        <div id="content-projects" class="tab-content space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="terminal-box p-5 space-y-2">
+        <!-- Section 3: Selected Cybersecurity Projects -->
+        <section id="projects" class="space-y-4">
+            <h2 class="text-lg font-bold text-slate-100 uppercase tracking-wider code-font border-b border-slate-800 pb-2">Selected Cybersecurity Projects & Labs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="terminal-box p-6 space-y-3">
                     <span class="text-xs font-mono text-emerald-400">[SIEM & Detection Engineering]</span>
-                    <h3 class="text-base font-bold text-white">Wazuh SIEM & Detection Engineering Lab</h3>
-                    <p class="text-xs text-slate-300">Built and documented a Wazuh SIEM laboratory demonstrating SOC monitoring, alert investigation, log analysis, File Integrity Monitoring (FIM), and custom detection rules.</p>
+                    <h3 class="text-lg font-bold text-white">Wazuh SIEM & Detection Engineering Lab</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">Built and documented a Wazuh SIEM laboratory demonstrating SOC monitoring, alert investigation, log analysis, File Integrity Monitoring (FIM), and custom detection rules. Developed offline validation tooling and analyst workflows.</p>
                 </div>
-                <div class="terminal-box p-5 space-y-2">
-                    <span class="text-xs font-mono text-emerald-400">[DFIR & Investigation]</span>
-                    <h3 class="text-base font-bold text-white">Linux DFIR Investigation Lab</h3>
-                    <p class="text-xs text-slate-300">Conducted a controlled Linux DFIR investigation using synthetic forensic artifacts, preserving evidence integrity via SHA-256 checksums and mapping to MITRE ATT&CK.</p>
+                <div class="terminal-box p-6 space-y-3">
+                    <span class="text-xs font-mono text-emerald-400">[Digital Forensics]</span>
+                    <h3 class="text-lg font-bold text-white">Linux DFIR Investigation Lab</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">Conducted a controlled Linux DFIR investigation using synthetic forensic artifacts, preserving evidence integrity via SHA-256 checksums, analyzing logs, and mapping findings to MITRE ATT&CK.</p>
                 </div>
-                <div class="terminal-box p-5 space-y-2">
+                <div class="terminal-box p-6 space-y-3">
                     <span class="text-xs font-mono text-emerald-400">[Network & Web Security]</span>
-                    <h3 class="text-base font-bold text-white">Network & Web Application Security Labs</h3>
-                    <p class="text-xs text-slate-300">Analyzed PCAP network traffic in Wireshark and performed web security assessments testing SQLi, XSS, CSRF, and JWT flows with Burp Suite and OWASP environments.</p>
+                    <h3 class="text-lg font-bold text-white">Network & Web Application Security Labs</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">Analyzed captured PCAP traffic in Wireshark, built Python tools for automated detection, and conducted web app assessments investigating SQLi, XSS, CSRF, and JWT flows using Burp Suite.</p>
                 </div>
-                <div class="terminal-box p-5 space-y-2">
-                    <span class="text-xs font-mono text-emerald-400">[Automation]</span>
-                    <h3 class="text-base font-bold text-white">Security Operations Automation</h3>
-                    <p class="text-xs text-slate-300">Created security automation scripts in Python, Bash, and PowerShell for IOC extraction, log anomaly parsing, and Wazuh alert enrichment.</p>
+                <div class="terminal-box p-6 space-y-3">
+                    <span class="text-xs font-mono text-emerald-400">[SOC Automation]</span>
+                    <h3 class="text-lg font-bold text-white">Security Operations Automation</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">Created security automation scripts in Python, Bash, and PowerShell for automated IOC extraction, log anomaly parsing, Wazuh alert enrichment, and threat-hunting validation.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- TAB CONTENT 2: Experience -->
-        <div id="content-experience" class="tab-content hidden space-y-4">
-            <div class="terminal-box p-5 space-y-2">
-                <div class="flex justify-between text-xs font-mono">
-                    <span class="text-emerald-400 font-bold">Zuetech Technology Solutions | Harare, Zimbabwe</span>
-                    <span class="text-slate-400">Jan 2021 - Present</span>
+        <!-- Section 4: Professional Experience -->
+        <section id="experience" class="space-y-4">
+            <h2 class="text-lg font-bold text-slate-100 uppercase tracking-wider code-font border-b border-slate-800 pb-2">Professional Experience</h2>
+            <div class="space-y-4">
+                <div class="terminal-box p-6 space-y-2">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                        <h3 class="text-base font-bold text-white">IT Support Specialist (Contract & Consulting)</h3>
+                        <span class="text-xs font-mono text-emerald-400">Zuetech Technology Solutions | Jan 2021 - Present</span>
+                    </div>
+                    <ul class="list-disc list-inside text-xs text-slate-300 space-y-1.5 pt-2">
+                        <li>Provide enterprise IT support, network operations, and security-conscious administration across client environments.</li>
+                        <li>Executed physical rack deployment, CLI configuration, circuit provisioning, and connectivity verification for SD-WAN appliances.</li>
+                        <li>Administer Active Directory, user provisioning, account management, and access controls applying least-privilege RBAC.</li>
+                        <li>Support endpoint protection administration, patch deployment, vulnerability mitigation, and perimeter hardening.</li>
+                    </ul>
                 </div>
-                <h3 class="text-sm font-bold text-white">IT Support Specialist (Contract & Consulting)</h3>
-                <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
-                    <li>Provide enterprise IT support, network operations, and administration maintaining business-critical infrastructure.</li>
-                    <li>Executed physical rack deployment, CLI configuration, circuit provisioning, and connectivity verification for SD-WAN appliances.</li>
-                    <li>Administer Active Directory, user provisioning, and RBAC access control policies.</li>
+
+                <div class="terminal-box p-6 space-y-2">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                        <h3 class="text-base font-bold text-white">Desktop Support Technician</h3>
+                        <span class="text-xs font-mono text-emerald-400">Raising Dawn Investments | Jan 2019 - Dec 2020</span>
+                    </div>
+                    <ul class="list-disc list-inside text-xs text-slate-300 space-y-1.5 pt-2">
+                        <li>Administered user accounts, permissions, security groups, and access control policies for 120+ end users.</li>
+                        <li>Monitored network perimeter security through Sophos Endpoint Protection and Sophos Firewall threat telemetry.</li>
+                    </ul>
+                </div>
+
+                <div class="terminal-box p-6 space-y-2">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                        <h3 class="text-base font-bold text-white">Information Technology Support Technician</h3>
+                        <span class="text-xs font-mono text-emerald-400">Compusys Technology | Jan 2016 - Dec 2018</span>
+                    </div>
+                    <p class="text-xs text-slate-300 pt-1">Delivered technical support across desktop, network, and infrastructure platforms. Managed access controls, applied security patches, and resolved authentication failures.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Technical Toolkit & Certifications -->
+        <section id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="terminal-box p-6 space-y-3">
+                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider border-b border-slate-800 pb-2">Certifications & Education</h3>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-certificate text-emerald-400"></i> <strong>CompTIA Security+ (SY0-701) Certified</strong></li>
+                    <li class="flex items-center gap-2"><i class="fa-brands fa-google text-emerald-400"></i> <span>Google Cybersecurity Professional Certificate</span></li>
+                    <li class="flex items-center gap-2"><i class="fa-brands fa-google text-emerald-400"></i> <span>Google IT Support Professional Certificate</span></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-emerald-400"></i> <span>BSc (Honours) Computer Science — Unicaf University (In Progress)</span></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-emerald-400"></i> <span>National Diploma in ICT — Harare Polytechnic</span></li>
                 </ul>
             </div>
 
-            <div class="terminal-box p-5 space-y-2">
-                <div class="flex justify-between text-xs font-mono">
-                    <span class="text-emerald-400 font-bold">Raising Dawn Investments | Harare, Zimbabwe</span>
-                    <span class="text-slate-400">Jan 2019 - Dec 2020</span>
-                </div>
-                <h3 class="text-sm font-bold text-white">Desktop Support Technician</h3>
-                <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
-                    <li>Administered user accounts, permissions, security groups, and access controls for 120+ users.</li>
-                    <li>Monitored network perimeter security through Sophos Endpoint Protection and Sophos Firewall telemetry.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- TAB CONTENT 3: Skills & Certs -->
-        <div id="content-skills" class="tab-content hidden space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="terminal-box p-5 space-y-2">
-                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider">Certifications & Training</h3>
-                    <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
-                        <li><strong>CompTIA Security+ (SY0-701) Certified</strong></li>
-                        <li>Google Cybersecurity Professional Certificate</li>
-                        <li>Google IT Support Professional Certificate</li>
-                        <li>Cisco Introduction to Cybersecurity</li>
-                        <li>Cisco Junior Cybersecurity Analyst Career Path</li>
-                    </ul>
-                </div>
-                <div class="terminal-box p-5 space-y-2">
-                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider">Technical Toolkit</h3>
-                    <ul class="text-xs text-slate-300 space-y-1.5">
-                        <li><strong>SIEM & Security:</strong> Wazuh, Wireshark, Nmap, Burp Suite, Sophos Endpoint & Firewall, OWASP Juice Shop</li>
-                        <li><strong>Systems & Cloud:</strong> Windows Server, Active Directory, Linux (Ubuntu/Debian), Dell Versa SD-WAN, Microsoft 365, Azure</li>
-                        <li><strong>Scripting:</strong> Python, Bash, PowerShell</li>
-                    </ul>
+            <div class="terminal-box p-6 space-y-3">
+                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider border-b border-slate-800 pb-2">Technical Toolkit</h3>
+                <div class="space-y-2 text-xs text-slate-300">
+                    <p><strong>SIEM & Security:</strong> Wazuh, Wireshark, Nmap, Burp Suite, Sophos Endpoint & Firewall, OWASP DVWA</p>
+                    <p><strong>Systems & Infrastructure:</strong> Active Directory, Windows Server, Linux (Ubuntu/Debian), Dell Versa SD-WAN (VOS), M365</p>
+                    <p><strong>Scripting & Automation:</strong> Python, Bash, PowerShell</p>
+                    <p><strong>Frameworks:</strong> MITRE ATT&CK, OWASP Top 10, File Integrity Monitoring, RBAC, System Hardening</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- TAB CONTENT 4: Terminal -->
-        <div id="content-terminal" class="tab-content hidden terminal-box p-6 space-y-3">
+        <!-- Section 6: Interactive Terminal -->
+        <section id="terminal" class="terminal-box p-6 space-y-3">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-terminal text-emerald-400 mr-2"></i>SOC Sandbox CLI v2.4</span>
                 <span class="text-xs text-slate-500">Type "help"</span>
@@ -165,20 +187,7 @@
                 <span class="text-emerald-400 font-mono text-xs">visitor@masiya-hub:~$</span>
                 <input type="text" id="terminal-input" class="bg-transparent text-xs font-mono text-white flex-1 focus:outline-none" placeholder="Try running "skills", "projects", or "clear"...">
             </div>
-        </div>
-
-        <!-- TAB CONTENT 5: Resume PDF -->
-        <div id="content-resume" class="tab-content hidden terminal-box p-6 space-y-4">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider">Official Curriculum Vitae (PDF)</h2>
-                <a href="Hazvinei_Masiya_Resume.pdf" target="_blank" class="text-xs text-emerald-400 hover:underline flex items-center gap-1">
-                    Open Fullscreen <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-            <div class="w-full h-[600px] rounded border border-slate-800 bg-slate-900 overflow-hidden">
-                <iframe src="Hazvinei_Masiya_Resume.pdf" class="w-full h-full"></iframe>
-            </div>
-        </div>
+        </section>
 
     </main>
 
@@ -187,16 +196,6 @@
     </footer>
 
     <script>
-        // Tab Switcher Logic
-        function switchTab(tabId) {
-            document.querySelectorAll(".tab-content").forEach(el => el.classList.add("hidden"));
-            document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
-            
-            document.getElementById("content-" + tabId).classList.remove("hidden");
-            document.getElementById("tab-" + tabId).classList.add("active");
-        }
-
-        // Live Log Stream Logic
         const logs = [
             { type: "CRITICAL", msg: "Event ID 4728: Account "j.doe" added to Domain Admins by "UNKNOWN_SID"" },
             { type: "WARNING",  msg: "Wazuh Alert Rule 100201: Outbound connection to suspicious IP 185.220.101.5" },
@@ -221,42 +220,39 @@
         setInterval(pushLog, 3000);
         pushLog();
 
-        // Terminal Logic
         const input = document.getElementById("terminal-input");
         const output = document.getElementById("terminal-output");
 
-        if(input) {
-            input.addEventListener("keydown", function(e) {
-                if (e.key === "Enter") {
-                    const cmd = this.value.trim().toLowerCase();
-                    this.value = "";
-                    
-                    const cmdLine = document.createElement("div");
-                    cmdLine.innerHTML = `<span class="text-emerald-400">visitor@masiya-hub:~$</span> ${cmd}`;
-                    output.appendChild(cmdLine);
+        input.addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
+                const cmd = this.value.trim().toLowerCase();
+                this.value = "";
+                
+                const cmdLine = document.createElement("div");
+                cmdLine.innerHTML = `<span class="text-emerald-400">visitor@masiya-hub:~$</span> ${cmd}`;
+                output.appendChild(cmdLine);
 
-                    let res = "";
-                    if (cmd === "help") {
-                        res = "Available commands: <span class="text-emerald-400">skills</span>, <span class="text-emerald-400">projects</span>, <span class="text-emerald-400">clear</span>";
-                    } else if (cmd === "skills") {
-                        res = "Wazuh SIEM | Wireshark DFIR | Sophos Telemetry | Python Automation | Linux & Windows Security";
-                    } else if (cmd === "projects") {
-                        res = "1. Wazuh SIEM & Detection Engineering Lab<br>2. Linux DFIR Investigation Lab<br>3. Security Operations Automation";
-                    } else if (cmd === "clear") {
-                        output.innerHTML = "";
-                        return;
-                    } else {
-                        res = `Command not recognized: "${cmd}". Type "help" for options.`;
-                    }
-
-                    const resLine = document.createElement("div");
-                    resLine.className = "text-slate-400 pl-4 border-l border-emerald-500/50 mb-2";
-                    resLine.innerHTML = res;
-                    output.appendChild(resLine);
-                    output.scrollTop = output.scrollHeight;
+                let res = "";
+                if (cmd === "help") {
+                    res = "Available commands: <span class="text-emerald-400">skills</span>, <span class="text-emerald-400">projects</span>, <span class="text-emerald-400">clear</span>";
+                } else if (cmd === "skills") {
+                    res = "Wazuh SIEM | Wireshark DFIR | Sophos Telemetry | Python Automation | Linux & Windows Security";
+                } else if (cmd === "projects") {
+                    res = "1. Wazuh SIEM & Detection Engineering Lab<br>2. Linux DFIR Investigation Lab<br>3. Security Operations Automation";
+                } else if (cmd === "clear") {
+                    output.innerHTML = "";
+                    return;
+                } else {
+                    res = `Command not recognized: "${cmd}". Type "help" for options.`;
                 }
-            });
-        }
+
+                const resLine = document.createElement("div");
+                resLine.className = "text-slate-400 pl-4 border-l border-emerald-500/50 mb-2";
+                resLine.innerHTML = res;
+                output.appendChild(resLine);
+                output.scrollTop = output.scrollHeight;
+            }
+        });
     </script>
 </body>
 </html>
