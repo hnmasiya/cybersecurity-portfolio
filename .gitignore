@@ -28,3 +28,7 @@ UPGRADED-SOC-REPORT-DRAFTS/
 __pycache__/
 *.pyc
 *.backup-*
+
+# Audit logs
+portfolio-master-audit-*.txt
+remediation-plan-*.txt
