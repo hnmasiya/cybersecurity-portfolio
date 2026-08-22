@@ -1,0 +1,77 @@
+[33mcommit 423623877b698919cf3a00a455e678673f712218[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author:     hnmasiya <norman.masiya@gmail.com>
+AuthorDate: Wed Aug 19 19:30:24 2026 +0200
+Commit:     hnmasiya <norman.masiya@gmail.com>
+CommitDate: Wed Aug 19 19:30:24 2026 +0200
+
+    Add historical snapshot notes to internal SOC audit logs
+
+[1mdiff --git a/Documentation-Archive/SOC-Audits/DEEP-SOC-REPORT-AUDIT.md b/Documentation-Archive/SOC-Audits/DEEP-SOC-REPORT-AUDIT.md[m
+[1mindex 5dce976..e2cf76f 100644[m
+[1m--- a/Documentation-Archive/SOC-Audits/DEEP-SOC-REPORT-AUDIT.md[m
+[1m+++ b/Documentation-Archive/SOC-Audits/DEEP-SOC-REPORT-AUDIT.md[m
+[36m@@ -1,5 +1,8 @@[m
+ # Deep SOC Report Audit[m
+ [m
+[32m+[m[32m> **Snapshot note:** Reflects repo state as of 18 Aug 2026 (07:31–07:37 CAT), before the 19 Aug DVWA cleanup and Wireshark/PCAP/Nmap report updates. Historical only — see live reports for current status.[m
+[32m+[m
+[32m+[m
+ **Repository:** /home/normann/cybersecurity-portfolio  [m
+ **Date:** Tue 18 Aug 2026 07:31:58 CAT  [m
+ [m
+[36m@@ -571,4 +574,3 @@[m [mThe following files may overlap with the five canonical reports:[m
+ - Improve diagrams[m
+ - Standardise headings[m
+ - Improve executive summaries[m
+[31m-[m
+[1mdiff --git a/Documentation-Archive/SOC-Audits/FINAL-REMEDIATION-CHECKLIST.md b/Documentation-Archive/SOC-Audits/FINAL-REMEDIATION-CHECKLIST.md[m
+[1mindex 0a0b1f0..9d786c0 100644[m
+[1m--- a/Documentation-Archive/SOC-Audits/FINAL-REMEDIATION-CHECKLIST.md[m
+[1m+++ b/Documentation-Archive/SOC-Audits/FINAL-REMEDIATION-CHECKLIST.md[m
+[36m@@ -1,5 +1,8 @@[m
+ # Final SOC Report Remediation Checklist[m
+ [m
+[32m+[m[32m> **Snapshot note:** Reflects repo state as of 18 Aug 2026 (07:31–07:37 CAT), before the 19 Aug DVWA cleanup and Wireshark/PCAP/Nmap report updates. Historical only — see live reports for current status.[m
+[32m+[m
+[32m+[m
+ Generated: 2026-08-18T07:37:21.468555[m
+ [m
+ > This checklist evaluates the upgraded drafts against the required professional SOC report structure. Original reports have not been modified.[m
+[1mdiff --git a/Documentation-Archive/SOC-Audits/FINAL-SOC-EVIDENCE-VALIDATION.md b/Documentation-Archive/SOC-Audits/FINAL-SOC-EVIDENCE-VALIDATION.md[m
+[1mindex 40ab7de..fdcbaa7 100644[m
+[1m--- a/Documentation-Archive/SOC-Audits/FINAL-SOC-EVIDENCE-VALIDATION.md[m
+[1m+++ b/Documentation-Archive/SOC-Audits/FINAL-SOC-EVIDENCE-VALIDATION.md[m
+[36m@@ -1,5 +1,8 @@[m
+ # FINAL SOC REPORT — EVIDENCE VALIDATION[m
+ [m
+[32m+[m[32m> **Snapshot note:** Reflects repo state as of 18 Aug 2026 (07:31–07:37 CAT), before the 19 Aug DVWA cleanup and Wireshark/PCAP/Nmap report updates. Historical only — see live reports for current status.[m
+[32m+[m
+[32m+[m
+ This audit checks whether the upgraded drafts contain evidence-backed material.[m
+ It does NOT modify the original reports or drafts.[m
+ [m
+[36m@@ -418,4 +421,4 @@[m [mSection completeness: **75.8%**[m
+ ✅ Original reports were not modified.[m
+ ✅ Backups exist.[m
+ ✅ No Git commit or push performed.[m
+[31m-⚠️ Do not publish until verification-required content has been checked against actual lab evidence.[m
+\ No newline at end of file[m
+[32m+[m[32m⚠️ Do not publish until verification-required content has been checked against actual lab evidence.[m
+[1mdiff --git a/Documentation-Archive/SOC-Audits/PORTFOLIO-WIDE-GAP-AUDIT.md b/Documentation-Archive/SOC-Audits/PORTFOLIO-WIDE-GAP-AUDIT.md[m
+[1mindex ff5a021..95b7066 100644[m
+[1m--- a/Documentation-Archive/SOC-Audits/PORTFOLIO-WIDE-GAP-AUDIT.md[m
+[1m+++ b/Documentation-Archive/SOC-Audits/PORTFOLIO-WIDE-GAP-AUDIT.md[m
+[36m@@ -1,5 +1,8 @@[m
+ # PORTFOLIO-WIDE GAP & JOB-READINESS AUDIT[m
+ [m
+[32m+[m[32m> **Snapshot note:** Reflects repo state as of 18 Aug 2026 (07:31–07:37 CAT), before the 19 Aug DVWA cleanup and Wireshark/PCAP/Nmap report updates. Historical only — see live reports for current status.[m
+[32m+[m
+[32m+[m
+ Generated automatically from the current repository.[m
+ [m
+ ## Executive Summary[m
+[36m@@ -1596,4 +1599,3 @@[m [mImprove README navigation, project summaries, architecture diagrams, skills mapp[m
+ ## Recommended Next Action[m
+ [m
+ **Do not modify the repository automatically from this audit.** Review the identified gaps first, then build the highest-value missing project based on evidence and reproducibility.[m
+[31m-[m
