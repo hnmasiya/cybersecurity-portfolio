@@ -1,7 +1,7 @@
 # HAZVINEI NOMATTER MASIYA
 **SOC Analyst & Security Engineer**  
-📍 Harare, Zimbabwe | 📧 norman.masiya@gmail.com | 📞 +263 77 521 6823 / +263 71 866 2162  
-**GitHub:** https://github.com/hnmasiya | **Portfolio:** https://masiya-hub.org  
+📍 Harare, Zimbabwe | 📧 norman.masiya@gmail.com / masiyahn@live.com | 📞 +263 77 521 6823 / +263 71 866 2162  
+**GitHub:** https://github.com/hnmasiya | **Portfolio:** https://masiya-hub.org | **LinkedIn:** https://www.linkedin.com/in/hazvinei-masiya/
 
 ---
 
