@@ -155,6 +155,17 @@ The active Wireshark project documents the packet-analysis workflow and clearly 
 
 ---
 
+## 🧩 Additional Security Engineering Repositories
+
+Beyond this portfolio, the following standalone repositories demonstrate focused, self-contained security engineering work:
+
+* **[Active Directory Security Log Parser](https://github.com/hnmasiya/ad-security-log-parser)** — Python parser for Windows Security Event XML logs, isolating Event ID 4728 (member added to a security-enabled global group) for AD group-membership threat detection.
+* **[Wazuh SIEM Detection Engineering Lab](https://github.com/hnmasiya/wazuh-siem-detection-lab)** — Custom Wazuh SIEM detection rules mapping Active Directory threat events to the MITRE ATT&CK framework (T1078 – Valid Accounts).
+* **[GCP Secure Multi-Tier VPC (Terraform)](https://github.com/hnmasiya/gcp-terraform-secure-vpc)** — Terraform IaC configuration deploying an enterprise Google Cloud Platform VPC with isolated application and database subnets, zero public IP assignments, and outbound Cloud NAT routing.
+* **[GitHub Profile README](https://github.com/hnmasiya/hnmasiya)** — Profile summary with links to the live portfolio, LinkedIn, and this repository.
+
+---
+
 ## 📈 Portfolio Architecture & Tracking
 
 * 📋 **[Lab Completion Tracker](./LAB-COMPLETION-TRACKER.md)** — Portfolio progress and project status.
