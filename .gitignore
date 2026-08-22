@@ -32,3 +32,4 @@ __pycache__/
 # Audit logs
 portfolio-master-audit-*.txt
 remediation-plan-*.txt
+.venv/
