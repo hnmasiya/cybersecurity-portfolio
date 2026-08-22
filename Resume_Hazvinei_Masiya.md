@@ -42,12 +42,12 @@ CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT 
 ## PROFESSIONAL EXPERIENCE
 
 **Senior IT Infrastructure & Security Specialist** | *Enterprise Infrastructure, Network & Client Services* (Jul 2012 – Present)
-* **Enterprise Security Operations & Triage:** Lead daily security log reviews, incident response triage, malware containment, and patch management across client networks. Apply security-analyst principles to monitor Sophos Endpoint/Firewall telemetry for anomalous activity.
-* **Active Directory & Access Control:** Administer accounts, GPOs, RBAC, least-privilege policies, and multi-factor authentication (MFA) across multi-tenant client environments (120+ to 500+ users).
-* **SD-WAN & Network Deployments:** Physically deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, and validate IP connectivity.
-* **Mastercard Zimbabwe Network Upgrade (Netvantage):** Decommissioned legacy Cisco switches, controllers, and APs; racked and deployed new Aruba controllers, switches, and sensor LAN cabling to optimize network performance.
-* **Ericsson Zimbabwe IT Deployment (Compusys):** Re-imaged laptop fleets to corporate security baselines, joined endpoints to Active Directory domains, deployed M365 email access, and installed network switches/APs.
-* **Enterprise Migrations & Infrastructure Upgrades (AJP Group / Abbeydale Group / ShermanIT):** Executed server migrations, HP switch upgrades, VoIP phone rollouts, PC re-imaging, PoE IP camera integrations, and secure legacy hardware decommissioning.
+* **SOC Operations & Incident Response:** Lead daily security log reviews, incident triage, malware containment, and patch compliance; monitor Sophos Endpoint and firewall telemetry to isolate threats.
+* **Identity & Access Management:** Administer Active Directory, Group Policies (GPOs), RBAC, least-privilege models, and MFA enforcement across multi-tenant environments (120+ to 500+ users).
+* **SD-WAN & Network Engineering:** Deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, and validate core IP connectivity.
+* **Mastercard Zimbabwe Infrastructure Upgrade:** Decommissioned legacy Cisco switches, APs, and controllers; racked and integrated new Aruba controllers, switches, and sensor LAN cabling.
+* **Ericsson Zimbabwe Enterprise Deployment:** Re-imaged laptop fleets to corporate security baselines, joined endpoints to domain environments, deployed M365 access, and installed core network switches.
+* **Systems Migrations & Upgrades (AJP & Abbeydale Groups):** Executed server migrations, HP switch deployments, VoIP rollouts, PC re-imaging, PoE IP camera integrations, and secure hardware decommissioning.
 
 ---
 
