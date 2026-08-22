@@ -1,0 +1,10 @@
+<group name="custom,authentication,">
+
+  <rule id="100001" level="10">
+    <if_sid>5710</if_sid>
+    <description>
+      Multiple failed authentication attempts detected
+    </description>
+  </rule>
+
+</group>

@@ -1,0 +1,75 @@
+[
+  {
+    "event_id": "HUNT-001",
+    "timestamp": "2026-08-19T09:00:01Z",
+    "host": "WIN-LAB-01",
+    "source": "Windows-Synthetic",
+    "event_type": "authentication",
+    "event_code": 4625,
+    "user": "administrator",
+    "src_ip": "192.0.2.50",
+    "message": "Failed password for administrator",
+    "expected_hunt": "Suspicious login"
+  },
+  {
+    "event_id": "HUNT-002",
+    "timestamp": "2026-08-19T09:00:05Z",
+    "host": "WIN-LAB-01",
+    "source": "Windows-Synthetic",
+    "event_type": "authentication",
+    "event_code": 4625,
+    "user": "administrator",
+    "src_ip": "192.0.2.50",
+    "message": "Failed password for administrator",
+    "expected_hunt": "Suspicious login"
+  },
+  {
+    "event_id": "HUNT-003",
+    "timestamp": "2026-08-19T09:00:09Z",
+    "host": "WIN-LAB-01",
+    "source": "Windows-Synthetic",
+    "event_type": "authentication",
+    "event_code": 4625,
+    "user": "administrator",
+    "src_ip": "192.0.2.50",
+    "message": "Failed password for administrator",
+    "expected_hunt": "Suspicious login"
+  },
+  {
+    "event_id": "HUNT-004",
+    "timestamp": "2026-08-19T09:01:30Z",
+    "host": "WIN-LAB-01",
+    "source": "Windows-Synthetic",
+    "event_type": "authentication",
+    "event_code": 4624,
+    "user": "analyst",
+    "src_ip": "192.0.2.20",
+    "message": "Successful logon",
+    "expected_hunt": "Benign"
+  },
+  {
+    "event_id": "HUNT-005",
+    "timestamp": "2026-08-19T09:03:00Z",
+    "host": "WIN-LAB-01",
+    "source": "Sysmon-Synthetic",
+    "event_type": "process",
+    "event_code": 1,
+    "user": "analyst",
+    "image": "powershell.exe",
+    "command_line": "powershell.exe -EncodedCommand SQBFAFgA",
+    "expected_hunt": "PowerShell"
+  },
+  {
+    "event_id": "HUNT-006",
+    "timestamp": "2026-08-19T09:04:00Z",
+    "host": "WIN-LAB-01",
+    "source": "Sysmon-Synthetic",
+    "event_type": "network",
+    "event_code": 3,
+    "user": "analyst",
+    "image": "powershell.exe",
+    "destination_ip": "192.0.2.60",
+    "destination_port": 443,
+    "expected_hunt": "PowerShell network activity"
+  }
+]

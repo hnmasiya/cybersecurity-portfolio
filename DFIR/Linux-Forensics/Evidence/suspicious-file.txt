@@ -1,0 +1,6 @@
+SYNTHETIC FORENSIC ARTIFACT
+
+Filename: suspicious-file.txt
+Purpose: controlled DFIR training evidence
+Indicator: simulated payload reference
+Domain: malicious.example.test

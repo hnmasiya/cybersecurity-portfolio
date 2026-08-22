@@ -1,0 +1,4 @@
+/
+/download/payload.bin?cmd=%2Fbin%2Fsh%20-c%20id
+/etc/passwd
+/search?id=1%27%20OR%20%271%27%3D%271

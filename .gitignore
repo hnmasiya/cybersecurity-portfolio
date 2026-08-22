@@ -1,0 +1,34 @@
+# Secrets
+.env
+*.key
+*.pem
+*.pfx
+*.secret
+
+# Credentials
+passwords.txt
+credentials.txt
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Virtual machines
+*.ova
+*.iso
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+# Local SOC report remediation working files
+REPORT-BACKUPS/
+UPGRADED-SOC-REPORT-DRAFTS/
+__pycache__/
+*.pyc
+*.backup-*
+
+# Audit logs
+portfolio-master-audit-*.txt
+remediation-plan-*.txt
