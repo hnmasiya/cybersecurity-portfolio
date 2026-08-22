@@ -1,0 +1,6 @@
+#!/home/normann/github-setup/cybersecurity-portfolio/.venv/bin/python3
+import sys
+from volatility3.cli.volshell import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())
