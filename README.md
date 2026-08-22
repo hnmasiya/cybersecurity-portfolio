@@ -214,5 +214,5 @@ A recruiter-focused mapping of SOC capabilities to the specific labs, scripts an
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* feat: implement 4 DevSecOps automations (secret scan, activity feed, log sanitizer, link checker) (11 seconds ago)
+* ci: add automated weekly and trigger-based repository audit workflow (8 seconds ago)
 <!-- END_SECTION:activity -->
