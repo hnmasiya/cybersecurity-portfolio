@@ -1,272 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hazvinei Nomatter Masiya | SOC & Detection Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap");
-        body { font-family: "Inter", sans-serif; background-color: #0b0f19; color: #e2e8f0; scroll-behavior: smooth; }
-        .code-font { font-family: "Fira Code", monospace; }
-        .terminal-box { background: #070a12; border: 1px solid #1e293b; border-radius: 8px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hazvinei Nomatter Masiya — SOC & Detection Engineering</title>
+<meta name="description" content="Security engineering portfolio of Hazvinei Nomatter Masiya — SIEM detection, network forensics, and security automation, Harare, Zimbabwe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF0EA;
+    --card:#FFFFFF;
+    --ink:#1A1F1D;
+    --ink-soft:#565F5A;
+    --line:#D6DAD1;
+    --moss:#2F4A37;
+    --moss-bg:#E4EBE3;
+    --brass:#7C551F;
+    --brass-bg:#EFE7D6;
+    --brick:#7A2E22;
+    --brick-bg:#F1E1DB;
+    --serif-mono: "IBM Plex Mono", monospace;
+    --sans: "IBM Plex Sans", sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+  }
+  a{color:var(--brass);}
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--moss);
+    outline-offset:2px;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px;}
+
+  header.site{
+    border-bottom:1px solid var(--line);
+    background:var(--paper);
+    position:sticky; top:0; z-index:10;
+  }
+  header.site .bar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .mark{
+    font-family:var(--serif-mono); font-weight:600; font-size:14px;
+    letter-spacing:0.04em; color:var(--ink); text-decoration:none;
+  }
+  nav.primary{display:flex; gap:24px;}
+  nav.primary a{
+    font-family:var(--serif-mono); font-size:12px; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--ink-soft); text-decoration:none;
+    padding:4px 0; border-bottom:1px solid transparent;
+  }
+  nav.primary a:hover{color:var(--ink); border-color:var(--brass);}
+
+  .eyebrow{
+    font-family:var(--serif-mono); font-size:12px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--brass); margin:0 0 12px;
+  }
+
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--line);}
+
+  .hero h1{
+    font-family:var(--serif-mono); font-weight:600;
+    font-size:clamp(28px,4vw,42px); line-height:1.15; margin:0 0 12px;
+    letter-spacing:-0.01em;
+  }
+  .hero .role{
+    font-size:16px; color:var(--ink-soft); margin:0 0 20px; max-width:56ch;
+  }
+  .hero .summary{
+    font-size:15px; color:var(--ink); max-width:64ch; margin:0 0 24px;
+  }
+  .creds{display:flex; flex-wrap:wrap; gap:8px;}
+  .cred{
+    font-family:var(--serif-mono); font-size:11px; letter-spacing:0.02em;
+    color:var(--ink-soft); background:var(--card); border:1px solid var(--line);
+    padding:6px 10px; border-radius:3px;
+  }
+
+  h2.section-title{
+    font-family:var(--serif-mono); font-weight:600; font-size:20px;
+    margin:0 0 8px; letter-spacing:-0.01em;
+  }
+  .section-note{
+    color:var(--ink-soft); font-size:14px; max-width:64ch; margin:0 0 32px;
+  }
+
+  .log{border-top:1px solid var(--line);}
+  .log-row{
+    display:grid; grid-template-columns:64px 1fr auto;
+    gap:16px; align-items:baseline; padding:16px 0;
+    border-bottom:1px solid var(--line);
+    text-decoration:none; color:inherit;
+  }
+  .log-row:hover .log-title{color:var(--brass);}
+  .log-id{font-family:var(--serif-mono); font-size:12px; color:var(--ink-soft);}
+  .log-title{font-size:15px; font-weight:500; color:var(--ink); margin:0 0 2px;}
+  .log-desc{font-size:13px; color:var(--ink-soft); margin:0;}
+  .tag{
+    font-family:var(--serif-mono); font-size:10px; letter-spacing:0.04em;
+    text-transform:uppercase; padding:4px 8px; border-radius:3px;
+    white-space:nowrap; height:fit-content;
+  }
+  .tag.evidence{color:var(--moss); background:var(--moss-bg);}
+  .tag.offline{color:var(--brass); background:var(--brass-bg);}
+  .tag.method{color:var(--brick); background:var(--brick-bg);}
+
+  .repo-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+  }
+  .repo-card{
+    background:var(--card); border:1px solid var(--line); border-radius:4px;
+    padding:20px; text-decoration:none; color:inherit; display:block;
+  }
+  .repo-card:hover{border-color:var(--brass);}
+  .repo-kind{
+    font-family:var(--serif-mono); font-size:10px; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 8px;
+  }
+  .repo-card h3{font-size:15px; margin:0 0 8px; color:var(--ink);}
+  .repo-card p{font-size:13px; color:var(--ink-soft); margin:0;}
+
+  .toolkit{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px;}
+  .toolkit-group h3{
+    font-family:var(--serif-mono); font-size:12px; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--brass); margin:0 0 10px;
+  }
+  .toolkit-group p{font-size:13px; color:var(--ink); margin:0; line-height:1.7;}
+
+  footer.site{padding:40px 0 56px;}
+  .contact-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:16px 24px; margin-bottom:24px;
+  }
+  .contact-item{font-size:13px;}
+  .contact-label{
+    display:block; font-family:var(--serif-mono); font-size:10px;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+  .contact-value, .contact-value a{color:var(--ink); text-decoration:none;}
+  .contact-value a:hover{color:var(--brass);}
+  .fine{font-size:12px; color:var(--ink-soft); font-family:var(--serif-mono);}
+
+  @media (max-width:640px){
+    nav.primary{display:none;}
+    .log-row{grid-template-columns:48px 1fr; }
+    .log-row .tag{grid-column:1 / -1; justify-self:start; margin-top:4px;}
+  }
+</style>
 </head>
+<body>
 
-<body class="min-h-screen flex flex-col">
+<header class="site">
+  <div class="wrap bar">
+    <a href="#top" class="mark">MASIYA</a>
+    <nav class="primary">
+      <a href="#work">Work</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- Header Navigation -->
-    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="h-3 w-3 rounded-full bg-emerald-500 animate-pulse"></div>
-                <span class="font-bold text-lg text-slate-100 code-font">MASIYA-SOC // SEC_OPS</span>
-            </div>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-400">
-                <a href="#summary" class="hover:text-emerald-400 transition">Profile</a>
-                <a href="#about" class="hover:text-emerald-400 transition">About Me</a>
-                <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
-                <a href="#experience" class="hover:text-emerald-400 transition">Experience</a>
-                <a href="#skills" class="hover:text-emerald-400 transition">Toolkit</a>
-                <a href="#terminal" class="hover:text-emerald-400 transition">Terminal</a>
-            </nav>
-            <a href="Hazvinei_Masiya_Resume.pdf" download class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider transition flex items-center gap-2">
-                <i class="fa-solid fa-download"></i> Download CV
-            </a>
-        </div>
-    </header>
+<main id="top">
 
-    <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-10">
+  <section class="hero wrap">
+    <p class="eyebrow">Exhibit 00 — Subject</p>
+    <h1>Hazvinei Nomatter Masiya</h1>
+    <p class="role">SOC &amp; detection engineering · IT Support Specialist, Harare, Zimbabwe</p>
+    <p class="summary">Nine years in enterprise IT infrastructure, now building evidence-backed labs in SIEM detection, network forensics, and security automation — documented and linked below, not summarized.</p>
+    <div class="creds">
+      <span class="cred">CompTIA Security+ (SY0-701)</span>
+      <span class="cred">Google Cybersecurity Professional Certificate</span>
+      <span class="cred">Google IT Support Professional Certificate</span>
+      <span class="cred">BSc Computer Science — Unicaf University (in progress)</span>
+    </div>
+  </section>
 
-        <!-- Section 1: Hero & Profile Summary -->
-        <section id="summary" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 terminal-box p-6 space-y-4">
-                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                    <span class="text-xs text-emerald-400 code-font">[SYSTEM_STATUS: OPERATIONAL]</span>
-                    <span class="text-xs text-slate-500">Harare, Zimbabwe</span>
-                </div>
-                <h1 class="text-3xl font-extrabold text-white">Hazvinei Nomatter Masiya</h1>
-                <p class="text-emerald-400 font-semibold text-sm">Cybersecurity Analyst | SOC Analyst | IT Security Specialist</p>
-                <p class="text-slate-300 text-sm leading-relaxed">
-                    CompTIA Security+ certified IT professional with over 9 years of experience supporting enterprise Windows environments, core infrastructure, endpoints, and business-critical IT operations. Combines extensive systems and infrastructure experience with hands-on cybersecurity capabilities demonstrated through practical SOC, SIEM, DFIR, network security, web security, and security automation laboratories.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Wazuh SIEM</span>
-                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Wireshark DFIR</span>
-                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Python Automation</span>
-                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">Sophos Telemetry</span>
-                    <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs font-mono border border-slate-700">CompTIA Security+</span>
-                </div>
-            </div>
+  <section id="work" class="wrap">
+    <h2 class="section-title">Exhibit log — cybersecurity-portfolio</h2>
+    <p class="section-note">Every entry links to its actual write-up on GitHub. The tag shows how it's sourced: evidence-backed means stored lab artifacts back the claim, offline/synthetic means the lab ran against generated test data rather than production telemetry, and methodology means the write-up documents a workflow without preserved raw output.</p>
 
-            <div class="terminal-box p-6 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Contact & Verified Links</h3>
-                    <ul class="space-y-3 text-xs">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-emerald-400"></i> <span>norman.masiya@gmail.com</span></li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-emerald-400"></i> <span>+263 77 521 6823 / +263 71 866 2162</span></li>
-                        <li class="flex items-center gap-2"><i class="fa-brands fa-linkedin text-emerald-400"></i> <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="text-emerald-400 hover:underline">linkedin.com/in/hazvinei-masiya</a></li>
-                        <li class="flex items-center gap-2"><i class="fa-brands fa-github text-emerald-400"></i> <a href="https://github.com/hnmasiya" target="_blank" class="text-emerald-400 hover:underline">github.com/hnmasiya</a></li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-emerald-400"></i> <a href="https://masiya-hub.org" target="_blank" class="text-emerald-400 hover:underline">masiya-hub.org</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <div class="log">
+      <a class="log-row" href="https://github.com/hnmasiya/cybersecurity-portfolio/blob/main/Network-Security/PCAP-Analysis/README.md" target="_blank" rel="noopener">
+        <span class="log-id">EX-01</span>
+        <span><span class="log-title">PCAP network security monitoring &amp; incident investigation</span><p class="log-desc">TShark protocol extraction, Python-based suspicious-request detection, IOC extraction and SOC triage workflow.</p></span>
+        <span class="tag evidence">Evidence-backed</span>
+      </a>
+      <a class="log-row" href="https://github.com/hnmasiya/cybersecurity-portfolio/blob/main/Threat-Hunting/Detection-Validation-Lab/README.md" target="_blank" rel="noopener">
+        <span class="log-id">EX-02</span>
+        <span><span class="log-title">Threat hunting &amp; detection validation</span><p class="log-desc">Hypothesis-driven hunts for failed authentication, encoded PowerShell, and suspicious network activity, mapped to MITRE ATT&amp;CK.</p></span>
+        <span class="tag offline">Offline / synthetic</span>
+      </a>
+      <a class="log-row" href="https://github.com/hnmasiya/cybersecurity-portfolio/blob/main/Endpoint-Security/Windows-Sysmon-Detection-Lab/README.md" target="_blank" rel="noopener">
+        <span class="log-id">EX-03</span>
+        <span><span class="log-title">Windows / Sysmon endpoint detection engineering</span><p class="log-desc">Detection logic for PowerShell execution, failed authentication, and suspicious parent/child processes, with JSON and CSV validation evidence.</p></span>
+        <span class="tag offline">Offline / synthetic</span>
+      </a>
+      <a class="log-row" href="https://github.com/hnmasiya/cybersecurity-portfolio/blob/main/SIEM/Wazuh/Detection-Engineering-Lab/README.md" target="_blank" rel="noopener">
+        <span class="log-id">EX-04</span>
+        <span><span class="log-title">Wazuh detection engineering</span><p class="log-desc">Custom authentication detection rules with a deterministic Python validation harness. Documented as offline rule validation — no Wazuh Manager installed on the workstation.</p></span>
+        <span class="tag offline">Offline validation</span>
+      </a>
+      <a class="log-row" href="https://github.com/hnmasiya/cybersecurity-portfolio/blob/main/Web-Security/DVWA/README.md" target="_blank" rel="noopener">
+        <span class="log-id">EX-05</span>
+        <span><span class="log-title">DVWA web application security</span><p class="log-desc">SQL injection, XSS, CSRF, brute force, command injection, file inclusion and upload, weak sessions, insecure CAPTCHA — with screenshots and write-ups.</p></span>
+        <span class="tag evidence">Evidence-backed</span>
+      </a>
+      <a class="log-row" href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Web-Security/Juice-Shop" target="_blank" rel="noopener">
+        <span class="log-id">EX-06</span>
+        <span><span class="log-title">OWASP Juice Shop</span><p class="log-desc">Authentication and JWT analysis, SQL injection testing, sensitive-data exposure, and Burp Suite traffic inspection.</p></span>
+        <span class="tag evidence">Evidence-backed</span>
+      </a>
+      <a class="log-row" href="https://github.com/hnmasiya/cybersecurity-portfolio/blob/main/Network-Security/Nmap/Reports/Nmap-Network-Reconnaissance.md" target="_blank" rel="noopener">
+        <span class="log-id">EX-07</span>
+        <span><span class="log-title">Nmap reconnaissance</span><p class="log-desc">Documents an authorized reconnaissance workflow. Raw scan output isn't stored in the project, so specific results aren't claimed.</p></span>
+        <span class="tag method">Methodology only</span>
+      </a>
+      <a class="log-row" href="https://github.com/hnmasiya/cybersecurity-portfolio/blob/main/Network-Security/Wireshark/Reports/Wireshark-Packet-Analysis.md" target="_blank" rel="noopener">
+        <span class="log-id">EX-08</span>
+        <span><span class="log-title">Wireshark packet analysis</span><p class="log-desc">Documents the packet-analysis workflow; the separate PCAP Analysis exhibit above holds the preserved capture evidence.</p></span>
+        <span class="tag method">Methodology only</span>
+      </a>
+    </div>
+  </section>
 
-        <!-- Section 2: Live Threat Telemetry Stream -->
-        <section id="tracker" class="terminal-box p-6">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
-                <div class="flex items-center gap-2">
-                    <div class="h-2 w-2 rounded-full bg-red-500 animate-ping"></div>
-                    <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider">Live Security Incident Log Feed</h2>
-                </div>
-                <span class="text-xs font-mono text-slate-500">Real-time Telemetry Engine</span>
-            </div>
-            <div id="log-feed" class="space-y-2 font-mono text-xs max-h-48 overflow-y-auto pr-2"></div>
-        </section>
+  <section class="wrap">
+    <h2 class="section-title">Standalone repositories</h2>
+    <p class="section-note">Self-contained engineering work outside the main portfolio repo.</p>
+    <div class="repo-grid">
+      <a class="repo-card" href="https://github.com/hnmasiya/ad-security-log-parser" target="_blank" rel="noopener">
+        <p class="repo-kind">Python tool</p>
+        <h3>AD security log parser</h3>
+        <p>Parses Windows Security Event XML logs to isolate Event ID 4728 (member added to a security-enabled global group) for AD group-membership threat detection.</p>
+      </a>
+      <a class="repo-card" href="https://github.com/hnmasiya/wazuh-siem-detection-lab" target="_blank" rel="noopener">
+        <p class="repo-kind">Detection rules</p>
+        <h3>Wazuh SIEM detection lab</h3>
+        <p>Custom Wazuh detection rules mapping Active Directory threat events to MITRE ATT&amp;CK (T1078 — Valid Accounts).</p>
+      </a>
+      <a class="repo-card" href="https://github.com/hnmasiya/gcp-terraform-secure-vpc" target="_blank" rel="noopener">
+        <p class="repo-kind">Terraform IaC</p>
+        <h3>GCP secure multi-tier VPC</h3>
+        <p>Deploys an enterprise Google Cloud VPC with isolated application and database subnets, no public IPs, and outbound Cloud NAT routing.</p>
+      </a>
+      <a class="repo-card" href="https://github.com/hnmasiya" target="_blank" rel="noopener">
+        <p class="repo-kind">Index</p>
+        <h3>All repositories</h3>
+        <p>Full GitHub profile — every public repository, commit history, and activity.</p>
+      </a>
+    </div>
+  </section>
 
-        <!-- Section 3: About Me -->
-        <section id="about" class="terminal-box p-6 space-y-4">
-            <h2 class="text-lg font-bold text-slate-100 uppercase tracking-wider code-font border-b border-slate-800 pb-2">About Me</h2>
-            <div class="text-xs text-slate-300 leading-relaxed space-y-3">
-                <p>
-                    I am an IT Security Specialist and SOC Analyst based in Harare, Zimbabwe, open to international opportunities. Over the past 9+ years, I have built a deep foundational background in enterprise IT infrastructure, Active Directory domain security, network engineering, and desktop support across diverse industry sectors.
-                </p>
-                <p>
-                    My practical cybersecurity approach centers on proactive threat detection, security log analysis, and automated investigation workflows. By pairing practical hands-on labs (covering Wazuh SIEM, Wireshark DFIR, Burp Suite, and Python automation) with my formal Computer Science studies (BSc Honours Candidate) and CompTIA Security+ certification, I specialize in bridging systems administration with modern Security Operations (SecOps).
-                </p>
-            </div>
-        </section>
+  <section id="toolkit" class="wrap">
+    <h2 class="section-title">Toolkit</h2>
+    <p class="section-note">Tools and frameworks used across the exhibits above.</p>
+    <div class="toolkit">
+      <div class="toolkit-group">
+        <h3>SIEM &amp; detection</h3>
+        <p>Wazuh, custom detection rules, MITRE ATT&amp;CK mapping</p>
+      </div>
+      <div class="toolkit-group">
+        <h3>Network &amp; web security</h3>
+        <p>Wireshark, TShark, Nmap, Burp Suite, DVWA, OWASP Juice Shop</p>
+      </div>
+      <div class="toolkit-group">
+        <h3>Systems &amp; infrastructure</h3>
+        <p>Active Directory, Windows Server, Linux (Ubuntu/Debian)</p>
+      </div>
+      <div class="toolkit-group">
+        <h3>Automation &amp; cloud</h3>
+        <p>Python, Bash, PowerShell, Terraform, Google Cloud Platform</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Section 4: Selected Cybersecurity Projects -->
-        <section id="projects" class="space-y-4">
-            <h2 class="text-lg font-bold text-slate-100 uppercase tracking-wider code-font border-b border-slate-800 pb-2">Selected Cybersecurity Projects & Labs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="terminal-box p-6 space-y-3">
-                    <span class="text-xs font-mono text-emerald-400">[SIEM & Detection Engineering]</span>
-                    <h3 class="text-lg font-bold text-white">Wazuh SIEM & Detection Engineering Lab</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">Built and documented a Wazuh SIEM laboratory demonstrating SOC monitoring, alert investigation, log analysis, File Integrity Monitoring (FIM), and custom detection rules. Developed offline validation tooling and analyst workflows.</p>
-                </div>
-                <div class="terminal-box p-6 space-y-3">
-                    <span class="text-xs font-mono text-emerald-400">[Digital Forensics]</span>
-                    <h3 class="text-lg font-bold text-white">Linux DFIR Investigation Lab</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">Conducted a controlled Linux DFIR investigation using synthetic forensic artifacts, preserving evidence integrity via SHA-256 checksums, analyzing logs, and mapping findings to MITRE ATT&CK.</p>
-                </div>
-                <div class="terminal-box p-6 space-y-3">
-                    <span class="text-xs font-mono text-emerald-400">[Network & Web Security]</span>
-                    <h3 class="text-lg font-bold text-white">Network & Web Application Security Labs</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">Analyzed captured PCAP traffic in Wireshark, built Python tools for automated detection, and conducted web app assessments investigating SQLi, XSS, CSRF, and JWT flows using Burp Suite.</p>
-                </div>
-                <div class="terminal-box p-6 space-y-3">
-                    <span class="text-xs font-mono text-emerald-400">[SOC Automation]</span>
-                    <h3 class="text-lg font-bold text-white">Security Operations Automation</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">Created security automation scripts in Python, Bash, and PowerShell for automated IOC extraction, log anomaly parsing, Wazuh alert enrichment, and threat-hunting validation.</p>
-                </div>
-            </div>
-        </section>
+</main>
 
-        <!-- Section 5: Professional Experience -->
-        <section id="experience" class="space-y-4">
-            <h2 class="text-lg font-bold text-slate-100 uppercase tracking-wider code-font border-b border-slate-800 pb-2">Professional Experience</h2>
-            <div class="space-y-4">
-                <div class="terminal-box p-6 space-y-2">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center">
-                        <h3 class="text-base font-bold text-white">IT Support Specialist (Contract & Consulting)</h3>
-                        <span class="text-xs font-mono text-emerald-400">Zuetech Technology Solutions | Jan 2021 - Present</span>
-                    </div>
-                    <ul class="list-disc list-inside text-xs text-slate-300 space-y-1.5 pt-2">
-                        <li>Provide enterprise IT support, network operations, and security-conscious administration across client environments.</li>
-                        <li>Executed physical rack deployment, CLI configuration, circuit provisioning, and connectivity verification for SD-WAN appliances.</li>
-                        <li>Administer Active Directory, user provisioning, account management, and access controls applying least-privilege RBAC.</li>
-                        <li>Support endpoint protection administration, patch deployment, vulnerability mitigation, and perimeter hardening.</li>
-                    </ul>
-                </div>
+<footer id="contact" class="site wrap">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <span class="contact-label">Email</span>
+      <span class="contact-value">norman.masiya@gmail.com</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">Phone</span>
+      <span class="contact-value">+263 77 521 6823</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">LinkedIn</span>
+      <span class="contact-value"><a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" rel="noopener">linkedin.com/in/hazvinei-masiya</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">GitHub</span>
+      <span class="contact-value"><a href="https://github.com/hnmasiya" target="_blank" rel="noopener">github.com/hnmasiya</a></span>
+    </div>
+  </div>
+  <p class="fine">© 2026 Hazvinei Nomatter Masiya · masiya-hub.org · hosted on GitHub Pages</p>
+</footer>
 
-                <div class="terminal-box p-6 space-y-2">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center">
-                        <h3 class="text-base font-bold text-white">Desktop Support Technician</h3>
-                        <span class="text-xs font-mono text-emerald-400">Raising Dawn Investments | Jan 2019 - Dec 2020</span>
-                    </div>
-                    <ul class="list-disc list-inside text-xs text-slate-300 space-y-1.5 pt-2">
-                        <li>Administered user accounts, permissions, security groups, and access control policies for 120+ end users.</li>
-                        <li>Monitored network perimeter security through Sophos Endpoint Protection and Sophos Firewall threat telemetry.</li>
-                    </ul>
-                </div>
-
-                <div class="terminal-box p-6 space-y-2">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center">
-                        <h3 class="text-base font-bold text-white">Information Technology Support Technician</h3>
-                        <span class="text-xs font-mono text-emerald-400">Compusys Technology | Jan 2016 - Dec 2018</span>
-                    </div>
-                    <p class="text-xs text-slate-300 pt-1">Delivered technical support across desktop, network, and infrastructure platforms. Managed access controls, applied security patches, and resolved authentication failures.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 6: Technical Toolkit & Certifications -->
-        <section id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="terminal-box p-6 space-y-3">
-                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider border-b border-slate-800 pb-2">Certifications & Education</h3>
-                <ul class="space-y-2 text-xs text-slate-300">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-certificate text-emerald-400"></i> <strong>CompTIA Security+ (SY0-701) Certified</strong></li>
-                    <li class="flex items-center gap-2"><i class="fa-brands fa-google text-emerald-400"></i> <span>Google Cybersecurity Professional Certificate</span></li>
-                    <li class="flex items-center gap-2"><i class="fa-brands fa-google text-emerald-400"></i> <span>Google IT Support Professional Certificate</span></li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-emerald-400"></i> <span>BSc (Honours) Computer Science — Unicaf University (In Progress)</span></li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-emerald-400"></i> <span>National Diploma in ICT — Harare Polytechnic</span></li>
-                </ul>
-            </div>
-
-            <div class="terminal-box p-6 space-y-3">
-                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider border-b border-slate-800 pb-2">Technical Toolkit</h3>
-                <div class="space-y-2 text-xs text-slate-300">
-                    <p><strong>SIEM & Security:</strong> Wazuh, Wireshark, Nmap, Burp Suite, Sophos Endpoint & Firewall, OWASP DVWA</p>
-                    <p><strong>Systems & Infrastructure:</strong> Active Directory, Windows Server, Linux (Ubuntu/Debian), Dell Versa SD-WAN (VOS), M365</p>
-                    <p><strong>Scripting & Automation:</strong> Python, Bash, PowerShell</p>
-                    <p><strong>Frameworks:</strong> MITRE ATT&CK, OWASP Top 10, File Integrity Monitoring, RBAC, System Hardening</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 7: Interactive Terminal -->
-        <section id="terminal" class="terminal-box p-6 space-y-3">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-terminal text-emerald-400 mr-2"></i>SOC Sandbox CLI v2.4</span>
-                <span class="text-xs text-slate-500">Type "help"</span>
-            </div>
-            <div id="terminal-output" class="font-mono text-xs text-slate-300 space-y-1 min-h-[140px] max-h-[200px] overflow-y-auto">
-                <div>Type <span class="text-emerald-400 font-bold">help</span> to see available commands.</div>
-            </div>
-            <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
-                <span class="text-emerald-400 font-mono text-xs">visitor@masiya-hub:~$</span>
-                <input type="text" id="terminal-input" class="bg-transparent text-xs font-mono text-white flex-1 focus:outline-none" placeholder="Try running help, skills, or projects...">
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="border-t border-slate-800 bg-slate-950 py-4 text-center text-xs text-slate-500 font-mono">
-        © 2026 Hazvinei Nomatter Masiya // Domain: masiya-hub.org // Hosted on GitHub Pages
-    </footer>
-
-    <script>
-        const logs = [
-            { type: "CRITICAL", msg: "Event ID 4728: Account "j.doe" added to Domain Admins by "UNKNOWN_SID"" },
-            { type: "WARNING",  msg: "Wazuh Alert Rule 100201: Outbound connection to suspicious IP 185.220.101.5" },
-            { type: "INFO",     msg: "Splunk SPL: Executed scheduled search "Privileged Logon Sweeps"" },
-            { type: "NOTICE",   msg: "YARA Scanner: Shellcode signature match in /tmp/mem_dump.raw (Rule: Webshell_PHP)" },
-            { type: "INFO",     msg: "Terraform IaC: VPC Security Group sync completed successfully" }
-        ];
-
-        function pushLog() {
-            const feed = document.getElementById("log-feed");
-            const item = logs[Math.floor(Math.random() * logs.length)];
-            const timestamp = new Date().toISOString().split("T")[1].slice(0, 8);
-            const color = item.type === "CRITICAL" ? "text-red-400" : item.type === "WARNING" ? "text-amber-400" : "text-emerald-400";
-            
-            const div = document.createElement("div");
-            div.className = "flex items-start gap-2 border-b border-slate-900 pb-1";
-            div.innerHTML = `<span class="text-slate-600">[${timestamp}]</span> <span class="font-bold ${color}">${item.type}</span> <span class="text-slate-300">${item.msg}</span>`;
-            
-            feed.prepend(div);
-            if (feed.children.length > 6) feed.removeChild(feed.lastChild);
-        }
-        setInterval(pushLog, 3000);
-        pushLog();
-
-        const input = document.getElementById("terminal-input");
-        const output = document.getElementById("terminal-output");
-
-        input.addEventListener("keydown", function(e) {
-            if (e.key === "Enter") {
-                const cmd = this.value.trim().toLowerCase();
-                this.value = "";
-                
-                const cmdLine = document.createElement("div");
-                cmdLine.innerHTML = `<span class="text-emerald-400">visitor@masiya-hub:~$</span> ${cmd}`;
-                output.appendChild(cmdLine);
-
-                let res = "";
-                if (cmd === "help") {
-                    res = "Available commands: <span class="text-emerald-400">skills</span>, <span class="text-emerald-400">projects</span>, <span class="text-emerald-400">clear</span>";
-                } else if (cmd === "skills") {
-                    res = "Wazuh SIEM | Wireshark DFIR | Sophos Telemetry | Python Automation | Linux & Windows Security";
-                } else if (cmd === "projects") {
-                    res = "1. Wazuh SIEM & Detection Engineering Lab<br>2. Linux DFIR Investigation Lab<br>3. Security Operations Automation";
-                } else if (cmd === "clear") {
-                    output.innerHTML = "";
-                    return;
-                } else {
-                    res = "Command not recognized: "" + cmd + "". Type "help" for options.";
-                }
-
-                const resLine = document.createElement("div");
-                resLine.className = "text-slate-400 pl-4 border-l border-emerald-500/50 mb-2";
-                resLine.innerHTML = res;
-                output.appendChild(resLine);
-                output.scrollTop = output.scrollHeight;
-            }
-        });
-    </script>
 </body>
 </html>
