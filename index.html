@@ -7,16 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; color: #e2e8f0; }
-        .code-font { font-family: 'Fira Code', monospace; }
+        @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap");
+        body { font-family: "Inter", sans-serif; background-color: #0b0f19; color: #e2e8f0; }
+        .code-font { font-family: "Fira Code", monospace; }
         .terminal-box { background: #070a12; border: 1px solid #1e293b; border-radius: 8px; }
-        .glow-green { text-shadow: 0 0 8px rgba(34, 197, 94, 0.4); }
     </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
-    <!-- Header Navigation -->
     <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -35,10 +33,8 @@
         </div>
     </header>
 
-    <!-- Main Content Grid -->
     <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-10">
 
-        <!-- Hero Section -->
         <section id="summary" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div class="lg:col-span-2 terminal-box p-6 space-y-4">
                 <div class="flex items-center justify-between border-b border-slate-800 pb-3">
@@ -59,7 +55,6 @@
                 </div>
             </div>
 
-            <!-- Contact & Quick Info Card -->
             <div class="terminal-box p-6 flex flex-col justify-between">
                 <div>
                     <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Verified Credentials</h3>
@@ -78,7 +73,6 @@
             </div>
         </section>
 
-        <!-- Live Threat Feed Stream (Live Tracker) -->
         <section id="tracker" class="terminal-box p-6">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
                 <div class="flex items-center gap-2">
@@ -87,27 +81,23 @@
                 </div>
                 <span class="text-xs font-mono text-slate-500">Real-time Stream Engine</span>
             </div>
-            <div id="log-feed" class="space-y-2 font-mono text-xs max-h-48 overflow-y-auto pr-2">
-                <!-- Javascript auto-injects live telemetry logs here -->
-            </div>
+            <div id="log-feed" class="space-y-2 font-mono text-xs max-h-48 overflow-y-auto pr-2"></div>
         </section>
 
-        <!-- Interactive Terminal Emulator -->
         <section id="terminal" class="terminal-box p-6 space-y-3">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-terminal text-emerald-400 mr-2"></i>SOC Sandbox CLI v2.4</span>
-                <span class="text-xs text-slate-500">Type 'help' or 'projects'</span>
+                <span class="text-xs text-slate-500">Type "help" or "projects"</span>
             </div>
             <div id="terminal-output" class="font-mono text-xs text-slate-300 space-y-1 min-h-[140px] max-h-[200px] overflow-y-auto">
-                <div>Type <span class="text-emerald-400 font-bold">'help'</span> to see available cybersecurity commands.</div>
+                <div>Type <span class="text-emerald-400 font-bold">"help"</span> to see available cybersecurity commands.</div>
             </div>
             <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
                 <span class="text-emerald-400 font-mono text-xs">visitor@masiya-hub:~$</span>
-                <input type="text" id="terminal-input" class="bg-transparent text-xs font-mono text-white flex-1 focus:outline-none" placeholder="Try running 'skills', 'projects', or 'clear'..." autofocus>
+                <input type="text" id="terminal-input" class="bg-transparent text-xs font-mono text-white flex-1 focus:outline-none" placeholder="Try running "skills", "projects", or "clear"..." autofocus>
             </div>
         </section>
 
-        <!-- Embedded Resume PDF Previewer -->
         <section id="resume" class="terminal-box p-6 space-y-4">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider">Official Curriculum Vitae (PDF)</h2>
@@ -126,24 +116,22 @@
         © 2026 Hazvinei Nomatter Masiya // Domain: masiya-hub.org // Hosted on GitHub Pages
     </footer>
 
-    <!-- Interactive JS Functionality -->
     <script>
-        // Live Threat Stream Simulator
         const logs = [
-            { type: "CRITICAL", msg: "Event ID 4728: Account 'j.doe' added to Domain Admins by 'UNKNOWN_SID'" },
+            { type: "CRITICAL", msg: "Event ID 4728: Account "j.doe" added to Domain Admins by "UNKNOWN_SID"" },
             { type: "WARNING",  msg: "Wazuh Alert Rule 100201: Outbound connection to suspicious IP 185.220.101.5" },
-            { type: "INFO",     msg: "Splunk SPL: Executed successful scheduled search 'Privileged Logon Sweeps'" },
+            { type: "INFO",     msg: "Splunk SPL: Executed scheduled search "Privileged Logon Sweeps"" },
             { type: "NOTICE",   msg: "YARA Scanner: Shellcode signature match in /tmp/mem_dump.raw (Rule: Webshell_PHP)" },
             { type: "INFO",     msg: "Terraform IaC: VPC Security Group sync completed successfully" }
         ];
 
         function pushLog() {
-            const feed = document.getElementById('log-feed');
+            const feed = document.getElementById("log-feed");
             const item = logs[Math.floor(Math.random() * logs.length)];
-            const timestamp = new Date().toISOString().split('T')[1].slice(0, 8);
-            const color = item.type === 'CRITICAL' ? 'text-red-400' : item.type === 'WARNING' ? 'text-amber-400' : 'text-emerald-400';
+            const timestamp = new Date().toISOString().split("T")[1].slice(0, 8);
+            const color = item.type === "CRITICAL" ? "text-red-400" : item.type === "WARNING" ? "text-amber-400" : "text-emerald-400";
             
-            const div = document.createElement('div');
+            const div = document.createElement("div");
             div.className = "flex items-start gap-2 border-b border-slate-900 pb-1";
             div.innerHTML = `<span class="text-slate-600">[${timestamp}]</span> <span class="font-bold ${color}">${item.type}</span> <span class="text-slate-300">${item.msg}</span>`;
             
@@ -153,36 +141,35 @@
         setInterval(pushLog, 3000);
         pushLog();
 
-        // Terminal Emulator Script
-        const input = document.getElementById('terminal-input');
-        const output = document.getElementById('terminal-output');
+        const input = document.getElementById("terminal-input");
+        const output = document.getElementById("terminal-output");
 
-        input.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
+        input.addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
                 const cmd = this.value.trim().toLowerCase();
-                this.value = '';
+                this.value = "";
                 
-                const cmdLine = document.createElement('div');
+                const cmdLine = document.createElement("div");
                 cmdLine.innerHTML = `<span class="text-emerald-400">visitor@masiya-hub:~$</span> ${cmd}`;
                 output.appendChild(cmdLine);
 
-                let res = '';
-                if (cmd === 'help') {
-                    res = "Available commands: <span class='text-emerald-400'>skills</span>, <span class='text-emerald-400'>projects</span>, <span class='text-emerald-400'>certifications</span>, <span class='text-emerald-400'>clear</span>";
-                } else if (cmd === 'skills') {
+                let res = "";
+                if (cmd === "help") {
+                    res = "Available commands: <span class="text-emerald-400">skills</span>, <span class="text-emerald-400">projects</span>, <span class="text-emerald-400">certifications</span>, <span class="text-emerald-400">clear</span>";
+                } else if (cmd === "skills") {
                     res = "SIEM (Wazuh, Splunk) | Python Automation | Wireshark DFIR | Windows Server & AD Security | Terraform IaC";
-                } else if (cmd === 'projects') {
+                } else if (cmd === "projects") {
                     res = "1. Active Directory Security Log Parser (Python)<br>2. Wazuh SIEM Detection Engineering Lab<br>3. GCP Secure Multi-Tier VPC (Terraform)";
-                } else if (cmd === 'certifications') {
+                } else if (cmd === "certifications") {
                     res = "CompTIA Security+ | Google Cybersecurity Professional | Google IT Support Professional";
-                } else if (cmd === 'clear') {
-                    output.innerHTML = '';
+                } else if (cmd === "clear") {
+                    output.innerHTML = "";
                     return;
                 } else {
-                    res = `Command not recognized: '${cmd}'. Type 'help' for options.`;
+                    res = `Command not recognized: "${cmd}". Type "help" for options.`;
                 }
 
-                const resLine = document.createElement('div');
+                const resLine = document.createElement("div");
                 resLine.className = "text-slate-400 pl-4 border-l border-emerald-500/50 mb-2";
                 resLine.innerHTML = res;
                 output.appendChild(resLine);
