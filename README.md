@@ -214,5 +214,5 @@ A recruiter-focused mapping of SOC capabilities to the specific labs, scripts an
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* docs: add Windows memory forensics incident report and evidence (9 seconds ago)
+* feat: add Advanced Threat Operations master lab (Linux DFIR, Malware, Threat Hunting) (12 seconds ago)
 <!-- END_SECTION:activity -->
