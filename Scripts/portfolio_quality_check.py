@@ -6,9 +6,6 @@ ROOT = Path(__file__).resolve().parents[1]
 
 IGNORE_PARTS = {
     ".git",
-    "REPORT-BACKUPS",
-    "UPGRADED-SOC-REPORT-DRAFTS",
-    "Documentation-Archive",
     "Archive",
 }
 
