@@ -1,0 +1,36 @@
+{
+  "hostname": "lab-web01",
+  "ssh_config": {
+    "PermitRootLogin": "yes",
+    "PasswordAuthentication": "yes",
+    "Protocol": "2"
+  },
+  "sudoers_entries": [
+    {"user": "deploy", "commands": "ALL", "nopasswd": true},
+    {"user": "backup-svc", "commands": "/usr/bin/rsync", "nopasswd": true}
+  ],
+  "world_writable_files": [
+    "/var/www/html/uploads",
+    "/tmp/build-cache",
+    "/etc/cron.d/legacy-job"
+  ],
+  "suid_binaries": [
+    "/usr/bin/passwd",
+    "/usr/bin/sudo",
+    "/opt/legacy-app/bin/setuid-helper"
+  ],
+  "expected_suid_allowlist": [
+    "/usr/bin/passwd",
+    "/usr/bin/sudo",
+    "/usr/bin/su",
+    "/usr/bin/mount",
+    "/usr/bin/umount"
+  ],
+  "running_services": [
+    "sshd",
+    "nginx",
+    "cron",
+    "telnet"
+  ],
+  "firewall_active": false
+}
