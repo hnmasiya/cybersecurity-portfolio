@@ -1028,15 +1028,61 @@ Caller User: 'bad_actor_admin'</code>
             });
         }
 
-        // Keyboard Navigation Shortcuts
+        // Reliable keyboard navigation
+        function navigateToSection(id) {
+            const target = document.getElementById(id);
+            if (!target) return false;
+
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+            if (history.replaceState) {
+                history.replaceState(null, '', '#' + id);
+            } else {
+                window.location.hash = '#' + id;
+            }
+
+            return true;
+        }
+
         document.addEventListener('keydown', function(e) {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-            
-            if (e.key === '1') window.location.hash = '#work';
-            if (e.key === '2') window.location.hash = '#snapshot';
-            if (e.key === '3') window.location.hash = '#certs';
-            if (e.key === '4') window.location.hash = '#contact';
-            if (e.key.toLowerCase() === 't') toggleTheme();
+            const tag = e.target && e.target.tagName
+                ? e.target.tagName.toUpperCase()
+                : '';
+
+            if (
+                tag === 'INPUT' ||
+                tag === 'TEXTAREA' ||
+                (e.target && e.target.isContentEditable)
+            ) {
+                return;
+            }
+
+            switch (e.key) {
+                case '1':
+                    e.preventDefault();
+                    navigateToSection('work');
+                    break;
+                case '2':
+                    e.preventDefault();
+                    navigateToSection('snapshot');
+                    break;
+                case '3':
+                    e.preventDefault();
+                    navigateToSection('certs');
+                    break;
+                case '4':
+                    e.preventDefault();
+                    navigateToSection('contact');
+                    break;
+                case 't':
+                case 'T':
+                    e.preventDefault();
+                    toggleTheme();
+                    break;
+            }
         });
 
         // Overview Modal
@@ -1050,11 +1096,35 @@ Caller User: 'bad_actor_admin'</code>
 
         // Interactive CLI Terminal Functions
         function openTerminalModal() {
-            document.getElementById('terminalModal').style.display = 'flex';
-            document.getElementById('terminal-input').focus();
+            const modal = document.getElementById('terminalModal');
+            const input = document.getElementById('terminal-input');
+
+            if (!modal) return;
+
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+
+            if (input) {
+                setTimeout(function() {
+                    input.focus();
+                }, 50);
+            }
         }
-        function hideTerminalModal() { document.getElementById('terminalModal').style.display = 'none'; }
-        function closeTerminalModal(e) { if (e.target.classList.contains('modal-overlay')) hideTerminalModal(); }
+
+        function hideTerminalModal() {
+            const modal = document.getElementById('terminalModal');
+
+            if (!modal) return;
+
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        function closeTerminalModal(e) {
+            if (e && e.target && e.target.classList.contains('modal-overlay')) {
+                hideTerminalModal();
+            }
+        }
 
         function handleTerminalCommand(e) {
             if (e.key === 'Enter') {
