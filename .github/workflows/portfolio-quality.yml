@@ -27,6 +27,12 @@ jobs:
         run: |
           python -m compileall -q             Endpoint-Security             Security-Automation             SIEM             Threat-Hunting             Scripts
 
+      - name: Install test dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Run unit tests
+        run: python -m pytest tests/ -v
+
       - name: Remove Python runtime artifacts
         run: |
           find . -type d -name __pycache__ -prune -exec rm -rf {} +

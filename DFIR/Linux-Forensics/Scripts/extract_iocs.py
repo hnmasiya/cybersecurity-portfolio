@@ -15,32 +15,45 @@ DOMAIN_PATTERN = re.compile(
     re.IGNORECASE
 )
 
-ips = set()
-domains = set()
+def extract_from_files(filenames):
+    """Scan the given files for IPv4 and domain indicators.
+    Returns (ips, domains) as sets. Missing files are skipped with a warning."""
+    ips = set()
+    domains = set()
 
-for filename in sys.argv[1:]:
-    path = Path(filename)
+    for filename in filenames:
+        path = Path(filename)
 
-    if not path.exists():
-        print(f"WARNING: File not found: {path}", file=sys.stderr)
-        continue
+        if not path.exists():
+            print(f"WARNING: File not found: {path}", file=sys.stderr)
+            continue
 
-    text = path.read_text(errors="ignore")
+        text = path.read_text(errors="ignore")
 
-    ips.update(IP_PATTERN.findall(text))
-    domains.update(DOMAIN_PATTERN.findall(text))
+        ips.update(IP_PATTERN.findall(text))
+        domains.update(DOMAIN_PATTERN.findall(text))
 
-print("# IOC Extraction")
-print()
-print("## IPv4 Indicators")
-print()
+    return ips, domains
 
-for item in sorted(ips):
-    print(f"- `{item}`")
 
-print()
-print("## Domain Indicators")
-print()
+def main():
+    ips, domains = extract_from_files(sys.argv[1:])
 
-for item in sorted(domains):
-    print(f"- `{item}`")
+    print("# IOC Extraction")
+    print()
+    print("## IPv4 Indicators")
+    print()
+
+    for item in sorted(ips):
+        print(f"- `{item}`")
+
+    print()
+    print("## Domain Indicators")
+    print()
+
+    for item in sorted(domains):
+        print(f"- `{item}`")
+
+
+if __name__ == "__main__":
+    main()
