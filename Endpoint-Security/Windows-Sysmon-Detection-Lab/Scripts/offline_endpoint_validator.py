@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-events = json.loads((ROOT / "Data" / "synthetic-endpoint-events.json").read_text())
+
 
 def detect(event):
     alerts = []
@@ -28,38 +28,46 @@ def detect(event):
 
     return alerts
 
-failures = 0
-results = []
 
-print("WINDOWS / SYSMON OFFLINE DETECTION VALIDATOR")
-print("=" * 60)
+def main():
+    events = json.loads((ROOT / "Data" / "synthetic-endpoint-events.json").read_text())
 
-for event in events:
-    alerts = detect(event)
-    names = [x[0] for x in alerts]
+    failures = 0
+    results = []
 
-    expected = "No alert" not in event.get("expected_detection", "")
-    passed = bool(alerts) == expected
+    print("WINDOWS / SYSMON OFFLINE DETECTION VALIDATOR")
+    print("=" * 60)
 
-    results.append({
-        "event_id": event["event_id"],
-        "detections": names,
-        "expected": event["expected_detection"],
-        "status": "PASS" if passed else "FAIL"
-    })
+    for event in events:
+        alerts = detect(event)
+        names = [x[0] for x in alerts]
 
-    print(
-        f"{'PASS' if passed else 'FAIL'}: "
-        f"{event['event_id']} -> detections={names} "
-        f"expected={event['expected_detection']}"
-    )
+        expected = "No alert" not in event.get("expected_detection", "")
+        passed = bool(alerts) == expected
 
-    if not passed:
-        failures += 1
+        results.append({
+            "event_id": event["event_id"],
+            "detections": names,
+            "expected": event["expected_detection"],
+            "status": "PASS" if passed else "FAIL"
+        })
 
-out = ROOT / "Evidence" / "detection-validation.json"
-out.write_text(json.dumps(results, indent=2) + "\n")
+        print(
+            f"{'PASS' if passed else 'FAIL'}: "
+            f"{event['event_id']} -> detections={names} "
+            f"expected={event['expected_detection']}"
+        )
 
-print("=" * 60)
-print("RESULT:", "PASS" if failures == 0 else "FAIL")
-raise SystemExit(1 if failures else 0)
+        if not passed:
+            failures += 1
+
+    out = ROOT / "Evidence" / "detection-validation.json"
+    out.write_text(json.dumps(results, indent=2) + "\n")
+
+    print("=" * 60)
+    print("RESULT:", "PASS" if failures == 0 else "FAIL")
+    return 1 if failures else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
