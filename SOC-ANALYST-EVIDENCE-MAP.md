@@ -10,6 +10,8 @@ This document maps practical SOC capabilities to specific repository evidence.
 | IOC Extraction | `Security-Automation/Wazuh-Alert-Enrichment/` |
 | Threat Hunting | `Threat-Hunting/Detection-Validation-Lab/` |
 | Active Directory Security | `Active-Directory/Detection-Lab/` |
+| Linux Host Hardening | `Linux-Security/Hardening-Lab/` |
+| Container Security | `Docker-Labs/Container-Audit-Lab/` |
 | Incident Response | `Incident-Response/` and Wazuh investigation reports |
 | Network Security Monitoring | `Network-Security/PCAP-Analysis/` |
 | Web Application Security | `Web-Security/DVWA/` |
@@ -29,9 +31,16 @@ This document maps practical SOC capabilities to specific repository evidence.
 **Controlled laboratory:** DVWA, Juice Shop and PCAP exercises.
 
 **Synthetic/offline:** Windows/Sysmon detection, Threat Hunting validation,
-and Active Directory Detection Lab.
+Active Directory Detection Lab, Linux Host Hardening Lab, and Container
+Configuration Audit Lab.
 
 **Evidence-bounded methodology:** Nmap and Wireshark active methodology reports.
+
+**Illustrative scenario (not a live finding):** the AppSec/SAST,
+Offensive Security, Enterprise AD hygiene, and Cloud CSPM reports are
+scenario write-ups demonstrating reporting methodology - each is
+labeled as such at the top of the file, with a pointer to the nearest
+evidence-backed equivalent where one exists.
 
 ## Remaining Live Dependency
 

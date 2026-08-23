@@ -25,7 +25,7 @@ jobs:
 
       - name: Python syntax validation
         run: |
-          python -m compileall -q             Active-Directory             DFIR             Endpoint-Security             Network-Security             Security-Automation             SIEM             Threat-Hunting             Scripts
+          python -m compileall -q             Active-Directory             DFIR             Docker-Labs             Endpoint-Security             Linux-Security             Network-Security             Security-Automation             SIEM             Threat-Hunting             Scripts
 
       - name: Install test dependencies
         run: pip install -r requirements-dev.txt
