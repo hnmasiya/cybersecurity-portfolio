@@ -2,45 +2,91 @@ name: Dynamic Lab Activity Updater
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Every night at midnight
-  push:
-    branches: [ main ]
+    - cron: '0 0 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfolio-automation
+  cancel-in-progress: false
 
 jobs:
   update-readme-activity:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate Activity Section
         run: |
-          python3 -c "
-          import subprocess, re
+          python3 - <<'PY'
+          import re
+          import subprocess
+          from pathlib import Path
 
-          # Get last 5 commit logs
-          cmd = 'git log -n 5 --pretty=format:\"* %s (%cr)\"'
-          log_output = subprocess.check_output(cmd, shell=True).decode('utf-8')
+          path = Path("README.md")
+          content = path.read_text()
 
-          with open('README.md', 'r') as f:
-              content = f.read()
+          start_marker = "<!-- START_SECTION:activity -->"
+          end_marker = "<!-- END_SECTION:activity -->"
 
-          start_marker = '<!-- START_SECTION:activity -->'
-          end_marker = '<!-- END_SECTION:activity -->'
-          
-          if start_marker in content and end_marker in content:
-              new_section = f'{start_marker}\n### Recent Lab & Security Updates\n{log_output}\n{end_marker}'
-              pattern = re.compile(f'{re.escape(start_marker)}.*?{re.escape(end_marker)}', re.DOTALL)
-              updated_content = pattern.sub(new_section, content)
-              with open('README.md', 'w') as f:
-                  f.write(updated_content)
-          "
+          if start_marker not in content or end_marker not in content:
+              raise SystemExit(
+                  "ERROR: README activity markers are missing."
+              )
 
-      - name: Commit & Push Changes
+          log_output = subprocess.check_output(
+              [
+                  "git",
+                  "log",
+                  "-n",
+                  "5",
+                  "--pretty=format:* %s (%cr)"
+              ],
+              text=True
+          ).strip()
+
+          new_section = (
+              f"{start_marker}\n"
+              f"### Recent Lab & Security Updates\n"
+              f"{log_output}\n"
+              f"{end_marker}"
+          )
+
+          pattern = re.compile(
+              re.escape(start_marker)
+              + r".*?"
+              + re.escape(end_marker),
+              re.DOTALL
+          )
+
+          updated_content = pattern.sub(new_section, content)
+
+          if updated_content == content:
+              print("[PASS] Activity feed already current.")
+          else:
+              path.write_text(updated_content)
+              print("[PASS] Activity feed updated.")
+          PY
+
+      - name: Commit and Push Changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md || true
-          git diff-index --quiet HEAD || git commit -m "auto: update dynamic lab activity feed [skip ci]"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "[PASS] No README activity changes required."
+            exit 0
+          fi
+
+          git commit -m "auto: update dynamic lab activity feed [skip ci]"
+
+          git pull --rebase origin main
+          git push origin HEAD:main
