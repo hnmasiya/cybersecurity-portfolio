@@ -25,7 +25,7 @@ jobs:
 
       - name: Python syntax validation
         run: |
-          python -m compileall -q             Endpoint-Security             Security-Automation             SIEM             Threat-Hunting             Scripts
+          python -m compileall -q             DFIR             Endpoint-Security             Network-Security             Security-Automation             SIEM             Threat-Hunting             Scripts
 
       - name: Install test dependencies
         run: pip install -r requirements-dev.txt
@@ -49,7 +49,7 @@ jobs:
 
       - name: Public secret assignment scan
         run: |
-          if git grep -nEI             'INDEXER_PASSWORD=|API_PASSWORD=|DASHBOARD_PASSWORD='             --             ':!.github/workflows/portfolio-quality.yml'             ':!Scripts/portfolio_quality_check.py'             ':!REPORT-BACKUPS/*'             ':!UPGRADED-SOC-REPORT-DRAFTS/*'             ':!Documentation-Archive/*'; then
+          if git grep -nEI             'INDEXER_PASSWORD=|API_PASSWORD=|DASHBOARD_PASSWORD='             --             ':!.github/workflows/portfolio-quality.yml'             ':!Scripts/portfolio_quality_check.py'; then
             echo "Potential credential assignment found"
             exit 1
           fi
