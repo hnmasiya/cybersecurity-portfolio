@@ -1,0 +1,37 @@
+[
+  {
+    "name": "legacy-web-app",
+    "image": "myapp:latest",
+    "user": "root",
+    "env": {
+      "APP_ENV": "production",
+      "API_KEY": "sk-live-9f8a7b6c5d4e3f2a1b0c"
+    },
+    "privileged": true,
+    "network_mode": "bridge",
+    "volumes": ["/var/run/docker.sock:/var/run/docker.sock", "/data:/data"]
+  },
+  {
+    "name": "legacy-monitoring-agent",
+    "image": "monitoring-agent",
+    "user": "appuser",
+    "env": {
+      "APP_ENV": "production"
+    },
+    "privileged": false,
+    "network_mode": "host",
+    "volumes": ["/data:/data"]
+  },
+  {
+    "name": "hardened-api",
+    "image": "myapp-api:2.4.1",
+    "user": "appuser",
+    "env": {
+      "APP_ENV": "production",
+      "API_KEY": "changeme"
+    },
+    "privileged": false,
+    "network_mode": "bridge",
+    "volumes": ["/data:/data:ro"]
+  }
+]
