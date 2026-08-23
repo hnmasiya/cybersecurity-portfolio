@@ -186,6 +186,11 @@ Without FIM monitoring, unauthorized modifications may remain unnoticed.
 
 # 10. Evidence
 
+No screenshots have been captured for this specific report yet. For
+FIM evidence that is captured, see the offline/synthetic
+[Wazuh Detection Engineering Lab](../Detection-Engineering-Lab/README.md),
+which produces JSON/CSV validation evidence under `Evidence/`.
+
 ---
 
 # 11. Recommendations
