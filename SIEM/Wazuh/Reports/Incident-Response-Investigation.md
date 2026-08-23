@@ -65,6 +65,11 @@ Recommended actions:
 
 # 6. Evidence
 
+No screenshots have been captured for this specific report yet. For
+investigation evidence that is captured, see
+[SOC Alert Triage and IOC Enrichment](../../../Security-Automation/SOC-Alert-Triage/Reports/SOC-Alert-Triage-IOC-Enrichment.md),
+which produces JSON evidence under `Evidence/`.
+
 ---
 
 # 7. Lessons Learned
