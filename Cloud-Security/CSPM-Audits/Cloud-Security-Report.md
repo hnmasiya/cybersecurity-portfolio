@@ -1,5 +1,14 @@
 # Cloud Security Posture Assessment: AWS Infrastructure Audit
 
+> **Status: Methodology / Illustrative Scenario.** This report demonstrates
+> how I structure a CSPM finding and remediation write-up. It is not a
+> claim of a live AWS account audit in this portfolio — no Prowler output,
+> CloudTrail export, or account backs this specific scenario. The
+> supporting `../IAM-Policies/least-privilege-policy.json` and
+> `../Detection-Rules/suspicious_iam_modifications.sql` in this folder are
+> real, reviewable IAM/detection-engineering artifacts, independent of
+> this narrative scenario.
+
 ## Metadata
 * **Case ID:** CSPM-2026-0822-01
 * **Analyst:** Hazvinei Masiya

@@ -1,5 +1,13 @@
 # Application Security Assessment: SAST & SCA Pipeline Review
 
+> **Status: Methodology / Illustrative Scenario.** This report demonstrates
+> how I structure and write up a SAST/SCA finding, using a representative
+> vulnerability class (a vulnerable logging dependency). It is not a claim
+> of a finding against a live system in this portfolio — no pipeline
+> config, scan output, or dependency manifest backs this specific scenario.
+> For evidence-backed detection work, see `Security-Automation/` and
+> `tests/`, where the analysis logic is real, tested, and runnable.
+
 ## Metadata
 * **Project:** Microservices-Auth-API
 * **Analyst:** Hazvinei Masiya

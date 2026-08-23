@@ -24,6 +24,15 @@ Docker Security Lab
 
 Docker-Labs/Screenshots/
 
-## Status
+## Current Status
 
-Pending Lab Execution
+**Live container lab walkthrough: pending** (requires a dedicated Docker
+host and screenshots).
+
+**Container configuration audit: complete (offline/synthetic).** The
+[Container Configuration Security Audit Lab](../Container-Audit-Lab/README.md)
+evaluates synthetic container build/runtime configuration against
+CIS Docker Benchmark-style checks (root user, unpinned images, hardcoded
+secrets, privileged mode, docker.sock mounts, host networking), mapped to
+MITRE ATT&CK for Containers, with an automated pytest suite. See
+`Docker-Labs/Container-Audit-Lab/`.

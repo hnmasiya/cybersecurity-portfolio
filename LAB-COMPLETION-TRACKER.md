@@ -11,8 +11,11 @@
 | Threat Hunting | Complete | Offline/synthetic |
 | Incident Response | Complete | Evidence-driven lab |
 | Active Directory Detection | Complete | Offline/synthetic; live DC pending |
+| Linux Host Hardening | Complete | Offline/synthetic; live host pending |
+| Container Configuration Audit | Complete | Offline/synthetic; live Docker host pending |
 | Nmap | Evidence-Bounded | Live execution evidence pending |
 | Wireshark | Evidence-Bounded | Live execution evidence pending |
+| AppSec/SAST, Offensive Security, Enterprise AD Audit, Cloud CSPM | Methodology | Illustrative write-ups, not live findings |
 
 ## Remaining External Dependency
 Windows + Sysmon + Wazuh Agent + live telemetry + live screenshots require access to a Windows endpoint.
