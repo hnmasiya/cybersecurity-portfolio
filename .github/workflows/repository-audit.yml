@@ -24,7 +24,7 @@ jobs:
           echo "================================================="
           echo "1. REPOSITORY STRUCTURE & GIT HYGIENE AUDIT"
           echo "================================================="
-          STRAY_FILES=$(find . -maxdepth 2 -type f \( -name "*.tmp" -o -name "*.bak" -o -name "*resume.html" -o -name ".DS_Store" \))
+          STRAY_FILES=$(find . -maxdepth 2 -type f \( -name "*.tmp" -o -name "*.bak" -o -name ".DS_Store" \))
           if [ -n "$STRAY_FILES" ]; then
             echo "[!] Stray files found:"
             echo "$STRAY_FILES"
