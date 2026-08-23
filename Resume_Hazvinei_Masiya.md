@@ -26,7 +26,7 @@
 </div>
 
 <h2>Professional Summary</h2>
-CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT infrastructure, systems administration, network engineering, and security operations experience. Specializing in SOC analysis, threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in executing enterprise network migrations, authoring custom XML detection rules, and isolating lateral movement.
+CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT infrastructure, systems administration, network engineering, and security-focused operations experience. Specializing in SOC analysis, threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in executing enterprise network migrations, authoring custom XML detection rules, and isolating lateral movement.
 
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
@@ -34,26 +34,26 @@ CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT 
   <li><b>DFIR & Threat Hunting:</b> Linux Auth/Syslog Forensics, PCAP Packet Analysis (Tshark/Wireshark), Hash Verification, MITRE ATT&CK Mapping</li>
   <li><b>Security Automation & Scripting:</b> Python (Automated IOC & Log Parsers), Bash, PowerShell, YAML</li>
   <li><b>Network & Systems Security:</b> Active Directory (GPO, Event Log Analysis), Dell Versa SD-WAN, Sophos XG, Aruba/Cisco Racking & VOS Upgrades</li>
-  <li><b>Cloud & DevSecOps:</b> GCP Multi-Tier Architecture (Terraform IaC, Cloud NAT, Zero Public IP DB Tier), GitHub Actions CI/CD</li>
+  <li><b>Cloud & DevSecOps:</b> GCP Multi-Tier Architecture (Terraform IaC, Cloud NAT, No Public IP Assigned to Internal Database Tier), GitHub Actions CI/CD</li>
 </ul>
 
 <h2>Security Engineering Projects & Artifacts</h2>
 
 <div class="project-title">PCAP Traffic & Triage Automation</div>
 <ul>
-  <li>Processed 50,000+ network packets in &lt; 2.5 seconds using tshark and custom Python parsing scripts.</li>
+  <li>Processed captured network traffic using Tshark and custom Python parsing scripts to identify suspicious HTTP requests, hosts, protocols, and indicators of compromise.</li>
   <li>Automated detection of web application scans, SQL injection payloads (MITRE T1190), and command execution attempts.</li>
 </ul>
 
 <div class="project-title">Linux Incident Response & DFIR</div>
 <ul>
-  <li>Analyzed 1.2GB of compromised Linux system logs to reconstruct post-incident attack timelines.</li>
+  <li>Analyzed Linux authentication and system logs to reconstruct post-incident attack timelines.</li>
   <li>Verified SHA-256 evidence chain integrity and mapped unauthorized SSH key sessions to MITRE T1078.</li>
 </ul>
 
 <div class="project-title">Wazuh SIEM Rules & FIM Lab</div>
 <ul>
-  <li>Authored custom XML detection rules to flag sudo privilege escalation, reducing false positives by 40%.</li>
+  <li>Authored custom XML detection rules to flag sudo privilege escalation and validated them against test events.</li>
   <li>Configured File Integrity Monitoring (FIM) across critical Linux system binaries and configuration files.</li>
 </ul>
 
@@ -71,7 +71,7 @@ CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT 
 </div>
 <ul>
   <li>Lead daily security log reviews, incident response triage, malware containment, and structured patch management across multi-tenant environments; apply security-analyst triage principles to monitor Sophos Endpoint and firewall telemetry for anomalous activity.</li>
-  <li>Administer user accounts, permissions, Active Directory Group Policies (GPOs), RBAC, least-privilege models, and multi-factor authentication (MFA) across client networks (120+ to 500+ users).</li>
+  <li>Administer user accounts, permissions, Active Directory Group Policies (GPOs), RBAC, least-privilege models, and multi-factor authentication (MFA) across enterprise client environments.</li>
   <li>Physically deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, IP configuration, and live connectivity validation.</li>
   <li>Decommissioned legacy Cisco switches, APs, and controllers during enterprise network upgrades (Mastercard Zimbabwe), racking and installing new Aruba controllers, switches, and sensor LAN cabling.</li>
   <li>Re-imaged laptop fleets to corporate security baselines during enterprise deployments (Ericsson Zimbabwe), joined endpoints to Active Directory domains, configured M365 email access, and installed core switches/APs.</li>
@@ -83,5 +83,5 @@ CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT 
 <ul>
   <li><b>CompTIA Security+ (SY0-701)</b> — CompTIA</li>
   <li><b>Google Cybersecurity Professional Certificate</b> — Google &nbsp;|&nbsp; <b>Google IT Support Professional Certificate</b> — Google</li>
-  <li><b>BSc in Computer Science</b> — Unicaf University</li>
+  <li><b>BSc in Computer Science</b> — Unicaf University (In Progress)</li>
 </ul>
