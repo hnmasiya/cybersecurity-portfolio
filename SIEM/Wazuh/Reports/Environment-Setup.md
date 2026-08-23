@@ -107,6 +107,12 @@ The Wazuh SIEM environment supports:
 
 # 7. Evidence
 
+No screenshots have been captured for this specific report yet. For
+evidence that is captured, see the DVWA and OWASP Juice Shop
+assessments under `Web-Security/`, and the offline/synthetic
+detection labs under `SIEM/Wazuh/Detection-Engineering-Lab/`,
+`Threat-Hunting/`, and `Endpoint-Security/`.
+
 ---
 
 # 8. Lessons Learned

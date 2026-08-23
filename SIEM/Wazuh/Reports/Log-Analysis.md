@@ -67,6 +67,11 @@ The analysis demonstrated how Wazuh can:
 
 # 6. Evidence
 
+No screenshots have been captured for this specific report yet. For
+log-analysis evidence that is captured, see
+[Log Parsing and Anomaly Detection](../../../Security-Automation/Log-Anomaly-Detection/Reports/Log-Parsing-Anomaly-Detection.md),
+which produces JSON evidence under `Evidence/`.
+
 ---
 
 # 7. Lessons Learned

@@ -64,6 +64,8 @@ Validation included:
 
 # 6. Evidence
 
+No screenshots have been captured for this specific report yet.
+
 ---
 
 # 7. Lessons Learned
