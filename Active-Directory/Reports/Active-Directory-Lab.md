@@ -27,6 +27,14 @@ Screenshots:
 
 Active-Directory/Screenshots/
 
-## Status
+## Current Status
 
-Pending Lab Execution
+**Live Domain Controller deployment: pending** (requires a Windows Server
+environment).
+
+**Detection engineering: complete (offline/synthetic).** The
+[Active Directory Detection Lab](../Detection-Lab/README.md) analyzes
+synthetic Windows Security event data for brute force authentication,
+Kerberoasting, privileged group membership changes, account creation, and
+audit log clearing, with MITRE ATT&CK mapping and an automated pytest
+suite. See `Active-Directory/Detection-Lab/`.
