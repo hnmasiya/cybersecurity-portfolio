@@ -9,6 +9,7 @@ This document maps practical SOC capabilities to specific repository evidence.
 | Alert Triage | `Security-Automation/SOC-Alert-Triage/` |
 | IOC Extraction | `Security-Automation/Wazuh-Alert-Enrichment/` |
 | Threat Hunting | `Threat-Hunting/Detection-Validation-Lab/` |
+| Active Directory Security | `Active-Directory/Detection-Lab/` |
 | Incident Response | `Incident-Response/` and Wazuh investigation reports |
 | Network Security Monitoring | `Network-Security/PCAP-Analysis/` |
 | Web Application Security | `Web-Security/DVWA/` |
@@ -27,7 +28,8 @@ This document maps practical SOC capabilities to specific repository evidence.
 
 **Controlled laboratory:** DVWA, Juice Shop and PCAP exercises.
 
-**Synthetic/offline:** Windows/Sysmon detection and Threat Hunting validation.
+**Synthetic/offline:** Windows/Sysmon detection, Threat Hunting validation,
+and Active Directory Detection Lab.
 
 **Evidence-bounded methodology:** Nmap and Wireshark active methodology reports.
 
