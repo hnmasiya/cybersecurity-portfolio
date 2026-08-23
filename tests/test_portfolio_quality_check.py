@@ -56,7 +56,7 @@ class TestScanPlaceholdersAndSecrets:
 
 class TestScanIgnoresAndNonMarkdown:
     def test_ignores_configured_directories(self, tmp_path):
-        archive = tmp_path / "Documentation-Archive"
+        archive = tmp_path / "Archive"
         archive.mkdir()
         (archive / "doc.md").write_text("PLACEHOLDER")
         findings = quality.scan(tmp_path)
