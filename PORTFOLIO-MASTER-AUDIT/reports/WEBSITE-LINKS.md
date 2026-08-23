@@ -1,0 +1,44 @@
+# Website Link Audit
+
+Generated: Sun 23 Aug 2026 08:06:49 CAT
+
+- #
+  - local/internal link
+- /cdn-cgi/l/email-protection#610f0e130c000f4f0c001208180021060c00080d4f020e0c414e410c0012081800090f210d0817044f020e0c
+  - local/internal link
+- /cdn-cgi/l/email-protection#b5dbdac7d8d4db9bd8d4c6dcccd4f5d2d8d4dcd99bd6dad8959a95d8d4c6dcccd4dddbf5d9dcc3d09bd6dad8
+  - local/internal link
+- #certs
+  - local/internal link
+- #contact
+  - local/internal link
+- https://fonts.googleapis.com
+  - WARNING: HTTP 404
+- https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap
+  - HTTP 200
+- https://fonts.gstatic.com
+  - WARNING: HTTP 404
+- https://github.com/hnmasiya
+  - HTTP 200
+- https://github.com/hnmasiya/cybersecurity-portfolio/raw/main/Resume_Hazvinei_Masiya.pdf
+  - HTTP 200
+- https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security
+  - HTTP 200
+- https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/DFIR/Linux-Forensics
+  - HTTP 200
+- https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Endpoint-Security/Windows-Sysmon-Detection-Lab
+  - HTTP 200
+- https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Network-Security/PCAP-Analysis
+  - HTTP 200
+- https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Security-Automation
+  - HTTP 200
+- https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Wazuh/Detection-Engineering-Lab
+  - HTTP 200
+- https://linkedin.com/in/hazvinei-masiya
+  - HTTP 200
+- https://masiya-hub.org/cdn-cgi/content?id=VI77fjZ0k1m76zMPmvq_NiAuayCrHgo1FMQHAKvDdpU-1787465209.2689905-1.2.1.1-8vqmRkqYaMAOYL.7vG1oPTfmeC3w40TRko4Ov1f1QCDRZB.7aJEf5k5VdEL.PZiX
+  - HTTP 200
+- #snapshot
+  - local/internal link
+- #work
+  - local/internal link
