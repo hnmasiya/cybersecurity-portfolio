@@ -75,7 +75,7 @@ CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT 
   <li>Physically deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, IP configuration, and live connectivity validation.</li>
   <li>Decommissioned legacy Cisco switches, APs, and controllers during enterprise network upgrades (Mastercard Zimbabwe), racking and installing new Aruba controllers, switches, and sensor LAN cabling.</li>
   <li>Re-imaged laptop fleets to corporate security baselines during enterprise deployments (Ericsson Zimbabwe), joined endpoints to Active Directory domains, configured M365 email access, and installed core switches/APs.</li>
-  <li>Executed server migrations, HP switch deployments, VoIP phone rollouts, PC re-imaging, PoE IP camera integrations, and secure legacy hardware decommissioning across multi-site client projects (AJP Group / Abbeydale Group / ShermanIT).</li>
+  <li>Executed server migrations, HP switch deployments, VoIP phone rollouts, PC re-imaging, PoE IP camera integrations, and secure legacy hardware decommissioning across multi-site client projects (AJP Group / Abbeydale Group / Sherman IT).</li>
   <li>Provide 1st through 3rd line technical support, endpoint hardening, desktop diagnostics, backup/business continuity operations, and SOP documentation to standardize incident response.</li>
 </ul>
 

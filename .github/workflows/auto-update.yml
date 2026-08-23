@@ -1,0 +1,32 @@
+name: Auto-Build Resume & Deploy Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install LibreOffice
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libreoffice
+
+      - name: Convert Resume Markdown to PDF
+        run: |
+          if [ -f "Resume_Hazvinei_Masiya.md" ]; then
+            libreoffice --headless --convert-to pdf --outdir . Resume_Hazvinei_Masiya.md
+          fi
+
+      - name: Commit and Push Updated Resume PDF
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Resume_Hazvinei_Masiya.pdf || true
+          git diff-index --quiet HEAD || git commit -m "auto: build updated resume PDF [skip ci]"
+          git push

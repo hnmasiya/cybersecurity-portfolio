@@ -1,0 +1,68 @@
+name: Automated Portfolio Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 0' # Every Sunday at midnight
+  workflow_dispatch:
+
+jobs:
+  run-portfolio-audit:
+    name: Execute Full System Diagnostic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 1. Repository Hygiene & Stray Files Audit
+        run: |
+          echo "================================================="
+          echo "1. REPOSITORY STRUCTURE & GIT HYGIENE AUDIT"
+          echo "================================================="
+          STRAY_FILES=$(find . -maxdepth 2 -type f \( -name "*.tmp" -o -name "*.bak" -o -name "*resume.html" -o -name ".DS_Store" \))
+          if [ -n "$STRAY_FILES" ]; then
+            echo "[!] Stray files found:"
+            echo "$STRAY_FILES"
+            exit 1
+          else
+            echo "[+] Working tree clean. Zero stray build files."
+          fi
+
+      - name: 2. Core Resume & Portfolio Assets Audit
+        run: |
+          echo "================================================="
+          echo "2. RESUME & PORTFOLIO ASSET ALIGNMENT AUDIT"
+          echo "================================================="
+          if [ ! -f "Resume_Hazvinei_Masiya.md" ]; then
+            echo "[-] ERROR: Resume_Hazvinei_Masiya.md is missing!"
+            exit 1
+          fi
+          if [ ! -f "Resume_Hazvinei_Masiya.pdf" ]; then
+            echo "[-] ERROR: Resume_Hazvinei_Masiya.pdf is missing!"
+            exit 1
+          fi
+          echo "[+] Resume Markdown and compiled PDF verified."
+
+      - name: 3. Dynamic README Markers Audit
+        run: |
+          echo "================================================="
+          echo "3. DYNAMIC ACTIVITY MARKERS AUDIT"
+          echo "================================================="
+          if grep -q "START_SECTION:activity" README.md && grep -q "END_SECTION:activity" README.md; then
+            echo "[+] Dynamic activity feed markers verified in README.md."
+          else
+            echo "[-] WARNING: Dynamic activity markers missing in README.md."
+            exit 1
+          fi
+
+      - name: 4. Workflow Inventory Audit
+        run: |
+          echo "================================================="
+          echo "4. ACTIVE WORKFLOW INVENTORY"
+          echo "================================================="
+          ls -la .github/workflows/
