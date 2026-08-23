@@ -1,6 +1,6 @@
 from conftest import load_module
 
-ad_parser = load_module("scripts/log-parsers/ad_event_parser.py")
+ad_parser = load_module("Scripts/log-parsers/ad_event_parser.py")
 
 
 class TestParseEvent:
