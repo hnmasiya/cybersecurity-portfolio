@@ -173,7 +173,6 @@ The active Wireshark project documents the packet-analysis workflow and clearly 
 
 * 📋 **[Lab Completion Tracker](./LAB-COMPLETION-TRACKER.md)** — Portfolio progress and project status.
 * 🛠️ **[Security Tools Inventory](./SECURITY-TOOLS-INVENTORY.md)** — Security tooling and lab inventory.
-* 🧾 **[Evidence Tracker](./EVIDENCE-TRACKER.md)** — Evidence mapping and supporting artifacts.
 
 ---
 
@@ -203,7 +202,7 @@ No unsupported technical finding is intentionally presented as observed evidence
 
 The portfolio is published through GitHub Pages:
 
-https://hnmasiya.github.io/cybersecurity-portfolio/
+https://masiya-hub.org
 
 The GitHub repository remains the authoritative source for the underlying reports, scripts and evidence.
 

@@ -56,6 +56,7 @@ This repository documents practical security investigations, detection engineeri
 - Security log parsing
 - Detection tooling
 - Evidence-processing automation
+- Pytest unit test suite covering the automation scripts (`tests/`)
 
 ---
 
@@ -95,17 +96,19 @@ This repository documents practical security investigations, detection engineeri
 
 The repository is organized around practical security domains:
 
-- `Windows-Forensics/`
-- `Advanced-Threat-Operations/`
-- `Cloud-Security/`
-- `AppSec-DevSecOps/`
-- `Offensive-Security/`
-- `Enterprise-Security/`
-- `Incident-Response/`
-- `Active-Directory/`
-- `Network-Security/`
-- `Web-Security/`
-- `Scripts/`
+- `SIEM/` — Wazuh detection engineering, alert investigation, File Integrity Monitoring
+- `Security-Automation/` — Python tooling for alert triage, enrichment, log anomaly detection, file integrity monitoring
+- `Threat-Hunting/` — hypothesis-driven hunts and offline detection validation
+- `Endpoint-Security/` — Windows/Sysmon detection engineering
+- `Incident-Response/` — investigation workflow, containment, evidence handling
+- `DFIR/` — Linux forensic investigation, IOC extraction
+- `Network-Security/` — PCAP analysis, Wireshark, Nmap
+- `Web-Security/` — DVWA and OWASP Juice Shop assessments, PortSwigger Academy
+- `Active-Directory/` — Windows/AD security lab
+- `Cloud-Security/` — cloud security fundamentals
+- `AppSec-DevSecOps/`, `Offensive-Security/`, `Enterprise-Security/`, `Linux-Security/`, `Docker-Labs/` — supporting domain reports
+- `Scripts/` — repository automation and quality-check tooling
+- `tests/` — pytest suite covering the automation scripts above
 
 Projects contain technical documentation, investigation methodology, configurations, scripts, reports, and supporting evidence where applicable.
 
