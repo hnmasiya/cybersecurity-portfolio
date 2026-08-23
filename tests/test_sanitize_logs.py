@@ -1,6 +1,6 @@
 from conftest import load_module
 
-sanitize = load_module("scripts/sanitize-logs.py")
+sanitize = load_module("Scripts/sanitize-logs.py")
 
 
 class TestPrivateIpRedaction:

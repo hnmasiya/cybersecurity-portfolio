@@ -10,6 +10,7 @@
 | Windows / Sysmon | Complete | Live endpoint pending |
 | Threat Hunting | Complete | Offline/synthetic |
 | Incident Response | Complete | Evidence-driven lab |
+| Active Directory Detection | Complete | Offline/synthetic; live DC pending |
 | Nmap | Evidence-Bounded | Live execution evidence pending |
 | Wireshark | Evidence-Bounded | Live execution evidence pending |
 
