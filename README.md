@@ -113,6 +113,12 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 ---
 
+---
+
+<!-- START_SECTION:activity -->
+### Recent Lab & Security Updates
+<!-- END_SECTION:activity -->
+
 ## 🎯 Career Focus
 
 Currently targeting opportunities in:
