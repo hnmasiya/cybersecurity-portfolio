@@ -51,6 +51,12 @@ Custom rules can detect:
 
 # 5. Evidence
 
+No screenshots have been captured for this specific report yet. For
+custom-rule evidence that is captured, see the offline/synthetic
+[Wazuh Detection Engineering Lab](../Detection-Engineering-Lab/README.md),
+which validates custom rule XML against synthetic events and produces
+JSON/CSV evidence under `Evidence/`.
+
 ---
 
 # 6. Lessons Learned
