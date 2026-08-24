@@ -120,7 +120,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* Merge remote-tracking branch 'origin/main' (61 seconds ago)
+* Add mobile-responsive layout for the portfolio site (#5) (14 hours ago)
+* Add mobile-responsive layout for the portfolio site (14 hours ago)
+* Add Linux/Docker labs, relabel unverified findings, fix empty evidence sections (#4) (15 hours ago)
+* Add Linux/Docker labs, relabel unverified findings, fix empty evidence sections (15 hours ago)
+* Fix two pre-existing broken CI checks (#3) (16 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
