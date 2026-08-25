@@ -15,7 +15,7 @@ title: "Enterprise Cybersecurity & SOC Operations Portfolio"
 
 ## 👤 About Me
 
-I am a **CompTIA Security+ certified IT professional with 9+ years of enterprise IT experience**, building on that foundation with a strong hands-on cybersecurity focus across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.
+I am a **CompTIA Security+ certified IT professional with 12+ years of enterprise IT experience** (since March 2014), building on that foundation with a strong hands-on cybersecurity focus across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.
 
 My professional background includes supporting **enterprise sites and business-critical IT infrastructure**, with experience across Windows Server, Active Directory, endpoint security, networking, access control, system hardening, patch management, troubleshooting, and infrastructure operations.
 
