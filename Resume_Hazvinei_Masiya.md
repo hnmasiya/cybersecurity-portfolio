@@ -86,6 +86,7 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
   <li>Deliver endpoint protection, patch deployment, and vulnerability mitigation across client networks; troubleshoot Microsoft 365 and application issues.</li>
   <li>Monitor endpoint, network, and system activity for anomalies, applying security-analyst triage principles to identify and escalate security-relevant incidents.</li>
   <li>Maintain technical documentation and SOP development to standardize client support delivery.</li>
+  <li>Client project — Network Infrastructure Upgrade, Mastercard Zimbabwe (Mar–Apr 2022): installed sensor LAN cabling, decommissioned legacy Cisco switches/controllers/APs, and racked/installed new Aruba controllers, switches, and access points.</li>
 </ul>
 
 <div class="job-header">
@@ -105,6 +106,7 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
 <ul>
   <li>Delivered desktop, network, and infrastructure support across multiple client environments; managed user access controls and permissions.</li>
   <li>Applied security patches, supported vulnerability remediation, and investigated authentication/access-control issues.</li>
+  <li>Client project — IT Equipment Deployment and Configuration, Ericsson Zimbabwe (Nov 2016–Dec 2018): re-imaged laptop fleets to company standards, joined devices to the domain, configured email access, and installed network switches/access points.</li>
 </ul>
 
 <div class="job-header">
@@ -114,6 +116,7 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
 <ul>
   <li>Supported 200+ users across multiple business locations, providing remote and onsite technical support within defined SLA requirements.</li>
   <li>Troubleshot hardware, software, networking, and authentication issues; supported software deployments and infrastructure updates.</li>
+  <li>Client project — IT Infrastructure Upgrade, AJP Group (May–Aug 2015): retired outdated systems, onboarded new devices to the domain, implemented VoIP phone systems, and migrated data to new systems.</li>
 </ul>
 
 <h2>Certifications & Education</h2>
