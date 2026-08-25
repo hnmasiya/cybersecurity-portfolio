@@ -120,11 +120,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* Add mobile-responsive layout for the portfolio site (#5) (14 hours ago)
-* Add mobile-responsive layout for the portfolio site (14 hours ago)
-* Add Linux/Docker labs, relabel unverified findings, fix empty evidence sections (#4) (15 hours ago)
-* Add Linux/Docker labs, relabel unverified findings, fix empty evidence sections (15 hours ago)
-* Fix two pre-existing broken CI checks (#3) (16 hours ago)
+* auto: update dynamic lab activity feed [skip ci] (24 hours ago)
+* Add mobile-responsive layout for the portfolio site (#5) (2 days ago)
+* Add mobile-responsive layout for the portfolio site (2 days ago)
+* Add Linux/Docker labs, relabel unverified findings, fix empty evidence sections (#4) (2 days ago)
+* Add Linux/Docker labs, relabel unverified findings, fix empty evidence sections (2 days ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
