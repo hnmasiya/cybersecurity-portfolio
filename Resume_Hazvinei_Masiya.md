@@ -26,7 +26,7 @@
 </div>
 
 <h2>Professional Summary</h2>
-CompTIA Security+ certified specialist with 12+ years of hands-on enterprise IT infrastructure, systems administration, network engineering, and security-focused operations experience. Specializing in SOC analysis, threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in executing enterprise network migrations, authoring custom XML detection rules, and isolating lateral movement.
+CompTIA Security+ certified IT professional with 12+ years of progressive experience across enterprise IT infrastructure, systems administration, network engineering, and security-conscious technical support — including enterprise SD-WAN deployment and network migrations. Independently developed SIEM detection engineering, threat hunting, and security automation skills (Wazuh, Sysmon, Python), demonstrated in a public, tested portfolio at masiya-hub.org.
 
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
@@ -66,17 +66,54 @@ CompTIA Security+ certified specialist with 12+ years of hands-on enterprise IT 
 <h2>Professional Experience</h2>
 
 <div class="job-header">
-  <span class="date">Mar 2014 – Present</span>
-  <span class="job-title">Senior IT Infrastructure & Security Specialist</span> | <span class="company">Enterprise Infrastructure, Network & Client Services</span>
+  <span class="date">Jan 2025 – Present</span>
+  <span class="job-title">Information Technology Support Specialist</span> | <span class="company">Netvantage Partners</span>
 </div>
 <ul>
-  <li>Lead daily security log reviews, incident response triage, malware containment, and structured patch management across multi-tenant environments; apply security-analyst triage principles to monitor Sophos Endpoint and firewall telemetry for anomalous activity.</li>
-  <li>Administer user accounts, permissions, Active Directory Group Policies (GPOs), RBAC, least-privilege models, and multi-factor authentication (MFA) across enterprise client environments.</li>
-  <li>Physically deploy, configure, and migrate enterprise Dell Versa SD-WAN appliances, perform Versa Operating System (VOS) upgrades, IP configuration, and live connectivity validation.</li>
-  <li>Decommissioned legacy Cisco switches, APs, and controllers during enterprise network upgrades (Mastercard Zimbabwe), racking and installing new Aruba controllers, switches, and sensor LAN cabling.</li>
-  <li>Re-imaged laptop fleets to corporate security baselines during enterprise deployments (Ericsson Zimbabwe), joined endpoints to Active Directory domains, configured M365 email access, and installed core switches/APs.</li>
-  <li>Executed server migrations, HP switch deployments, VoIP phone rollouts, PC re-imaging, PoE IP camera integrations, and secure legacy hardware decommissioning across multi-site client projects (AJP Group / Abbeydale Group / Sherman IT).</li>
-  <li>Provide 1st through 3rd line technical support, endpoint hardening, desktop diagnostics, backup/business continuity operations, and SOP documentation to standardize incident response.</li>
+  <li>Deliver 1st and 2nd line IT support across multiple client environments, including secure endpoint deployment, desktop/laptop diagnostics, and hardened onboarding processes.</li>
+  <li>Support vulnerability mitigation through structured patch management, maintaining compliant and up-to-date systems across client networks.</li>
+  <li>Investigate and resolve security-relevant incidents, including malware alerts, unauthorized access attempts, and connectivity disruptions.</li>
+  <li>Develop IT support documentation and incident-handling procedures to standardize response consistency and reduce resolution time.</li>
+</ul>
+
+<div class="job-header">
+  <span class="date">Jan 2021 – Present</span>
+  <span class="job-title">IT Support Specialist (Contract & Consulting)</span> | <span class="company">Zuetech Technology Solutions</span>
+</div>
+<ul>
+  <li>Provide enterprise IT support, infrastructure administration, and network operations across client environments, including Active Directory administration, RBAC, and least-privilege access control.</li>
+  <li>Physically deploy and configure enterprise Dell Versa SD-WAN appliances, including Versa Operating System (VOS) upgrades, IP configuration, live migration support, and connectivity validation.</li>
+  <li>Deliver endpoint protection, patch deployment, and vulnerability mitigation across client networks; troubleshoot Microsoft 365 and application issues.</li>
+  <li>Monitor endpoint, network, and system activity for anomalies, applying security-analyst triage principles to identify and escalate security-relevant incidents.</li>
+  <li>Maintain technical documentation and SOP development to standardize client support delivery.</li>
+</ul>
+
+<div class="job-header">
+  <span class="date">Jan 2019 – Dec 2020</span>
+  <span class="job-title">Desktop Support Technician</span> | <span class="company">Raising Dawn Investment</span>
+</div>
+<ul>
+  <li>Administered user accounts, permissions, and security groups for 120+ users; supported access-control administration.</li>
+  <li>Monitored Sophos Endpoint Protection and firewall telemetry, escalating security anomalies and endpoint issues.</li>
+  <li>Supported backup, recovery, and business continuity operations, maintaining technical and operational documentation.</li>
+</ul>
+
+<div class="job-header">
+  <span class="date">Jan 2016 – Dec 2018</span>
+  <span class="job-title">Information Technology Support Technician</span> | <span class="company">Compusys Technology</span>
+</div>
+<ul>
+  <li>Delivered desktop, network, and infrastructure support across multiple client environments; managed user access controls and permissions.</li>
+  <li>Applied security patches, supported vulnerability remediation, and investigated authentication/access-control issues.</li>
+</ul>
+
+<div class="job-header">
+  <span class="date">Mar 2014 – Dec 2015</span>
+  <span class="job-title">Help Desk Support Technician</span> | <span class="company">shermanit</span>
+</div>
+<ul>
+  <li>Supported 200+ users across multiple business locations, providing remote and onsite technical support within defined SLA requirements.</li>
+  <li>Troubleshot hardware, software, networking, and authentication issues; supported software deployments and infrastructure updates.</li>
 </ul>
 
 <h2>Certifications & Education</h2>
