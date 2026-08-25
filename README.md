@@ -1,10 +1,12 @@
 # Hazvinei Nomatter Masiya
 
-## SOC Analyst | Security Engineer | Detection & Incident Response
+## Cybersecurity Analyst · Security Operations · Detection & Automation
 
-Cybersecurity professional with 9+ years of enterprise IT operations experience, transitioning into security engineering and security operations.
+Enterprise IT Professional | CompTIA Security+ | Google Cybersecurity
 
-CompTIA Security+ certified with hands-on work across security operations, detection engineering, incident response, digital forensics, Windows and Active Directory security, network security, cloud security, and security automation.
+12+ years of hands-on enterprise IT experience (since March 2014) supporting Windows environments, infrastructure, access control, endpoint security, system hardening, troubleshooting, and business-critical operations — now focused on cybersecurity, security operations, detection, investigation, and automation.
+
+Hands-on work across security operations, detection engineering, incident response, digital forensics, Windows and Active Directory security, network security, cloud security, and security automation.
 
 ---
 

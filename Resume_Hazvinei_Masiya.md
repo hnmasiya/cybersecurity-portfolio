@@ -18,7 +18,7 @@
 
 <div class="header">
   <h1>HAZVINEI NOMATTER MASIYA</h1>
-  <div class="subtitle">SOC Analyst & Security Engineer</div>
+  <div class="subtitle">Cybersecurity Analyst · Security Operations · Detection & Automation</div>
   <div class="contact">
     📍 Harare, Zimbabwe &nbsp;|&nbsp; 📧 norman.masiya@gmail.com / masiyahn@live.com &nbsp;|&nbsp; 📞 +263 77 521 6823 / +263 71 866 2162<br>
     <b>GitHub:</b> https://github.com/hnmasiya &nbsp;|&nbsp; <b>Portfolio:</b> https://masiya-hub.org &nbsp;|&nbsp; <b>LinkedIn:</b> https://www.linkedin.com/in/hazvinei-masiya/
@@ -26,7 +26,7 @@
 </div>
 
 <h2>Professional Summary</h2>
-CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT infrastructure, systems administration, network engineering, and security-focused operations experience. Specializing in SOC analysis, threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in executing enterprise network migrations, authoring custom XML detection rules, and isolating lateral movement.
+CompTIA Security+ certified specialist with 12+ years of hands-on enterprise IT infrastructure, systems administration, network engineering, and security-focused operations experience. Specializing in SOC analysis, threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response. Proven track record in executing enterprise network migrations, authoring custom XML detection rules, and isolating lateral movement.
 
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
@@ -66,7 +66,7 @@ CompTIA Security+ certified specialist with 14+ years of hands-on enterprise IT 
 <h2>Professional Experience</h2>
 
 <div class="job-header">
-  <span class="date">Jul 2012 – Present</span>
+  <span class="date">Mar 2014 – Present</span>
   <span class="job-title">Senior IT Infrastructure & Security Specialist</span> | <span class="company">Enterprise Infrastructure, Network & Client Services</span>
 </div>
 <ul>

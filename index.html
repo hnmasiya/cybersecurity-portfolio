@@ -8,7 +8,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hazvinei Nomatter Masiya | SOC Analyst & Security Engineer</title>
+    <title>Hazvinei Nomatter Masiya | Cybersecurity Analyst & Security Operations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -215,6 +215,12 @@
             font-family: 'IBM Plex Mono', monospace;
             color: var(--accent-cyan);
             font-size: 1.25rem;
+            margin-bottom: 0.4rem;
+        }
+        .hero-subtitle-secondary {
+            font-family: 'IBM Plex Mono', monospace;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
             margin-bottom: 1.25rem;
         }
         .hero-meta {
@@ -551,6 +557,7 @@
             .hero { padding: 2rem 0 1.5rem; }
             .hero-title { font-size: 2.1rem; }
             .hero-subtitle { font-size: 1.05rem; }
+            .hero-subtitle-secondary { font-size: 0.85rem; }
             .hero-meta { gap: 0.85rem 1.25rem; }
             .hero-desc { font-size: 1rem; }
 
@@ -635,7 +642,7 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <div class="status-dot"></div>
-                <span>HN-MASIYA // SOC & SEC-ENG</span>
+                <span>HN-MASIYA // CYBER-SEC & SECOPS</span>
             </a>
             <nav>
                 <ul>
@@ -654,8 +661,9 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1 class="hero-title">Hazvinei Nomatter Masiya</h1>
-            <div class="hero-subtitle">SOC Analyst & Security Engineer</div>
-            
+            <div class="hero-subtitle">Cybersecurity Analyst · Security Operations · Detection & Automation</div>
+            <div class="hero-subtitle-secondary">Enterprise IT Professional | CompTIA Security+ | Google Cybersecurity</div>
+
             <div class="hero-meta">
                 <span>📍 Harare, Zimbabwe</span>
                 <span>📧 <a href="mailto:norman.masiya@gmail.com / masiyahn@live.com" style="color:inherit; text-decoration:none;">norman.masiya@gmail.com / masiyahn@live.com</a></span>
@@ -663,7 +671,7 @@
             </div>
 
             <p class="hero-desc">
-                CompTIA Security+ certified specialist with 14+ years of enterprise IT infrastructure, systems administration, and network infrastructure. Specializing in threat hunting, SIEM detection engineering (Wazuh, Sysmon), automated log triage, and incident response.
+                12+ years of hands-on enterprise IT experience supporting Windows environments, infrastructure, access control, endpoint security, system hardening, troubleshooting, and business-critical operations — now focused on cybersecurity, security operations, detection, investigation, and automation.
             </p>
 
             <div class="btn-cta-group">
@@ -1197,7 +1205,7 @@ Caller User: 'bad_actor_admin'</code>
                 if (cmd === 'help') {
                     response = "Available commands:<br>&nbsp;&nbsp;whoami&nbsp;&nbsp;&nbsp;- Print candidate overview<br>&nbsp;&nbsp;skills&nbsp;&nbsp;&nbsp;&nbsp;- List technical stack<br>&nbsp;&nbsp;certs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- View certifications<br>&nbsp;&nbsp;contact&nbsp;&nbsp;&nbsp;- Show email and phone<br>&nbsp;&nbsp;clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Clear screen";
                 } else if (cmd === 'whoami') {
-                    response = "Hazvinei Nomatter Masiya | SOC Analyst & Security Engineer (CompTIA Security+ Certified)";
+                    response = "Hazvinei Nomatter Masiya | Cybersecurity Analyst & Security Operations (CompTIA Security+ Certified) | 12+ years enterprise IT";
                 } else if (cmd === 'skills') {
                     response = "SIEM (Wazuh, Sysmon), Log Analysis, Python Automation, Linux DFIR, Wireshark, GCP Terraform, Active Directory.";
                 } else if (cmd === 'certs') {
