@@ -87,7 +87,7 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
   <li>Monitor endpoint, network, and system activity for anomalies, applying security-analyst triage principles to identify and escalate security-relevant incidents.</li>
   <li>Maintain technical documentation and SOP development to standardize client support delivery.</li>
   <li>Client project — Network Infrastructure Upgrade, Mastercard Zimbabwe (Mar–Apr 2022): installed sensor LAN cabling, decommissioned legacy Cisco switches/controllers/APs, and racked/installed new Aruba controllers, switches, and access points.</li>
-  <li>Client project — SD-WAN Circuit Deployment (Jul 2026): racked, powered on, and configured two Dell Versa VEP1485 SD-WAN appliances via console CLI (IP/subnet/gateway configuration), cabled per installation diagram, and connected each device to a dedicated internet circuit; verified connectivity on both.</li>
+  <li>Client project — SD-WAN Circuit Deployment, SITA AERO (Jul 2026): racked, powered on, and configured two Dell Versa VEP1485 SD-WAN appliances via console CLI (IP/subnet/gateway configuration), cabled per installation diagram, and connected each device to a dedicated internet circuit; verified connectivity on both.</li>
   <li>Client project — Qatar Airways VOS Upgrade &amp; SD-WAN Migration, Harare Airport Back Office &amp; City Office (Aug 2026): performed VOS upgrading, device onboarding, and SD-WAN migration on Dell VEP1425 appliances across both sites.</li>
 </ul>
 
