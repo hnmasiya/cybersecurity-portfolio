@@ -122,11 +122,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* auto: update dynamic lab activity feed [skip ci] (24 hours ago)
-* Add mobile-responsive layout for the portfolio site (#5) (2 days ago)
-* Add mobile-responsive layout for the portfolio site (2 days ago)
-* Add Linux/Docker labs, relabel unverified findings, fix empty evidence sections (#4) (2 days ago)
-* Add Linux/Docker labs, relabel unverified findings, fix empty evidence sections (2 days ago)
+* auto: build updated resume PDF [skip ci] (3 hours ago)
+* Add Abbeydale Group early-career engagement to resume (#12) (3 hours ago)
+* auto: build updated resume PDF [skip ci] (3 hours ago)
+* Attribute the July 2026 SD-WAN deployment to SITA AERO (#11) (3 hours ago)
+* Attribute the July 2026 SD-WAN deployment to SITA AERO (3 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
