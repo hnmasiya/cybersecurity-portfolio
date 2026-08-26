@@ -111,7 +111,11 @@ No screenshots have been captured for this specific report yet. For
 evidence that is captured, see the DVWA and OWASP Juice Shop
 assessments under `Web-Security/`, and the offline/synthetic
 detection labs under `SIEM/Wazuh/Detection-Engineering-Lab/`,
-`Threat-Hunting/`, and `Endpoint-Security/`.
+`Threat-Hunting/`, and `Endpoint-Security/`. For a real, live Windows
+endpoint connected to this Manager (real alerts, MITRE-mapped detections,
+CIS Benchmark SCA findings), see
+[`Agent-Deployment.md`](./Agent-Deployment.md) and
+[`Wazuh-Live-Server-Integration.md`](./Wazuh-Live-Server-Integration.md).
 
 ---
 
