@@ -17,6 +17,7 @@ EXPECTED_SUID_ALLOWLIST = [
     "/usr/bin/passwd", "/usr/bin/chfn", "/usr/bin/umount",
     "/usr/bin/gpasswd", "/usr/bin/fusermount3", "/usr/bin/sudo",
     "/usr/bin/su", "/usr/bin/mount", "/usr/bin/pkexec", "/usr/bin/chsh",
+    "/usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool",
     "/usr/lib/openssh/ssh-keysign", "/usr/lib/polkit-1/polkit-agent-helper-1",
     "/usr/lib/virtualbox/VirtualBoxVM", "/usr/lib/virtualbox/VBoxHeadless",
     "/usr/lib/virtualbox/VBoxNetNAT", "/usr/lib/virtualbox/VBoxNetDHCP",
