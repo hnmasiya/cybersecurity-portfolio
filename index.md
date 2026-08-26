@@ -202,9 +202,13 @@ The repository contains supporting screenshots and structured security reports.
 
 ### 🕵️ Wireshark Packet Analysis
 
-**Evidence-bounded methodology project**
+**Evidence-backed — real capture from live traffic**
 
-The active Wireshark project documents the packet-analysis workflow and clearly separates methodology from verified packet evidence. The repository's separate PCAP Analysis project contains the currently preserved packet-capture evidence.
+* Real `tcpdump` capture (52 packets) on the analyst's own home-lab host, targeting the project's own Juice Shop container
+* A genuine test of Juice Shop's known SQL-injection-vulnerable search endpoint, captured and analyzed alongside benign traffic
+* This portfolio's existing `pcap_soc_analyzer.py` — previously validated only against a synthetic PCAP — run against the real capture
+
+**Current status:** Complete — the analyzer correctly flagged the real SQLi-pattern request (HIGH, score 3) while correctly declining to flag a weaker scanner-User-Agent signal alone, confirming the detection logic holds up against real traffic, not just synthetic fixtures.
 
 [View Wireshark Report](./Network-Security/Wireshark/Reports/Wireshark-Packet-Analysis.md)
 
