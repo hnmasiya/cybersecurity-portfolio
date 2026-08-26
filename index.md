@@ -120,13 +120,13 @@ This portfolio contains documented evidence of hands-on work, including **securi
 
 ### ☁️ Azure Windows Server Security Lab
 
-**Infrastructure-as-Code — not yet deployed**
+**Evidence-backed — deployed**
 
 * Terraform provisioning a Windows Server 2022 VM in Azure: locked-down NSG (RDP restricted to a single admin IP, no default-open rule), no secrets committed, daily auto-shutdown for cost control
-* PowerShell to promote the VM to an Active Directory Domain Controller and apply an audit-policy/hardening baseline
+* PowerShell that promoted the VM to an Active Directory Domain Controller (`lab.local`) and applied an audit-policy/hardening baseline
 * Designed to eventually feed real Windows Security event data into the Active Directory Detection Lab below, closing its "live DC pending" gap
 
-**Current status:** Code is written and reviewed; infrastructure has not been applied yet, so no deployment evidence is claimed.
+**Current status:** Deployed to a real Azure subscription and verified — see the lab's `Evidence/` folder for `Get-ADDomain` output, the applied audit policy, and the full Azure resource list. Exporting real event log data to feed the detection script is the next step.
 
 [View Azure Windows Server Lab](./Cloud-Security/Azure-Windows-Server-Lab/README.md)
 
