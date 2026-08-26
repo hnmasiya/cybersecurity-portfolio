@@ -143,6 +143,18 @@ This portfolio contains documented evidence of hands-on work, including **securi
 
 [View Linux Host Hardening Lab](./Linux-Security/Hardening-Lab/README.md)
 
+### 🐳 Container Configuration Security Audit
+
+**Evidence-backed — validated against a real, live Docker host**
+
+* CIS Docker Benchmark / MITRE ATT&CK for Containers-style checks: root user, unpinned image tags, hardcoded secrets, privileged mode, Docker socket mounts, host network mode
+* Deterministic Python audit engine, validated first against synthetic fixtures containing both a fully-hardened config and common misconfigurations
+* A real collector script (`docker inspect`-based, redacting all env var values before they ever touch disk) run against 8 real running containers on a home-lab Docker host
+
+**Current status:** 14 real findings across 8 containers (1 CRITICAL, 10 HIGH, 3 MEDIUM), interpreted honestly rather than filtered: 5 containers running as root, 5 hardcoded secrets (the Wazuh Docker Compose quickstart's own plaintext demo credentials), a CRITICAL Docker-socket mount on Portainer (by design — it needs that access to manage the host's containers), and 3 unpinned image tags. One container in the same stack (`wazuh-indexer`) produced zero findings, showing the audit isn't just flagging everything indiscriminately.
+
+[View Container Audit Lab](./Docker-Labs/Container-Audit-Lab/README.md)
+
 ### 🌐 DVWA Web Application Security
 
 **Evidence-backed vulnerability assessment project**
