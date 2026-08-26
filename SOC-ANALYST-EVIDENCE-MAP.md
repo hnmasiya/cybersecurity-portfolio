@@ -42,6 +42,11 @@ scenario write-ups demonstrating reporting methodology - each is
 labeled as such at the top of the file, with a pointer to the nearest
 evidence-backed equivalent where one exists.
 
+**Infrastructure-as-Code (not yet deployed):** `Cloud-Security/Azure-Windows-Server-Lab/`
+is Terraform + PowerShell that provisions a Windows Server VM in Azure on
+demand. It has not been applied, so no live/deployment evidence is claimed
+for it yet.
+
 ## Remaining Live Dependency
 
 The remaining live endpoint capability is:
@@ -49,3 +54,5 @@ The remaining live endpoint capability is:
 `Windows -> Sysmon -> Wazuh Agent -> Wazuh Manager -> live alert`
 
 That requires access to a Windows endpoint or separate virtualization host.
+`Cloud-Security/Azure-Windows-Server-Lab/` provides the IaC to stand one up
+in Azure when needed.

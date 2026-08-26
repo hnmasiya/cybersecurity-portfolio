@@ -30,3 +30,12 @@ remediation-plan-*.txt
 PORTFOLIO-MASTER-AUDIT/
 .venv/
 Advanced-Threat-Operations/
+
+# Terraform
+*.tfvars
+!*.tfvars.example
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log

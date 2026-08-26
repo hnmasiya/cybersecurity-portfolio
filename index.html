@@ -874,6 +874,42 @@ Caller User: 'bad_actor_admin'</code>
                     </div>
                 </div>
 
+                <!-- Azure Windows Server Lab -->
+                <div class="card project-item" data-category="methodology">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Azure Windows Server Security Lab</h3>
+                            <span class="project-badge badge-methodology">Architecture</span>
+                        </div>
+                        <div class="metric-badge">🔒 RDP Locked to a Single Admin IP — No Open Ingress</div>
+                        <p class="project-desc">Terraform provisioning a Windows Server 2022 VM in Azure with a default-deny NSG, no committed secrets, and daily auto-shutdown for cost control. PowerShell promotes it to an AD Domain Controller and applies an audit-policy hardening baseline.</p>
+
+                        <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
+                            <svg width="100%" height="70" viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="15" width="60" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="40" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Admin IP</text>
+                                <path d="M70 35 H110" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="110" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="145" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">NSG (3389)</text>
+                                <path d="M180 35 H220" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="220" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+                                <text x="255" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Win Server DC</text>
+                            </svg>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Terraform</span>
+                            <span class="tag">Azure</span>
+                            <span class="tag">Active Directory</span>
+                            <span class="tag">PowerShell</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Azure Windows Server Lab', 'Terraform + PowerShell IaC for a locked-down Windows Server Domain Controller in Azure. Not yet deployed — no live evidence is claimed.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security/Azure-Windows-Server-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
                 <!-- Sysmon Detection -->
                 <div class="card project-item" data-category="synthetic">
                     <div>
@@ -948,7 +984,7 @@ Caller User: 'bad_actor_admin'</code>
                     <h4>Engineering</h4>
                     <ul>
                         <li>Python IOC Parsers</li>
-                        <li>Terraform GCP IaC</li>
+                        <li>Terraform (GCP & Azure) IaC</li>
                         <li>Bash & PowerShell Scripts</li>
                         <li>Cloud VPC Isolation</li>
                     </ul>
