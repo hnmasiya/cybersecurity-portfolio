@@ -26,7 +26,7 @@ This document maps practical SOC capabilities to specific repository evidence.
 
 ## Evidence Classification
 
-**Live:** Wazuh server deployment.
+**Live:** Wazuh server deployment. Azure Windows Server Lab (`Cloud-Security/Azure-Windows-Server-Lab/`) — a real, deployed Windows Server 2022 Domain Controller in Azure, hardened per its audit-policy baseline.
 
 **Controlled laboratory:** DVWA, Juice Shop and PCAP exercises.
 
@@ -42,17 +42,14 @@ scenario write-ups demonstrating reporting methodology - each is
 labeled as such at the top of the file, with a pointer to the nearest
 evidence-backed equivalent where one exists.
 
-**Infrastructure-as-Code (not yet deployed):** `Cloud-Security/Azure-Windows-Server-Lab/`
-is Terraform + PowerShell that provisions a Windows Server VM in Azure on
-demand. It has not been applied, so no live/deployment evidence is claimed
-for it yet.
-
 ## Remaining Live Dependency
 
 The remaining live endpoint capability is:
 
 `Windows -> Sysmon -> Wazuh Agent -> Wazuh Manager -> live alert`
 
-That requires access to a Windows endpoint or separate virtualization host.
-`Cloud-Security/Azure-Windows-Server-Lab/` provides the IaC to stand one up
-in Azure when needed.
+`Cloud-Security/Azure-Windows-Server-Lab/` provides that Windows endpoint —
+a deployed Azure Domain Controller (see its `Evidence/` folder). Installing
+Sysmon and a Wazuh Agent on it, and exporting its real event log to feed
+`Active-Directory/Detection-Lab/Scripts/ad_security_event_analyzer.py`, are
+the remaining steps to close this gap end-to-end.
