@@ -88,9 +88,9 @@ This portfolio contains documented evidence of hands-on work, including **securi
 
 ### 🖥️ Windows / Sysmon Endpoint Detection Engineering
 
-**Evidence-backed offline detection engineering project**
+**Evidence-backed detection engineering project — validated against real endpoint telemetry**
 
-* Synthetic Windows and Sysmon-style endpoint telemetry
+* Synthetic and real Windows/Sysmon endpoint telemetry
 * PowerShell execution detection
 * Failed Windows authentication detection
 * PowerShell network-connection detection
@@ -99,7 +99,7 @@ This portfolio contains documented evidence of hands-on work, including **securi
 * JSON and CSV evidence
 * MITRE ATT&CK contextual mapping
 
-**Current status:** Offline/synthetic validation. A live Windows/Sysmon endpoint is not currently claimed as repository evidence.
+**Current status:** Complete — validated against both synthetic fixtures and real Sysmon/Security telemetry (16 events, 5 findings) captured from a live, deployed Azure Domain Controller. See the [Azure Windows Server Lab](./Cloud-Security/Azure-Windows-Server-Lab/README.md) for the raw export and analysis.
 
 [View Windows / Sysmon Detection Lab](./Endpoint-Security/Windows-Sysmon-Detection-Lab/README.md)
 
