@@ -118,6 +118,18 @@ This portfolio contains documented evidence of hands-on work, including **securi
 
 [View Detection Engineering Lab](./SIEM/Wazuh/Detection-Engineering-Lab/README.md)
 
+### ☁️ Azure Windows Server Security Lab
+
+**Infrastructure-as-Code — not yet deployed**
+
+* Terraform provisioning a Windows Server 2022 VM in Azure: locked-down NSG (RDP restricted to a single admin IP, no default-open rule), no secrets committed, daily auto-shutdown for cost control
+* PowerShell to promote the VM to an Active Directory Domain Controller and apply an audit-policy/hardening baseline
+* Designed to eventually feed real Windows Security event data into the Active Directory Detection Lab below, closing its "live DC pending" gap
+
+**Current status:** Code is written and reviewed; infrastructure has not been applied yet, so no deployment evidence is claimed.
+
+[View Azure Windows Server Lab](./Cloud-Security/Azure-Windows-Server-Lab/README.md)
+
 ### 🌐 DVWA Web Application Security
 
 **Evidence-backed vulnerability assessment project**
