@@ -39,6 +39,6 @@ Result: 16 events analyzed, 5 findings (0 high, 5 medium):
 
 No genuinely malicious activity was present in this capture; the findings correctly reflect real, explainable activity on the box, which is the honest result to expect from a lab environment.
 
-## Remaining gap
+## Wazuh Agent connection
 
-A Wazuh Agent has not been installed or connected to a Wazuh Manager from this endpoint. The project's Wazuh Manager runs locally via Docker on a home machine, and connecting a cloud VM to it would require exposing a home-network port — a tradeoff deliberately not made yet. Sysmon telemetry capture and analysis is complete independent of that connection.
+This same endpoint's Wazuh Agent is also connected to the project's Wazuh Manager (which runs locally via Docker on a home machine) over a private Tailscale mesh VPN, so no home-network port is exposed. Wazuh's own rule engine has generated real alerts from this endpoint's telemetry, including a MITRE-mapped authentication event and genuine CIS Benchmark compliance findings — see the [Azure Windows Server Lab](../../Cloud-Security/Azure-Windows-Server-Lab/README.md#real-wazuh-agent-connection) for the full write-up and evidence.
