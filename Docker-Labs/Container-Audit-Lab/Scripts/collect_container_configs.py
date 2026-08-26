@@ -2,16 +2,24 @@
 """Collects real running-container configuration via `docker inspect`,
 transformed into the JSON schema container_config_auditor.py expects.
 
-Only reads container metadata (image, user, env var *names*, privileged
-flag, mounts, network mode) - the auditor's own findings only ever
-reference env var key names, never values, so no secret material from
-env vars is written to the output.
+Env var VALUES are never written to the output - only key names, with
+every value replaced by a fixed, non-placeholder sentinel. The auditor
+only uses env values to tell "a real value is set" apart from a known
+placeholder (empty/changeme/redacted/example/...); it never needs the
+actual value for anything, so a real secret's value is never collected,
+let alone written to disk or committed.
 
 Usage: python3 collect_container_configs.py > containers.json
 """
 import json
 import subprocess
 import sys
+
+# Deliberately not in container_config_auditor.py's PLACEHOLDER_VALUES set
+# (which includes the bare word "redacted") - this must look like a real,
+# present value to the auditor's secret-detection logic, while never being
+# the actual secret.
+REDACTED_ENV_VALUE = "<value-not-collected>"
 
 
 def get_running_container_ids():
@@ -35,7 +43,7 @@ def env_list_to_dict(env_list):
     for entry in env_list or []:
         if "=" in entry:
             key, _, value = entry.partition("=")
-            result[key] = value
+            result[key] = REDACTED_ENV_VALUE if value else ""
     return result
 
 
