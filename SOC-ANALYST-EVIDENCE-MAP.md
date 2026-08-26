@@ -26,7 +26,7 @@ This document maps practical SOC capabilities to specific repository evidence.
 
 ## Evidence Classification
 
-**Live:** Wazuh server deployment. Azure Windows Server Lab (`Cloud-Security/Azure-Windows-Server-Lab/`) — a real, deployed Windows Server 2022 Domain Controller in Azure, hardened per its audit-policy baseline, with 409 real Security events exported and analyzed (392 findings), and real Sysmon telemetry (16 events, 5 findings) captured after installing Sysmon with the SwiftOnSecurity configuration — see its `Evidence/` folder.
+**Live:** Wazuh server deployment, now with a live, connected Windows endpoint (see below). Azure Windows Server Lab (`Cloud-Security/Azure-Windows-Server-Lab/`) — a real, deployed Windows Server 2022 Domain Controller in Azure, hardened per its audit-policy baseline, with 409 real Security events exported and analyzed (392 findings), real Sysmon telemetry (16 events, 5 findings) captured after installing Sysmon with the SwiftOnSecurity configuration, and its Wazuh Agent connected to the project's Wazuh Manager over a Tailscale mesh VPN, generating real MITRE-mapped alerts and CIS Benchmark SCA findings — see its `Evidence/` folder.
 
 **Controlled laboratory:** DVWA, Juice Shop and PCAP exercises.
 
@@ -41,21 +41,23 @@ scenario write-ups demonstrating reporting methodology - each is
 labeled as such at the top of the file, with a pointer to the nearest
 evidence-backed equivalent where one exists.
 
-## Remaining Live Dependency
+## Live Windows Endpoint -> Wazuh Chain
 
-The remaining live capability is the last hop of:
+This chain is now closed end-to-end:
 
 `Windows -> Sysmon -> Wazuh Agent -> Wazuh Manager -> live alert`
 
 `Cloud-Security/Azure-Windows-Server-Lab/` provides the Windows endpoint — a
 deployed Azure Domain Controller, with its real Security event log exported
 and run through `Active-Directory/Detection-Lab/Scripts/
-ad_security_event_analyzer.py` (392 findings), and Sysmon installed
+ad_security_event_analyzer.py` (392 findings), Sysmon installed
 (SwiftOnSecurity config) with real telemetry exported and run through
 `Endpoint-Security/Windows-Sysmon-Detection-Lab/Scripts/
-real_endpoint_event_analyzer.py` (5 findings) — see the lab's `Evidence/`
-folder for both raw exports and analyses. The remaining gap is connecting a
-Wazuh Agent on that VM to a Wazuh Manager: the project's Manager runs
-locally via Docker on a home machine, and wiring a cloud VM to it would mean
-exposing a home-network port — deliberately deferred rather than done
-blindly.
+real_endpoint_event_analyzer.py` (5 findings), and its Wazuh Agent connected
+to the project's Wazuh Manager (`SIEM/Wazuh/`, Docker on a home machine)
+over a private Tailscale mesh VPN — no home-network port exposed. Wazuh's
+own rule engine has generated real alerts from this connection, including a
+MITRE-mapped authentication event (T1078, Valid Accounts) and genuine CIS
+Microsoft Windows Server 2022 Benchmark SCA findings. See the lab's
+`Evidence/` folder for the raw exports, analyses, and the Wazuh connection
+evidence.
