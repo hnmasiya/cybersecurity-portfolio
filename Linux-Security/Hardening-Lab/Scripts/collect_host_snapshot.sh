@@ -31,14 +31,25 @@ fi
 # Running services.
 SERVICES=$(systemctl list-units --type=service --state=running --no-legend | awk '{print $1}' | sed 's/\.service$//')
 
-# SUID binaries (host filesystem only, -xdev avoids crossing into
-# container/network mounts).
-SUID_BINARIES=$(find / -xdev -perm -4000 -type f 2>/dev/null || true)
+# SUID binaries (host filesystem only). -xdev alone isn't enough to keep
+# container internals out: containerd/Docker store each image layer as a
+# plain directory tree under /var/lib/containerd and /var/lib/docker on
+# the *same* filesystem as the host, so those paths are excluded
+# explicitly - otherwise every container image layer's copy of passwd,
+# sudo, mount, etc. shows up as if it were a real host binary.
+SUID_BINARIES=$(find / -xdev -type f -perm -4000 \
+    -not -path "/var/lib/docker/*" \
+    -not -path "/var/lib/containerd/*" \
+    2>/dev/null || true)
 
 # World-writable files outside /tmp and /var/tmp (system directories only -
 # /home is excluded since a user's own writable files there aren't a
-# system hardening misconfiguration in the same sense).
-WORLD_WRITABLE=$(find /etc /usr /opt /var /root -xdev -type f -perm -0002 2>/dev/null || true)
+# system hardening misconfiguration in the same sense; container image
+# layers excluded for the same reason as the SUID scan above).
+WORLD_WRITABLE=$(find /etc /usr /opt /var /root -xdev -type f -perm -0002 \
+    -not -path "/var/lib/docker/*" \
+    -not -path "/var/lib/containerd/*" \
+    2>/dev/null || true)
 
 python3 "$(dirname "$0")/_build_snapshot.py" \
     "$HOSTNAME" "$PERMIT_ROOT_LOGIN" "$PASSWORD_AUTH" "$FW_ACTIVE" \
