@@ -5,7 +5,7 @@
 
 .DESCRIPTION
   Run this on the deployed Domain Controller (after Harden-WindowsServer.ps1
-  has applied the audit policy — without that, most of these event IDs are
+  has applied the audit policy - without that, most of these event IDs are
   never generated in the first place).
 
   Field mapping per event type (Windows' real field names vary by event and
@@ -55,7 +55,7 @@ Write-Host "[*] Querying Security log for event IDs: $($eventIds -join ', ')..."
 $rawEvents = Get-WinEvent -FilterHashtable @{ LogName = 'Security'; Id = $eventIds } -MaxEvents $MaxEvents -ErrorAction SilentlyContinue
 
 if (-not $rawEvents) {
-    Write-Warning "No matching Security events found yet. This is normal on a freshly hardened DC with little activity — RDP in a few more times, or intentionally fail a login 5+ times, then re-run."
+    Write-Warning "No matching Security events found yet. This is normal on a freshly hardened DC with little activity - RDP in a few more times, or intentionally fail a login 5+ times, then re-run."
     "[]" | Set-Content -Path $OutputPath -Encoding UTF8
     exit 0
 }
