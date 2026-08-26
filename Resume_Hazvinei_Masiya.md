@@ -121,6 +121,14 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
   <li>Client project — IT Infrastructure Upgrade, AJP Group (May–Aug 2015): retired outdated systems, onboarded new devices to the domain, implemented VoIP phone systems, and migrated data to new systems.</li>
 </ul>
 
+<div class="job-header">
+  <span class="date">Jul 2012</span>
+  <span class="job-title">IT System Migration and Setup (Contract)</span> | <span class="company">Abbeydale Group</span>
+</div>
+<ul>
+  <li>Engaged as outside technical support prior to formally joining shermanit: migrated servers to improve application performance and reliability, installed new HP switches, re-imaged PCs to organizational standards, joined computers to the domain, connected VoIP phones, decommissioned outdated computers with secure data disposal, and reconnected IP cameras to new PoE switches.</li>
+</ul>
+
 <h2>Certifications & Education</h2>
 <ul>
   <li><b>CompTIA Security+ (SY0-701)</b> — CompTIA</li>
