@@ -1,0 +1,4357 @@
+{
+  "summary": {
+    "events_analyzed": 409,
+    "findings": 392,
+    "critical": 1,
+    "high": 16,
+    "medium": 375
+  },
+  "findings": [
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:09:37.6675673+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:09:26.6728688+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:09:26.6649451+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:09:26.6628487+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:09:26.6593148+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:09:26.6535629+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:08:37.6525115+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:07:38.2179803+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:07:38.2134520+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:07:37.6413972+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:06:37.6309584+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:05:37.6155732+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:04:37.6037800+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T14:04:29.2911258+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:04:26.6480627+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:04:26.6400040+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:04:26.6377343+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:04:26.6346476+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:04:26.6319710+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:03:37.5942461+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:02:37.9026203+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:02:37.8982211+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:02:37.5826403+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:01:52.3370892+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:01:37.5728181+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T14:00:37.5606535+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T14:00:33.4863782+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "hazvinei",
+      "timestamp": "2026-08-26T14:00:29.8600057+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:59:37.5443929+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:59:26.6261228+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:59:26.6182784+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:59:26.6160135+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:59:26.6124484+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:59:26.6096826+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:58:37.5283078+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:57:40.0001350+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:57:37.6712515+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:57:37.6668310+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:57:37.5195205+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:56:37.5091232+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:55:37.4880430+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:54:37.4806257+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:54:29.2868819+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:54:26.6009608+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:54:26.5930612+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:54:26.5910717+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:54:26.5881390+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:54:26.5827444+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:54:26.5825817+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:53:37.4669738+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:52:37.4555707+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:52:37.2934029+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:52:37.2889591+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:51:52.3196537+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:51:37.4510222+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:50:37.4350166+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:49:37.4294607+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:49:26.5723956+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:49:26.5641964+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:49:26.5619328+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:49:26.5582358+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:49:26.5553313+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:48:37.4191675+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:47:37.4134620+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:47:37.0103488+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:47:37.0057132+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:46:37.4082788+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:45:37.3978354+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:44:37.3724221+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:44:29.2599091+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:44:26.5505649+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:44:26.5427065+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:44:26.5405001+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:44:26.5374172+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:44:26.5346287+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:43:37.3711384+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:42:37.3545033+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:42:36.6738501+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:42:36.6692787+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:41:52.3028293+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:41:37.3443663+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:40:37.3229984+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:39:37.3174307+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:39:26.5193182+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:39:26.5081016+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:39:26.5059592+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:39:26.5027693+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:39:26.4915723+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:38:37.3121203+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:37:37.9881685+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:37:37.2954660+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:37:36.4834066+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:37:36.4787218+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:37:33.9512362+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:37:23.1025449+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:37:23.0999741+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:37:23.0953742+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:36:37.2810109+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:35:37.2793140+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:34:37.2693441+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:34:30.8509872+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:34:29.2438745+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:34:26.4806066+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:34:26.4725983+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:34:26.4704084+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:34:26.4669224+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:34:26.4642110+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:33:37.2617391+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:32:37.2609422+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:32:36.1369358+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:32:36.1324428+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:31:52.2940156+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:31:37.2459517+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:30:37.2332042+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:29:42.1038504+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:29:37.2334199+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:29:26.4603889+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:29:26.4459870+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:29:26.4438026+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:29:26.4402644+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:29:26.4375591+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:28:37.2374946+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:37.2294040+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:35.9792366+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:35.4969733+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:35.4917297+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:34.4941122+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:34.4899655+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:34.4818675+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:34.4783915+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:27:34.4683208+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:26:37.2397304+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:25:37.2477337+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:25:25.7579646+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:25:25.7553622+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:25:25.7349374+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:37.2838436+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.6300275+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.6237101+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.6205222+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.6164921+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:26.5350975+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.1514005+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.1484504+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.0851049+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.0678794+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.0655696+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:26.0602102+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:25.6054643+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:25.4233342+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:25.0746085+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:25.0695183+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:25.0339306+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:24.9519717+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:24.9416715+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:24.9224917+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "hazvinei",
+      "timestamp": "2026-08-26T13:24:24.7575012+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:24.4779360+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:24.4777976+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:24.4594867+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:24.0140624+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:23.9971066+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:23.9939345+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:23.9896065+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:24:23.9813713+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:12.8317265+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "DWM-2",
+      "timestamp": "2026-08-26T13:24:12.6726886+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "DWM-2",
+      "timestamp": "2026-08-26T13:24:12.6726876+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "hazvinei",
+      "timestamp": "2026-08-26T13:24:07.5031517+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:07.1382928+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:06.9661526+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:05.9363736+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:05.4524507+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:05.4332864+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:05.4055302+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:24:05.3116742+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:23:37.3484140+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:23:35.1188135+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:23:35.1167490+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:52.5341992+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:43.9631459+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:39.4614543+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:39.4343593+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.5545994+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.5487937+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.5429068+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.4080918+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.4041766+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.3870915+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.1846794+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.0482987+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.0393335+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:37.0386817+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:36.9945094+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:36.9744945+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:36.9653059+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:36.9594016+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:36.9481425+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:36.9438705+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:36.7889350+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:36.5993281+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:35.5679408+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.6048900+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.5509369+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.5107453+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.5015079+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.4990596+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:34.4910983+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.4860238+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.1527766+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.1469639+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.1410424+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.1279602+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.1219189+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.1156956+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.1096958+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.1039002+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0967578+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0906789+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0846604+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0782438+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0723839+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0710537+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0659473+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0590691+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0508174+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0442129+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0428981+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0152449+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0112285+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0047144+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:34.0012915+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9978632+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9917494+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9856885+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9852471+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9775979+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9774071+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9583897+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9461836+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9441343+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9305605+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.9086859+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.7853573+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.7698586+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "dc01-lab$",
+      "timestamp": "2026-08-26T13:22:33.7601343+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:04.9499152+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:04.5664692+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.9445137+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.9204839+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.9146422+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.9072748+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.8796083+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.8483748+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.8447465+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.8410709+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.8369376+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.8273883+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.8207842+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.8105097+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:22:03.7565856+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:55.0368642+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.9865298+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.8879804+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.8690142+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.7871922+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.7509581+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.7464878+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.7168128+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.6637409+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.6343212+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.6225520+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.6188758+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "DWM-1",
+      "timestamp": "2026-08-26T13:21:54.5805232+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "DWM-1",
+      "timestamp": "2026-08-26T13:21:54.5805218+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.5122622+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "LOCAL SERVICE",
+      "timestamp": "2026-08-26T13:21:54.4766208+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.4013763+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "NETWORK SERVICE",
+      "timestamp": "2026-08-26T13:21:54.3495311+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:54.2314890+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=Read-only Domain Controllers,CN=Users,DC=lab,DC=local",
+      "group": "Denied RODC Password Replication Group",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:54.0941223+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=krbtgt,CN=Users,DC=lab,DC=local",
+      "group": "Denied RODC Password Replication Group",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:54.0870540+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=Domain Controllers,CN=Users,DC=lab,DC=local",
+      "group": "Denied RODC Password Replication Group",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:54.0864994+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=Cert Publishers,CN=Users,DC=lab,DC=local",
+      "group": "Denied RODC Password Replication Group",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:54.0859369+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=Domain Admins,CN=Users,DC=lab,DC=local",
+      "group": "Denied RODC Password Replication Group",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:54.0508792+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=Group Policy Creator Owners,CN=Users,DC=lab,DC=local",
+      "group": "Denied RODC Password Replication Group",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:54.0500643+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "New User Account Created",
+      "severity": "MEDIUM",
+      "target_user": "WDAGUtilityAccount",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:54.0461389+00:00",
+      "mitre_attack": {
+        "technique": "T1136",
+        "name": "Create Account",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "-",
+      "group": "None",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:54.0460283+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "-",
+      "group": "Windows Authorization Access Group",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9994994+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "-",
+      "group": "Pre-Windows 2000 Compatible Access",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9986666+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=hazvinei,CN=Users,DC=lab,DC=local",
+      "group": "Group Policy Creator Owners",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9979710+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=hazvinei,CN=Users,DC=lab,DC=local",
+      "group": "Enterprise Admins",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9974320+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=hazvinei,CN=Users,DC=lab,DC=local",
+      "group": "Schema Admins",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9964966+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "CN=hazvinei,CN=Users,DC=lab,DC=local",
+      "group": "Domain Admins",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9957428+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "-",
+      "group": "Guests",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9949558+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "-",
+      "group": "Users",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9943747+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "-",
+      "group": "Administrators",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.9933679+00:00",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "New User Account Created",
+      "severity": "MEDIUM",
+      "target_user": "krbtgt",
+      "actor": "ANONYMOUS LOGON",
+      "timestamp": "2026-08-26T13:21:53.8617850+00:00",
+      "mitre_attack": {
+        "technique": "T1136",
+        "name": "Create Account",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:19.2591737+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:12.1541519+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:05.3135091+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:21:04.4872271+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:20:26.2017879+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:18:13.5714222+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:16:45.3074425+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:16:44.1027070+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:16:43.1909064+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:16:43.1739987+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:16:43.0934143+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:16:12.3106422+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:16:10.5714641+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "hazvinei",
+      "timestamp": "2026-08-26T13:14:47.1617108+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:14:46.8482287+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "hazvinei",
+      "timestamp": "2026-08-26T13:14:43.2014867+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:12:19.9473107+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:12:19.9244388+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:07:56.2668564+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:06:58.9167749+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:06:56.9283486+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:06:54.9552555+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:06:54.2041996+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:04:45.5762084+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:04:43.2936648+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:02:34.7534251+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:02:01.9937494+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:02:01.3320291+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:02:00.5834042+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "hazvinei",
+      "timestamp": "2026-08-26T13:01:56.7766160+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "DWM-2",
+      "timestamp": "2026-08-26T13:01:55.3601253+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "DWM-2",
+      "timestamp": "2026-08-26T13:01:55.3601234+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:01:53.7518263+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "hazvinei",
+      "timestamp": "2026-08-26T13:01:50.7649003+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "hazvinei",
+      "timestamp": "2026-08-26T13:01:45.8249738+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:01:13.5368721+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:00:33.3724620+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:00:25.7563942+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:00:23.8588120+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:00:11.1727657+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T13:00:10.1727316+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:59:11.4522882+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:57:53.8827815+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:57:53.8499609+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:57:51.5774523+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:57:48.4116258+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:57:48.3004596+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:56:18.1330245+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:56:10.5027808+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:56:09.6999420+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:56:09.4045950+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:56:04.1592150+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:56:02.0929786+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:50.7436627+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:48.6236228+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:48.4235179+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:48.1019252+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:48.0594127+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.9435965+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.3414883+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.3296930+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.3280011+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.3253657+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.3210056+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.2916632+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.2915496+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.2532585+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:47.1193748+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:46.9962592+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:46.9182321+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:46.9089509+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:46.8772170+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T05:55:46.2370321+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T05:55:46.2130652+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T05:55:46.2099998+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T05:55:46.2093905+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T05:55:46.1381208+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T05:55:46.0910517+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:35.3779378+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:35.1567277+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "DWM-1",
+      "timestamp": "2026-08-26T12:55:32.4623094+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "DWM-1",
+      "timestamp": "2026-08-26T12:55:32.4623083+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "LOCAL SERVICE",
+      "timestamp": "2026-08-26T12:55:32.4461505+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:32.4150758+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:32.3866814+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:32.3043475+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "NETWORK SERVICE",
+      "timestamp": "2026-08-26T12:55:32.2725340+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-26T12:55:32.2102269+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-09T06:23:02.2939300+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-09T06:23:01.4587345+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-09T06:23:01.3070446+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-09T06:23:01.0095069+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "SYSTEM",
+      "timestamp": "2026-08-09T06:22:58.3361223+00:00",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Security Audit Log Cleared",
+      "severity": "CRITICAL",
+      "actor": null,
+      "timestamp": "2026-08-09T06:22:56.9907873+00:00",
+      "mitre_attack": {
+        "technique": "T1070.001",
+        "name": "Clear Windows Event Logs",
+        "tactic": "Defense Evasion"
+      }
+    }
+  ]
+}
