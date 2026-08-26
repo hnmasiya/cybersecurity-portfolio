@@ -5,7 +5,7 @@
 | DVWA | Complete | None |
 | OWASP Juice Shop | Complete | None |
 | PCAP Monitoring | Complete | Synthetic lab |
-| Wazuh | Complete | Live server; Windows endpoint (Sysmon) captured, Agent-to-Manager connection deferred by choice (would expose home network) |
+| Wazuh | Complete | Live server with a live, connected Windows endpoint (Azure DC via Tailscale mesh VPN); real MITRE-mapped alerts and CIS Benchmark SCA findings generated |
 | Security Automation | Complete | Local/sample validation |
 | Windows / Sysmon | Complete | Validated against both synthetic fixtures and 16 real Sysmon/Security events from a live Azure DC (see Azure Windows Server Lab evidence) |
 | Threat Hunting | Complete | Offline/synthetic |
@@ -18,5 +18,8 @@
 | Wireshark | Evidence-Bounded | Live execution evidence pending |
 | AppSec/SAST, Offensive Security, Enterprise AD Audit, Cloud CSPM | Methodology | Illustrative write-ups, not live findings |
 
-## Remaining External Dependency
-[`Cloud-Security/Azure-Windows-Server-Lab`](./Cloud-Security/Azure-Windows-Server-Lab/README.md) provides a real, deployed Azure Domain Controller. Its real Security event log has been exported and validated against `ad_security_event_analyzer.py`, and Sysmon has been installed (SwiftOnSecurity config) with real telemetry exported and validated against the Windows/Sysmon Endpoint Detection Lab's detection logic (see its `Evidence/` folder for both). The one remaining gap is connecting a Wazuh Agent on that VM to a Wazuh Manager: the project's Manager runs locally via Docker on a home machine, and wiring a cloud VM to it would mean exposing a home-network port — deliberately deferred rather than done blindly.
+## Live Windows Endpoint
+[`Cloud-Security/Azure-Windows-Server-Lab`](./Cloud-Security/Azure-Windows-Server-Lab/README.md) provides a real, deployed Azure Domain Controller, fully validated end-to-end: its real Security event log is exported and analyzed against `ad_security_event_analyzer.py`, Sysmon (SwiftOnSecurity config) captures real telemetry analyzed against the Windows/Sysmon Endpoint Detection Lab's logic, and its Wazuh Agent is connected to the project's Wazuh Manager over a Tailscale mesh VPN, generating real Wazuh-side alerts (MITRE-mapped detections, CIS Benchmark SCA findings). See its `Evidence/` folder for all three.
+
+## Remaining Gaps
+Live-host validation is still pending for the Linux Host Hardening and Container Configuration Audit labs, and live execution evidence is still pending for Nmap and Wireshark — none of these block on the Wazuh/Azure DC work above.
