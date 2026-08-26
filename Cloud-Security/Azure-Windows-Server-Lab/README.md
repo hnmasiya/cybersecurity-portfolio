@@ -72,6 +72,11 @@ On the VM itself (via RDP, or `az vm run-command invoke`):
 
 # 3. Export real Security event log data for the AD Detection Lab
 .\Export-SecurityEventLog.ps1
+
+# 4. Install Sysmon (SwiftOnSecurity config) and export telemetry for the
+#    Windows/Sysmon Endpoint Detection Lab
+.\Install-Sysmon.ps1
+.\Export-SysmonEvents.ps1
 ```
 
 ## Tearing down
@@ -94,6 +99,8 @@ Standard_B2s in most regions runs roughly $0.04–0.05/hr; with the daily auto-s
 - [`Evidence/azure-resource-list.txt`](./Evidence/azure-resource-list.txt) — full `az resource list` output for the resource group, confirming every Terraform-managed resource (including the auto-shutdown schedule) deployed successfully.
 - [`Evidence/raw-security-events.json`](./Evidence/raw-security-events.json) — 409 real Windows Security events exported from this VM via `Export-SecurityEventLog.ps1`.
 - [`Evidence/real-ad-analysis.json`](./Evidence/real-ad-analysis.json) — output of `ad_security_event_analyzer.py` run against that real data (392 findings: 1 CRITICAL, 16 HIGH, 375 MEDIUM).
+- [`Evidence/raw-sysmon-events.json`](./Evidence/raw-sysmon-events.json) — 16 real Sysmon (Process Create, Network Connect) and Security (failed logon) events exported from this VM via `Export-SysmonEvents.ps1`, after installing Sysmon with the SwiftOnSecurity community configuration.
+- [`Evidence/real-sysmon-analysis.json`](./Evidence/real-sysmon-analysis.json) — output of the [Windows/Sysmon Endpoint Detection Lab](../../Endpoint-Security/Windows-Sysmon-Detection-Lab/README.md)'s `real_endpoint_event_analyzer.py` run against that real data (5 findings, all medium).
 
 ## Real telemetry results
 
@@ -104,6 +111,20 @@ Running [`Active-Directory/Detection-Lab/Scripts/ad_security_event_analyzer.py`]
 - **1 CRITICAL "Security Audit Log Cleared"** — most likely triggered by the audit policy changes `Harden-WindowsServer.ps1` made, or the DC promotion process, not a cover-up.
 
 This is deliberately left as real, unfiltered output rather than a cherry-picked "clean" result — a raw event-based analyzer with no baselining will always flag legitimate administrative activity like this, and correctly interpreting that (rather than either ignoring it or panicking) is the point of the exercise.
+
+## Real Sysmon telemetry results
+
+Sysmon was installed on this VM with the [SwiftOnSecurity](https://github.com/SwiftOnSecurity/sysmon-config) community configuration (Sysmon's default settings log almost nothing useful). `Export-SysmonEvents.ps1` then captured Process Create (ID 1), Network Connect (ID 3), and failed-logon (Security ID 4625) events, and [`Endpoint-Security/Windows-Sysmon-Detection-Lab`](../../Endpoint-Security/Windows-Sysmon-Detection-Lab/README.md)'s `real_endpoint_event_analyzer.py` ran the same detection logic used against synthetic data over this real capture.
+
+16 events analyzed, 5 findings (0 high, 5 medium):
+
+- **EDR-004 ×1** — `notepad.exe` spawned by `powershell.exe`: a deliberate test launch during the session.
+- **EDR-002 ×3** — `powershell.exe` connecting outbound on port 443: the session's own `Invoke-WebRequest` calls downloading Sysmon and its config from Sysinternals/GitHub.
+- **EDR-003 ×1** — the same single failed logon already present in the AD Detection Lab's real data.
+
+No genuinely malicious activity is present — every finding traces back to real, explainable actions taken on the box during this deployment, which is exactly the kind of result an unfiltered detector should produce on a clean lab VM.
+
+**Remaining gap:** a Wazuh Agent has not been installed or connected to a Wazuh Manager from this VM. The project's Wazuh Manager runs locally via Docker on a home machine ([`SIEM/Wazuh`](../../SIEM/Wazuh)), and connecting a cloud VM to it would mean exposing a home-network port — a tradeoff deliberately deferred rather than made blindly. Sysmon capture and analysis stand independent of that connection.
 
 ## Notes on Azure Cloud Shell
 
