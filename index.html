@@ -910,6 +910,41 @@ Caller User: 'bad_actor_admin'</code>
                     </div>
                 </div>
 
+                <!-- Linux Host Hardening -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Linux Host Hardening Audit</h3>
+                            <span class="project-badge badge-live">Observed Evidence</span>
+                        </div>
+                        <div class="metric-badge">🐧 0 Findings — All 26 SUID Binaries Individually Verified</div>
+                        <p class="project-desc">CIS-benchmark-style Python audit engine (SSH config, sudoers NOPASSWD scope, SUID binaries, world-writable files, legacy services, firewall state), validated first against synthetic fixtures, then run for real against a live personal Linux host via a purpose-built collector script.</p>
+
+                        <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
+                            <svg width="100%" height="70" viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="50" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Real Host</text>
+                                <path d="M90 35 H130" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="130" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+                                <text x="170" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">CIS Checks</text>
+                                <path d="M210 35 H250" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="250" y="15" width="40" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="270" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">0</text>
+                            </svg>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Linux Hardening</span>
+                            <span class="tag">CIS Benchmark</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Linux Host Hardening Audit', 'CIS-benchmark-style audit run against a real, live personal Linux host: 0 findings, but only after verifying all 26 SUID binaries against their owning packages and fixing two real methodology issues (an unprivileged scan that looked falsely clean, and Docker/containerd image-layer false positives).')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Linux-Security/Hardening-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
                 <!-- Sysmon Detection -->
                 <div class="card project-item" data-category="live">
                     <div>
