@@ -2,11 +2,9 @@
 
 ## Nmap
 
-The active Nmap project is intentionally evidence-bounded.
+The active Nmap project now contains a real, preserved scan.
 
-The repository contains the reconnaissance methodology and reporting structure, but the active Nmap project does not currently contain a preserved scan output or screenshot from an executed Nmap run.
-
-The portfolio therefore does not present unverified host, port or service results as observed findings.
+`sudo nmap -sV -sC -p- -oA home-lab-scan localhost` was run against the analyst's own home-lab host (full TCP port range, service/version detection, default scripts), discovering 13 real open ports. Raw output is preserved in all three Nmap formats under `Network-Security/Nmap/Evidence/`. See [`Reports/Nmap-Network-Reconnaissance.md`](../Nmap/Reports/Nmap-Network-Reconnaissance.md) for the full write-up, including an anomaly (an unrecognized service fingerprint on port 9443) that was independently verified with `curl`/`ss` rather than assumed.
 
 ## Wireshark
 
