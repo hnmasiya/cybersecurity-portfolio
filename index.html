@@ -911,14 +911,14 @@ Caller User: 'bad_actor_admin'</code>
                 </div>
 
                 <!-- Sysmon Detection -->
-                <div class="card project-item" data-category="synthetic">
+                <div class="card project-item" data-category="live">
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
                             <h3 class="project-title">Windows Sysmon Telemetry Engineering</h3>
-                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
+                            <span class="project-badge badge-live">Observed Evidence</span>
                         </div>
-                        <div class="metric-badge">👁️ Sysmon Telemetry for Process Injection & LSASS Activity</div>
-                        <p class="project-desc">Configured custom Sysmon XML profiles to capture process injection (Event ID 8), command-line execution (Event ID 1), and abnormal outbound TCP connections (Event ID 3).</p>
+                        <div class="metric-badge">👁️ Real Sysmon Telemetry: 16 Events, 5 Findings</div>
+                        <p class="project-desc">Installed Sysmon (SwiftOnSecurity config) on a live, deployed Azure Domain Controller and captured real process-create (Event ID 1) and network-connect (Event ID 3) telemetry, validated against the same detection logic used on synthetic data.</p>
 
                         <div class="terminal-preview">
                             <div class="terminal-header">
@@ -940,7 +940,7 @@ Caller User: 'bad_actor_admin'</code>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('Sysmon Detection Engineering', 'Custom SwiftOnSecurity Sysmon rule deployment to detect suspicious process spawning and abnormal network connections.')">Overview</button>
+                        <button class="btn-quicklook" onclick="showModal('Sysmon Detection Engineering', 'SwiftOnSecurity Sysmon config deployed to a live Azure Domain Controller. Real process-create and network-connect telemetry captured and analyzed: 16 events, 5 findings, all explainable session activity. See the Evidence folder for the raw export and analysis.')">Overview</button>
                         <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Endpoint-Security/Windows-Sysmon-Detection-Lab" target="_blank" class="btn-link">View Artifacts →</a>
                     </div>
                 </div>
