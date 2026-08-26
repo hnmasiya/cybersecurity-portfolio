@@ -87,9 +87,11 @@ Validation included:
 Text evidence (Manager CLI output, agent connection log, real alert JSON,
 and group membership) is in
 [`Evidence/wazuh-agent-connection.txt`](../../../Cloud-Security/Azure-Windows-Server-Lab/Evidence/wazuh-agent-connection.txt)
-under the Azure Windows Server Lab. No dashboard screenshot has been
-captured yet; the text evidence is independently verifiable (Manager-side
-CLI output and agent-side log entries corroborate each other).
+under the Azure Windows Server Lab. A Wazuh Dashboard screenshot of the
+endpoint's view (Active status, both groups, MITRE ATT&CK tactic
+breakdown, live events graph) is in
+[`Evidence/wazuh-dashboard-agent-active.jpg`](../../../Cloud-Security/Azure-Windows-Server-Lab/Evidence/wazuh-dashboard-agent-active.jpg)
+in the same folder.
 
 ---
 
