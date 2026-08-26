@@ -131,6 +131,18 @@ This portfolio contains documented evidence of hands-on work, including **securi
 
 [View Azure Windows Server Lab](./Cloud-Security/Azure-Windows-Server-Lab/README.md)
 
+### 🐧 Linux Host Hardening Audit
+
+**Evidence-backed — validated against a real, live host**
+
+* CIS-benchmark-style checks: SSH config, sudoers (`NOPASSWD` scope), SUID binaries, world-writable files, legacy services, host firewall state
+* Deterministic Python audit engine, validated first against synthetic fixtures containing both misconfigurations and compliant settings
+* A real collector script (`sshd -T`, sudoers parsing, `find`-based SUID/permission scans, `systemctl`, `ufw`) run against a real personal Linux machine
+
+**Current status:** 0 findings against the real host — earned, not assumed: no SSH server (zero attack surface), no `NOPASSWD` sudoers, active default-deny firewall, no legacy services, and all 26 real SUID binaries individually verified against their owning package. The verification process itself caught two real methodology issues along the way (an unprivileged scan that looked falsely clean, and hundreds of false positives from Docker/containerd image-layer storage) rather than accepting a clean number at face value.
+
+[View Linux Host Hardening Lab](./Linux-Security/Hardening-Lab/README.md)
+
 ### 🌐 DVWA Web Application Security
 
 **Evidence-backed vulnerability assessment project**
