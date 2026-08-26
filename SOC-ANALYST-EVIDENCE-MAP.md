@@ -26,12 +26,11 @@ This document maps practical SOC capabilities to specific repository evidence.
 
 ## Evidence Classification
 
-**Live:** Wazuh server deployment, now with a live, connected Windows endpoint (see below). Azure Windows Server Lab (`Cloud-Security/Azure-Windows-Server-Lab/`) — a real, deployed Windows Server 2022 Domain Controller in Azure, hardened per its audit-policy baseline, with 409 real Security events exported and analyzed (392 findings), real Sysmon telemetry (16 events, 5 findings) captured after installing Sysmon with the SwiftOnSecurity configuration, and its Wazuh Agent connected to the project's Wazuh Manager over a Tailscale mesh VPN, generating real MITRE-mapped alerts and CIS Benchmark SCA findings — see its `Evidence/` folder. Linux Host Hardening Lab (`Linux-Security/Hardening-Lab/`) — the same audit logic run against a real personal Linux host (0 findings, all SUID binaries individually package-verified) — see its `Evidence/` and `Data/` folders.
+**Live:** Wazuh server deployment, now with a live, connected Windows endpoint (see below). Azure Windows Server Lab (`Cloud-Security/Azure-Windows-Server-Lab/`) — a real, deployed Windows Server 2022 Domain Controller in Azure, hardened per its audit-policy baseline, with 409 real Security events exported and analyzed (392 findings), real Sysmon telemetry (16 events, 5 findings) captured after installing Sysmon with the SwiftOnSecurity configuration, and its Wazuh Agent connected to the project's Wazuh Manager over a Tailscale mesh VPN, generating real MITRE-mapped alerts and CIS Benchmark SCA findings — see its `Evidence/` folder. Linux Host Hardening Lab (`Linux-Security/Hardening-Lab/`) — the same audit logic run against a real personal Linux host (0 findings, all SUID binaries individually package-verified) — see its `Evidence/` and `Data/` folders. Container Configuration Audit Lab (`Docker-Labs/Container-Audit-Lab/`) — the same audit logic run against a real home-lab Docker host (14 findings across 8 real running containers: hardcoded secrets, root containers, a docker.sock mount, unpinned tags) — see its `Evidence/` and `Data/` folders.
 
 **Controlled laboratory:** DVWA, Juice Shop and PCAP exercises.
 
-**Synthetic/offline:** Threat Hunting validation and Container Configuration
-Audit Lab.
+**Synthetic/offline:** Threat Hunting validation.
 
 **Evidence-bounded methodology:** Nmap and Wireshark active methodology reports.
 
