@@ -1,0 +1,14 @@
+$ az resource list --resource-group rg-winserver-security-lab --output table
+
+Name                                                 ResourceGroup              Location    Type                                      Status
+----------------------------------------------------  -------------------------  ----------  ----------------------------------------  ---------
+nsg-winserver-lab                                    rg-winserver-security-lab  eastus2     Microsoft.Network/networkSecurityGroups  Succeeded
+vnet-winserver-lab                                   rg-winserver-security-lab  eastus2     Microsoft.Network/virtualNetworks        Succeeded
+pip-winserver-lab                                    rg-winserver-security-lab  eastus2     Microsoft.Network/publicIPAddresses      Succeeded
+nic-winserver-lab                                    rg-winserver-security-lab  eastus2     Microsoft.Network/networkInterfaces      Succeeded
+dc01-lab                                             rg-winserver-security-lab  eastus2     Microsoft.Compute/virtualMachines        Succeeded
+dc01-lab_OsDisk_1_195761c5036c40cd9b1ad9ae0078beb8   RG-WINSERVER-SECURITY-LAB  eastus2     Microsoft.Compute/disks                  Succeeded
+shutdown-computevm-dc01-lab                          rg-winserver-security-lab  eastus2     Microsoft.DevTestLab/schedules           Succeeded
+
+Captured 2026-08-26. Confirms the full resource set from Terraform/main.tf deployed
+successfully, including the auto-shutdown schedule (cost control).
