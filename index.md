@@ -190,9 +190,13 @@ The repository contains supporting screenshots and structured security reports.
 
 ### 🔎 Nmap Reconnaissance
 
-**Evidence-bounded methodology project**
+**Evidence-backed — real scan against a self-owned host**
 
-The active Nmap project documents an authorized reconnaissance workflow and explicitly avoids claiming specific scan results because raw Nmap output is not currently stored in the project.
+* Full TCP port range (`-sV -sC -p-`) scan against the analyst's own home-lab machine, discovering 13 real open ports with service/version fingerprints
+* Raw output preserved in all three Nmap formats (`.nmap`, `.xml`, `.gnmap`)
+* An unrecognized service fingerprint (port 9443) independently verified with `curl`/`ss` rather than assumed, confirming Portainer is exposed on all network interfaces rather than scoped like the project's other services
+
+**Current status:** Complete — see the raw scan output and the full write-up (including remediation recommendations: scope Portainer's binding, identify an unaccounted-for port, disable unused default services) for the honest read of what a real scan against this host actually revealed.
 
 [View Nmap Report](./Network-Security/Nmap/Reports/Nmap-Network-Reconnaissance.md)
 
