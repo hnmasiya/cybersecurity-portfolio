@@ -39,9 +39,10 @@ Benchmark SCA findings. Full evidence, including the Tailscale/ACL setup
 and a representative alert, is in
 [`Evidence/wazuh-agent-connection.txt`](../../../Cloud-Security/Azure-Windows-Server-Lab/Evidence/wazuh-agent-connection.txt).
 
-A dashboard screenshot has not been captured yet - the text evidence above
-(Manager CLI output, agent log, and real alert JSON) stands on its own as
-verifiable proof of the live connection.
+A dashboard screenshot confirming the endpoint's live status (Active,
+correct groups, real MITRE tactic breakdown) is in
+[`Evidence/wazuh-dashboard-agent-active.jpg`](../../../Cloud-Security/Azure-Windows-Server-Lab/Evidence/wazuh-dashboard-agent-active.jpg)
+under the Azure Windows Server Lab, alongside the text evidence above.
 
 ## Conclusion
 The Wazuh server-side deployment is operational and portfolio-ready, and is
