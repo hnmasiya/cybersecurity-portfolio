@@ -1,0 +1,390 @@
+# Nmap 7.94SVN scan initiated Wed Aug 26 20:37:40 2026 as: nmap -sV -sC -p- -oA home-lab-scan localhost
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000010s latency).
+Not shown: 65522 closed tcp ports (reset)
+PORT      STATE SERVICE             VERSION
+80/tcp    open  http                Apache httpd 2.4.58 ((Ubuntu))
+|_http-title: Apache2 Ubuntu Default Page: It works
+|_http-server-header: Apache/2.4.58 (Ubuntu)
+443/tcp   open  ssl/https
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=wazuh.dashboard/organizationName=Wazuh/countryName=US
+| Subject Alternative Name: DNS:wazuh.dashboard
+| Not valid before: 2026-08-05T11:03:22
+|_Not valid after:  2036-08-02T11:03:22
+| tls-alpn: 
+|_  http/1.1
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 401 Unauthorized
+|     osd-name: wazuh.dashboard
+|     x-frame-options: sameorigin
+|     content-type: application/json; charset=utf-8
+|     cache-control: private, no-cache, no-store, must-revalidate
+|     set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Path=/
+|     content-length: 77
+|     Date: Wed, 26 Aug 2026 18:37:54 GMT
+|     Connection: close
+|     {"statusCode":401,"error":"Unauthorized","message":"Authentication required"}
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     location: /app/login?
+|     osd-name: wazuh.dashboard
+|     x-frame-options: sameorigin
+|     cache-control: private, no-cache, no-store, must-revalidate
+|     set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Path=/
+|     content-length: 0
+|     Date: Wed, 26 Aug 2026 18:37:53 GMT
+|     Connection: close
+|   HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     osd-name: wazuh.dashboard
+|     x-frame-options: sameorigin
+|     content-type: application/json; charset=utf-8
+|     cache-control: private, no-cache, no-store, must-revalidate
+|     content-length: 60
+|     Date: Wed, 26 Aug 2026 18:37:54 GMT
+|     Connection: close
+|     {"statusCode":404,"error":"Not Found","message":"Not Found"}
+|   RTSPRequest: 
+|     HTTP/1.1 404 Not Found
+|     osd-name: wazuh.dashboard
+|     x-frame-options: sameorigin
+|     content-type: application/json; charset=utf-8
+|     cache-control: private, no-cache, no-store, must-revalidate
+|     content-length: 60
+|     Date: Wed, 26 Aug 2026 18:37:59 GMT
+|     Connection: close
+|     {"statusCode":404,"error":"Not Found","message":"Not Found"}
+|   tor-versions: 
+|_    HTTP/1.1 400 Bad Request
+| http-title: Wazuh
+|_Requested resource was /app/login?
+631/tcp   open  ipp                 CUPS 2.4
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: CUPS/2.4 IPP/2.1
+|_http-title: Home - CUPS 2.4.7
+1514/tcp  open  fujitsu-dtcns?
+1515/tcp  open  ssl/ifor-protocol?
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=wazuh.manager
+| Not valid before: 2026-08-05T12:03:05
+|_Not valid after:  2036-08-02T12:03:05
+| fingerprint-strings: 
+|   FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|_    ERROR: Invalid request for new agent. Unable to add agent
+1716/tcp  open  xmsg?
+3000/tcp  open  ppp?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Access-Control-Allow-Origin: *
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: SAMEORIGIN
+|     Feature-Policy: payment 'self'
+|     X-Recruiting: /#/jobs
+|     Accept-Ranges: bytes
+|     Cache-Control: public, max-age=0
+|     Last-Modified: Wed, 26 Aug 2026 16:52:18 GMT
+|     ETag: W/"26af-1a03efc9e77"
+|     Content-Type: text/html; charset=UTF-8
+|     Content-Length: 9903
+|     Vary: Accept-Encoding
+|     Date: Wed, 26 Aug 2026 18:37:52 GMT
+|     Connection: close
+|     <!--
+|     Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+|     SPDX-License-Identifier: MIT
+|     <!doctype html>
+|     <html lang="en" data-beasties-container>
+|     <head>
+|     <meta charset="utf-8">
+|     <title>OWASP Juice Shop</title>
+|     <meta name="description" content="Probably the most modern and sophisticated insecure web application">
+|     <meta name="viewport" content="width=device-width, initial-scale=1">
+|     <link rel="preconnect" href="htt
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.1 204 No Content
+|     Access-Control-Allow-Origin: *
+|     Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE
+|     Vary: Access-Control-Request-Headers
+|     Content-Length: 0
+|     Date: Wed, 26 Aug 2026 18:37:52 GMT
+|     Connection: close
+|   Help, NCP: 
+|     HTTP/1.1 400 Bad Request
+|_    Connection: close
+3001/tcp  open  http                nginx
+|_http-title: Site doesn't have a title (text/html).
+3306/tcp  open  mysql               MySQL 5.5.5-10.11.14-MariaDB-0ubuntu0.24.04.1
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.5-10.11.14-MariaDB-0ubuntu0.24.04.1
+|   Thread ID: 33
+|   Capabilities flags: 63486
+|   Some Capabilities: IgnoreSpaceBeforeParenthesis, LongColumnFlag, Speaks41ProtocolOld, SupportsTransactions, Speaks41ProtocolNew, SupportsCompression, FoundRows, SupportsLoadDataLocal, IgnoreSigpipes, DontAllowDatabaseTableColumn, InteractiveClient, ConnectWithDatabase, ODBCClient, Support41Auth, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins
+|   Status: Autocommit
+|   Salt: =@js'dB],b+L!\.kVKVM
+|_  Auth Plugin Name: mysql_native_password
+9200/tcp  open  ssl/wap-wsp?
+| ssl-cert: Subject: commonName=wazuh.indexer/organizationName=Wazuh/countryName=US
+| Subject Alternative Name: DNS:wazuh.indexer
+| Not valid before: 2026-08-05T11:03:22
+|_Not valid after:  2036-08-02T11:03:22
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.0 401 Unauthorized
+|     WWW-Authenticate: Basic realm="OpenSearch Security"
+|     content-type: text/plain; charset=UTF-8
+|     content-length: 12
+|     Unauthorized
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Allow: GET,HEAD,DELETE
+|     content-type: text/plain; charset=UTF-8
+|     content-length: 0
+|   Help, TerminalServerCookie: 
+|     HTTP/1.0 400 Bad Request
+|     content-type: application/json; charset=UTF-8
+|     content-length: 203
+|     {"error":{"root_cause":[{"type":"illegal_argument_exception","reason":"text is empty (possibly HTTP/0.9)"}],"type":"illegal_argument_exception","reason":"text is empty (possibly HTTP/0.9)"},"status":400}
+|   RTSPRequest: 
+|     HTTP/1.0 400 Bad Request
+|     content-type: application/json; charset=UTF-8
+|     content-length: 201
+|     {"error":{"root_cause":[{"type":"illegal_argument_exception","reason":"invalid version format: RTSP/1.0"}],"type":"illegal_argument_exception","reason":"invalid version format: RTSP/1.0"},"status":400}
+|   SSLSessionReq: 
+|     HTTP/1.0 400 Bad Request
+|     content-type: application/json; charset=UTF-8
+|     content-length: 343
+|_    {"error":{"root_cause":[{"type":"invalid_line_separator_exception","reason":"Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines"}],"type":"invalid_line_separator_exception","reason":"Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines"},"status":400}
+9443/tcp  open  ssl/tungsten-https?
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:localhost, IP Address:0.0.0.0
+| Not valid before: 2026-07-26T11:40:11
+|_Not valid after:  2031-07-26T11:40:11
+|_ssl-date: TLS randomness does not represent time
+| fingerprint-strings: 
+|   GenericLines: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Accept-Ranges: bytes
+|     Cache-Control: max-age=31536000
+|     Content-Length: 14202
+|     Content-Security-Policy: script-src 'self' https://js.hsforms.net https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; object-src 'none'; frame-ancestors 'none'; frame-src https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/
+|     Content-Type: text/html; charset=utf-8
+|     Last-Modified: Mon, 13 Jul 2026 22:12:44 GMT
+|_    Permissions-Policy: accelerometer=(),ambient-light-sensor=(),attribution-reporting=(),autoplay=(),battery=(),browsing-topics=(),camera=(),captured-surface-control=(),ch-device-memory=(),ch-downlink=(),ch-dpr=(),ch-ect=(),ch-prefers-color-scheme=(),ch-prefers-reduced-motion=(),ch-prefers-reduced-transparency=(),ch-rtt=(),ch-save-data=(),ch-ua=(),ch-ua-arch=(),ch-ua-bitness=(),ch-ua-form-factors=(),ch-ua-full-version=(),ch-ua-full-version-list=(),ch-ua-mobil
+44433/tcp open  unknown
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Date: Wed, 26 Aug 2026 18:38:12 GMT
+|     Content-Length: 19
+|     Content-Type: text/plain; charset=utf-8
+|     404: Page Not Found
+|   GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 404 Not Found
+|     Date: Wed, 26 Aug 2026 18:37:47 GMT
+|     Content-Length: 19
+|     Content-Type: text/plain; charset=utf-8
+|_    404: Page Not Found
+55000/tcp open  unknown
+6 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.94SVN%T=SSL%I=7%D=8/26%Time=6A8F3282%P=x86_64-pc-linux-
+SF:gnu%r(GetRequest,157,"HTTP/1\.1\x20302\x20Found\r\nlocation:\x20/app/lo
+SF:gin\?\r\nosd-name:\x20wazuh\.dashboard\r\nx-frame-options:\x20sameorigi
+SF:n\r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20must-reval
+SF:idate\r\nset-cookie:\x20security_authentication=;\x20Max-Age=0;\x20Expi
+SF:res=Thu,\x2001\x20Jan\x201970\x2000:00:00\x20GMT;\x20HttpOnly;\x20Path=
+SF:/\r\ncontent-length:\x200\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:3
+SF:7:53\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(HTTPOptions,146,"HTTP/1
+SF:\.1\x20404\x20Not\x20Found\r\nosd-name:\x20wazuh\.dashboard\r\nx-frame-
+SF:options:\x20sameorigin\r\ncontent-type:\x20application/json;\x20charset
+SF:=utf-8\r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20must-
+SF:revalidate\r\ncontent-length:\x2060\r\nDate:\x20Wed,\x2026\x20Aug\x2020
+SF:26\x2018:37:54\x20GMT\r\nConnection:\x20close\r\n\r\n{\"statusCode\":40
+SF:4,\"error\":\"Not\x20Found\",\"message\":\"Not\x20Found\"}")%r(FourOhFo
+SF:urRequest,1C4,"HTTP/1\.1\x20401\x20Unauthorized\r\nosd-name:\x20wazuh\.
+SF:dashboard\r\nx-frame-options:\x20sameorigin\r\ncontent-type:\x20applica
+SF:tion/json;\x20charset=utf-8\r\ncache-control:\x20private,\x20no-cache,\
+SF:x20no-store,\x20must-revalidate\r\nset-cookie:\x20security_authenticati
+SF:on=;\x20Max-Age=0;\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:00\x20
+SF:GMT;\x20HttpOnly;\x20Path=/\r\ncontent-length:\x2077\r\nDate:\x20Wed,\x
+SF:2026\x20Aug\x202026\x2018:37:54\x20GMT\r\nConnection:\x20close\r\n\r\n{
+SF:\"statusCode\":401,\"error\":\"Unauthorized\",\"message\":\"Authenticat
+SF:ion\x20required\"}")%r(tor-versions,1C,"HTTP/1\.1\x20400\x20Bad\x20Requ
+SF:est\r\n\r\n")%r(RTSPRequest,146,"HTTP/1\.1\x20404\x20Not\x20Found\r\nos
+SF:d-name:\x20wazuh\.dashboard\r\nx-frame-options:\x20sameorigin\r\nconten
+SF:t-type:\x20application/json;\x20charset=utf-8\r\ncache-control:\x20priv
+SF:ate,\x20no-cache,\x20no-store,\x20must-revalidate\r\ncontent-length:\x2
+SF:060\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:59\x20GMT\r\nConnect
+SF:ion:\x20close\r\n\r\n{\"statusCode\":404,\"error\":\"Not\x20Found\",\"m
+SF:essage\":\"Not\x20Found\"}");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port1515-TCP:V=7.94SVN%T=SSL%I=7%D=8/26%Time=6A8F3286%P=x86_64-pc-linux
+SF:-gnu%r(GenericLines,39,"ERROR:\x20Invalid\x20request\x20for\x20new\x20a
+SF:gent\.\x20Unable\x20to\x20add\x20agent")%r(GetRequest,39,"ERROR:\x20Inv
+SF:alid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agen
+SF:t")%r(HTTPOptions,39,"ERROR:\x20Invalid\x20request\x20for\x20new\x20age
+SF:nt\.\x20Unable\x20to\x20add\x20agent")%r(RTSPRequest,39,"ERROR:\x20Inva
+SF:lid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent
+SF:")%r(Help,39,"ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20
+SF:Unable\x20to\x20add\x20agent")%r(SSLSessionReq,39,"ERROR:\x20Invalid\x2
+SF:0request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent")%r(T
+SF:erminalServerCookie,39,"ERROR:\x20Invalid\x20request\x20for\x20new\x20a
+SF:gent\.\x20Unable\x20to\x20add\x20agent")%r(TLSSessionReq,39,"ERROR:\x20
+SF:Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20a
+SF:gent")%r(Kerberos,39,"ERROR:\x20Invalid\x20request\x20for\x20new\x20age
+SF:nt\.\x20Unable\x20to\x20add\x20agent")%r(FourOhFourRequest,39,"ERROR:\x
+SF:20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x2
+SF:0agent")%r(LPDString,39,"ERROR:\x20Invalid\x20request\x20for\x20new\x20
+SF:agent\.\x20Unable\x20to\x20add\x20agent")%r(LDAPSearchReq,39,"ERROR:\x2
+SF:0Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20
+SF:agent")%r(SIPOptions,39,"ERROR:\x20Invalid\x20request\x20for\x20new\x20
+SF:agent\.\x20Unable\x20to\x20add\x20agent");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3000-TCP:V=7.94SVN%I=7%D=8/26%Time=6A8F3280%P=x86_64-pc-linux-gnu%r
+SF:(GetRequest,2866,"HTTP/1\.1\x20200\x20OK\r\nAccess-Control-Allow-Origin
+SF::\x20\*\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SA
+SF:MEORIGIN\r\nFeature-Policy:\x20payment\x20'self'\r\nX-Recruiting:\x20/#
+SF:/jobs\r\nAccept-Ranges:\x20bytes\r\nCache-Control:\x20public,\x20max-ag
+SF:e=0\r\nLast-Modified:\x20Wed,\x2026\x20Aug\x202026\x2016:52:18\x20GMT\r
+SF:\nETag:\x20W/\"26af-1a03efc9e77\"\r\nContent-Type:\x20text/html;\x20cha
+SF:rset=UTF-8\r\nContent-Length:\x209903\r\nVary:\x20Accept-Encoding\r\nDa
+SF:te:\x20Wed,\x2026\x20Aug\x202026\x2018:37:52\x20GMT\r\nConnection:\x20c
+SF:lose\r\n\r\n<!--\n\x20\x20~\x20Copyright\x20\(c\)\x202014-2026\x20Bjoer
+SF:n\x20Kimminich\x20&\x20the\x20OWASP\x20Juice\x20Shop\x20contributors\.\
+SF:n\x20\x20~\x20SPDX-License-Identifier:\x20MIT\n\x20\x20-->\n\n<!doctype
+SF:\x20html>\n<html\x20lang=\"en\"\x20data-beasties-container>\n<head>\n\x
+SF:20\x20<meta\x20charset=\"utf-8\">\n\x20\x20<title>OWASP\x20Juice\x20Sho
+SF:p</title>\n\x20\x20<meta\x20name=\"description\"\x20content=\"Probably\
+SF:x20the\x20most\x20modern\x20and\x20sophisticated\x20insecure\x20web\x20
+SF:application\">\n\x20\x20<meta\x20name=\"viewport\"\x20content=\"width=d
+SF:evice-width,\x20initial-scale=1\">\n\x20\x20<link\x20rel=\"preconnect\"
+SF:\x20href=\"htt")%r(Help,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConne
+SF:ction:\x20close\r\n\r\n")%r(NCP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\
+SF:r\nConnection:\x20close\r\n\r\n")%r(HTTPOptions,EA,"HTTP/1\.1\x20204\x2
+SF:0No\x20Content\r\nAccess-Control-Allow-Origin:\x20\*\r\nAccess-Control-
+SF:Allow-Methods:\x20GET,HEAD,PUT,PATCH,POST,DELETE\r\nVary:\x20Access-Con
+SF:trol-Request-Headers\r\nContent-Length:\x200\r\nDate:\x20Wed,\x2026\x20
+SF:Aug\x202026\x2018:37:52\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(RTSP
+SF:Request,EA,"HTTP/1\.1\x20204\x20No\x20Content\r\nAccess-Control-Allow-O
+SF:rigin:\x20\*\r\nAccess-Control-Allow-Methods:\x20GET,HEAD,PUT,PATCH,POS
+SF:T,DELETE\r\nVary:\x20Access-Control-Request-Headers\r\nContent-Length:\
+SF:x200\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:52\x20GMT\r\nConnec
+SF:tion:\x20close\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9200-TCP:V=7.94SVN%T=SSL%I=7%D=8/26%Time=6A8F328B%P=x86_64-pc-linux
+SF:-gnu%r(GetRequest,9B,"HTTP/1\.0\x20401\x20Unauthorized\r\nWWW-Authentic
+SF:ate:\x20Basic\x20realm=\"OpenSearch\x20Security\"\r\ncontent-type:\x20t
+SF:ext/plain;\x20charset=UTF-8\r\ncontent-length:\x2012\r\n\r\nUnauthorize
+SF:d")%r(HTTPOptions,67,"HTTP/1\.0\x20200\x20OK\r\nAllow:\x20GET,HEAD,DELE
+SF:TE\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ncontent-length:\
+SF:x200\r\n\r\n")%r(RTSPRequest,129,"HTTP/1\.0\x20400\x20Bad\x20Request\r\
+SF:ncontent-type:\x20application/json;\x20charset=UTF-8\r\ncontent-length:
+SF:\x20201\r\n\r\n{\"error\":{\"root_cause\":\[{\"type\":\"illegal_argumen
+SF:t_exception\",\"reason\":\"invalid\x20version\x20format:\x20RTSP/1\.0\"
+SF:}\],\"type\":\"illegal_argument_exception\",\"reason\":\"invalid\x20ver
+SF:sion\x20format:\x20RTSP/1\.0\"},\"status\":400}")%r(Help,12B,"HTTP/1\.0
+SF:\x20400\x20Bad\x20Request\r\ncontent-type:\x20application/json;\x20char
+SF:set=UTF-8\r\ncontent-length:\x20203\r\n\r\n{\"error\":{\"root_cause\":\
+SF:[{\"type\":\"illegal_argument_exception\",\"reason\":\"text\x20is\x20em
+SF:pty\x20\(possibly\x20HTTP/0\.9\)\"}\],\"type\":\"illegal_argument_excep
+SF:tion\",\"reason\":\"text\x20is\x20empty\x20\(possibly\x20HTTP/0\.9\)\"}
+SF:,\"status\":400}")%r(SSLSessionReq,1B7,"HTTP/1\.0\x20400\x20Bad\x20Requ
+SF:est\r\ncontent-type:\x20application/json;\x20charset=UTF-8\r\ncontent-l
+SF:ength:\x20343\r\n\r\n{\"error\":{\"root_cause\":\[{\"type\":\"invalid_l
+SF:ine_separator_exception\",\"reason\":\"Line\x20Feed\x20must\x20be\x20pr
+SF:eceded\x20by\x20Carriage\x20Return\x20when\x20terminating\x20HTTP\x20st
+SF:art-\x20and\x20header\x20field-lines\"}\],\"type\":\"invalid_line_separ
+SF:ator_exception\",\"reason\":\"Line\x20Feed\x20must\x20be\x20preceded\x2
+SF:0by\x20Carriage\x20Return\x20when\x20terminating\x20HTTP\x20start-\x20a
+SF:nd\x20header\x20field-lines\"},\"status\":400}")%r(TerminalServerCookie
+SF:,12B,"HTTP/1\.0\x20400\x20Bad\x20Request\r\ncontent-type:\x20applicatio
+SF:n/json;\x20charset=UTF-8\r\ncontent-length:\x20203\r\n\r\n{\"error\":{\
+SF:"root_cause\":\[{\"type\":\"illegal_argument_exception\",\"reason\":\"t
+SF:ext\x20is\x20empty\x20\(possibly\x20HTTP/0\.9\)\"}\],\"type\":\"illegal
+SF:_argument_exception\",\"reason\":\"text\x20is\x20empty\x20\(possibly\x2
+SF:0HTTP/0\.9\)\"},\"status\":400}");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9443-TCP:V=7.94SVN%T=SSL%I=7%D=8/26%Time=6A8F3282%P=x86_64-pc-linux
+SF:-gnu%r(GetRequest,4034,"HTTP/1\.0\x20200\x20OK\r\nAccept-Ranges:\x20byt
+SF:es\r\nCache-Control:\x20max-age=31536000\r\nContent-Length:\x2014202\r\
+SF:nContent-Security-Policy:\x20script-src\x20'self'\x20https://js\.hsform
+SF:s\.net\x20https://www\.google\.com/recaptcha/\x20https://www\.gstatic\.
+SF:com/recaptcha/;\x20object-src\x20'none';\x20frame-ancestors\x20'none';\
+SF:x20frame-src\x20https://www\.google\.com/recaptcha/\x20https://www\.gst
+SF:atic\.com/recaptcha/\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\
+SF:nLast-Modified:\x20Mon,\x2013\x20Jul\x202026\x2022:12:44\x20GMT\r\nPerm
+SF:issions-Policy:\x20accelerometer=\(\),ambient-light-sensor=\(\),attribu
+SF:tion-reporting=\(\),autoplay=\(\),battery=\(\),browsing-topics=\(\),cam
+SF:era=\(\),captured-surface-control=\(\),ch-device-memory=\(\),ch-downlin
+SF:k=\(\),ch-dpr=\(\),ch-ect=\(\),ch-prefers-color-scheme=\(\),ch-prefers-
+SF:reduced-motion=\(\),ch-prefers-reduced-transparency=\(\),ch-rtt=\(\),ch
+SF:-save-data=\(\),ch-ua=\(\),ch-ua-arch=\(\),ch-ua-bitness=\(\),ch-ua-for
+SF:m-factors=\(\),ch-ua-full-version=\(\),ch-ua-full-version-list=\(\),ch-
+SF:ua-mobil")%r(GenericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nCon
+SF:tent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\
+SF:r\n400\x20Bad\x20Request")%r(HTTPOptions,4034,"HTTP/1\.0\x20200\x20OK\r
+SF:\nAccept-Ranges:\x20bytes\r\nCache-Control:\x20max-age=31536000\r\nCont
+SF:ent-Length:\x2014202\r\nContent-Security-Policy:\x20script-src\x20'self
+SF:'\x20https://js\.hsforms\.net\x20https://www\.google\.com/recaptcha/\x2
+SF:0https://www\.gstatic\.com/recaptcha/;\x20object-src\x20'none';\x20fram
+SF:e-ancestors\x20'none';\x20frame-src\x20https://www\.google\.com/recaptc
+SF:ha/\x20https://www\.gstatic\.com/recaptcha/\r\nContent-Type:\x20text/ht
+SF:ml;\x20charset=utf-8\r\nLast-Modified:\x20Mon,\x2013\x20Jul\x202026\x20
+SF:22:12:44\x20GMT\r\nPermissions-Policy:\x20accelerometer=\(\),ambient-li
+SF:ght-sensor=\(\),attribution-reporting=\(\),autoplay=\(\),battery=\(\),b
+SF:rowsing-topics=\(\),camera=\(\),captured-surface-control=\(\),ch-device
+SF:-memory=\(\),ch-downlink=\(\),ch-dpr=\(\),ch-ect=\(\),ch-prefers-color-
+SF:scheme=\(\),ch-prefers-reduced-motion=\(\),ch-prefers-reduced-transpare
+SF:ncy=\(\),ch-rtt=\(\),ch-save-data=\(\),ch-ua=\(\),ch-ua-arch=\(\),ch-ua
+SF:-bitness=\(\),ch-ua-form-factors=\(\),ch-ua-full-version=\(\),ch-ua-ful
+SF:l-version-list=\(\),ch-ua-mobil");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port44433-TCP:V=7.94SVN%I=7%D=8/26%Time=6A8F327B%P=x86_64-pc-linux-gnu%
+SF:r(GenericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\
+SF:x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20B
+SF:ad\x20Request")%r(GetRequest,8F,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDa
+SF:te:\x20Wed,\x2026\x20Aug\x202026\x2018:37:47\x20GMT\r\nContent-Length:\
+SF:x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20P
+SF:age\x20Not\x20Found")%r(HTTPOptions,8F,"HTTP/1\.0\x20404\x20Not\x20Foun
+SF:d\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:47\x20GMT\r\nContent-L
+SF:ength:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n40
+SF:4:\x20Page\x20Not\x20Found")%r(RTSPRequest,67,"HTTP/1\.1\x20400\x20Bad\
+SF:x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnecti
+SF:on:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Help,67,"HTTP/1\.1\x20400
+SF:\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n
+SF:Connection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(SSLSessionReq,67,
+SF:"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20
+SF:charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(
+SF:TerminalServerCookie,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-
+SF:Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n40
+SF:0\x20Bad\x20Request")%r(TLSSessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Re
+SF:quest\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x
+SF:20close\r\n\r\n400\x20Bad\x20Request")%r(Kerberos,67,"HTTP/1\.1\x20400\
+SF:x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nC
+SF:onnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(FourOhFourRequest,
+SF:8F,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2026\x20Aug\x202
+SF:026\x2018:38:12\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20tex
+SF:t/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found")%r(LPDSt
+SF:ring,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/pl
+SF:ain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Requ
+SF:est")%r(LDAPSearchReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent
+SF:-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n4
+SF:00\x20Bad\x20Request");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Aug 26 20:39:40 2026 -- 1 IP address (1 host up) scanned in 120.10 seconds
