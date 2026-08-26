@@ -20,7 +20,7 @@
   <h1>HAZVINEI NOMATTER MASIYA</h1>
   <div class="subtitle">Cybersecurity Analyst · Security Operations · Detection & Automation</div>
   <div class="contact">
-    📍 Harare, Zimbabwe &nbsp;|&nbsp; 📧 norman.masiya@gmail.com / masiyahn@live.com &nbsp;|&nbsp; 📞 +263 77 521 6823 / +263 71 866 2162<br>
+    Harare, Zimbabwe &nbsp;|&nbsp; norman.masiya@gmail.com &nbsp;|&nbsp; +263 77 521 6823 / +263 71 866 2162<br>
     <b>GitHub:</b> https://github.com/hnmasiya &nbsp;|&nbsp; <b>Portfolio:</b> https://masiya-hub.org &nbsp;|&nbsp; <b>LinkedIn:</b> https://www.linkedin.com/in/hazvinei-masiya/
   </div>
 </div>
@@ -70,9 +70,9 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
   <span class="job-title">Information Technology Support Specialist</span> | <span class="company">Netvantage Partners</span>
 </div>
 <ul>
-  <li>Deliver 1st and 2nd line IT support across multiple client environments, including secure endpoint deployment, desktop/laptop diagnostics, and hardened onboarding processes.</li>
-  <li>Support vulnerability mitigation through structured patch management, maintaining compliant and up-to-date systems across client networks.</li>
   <li>Investigate and resolve security-relevant incidents, including malware alerts, unauthorized access attempts, and connectivity disruptions.</li>
+  <li>Support vulnerability mitigation through structured patch management, maintaining compliant and up-to-date systems across client networks.</li>
+  <li>Deliver 1st and 2nd line IT support across multiple client environments, including secure endpoint deployment, desktop/laptop diagnostics, and hardened onboarding processes.</li>
   <li>Develop IT support documentation and incident-handling procedures to standardize response consistency and reduce resolution time.</li>
 </ul>
 
@@ -82,9 +82,9 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
 </div>
 <ul>
   <li>Provide enterprise IT support, infrastructure administration, and network operations across client environments, including Active Directory administration, RBAC, and least-privilege access control.</li>
-  <li>Physically deploy and configure enterprise Dell Versa SD-WAN appliances, including Versa Operating System (VOS) upgrades, IP configuration, live migration support, and connectivity validation.</li>
-  <li>Deliver endpoint protection, patch deployment, and vulnerability mitigation across client networks; troubleshoot Microsoft 365 and application issues.</li>
   <li>Monitor endpoint, network, and system activity for anomalies, applying security-analyst triage principles to identify and escalate security-relevant incidents.</li>
+  <li>Deploy and configure enterprise Dell Versa SD-WAN appliances, including Versa Operating System (VOS) upgrades, IP configuration, live migration support, and connectivity validation.</li>
+  <li>Deliver endpoint protection, patch deployment, and vulnerability mitigation across client networks; troubleshoot Microsoft 365 and application issues.</li>
   <li>Maintain technical documentation and SOP development to standardize client support delivery.</li>
   <li>Client project — Network Infrastructure Upgrade, Mastercard Zimbabwe (Mar–Apr 2022): installed sensor LAN cabling, decommissioned legacy Cisco switches/controllers/APs, and racked/installed new Aruba controllers, switches, and access points.</li>
   <li>Client project — SD-WAN Circuit Deployment, SITA AERO (Jul 2026): racked, powered on, and configured two Dell Versa VEP1485 SD-WAN appliances via console CLI (IP/subnet/gateway configuration), cabled per installation diagram, and connected each device to a dedicated internet circuit; verified connectivity on both.</li>
@@ -132,6 +132,7 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
 <h2>Certifications & Education</h2>
 <ul>
   <li><b>CompTIA Security+ (SY0-701)</b> — CompTIA</li>
-  <li><b>Google Cybersecurity Professional Certificate</b> — Google &nbsp;|&nbsp; <b>Google IT Support Professional Certificate</b> — Google</li>
+  <li><b>Google Cybersecurity Professional Certificate</b> — Google</li>
+  <li><b>Google IT Support Professional Certificate</b> — Google</li>
   <li><b>BSc in Computer Science</b> — Unicaf University (In Progress)</li>
 </ul>
