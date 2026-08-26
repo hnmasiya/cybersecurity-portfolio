@@ -114,7 +114,7 @@ This portfolio contains documented evidence of hands-on work, including **securi
 * JSON and CSV validation evidence
 * MITRE ATT&CK contextual mapping
 
-**Important:** This project is explicitly documented as **offline Wazuh rule validation** because Wazuh Manager is not currently installed on the workstation.
+**Note:** These custom rules are validated offline via a deterministic Python harness rather than by loading them into the live Wazuh Manager and triggering real events. For a live, connected endpoint generating real Wazuh-side alerts, see the Azure Windows Server Lab below.
 
 [View Detection Engineering Lab](./SIEM/Wazuh/Detection-Engineering-Lab/README.md)
 
@@ -125,8 +125,9 @@ This portfolio contains documented evidence of hands-on work, including **securi
 * Terraform provisioning a Windows Server 2022 VM in Azure: locked-down NSG (RDP restricted to a single admin IP, no default-open rule), no secrets committed, daily auto-shutdown for cost control
 * PowerShell that promoted the VM to an Active Directory Domain Controller (`lab.local`) and applied an audit-policy/hardening baseline
 * Real Windows Security event data exported and fed into the Active Directory Detection Lab below, closing its "live DC pending" gap end-to-end
+* Wazuh Agent connected to the project's Wazuh Manager over a private Tailscale mesh VPN, generating real MITRE-mapped alerts and CIS Benchmark compliance findings from Wazuh's own rule engine
 
-**Current status:** Deployed to a real Azure subscription and verified — see the lab's `Evidence/` folder for `Get-ADDomain` output, the applied audit policy, the full Azure resource list, and 409 real exported events analyzed for 392 findings (1 CRITICAL, 16 HIGH, 375 MEDIUM).
+**Current status:** Deployed to a real Azure subscription and verified — see the lab's `Evidence/` folder for `Get-ADDomain` output, the applied audit policy, the full Azure resource list, 409 real exported events analyzed for 392 findings (1 CRITICAL, 16 HIGH, 375 MEDIUM), and the live Wazuh Agent connection evidence.
 
 [View Azure Windows Server Lab](./Cloud-Security/Azure-Windows-Server-Lab/README.md)
 
