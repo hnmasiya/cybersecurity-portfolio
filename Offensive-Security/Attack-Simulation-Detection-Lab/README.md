@@ -41,7 +41,7 @@ This decodes to `id;whoami` and pipes it straight into `bash` — the exact obfu
 ```
 then `augenrules --load` and confirm Wazuh's `ossec.conf` collects `/var/log/audit/audit.log` under `<localfile>`.
 
-**Detection rule:** [`Rules/execution-obfuscated-command.xml`](./Rules/execution-obfuscated-command.xml)
+**Detection rule:** [`Rules/execution-obfuscated-command.xml`](./Rules/execution-obfuscated-command.xml) — matches the *pattern*, not the payload content. Checking the real raw `audit.log` line this exact command produces showed real `auditd` hex-encodes any argument containing shell metacharacters like `|` (e.g. `a2=6563686F...` instead of readable quoted text), and Wazuh's `auditd` decoder doesn't extract that field for content-matching either way. The rule instead flags a `bash`/`sh -c` invocation whose argument is unquoted hex rather than quoted plain text — real auditd only hex-encodes when it has to, so this is the obfuscation signal itself, and it survives the attacker changing the actual payload.
 
 ### Windows: PowerShell `-EncodedCommand`
 

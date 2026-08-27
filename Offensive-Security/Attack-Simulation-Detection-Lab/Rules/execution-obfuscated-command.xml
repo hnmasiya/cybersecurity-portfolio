@@ -16,15 +16,33 @@
   named fields (like audit.execve.a0), not the raw log text - full_log
   needs <match>, the same construct this repo's own earlier rules
   (custom_sudo_escalation.xml, suspicious-login-rule.xml) already use
-  correctly. Fixed below.
+  correctly.
+
+  A third live test - against the REAL raw audit.log line this
+  manager's own agent actually produced for `bash -c "echo ... |
+  base64 -d | bash"` - found real auditd hex-encodes any argument
+  containing shell metacharacters like |, so a2 shows up as
+  "a2=6563686F..." rather than readable quoted text. Confirmed via
+  wazuh-logtest that Wazuh's auditd decoder doesn't extract a2 as a
+  field at all in this ruleset version, hex or not, so content-matching
+  the payload (whether via <field> or <match>) was never going to work.
+
+  Detects the pattern instead: a bash/sh -c invocation whose argument
+  is unquoted hex rather than quoted plain text IS the signal - real
+  auditd only hex-encodes when the argument contains shell
+  metacharacters, so this is actually more robust than content-matching
+  would have been, since it survives the attacker changing the payload
+  entirely.
 -->
 <group name="attack_sim,execution,t1059,">
 
-  <!-- Linux: base64-decoded command piped into a shell -->
+  <!-- Linux: bash/sh -c invocation with a hex-encoded (i.e. contains
+       shell metacharacters) argument - real auditd only hex-encodes
+       when it has to, so this is itself the obfuscation signal. -->
   <rule id="100200" level="12">
     <if_sid>80700</if_sid>
-    <match type="pcre2">(?i)base64\s+-d\s*\|\s*(ba)?sh</match>
-    <description>Execution: base64-decoded command piped into a shell (obfuscated command pattern)</description>
+    <match type="pcre2">a0="(ba)?sh"\s+a1="-c"\s+a2=[0-9A-Fa-f]{16,}</match>
+    <description>Execution: shell -c invocation with a hex-encoded (obfuscated) argument</description>
     <mitre>
       <id>T1059</id>
       <id>T1140</id>
