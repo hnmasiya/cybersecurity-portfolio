@@ -237,6 +237,19 @@ The repository contains supporting screenshots and structured security reports.
 
 [View GCP Landing Zone Lab](./Cloud-Security/GCP-Landing-Zone-Lab/README.md)
 
+### 🎯 Attack Simulation & Detection Engineering Lab
+
+**Designed, ready to execute — awaiting live evidence**
+
+* 3 real MITRE ATT&CK techniques — Execution (T1059), Persistence (T1053/T1547), Credential Access (T1003) — each written for both platforms below
+* 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server DC already documented in this portfolio — no third-party system touched
+* A real custom Wazuh detection rule written for each technique, ready to load against the live manager
+* Real, runnable simulation scripts (`linux-simulations.sh`, `windows-simulations.ps1`) with built-in cleanup steps and an explicit safety note for the one technique (LSASS memory access) that touches real credential material
+
+**Current status:** Every simulation command and detection rule is written and ready. No simulation has been executed yet, so no alert evidence exists — this is the one remaining step before this lab is complete.
+
+[View Attack Simulation & Detection Engineering Lab](./Offensive-Security/Attack-Simulation-Detection-Lab/README.md)
+
 ---
 
 ## 📈 Portfolio Architecture & Tracking
