@@ -25,6 +25,7 @@ This document maps practical SOC capabilities to specific repository evidence.
 | Packet Analysis | `Network-Security/Wireshark/` and PCAP lab |
 | Static Application Security Testing | `AppSec-DevSecOps/SAST-Reports/` |
 | Cloud Landing Zone Architecture | `Cloud-Security/GCP-Landing-Zone-Lab/` |
+| Attack Simulation & Detection Engineering | `Offensive-Security/Attack-Simulation-Detection-Lab/` |
 
 ## Evidence Classification
 
@@ -36,13 +37,14 @@ This document maps practical SOC capabilities to specific repository evidence.
 
 **Architecture / not yet deployed:** GCP Secure Landing Zone (`Cloud-Security/GCP-Landing-Zone-Lab/`) — real, formatting-checked Terraform (org policy guardrails, environment folders, Shared VPC, org-wide logging sink); `terraform validate`/`plan`/`apply` pending a real GCP org and registry access this environment lacks, the same starting point the Azure lab had before it was deployed.
 
-**Illustrative scenario (not a live finding):** the Offensive Security
-and Enterprise AD hygiene reports are scenario write-ups demonstrating
-reporting methodology - each is labeled as such at the top of the
-file, with a pointer to the nearest evidence-backed equivalent where
-one exists. Unlike the labs above, these two would require an
-authorized live pentest target or a real Active Directory domain,
-neither of which this portfolio's build environment has access to.
+**Designed, awaiting execution:** Attack Simulation & Detection Engineering Lab (`Offensive-Security/Attack-Simulation-Detection-Lab/`) — 3 real MITRE ATT&CK techniques (Execution, Persistence, Credential Access) written to run against 2 real, self-owned platforms (the home-lab Linux host and the Azure DC documented above), each with a real custom Wazuh detection rule already written to catch it. The simulation commands and rules are real; only the actual execution and captured alert evidence are still pending.
+
+**Illustrative scenario (not a live finding):** the Enterprise AD
+hygiene report is a scenario write-up demonstrating reporting
+methodology, labeled as such at the top of the file. It would require
+a separate authorized Active Directory domain beyond the Azure DC
+already exercised above, which this portfolio's build environment
+doesn't have access to.
 
 ## Live Windows Endpoint -> Wazuh Chain
 

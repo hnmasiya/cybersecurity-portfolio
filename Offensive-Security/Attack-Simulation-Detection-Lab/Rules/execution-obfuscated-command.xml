@@ -1,0 +1,42 @@
+<!--
+  Attack Simulation & Detection Engineering Lab - T1059 (Execution)
+  Catches base64-obfuscated command execution on Linux (via auditd execve
+  logs) and PowerShell -EncodedCommand usage on Windows (via Sysmon Event
+  ID 1), as two rules in the same group since they detect the same
+  technique on different platforms.
+
+  The Linux rule matches on full_log content rather than a specific
+  parent audit-decoder rule ID (e.g. Wazuh's built-in audit/execve
+  rules), since that internal ID varies by ruleset version and hasn't
+  been confirmed against the live manager yet - verify/tune the
+  <if_sid> or <if_group> parent once this is actually loaded and
+  tested, rather than trusting this as-is.
+-->
+<group name="attack_sim,execution,t1059,">
+
+  <!-- Linux: base64-decoded command piped into a shell -->
+  <rule id="100200" level="12">
+    <if_group>audit_command</if_group>
+    <field name="full_log" type="pcre2">(?i)base64\s+-d\s*\|\s*(ba)?sh</field>
+    <description>Execution: base64-decoded command piped into a shell (obfuscated command pattern)</description>
+    <mitre>
+      <id>T1059</id>
+      <id>T1140</id>
+    </mitre>
+  </rule>
+
+  <!-- Windows: PowerShell -EncodedCommand / -enc. sysmon_event1 and
+       win.eventdata.commandLine are Wazuh's standard Sysmon-integration
+       field names for Event ID 1, but confirm against this DC's actual
+       decoded event structure the first time this rule is tested. -->
+  <rule id="100201" level="12">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)-enc(odedcommand)?\s+[A-Za-z0-9+/=]{20,}</field>
+    <description>Execution: PowerShell -EncodedCommand with base64 payload</description>
+    <mitre>
+      <id>T1059.001</id>
+      <id>T1027</id>
+    </mitre>
+  </rule>
+
+</group>
