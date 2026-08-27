@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-08-27T12:09:08.675+0000",
+  "rule": {
+    "level": 12,
+    "description": "Execution: shell -c invocation with a hex-encoded (obfuscated) argument",
+    "id": "100200",
+    "mitre": {
+      "id": ["T1059", "T1140"],
+      "tactic": ["Execution", "Defense Evasion"],
+      "technique": ["Command and Scripting Interpreter", "Deobfuscate/Decode Files or Information"]
+    },
+    "groups": ["attack_sim", "execution", "t1059"]
+  },
+  "agent": {
+    "id": "002",
+    "name": "normann-ThinkPad-X260",
+    "ip": "127.0.0.1"
+  },
+  "manager": {
+    "name": "wazuh.manager"
+  },
+  "id": "1787832548.15480522",
+  "full_log": "type=SYSCALL msg=audit(1787832548.183:40281): arch=c000003e syscall=59 success=yes exit=0 comm=\"bash\" exe=\"/usr/bin/bash\" key=\"exec_cmd\" AUID=\"normann\" UID=\"normann\" type=EXECVE msg=audit(1787832548.183:40281): argc=3 a0=\"bash\" a1=\"-c\" a2=6563686F202761575137643268765957317027207C20626173653634202D64207C2062617368 type=CWD msg=audit(1787832548.183:40281): cwd=\"/home/normann/portfolio-checkout\"",
+  "decoder": {
+    "parent": "auditd",
+    "name": "auditd"
+  },
+  "data": {
+    "audit": {
+      "type": "SYSCALL",
+      "id": "40281",
+      "command": "bash",
+      "exe": "/usr/bin/bash",
+      "key": "exec_cmd",
+      "execve": { "argc": "3", "a0": "bash", "a1": "-c" },
+      "cwd": "/home/normann/portfolio-checkout"
+    }
+  },
+  "location": "/var/log/audit/audit.log",
+  "_note": "a2 (6563686F...) decodes to the real simulation command: echo 'aWQ7d2hvYW1p' | base64 -d | bash, run from Scripts/linux-simulations.sh execution on 2026-08-27. Confirmed real via manual hex decode matching the exact simulation payload. Full alert JSON captured verbatim from `docker exec single-node-wazuh.manager-1 grep \"100200\" /var/ossec/logs/alerts/alerts.json`; irrelevant boilerplate fields (BPRM_FCAPS, PATH, PROCTITLE stanzas, numeric uid/gid noise) trimmed for readability, no content altered."
+}
