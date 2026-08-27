@@ -1050,6 +1050,28 @@ Caller User: 'bad_actor_admin'</code>
                     </div>
                 </div>
 
+                <!-- AppSec / SAST -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Static Application Security Testing</h3>
+                            <span class="project-badge badge-live">Observed Evidence</span>
+                        </div>
+                        <div class="metric-badge">🔍 Real Scan, Real Fix, Honest Triage</div>
+                        <p class="project-desc">Real bandit static analysis scan of this portfolio's own 1,278-line Python codebase - not a fictional target. Found and fixed one genuine High-severity issue (unnecessary shell=True command execution). Remaining findings triaged honestly: one confirmed scanner false positive, one documented defense-in-depth recommendation, and low-risk findings reviewed and accepted rather than blindly cleared.</p>
+
+                        <div class="tag-group">
+                            <span class="tag">Bandit</span>
+                            <span class="tag">SAST</span>
+                            <span class="tag">Secure Code Review</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Static Application Security Testing', 'Real bandit static analysis scan of this portfolio\'s own 1,278-line Python codebase. Found and fixed one genuine High-severity issue (unnecessary shell=True command execution in a git automation script). Remaining Medium/Low findings triaged by reading the surrounding code rather than acting on severity labels alone: one confirmed scanner false positive, one documented-but-accepted defense-in-depth recommendation, and several low-risk findings reviewed and accepted. Re-scanned after remediation: 0 High, 3 Medium (documented), 10 Low (documented).')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/AppSec-DevSecOps/SAST-Reports" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
                 <!-- Sysmon Detection -->
                 <div class="card project-item" data-category="live">
                     <div>
