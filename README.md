@@ -45,6 +45,7 @@ This repository documents practical security investigations, detection engineeri
 ### Cloud & Infrastructure Security
 
 - **GCP Secure Landing Zone** — org policy guardrails, folder structure, Shared VPC, centralized logging
+- **GCP Project Security Lab (CSPM)** — project-scoped hardened VPC/VM/bucket plus a real, unit-tested CSPM audit tool (`gcp_cspm_auditor.py`)
 - Terraform Infrastructure as Code
 - Cloud security architecture
 - IAM security and least privilege
@@ -52,7 +53,7 @@ This repository documents practical security investigations, detection engineeri
 
 ### Threat Intelligence
 
-- **OpenCTI custom SOC dashboard design** — STIX 2.1 data model, widget-level query specification
+- **OpenCTI custom SOC dashboard design** — STIX 2.1 data model, widget-level query specification, with a ready-to-run `docker-compose` deployment
 
 ### Security Automation
 
@@ -111,9 +112,11 @@ The repository is organized around practical security domains:
 - `Network-Security/` — PCAP analysis, Wireshark, Nmap
 - `Web-Security/` — DVWA and OWASP Juice Shop assessments, PortSwigger Academy
 - `Active-Directory/` — Windows/AD security lab
-- `Cloud-Security/` — cloud security fundamentals; Terraform/PowerShell IaC for an Azure Windows Server lab and a GCP Secure Landing Zone
-- `Threat-Intelligence/` — OpenCTI custom SOC dashboard design
-- `AppSec-DevSecOps/`, `Offensive-Security/`, `Enterprise-Security/`, `Linux-Security/`, `Docker-Labs/` — supporting domain reports
+- `Cloud-Security/` — cloud security fundamentals; Terraform/PowerShell IaC for an Azure Windows Server lab, a GCP Secure Landing Zone, and a project-scoped GCP CSPM lab
+- `Threat-Intelligence/` — OpenCTI custom SOC dashboard design, with a real docker-compose deployment
+- `Linux-Security/` — Linux host hardening audit lab, validated against a real personal host
+- `Docker-Labs/` — container configuration security audit lab, validated against a real Docker host
+- `AppSec-DevSecOps/`, `Offensive-Security/`, `Enterprise-Security/` — supporting domain reports
 - `Scripts/` — repository automation and quality-check tooling
 - `tests/` — pytest suite covering the automation scripts above
 - `Coursework/` — Google Cybersecurity Professional Certificate labs (2023) and early independent follow-on projects, kept separate from the evidence-backed labs above
