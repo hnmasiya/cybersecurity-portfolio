@@ -229,6 +229,12 @@ The repository contains supporting screenshots and structured security reports.
 
 ---
 
+## 🎓 Certificate Coursework
+
+The labs above are the current, evidence-backed portfolio. For the earlier **Google Cybersecurity Professional Certificate** coursework (awarded July 2023) that this work grew out of — security audits, Linux permissions, SQL log analysis, Python automation, network analysis, plus early independent follow-on projects — see [`Coursework/Google-Cybersecurity-Certificate-2023/`](./Coursework/Google-Cybersecurity-Certificate-2023/README.md).
+
+---
+
 ## 📚 Evidence Philosophy
 
 This portfolio separates:
