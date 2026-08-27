@@ -10,13 +10,20 @@
   EXECVE line on this exact manager (v4.14.7), after an initial guess at
   <if_group>audit_command</if_group> turned out not to exist in this
   ruleset. 80700 is real and verified, not another guess.
+
+  A second live wazuh-logtest pass against this same manager caught a
+  further bug: <field name="full_log"> only matches decoder-extracted
+  named fields (like audit.execve.a0), not the raw log text - full_log
+  needs <match>, the same construct this repo's own earlier rules
+  (custom_sudo_escalation.xml, suspicious-login-rule.xml) already use
+  correctly. Fixed below.
 -->
 <group name="attack_sim,execution,t1059,">
 
   <!-- Linux: base64-decoded command piped into a shell -->
   <rule id="100200" level="12">
     <if_sid>80700</if_sid>
-    <field name="full_log" type="pcre2">(?i)base64\s+-d\s*\|\s*(ba)?sh</field>
+    <match type="pcre2">(?i)base64\s+-d\s*\|\s*(ba)?sh</match>
     <description>Execution: base64-decoded command piped into a shell (obfuscated command pattern)</description>
     <mitre>
       <id>T1059</id>
