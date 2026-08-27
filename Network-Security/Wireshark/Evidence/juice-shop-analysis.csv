@@ -1,0 +1,2 @@
+frame.number,ip.src,ip.dst,http.host,http.request.uri,http.user_agent,score,reasons
+24,,,localhost:3000,/rest/products/search?q=%27%20OR%20%271%27%3D%271,curl/8.5.0,3,SQL-injection-like pattern
