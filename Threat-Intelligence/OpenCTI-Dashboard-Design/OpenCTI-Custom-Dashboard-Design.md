@@ -53,3 +53,5 @@ No screenshot, exported Workspace JSON, or live query result backs this document
 ## Closing this gap
 
 To make this evidence-backed, the same pattern used elsewhere in this portfolio applies: stand up OpenCTI (`docker-compose` on a real host with enough memory for OpenSearch/RabbitMQ/Redis/MinIO — not this sandbox), connect at least one real connector (even the built-in MITRE ATT&CK or CVE import connector is enough to populate real data), build this Workspace against it, and bring back the exported Workspace config plus a real screenshot as `Evidence/`.
+
+A ready-to-run `docker-compose.yml` (platform, Redis, Elasticsearch, MinIO, RabbitMQ, workers, and the MITRE ATT&CK connector) plus step-by-step deployment instructions live in [`Deployment/`](Deployment/README.md). `Evidence/` is scaffolded and waiting for the exported Workspace JSON and dashboard screenshot once that's run against a real host.
