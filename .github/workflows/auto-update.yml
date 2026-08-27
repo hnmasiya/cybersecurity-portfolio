@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: portfolio-automation
@@ -41,7 +42,9 @@ jobs:
             exit 1
           fi
 
-      - name: Commit and Push Updated Resume PDF
+      - name: Commit, Open PR, and Merge Updated Resume PDF
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -53,7 +56,19 @@ jobs:
             exit 0
           fi
 
-          git commit -m "auto: build updated resume PDF [skip ci]"
+          # main requires PRs with passing status checks - a direct push is
+          # rejected by branch protection, so this opens a PR and waits for
+          # its checks instead. Commit message intentionally has no
+          # [skip ci]: skipping CI would mean the required checks never
+          # report, and the merge below would hang waiting for them.
+          BRANCH="auto/resume-pdf-$(date -u +%Y%m%d%H%M%S)"
+          git checkout -b "$BRANCH"
+          git commit -m "auto: build updated resume PDF"
+          git push origin "$BRANCH"
 
-          git pull --rebase origin main
-          git push origin HEAD:main
+          PR_URL=$(gh pr create --base main --head "$BRANCH" \
+            --title "auto: build updated resume PDF" \
+            --body "Automated rebuild of \`Resume_Hazvinei_Masiya.pdf\` from the updated \`Resume_Hazvinei_Masiya.md\`.")
+
+          gh pr checks "$PR_URL" --watch --fail-fast
+          gh pr merge "$PR_URL" --squash --delete-branch
