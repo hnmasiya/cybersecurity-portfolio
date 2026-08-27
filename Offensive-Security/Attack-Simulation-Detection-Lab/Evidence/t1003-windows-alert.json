@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-08-27T21:05:24.053+0000",
+  "rule": {
+    "level": 13,
+    "description": "Credential Access: process memory access targeting lsass.exe",
+    "id": "100221",
+    "mitre": {
+      "id": ["T1003.001"],
+      "tactic": ["Credential Access"],
+      "technique": ["LSASS Memory"]
+    },
+    "firedtimes": 45,
+    "groups": ["attack_sim", "credential_access", "t1003"]
+  },
+  "agent": {
+    "id": "003",
+    "name": "dc01-lab",
+    "ip": "100.79.229.99"
+  },
+  "manager": {
+    "name": "wazuh.manager"
+  },
+  "id": "1787864724.45394899",
+  "decoder": {
+    "name": "windows_eventchannel"
+  },
+  "data": {
+    "win": {
+      "system": {
+        "providerName": "Microsoft-Windows-Sysmon",
+        "eventID": "10",
+        "channel": "Microsoft-Windows-Sysmon/Operational",
+        "computer": "dc01-lab.lab.local"
+      },
+      "eventdata": {
+        "utcTime": "2026-08-27 21:05:22.877",
+        "sourceImage": "C:\\Windows\\system32\\taskmgr.exe",
+        "targetImage": "C:\\Windows\\system32\\lsass.exe",
+        "grantedAccess": "0x1fffff",
+        "callTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a0854|C:\\Windows\\SYSTEM32\\ntdll.dll+dbb00|C:\\Windows\\System32\\KERNEL32.DLL+1e4e8|C:\\Windows\\System32\\KERNEL32.DLL+264ee|C:\\Windows\\system32\\dbgcore.DLL+a47a|C:\\Windows\\system32\\dbgcore.DLL+19735|C:\\Windows\\system32\\dbgcore.DLL+12988|C:\\Windows\\system32\\dbgcore.DLL+66a8|C:\\Windows\\system32\\dbgcore.DLL+71b8|C:\\Windows\\system32\\taskmgr.exe+6dd67|C:\\Windows\\System32\\KERNEL32.DLL+14cb0|C:\\Windows\\SYSTEM32\\ntdll.dll+7edeb",
+        "sourceUser": "LAB\\hazvinei",
+        "targetUser": "NT AUTHORITY\\SYSTEM"
+      }
+    }
+  },
+  "_note": "Real, live-fired alert for Rules/credential-access-shadow-lsass.xml's Windows rule (100221), captured against dc01-lab. This closes out the last of the 6 combinations (3 MITRE techniques x 2 platforms) in this lab. The path to this alert involved three real, separate problems, in order: (1) command-line procdump against lsass.exe was blocked pre-handle by Windows Defender's signature-based HackTool:Win32/DumpLsass.E detection - confirmed via Get-WinEvent showing the detection fired and the corresponding Sysmon Event 10 query for that timestamp returned zero procdump64.exe entries, meaning Defender denied the OpenProcess call before Sysmon's ETW hook could ever log it. Pivoted to Task Manager's native 'Create dump file' feature instead, which only gets caught by Defender's behavior-monitoring detection (Behavior:Win32/DumpLsass.C!attk) after the process handle and dump file already exist - late enough to leave real ProcessAccess telemetry behind. (2) Sysmon itself had been completely uninstalled during an unrelated reinstall attempt that hit a STATUS_STACK_BUFFER_OVERRUN crash (0xC0000409) when loading the full production sysmonconfig-export.xml with a new ProcessAccess/lsass.exe rule added; bisected via a minimal standalone config to confirm the TargetImage/ProcessAccess rule syntax itself was not the cause, then ran that minimal config live as a pragmatic workaround (the underlying interaction bug in the full config remains unexplained and unresolved - a follow-up item). (3) Once Sysmon was back and producing the correct local telemetry (confirmed via Get-WinEvent), the event still never reached the manager: two malformed verification greps (with a stray space after the JSON colon that real compact Wazuh JSON never has) produced false negatives suggesting failure, and the real remaining issue was the Wazuh Windows agent's own eventchannel subscription having gone stale across the Sysmon driver's multiple uninstall/reinstall cycles (the agent's <only-future-events>yes</only-future-events> localfile setting meant it needed to resubscribe fresh). Restarting the WazuhSvc service on dc01-lab and re-running the Task Manager dump produced this alert, captured verbatim via `docker exec single-node-wazuh.manager-1 sh -c 'grep -F \"\\\"id\\\":\\\"100221\\\"\" /var/ossec/logs/alerts/alerts.json'`, no content altered. GrantedAccess 0x1FFFFF is PROCESS_ALL_ACCESS, and the call trace through dbgcore.DLL is the fingerprint of the MiniDumpWriteDump API - the same underlying mechanism procdump uses, confirming this is a genuine T1003.001 LSASS-memory-access technique, not a benign background read (compare to the 0x1000/0x1400 GrantedAccess values from MsMpEng.exe/svchost.exe/the Wazuh agent itself seen throughout the same time window, which are read-only telemetry-gathering accesses)."
+}
