@@ -5,18 +5,17 @@
   ID 1), as two rules in the same group since they detect the same
   technique on different platforms.
 
-  The Linux rule matches on full_log content rather than a specific
-  parent audit-decoder rule ID (e.g. Wazuh's built-in audit/execve
-  rules), since that internal ID varies by ruleset version and hasn't
-  been confirmed against the live manager yet - verify/tune the
-  <if_sid> or <if_group> parent once this is actually loaded and
-  tested, rather than trusting this as-is.
+  The Linux rule chains off rule 80700 ("Audit: Messages grouped", group
+  "audit") - confirmed via `wazuh-logtest` against a real synthetic
+  EXECVE line on this exact manager (v4.14.7), after an initial guess at
+  <if_group>audit_command</if_group> turned out not to exist in this
+  ruleset. 80700 is real and verified, not another guess.
 -->
 <group name="attack_sim,execution,t1059,">
 
   <!-- Linux: base64-decoded command piped into a shell -->
   <rule id="100200" level="12">
-    <if_group>audit_command</if_group>
+    <if_sid>80700</if_sid>
     <field name="full_log" type="pcre2">(?i)base64\s+-d\s*\|\s*(ba)?sh</field>
     <description>Execution: base64-decoded command piped into a shell (obfuscated command pattern)</description>
     <mitre>
