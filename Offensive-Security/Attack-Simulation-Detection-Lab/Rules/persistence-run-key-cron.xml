@@ -5,10 +5,16 @@
   Sysmon Event ID 13), as two rules in the same group.
 
   Both <if_sid> parents below are Wazuh's well-known default rule IDs
-  (550/553 for syscheck file-modified events, and the sysmon_event13
-  group for Sysmon registry events) - still confirm against the live
-  manager's actual decoded fields the first time each rule is tested,
-  same as the execution rule in this lab.
+  (550/553 for syscheck file-modified events, and the sysmon_event_13
+  group for Sysmon registry events - note the underscore. Wazuh's own
+  upstream ruleset (0330-sysmon_rules.xml) is inconsistent here: events
+  1-9 use no underscore (sysmon_event1...sysmon_event9), but 10 and up
+  switch to one (sysmon_event_10, sysmon_event_11, sysmon_event_12,
+  sysmon_event_13...). This rule originally guessed the no-underscore
+  form and was silently ignored - confirmed via the manager log warning
+  `Group 'sysmon_event13' was not found. Invalid 'if_group'. Rule
+  '100211' will be ignored.` on every restart - fixed by matching the
+  real group name).
 -->
 <group name="attack_sim,persistence,t1053,t1547,">
 
@@ -24,7 +30,7 @@
 
   <!-- Windows: registry Run key value set -->
   <rule id="100211" level="12">
-    <if_group>sysmon_event13</if_group>
+    <if_group>sysmon_event_13</if_group>
     <field name="win.eventdata.targetObject" type="pcre2">(?i)\\CurrentVersion\\Run</field>
     <description>Persistence: registry Run key value added</description>
     <mitre>
