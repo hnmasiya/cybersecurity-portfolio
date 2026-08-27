@@ -16,10 +16,11 @@
 | Azure Windows Server Lab (IaC) | Complete | Deployed, hardened, and validated end-to-end: real Security event log exported and fed into the AD Detection Lab analyzer |
 | Nmap | Complete | Real full-TCP-range scan against a self-owned home-lab host (13 open ports, raw output preserved in 3 formats) |
 | Wireshark | Complete | Real packet capture of Juice Shop traffic (52 packets), including a genuine SQLi-pattern test correctly flagged by the analyzer |
-| AppSec/SAST, Offensive Security, Enterprise AD Audit, Cloud CSPM | Methodology | Illustrative write-ups, not live findings |
+| AppSec/SAST | Complete | Real `bandit` scan of this portfolio's own codebase (1,278 lines, 37 scripts) — 1 real High-severity finding fixed, remaining Medium/Low findings triaged and documented (one confirmed false positive) |
+| Offensive Security, Enterprise AD Audit, Cloud CSPM | Methodology | Illustrative write-ups, not live findings — no authorized pentest target, live AD domain, or cloud account accessible from this environment |
 
 ## Live Windows Endpoint
 [`Cloud-Security/Azure-Windows-Server-Lab`](./Cloud-Security/Azure-Windows-Server-Lab/README.md) provides a real, deployed Azure Domain Controller, fully validated end-to-end: its real Security event log is exported and analyzed against `ad_security_event_analyzer.py`, Sysmon (SwiftOnSecurity config) captures real telemetry analyzed against the Windows/Sysmon Endpoint Detection Lab's logic, and its Wazuh Agent is connected to the project's Wazuh Manager over a Tailscale mesh VPN, generating real Wazuh-side alerts (MITRE-mapped detections, CIS Benchmark SCA findings). See its `Evidence/` folder for all three.
 
 ## Remaining Gaps
-None. Every lab above is now validated against real, live evidence rather than synthetic fixtures alone. The only category still deliberately marked otherwise is Methodology (AppSec/SAST, Offensive Security, Enterprise AD Audit, Cloud CSPM), which is intentionally published as illustrative scenario write-ups rather than live findings.
+Offensive Security, Enterprise AD Audit, and Cloud CSPM remain intentionally-illustrative Methodology write-ups — each would need an authorized live pentest target, a real Active Directory domain, and a real cloud account respectively, none of which are stand-ins for what's already evidence-backed elsewhere in this repo (the AD Detection Lab's real event analysis, the Azure Windows Server Lab's real domain controller). Every other lab, including AppSec/SAST as of this pass, is validated against real, live evidence rather than synthetic fixtures alone.
