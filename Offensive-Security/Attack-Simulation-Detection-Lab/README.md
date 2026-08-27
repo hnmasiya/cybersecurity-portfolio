@@ -1,6 +1,6 @@
 # Attack Simulation & Detection Engineering Lab
 
-> **Status: 3 of 6 combinations evidence-backed, 3 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). All 3 techniques on Linux (Execution, Persistence, Credential Access) have real, captured alerts in `Evidence/` — see below. The 3 Windows combinations are designed and ready but not yet run. Nothing here is claimed as done until it has real, timestamped evidence behind it.
+> **Status: 3 of 6 combinations evidence-backed, 3 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). All 3 techniques on Linux (Execution, Persistence, Credential Access) have real, captured alerts in `Evidence/` — see below. All 3 Windows rules are now verified loadable by the manager (a real bug — two of the three referenced a Sysmon rule group that doesn't exist — was found and fixed; see the Persistence and Credential Access sections below), but none has been run for real yet. Nothing here is claimed as done until it has real, timestamped evidence behind it.
 
 ## Why this lab exists
 
@@ -88,7 +88,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v UpdaterSvc /t RE
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v UpdaterSvc /f
 ```
 
-**Detection rule:** [`Rules/persistence-run-key-cron.xml`](./Rules/persistence-run-key-cron.xml)
+**Detection rule:** [`Rules/persistence-run-key-cron.xml`](./Rules/persistence-run-key-cron.xml) — the Windows rule (100211) originally guessed `<if_group>sysmon_event13</if_group>`, which doesn't exist. Confirmed via repeated `wazuh-analysisd: WARNING: (7610): Group 'sysmon_event13' was not found. Invalid 'if_group'. Rule '100211' will be ignored.` in the manager log across multiple restarts, then root-caused against Wazuh's own upstream ruleset (`0330-sysmon_rules.xml`): Sysmon events 1-9 register a group with no underscore (`sysmon_event1`...`sysmon_event9`), but 10 and up switch to one (`sysmon_event_10`, `sysmon_event_11`, `sysmon_event_12`, `sysmon_event_13`...) — an inconsistency in Wazuh's own naming, not documented anywhere obvious. Fixed to `sysmon_event_13`.
 
 ## T1003 — Credential Access
 
@@ -120,7 +120,7 @@ del /f lsass.dmp
 
 **Telemetry source:** Sysmon Event ID 10 (ProcessAccess) with `TargetImage` = `lsass.exe` and a `GrantedAccess` value associated with memory-read rights (commonly `0x1010` or `0x1410` depending on the tool).
 
-**Detection rule:** [`Rules/credential-access-shadow-lsass.xml`](./Rules/credential-access-shadow-lsass.xml)
+**Detection rule:** [`Rules/credential-access-shadow-lsass.xml`](./Rules/credential-access-shadow-lsass.xml) — the Windows rule (100221) had the same bug as the persistence rule: it guessed `<if_group>sysmon_event10</if_group>`, confirmed missing via `wazuh-analysisd: WARNING: (7610): Group 'sysmon_event10' was not found. Invalid 'if_group'. Rule '100221' will be ignored.` Fixed to `sysmon_event_10` (events 10+ use the underscore form; see the persistence section above for the full explanation). Rule 100201 (Execution) needed no fix — event 1 is one of the events that doesn't take the underscore, so the original guess was already correct.
 
 ## Evidence
 
