@@ -1,0 +1,119 @@
+services:
+  redis:
+    image: redis:7.4.1
+    restart: always
+    volumes:
+      - redisdata:/data
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.1
+    restart: always
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    deploy:
+      resources:
+        limits:
+          memory: 3G
+    environment:
+      - discovery.type=single-node
+      - xpack.ml.enabled=false
+      - xpack.security.enabled=false
+      - thread_pool.search.queue_size=5000
+      - "ES_JAVA_OPTS=-Xms${ELASTIC_MEMORY_SIZE} -Xmx${ELASTIC_MEMORY_SIZE}"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  minio:
+    image: minio/minio:RELEASE.2024-08-29T01-40-52Z
+    restart: always
+    volumes:
+      - s3data:/data
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    command: server /data
+
+  rabbitmq:
+    image: rabbitmq:4.0-management
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+    volumes:
+      - amqpdata:/var/lib/rabbitmq
+
+  opencti:
+    image: opencti/platform:${OPENCTI_VERSION}
+    restart: always
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=8096
+      - APP__PORT=8080
+      - APP__BASE_URL=${OPENCTI_BASE_URL}
+      - APP__ADMIN__EMAIL=${OPENCTI_ADMIN_EMAIL}
+      - APP__ADMIN__PASSWORD=${OPENCTI_ADMIN_PASSWORD}
+      - APP__ADMIN__TOKEN=${OPENCTI_ADMIN_TOKEN}
+      - APP__APP_LOGS__LOGS_LEVEL=error
+      - REDIS__HOSTNAME=redis
+      - REDIS__PORT=6379
+      - ELASTICSEARCH__URL=http://elasticsearch:9200
+      - MINIO__ENDPOINT=minio
+      - MINIO__PORT=9000
+      - MINIO__USE_SSL=false
+      - MINIO__ACCESS_KEY=${MINIO_ROOT_USER}
+      - MINIO__SECRET_KEY=${MINIO_ROOT_PASSWORD}
+      - RABBITMQ__HOSTNAME=rabbitmq
+      - RABBITMQ__PORT=5672
+      - RABBITMQ__PORT_MANAGEMENT=15672
+      - RABBITMQ__MANAGEMENT_SSL=false
+      - RABBITMQ__USERNAME=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ__PASSWORD=${RABBITMQ_DEFAULT_PASS}
+      - PROVIDERS__LOCAL__STRATEGY=LocalStrategy
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+      - elasticsearch
+      - minio
+      - rabbitmq
+
+  worker:
+    image: opencti/worker:${OPENCTI_VERSION}
+    restart: always
+    environment:
+      - OPENCTI_URL=http://opencti:8080
+      - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
+      - WORKER_LOG_LEVEL=info
+    depends_on:
+      - opencti
+    deploy:
+      mode: replicated
+      replicas: 3
+
+  # MITRE ATT&CK import connector — chosen because it needs no external API
+  # key (unlike e.g. AlienVault OTX) and reliably populates real STIX 2.1
+  # data (Intrusion-Set, Attack-Pattern, Malware, Course-of-Action objects)
+  # on first run, which is what the dashboard design in ../
+  # OpenCTI-Custom-Dashboard-Design.md needs to be buildable against real data.
+  connector-mitre:
+    image: opencti/connector-mitre:${OPENCTI_VERSION}
+    restart: always
+    environment:
+      - OPENCTI_URL=http://opencti:8080
+      - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
+      - CONNECTOR_ID=${CONNECTOR_MITRE_ID}
+      - CONNECTOR_TYPE=EXTERNAL_IMPORT
+      - CONNECTOR_NAME=MITRE ATT&CK
+      - CONNECTOR_SCOPE=tool,report,malware,identity,campaign,intrusion-set,threat-actor,course-of-action,attack-pattern,vulnerability
+      - CONNECTOR_LOG_LEVEL=error
+      - CONNECTOR_DURATION_PERIOD=P2D
+      - MITRE_REMOVE_STATEMENT_MARKING=true
+    depends_on:
+      - opencti
+
+volumes:
+  esdata:
+  s3data:
+  amqpdata:
+  redisdata:
