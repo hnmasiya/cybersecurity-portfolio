@@ -237,32 +237,6 @@ The repository contains supporting screenshots and structured security reports.
 
 [View GCP Landing Zone Lab](./Cloud-Security/GCP-Landing-Zone-Lab/README.md)
 
-### ☁️ GCP Project Security Lab (CSPM)
-
-**Architecture / methodology — real Terraform + a real audit tool, not yet deployed**
-
-* Project-scoped complement to the org-level landing zone above — deployable against a standalone GCP project with no Cloud Identity/Workspace organization required
-* Custom VPC with a deny-by-default firewall; the only inbound path is SSH via Identity-Aware Proxy (IAP), never a direct admin-IP allowlist
-* Shielded VM (secure boot, vTPM, integrity monitoring), no external IP, OS Login, and a scoped custom service account instead of the broad-scope default one
-* A real, unit-tested CSPM audit tool (`gcp_cspm_auditor.py`, 19 tests) that flags open firewall rules, public buckets, external IPs, disabled Shielded VM protections, default service accounts, and public primitive-role grants
-
-**Current status:** `terraform validate` run against the real `google` provider registry from a real machine — "Success! The configuration is valid." Auditor unit-tested and smoke-tested against a synthetic config. `terraform plan`/`apply` and a live audit run still pending: a real GCP project exists (`gcp-security-lab-2026`), but its billing account is currently closed.
-
-[View GCP Project Security Lab](./Cloud-Security/GCP-Project-Security-Lab/README.md)
-
-### 🧩 OpenCTI Custom SOC Dashboard
-
-**Deployed and connector-verified — this specific Workspace not yet built**
-
-* A single OpenCTI Workspace dashboard designed for shift-start SOC triage
-* 13 widgets, each specified against OpenCTI's actual STIX 2.1 data model and real widget types (Number, Distribution, List, Timeline, Donut) — not a generic mockup
-* Covers active alerts, open incidents, IOC volume, unpatched vulnerabilities tied to internal assets, MTTR trend, playbook execution rate, and TTP/threat-actor linkage
-* The `docker-compose.yml` deployment in `Deployment/` was actually run against a real Docker host — all 9 containers came up and the MITRE ATT&CK connector genuinely imported real STIX data
-
-**Current status:** Deployed and connector-verified — 181 real Intrusion-Set objects and 273 real Malware objects imported, confirmed live in the platform's UI. Building this specific Workspace against that running instance and exporting its config/screenshot is the remaining step.
-
-[View OpenCTI Dashboard Design](./Threat-Intelligence/OpenCTI-Dashboard-Design/OpenCTI-Custom-Dashboard-Design.md)
-
 ---
 
 ## 📈 Portfolio Architecture & Tracking
