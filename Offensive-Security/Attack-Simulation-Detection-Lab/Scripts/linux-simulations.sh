@@ -27,13 +27,20 @@ case "$1" in
     bash -c "echo 'aWQ7d2hvYW1p' | base64 -d | bash"
     ;;
   persistence)
-    # T1053.003: cron job added, beacon target is localhost only
-    (crontab -l 2>/dev/null; echo "* * * * * curl -s http://127.0.0.1:9999/beacon") | crontab -
+    # T1053.003: system cron job dropped into /etc/cron.d/, beacon
+    # target is localhost only. Uses /etc/cron.d rather than a user's
+    # personal crontab (crontab -e) deliberately: this host's Wazuh FIM
+    # only watches /etc, /usr/bin, /usr/sbin, /bin, /sbin, /boot by
+    # default - not /var/spool/cron/crontabs where a personal crontab
+    # lives. /etc/cron.d is already covered under the monitored /etc
+    # tree, so no agent reconfiguration is needed, and it's also a
+    # stronger technique in practice (root-level system cron).
+    echo "* * * * * root curl -s http://127.0.0.1:9999/beacon" | sudo tee /etc/cron.d/update-check >/dev/null
     echo "Cron entry added. Capture the Wazuh FIM alert, then run:"
     echo "  $0 persistence-cleanup"
     ;;
   persistence-cleanup)
-    crontab -l | grep -v '127.0.0.1:9999' | crontab -
+    sudo rm -f /etc/cron.d/update-check
     echo "Cron entry removed."
     ;;
   credential-access)
