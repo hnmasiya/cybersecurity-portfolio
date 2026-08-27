@@ -128,11 +128,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* auto: build updated resume PDF [skip ci] (3 hours ago)
-* Add Abbeydale Group early-career engagement to resume (#12) (3 hours ago)
-* auto: build updated resume PDF [skip ci] (3 hours ago)
-* Attribute the July 2026 SD-WAN deployment to SITA AERO (#11) (3 hours ago)
-* Attribute the July 2026 SD-WAN deployment to SITA AERO (3 hours ago)
+* Add Attack Simulation & Detection Engineering Lab (designed, ready to run) (#45) (2 minutes ago)
+* Remove GCP Project Security Lab and OpenCTI dashboard from the portfolio (#42) (16 minutes ago)
+* Fix auto-PR workflows: use a PAT so checks aren't gated on approval (#41) (78 minutes ago)
+* Fix race condition in auto-PR workflows: wait for checks to register (#38) (2 hours ago)
+* Final polish pass: fix broken auto-push CI, capture tonight's real results (#35) (2 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
