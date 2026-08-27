@@ -143,6 +143,18 @@ This portfolio contains documented evidence of hands-on work, including **securi
 
 [View Linux Host Hardening Lab](./Linux-Security/Hardening-Lab/README.md)
 
+### 🐳 Container Configuration Security Audit
+
+**Evidence-backed — validated against a real, live Docker host**
+
+* CIS Docker Benchmark / MITRE ATT&CK for Containers-style checks: root user, unpinned image tags, hardcoded secrets, privileged mode, Docker socket mounts, host network mode
+* Deterministic Python audit engine, validated first against synthetic fixtures containing both a fully-hardened config and common misconfigurations
+* A real collector script (`docker inspect`-based, redacting all env var values before they ever touch disk) run against 8 real running containers on a home-lab Docker host
+
+**Current status:** 14 real findings across 8 containers (1 CRITICAL, 10 HIGH, 3 MEDIUM), interpreted honestly rather than filtered: 5 containers running as root, 5 hardcoded secrets (the Wazuh Docker Compose quickstart's own plaintext demo credentials), a CRITICAL Docker-socket mount on Portainer (by design — it needs that access to manage the host's containers), and 3 unpinned image tags. One container in the same stack (`wazuh-indexer`) produced zero findings, showing the audit isn't just flagging everything indiscriminately.
+
+[View Container Audit Lab](./Docker-Labs/Container-Audit-Lab/README.md)
+
 ### 🌐 DVWA Web Application Security
 
 **Evidence-backed vulnerability assessment project**
@@ -178,17 +190,25 @@ The repository contains supporting screenshots and structured security reports.
 
 ### 🔎 Nmap Reconnaissance
 
-**Evidence-bounded methodology project**
+**Evidence-backed — real scan against a self-owned host**
 
-The active Nmap project documents an authorized reconnaissance workflow and explicitly avoids claiming specific scan results because raw Nmap output is not currently stored in the project.
+* Full TCP port range (`-sV -sC -p-`) scan against the analyst's own home-lab machine, discovering 13 real open ports with service/version fingerprints
+* Raw output preserved in all three Nmap formats (`.nmap`, `.xml`, `.gnmap`)
+* An unrecognized service fingerprint (port 9443) independently verified with `curl`/`ss` rather than assumed, confirming Portainer is exposed on all network interfaces rather than scoped like the project's other services
+
+**Current status:** Complete — see the raw scan output and the full write-up (including remediation recommendations: scope Portainer's binding, identify an unaccounted-for port, disable unused default services) for the honest read of what a real scan against this host actually revealed.
 
 [View Nmap Report](./Network-Security/Nmap/Reports/Nmap-Network-Reconnaissance.md)
 
 ### 🕵️ Wireshark Packet Analysis
 
-**Evidence-bounded methodology project**
+**Evidence-backed — real capture from live traffic**
 
-The active Wireshark project documents the packet-analysis workflow and clearly separates methodology from verified packet evidence. The repository's separate PCAP Analysis project contains the currently preserved packet-capture evidence.
+* Real `tcpdump` capture (52 packets) on the analyst's own home-lab host, targeting the project's own Juice Shop container
+* A genuine test of Juice Shop's known SQL-injection-vulnerable search endpoint, captured and analyzed alongside benign traffic
+* This portfolio's existing `pcap_soc_analyzer.py` — previously validated only against a synthetic PCAP — run against the real capture
+
+**Current status:** Complete — the analyzer correctly flagged the real SQLi-pattern request (HIGH, score 3) while correctly declining to flag a weaker scanner-User-Agent signal alone, confirming the detection logic holds up against real traffic, not just synthetic fixtures.
 
 [View Wireshark Report](./Network-Security/Wireshark/Reports/Wireshark-Packet-Analysis.md)
 
