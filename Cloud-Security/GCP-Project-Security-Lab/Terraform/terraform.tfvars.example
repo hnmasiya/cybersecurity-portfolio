@@ -1,0 +1,11 @@
+# Copy this file to terraform.tfvars and fill in real values.
+# terraform.tfvars is gitignored — never commit it.
+
+project_id  = "REPLACE-WITH-YOUR-GCP-PROJECT-ID"       # from `gcloud config get-value project`
+bucket_name = "REPLACE-WITH-A-GLOBALLY-UNIQUE-BUCKET-NAME" # e.g. "yourname-gcp-security-lab-2026"
+
+# Optional overrides (defaults live in variables.tf)
+# default_region      = "us-central1"
+# default_zone        = "us-central1-a"
+# vm_machine_type     = "e2-small"
+# log_retention_days  = 90
