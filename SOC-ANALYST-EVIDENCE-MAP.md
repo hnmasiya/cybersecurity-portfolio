@@ -24,6 +24,8 @@ This document maps practical SOC capabilities to specific repository evidence.
 | Network Reconnaissance | `Network-Security/Nmap/` |
 | Packet Analysis | `Network-Security/Wireshark/` and PCAP lab |
 | Static Application Security Testing | `AppSec-DevSecOps/SAST-Reports/` |
+| Cloud Landing Zone Architecture | `Cloud-Security/GCP-Landing-Zone-Lab/` |
+| Threat Intelligence Platform Design | `Threat-Intelligence/OpenCTI-Dashboard-Design/` |
 
 ## Evidence Classification
 
@@ -32,6 +34,10 @@ This document maps practical SOC capabilities to specific repository evidence.
 **Controlled laboratory:** DVWA, Juice Shop and PCAP exercises.
 
 **Synthetic/offline:** Threat Hunting validation.
+
+**Architecture / not yet deployed:** GCP Secure Landing Zone (`Cloud-Security/GCP-Landing-Zone-Lab/`) — real, formatting-checked Terraform (org policy guardrails, environment folders, Shared VPC, org-wide logging sink); `terraform validate`/`plan`/`apply` pending a real GCP org and registry access this environment lacks, the same starting point the Azure lab had before it was deployed.
+
+**Design exercise (not a live deployment):** OpenCTI Custom SOC Dashboard (`Threat-Intelligence/OpenCTI-Dashboard-Design/`) — 13 widgets specified against OpenCTI's real STIX 2.1 data model and actual widget types; no live instance backs this, since this environment has no Docker daemon to run OpenCTI's stack.
 
 **Illustrative scenario (not a live finding):** the Offensive Security,
 Enterprise AD hygiene, and Cloud CSPM reports are scenario write-ups

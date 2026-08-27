@@ -224,6 +224,31 @@ The repository contains supporting screenshots and structured security reports.
 
 [View AppSec/SAST Report](./AppSec-DevSecOps/SAST-Reports/AppSec-Audit-Report.md)
 
+### ☁️ GCP Secure Landing Zone
+
+**Architecture / methodology — real Terraform, not yet deployed**
+
+* Org-level policy guardrails: deny external IPs org-wide, disable service-account key creation, domain-restricted IAM, enforced uniform bucket access
+* Environment folder structure (bootstrap, common, production, non-prod, development)
+* Shared VPC host project: deny-all-ingress firewall baseline, per-region Cloud NAT for private-instance egress
+* Organization-wide aggregated logging sink, so every project's audit logs land in one place regardless of which folder it's created under later
+
+**Current status:** Formatting-checked (`terraform fmt -check`, clean). `terraform validate`/`plan`/`apply` not run — this build environment can't reach the Terraform provider registry, and no real org backs this yet. Same starting point the [Azure Windows Server Lab](./Cloud-Security/Azure-Windows-Server-Lab/README.md) had before it was actually deployed.
+
+[View GCP Landing Zone Lab](./Cloud-Security/GCP-Landing-Zone-Lab/README.md)
+
+### 🧩 OpenCTI Custom SOC Dashboard
+
+**Methodology / design exercise**
+
+* A single OpenCTI Workspace dashboard designed for shift-start SOC triage
+* 13 widgets, each specified against OpenCTI's actual STIX 2.1 data model and real widget types (Number, Distribution, List, Timeline, Donut) — not a generic mockup
+* Covers active alerts, open incidents, IOC volume, unpatched vulnerabilities tied to internal assets, MTTR trend, playbook execution rate, and TTP/threat-actor linkage
+
+**Current status:** Design only — no live OpenCTI instance backs this. This build environment has no Docker daemon to run OpenCTI's real stack (OpenSearch, RabbitMQ, Redis, MinIO).
+
+[View OpenCTI Dashboard Design](./Threat-Intelligence/OpenCTI-Dashboard-Design/OpenCTI-Custom-Dashboard-Design.md)
+
 ---
 
 ## 📈 Portfolio Architecture & Tracking
