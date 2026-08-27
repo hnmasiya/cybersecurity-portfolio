@@ -63,14 +63,16 @@ powershell.exe -EncodedCommand $encoded
 ### Linux: cron job
 
 ```bash
-(crontab -l 2>/dev/null; echo "* * * * * curl -s http://127.0.0.1:9999/beacon") | crontab -
+echo "* * * * * root curl -s http://127.0.0.1:9999/beacon" | sudo tee /etc/cron.d/update-check
 ```
 
-**Telemetry source:** Wazuh File Integrity Monitoring watching the cron spool. Confirm `/var/spool/cron/crontabs` (Debian/Ubuntu) or `/var/spool/cron` (RHEL) is in the agent's `<syscheck>` directory list.
+Uses `/etc/cron.d/` rather than a user's personal crontab (`crontab -e`) deliberately: checking this host's actual FIM config (`sudo grep -A20 "<syscheck>" /var/ossec/etc/ossec.conf`) showed it only watches `/etc`, `/usr/bin`, `/usr/sbin`, `/bin`, `/sbin`, `/boot` by default — not `/var/spool/cron/crontabs`, where a personal crontab lives. `/etc/cron.d/` is already covered under the monitored `/etc` tree, so no agent reconfiguration was needed, and it's also a stronger technique in practice (root-level system cron rather than a single user's).
+
+**Telemetry source:** Wazuh File Integrity Monitoring watching `/etc`.
 
 **Cleanup (run immediately after capturing evidence):**
 ```bash
-crontab -l | grep -v '127.0.0.1:9999' | crontab -
+sudo rm -f /etc/cron.d/update-check
 ```
 
 ### Windows: registry Run key
