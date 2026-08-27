@@ -1,6 +1,6 @@
 # GCP Project Security Lab
 
-> **Status: Infrastructure-as-Code, formatting-checked, not yet applied.** `terraform fmt -check -diff` is clean. `terraform init`/`validate` could not run in the build environment that wrote this — outbound access to `registry.terraform.io` is blocked there, so the `google` provider schema can't be downloaded. This needs to run from a real machine or Cloud Shell with registry access and a real GCP project, the same starting point the [Azure Windows Server Lab](../Azure-Windows-Server-Lab/README.md) had before it was applied. See [Verification done so far](#verification-done-so-far) and [Next steps to close this gap](#next-steps-to-close-this-gap).
+> **Status: Infrastructure-as-Code, validated against the real provider, not yet applied.** `terraform fmt -check -diff` is clean, and `terraform init`/`validate` have since been run from a real machine with registry access — `terraform validate` returned "Success! The configuration is valid." against the actual `google` provider schema. `terraform plan`/`apply` are still pending: a real GCP project was created for this (`gcp-security-lab-2026`), but its billing account is currently closed, blocking `plan`/`apply` and the live audit run. See [Verification done so far](#verification-done-so-far) and [Next steps to close this gap](#next-steps-to-close-this-gap).
 
 ## Why this lab, and not the org-level landing zone
 
@@ -64,9 +64,9 @@ A hardened GCP project baseline plus a real CSPM (Cloud Security Posture Managem
 - [x] `terraform fmt -check -diff` — clean (no formatting drift)
 - [x] Manual resource/attribute review against the `google` provider's documented schema (every resource type and argument here mirrors what the already-applied [landing zone lab](../GCP-Landing-Zone-Lab/README.md) used, cross-checked individually rather than assumed correct by similarity)
 - [x] `gcp_cspm_auditor.py` unit-tested (19 tests, `pytest tests/test_gcp_cspm_auditor.py`) and smoke-tested against a synthetic config matching this Terraform's intended output — reports 0 findings, as designed
-- [ ] `terraform validate` — **not run**; this build environment's network policy blocks `registry.terraform.io`
-- [ ] `terraform plan` / `terraform apply` — **not run**; needs a real GCP project
-- [ ] `collect_gcp_config.py` against a real project — **not run**; needs real `gcloud` credentials
+- [x] `terraform init` / `terraform validate` — run from a real machine against the actual `google` provider registry: **"Success! The configuration is valid."**
+- [ ] `terraform plan` / `terraform apply` — **not run**; a real GCP project (`gcp-security-lab-2026`) exists, but its billing account is currently closed
+- [ ] `collect_gcp_config.py` against a real project — **not run**; blocked on the same billing issue above
 
 ## Next steps to close this gap
 
