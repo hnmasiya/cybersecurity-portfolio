@@ -25,6 +25,7 @@ This document maps practical SOC capabilities to specific repository evidence.
 | Packet Analysis | `Network-Security/Wireshark/` and PCAP lab |
 | Static Application Security Testing | `AppSec-DevSecOps/SAST-Reports/` |
 | Cloud Landing Zone Architecture | `Cloud-Security/GCP-Landing-Zone-Lab/` |
+| Cloud Security Posture Management (CSPM) | `Cloud-Security/GCP-Project-Security-Lab/` |
 | Threat Intelligence Platform Design | `Threat-Intelligence/OpenCTI-Dashboard-Design/` |
 
 ## Evidence Classification
@@ -35,18 +36,17 @@ This document maps practical SOC capabilities to specific repository evidence.
 
 **Synthetic/offline:** Threat Hunting validation.
 
-**Architecture / not yet deployed:** GCP Secure Landing Zone (`Cloud-Security/GCP-Landing-Zone-Lab/`) — real, formatting-checked Terraform (org policy guardrails, environment folders, Shared VPC, org-wide logging sink); `terraform validate`/`plan`/`apply` pending a real GCP org and registry access this environment lacks, the same starting point the Azure lab had before it was deployed.
+**Architecture / not yet deployed:** GCP Secure Landing Zone (`Cloud-Security/GCP-Landing-Zone-Lab/`) — real, formatting-checked Terraform (org policy guardrails, environment folders, Shared VPC, org-wide logging sink); `terraform validate`/`plan`/`apply` pending a real GCP org and registry access this environment lacks, the same starting point the Azure lab had before it was deployed. GCP Project Security Lab (`Cloud-Security/GCP-Project-Security-Lab/`) — the project-scoped complement, deployable without a GCP organization: real, formatting-checked Terraform (custom VPC, deny-by-default firewall with IAP-only SSH, Shielded VM, scoped service account, hardened bucket) plus a real, unit-tested CSPM audit tool (`gcp_cspm_auditor.py`, 19 tests) ready to run against it once applied; same registry-access blocker as the landing zone lab.
 
-**Design exercise (not a live deployment):** OpenCTI Custom SOC Dashboard (`Threat-Intelligence/OpenCTI-Dashboard-Design/`) — 13 widgets specified against OpenCTI's real STIX 2.1 data model and actual widget types; no live instance backs this, since this environment has no Docker daemon to run OpenCTI's stack.
+**Design exercise, deployment scaffolded (not yet a live deployment):** OpenCTI Custom SOC Dashboard (`Threat-Intelligence/OpenCTI-Dashboard-Design/`) — 13 widgets specified against OpenCTI's real STIX 2.1 data model and actual widget types, plus a ready-to-run `docker-compose.yml` and deployment instructions in `Deployment/` (platform, Elasticsearch, MinIO, RabbitMQ, workers, MITRE ATT&CK connector); no live instance backs this yet, since this environment has no Docker daemon to run OpenCTI's stack.
 
-**Illustrative scenario (not a live finding):** the Offensive Security,
-Enterprise AD hygiene, and Cloud CSPM reports are scenario write-ups
-demonstrating reporting methodology - each is labeled as such at the
-top of the file, with a pointer to the nearest evidence-backed
-equivalent where one exists. Unlike the labs above, these three would
-require an authorized live pentest target, a real Active Directory
-domain, and a real cloud account respectively - none of which this
-portfolio's build environment has access to.
+**Illustrative scenario (not a live finding):** the Offensive Security
+and Enterprise AD hygiene reports are scenario write-ups demonstrating
+reporting methodology - each is labeled as such at the top of the
+file, with a pointer to the nearest evidence-backed equivalent where
+one exists. Unlike the labs above, these two would require an
+authorized live pentest target or a real Active Directory domain,
+neither of which this portfolio's build environment has access to.
 
 ## Live Windows Endpoint -> Wazuh Chain
 
