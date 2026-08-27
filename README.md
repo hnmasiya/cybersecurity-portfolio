@@ -44,11 +44,15 @@ This repository documents practical security investigations, detection engineeri
 
 ### Cloud & Infrastructure Security
 
-- **GCP Secure VPC Architecture**
+- **GCP Secure Landing Zone** — org policy guardrails, folder structure, Shared VPC, centralized logging
 - Terraform Infrastructure as Code
 - Cloud security architecture
 - IAM security and least privilege
 - Cloud Security Posture Management
+
+### Threat Intelligence
+
+- **OpenCTI custom SOC dashboard design** — STIX 2.1 data model, widget-level query specification
 
 ### Security Automation
 
@@ -107,7 +111,8 @@ The repository is organized around practical security domains:
 - `Network-Security/` — PCAP analysis, Wireshark, Nmap
 - `Web-Security/` — DVWA and OWASP Juice Shop assessments, PortSwigger Academy
 - `Active-Directory/` — Windows/AD security lab
-- `Cloud-Security/` — cloud security fundamentals; Terraform/PowerShell IaC for an Azure Windows Server lab
+- `Cloud-Security/` — cloud security fundamentals; Terraform/PowerShell IaC for an Azure Windows Server lab and a GCP Secure Landing Zone
+- `Threat-Intelligence/` — OpenCTI custom SOC dashboard design
 - `AppSec-DevSecOps/`, `Offensive-Security/`, `Enterprise-Security/`, `Linux-Security/`, `Docker-Labs/` — supporting domain reports
 - `Scripts/` — repository automation and quality-check tooling
 - `tests/` — pytest suite covering the automation scripts above
