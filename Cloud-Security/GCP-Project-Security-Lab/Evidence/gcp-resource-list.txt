@@ -1,0 +1,3 @@
+
+Planning failed. Terraform encountered an error while generating this plan.
+

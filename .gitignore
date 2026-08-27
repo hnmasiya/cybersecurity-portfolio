@@ -39,3 +39,4 @@ Advanced-Threat-Operations/
 .terraform/
 .terraform.lock.hcl
 crash.log
+tfplan
