@@ -1,6 +1,6 @@
 # Attack Simulation & Detection Engineering Lab
 
-> **Status: 1 of 6 combinations evidence-backed, 5 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). T1059 Execution (Linux) has a real, captured alert in `Evidence/` — see below. The other five (T1059 Windows, both platforms for Persistence and Credential Access) are designed and ready but not yet run. Nothing here is claimed as done until it has real, timestamped evidence behind it.
+> **Status: 2 of 6 combinations evidence-backed, 4 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). T1059 Execution and T1053 Persistence, both on Linux, have real, captured alerts in `Evidence/` — see below. The other four (both techniques on Windows, plus T1003 Credential Access on Linux) are designed and ready but not yet run. Nothing here is claimed as done until it has real, timestamped evidence behind it.
 
 ## Why this lab exists
 
@@ -68,7 +68,7 @@ echo "* * * * * root curl -s http://127.0.0.1:9999/beacon" | sudo tee /etc/cron.
 
 Uses `/etc/cron.d/` rather than a user's personal crontab (`crontab -e`) deliberately: checking this host's actual FIM config (`sudo grep -A20 "<syscheck>" /var/ossec/etc/ossec.conf`) showed it only watches `/etc`, `/usr/bin`, `/usr/sbin`, `/bin`, `/sbin`, `/boot` by default — not `/var/spool/cron/crontabs`, where a personal crontab lives. `/etc/cron.d/` is already covered under the monitored `/etc` tree, so no agent reconfiguration was needed, and it's also a stronger technique in practice (root-level system cron rather than a single user's).
 
-**Telemetry source:** Wazuh File Integrity Monitoring watching `/etc`.
+**Telemetry source:** Wazuh File Integrity Monitoring watching `/etc`. Getting a real alert required working around a genuine Wazuh behavior: the FIM scan immediately following *any* `wazuh-agent` daemon restart is always treated as establishing a fresh baseline and never generates an alert, regardless of whether the underlying FIM database already has history for that path (confirmed directly via `sqlite3` against the agent's own FIM database — the file was recorded, just silently). Restarting the agent to force an on-demand scan (the first approach tried) absorbed the new file into the baseline instead of alerting on it. The fix: shorten `<frequency>` temporarily (`43200` → `30` seconds), let the daemon settle into genuine periodic scans without restarting again, and only then create the file — that produced the real alert below.
 
 **Cleanup (run immediately after capturing evidence):**
 ```bash
