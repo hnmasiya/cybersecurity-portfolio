@@ -839,38 +839,60 @@ Caller User: 'bad_actor_admin'</code>
                     </div>
                 </div>
 
-                <!-- GCP VPC Architecture -->
+                <!-- GCP Landing Zone -->
                 <div class="card project-item" data-category="methodology">
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">GCP Secure Multi-Tier Architecture</h3>
+                            <h3 class="project-title">GCP Secure Landing Zone</h3>
                             <span class="project-badge badge-methodology">Architecture</span>
                         </div>
-                        <div class="metric-badge">🔒 No Public IP Assigned to Internal Database Tier</div>
-                        <p class="project-desc">Architected an enterprise multi-tier Google Cloud VPC using Terraform. Implemented strict firewall ingress controls, no public IP assigned to internal database instances, and secure Cloud NAT egress.</p>
+                        <div class="metric-badge">🔒 Org-Wide Deny-External-IP Policy + Deny-All-Ingress VPC</div>
+                        <p class="project-desc">Real Terraform for a GCP organization landing zone: org-level policy guardrails (no external IPs, no SA key files, domain-restricted IAM), an environment folder structure, a Shared VPC host project with deny-all-ingress firewall rules and Cloud NAT, and a centralized org-wide logging sink. Formatting-checked with terraform fmt; full validate/apply pending a real org (this build environment can't reach the Terraform registry).</p>
 
                         <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
                             <svg width="100%" height="70" viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="10" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-                                <text x="45" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Web Tier</text>
+                                <text x="45" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Org Policy</text>
                                 <path d="M80 35 H110" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
                                 <rect x="110" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
-                                <text x="150" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">App VPC Tier</text>
+                                <text x="150" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Shared VPC</text>
                                 <path d="M190 35 H220" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
                                 <rect x="220" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-                                <text x="255" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Isolated DB</text>
+                                <text x="255" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Org Logging</text>
                             </svg>
                         </div>
 
                         <div class="tag-group">
                             <span class="tag">GCP</span>
                             <span class="tag">Terraform</span>
-                            <span class="tag">Zero Trust</span>
+                            <span class="tag">Landing Zone</span>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('GCP Multi-Tier VPC', 'Terraform-based IaC deployment of isolated cloud networks with no public IPs on internal tiers and outbound Cloud NAT.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security" target="_blank" class="btn-link">View Artifacts →</a>
+                        <button class="btn-quicklook" onclick="showModal('GCP Secure Landing Zone', 'Real Terraform for a GCP organization landing zone: org policy guardrails (deny external IPs, disable SA key creation, domain-restricted IAM, uniform bucket access), a bootstrap/common/production/nonprod/development folder structure, a Shared VPC host project with deny-all-ingress firewall rules and per-region Cloud NAT, and an organization-wide aggregated logging sink. Formatting-checked with terraform fmt -check; full terraform validate/plan/apply needs a real GCP org and registry access this build environment does not have.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security/GCP-Landing-Zone-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- OpenCTI Custom Dashboard Design -->
+                <div class="card project-item" data-category="methodology">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">OpenCTI Custom SOC Dashboard</h3>
+                            <span class="project-badge badge-methodology">Design</span>
+                        </div>
+                        <div class="metric-badge">🧩 13 Widgets Specified Against Real OpenCTI Queries</div>
+                        <p class="project-desc">A custom OpenCTI Workspace dashboard design for shift-start SOC triage - 13 widgets (active alerts, open incidents, MTTR trend, IOC table, TTP/threat-actor links, highest-risk assets) each specified against OpenCTI's real STIX data model and widget types, not a generic mockup. No live instance backs this - this build environment has no Docker daemon to run OpenCTI's stack.</p>
+
+                        <div class="tag-group">
+                            <span class="tag">OpenCTI</span>
+                            <span class="tag">STIX 2.1</span>
+                            <span class="tag">Threat Intelligence</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('OpenCTI Custom SOC Dashboard', 'A custom OpenCTI Workspace dashboard design: 13 widgets each specified against OpenCTI\'s real STIX 2.1 data model and actual widget types (Number, Distribution, List, Timeline, Donut) rather than a generic mockup - active alerts, open incidents, IOC volume, unpatched-vulnerability count tied to internal assets, MTTR trend, playbooks executed, and TTP/threat-actor linkage. Labeled as a design exercise, not a live deployment - no Docker daemon available in this build environment to run OpenCTI\'s real stack (OpenSearch, RabbitMQ, Redis, MinIO).')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Threat-Intelligence/OpenCTI-Dashboard-Design" target="_blank" class="btn-link">View Artifacts →</a>
                     </div>
                 </div>
 
