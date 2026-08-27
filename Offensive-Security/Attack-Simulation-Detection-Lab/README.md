@@ -1,6 +1,6 @@
 # Attack Simulation & Detection Engineering Lab
 
-> **Status: 3 of 6 combinations evidence-backed, 3 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). All 3 techniques on Linux (Execution, Persistence, Credential Access) have real, captured alerts in `Evidence/` — see below. All 3 Windows rules are now verified loadable by the manager (a real bug — two of the three referenced a Sysmon rule group that doesn't exist — was found and fixed; see the Persistence and Credential Access sections below), but none has been run for real yet. Nothing here is claimed as done until it has real, timestamped evidence behind it.
+> **Status: 3 of 6 combinations evidence-backed with live-fired alerts, 1 more validated end-to-end pending a live alert, 2 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). All 3 techniques on Linux (Execution, Persistence, Credential Access) have real, captured alerts in `Evidence/` — see below. On the Windows side: all 3 rules are verified loadable by the manager (a real bug — two of the three referenced a Sysmon rule group that doesn't exist — was found and fixed), and the Persistence rule (100211) has been validated end-to-end against real archived Sysmon telemetry from `dc01-lab` via `wazuh-logtest` (a real agent-connectivity bug had to be fixed first to get that telemetry flowing at all) — see the Persistence section below. Nothing here is claimed as done until it has real, timestamped evidence behind it.
 
 ## Why this lab exists
 
@@ -88,7 +88,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v UpdaterSvc /t RE
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v UpdaterSvc /f
 ```
 
-**Detection rule:** [`Rules/persistence-run-key-cron.xml`](./Rules/persistence-run-key-cron.xml) — the Windows rule (100211) originally guessed `<if_group>sysmon_event13</if_group>`, which doesn't exist. Confirmed via repeated `wazuh-analysisd: WARNING: (7610): Group 'sysmon_event13' was not found. Invalid 'if_group'. Rule '100211' will be ignored.` in the manager log across multiple restarts, then root-caused against Wazuh's own upstream ruleset (`0330-sysmon_rules.xml`): Sysmon events 1-9 register a group with no underscore (`sysmon_event1`...`sysmon_event9`), but 10 and up switch to one (`sysmon_event_10`, `sysmon_event_11`, `sysmon_event_12`, `sysmon_event_13`...) — an inconsistency in Wazuh's own naming, not documented anywhere obvious. Fixed to `sysmon_event_13`.
+**Detection rule:** [`Rules/persistence-run-key-cron.xml`](./Rules/persistence-run-key-cron.xml) — the Windows rule (100211) went through two real fixes. First, it originally guessed `<if_group>sysmon_event13</if_group>`, which doesn't exist. Confirmed via repeated `wazuh-analysisd: WARNING: (7610): Group 'sysmon_event13' was not found. Invalid 'if_group'. Rule '100211' will be ignored.` in the manager log across multiple restarts, then root-caused against Wazuh's own upstream ruleset (`0330-sysmon_rules.xml`): Sysmon events 1-9 register a group with no underscore (`sysmon_event1`...`sysmon_event9`), but 10 and up switch to one (`sysmon_event_10`, `sysmon_event_11`, `sysmon_event_12`, `sysmon_event_13`...) — an inconsistency in Wazuh's own naming, not documented anywhere obvious. Fixed to `sysmon_event_13`. Getting real Sysmon telemetry flowing after that surfaced a second, unrelated bug: the `dc01-lab` Wazuh agent was stuck disconnected because of a stale duplicate agent registration under the same hostname (left over from a `client.keys` reset), which had to be force-removed on the manager (`manage_agents -r`) before the agent could re-enroll. With real telemetry finally flowing, replaying a genuine archived Sysmon Event ID 13 through `wazuh-logtest` showed matching directly on the decoded fields (`win.system.providerName`, `win.system.eventID`, `win.eventdata.targetObject`) was more direct than the group-chaining approach, so the rule was switched to that — see [`Evidence/t1053-windows-validation.json`](./Evidence/t1053-windows-validation.json) for the full validation run. That confirms the detection logic against real data end-to-end (agent → manager → archive → decode → rule match); a live-fired alert from an actual real-time simulation run is the one piece still pending.
 
 ## T1003 — Credential Access
 
@@ -128,11 +128,11 @@ del /f lsass.dmp
 
 - [x] T1059 Execution — Linux (`t1059-linux-alert.json`)
 - [ ] T1059 Execution — Windows
-- [ ] T1053/T1547 Persistence — Linux
-- [ ] T1053/T1547 Persistence — Windows
-- [ ] T1003 Credential Access — Linux
+- [x] T1053/T1547 Persistence — Linux (`t1053-linux-alert.json`)
+- [~] T1053/T1547 Persistence — Windows — rule validated against real archived telemetry via `wazuh-logtest` (`t1053-windows-validation.json`); live-fired alert still pending
+- [x] T1003 Credential Access — Linux (`t1003-linux-alert.json`)
 - [ ] T1003 Credential Access — Windows
 
 ## What "done" looks like
 
-Six real alerts (3 techniques × 2 platforms), each traceable from simulation command → real telemetry → custom rule ID → dashboard alert, with the raw evidence preserved. One down, five to go — this lab's status is "in progress with real evidence," not "complete" yet, same evidence bar as everything else in this portfolio.
+Six real, live-fired alerts (3 techniques × 2 platforms), each traceable from simulation command → real telemetry → custom rule ID → dashboard alert, with the raw evidence preserved. Three of six are there; the Windows Persistence rule is validated end-to-end against real telemetry but not yet live-fired, and the remaining two Windows combinations are designed and ready. This lab's status is "in progress with real evidence," not "complete" yet, same evidence bar as everything else in this portfolio.
