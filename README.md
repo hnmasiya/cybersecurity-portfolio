@@ -111,6 +111,7 @@ The repository is organized around practical security domains:
 - `AppSec-DevSecOps/`, `Offensive-Security/`, `Enterprise-Security/`, `Linux-Security/`, `Docker-Labs/` — supporting domain reports
 - `Scripts/` — repository automation and quality-check tooling
 - `tests/` — pytest suite covering the automation scripts above
+- `Coursework/` — Google Cybersecurity Professional Certificate labs (2023) and early independent follow-on projects, kept separate from the evidence-backed labs above
 
 Projects contain technical documentation, investigation methodology, configurations, scripts, reports, and supporting evidence where applicable.
 
