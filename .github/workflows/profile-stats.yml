@@ -103,5 +103,18 @@ jobs:
             --title "auto: update dynamic lab activity feed" \
             --body "Automated update of the README activity feed from the 5 most recent commits on \`main\`.")
 
+          # `gh pr checks --watch` exits immediately with "no checks
+          # reported" if called before GitHub has registered any check
+          # runs for the new commit yet - a short race right after push.
+          # Poll until at least one check shows up before handing off to
+          # --watch, instead of a single fixed sleep that could still lose
+          # the race under load.
+          for i in $(seq 1 10); do
+            if gh pr checks "$PR_URL" >/dev/null 2>&1; then
+              break
+            fi
+            sleep 3
+          done
+
           gh pr checks "$PR_URL" --watch --fail-fast
           gh pr merge "$PR_URL" --squash --delete-branch
