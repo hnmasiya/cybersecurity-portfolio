@@ -875,6 +875,27 @@ Caller User: 'bad_actor_admin'</code>
                     </div>
                 </div>
 
+                <!-- Attack Simulation & Detection Engineering Lab -->
+                <div class="card project-item" data-category="methodology">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Attack Simulation &amp; Detection Engineering Lab</h3>
+                            <span class="project-badge badge-methodology">Designed</span>
+                        </div>
+                        <div class="metric-badge">🎯 3 ATT&amp;CK Techniques × 2 Real Self-Owned Platforms</div>
+                        <p class="project-desc">3 real MITRE ATT&CK techniques (Execution T1059, Persistence T1053/T1547, Credential Access T1003), each written to run against 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server DC documented elsewhere in this portfolio. Each technique has a real, runnable simulation script and a real custom Wazuh detection rule already written to catch it, including an explicit safety note for the LSASS memory-access technique. Every command and rule is real and ready; only the actual execution and captured alert evidence are still pending.</p>
+
+                        <div class="tag-group">
+                            <span class="tag">MITRE ATT&CK</span>
+                            <span class="tag">Wazuh</span>
+                            <span class="tag">Detection Engineering</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Attack Simulation &amp; Detection Engineering Lab', '3 real MITRE ATT&CK techniques (Execution, Persistence, Credential Access), each written to run against 2 real self-owned platforms (a home-lab Linux host and an Azure Windows Server DC) with a real, runnable simulation script and a real custom Wazuh detection rule per technique. The Credential Access technique uses procdump.exe against lsass.exe - a legitimate, signed Sysinternals tool and the standard safe way to generate this exact detection signal without malware - with an explicit warning that the resulting dump contains real credential material and must be deleted immediately after capturing evidence. Every command and rule is written and ready; execution and captured alert evidence are the remaining step.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Offensive-Security/Attack-Simulation-Detection-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
 
                 <!-- Azure Windows Server Lab -->
                 <div class="card project-item" data-category="live">
@@ -1143,7 +1164,8 @@ Caller User: 'bad_actor_admin'</code>
                         <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Wireshark</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real packet capture of Juice Shop traffic (52 packets), genuine SQLi test correctly flagged</td></tr>
                         <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">AppSec/SAST</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real bandit scan of this portfolio's own code; 1 real High-severity finding fixed</td></tr>
                         <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">GCP Secure Landing Zone (IaC)</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Architecture</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real Terraform, formatting-checked; validate/plan/apply pending a real GCP org</td></tr>
-                        <tr><td style="padding: 0.65rem 1rem;">Offensive Security, Enterprise AD Audit</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Methodology</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Illustrative write-ups, not live findings — no authorized pentest target or live AD domain accessible</td></tr>
+                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Attack Simulation &amp; Detection Engineering Lab</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Designed</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">3 ATT&amp;CK techniques × 2 real self-owned platforms; real simulation scripts and Wazuh rules written, execution and alert evidence pending</td></tr>
+                        <tr><td style="padding: 0.65rem 1rem;">Enterprise AD Audit</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Methodology</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Illustrative write-up, not a live finding — no separate authorized AD domain accessible beyond the Azure DC already exercised</td></tr>
                     </tbody>
                 </table>
             </div>
