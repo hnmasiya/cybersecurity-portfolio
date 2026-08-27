@@ -212,6 +212,18 @@ The repository contains supporting screenshots and structured security reports.
 
 [View Wireshark Report](./Network-Security/Wireshark/Reports/Wireshark-Packet-Analysis.md)
 
+### 🔍 Static Application Security Testing (SAST)
+
+**Evidence-backed — real scan of this portfolio's own code**
+
+* Real `bandit` static analysis scan of this repository's own 1,278-line Python codebase — not a fictional target
+* One genuine High-severity finding (unnecessary `shell=True` command execution) identified and fixed
+* Remaining findings triaged honestly: one confirmed scanner false positive, one documented-but-accepted defense-in-depth recommendation, and several low-risk findings reviewed and accepted rather than blindly cleared
+
+**Current status:** Complete — re-scanned after remediation: 0 High, 3 Medium (documented), 10 Low (documented).
+
+[View AppSec/SAST Report](./AppSec-DevSecOps/SAST-Reports/AppSec-Audit-Report.md)
+
 ---
 
 ## 📈 Portfolio Architecture & Tracking
