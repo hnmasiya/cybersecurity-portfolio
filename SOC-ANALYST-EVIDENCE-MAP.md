@@ -25,8 +25,6 @@ This document maps practical SOC capabilities to specific repository evidence.
 | Packet Analysis | `Network-Security/Wireshark/` and PCAP lab |
 | Static Application Security Testing | `AppSec-DevSecOps/SAST-Reports/` |
 | Cloud Landing Zone Architecture | `Cloud-Security/GCP-Landing-Zone-Lab/` |
-| Cloud Security Posture Management (CSPM) | `Cloud-Security/GCP-Project-Security-Lab/` |
-| Threat Intelligence Platform Design | `Threat-Intelligence/OpenCTI-Dashboard-Design/` |
 
 ## Evidence Classification
 
@@ -36,9 +34,7 @@ This document maps practical SOC capabilities to specific repository evidence.
 
 **Synthetic/offline:** Threat Hunting validation.
 
-**Architecture / not yet deployed:** GCP Secure Landing Zone (`Cloud-Security/GCP-Landing-Zone-Lab/`) — real, formatting-checked Terraform (org policy guardrails, environment folders, Shared VPC, org-wide logging sink); `terraform validate`/`plan`/`apply` pending a real GCP org and registry access this environment lacks, the same starting point the Azure lab had before it was deployed. GCP Project Security Lab (`Cloud-Security/GCP-Project-Security-Lab/`) — the project-scoped complement, deployable without a GCP organization: real Terraform (custom VPC, deny-by-default firewall with IAP-only SSH, Shielded VM, scoped service account, hardened bucket) plus a real, unit-tested CSPM audit tool (`gcp_cspm_auditor.py`, 19 tests); `terraform validate` has been run against the real `google` provider registry and passed — `plan`/`apply` are blocked on a billing account, not on registry access.
-
-**Deployed and connector-verified; custom Workspace not yet built:** OpenCTI Custom SOC Dashboard (`Threat-Intelligence/OpenCTI-Dashboard-Design/`) — 13 widgets specified against OpenCTI's real STIX 2.1 data model and actual widget types. Its `docker-compose.yml` deployment (`Deployment/`) has actually been run against a real Docker host: all 9 containers came up, and the built-in MITRE ATT&CK connector genuinely imported real STIX data (181 Intrusion-Set, 273 Malware objects), confirmed live in the platform's UI. Building this specific Workspace against that running instance and exporting its config/screenshot is the remaining step, not the deployment itself.
+**Architecture / not yet deployed:** GCP Secure Landing Zone (`Cloud-Security/GCP-Landing-Zone-Lab/`) — real, formatting-checked Terraform (org policy guardrails, environment folders, Shared VPC, org-wide logging sink); `terraform validate`/`plan`/`apply` pending a real GCP org and registry access this environment lacks, the same starting point the Azure lab had before it was deployed.
 
 **Illustrative scenario (not a live finding):** the Offensive Security
 and Enterprise AD hygiene reports are scenario write-ups demonstrating
