@@ -237,15 +237,29 @@ The repository contains supporting screenshots and structured security reports.
 
 [View GCP Landing Zone Lab](./Cloud-Security/GCP-Landing-Zone-Lab/README.md)
 
+### ☁️ GCP Project Security Lab (CSPM)
+
+**Architecture / methodology — real Terraform + a real audit tool, not yet deployed**
+
+* Project-scoped complement to the org-level landing zone above — deployable against a standalone GCP project with no Cloud Identity/Workspace organization required
+* Custom VPC with a deny-by-default firewall; the only inbound path is SSH via Identity-Aware Proxy (IAP), never a direct admin-IP allowlist
+* Shielded VM (secure boot, vTPM, integrity monitoring), no external IP, OS Login, and a scoped custom service account instead of the broad-scope default one
+* A real, unit-tested CSPM audit tool (`gcp_cspm_auditor.py`, 19 tests) that flags open firewall rules, public buckets, external IPs, disabled Shielded VM protections, default service accounts, and public primitive-role grants
+
+**Current status:** Formatting-checked (`terraform fmt -check`, clean), auditor unit-tested and smoke-tested against a synthetic config. `terraform validate`/`plan`/`apply` and a live audit run not done — this build environment can't reach the Terraform provider registry and has no real GCP credentials.
+
+[View GCP Project Security Lab](./Cloud-Security/GCP-Project-Security-Lab/README.md)
+
 ### 🧩 OpenCTI Custom SOC Dashboard
 
-**Methodology / design exercise**
+**Methodology / design exercise — deployment scaffolded**
 
 * A single OpenCTI Workspace dashboard designed for shift-start SOC triage
 * 13 widgets, each specified against OpenCTI's actual STIX 2.1 data model and real widget types (Number, Distribution, List, Timeline, Donut) — not a generic mockup
 * Covers active alerts, open incidents, IOC volume, unpatched vulnerabilities tied to internal assets, MTTR trend, playbook execution rate, and TTP/threat-actor linkage
+* A ready-to-run `docker-compose.yml` (platform, Elasticsearch, MinIO, RabbitMQ, workers, MITRE ATT&CK connector) and step-by-step deployment instructions now exist in `Deployment/`
 
-**Current status:** Design only — no live OpenCTI instance backs this. This build environment has no Docker daemon to run OpenCTI's real stack (OpenSearch, RabbitMQ, Redis, MinIO).
+**Current status:** Design specified, deployment scaffolded — no live OpenCTI instance backs this yet. This build environment has no Docker daemon to run OpenCTI's real stack (OpenSearch, RabbitMQ, Redis, MinIO).
 
 [View OpenCTI Dashboard Design](./Threat-Intelligence/OpenCTI-Dashboard-Design/OpenCTI-Custom-Dashboard-Design.md)
 
