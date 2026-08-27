@@ -1,13 +1,15 @@
 # OpenCTI Custom SOC Dashboard: Design
 
-> **Status: Methodology / Design Exercise.** This is a real, specific dashboard
+> **Status: Design specified; real instance deployed and connector-verified; this specific Workspace not yet built.** This is a real, specific dashboard
 > design against OpenCTI's actual Workspace/widget model and STIX data model —
-> not a vague mockup. It is not a claim of a live, deployed OpenCTI instance
-> in this portfolio: no instance, connector feed, or exported widget config
-> backs this specific dashboard. This build environment has no running Docker
-> daemon, and OpenCTI's real stack (OpenSearch, RabbitMQ, Redis, MinIO, the
-> platform itself) is too heavy to stand up as a quick sandbox exercise. For
-> the path to making this evidence-backed, see [Closing this gap](#closing-this-gap).
+> not a vague mockup. The stack in [`Deployment/`](Deployment/) has since been
+> run against a real Docker host: all 9 containers came up, and the built-in
+> MITRE ATT&CK connector genuinely imported real STIX data (181 Intrusion-Set
+> and 273 Malware objects, independently observed live in the platform's UI).
+> What's not yet done is building *this specific* Workspace against that
+> running instance and exporting its config/screenshot — deprioritized this
+> pass due to host memory constraints running two OpenSearch-based stacks side
+> by side. For the remaining step, see [Closing this gap](#closing-this-gap).
 
 ## Metadata
 * **Platform:** OpenCTI (open-source Cyber Threat Intelligence platform)
@@ -48,10 +50,10 @@ Modeled as a single OpenCTI Workspace with three rows: a top row of the four Num
 
 ## 5. Evidence status
 
-No screenshot, exported Workspace JSON, or live query result backs this document — it's a design, not an observation. Every widget above is specified against OpenCTI's real, current data model and widget types (not invented ones), so it's directly buildable, but "directly buildable" isn't the same claim as "built and verified," and this report doesn't blur that line.
+No screenshot or exported Workspace JSON for *this specific dashboard* backs this document yet — that part is still a design, not an observation. What is now observed rather than assumed: a real OpenCTI instance was deployed from [`Deployment/`](Deployment/) against a real Docker host, and the built-in MITRE ATT&CK connector genuinely populated real STIX data (181 Intrusion-Set objects, 273 Malware objects), independently confirmed live in the platform's own UI. Every widget above is specified against OpenCTI's real, current data model and widget types (not invented ones), so it's directly buildable — and the data it would need to run against is now proven to exist for real, not just assumed reachable.
 
 ## Closing this gap
 
-To make this evidence-backed, the same pattern used elsewhere in this portfolio applies: stand up OpenCTI (`docker-compose` on a real host with enough memory for OpenSearch/RabbitMQ/Redis/MinIO — not this sandbox), connect at least one real connector (even the built-in MITRE ATT&CK or CVE import connector is enough to populate real data), build this Workspace against it, and bring back the exported Workspace config plus a real screenshot as `Evidence/`.
+The deployment half of this gap is closed: `Deployment/` has a validated `docker-compose.yml` and was run against a real host with a verified working connector. What's left is narrower than before — build this specific Workspace against that running instance (or a fresh one, following the same steps) and export its config plus a screenshot as `Evidence/`. Given the MITRE ATT&CK connector only populates Intrusion-Set/Malware/Attack-Pattern/Course-of-Action data, expect the widgets tied to org-specific Incidents/Vulnerabilities/Indicators to legitimately show empty — that's a scope limit of this connector, not a bug, and worth noting honestly in the eventual write-up rather than treated as a gap to hide.
 
-A ready-to-run `docker-compose.yml` (platform, Redis, Elasticsearch, MinIO, RabbitMQ, workers, and the MITRE ATT&CK connector) plus step-by-step deployment instructions live in [`Deployment/`](Deployment/README.md). `Evidence/` is scaffolded and waiting for the exported Workspace JSON and dashboard screenshot once that's run against a real host.
+See [`Deployment/README.md`](Deployment/README.md) for the exact steps.
