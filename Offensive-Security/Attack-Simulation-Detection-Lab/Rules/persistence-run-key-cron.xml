@@ -4,17 +4,31 @@
   Integrity Monitoring) and a registry Run-key addition on Windows (via
   Sysmon Event ID 13), as two rules in the same group.
 
-  Both <if_sid> parents below are Wazuh's well-known default rule IDs
-  (550/553 for syscheck file-modified events, and the sysmon_event_13
-  group for Sysmon registry events - note the underscore. Wazuh's own
-  upstream ruleset (0330-sysmon_rules.xml) is inconsistent here: events
-  1-9 use no underscore (sysmon_event1...sysmon_event9), but 10 and up
-  switch to one (sysmon_event_10, sysmon_event_11, sysmon_event_12,
-  sysmon_event_13...). This rule originally guessed the no-underscore
-  form and was silently ignored - confirmed via the manager log warning
-  `Group 'sysmon_event13' was not found. Invalid 'if_group'. Rule
-  '100211' will be ignored.` on every restart - fixed by matching the
-  real group name).
+  The Linux <if_sid> parent below is Wazuh's well-known default rule ID
+  (550/553 for syscheck file-modified events).
+
+  The Windows rule (100211) went through two real fixes, in order:
+  1. It originally guessed <if_group>sysmon_event13</if_group> (no
+     underscore), which doesn't exist - Wazuh's own upstream ruleset
+     (0330-sysmon_rules.xml) is inconsistent here: events 1-9 register
+     a group with no underscore (sysmon_event1...sysmon_event9), but
+     10 and up switch to one (sysmon_event_10, sysmon_event_11,
+     sysmon_event_12, sysmon_event_13...). Confirmed via the manager
+     log warning `Group 'sysmon_event13' was not found. Invalid
+     'if_group'. Rule '100211' will be ignored.` on every restart -
+     first fixed by switching to the real group name, sysmon_event_13.
+  2. Once real Sysmon Event ID 13 telemetry from dc01-lab was actually
+     flowing into Wazuh's archives (getting to that point surfaced a
+     separate, unrelated agent-enrollment bug - a stale duplicate
+     agent registration under the same hostname that had to be
+     removed on the manager before the agent could reconnect), running
+     that real archived event through wazuh-logtest showed the
+     if_group approach still wasn't the most direct match. The rule
+     was switched to match directly on the decoded fields
+     (win.system.providerName, win.system.eventID,
+     win.eventdata.targetObject) instead of chaining through the
+     group - functionally equivalent for this decoder, but verified
+     directly against the real archived event rather than inferred.
 -->
 <group name="attack_sim,persistence,t1053,t1547,">
 
@@ -28,10 +42,13 @@
     </mitre>
   </rule>
 
-  <!-- Windows: registry Run key value set -->
+  <!-- Windows: registry Run key value set - matched directly on
+       decoded windows_eventchannel fields, verified via wazuh-logtest
+       against a real archived Sysmon Event ID 13 from dc01-lab -->
   <rule id="100211" level="12">
-    <if_group>sysmon_event_13</if_group>
-    <field name="win.eventdata.targetObject" type="pcre2">(?i)\\CurrentVersion\\Run</field>
+    <field name="win.system.providerName">^Microsoft-Windows-Sysmon$</field>
+    <field name="win.system.eventID">^13$</field>
+    <field name="win.eventdata.targetObject" type="pcre2">(?i)CurrentVersion.*Run</field>
     <description>Persistence: registry Run key value added</description>
     <mitre>
       <id>T1547.001</id>

@@ -1,0 +1,33 @@
+{
+  "_status": "Rule validated against real archived telemetry via wazuh-logtest. Live alert generation from a real-time simulation run is pending final confirmation - see _note.",
+  "technique": "T1547.001 - Registry Run Keys / Startup Folder",
+  "rule": {
+    "id": "100211",
+    "level": 12,
+    "description": "Persistence: registry Run key value added"
+  },
+  "host": "dc01-lab",
+  "data_source": "Windows Sysmon Event ID 13 (RegistryEvent - value set)",
+  "siem": "Wazuh 4.14.7",
+  "simulation_command": "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" /v WazuhLabTest /t REG_SZ /d \"C:\\Windows\\Temp\\update.exe\" /f",
+  "archived_event": {
+    "provider": "Microsoft-Windows-Sysmon",
+    "eventID": "13",
+    "targetObject": "HKU\\...\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WazuhLabTest",
+    "image": "powershell.exe",
+    "user": "LAB\\hazvinei"
+  },
+  "logtest_result": {
+    "input": "the real archived event above, replayed through /var/ossec/bin/wazuh-logtest",
+    "output": "Trying rule: 100211 - Persistence: registry Run key value added\n    *Rule 100211 matched\n**Alert to be generated.\nUnit test OK"
+  },
+  "pipeline_status": {
+    "sysmon_event_generation": "PASS",
+    "agent_to_manager_delivery": "PASS",
+    "event_archival": "PASS",
+    "event_decoding": "PASS",
+    "custom_rule_matching_offline": "PASS (via wazuh-logtest against the real archived event)",
+    "live_alert_generation": "PENDING - not yet confirmed from a real-time simulation run generating an alert in alerts.json"
+  },
+  "_note": "This validates the detection LOGIC against a genuine, live-captured Sysmon Event 13 from dc01-lab - not a synthetic/hand-crafted log line. Getting to this point required fixing two real bugs: (1) rule 100211 originally referenced a Sysmon rule group name that doesn't exist in Wazuh's ruleset (sysmon_event13 vs the real sysmon_event_13, see Rules/persistence-run-key-cron.xml for the full root-cause), and (2) the dc01-lab Wazuh agent was stuck disconnected because of a stale duplicate agent registration on the manager (same hostname registered twice after a client.keys reset), which had to be removed via manage_agents before the agent could re-enroll and start forwarding Sysmon telemetry again. What remains before this can be upgraded to a genuine live-fired alert (matching the evidence bar set by t1059-linux-alert.json, t1053-linux-alert.json, and t1003-linux-alert.json) is re-running the actual reg add simulation now that the pipeline is confirmed end-to-end, and capturing the resulting alert directly from alerts.json rather than via logtest replay."
+}
