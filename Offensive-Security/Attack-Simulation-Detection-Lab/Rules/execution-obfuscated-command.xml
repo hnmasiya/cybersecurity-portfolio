@@ -33,15 +33,31 @@
   metacharacters, so this is actually more robust than content-matching
   would have been, since it survives the attacker changing the payload
   entirely.
+
+  Running the real simulation live against this manager surfaced a
+  genuine false positive: Wazuh's own internal health checks (e.g.
+  `sh -c "/bin/ps -p ... > /dev/null 2>&1"`) also get hex-encoded, since
+  `>` and `&` are shell metacharacters too, and fired this rule 258
+  times before the real simulation's single genuine alert ever showed
+  up. Those FP events all carry audit.auid=4294967295 ("unset" - no
+  real login session, the marker for a system/container-originated
+  process), while the real simulation's alert carried audit.auid=1000
+  (an actual logged-in user). Excluding the unset marker is a real,
+  decoded-field-based fix confirmed against both the genuine alert and
+  the FP alerts captured live, not a guess.
 -->
 <group name="attack_sim,execution,t1059,">
 
   <!-- Linux: bash/sh -c invocation with a hex-encoded (i.e. contains
-       shell metacharacters) argument - real auditd only hex-encodes
-       when it has to, so this is itself the obfuscation signal. -->
+       shell metacharacters) argument, from a real login session - real
+       auditd only hex-encodes when it has to, so that's the obfuscation
+       signal; excluding audit.auid=4294967295 (no login session) cuts
+       the false positives from Wazuh's own internal health checks,
+       confirmed against real captured alerts from both cases. -->
   <rule id="100200" level="12">
     <if_sid>80700</if_sid>
     <match type="pcre2">a0="(ba)?sh"\s+a1="-c"\s+a2=[0-9A-Fa-f]{16,}</match>
+    <field name="audit.auid" negate="yes" type="pcre2">^4294967295$</field>
     <description>Execution: shell -c invocation with a hex-encoded (obfuscated) argument</description>
     <mitre>
       <id>T1059</id>
