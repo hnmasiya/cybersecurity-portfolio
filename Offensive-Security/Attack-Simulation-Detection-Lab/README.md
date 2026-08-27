@@ -1,6 +1,6 @@
 # Attack Simulation & Detection Engineering Lab
 
-> **Status: 5 of 6 combinations evidence-backed with live-fired alerts, 1 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). All 3 techniques on Linux (Execution, Persistence, Credential Access) have real, captured alerts in `Evidence/`, and on Windows, Execution (T1059.001, rule 100201) and Persistence (T1547.001, rule 100211) do too — see below. The Windows Persistence rule took the most work to get right: a wrong Sysmon rule-group name, then a pre-existing community Sysmon detection rule silently winning the match ahead of the custom rule, and finally a `docker cp` deployment that silently failed to actually update the file on the manager (confirmed by `cat`-ing the on-disk file and finding the pre-fix version still there) — each root-caused and fixed in turn until a genuine live alert came through. Only Credential Access/Windows (`procdump` against `lsass.exe`) remains unrun. Nothing here is claimed as done until it has real, timestamped evidence behind it.
+> **Status: 6 of 6 combinations evidence-backed with live-fired alerts.** Every technique, simulation command, and Wazuh detection rule in this lab is real and has been run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). All 3 techniques on both Linux and Windows (Execution, Persistence, Credential Access) have real, captured alerts in `Evidence/` — see below. The two Windows detections took the most work to get right. Persistence (T1547.001, rule 100211): a wrong Sysmon rule-group name, then a pre-existing community Sysmon detection rule silently winning the match ahead of the custom rule, and finally a `docker cp` deployment that silently failed to actually update the file on the manager (confirmed by `cat`-ing the on-disk file and finding the pre-fix version still there). Credential Access (T1003.001, rule 100221): `procdump` blocked pre-handle by Windows Defender's signature detection with zero corresponding Sysmon telemetry, a pivot to Task Manager's native dump feature to get past that, Sysmon itself getting uninstalled and hitting a crash during an unrelated reinstall attempt, and finally the Wazuh agent's own eventchannel subscription going stale across that reinstall cycle, fixed by restarting the agent service. Each problem was root-caused and fixed in turn until a genuine live alert came through. Nothing here is claimed as done until it has real, timestamped evidence behind it.
 
 ## Why this lab exists
 
@@ -14,13 +14,13 @@ The rest of this portfolio validates detection logic against real telemetry that
 |---|---|---|
 | **Execution** (T1059) | Base64-obfuscated command piped to `bash` | PowerShell `-EncodedCommand` |
 | **Persistence** (T1053 / T1547) | Cron job added via `crontab` | Registry `Run` key added via `reg add` |
-| **Credential Access** (T1003) | Unprivileged read attempt on `/etc/shadow` | `procdump.exe` against `lsass.exe` (safe, signed Sysinternals tool — see safety note below) |
+| **Credential Access** (T1003) | Unprivileged read attempt on `/etc/shadow` | Task Manager "Create dump file" against `lsass.exe` (native OS feature — see safety note below; `procdump.exe`, the originally-planned tool, turned out to be blocked pre-handle by Defender, leaving no telemetry — see the Windows section below) |
 
 Each row below documents: the exact simulation command, the real telemetry source it should produce, the custom Wazuh rule written to catch it, and what "success" looks like as evidence.
 
 ## Safety notes (read before running anything)
 
-- **Credential Access / Windows is the one row that needs care.** `procdump -ma lsass.exe lsass.dmp` is a legitimate, Microsoft-signed Sysinternals tool — the exact same technique real attackers use (T1003.001), which is why it's the standard safe way for blue teams to generate this detection signal without malware. The resulting `.dmp` file **will contain real credential material** from the DC's memory. Do not open or parse it. Capture the Wazuh/Sysmon alert as evidence, then immediately delete the dump file securely (`sdelete -p 3 lsass.dmp` or at minimum `del /f lsass.dmp`).
+- **Credential Access / Windows is the one row that needs care.** Whether via `procdump` or Task Manager's "Create dump file" (see the Windows section below for why the latter is what actually worked here), the resulting `.dmp` file **will contain real credential material** from the DC's memory. Do not open or parse it. Capture the Wazuh/Sysmon alert as evidence, then immediately delete the dump file securely (`sdelete -p 3 <path>` or at minimum `del /f <path>`).
 - **Persistence rows leave a real artifact behind** (a cron entry, a registry key) until removed. Each technique's steps end with an explicit cleanup command — run it every time, immediately after capturing evidence.
 - **The Linux cron persistence command points at `127.0.0.1`**, not an external host — it never actually beacons anywhere, it only exists long enough to generate the file-integrity/audit telemetry.
 - Run these one at a time, not all six back-to-back, so each alert is unambiguous about which simulation triggered it.
@@ -109,20 +109,22 @@ This will (correctly) fail with `Permission denied` — that's expected and fine
 ```
 Unlike the execution technique's EXECVE-type records, this SYSCALL-type record decodes cleanly into named Wazuh fields (`audit.key`, `audit.success`, `audit.command`), confirmed via `wazuh-logtest` against a real captured line. That same test surfaced a real false-positive source: `sudo` itself reads `/etc/shadow` internally on every authentication (PAM's `pam_unix` module checking the password hash), tripping the same watch key with `audit.success=yes`. The detection rule requires `audit.success=no` to exclude that — which is also the semantically correct filter, since the attempt being denied is the actual T1003.008 signal.
 
-### Windows: LSASS memory access via `procdump`
+### Windows: LSASS memory access via Task Manager
 
+The plan was `procdump.exe -accepteula -ma lsass.exe lsass.dmp` — the standard, Microsoft-signed way to generate this signal safely. In practice it never got that far: Windows Defender's signature-based `HackTool:Win32/DumpLsass.E` detection blocked the tool's `OpenProcess` call before it succeeded, confirmed by the corresponding Sysmon Event 10 query for that timestamp returning zero `procdump64.exe` entries — Sysmon only logs *granted* accesses, and Defender denied this one before Sysmon's ETW hook ever fired. No amount of Defender exclusion tinkering (path exclusions, process exclusions, ASR-rule exclusions) got past it, and going further down that road would have crossed from "authorized detection testing" into active AV evasion, which this lab doesn't do.
+
+The working substitute is a native OS feature that achieves the same T1003.001 technique: Task Manager's own "Create dump file" action against `lsass.exe` (Details tab → right-click `lsass.exe` → Create dump file). This calls the same underlying `MiniDumpWriteDump` API procdump uses, and only gets caught by Defender's *behavior*-monitoring detection (`Behavior:Win32/DumpLsass.C!attk`) after the handle and dump file already exist — late enough to leave real `ProcessAccess` telemetry behind, which is the actual detection signal this rule is testing for.
+
+Capture evidence, then delete the resulting dump file securely (Task Manager saves it under `%LocalAppData%\Temp`):
 ```powershell
-procdump.exe -accepteula -ma lsass.exe lsass.dmp
+sdelete -p 3 "$env:LOCALAPPDATA\Temp\lsass.DMP"
 ```
 
-See the safety note above — capture evidence, then delete the dump immediately:
-```powershell
-del /f lsass.dmp
-```
-
-**Telemetry source:** Sysmon Event ID 10 (ProcessAccess) with `TargetImage` = `lsass.exe` and a `GrantedAccess` value associated with memory-read rights (commonly `0x1010` or `0x1410` depending on the tool).
+**Telemetry source:** Sysmon Event ID 10 (ProcessAccess) with `TargetImage` = `lsass.exe`. The genuine live-fired event showed `GrantedAccess: 0x1FFFFF` (`PROCESS_ALL_ACCESS`) with a call trace through `dbgcore.DLL` — the `MiniDumpWriteDump` fingerprint — distinguishing it from the constant background noise of `GrantedAccess: 0x1000`/`0x1400` (read-only, telemetry-gathering accesses from `MsMpEng.exe`, `svchost.exe`, and even the Wazuh agent itself, all seen in the same capture window).
 
 **Detection rule:** [`Rules/credential-access-shadow-lsass.xml`](./Rules/credential-access-shadow-lsass.xml) — the Windows rule (100221) had the same bug as the persistence rule: it guessed `<if_group>sysmon_event10</if_group>`, confirmed missing via `wazuh-analysisd: WARNING: (7610): Group 'sysmon_event10' was not found. Invalid 'if_group'. Rule '100221' will be ignored.` Fixed to `sysmon_event_10` (events 10+ use the underscore form; see the persistence section above for the full explanation). Rule 100201 (Execution) needed no fix — event 1 is one of the events that doesn't take the underscore, so the original guess was already correct.
+
+Getting from a fixed rule to a genuine live alert took two more real problems. First, Sysmon itself had been completely uninstalled on `dc01-lab` during an unrelated attempt to add the `TargetImage`/`lsass.exe` filter to the full production `sysmonconfig-export.xml` — every reinstall attempt with that edited config crashed with `STATUS_STACK_BUFFER_OVERRUN` (`0xC0000409`, a GS-cookie stack-smashing fail-fast). Bisecting with a minimal standalone config (just the `ProcessAccess`/`TargetImage` rule, nothing else) proved the rule syntax itself wasn't the cause — it loaded cleanly in isolation — so the crash is some unexplained interaction specific to the full 700+-line config, still unresolved. Running that minimal config live (at the cost of temporarily losing the DC's other Sysmon telemetry coverage — a follow-up item) unblocked evidence capture. Second, once Sysmon was confirmed generating the right local telemetry, the event still wasn't reaching the manager: `archives.json` showed other Sysmon events flowing through fine but zero `eventID:10` events, and the Wazuh Windows agent's `<only-future-events>yes</only-future-events>` eventchannel subscription had gone stale across Sysmon's multiple uninstall/reinstall cycles. Restarting the `WazuhSvc` service on `dc01-lab` to force a fresh subscription, then re-running the Task Manager dump, produced the alert below.
 
 ## Evidence
 
@@ -133,8 +135,8 @@ del /f lsass.dmp
 - [x] T1053/T1547 Persistence — Linux (`t1053-linux-alert.json`)
 - [x] T1053/T1547 Persistence — Windows (`t1053-windows-alert.json`, with `t1053-windows-validation.json` preserved as the earlier offline-validation step)
 - [x] T1003 Credential Access — Linux (`t1003-linux-alert.json`)
-- [ ] T1003 Credential Access — Windows
+- [x] T1003 Credential Access — Windows (`t1003-windows-alert.json`)
 
 ## What "done" looks like
 
-Six real, live-fired alerts (3 techniques × 2 platforms), each traceable from simulation command → real telemetry → custom rule ID → dashboard alert, with the raw evidence preserved. Five of six are there; Credential Access/Windows is the one combination not yet run. This lab's status is "in progress with real evidence," not "complete" yet, same evidence bar as everything else in this portfolio.
+Six real, live-fired alerts (3 techniques × 2 platforms), each traceable from simulation command → real telemetry → custom rule ID → dashboard alert, with the raw evidence preserved. All six are there. This lab's status is "complete with real evidence," same evidence bar as everything else in this portfolio.
