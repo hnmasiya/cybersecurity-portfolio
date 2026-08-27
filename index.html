@@ -875,50 +875,6 @@ Caller User: 'bad_actor_admin'</code>
                     </div>
                 </div>
 
-                <!-- GCP Project Security Lab (CSPM) -->
-                <div class="card project-item" data-category="methodology">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">GCP Project Security Lab (CSPM)</h3>
-                            <span class="project-badge badge-methodology">Architecture</span>
-                        </div>
-                        <div class="metric-badge">🔍 Real CSPM Audit Tool, 19 Unit Tests</div>
-                        <p class="project-desc">The project-scoped complement to the org-level landing zone above, deployable against a standalone GCP project with no Cloud Identity/Workspace organization required: a custom VPC with a deny-by-default firewall (SSH only via Identity-Aware Proxy, never a direct admin-IP allowlist), a Shielded VM with no external IP and a scoped custom service account, a hardened bucket, and a real, unit-tested CSPM audit tool (gcp_cspm_auditor.py) that flags open firewall rules, public buckets, external IPs, disabled Shielded VM protections, default service accounts, and public primitive-role grants. terraform validate has been run against the real google provider registry and passed; plan/apply and a live audit run are pending a billing account (a real GCP project exists, but its billing account is currently closed).</p>
-
-                        <div class="tag-group">
-                            <span class="tag">GCP</span>
-                            <span class="tag">Terraform</span>
-                            <span class="tag">CSPM</span>
-                            <span class="tag">Python</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('GCP Project Security Lab (CSPM)', 'A project-scoped GCP hardening lab plus a real CSPM audit tool: custom VPC, deny-by-default firewall with IAP-only SSH (no direct admin-IP allowlist), Shielded VM with no external IP and a scoped custom service account, a hardened storage bucket (uniform access + enforced public access prevention), and gcp_cspm_auditor.py - a real, 19-test unit-tested auditor that flags open firewall rules, public buckets, external IPs, disabled Shielded VM protections, default service accounts, and public primitive-role grants. Deployable without a GCP organization, unlike the org-level landing zone lab. terraform validate has been run against the real provider registry and passed; plan/apply and a live audit run are pending a billing account.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security/GCP-Project-Security-Lab" target="_blank" class="btn-link">View Artifacts →</a>
-                    </div>
-                </div>
-
-                <!-- OpenCTI Custom Dashboard Design -->
-                <div class="card project-item" data-category="methodology">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">OpenCTI Custom SOC Dashboard</h3>
-                            <span class="project-badge badge-methodology">Deployed</span>
-                        </div>
-                        <div class="metric-badge">🧩 13 Widgets Specified Against Real OpenCTI Queries</div>
-                        <p class="project-desc">A custom OpenCTI Workspace dashboard design for shift-start SOC triage - 13 widgets (active alerts, open incidents, MTTR trend, IOC table, TTP/threat-actor links, highest-risk assets) each specified against OpenCTI's real STIX data model and widget types, not a generic mockup. The docker-compose stack (platform, Elasticsearch, MinIO, RabbitMQ, workers, MITRE ATT&CK connector) has actually been deployed against a real Docker host - all 9 containers came up and the MITRE ATT&CK connector genuinely imported real STIX data (181 Intrusion-Set, 273 Malware objects), confirmed live in the platform's UI. Building this specific Workspace against that running instance is the remaining step.</p>
-
-                        <div class="tag-group">
-                            <span class="tag">OpenCTI</span>
-                            <span class="tag">STIX 2.1</span>
-                            <span class="tag">Threat Intelligence</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('OpenCTI Custom SOC Dashboard', 'A custom OpenCTI Workspace dashboard design: 13 widgets each specified against OpenCTI\'s real STIX 2.1 data model and actual widget types (Number, Distribution, List, Timeline, Donut) rather than a generic mockup - active alerts, open incidents, IOC volume, unpatched-vulnerability count tied to internal assets, MTTR trend, playbooks executed, and TTP/threat-actor linkage. The docker-compose stack has actually been deployed against a real Docker host, with the MITRE ATT&CK connector genuinely importing real STIX data (181 Intrusion-Set, 273 Malware objects) confirmed live in the platform\'s UI. Building this specific Workspace against that running instance and exporting its evidence is the remaining step.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Threat-Intelligence/OpenCTI-Dashboard-Design" target="_blank" class="btn-link">View Artifacts →</a>
-                    </div>
-                </div>
 
                 <!-- Azure Windows Server Lab -->
                 <div class="card project-item" data-category="live">
@@ -1187,8 +1143,6 @@ Caller User: 'bad_actor_admin'</code>
                         <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Wireshark</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real packet capture of Juice Shop traffic (52 packets), genuine SQLi test correctly flagged</td></tr>
                         <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">AppSec/SAST</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real bandit scan of this portfolio's own code; 1 real High-severity finding fixed</td></tr>
                         <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">GCP Secure Landing Zone (IaC)</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Architecture</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real Terraform, formatting-checked; validate/plan/apply pending a real GCP org</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">GCP Project Security Lab (CSPM)</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Architecture</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real Terraform + a real unit-tested CSPM audit tool, deployable without a GCP org; terraform validate passed against the real provider registry; plan/apply/live audit pending a billing account</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">OpenCTI Custom SOC Dashboard</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Deployed, dashboard pending</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Docker-compose stack deployed and connector-verified (181 Intrusion-Set, 273 Malware objects, real); this specific Workspace dashboard not yet built</td></tr>
                         <tr><td style="padding: 0.65rem 1rem;">Offensive Security, Enterprise AD Audit</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Methodology</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Illustrative write-ups, not live findings — no authorized pentest target or live AD domain accessible</td></tr>
                     </tbody>
                 </table>
