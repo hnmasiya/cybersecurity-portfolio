@@ -1,6 +1,6 @@
 # Attack Simulation & Detection Engineering Lab
 
-> **Status: 2 of 6 combinations evidence-backed, 4 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). T1059 Execution and T1053 Persistence, both on Linux, have real, captured alerts in `Evidence/` — see below. The other four (both techniques on Windows, plus T1003 Credential Access on Linux) are designed and ready but not yet run. Nothing here is claimed as done until it has real, timestamped evidence behind it.
+> **Status: 3 of 6 combinations evidence-backed, 3 remaining.** Every technique, simulation command, and Wazuh detection rule in this lab is real and ready to run against the two live, self-owned hosts already documented elsewhere in this portfolio (the home-lab Linux box and the Azure Windows Server 2022 Domain Controller). All 3 techniques on Linux (Execution, Persistence, Credential Access) have real, captured alerts in `Evidence/` — see below. The 3 Windows combinations are designed and ready but not yet run. Nothing here is claimed as done until it has real, timestamped evidence behind it.
 
 ## Why this lab exists
 
@@ -105,6 +105,7 @@ This will (correctly) fail with `Permission denied` — that's expected and fine
 ```
 -w /etc/shadow -p r -k shadow_access
 ```
+Unlike the execution technique's EXECVE-type records, this SYSCALL-type record decodes cleanly into named Wazuh fields (`audit.key`, `audit.success`, `audit.command`), confirmed via `wazuh-logtest` against a real captured line. That same test surfaced a real false-positive source: `sudo` itself reads `/etc/shadow` internally on every authentication (PAM's `pam_unix` module checking the password hash), tripping the same watch key with `audit.success=yes`. The detection rule requires `audit.success=no` to exclude that — which is also the semantically correct filter, since the attempt being denied is the actual T1003.008 signal.
 
 ### Windows: LSASS memory access via `procdump`
 
