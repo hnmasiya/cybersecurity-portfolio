@@ -30,10 +30,10 @@ Each row below documents: the exact simulation command, the real telemetry sourc
 ### Linux: base64-obfuscated command execution
 
 ```bash
-echo 'aWQ7d2hvYW1p' | base64 -d | bash
+bash -c "echo 'aWQ7d2hvYW1p' | base64 -d | bash"
 ```
 
-This decodes to `id;whoami` and pipes it straight into `bash` — the exact obfuscation pattern (`base64 -d | bash`) that shows up constantly in real dropper/loader payloads, distinguishing it from a developer just running `id`.
+This decodes to `id;whoami` and pipes it straight into `bash` — the exact obfuscation pattern (`base64 -d | bash`) that shows up constantly in real dropper/loader payloads, distinguishing it from a developer just running `id`. It's deliberately wrapped in an outer `bash -c "..."`: running the pipeline directly forks `echo`/`base64`/`bash` as three separate processes, none of which has the full pipeline text as a literal argument (the `|` is shell syntax, consumed before any exec happens), so it never produces a matchable audit record. Wrapping it as one `bash -c` argument is both how the detection rule below is actually validated and how real obfuscated droppers commonly invoke a decoded payload in practice — confirmed by actually hitting this exact gap running the un-wrapped version first.
 
 **Telemetry source:** requires an `auditd` execve watch forwarded to Wazuh. If not already configured on the host, add to `/etc/audit/rules.d/audit.rules`:
 ```
