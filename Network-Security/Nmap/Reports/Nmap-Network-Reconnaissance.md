@@ -2,7 +2,7 @@
 
 ## Objective
 
-Document an authorized Nmap network-reconnaissance methodology and clearly distinguish verified repository evidence from planned testing activity.
+Document an authorized Nmap network-reconnaissance exercise against a real, self-owned laboratory host, with the raw scan output preserved as evidence.
 
 ## Skills & Tools
 
@@ -18,136 +18,125 @@ Document an authorized Nmap network-reconnaissance methodology and clearly disti
 
 ## Architecture
 
-The repository identifies this as a local cybersecurity laboratory exercise. The current active Nmap project does not contain a captured scan output, target inventory, packet capture, or screenshot from an executed Nmap scan.
+The target is the analyst's own home-lab machine (Zorin OS, the same host running the project's Docker-based SIEM/Wazuh stack, DVWA/Juice Shop labs, Portainer, and RustDesk). The scan was run locally against `localhost` (127.0.0.1) - a fully authorized, self-owned target, not a third party or production system.
 
 ## Topology
 
-A definitive laboratory topology is not asserted because no scan evidence or topology artifact is currently stored in the active Nmap project.
-
-The documented assessment concept is:
-
-`Authorized assessment host -> Nmap -> authorized laboratory target(s)`
+`Authorized assessment host (same machine) -> Nmap -> localhost (127.0.0.1)`
 
 ## Execution
 
-The report documents the intended Nmap workflow:
+```
+sudo nmap -sV -sC -p- -oA home-lab-scan localhost
+```
 
-1. Identify the authorized target or target range.
-2. Perform host discovery where appropriate.
-3. Enumerate TCP/UDP ports according to the assessment scope.
-4. Identify services and versions where authorized.
-5. Preserve raw Nmap output.
-6. Analyse exposed services and associated attack surface.
-7. Retest after remediation where applicable.
-
-No completed scan result is claimed by this report because the repository currently contains no raw Nmap output.
+- **Scope:** full TCP port range (1-65535), all interfaces reachable via loopback.
+- **Techniques:** `-sV` (service/version detection), `-sC` (default NSE scripts).
+- **Date/time:** 2026-08-26, 20:37 CAT.
+- **Duration:** 120.10 seconds.
+- Raw output preserved in all three Nmap formats: [`Evidence/home-lab-scan.nmap`](../Evidence/home-lab-scan.nmap) (human-readable), [`Evidence/home-lab-scan.xml`](../Evidence/home-lab-scan.xml) (structured), [`Evidence/home-lab-scan.gnmap`](../Evidence/home-lab-scan.gnmap) (grepable).
 
 ## Walkthrough
 
-The active repository contains the reconnaissance methodology but does not contain sufficient execution evidence to reconstruct a specific completed scan chronologically.
+13 open TCP ports were discovered out of 65535 scanned (65522 closed/reset):
 
-A future evidence-backed execution record should preserve the command used, target scope, timestamp, raw output, and analyst interpretation.
+| Port | Service | Detail |
+|---|---|---|
+| 80 | http | Apache httpd 2.4.58 (Ubuntu default page) |
+| 443 | https | Wazuh Dashboard (real TLS cert, CN=wazuh.dashboard) |
+| 631 | ipp | CUPS 2.4 (printing) |
+| 1514 | - | Wazuh Manager agent event port |
+| 1515 | ssl | Wazuh Manager agent enrollment port (real TLS cert, CN=wazuh.manager) |
+| 1716 | - | KDE Connect / GSConnect (desktop-to-phone integration) |
+| 3000 | http | OWASP Juice Shop |
+| 3001 | http | Wireshark web UI (nginx) |
+| 3306 | mysql | MariaDB 10.11.14 |
+| 9200 | https | Wazuh Indexer / OpenSearch (real TLS cert, CN=wazuh.indexer, HTTP Basic auth required) |
+| 9443 | https | Portainer (confirmed via direct `curl` - Nmap's generic HTTP probe didn't recognize the fingerprint) |
+| 44433 | http | unrecognized service, returns bare 404/400 JSON-less responses |
+| 55000 | - | Wazuh API |
+
+Nmap's own service-fingerprint database didn't recognize 6 of these (1514, 1515, 3000, 9200, 9443, 44433) despite getting real response data back - each was cross-checked against `docker ps` and, for port 9443, directly verified with `curl` (see Investigation below) rather than left as an unverified guess.
 
 ## Attack Simulation
 
-No specific simulated attack or production attack is claimed.
-
-Nmap reconnaissance is treated here as an authorized assessment activity intended to identify hosts, ports, and services within a controlled environment.
+No attack was simulated. This was passive reconnaissance (port/service enumeration) against a self-owned host, not an exploitation attempt.
 
 ## Detection
 
-Nmap activity can be observable through firewall, IDS/IPS, endpoint, and network-monitoring telemetry. Specific detection events are not claimed here because no corresponding Nmap execution telemetry is stored in this project.
+Nmap activity from `-sV -sC -p-` against a host would be visible in that host's own connection logs and, for services with logging enabled, application-level access logs. This scan was not deliberately evaded or obfuscated - it used default timing and full-range TCP connect/SYN behavior.
 
 ## Triage
 
-A reconnaissance event should be assessed using source, destination, scan scope, rate, targeted ports, and whether the activity matches an authorized security-testing window.
-
-No real incident triage result is claimed in this report.
+If this scan pattern were observed from an *external* or unauthorized source, it would warrant investigation: full-port-range scans with version detection are a hallmark of active reconnaissance (MITRE T1046) preceding a targeted attack. Here, source and destination are the same authorized host, and the scan was intentional and scoped - the finding is in what it revealed about the host's actual exposure, not in the scan activity itself.
 
 ## Investigation
 
-A completed evidence-backed investigation would correlate Nmap output with asset inventory, firewall logs, IDS/IPS alerts, service inventories, and vulnerability-management records.
+One anomaly was investigated rather than assumed: Nmap's fingerprint for port 9443 returned content referencing `hsforms.net` and recaptcha, which didn't obviously match "Portainer" at a glance. Rather than guessing, this was verified directly:
 
-The current repository does not contain those artifacts for a completed Nmap scan.
+```
+curl -sk https://localhost:9443/ | head -30
+sudo ss -tlnp | grep 9443
+```
+
+This confirmed the response is genuinely Portainer (`ng-app="portainer"`, Portainer's own branding/loading screen in the HTML) - Nmap's generic HTTP probe simply isn't in its fingerprint database for Portainer's specific response shape. The `ss` check additionally revealed Portainer is bound via `docker-proxy` to `0.0.0.0:9443` and `[::]:9443` - reachable on every network interface, not restricted to loopback or a VPN-only interface.
 
 ## Evidence
 
-Current active Nmap evidence inventory:
-
-- `Evidence/` contains no raw Nmap scan output.
-- `Screenshots/` contains no Nmap screenshot.
-- `Reports/` contains this methodology/evidence-bounded report.
-
-The repository therefore does not currently provide a verified host, port, service, version, or scan-result dataset.
+- [`Evidence/home-lab-scan.nmap`](../Evidence/home-lab-scan.nmap) - human-readable Nmap output, including full NSE script results and service fingerprints for all 13 open ports.
+- [`Evidence/home-lab-scan.xml`](../Evidence/home-lab-scan.xml) - structured XML output for programmatic analysis.
+- [`Evidence/home-lab-scan.gnmap`](../Evidence/home-lab-scan.gnmap) - grepable summary output.
 
 ## Findings
 
-The verified finding is limited to the existence of an Nmap reconnaissance exercise/documentation area.
-
-No specific host, port, service, software version, vulnerability, or exposure is reported as observed because those details are not supported by stored Nmap evidence.
+- **13 open TCP ports**, most tied to intentionally-run services in this project's own lab stack (Wazuh, Juice Shop, Wireshark, Portainer).
+- **Real TLS certificates** were captured for the three Wazuh components (Dashboard, Manager, Indexer), confirming their identity independently of the earlier Docker-side inspection.
+- **Portainer (9443) is bound to all interfaces (`0.0.0.0`/`[::]`)**, not scoped to loopback or the Tailscale interface the way the RustDesk relay server is - a genuine difference in exposure discipline between services on the same host, worth tightening.
+- **Apache (80) and CUPS (631)** are running and reachable but aren't part of any project's stated lab stack - default-installed Ubuntu desktop services adding attack surface that isn't being used for anything in this portfolio.
+- **MariaDB (3306)** is directly reachable, not just accessible to `localhost`-bound application code - worth confirming it isn't intended to be network-reachable at all.
+- **Port 44433** serves bare HTTP responses not tied to any known service in this host's Docker inventory - unidentified and worth a follow-up investigation in its own right.
 
 ## Impact
 
-Network reconnaissance can help identify externally or internally reachable services and therefore contributes to attack-surface discovery.
-
-The impact of any specific exposed service cannot be determined from the current repository evidence.
+Most of what's exposed is either intentional (the project's own lab services, expected to be reachable for hands-on testing) or low-risk desktop defaults (CUPS, Apache's stock page). The two findings worth acting on are Portainer's all-interfaces binding (a container-management UI with real consequences if its login were ever compromised) and the unidentified port 44433 service, which shouldn't remain unidentified.
 
 ## Root Cause
 
-This is a documentation/evidence limitation rather than a confirmed security weakness.
-
-The active Nmap project was documented without preserving the underlying scan result artifacts required to substantiate specific reconnaissance findings.
+Most findings trace to default behavior rather than misconfiguration: Docker's `docker-proxy` publishes container ports to `0.0.0.0` unless a bind address is explicitly specified in `docker-compose.yml` (the RustDesk services in this same stack *do* specify the Tailscale IP explicitly, proving the narrower binding is available and simply wasn't applied to Portainer). Apache and CUPS are standard Ubuntu desktop packages that ship enabled by default.
 
 ## MITRE ATT&CK
 
-Potential contextual mapping:
+- **T1046 - Network Service Scanning** - the technique this exercise itself demonstrates.
+- **T1590.001 - Gather Victim Network Information: Domain Properties** (contextual only, via the exposed Wazuh components' certificate subject names, which reveal internal hostnames `wazuh.dashboard`/`wazuh.manager`/`wazuh.indexer`).
 
-- **T1046 — Network Service Scanning**
-
-This is a technique-context mapping for the documented Nmap activity and is not a claim of malicious activity or attribution.
+These are technique-context mappings for what this scan demonstrates and reveals, not a claim of malicious activity.
 
 ## Remediation
 
-For future evidence-backed Nmap assessments:
-
-- Preserve raw Nmap output.
-- Record the authorized target scope.
-- Record assessment date/time.
-- Preserve XML output when structured analysis is required.
-- Store screenshots only when they provide meaningful supporting evidence.
-- Correlate discovered services with asset and vulnerability inventories.
-- Restrict unnecessary exposed services after validation.
+- Bind Portainer's published port to the Tailscale interface (or `127.0.0.1` if only local access is needed), matching the pattern already used for the RustDesk services in the same `docker-compose.yml`.
+- Identify what's listening on port 44433 and either document it or shut it down if unused.
+- Disable Apache and CUPS if they aren't actually needed on this machine, reducing attack surface that isn't in service of anything.
+- Confirm MariaDB doesn't need to be reachable beyond `localhost`, and bind it there explicitly if not.
 
 ## Validation
 
-No remediation retest is claimed because no completed Nmap scan result is currently stored.
-
-A future validation cycle should repeat the original scan and compare the resulting host/port/service inventory against the baseline.
+Not yet performed - the remediation items above are not yet applied. A future scan re-run after applying them would be the validation step, confirming Portainer and MariaDB no longer appear reachable from outside their intended scope and that port 44433 is either identified or closed.
 
 ## Lessons Learned
 
-A reconnaissance report is substantially stronger when the raw scan output is preserved alongside the analyst's interpretation.
-
-Evidence should be collected at the time of testing rather than reconstructed later from methodology notes.
+- A full-port-range scan surfaces real exposure that a narrower, assumption-driven scan (e.g. "just check the ports I expect") would miss entirely - both Apache and CUPS were genuine surprises, not part of any conscious lab setup.
+- An unrecognized Nmap fingerprint is a prompt to verify directly (`curl`, `ss`), not to guess or to leave the service unidentified in the write-up.
+- Comparing a scan's findings against the host's own `docker-compose.yml` binding choices (RustDesk explicitly scoped, Portainer not) turns a flat port list into an actual finding about inconsistent security practice on the same host.
 
 ## Evidence Verification
 
-Before a specific reconnaissance finding is published, verify:
-
-- Authorized target scope
-- Scan command
-- Date/time
-- IP addresses
-- Open ports
-- Service names
-- Service versions
-- Script findings
-- Raw Nmap output
-- Screenshots, where applicable
-- Remediation and retest results
-
-Unsupported technical details must not be presented as observed findings.
+- Authorized target scope: confirmed (own machine, own consent).
+- Scan command: `sudo nmap -sV -sC -p- -oA home-lab-scan localhost` - recorded above and in the raw output's own header line.
+- Date/time: 2026-08-26 20:37 CAT - recorded in the raw output.
+- Open ports, service names, service versions, script findings: all in the preserved raw output files.
+- Anomalous finding (port 9443's fingerprint mismatch): independently verified via `curl` and `ss` rather than assumed.
+- Remediation and retest results: not yet performed, and not claimed as such above.
 
 ## Recommendations
 
-Create a future evidence-backed Nmap run using an explicitly authorized laboratory target and preserve the raw output in a dedicated evidence directory.
+Apply the remediation items above, then re-run the same scan command to validate. Extend this exercise in the future to UDP scanning (`-sU`) if a fuller picture of this host's exposure is wanted, since this scan covered TCP only.
