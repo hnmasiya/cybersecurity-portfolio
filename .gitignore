@@ -31,11 +31,15 @@ PORTFOLIO-MASTER-AUDIT/
 .venv/
 Advanced-Threat-Operations/
 
-# Terraform
-*.tfvars
 !*.tfvars.example
+
+# Terraform
+.terraform/
 *.tfstate
 *.tfstate.*
-.terraform/
-.terraform.lock.hcl
+*.tfplan
+terraform.tfvars
+*.tfvars
+!terraform.tfvars.example
 crash.log
+crash.*.log
