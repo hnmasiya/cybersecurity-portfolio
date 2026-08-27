@@ -1,0 +1,35 @@
+<!--
+  Attack Simulation & Detection Engineering Lab - T1053 / T1547 (Persistence)
+  Catches a cron job added to the crontab spool on Linux (via Wazuh File
+  Integrity Monitoring) and a registry Run-key addition on Windows (via
+  Sysmon Event ID 13), as two rules in the same group.
+
+  Both <if_sid> parents below are Wazuh's well-known default rule IDs
+  (550/553 for syscheck file-modified events, and the sysmon_event13
+  group for Sysmon registry events) - still confirm against the live
+  manager's actual decoded fields the first time each rule is tested,
+  same as the execution rule in this lab.
+-->
+<group name="attack_sim,persistence,t1053,t1547,">
+
+  <!-- Linux: cron spool file modified (FIM) -->
+  <rule id="100210" level="12">
+    <if_sid>550,553</if_sid>
+    <field name="file" type="pcre2">(?i)(cron\.d|crontabs)</field>
+    <description>Persistence: cron job spool modified</description>
+    <mitre>
+      <id>T1053.003</id>
+    </mitre>
+  </rule>
+
+  <!-- Windows: registry Run key value set -->
+  <rule id="100211" level="12">
+    <if_group>sysmon_event13</if_group>
+    <field name="win.eventdata.targetObject" type="pcre2">(?i)\\CurrentVersion\\Run</field>
+    <description>Persistence: registry Run key value added</description>
+    <mitre>
+      <id>T1547.001</id>
+    </mitre>
+  </rule>
+
+</group>
