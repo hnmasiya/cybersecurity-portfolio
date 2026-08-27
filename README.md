@@ -118,8 +118,6 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 ---
 
----
-
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
 * auto: build updated resume PDF [skip ci] (3 hours ago)
