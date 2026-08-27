@@ -16,8 +16,15 @@ usage() {
 
 case "$1" in
   execution)
-    # T1059: base64-obfuscated command piped into a shell
-    echo 'aWQ7d2hvYW1p' | base64 -d | bash
+    # T1059: base64-obfuscated command piped into a shell. Wrapped in
+    # `bash -c "..."` deliberately: running the pipeline directly forks
+    # echo/base64/bash as three separate processes, none of which has
+    # "base64 -d | bash" as a literal argument (that text is shell
+    # syntax, consumed before any exec happens) - so it never produces
+    # a matchable audit record. Wrapping it as one bash -c argument is
+    # both how the detection rule was actually validated and how real
+    # obfuscated droppers commonly invoke a decoded payload in practice.
+    bash -c "echo 'aWQ7d2hvYW1p' | base64 -d | bash"
     ;;
   persistence)
     # T1053.003: cron job added, beacon target is localhost only
