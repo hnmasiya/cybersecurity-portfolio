@@ -7,12 +7,7 @@
 > supporting `../IAM-Policies/least-privilege-policy.json` and
 > `../Detection-Rules/suspicious_iam_modifications.sql` in this folder are
 > real, reviewable IAM/detection-engineering artifacts, independent of
-> this narrative scenario. The nearest evidence-backed equivalent — a
-> different cloud provider, but the same real CSPM audit methodology
-> against real Terraform-defined infrastructure rather than a narrative —
-> is [`../GCP-Project-Security-Lab/`](../GCP-Project-Security-Lab/README.md):
-> a real, unit-tested audit tool (`gcp_cspm_auditor.py`) built to run
-> against a real GCP project, pending deployment.
+> this narrative scenario.
 
 ## Metadata
 * **Case ID:** CSPM-2026-0822-01
