@@ -129,11 +129,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* auto: build updated resume PDF [skip ci] (3 hours ago)
-* Add Abbeydale Group early-career engagement to resume (#12) (3 hours ago)
-* auto: build updated resume PDF [skip ci] (3 hours ago)
-* Attribute the July 2026 SD-WAN deployment to SITA AERO (#11) (3 hours ago)
-* Attribute the July 2026 SD-WAN deployment to SITA AERO (3 hours ago)
+* Fix race condition in auto-PR workflows: wait for checks to register (#38) (7 minutes ago)
+* Final polish pass: fix broken auto-push CI, capture tonight's real results (#35) (22 minutes ago)
+* Add project-scoped GCP Security Lab with a real CSPM audit tool (#34) (29 minutes ago)
+* Add real OpenCTI docker-compose deployment for the dashboard design (#33) (29 minutes ago)
+* Remove empty legacy scaffold folders and their stale reports (#32) (29 minutes ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
