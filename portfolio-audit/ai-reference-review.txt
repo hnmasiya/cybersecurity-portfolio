@@ -1,1 +1,0 @@
-./portfolio-final-polish-current-state.sh:598:  '(ChatGPT|Claude|Gemini|Copilot|OpenAI|Anthropic|Google AI)' \
