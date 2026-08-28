@@ -116,7 +116,7 @@ $content = Get-Content C:\Users\hazvinei\sysmon-install\sysmonconfig-export.xml 
    - Stability: 30+ min monitoring, no crashes
    - Config deployed on dc01-lab, ready for production"
    ```
-5. Push to `claude/test-coverage-analysis-6tvybs` branch
+5. Push to `main` branch
 
 ## Reference Files
 
