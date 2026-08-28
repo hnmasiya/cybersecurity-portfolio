@@ -4,9 +4,16 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 
+# Local/generated content that is intentionally outside the
+# public portfolio quality scan.
+#
+# PORTFOLIO-MASTER-AUDIT contains historical audit output and local
+# investigation artifacts. .venv contains the local Python environment.
 IGNORE_PARTS = {
     ".git",
     "Archive",
+    "PORTFOLIO-MASTER-AUDIT",
+    ".venv",
 }
 
 PLACEHOLDER_RE = re.compile(
@@ -35,8 +42,12 @@ def scan(root):
         if any(part in IGNORE_PARTS for part in p.parts):
             continue
 
+        # Python bytecode/cache files are generated locally by pytest
+        # and Python execution. Report them so they can be cleaned before
+        # release; the verifier removes them before final validation.
         if "__pycache__" in p.parts or p.suffix in {".pyc", ".pyo"}:
             runtime.append(str(p.relative_to(root)))
+            continue
 
         if p.suffix.lower() != ".md":
             continue
