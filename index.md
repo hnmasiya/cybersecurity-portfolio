@@ -238,14 +238,17 @@ The repository contains supporting screenshots and structured security reports.
 
 ### 🎯 Attack Simulation & Detection Engineering Lab
 
-**In progress — 1 of 6 technique/platform combinations evidence-backed**
+**Evidence-backed — 6 of 6 technique/platform combinations validated with live-fired alerts**
 
-* 3 real MITRE ATT&CK techniques — Execution (T1059), Persistence (T1053/T1547), Credential Access (T1003) — each written for both platforms below
-* 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server DC already documented in this portfolio — no third-party system touched
-* A real custom Wazuh detection rule written for each technique, ready to load against the live manager
-* Real, runnable simulation scripts (`linux-simulations.sh`, `windows-simulations.ps1`) with built-in cleanup steps and an explicit safety note for the one technique (LSASS memory access) that touches real credential material
+* 3 real MITRE ATT&CK techniques — Execution (T1059), Persistence (T1053/T1547), and Credential Access (T1003)
+* 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server 2022 Domain Controller
+* All 6 Linux/Windows technique combinations executed against the live targets
+* Custom Wazuh detection rules validated against genuine telemetry and live-fired alerts
+* Real simulation scripts for Linux and Windows with explicit cleanup procedures
+* Detection-engineering troubleshooting documented, including false-positive analysis, rule precedence, telemetry gaps, agent-state issues, and deployment validation
+* Credential-access testing documented with an explicit safety boundary around real credential material
 
-**Current status:** T1059 Execution on Linux has a real, captured Wazuh alert — running it live also surfaced a genuine false positive against Wazuh's own internal health checks, fixed with a decoded-field exclusion confirmed against both the real alert and the false positives. The other 5 combinations have real commands and rules written, execution still pending.
+**Current status:** Complete — all 6 combinations are evidence-backed with timestamped live alerts preserved in the lab's `Evidence/` directory. The project demonstrates the full attack → telemetry → detection rule → Wazuh alert → validation workflow across both Linux and Windows.
 
 [View Attack Simulation & Detection Engineering Lab](./Offensive-Security/Attack-Simulation-Detection-Lab/README.md)
 
