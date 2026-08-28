@@ -42,7 +42,7 @@ Tests requiring Wazuh/Sysmon/cloud execution remain pending until actually run.
 - [Security content audit](security-content-audit.txt)
 - [Local reference audit](local-reference-audit.txt)
 - [AI/vendor reference review](ai-reference-review.txt)
-- [QA log](qa.log)
+- QA validation: performed through the automated Portfolio Quality workflow.
 
 ## Git Diff
 
