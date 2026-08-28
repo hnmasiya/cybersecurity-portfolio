@@ -23,6 +23,8 @@ REPORT-BACKUPS/
 UPGRADED-SOC-REPORT-DRAFTS/
 __pycache__/
 *.pyc
+*.pyo
+.pytest_cache/
 *.backup-*
 # Audit logs
 portfolio-master-audit-*.txt
