@@ -244,7 +244,7 @@ echo "============================================================"
 echo "9. PYTEST"
 echo "============================================================"
 
-if python -m pytest -q; then
+if .venv/bin/python -m pytest -q; then
     pass "204-test Python suite passed"
 else
     fail "Python test suite failed"
@@ -274,7 +274,7 @@ echo "============================================================"
 echo "11. PORTFOLIO QUALITY CHECK"
 echo "============================================================"
 
-quality_output="$(python Scripts/portfolio_quality_check.py 2>&1 || true)"
+quality_output="$(.venv/bin/python Scripts/portfolio_quality_check.py 2>&1 || true)"
 echo "$quality_output"
 
 if echo "$quality_output" | grep -q "Broken local links : 0"; then
@@ -316,7 +316,7 @@ echo "============================================================"
 echo "12. SYSMON OFFLINE VALIDATION"
 echo "============================================================"
 
-if python Endpoint-Security/Windows-Sysmon-Detection-Lab/Scripts/offline_endpoint_validator.py; then
+if .venv/bin/python Endpoint-Security/Windows-Sysmon-Detection-Lab/Scripts/offline_endpoint_validator.py; then
     pass "Sysmon offline detection validation passed"
 else
     fail "Sysmon offline detection validation failed"
@@ -331,7 +331,7 @@ echo "============================================================"
 echo "13. THREAT-HUNT OFFLINE VALIDATION"
 echo "============================================================"
 
-if python Threat-Hunting/Detection-Validation-Lab/Scripts/offline_hunt_validator.py; then
+if .venv/bin/python Threat-Hunting/Detection-Validation-Lab/Scripts/offline_hunt_validator.py; then
     pass "Threat-hunt offline validation passed"
 else
     fail "Threat-hunt offline validation failed"
