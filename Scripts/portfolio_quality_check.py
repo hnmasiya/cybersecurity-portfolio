@@ -42,8 +42,10 @@ def scan(root):
         if any(part in IGNORE_PARTS for part in p.parts):
             continue
 
+        # Python bytecode/cache files are generated locally by pytest
+        # and Python execution. They are not portfolio content.
         if "__pycache__" in p.parts or p.suffix in {".pyc", ".pyo"}:
-            runtime.append(str(p.relative_to(root)))
+            continue
 
         if p.suffix.lower() != ".md":
             continue
