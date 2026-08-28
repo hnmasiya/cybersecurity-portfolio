@@ -69,7 +69,7 @@ cp /path/to/sysmonconfig-export.xml ./Cloud-Security/Azure-Windows-Server-Lab/sy
 ### Step 3: Commit and Push
 
 ```bash
-# On the claude/test-coverage-analysis-6tvybs branch
+# On the main branch
 git add Cloud-Security/Azure-Windows-Server-Lab/sysmon/sysmonconfig-export.xml
 
 git commit -m "Restore Sysmon full config: fix Events 7 & 9 field name validation crash
@@ -82,7 +82,7 @@ git commit -m "Restore Sysmon full config: fix Events 7 & 9 field name validatio
 - Stability: Ran 30+ minutes without crashes
 - Closes: STATUS_STACK_BUFFER_OVERRUN crash on full config load"
 
-git push -u origin claude/test-coverage-analysis-6tvybs
+git push -u origin main
 ```
 
 ## Current Configuration Status
@@ -131,14 +131,6 @@ For detailed information about the investigation and fix, see:
 - `SYSMON-CONFIG-FIX.md` - Complete technical documentation
 - Scratchpad: `SYSMON-INVESTIGATION-GUIDE.md` - Investigation methodology
 - Scratchpad: `EXECUTION-PLAN.md` - Testing and validation plan
-
-## Next: Update Lab Completion Tracker
-
-Once committed and pushed, update the main repository tracker:
-
-Edit `LAB-COMPLETION-TRACKER.md` to mark:
-- "Attack Simulation & Detection Engineering Lab" as **Complete (23/23)**
-- Add note: "Sysmon full config restored and validated"
 
 ## Questions?
 
