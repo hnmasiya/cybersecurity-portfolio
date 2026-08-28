@@ -8,7 +8,6 @@ title: "Enterprise Cybersecurity & SOC Operations Portfolio"
   <a href="#-about-me">About Me</a> |
   <a href="#-technical-competency--tool-stack">Tool Stack</a> |
   <a href="#-featured-security-labs">Security Labs</a> |
-  <a href="./LAB-COMPLETION-TRACKER.md">Lab Tracker</a>
 </p>
 
 ---
@@ -254,7 +253,6 @@ The repository contains supporting screenshots and structured security reports.
 
 ## 📈 Portfolio Architecture & Tracking
 
-* 📋 **[Lab Completion Tracker](./LAB-COMPLETION-TRACKER.md)** — Portfolio progress and project status.
 * 🛠️ **[Security Tools Inventory](./SECURITY-TOOLS-INVENTORY.md)** — Security tooling and lab inventory.
 
 ---
