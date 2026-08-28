@@ -132,14 +132,6 @@ For detailed information about the investigation and fix, see:
 - Scratchpad: `SYSMON-INVESTIGATION-GUIDE.md` - Investigation methodology
 - Scratchpad: `EXECUTION-PLAN.md` - Testing and validation plan
 
-## Next: Update Lab Completion Tracker
-
-Once committed and pushed, update the main repository tracker:
-
-Edit `LAB-COMPLETION-TRACKER.md` to mark:
-- "Attack Simulation & Detection Engineering Lab" as **Complete (23/23)**
-- Add note: "Sysmon full config restored and validated"
-
 ## Questions?
 
 Refer to `SYSMON-CONFIG-FIX.md` for complete documentation of:
