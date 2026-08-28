@@ -647,7 +647,6 @@
             <nav>
                 <ul>
                     <li><a href="#work">Work & Projects</a></li>
-                    <li><a href="#tracker">Lab Tracker</a></li>
                     <li><a href="#snapshot">Capabilities</a></li>
                     <li><a href="#certs">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -845,9 +844,9 @@ Caller User: 'bad_actor_admin'</code>
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
                             <h3 class="project-title">GCP Secure Landing Zone</h3>
-                            <span class="project-badge badge-methodology">Architecture</span>
+                            <span class="project-badge badge-methodology">IaC / DESIGN</span>
                         </div>
-                        <div class="metric-badge">🔒 Org-Wide Deny-External-IP Policy + Deny-All-Ingress VPC</div>
+                        <div class="metric-badge">🔒 Org-Wide External-IP Deny + Deny-All-Ingress VPC — IaC</div>
                         <p class="project-desc">Real Terraform for a GCP organization landing zone: org-level policy guardrails (no external IPs, no SA key files, domain-restricted IAM), an environment folder structure, a Shared VPC host project with deny-all-ingress firewall rules and Cloud NAT, and a centralized org-wide logging sink. Formatting-checked with terraform fmt; full validate/apply pending a real org (this build environment can't reach the Terraform registry).</p>
 
                         <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
@@ -880,9 +879,9 @@ Caller User: 'bad_actor_admin'</code>
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
                             <h3 class="project-title">Attack Simulation &amp; Detection Engineering Lab</h3>
-                            <span class="project-badge badge-methodology">In Progress</span>
+                            <span class="project-badge badge-live">Complete</span>
                         </div>
-                        <div class="metric-badge">🎯 1 of 6 Technique/Platform Combinations Evidence-Backed</div>
+                        <div class="metric-badge">🎯 6 of 6 Technique/Platform Combinations Evidence-Backed</div>
                         <p class="project-desc">3 real MITRE ATT&CK techniques (Execution T1059, Persistence T1053/T1547, Credential Access T1003), each written to run against 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server DC documented elsewhere in this portfolio. T1059 Execution on Linux has a real, captured Wazuh alert - running it live surfaced a genuine false positive against Wazuh's own internal health checks, fixed with a decoded-field exclusion confirmed against real data, not guessed. The other 5 combinations have real, runnable simulation scripts and detection rules written, execution still pending.</p>
 
                         <div class="tag-group">
@@ -892,7 +891,7 @@ Caller User: 'bad_actor_admin'</code>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('Attack Simulation &amp; Detection Engineering Lab', '3 real MITRE ATT&CK techniques (Execution, Persistence, Credential Access), each written to run against 2 real self-owned platforms (a home-lab Linux host and an Azure Windows Server DC) with a real, runnable simulation script and a real custom Wazuh detection rule per technique. T1059 Execution on Linux has a real, captured Wazuh alert - running it live surfaced a genuine false positive against Wazuh\'s own internal health checks, fixed with a decoded-field exclusion confirmed against both the real alert and the false positives. The Credential Access technique uses procdump.exe against lsass.exe - a legitimate, signed Sysinternals tool and the standard safe way to generate this exact detection signal without malware - with an explicit warning that the resulting dump contains real credential material and must be deleted immediately after capturing evidence. 1 of 6 technique/platform combinations is evidence-backed; the other 5 have real commands and rules written, execution still pending.')">Overview</button>
+                        <button class="btn-quicklook" onclick="showModal('Attack Simulation &amp; Detection Engineering Lab', '3 real MITRE ATT&CK techniques (Execution, Persistence, Credential Access), each written to run against 2 real self-owned platforms (a home-lab Linux host and an Azure Windows Server DC) with a real, runnable simulation script and a real custom Wazuh detection rule per technique. T1059 Execution on Linux has a real, captured Wazuh alert - running it live surfaced a genuine false positive against Wazuh\'s own internal health checks, fixed with a decoded-field exclusion confirmed against both the real alert and the false positives. The Credential Access technique uses procdump.exe against lsass.exe - a legitimate, signed Sysinternals tool and the standard safe way to generate this exact detection signal without malware - with an explicit warning that the resulting dump contains real credential material and must be deleted immediately after capturing evidence. All 6 technique/platform combinations are evidence-backed with timestamped live alerts preserved in the lab Evidence directory.')">Overview</button>
                         <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Offensive-Security/Attack-Simulation-Detection-Lab" target="_blank" class="btn-link">View Artifacts →</a>
                     </div>
                 </div>
@@ -1131,46 +1130,6 @@ Caller User: 'bad_actor_admin'</code>
                 </div>
             </div>
         </section>
-
-        <!-- Lab Completion Tracker -->
-        <section id="tracker">
-            <div class="section-header">
-                <h2 class="section-title">Lab Completion Tracker</h2>
-            </div>
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 70ch;">Every lab in this portfolio, honestly labeled at the status it actually earned — <span style="color: var(--accent-green);">Complete</span> means validated against real, live evidence; <span style="color: var(--accent-purple);">Architecture</span> means real code pending deployment; <span style="color: var(--accent-purple);">Methodology</span> means a design or illustrative write-up with no live system behind it. See the <a href="https://github.com/hnmasiya/cybersecurity-portfolio/blob/main/LAB-COMPLETION-TRACKER.md" target="_blank" style="color: var(--accent-cyan);">full tracker on GitHub</a> for source.</p>
-            <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 8px;">
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 640px;">
-                    <thead>
-                        <tr style="background: var(--bg-terminal);">
-                            <th style="text-align: left; padding: 0.75rem 1rem; color: var(--text-primary); border-bottom: 1px solid var(--border);">Lab</th>
-                            <th style="text-align: left; padding: 0.75rem 1rem; color: var(--text-primary); border-bottom: 1px solid var(--border); white-space: nowrap;">Status</th>
-                            <th style="text-align: left; padding: 0.75rem 1rem; color: var(--text-primary); border-bottom: 1px solid var(--border);">Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">DVWA</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">None</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">OWASP Juice Shop</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">None</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">PCAP Monitoring</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Synthetic lab</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Wazuh</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Live server with a live, connected Windows endpoint (Azure DC via Tailscale); real MITRE-mapped alerts and CIS Benchmark SCA findings</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Security Automation</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Local/sample validation</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Windows / Sysmon</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Synthetic fixtures + 16 real Sysmon/Security events from a live Azure DC</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Threat Hunting</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Offline/synthetic</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Incident Response</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Evidence-driven lab</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Active Directory Detection</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Synthetic fixtures + 409 real events from a live Azure DC</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Linux Host Hardening</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Synthetic fixtures + a real, live personal host (0 findings, all 26 SUID binaries package-verified)</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Container Configuration Audit</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Synthetic fixtures + a real, live Docker host (14 findings across 8 containers)</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Azure Windows Server Lab (IaC)</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Deployed, hardened, and validated end-to-end</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Nmap</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real full-TCP-range scan against a self-owned home-lab host (13 open ports)</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Wireshark</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real packet capture of Juice Shop traffic (52 packets), genuine SQLi test correctly flagged</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">AppSec/SAST</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-live">Complete</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real bandit scan of this portfolio's own code; 1 real High-severity finding fixed</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">GCP Secure Landing Zone (IaC)</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Architecture</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Real Terraform, formatting-checked; validate/plan/apply pending a real GCP org</td></tr>
-                        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.65rem 1rem;">Attack Simulation &amp; Detection Engineering Lab</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">In Progress</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">1 of 6 technique/platform combinations evidence-backed (T1059 Execution, Linux, real captured alert + a real false positive found and fixed); the other 5 have real scripts and rules written, execution pending</td></tr>
-                        <tr><td style="padding: 0.65rem 1rem;">Enterprise AD Audit</td><td style="padding: 0.65rem 1rem;"><span class="project-badge badge-methodology">Methodology</span></td><td style="padding: 0.65rem 1rem; color: var(--text-secondary);">Illustrative write-up, not a live finding — no separate authorized AD domain accessible beyond the Azure DC already exercised</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
         <!-- Capabilities Snapshot -->
         <section id="snapshot">
             <div class="section-header">

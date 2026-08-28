@@ -26,7 +26,7 @@ Hands-on work across security operations, detection engineering, incident respon
 - Resolved 4 real issues in the loop: Wazuh false positives, pre-existing rule conflicts, rule group naming inconsistencies, stale event subscriptions
 - All labs tested against synthetic fixtures *and* real infrastructure — no shortcuts
 
-[📊 View Lab Summary](https://claude.ai/code/artifacts) | [📖 Read Sysmon Case Study](#sysmon-case-study) | [🔍 Browse Evidence](#evidence)
+📊 23/23 Security Labs — Evidence-Backed | [📖 Read Sysmon Case Study](#sysmon-case-study) | [🔍 Browse Evidence](#evidence)
 
 ---
 
@@ -110,7 +110,10 @@ This repository documents practical security investigations, detection engineeri
 - **Google IT Support Professional Certificate**
 
 ---
+## 🧪 Hands-On Cybersecurity Training
 
+- **TryHackMe** — Hands-on cybersecurity labs and security training  
+  [View TryHackMe Profile →](https://tryhackme.com/p/norman.masiya)
 ## 🎓 Education
 
 - **National Diploma in Information Communication Technology**
