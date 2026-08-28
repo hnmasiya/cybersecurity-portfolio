@@ -200,14 +200,6 @@ deny-policy-test.txt, DEPLOYMENT_LOG.md"
 git push origin fix/gcp-landing-zone-deployment
 ```
 
-### Update tracker
-
-Edit `LAB-COMPLETION-TRACKER.md`:
-
-```markdown
-| GCP Secure Landing Zone (IaC) | Complete | Deployed real Terraform against live GCP organization ({org_id}). 5 folders, 2 core projects, Shared VPC, Cloud NAT, 8 org policies applied. Deny-all-ingress verified. Evidence: terraform outputs, org policies, folder structure, deny-policy test. |
-```
-
 ### Update README
 
 Edit `Cloud-Security/GCP-Landing-Zone-Lab/README.md`:
