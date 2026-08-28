@@ -110,7 +110,10 @@ This repository documents practical security investigations, detection engineeri
 - **Google IT Support Professional Certificate**
 
 ---
+## 🧪 Hands-On Cybersecurity Training
 
+- **TryHackMe** — Hands-on cybersecurity labs and security training  
+  [View TryHackMe Profile →](https://tryhackme.com/p/norman.masiya)
 ## 🎓 Education
 
 - **National Diploma in Information Communication Technology**
