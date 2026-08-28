@@ -1,0 +1,29 @@
+// Microsoft Sentinel / KQL
+// Purpose: investigate endpoint network connections.
+//
+// Status: ARCHITECTURE / METHODOLOGY
+
+// Recent network connections
+DeviceNetworkEvents
+| where Timestamp >= ago(24h)
+| project
+    Timestamp,
+    DeviceName,
+    InitiatingProcessAccountName,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    RemoteIP,
+    RemotePort,
+    RemoteUrl,
+    Protocol
+| order by Timestamp desc
+
+// Investigate unusual outbound connections by process
+DeviceNetworkEvents
+| where Timestamp >= ago(24h)
+| summarize
+    ConnectionCount = count(),
+    RemoteIPs = make_set(RemoteIP, 50),
+    RemotePorts = make_set(RemotePort, 50)
+    by DeviceName, InitiatingProcessFileName
+| order by ConnectionCount desc
