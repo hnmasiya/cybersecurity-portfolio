@@ -10,6 +10,26 @@ Hands-on work across security operations, detection engineering, incident respon
 
 ---
 
+## 🎯 Portfolio Highlights
+
+**23/23 Security Labs — 100% Evidence-Backed**
+
+✅ **Real Infrastructure** — Deployed Azure Domain Controller + Wazuh SIEM + Sysmon endpoint monitoring over Tailscale mesh VPN
+
+✅ **Live Attack Simulations** — 6 of 6 attack scenarios trigger real Wazuh alerts (3 MITRE techniques × 2 platforms: Linux + Windows)
+
+✅ **Credible Findings** — 409 real Windows Security events analyzed, 52 PCAP packets extracted, real Sysmon telemetry correlated with detections
+
+**Key Technical Wins**
+- Debugged & fixed Sysmon `STATUS_STACK_BUFFER_OVERRUN` crash (root cause: field name validation in Events 7 & 9)
+- Built working detections for T1003 (Credential Access), T1053/T1547 (Persistence), T1059 (Execution)
+- Resolved 4 real issues in the loop: Wazuh false positives, pre-existing rule conflicts, rule group naming inconsistencies, stale event subscriptions
+- All labs tested against synthetic fixtures *and* real infrastructure — no shortcuts
+
+[📊 View Lab Summary](https://claude.ai/code/artifacts) | [📖 Read Sysmon Case Study](#sysmon-case-study) | [🔍 Browse Evidence](#evidence)
+
+---
+
 ## 🔐 Security Portfolio
 
 This repository documents practical security investigations, detection engineering projects, incident-response exercises, security assessments, automation, and infrastructure security work.
@@ -128,11 +148,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* auto: build updated resume PDF [skip ci] (3 hours ago)
-* Add Abbeydale Group early-career engagement to resume (#12) (3 hours ago)
-* auto: build updated resume PDF [skip ci] (3 hours ago)
-* Attribute the July 2026 SD-WAN deployment to SITA AERO (#11) (3 hours ago)
-* Attribute the July 2026 SD-WAN deployment to SITA AERO (3 hours ago)
+* Merge: Complete Attack Simulation & Detection Engineering Lab (6 of 6 combos with live-fired alerts) (9 hours ago)
+* Add real T1003 Windows Credential Access evidence; 6 of 6 combos proven (9 hours ago)
+* Add real T1053/T1547 Windows Persistence evidence; 5 of 6 combos proven (11 hours ago)
+* Add real T1059 (Execution) Windows evidence; 4 of 6 combos proven (#60) (11 hours ago)
+* Chain T1053 Windows rule under pre-existing community Sysmon rule (#59) (11 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
