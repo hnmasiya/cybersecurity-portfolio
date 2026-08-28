@@ -1,0 +1,39 @@
+<!--
+  Attack Simulation & Detection Engineering Lab - Local Rule Suppressions
+
+  This file contains custom alert suppression and escalation rules that build
+  on the parent rules defined in the attack-sim detection pack. These rules
+  demonstrate:
+  - False-positive suppression: matching known-good behaviors and downgrading
+    alert severity to level 0 to prevent alert fatigue (e.g., Microsoft Defender
+    reading LSASS memory is expected system activity, not credential theft)
+  - Field-specific regex matching with CDATA-wrapped patterns to handle
+    Windows paths with backslashes safely
+  - Parent rule chaining via if_sid to build detection hierarchies
+
+  FIXED: All rules now use CDATA-wrapped regex patterns (<![CDATA[...]]>) to
+  properly handle Windows paths containing backslashes and regex metacharacters,
+  eliminating XML parsing ambiguities that caused "Syntax error" messages.
+  Parent-child relationships are explicit via if_sid chaining.
+-->
+
+<!-- Rule 100222: Suppress Defender LSASS access (known good behavior)
+     Context: Microsoft Defender (MsMpEng.exe) regularly reads LSASS memory
+     as part of its threat detection process. This is expected, legitimate
+     system activity and should not trigger security alerts.
+
+     Matching conditions:
+     - Source: Microsoft Defender binary at specific path
+     - Target: LSASS.exe in System32
+     - Access level: 0x1000 (standard scan/read access)
+
+     FIXED: Regex patterns wrapped in CDATA to avoid XML parsing issues with
+     backslashes and regex metacharacters like [^\\].
+-->
+<rule id="100222" level="0">
+  <if_sid>100221</if_sid>
+  <field name="win.eventdata.sourceImage" type="pcre2"><![CDATA[(?i)^C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\[^\\]+\\MsMpEng\.exe$]]></field>
+  <field name="win.eventdata.targetImage" type="pcre2"><![CDATA[(?i)^C:\\Windows\\system32\\lsass\.exe$]]></field>
+  <field name="win.eventdata.grantedAccess">^0x1000$</field>
+  <description>Expected Microsoft Defender access to LSASS - suppress known false positive</description>
+</rule>
