@@ -56,3 +56,10 @@ Org policy guardrails applied at the `organizations/{org_id}` node (so they bind
 ## Next step to close this gap
 
 Exactly the same path the Azure lab took: run this from a real machine/Cloud Shell with registry access and a real GCP org — `terraform init && terraform validate && terraform plan` first, then `apply` once the plan looks right, then bring back the real output (a resource list, the applied org policies, evidence the deny-all-ingress rule actually blocks what it should) as evidence, the same way `Evidence/azure-resource-list.txt` proves the Azure lab's deployment.
+
+**When you have GCP organization access**, follow [`DEPLOYMENT_CHECKLIST.md`](./DEPLOYMENT_CHECKLIST.md) — it contains a step-by-step walkthrough including:
+- Prerequisites verification (org ID, billing account, domain)
+- `terraform init`/`validate`/`plan`/`apply` commands
+- Evidence capture (outputs, org policies, folder structure, deny-policy test)
+- Troubleshooting guide
+- Success criteria checklist
