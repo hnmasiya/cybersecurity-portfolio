@@ -4,9 +4,16 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 
+# Local/generated content that is intentionally outside the
+# public portfolio quality scan.
+#
+# PORTFOLIO-MASTER-AUDIT contains historical audit output and local
+# investigation artifacts. .venv contains the local Python environment.
 IGNORE_PARTS = {
     ".git",
     "Archive",
+    "PORTFOLIO-MASTER-AUDIT",
+    ".venv",
 }
 
 PLACEHOLDER_RE = re.compile(
