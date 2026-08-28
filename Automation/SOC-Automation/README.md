@@ -1,30 +1,90 @@
 # SOC Automation
 
-Use the repository's existing Python/Bash/PowerShell capabilities to demonstrate practical analyst automation.
+## Purpose
 
-## Target workflow
+This project demonstrates practical automation for repetitive SOC analyst work using Python, Bash and PowerShell.
 
-**Wazuh alert/log → parser → event extraction → IOC extraction → classification → severity → analyst summary → report**
+The focus is not automation for its own sake.
 
-## Outputs
+The objective is to reduce repetitive processing while keeping security decisions explainable and auditable.
 
-Where useful:
+## Workflow
+
+**Alert/log → parse → normalize → IOC extraction → enrichment → classification → prioritization → analyst summary → case/report**
+
+## Architecture
+
+```
+              SIEM / Log Source
+                     |
+                     v
+              Event ingestion
+                     |
+                     v
+                Normalizer
+                     |
+          +----------+----------+
+          |          |          |
+         IOC       Host        User
+       extraction  context     context
+          |          |          |
+          +----------+----------+
+                     |
+                     v
+                 Enrichment
+                     |
+                     v
+                Classification
+                     |
+                     v
+                 Prioritization
+                     |
+                     v
+              Analyst decision
+                     |
+             +-------+-------+
+             |               |
+          Escalate         Close
+             |
+             v
+       Case/report output
+```
+
+## Automation outputs
+
+Where appropriate:
 - JSON
 - CSV
 - Markdown
 - HTML
 
-## Documentation
+## Engineering requirements
 
-For each automation document:
+Each automation should document:
 1. Problem
 2. Manual workflow
-3. Automation
-4. Inputs
-5. Processing
-6. Outputs
-7. Error handling
-8. Testing
-9. Limitations
+3. Inputs
+4. Processing
+5. Outputs
+6. Error handling
+7. Testing
+8. Limitations
 
-Do not claim measured time savings without measurement.
+## Human-in-the-loop
+
+Automation assists the analyst.
+
+It does not automatically declare an event malicious or perform destructive containment without an explicitly authorized workflow.
+
+## Evidence integrity
+
+Do not claim:
+- measured time savings
+- accuracy
+- detection rates
+- false-positive reduction
+- automated containment
+
+unless those outcomes have actually been measured and retained as evidence.
+
+See `PLAYBOOK.md` for the analyst workflow.
