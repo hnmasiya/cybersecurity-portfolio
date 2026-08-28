@@ -69,7 +69,7 @@ cp /path/to/sysmonconfig-export.xml ./Cloud-Security/Azure-Windows-Server-Lab/sy
 ### Step 3: Commit and Push
 
 ```bash
-# On the claude/test-coverage-analysis-6tvybs branch
+# On the main branch
 git add Cloud-Security/Azure-Windows-Server-Lab/sysmon/sysmonconfig-export.xml
 
 git commit -m "Restore Sysmon full config: fix Events 7 & 9 field name validation crash
@@ -82,7 +82,7 @@ git commit -m "Restore Sysmon full config: fix Events 7 & 9 field name validatio
 - Stability: Ran 30+ minutes without crashes
 - Closes: STATUS_STACK_BUFFER_OVERRUN crash on full config load"
 
-git push -u origin claude/test-coverage-analysis-6tvybs
+git push -u origin main
 ```
 
 ## Current Configuration Status
