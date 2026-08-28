@@ -879,9 +879,9 @@ Caller User: 'bad_actor_admin'</code>
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
                             <h3 class="project-title">Attack Simulation &amp; Detection Engineering Lab</h3>
-                            <span class="project-badge badge-methodology">In Progress</span>
+                            <span class="project-badge badge-live">Complete</span>
                         </div>
-                        <div class="metric-badge">🎯 1 of 6 Technique/Platform Combinations Evidence-Backed</div>
+                        <div class="metric-badge">🎯 6 of 6 Technique/Platform Combinations Evidence-Backed</div>
                         <p class="project-desc">3 real MITRE ATT&CK techniques (Execution T1059, Persistence T1053/T1547, Credential Access T1003), each written to run against 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server DC documented elsewhere in this portfolio. T1059 Execution on Linux has a real, captured Wazuh alert - running it live surfaced a genuine false positive against Wazuh's own internal health checks, fixed with a decoded-field exclusion confirmed against real data, not guessed. The other 5 combinations have real, runnable simulation scripts and detection rules written, execution still pending.</p>
 
                         <div class="tag-group">
@@ -891,7 +891,7 @@ Caller User: 'bad_actor_admin'</code>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('Attack Simulation &amp; Detection Engineering Lab', '3 real MITRE ATT&CK techniques (Execution, Persistence, Credential Access), each written to run against 2 real self-owned platforms (a home-lab Linux host and an Azure Windows Server DC) with a real, runnable simulation script and a real custom Wazuh detection rule per technique. T1059 Execution on Linux has a real, captured Wazuh alert - running it live surfaced a genuine false positive against Wazuh\'s own internal health checks, fixed with a decoded-field exclusion confirmed against both the real alert and the false positives. The Credential Access technique uses procdump.exe against lsass.exe - a legitimate, signed Sysinternals tool and the standard safe way to generate this exact detection signal without malware - with an explicit warning that the resulting dump contains real credential material and must be deleted immediately after capturing evidence. 1 of 6 technique/platform combinations is evidence-backed; the other 5 have real commands and rules written, execution still pending.')">Overview</button>
+                        <button class="btn-quicklook" onclick="showModal('Attack Simulation &amp; Detection Engineering Lab', '3 real MITRE ATT&CK techniques (Execution, Persistence, Credential Access), each written to run against 2 real self-owned platforms (a home-lab Linux host and an Azure Windows Server DC) with a real, runnable simulation script and a real custom Wazuh detection rule per technique. T1059 Execution on Linux has a real, captured Wazuh alert - running it live surfaced a genuine false positive against Wazuh\'s own internal health checks, fixed with a decoded-field exclusion confirmed against both the real alert and the false positives. The Credential Access technique uses procdump.exe against lsass.exe - a legitimate, signed Sysinternals tool and the standard safe way to generate this exact detection signal without malware - with an explicit warning that the resulting dump contains real credential material and must be deleted immediately after capturing evidence. All 6 technique/platform combinations are evidence-backed with timestamped live alerts preserved in the lab Evidence directory.')">Overview</button>
                         <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Offensive-Security/Attack-Simulation-Detection-Lab" target="_blank" class="btn-link">View Artifacts →</a>
                     </div>
                 </div>
