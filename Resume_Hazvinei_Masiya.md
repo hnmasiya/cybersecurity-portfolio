@@ -1,3 +1,5 @@
+<!-- Resume maintained as the current August 2026 version. -->
+
 <style>
   @page { size: letter; margin: 0.35in; }
   body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 8.8pt; line-height: 1.22; color: #0f172a; margin: 0; }
