@@ -670,15 +670,32 @@
                 <span>📞 +263 77 521 6823 / +263 71 866 2162</span>
             </div>
 
-            <p class="hero-desc">
-                12+ years of hands-on enterprise IT experience supporting Windows environments, infrastructure, access control, endpoint security, system hardening, troubleshooting, and business-critical operations — now focused on cybersecurity, security operations, detection, investigation, and automation.
+            <div style="margin: 1.5rem 0; padding: 1.5rem; background: var(--bg-card); border-left: 4px solid var(--accent-green); border-radius: 4px;">
+                <p class="hero-desc" style="margin: 0; font-size: 1.05em; font-weight: 500;">
+                    SOC & Detection Engineering professional with 12+ years enterprise IT infrastructure experience. Real Wazuh SIEM deployment + live attack simulations. 6 of 6 detection combos proven against production infrastructure. Ready for immediate SOC Analyst, Detection Engineer, or Threat Hunting roles.
+                </p>
+            </div>
+
+            <p class="hero-desc" style="font-size: 0.95em; color: var(--text-secondary); margin-top: 1rem;">
+                12+ years supporting Windows/Linux environments, infrastructure, Active Directory, endpoint security, system hardening — now focused on detection engineering, incident response, threat hunting, digital forensics, and security automation.
             </p>
 
             <div class="btn-cta-group">
-                <a href="#work" class="btn-cta btn-primary">Explore Work (#work)</a>
-                <a href="https://masiya-hub.org/Resume_Hazvinei_Masiya.pdf" class="btn-cta btn-outline" target="_blank">📄 Download Resume (PDF)</a>
-                <a href="https://github.com/hnmasiya" target="_blank" class="btn-cta btn-outline">GitHub Profile</a>
-                <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="btn-cta btn-outline">LinkedIn Profile</a>
+                <a href="mailto:norman.masiya@gmail.com" class="btn-cta btn-primary">📧 Contact Me</a>
+                <a href="#work" class="btn-cta btn-outline">Explore Work</a>
+                <a href="https://masiya-hub.org/Resume_Hazvinei_Masiya.pdf" class="btn-cta btn-outline" target="_blank">📄 Resume</a>
+                <a href="https://github.com/hnmasiya" target="_blank" class="btn-cta btn-outline">GitHub</a>
+                <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="btn-cta btn-outline">LinkedIn</a>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(16, 185, 129, 0.08); border-radius: 8px;">
+                <div style="font-size: 0.9em; font-weight: 600; color: var(--text-muted); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">⚡ Key Labs</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.95em;">
+                    <a href="#work" onclick="filterWork('live', event); return false;" style="color: var(--accent-green); text-decoration: none; padding: 0.5rem; border-left: 2px solid var(--accent-green); padding-left: 1rem;">→ Wazuh SIEM Detection Lab</a>
+                    <a href="#work" onclick="filterWork('live', event); return false;" style="color: var(--accent-green); text-decoration: none; padding: 0.5rem; border-left: 2px solid var(--accent-green); padding-left: 1rem;">→ Sysmon Endpoint Detection</a>
+                    <a href="#work" onclick="filterWork('live', event); return false;" style="color: var(--accent-green); text-decoration: none; padding: 0.5rem; border-left: 2px solid var(--accent-green); padding-left: 1rem;">→ Attack Simulation & Detection</a>
+                    <a href="#work" onclick="filterWork('live', event); return false;" style="color: var(--accent-green); text-decoration: none; padding: 0.5rem; border-left: 2px solid var(--accent-green); padding-left: 1rem;">→ Threat Hunting Lab</a>
+                </div>
             </div>
         </section>
 
@@ -1430,7 +1447,9 @@ Caller User: 'bad_actor_admin'</code>
                 } else if (cmd === 'certs') {
                     response = "• CompTIA Security+ (SY0-701)<br>• Google Cybersecurity Certificate<br>• Google IT Support Professional<br>• BSc Computer Science (In Progress)";
                 } else if (cmd === 'contact') {
+                } else if (cmd === 'contact') {
                     response = "Email: norman.masiya@gmail.com | Phone: +263 77 521 6823 / +263 71 866 2162 | Location: Harare, Zimbabwe";
+                } else if (cmd === 'clear') {
                 } else if (cmd === 'clear') {
                     history.innerHTML = '';
                     input.value = '';
