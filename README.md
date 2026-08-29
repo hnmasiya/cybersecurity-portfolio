@@ -49,7 +49,7 @@ This repository documents practical security investigations, detection engineeri
 
 ### Offensive Security
 
-- **Attack Simulation & Detection Engineering Lab** — 3 MITRE ATT&CK techniques (Execution, Persistence, Credential Access) designed to run against 2 real, self-owned platforms, each paired with a real custom Wazuh detection rule
+- **Attack Simulation & Detection Engineering Lab** — 3 MITRE ATT&CK techniques (Execution, Persistence, Credential Access) validated across 2 real, self-owned platforms, each paired with a real custom Wazuh detection rule
 
 ### Incident Response & Digital Forensics
 
@@ -143,7 +143,7 @@ The repository is organized around practical security domains:
 - `Cloud-Security/` — cloud security fundamentals; Terraform/PowerShell IaC for an Azure Windows Server lab and a GCP Secure Landing Zone
 - `Linux-Security/` — Linux host hardening audit lab, validated against a real personal host
 - `Docker-Labs/` — container configuration security audit lab, validated against a real Docker host
-- `Offensive-Security/` — real attack simulation and detection engineering lab (designed, awaiting execution), plus a methodology pentest report
+- `Offensive-Security/` — real attack simulation and detection engineering lab, validated against live infrastructure, plus a methodology pentest report
 - `AppSec-DevSecOps/`, `Enterprise-Security/` — supporting domain reports
 - `Scripts/` — repository automation and quality-check tooling
 - `tests/` — pytest suite covering the automation scripts above
