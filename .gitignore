@@ -47,4 +47,3 @@ crash.log
 crash.*.log
 .claude/
 .cursor/
-.copilot/
