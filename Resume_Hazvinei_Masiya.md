@@ -137,4 +137,5 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
   <li><b>Google Cybersecurity Professional Certificate</b> — Google</li>
   <li><b>Google IT Support Professional Certificate</b> — Google</li>
   <li><b>BSc in Computer Science</b> — Unicaf University (In Progress)</li>
+  <li><b>National Diploma in Information Communication Technology</b> — Harare Polytechnic</li>
 </ul>
