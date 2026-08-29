@@ -151,11 +151,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* Merge: Complete Attack Simulation & Detection Engineering Lab (6 of 6 combos with live-fired alerts) (9 hours ago)
-* Add real T1003 Windows Credential Access evidence; 6 of 6 combos proven (9 hours ago)
-* Add real T1053/T1547 Windows Persistence evidence; 5 of 6 combos proven (11 hours ago)
-* Add real T1059 (Execution) Windows evidence; 4 of 6 combos proven (#60) (11 hours ago)
-* Chain T1053 Windows rule under pre-existing community Sysmon rule (#59) (11 hours ago)
+* Merge: Standardize portfolio for recruiter review (14 minutes ago)
+* chore: standardize portfolio for recruiter review (16 minutes ago)
+* Merge: Permanent fix for Wazuh rule loading errors (3 hours ago)
+* Merge main into claude/test-coverage-analysis-6tvybs: keep Wazuh fixes + latest from main (3 hours ago)
+* Merge claude/test-coverage-analysis-6tvybs: resolve conflicts, keep Wazuh fixes (3 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
