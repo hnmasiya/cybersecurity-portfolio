@@ -589,16 +589,6 @@ with open(out,"w",encoding="utf-8") as f:
 PY
 
 # -----------------------------------------------------------------------------
-# Find likely AI-assistant/vendor wording so it can be manually reviewed.
-# -----------------------------------------------------------------------------
-echo "=== CHECKING AI/ASSISTANT REFERENCES ==="
-grep -RInE \
-  --exclude-dir=.git \
-  --exclude-dir=portfolio-audit \
-  '(ChatGPT|Claude|Gemini|Copilot|OpenAI|Anthropic|Google AI)' \
-  . > "$AUDIT_DIR/ai-reference-review.txt" 2>/dev/null || true
-
-# -----------------------------------------------------------------------------
 # Existing QA scripts — run only when present, never replace them.
 # -----------------------------------------------------------------------------
 echo "=== RUNNING EXISTING PORTFOLIO QA WHERE AVAILABLE ==="
