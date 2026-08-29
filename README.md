@@ -160,8 +160,6 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 * Merge: Standardize portfolio for recruiter review (14 minutes ago)
 * chore: standardize portfolio for recruiter review (16 minutes ago)
 * Merge: Permanent fix for Wazuh rule loading errors (3 hours ago)
-* Merge main into claude/test-coverage-analysis-6tvybs: keep Wazuh fixes + latest from main (3 hours ago)
-* Merge claude/test-coverage-analysis-6tvybs: resolve conflicts, keep Wazuh fixes (3 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
