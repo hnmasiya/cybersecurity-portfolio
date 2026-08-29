@@ -42,16 +42,46 @@ jobs:
                   "ERROR: README activity markers are missing."
               )
 
+          # The public activity feed must never expose tooling/vendor
+          # attribution or branch names from AI-assisted maintenance work.
+          # Keep Git history intact; only filter what is published here.
+          blocked_terms = re.compile(
+              r"(?i)(?:^|[^a-z0-9])(claude|anthropic|chatgpt|openai|gemini|copilot|github\s+copilot|cursor|codeium|tabnine|perplexity|mistral|grok|deepseek|windsurf)(?:$|[^a-z0-9])"
+          )
+
           log_output = subprocess.check_output(
               [
                   "git",
                   "log",
                   "-n",
-                  "5",
-                  "--pretty=format:* %s (%cr)"
+                  "50",
+                  "--pretty=format:%s%x09%cr"
               ],
               text=True
           ).strip()
+
+          safe_entries = []
+          for entry in log_output.splitlines():
+              subject, relative_time = entry.split("\t", 1)
+
+              # Do not publish AI/tool references, nor this workflow's own
+              # maintenance commits, which would otherwise pollute the feed
+              # and can cause unnecessary activity-feed churn.
+              if blocked_terms.search(subject):
+                  continue
+              if subject.strip().lower() == "auto: update dynamic lab activity feed":
+                  continue
+
+              safe_entries.append(f"* {subject} ({relative_time})")
+              if len(safe_entries) == 5:
+                  break
+
+          if not safe_entries:
+              raise SystemExit(
+                  "ERROR: No safe activity entries were found."
+              )
+
+          log_output = "\n".join(safe_entries)
 
           new_section = (
               f"{start_marker}\n"
@@ -70,10 +100,10 @@ jobs:
           updated_content = pattern.sub(new_section, content)
 
           if updated_content == content:
-              print("[PASS] Activity feed already current.")
+              print("[PASS] Activity feed already current and AI-clean.")
           else:
               path.write_text(updated_content)
-              print("[PASS] Activity feed updated.")
+              print("[PASS] Activity feed updated with safe entries only.")
           PY
 
       - name: Commit, Open PR, and Merge
@@ -108,14 +138,11 @@ jobs:
 
           PR_URL=$(gh pr create --base main --head "$BRANCH" \
             --title "auto: update dynamic lab activity feed" \
-            --body "Automated update of the README activity feed from the 5 most recent commits on \`main\`.")
+            --body "Automated update of the README activity feed from the 5 most recent safe commits on \`main\`, excluding AI/tool/vendor attribution and this workflow's own maintenance commit.")
 
           # `gh pr checks --watch` exits immediately with "no checks
           # reported" if called before GitHub has registered any check
           # runs for the new commit yet - a short race right after push.
-          # Poll until at least one check shows up before handing off to
-          # --watch, instead of a single fixed sleep that could still lose
-          # the race under load.
           for i in $(seq 1 10); do
             if gh pr checks "$PR_URL" >/dev/null 2>&1; then
               break
