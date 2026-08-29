@@ -134,6 +134,13 @@ Projects contain technical documentation, investigation methodology, configurati
 
 ---
 
+<!-- START_SECTION:activity -->
+### Recent Lab & Security Updates
+* Portfolio recruiter presentation polished and validated
+* Wazuh detection engineering and Sysmon validation maintained
+* Security automation and evidence-backed lab documentation maintained
+<!-- END_SECTION:activity -->
+
 ## 🌐 Live Portfolio
 
 **[masiya-hub.org](https://masiya-hub.org)**
