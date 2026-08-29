@@ -2,7 +2,7 @@
 # terraform.tfvars is gitignored — never commit it.
 
 admin_username  = "labadmin"
-admin_password  = "REPLACE-WITH-A-STRONG-PASSWORD"   # 12+ chars, upper/lower/number/symbol
+# admin_password is supplied securely at deployment time; do not store credentials here.
 admin_source_ip = "REPLACE-WITH-YOUR-PUBLIC-IP/32"    # e.g. "203.0.113.10/32" — find yours at https://ifconfig.me
 
 # Optional overrides (defaults live in variables.tf)
