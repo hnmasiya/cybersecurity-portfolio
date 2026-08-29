@@ -44,3 +44,5 @@ terraform.tfvars
 crash.log
 crash.*.log
 .claude/
+.cursor/
+.copilot/
