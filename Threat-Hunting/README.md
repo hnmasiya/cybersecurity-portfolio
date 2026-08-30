@@ -1,44 +1,35 @@
 # Proactive Threat Hunting & Detection Validation
 
-This directory contains structured threat-hunting methodology and an evidence-driven offline detection-validation lab.
+> **Evidence classification: Synthetic / offline validation**
 
-## Current lab status
+This section contains hypothesis-driven threat-hunting methodology and an offline detection-validation lab. Synthetic activity is explicitly separated from real enterprise telemetry.
 
-The active threat-hunting validation project uses synthetic authentication and endpoint telemetry. It is clearly separated from live enterprise telemetry.
-
-## Hunt scenarios
+## Hunt Scenarios
 
 - Repeated failed authentication
 - Encoded PowerShell
 - PowerShell network activity
 
+## Methodology
+
+1. Define a hunt hypothesis.
+2. Identify the telemetry required to test it.
+3. Apply analytic logic.
+4. Validate expected detections with known inputs.
+5. Correlate host, user and network context.
+6. Document findings and limitations.
+7. Repeat against live authorized telemetry when available.
+
 ## Evidence
 
-The active validation lab contains:
-
-- Synthetic hunt events
-- Hunt logic
-- JSON validation results
-- CSV validation results
-- Python validation tooling
-- MITRE ATT&CK contextual mappings
+The validation lab contains synthetic hunt events, detection logic, JSON/CSV results, Python tooling and MITRE ATT&CK contextual mappings.
 
 [View Threat Hunting Detection Validation](./Detection-Validation-Lab/README.md)
 
-## Methodology
+## Analyst Mindset
 
-Threat hunting remains hypothesis-driven:
+A hunt is not successful merely because an analytic fires. The analyst must determine whether the signal is malicious, benign or inconclusive and document the reasoning. This portfolio therefore preserves both detection results and their evidence basis.
 
-1. Define a hunt hypothesis.
-2. Identify required telemetry.
-3. Apply analytic logic.
-4. Validate expected detections.
-5. Correlate context.
-6. Document findings.
-7. Repeat the hunt against live authorized telemetry when available.
+## Limitation
 
-## Evidence standard
-
-Synthetic activity is explicitly labelled as synthetic.
-
-Specific real-world findings must only be reported when supported by stored telemetry or other repository evidence.
+The active hunt validation uses synthetic data. It demonstrates analytic development and validation methodology, not proof of a real-world intrusion or production threat-hunting engagement.
