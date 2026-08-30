@@ -1,44 +1,52 @@
 # Windows / Sysmon Endpoint Detection Lab
 
-This project validates Windows endpoint detection logic using synthetic Windows and Sysmon-style events.
+> **Evidence classification: Real telemetry + synthetic validation**
 
-## Current status
+This project validates endpoint detection logic against controlled synthetic events and real Sysmon/Windows Security telemetry captured from the deployed Azure Windows Server lab.
 
-**Complete — validated against both synthetic and real data**
-
-The detection logic (`Scripts/offline_endpoint_validator.py`'s `detect()` function) has been validated two ways: a synthetic self-test with pre-labeled expected outcomes, and a run against real Sysmon telemetry captured from a live, domain-joined Windows Server (see [Azure Windows Server Lab](../../Cloud-Security/Azure-Windows-Server-Lab/README.md)).
-
-## Detection scenarios
+## Detection Scenarios
 
 - Suspicious PowerShell
 - PowerShell network connection
 - Failed Windows authentication
 - PowerShell child process
 
-## Validation (synthetic)
+## Validation
 
-Run:
+Synthetic validation:
 
-`python3 Scripts/offline_endpoint_validator.py`
+```bash
+python3 Scripts/offline_endpoint_validator.py
+```
 
-The validator produces:
+Real-data analysis uses the same detection logic against stored telemetry from the Azure lab. The real dataset is analyzed without pre-labeled ground truth, so findings are reported as observations and then investigated for context.
 
-`Evidence/detection-validation.json`
+## Real Telemetry Result
 
-## Real telemetry
+The documented capture contains **16 events and 5 findings (0 high, 5 medium)**:
 
-Sysmon (installed with the SwiftOnSecurity community configuration) and Windows Security event data were captured directly from the live Domain Controller and analyzed with the same detection logic via a real-data analyzer (no pre-labeled ground truth, findings reported as-is):
+- `EDR-004 ×1` — `notepad.exe` spawned by `powershell.exe`; deliberate test activity.
+- `EDR-002 ×3` — PowerShell outbound HTTPS connections associated with the session's `Invoke-WebRequest` activity used to obtain Sysmon/configuration.
+- `EDR-003 ×1` — a failed Windows logon already represented in the Active Directory detection dataset.
 
-`python3 Scripts/real_endpoint_event_analyzer.py --input ../Cloud-Security/Azure-Windows-Server-Lab/Evidence/raw-sysmon-events.json --output ../Cloud-Security/Azure-Windows-Server-Lab/Evidence/real-sysmon-analysis.json`
+No malicious activity was identified in this capture. The value of the exercise is demonstrating that detection findings require context and investigation rather than automatic escalation.
 
-Result: 16 events analyzed, 5 findings (0 high, 5 medium):
+## Evidence
 
-- **EDR-004** ×1 — `notepad.exe` spawned by `powershell.exe`: a deliberate test process launch during the session, not an intrusion.
-- **EDR-002** ×3 — `powershell.exe` connecting out on port 443: these are the session's own `Invoke-WebRequest` calls downloading Sysmon and its configuration from GitHub/Sysinternals.
-- **EDR-003** ×1 — one failed logon (4625), the same event already captured and explained in the AD Detection Lab's real data.
+- `Data/` — test/telemetry inputs
+- `Evidence/` — validation and analysis outputs
+- `Rules/` — detection logic
+- `Reports/` — supporting analysis
+- `Scripts/` — synthetic and real-data analyzers
 
-No genuinely malicious activity was present in this capture; the findings correctly reflect real, explainable activity on the box, which is the honest result to expect from a lab environment.
+## Wazuh Integration
 
-## Wazuh Agent connection
+The same endpoint is documented as connected to the portfolio's Wazuh Manager over a private Tailscale network. Wazuh-generated findings are documented separately in the Azure Windows Server lab rather than being conflated with this offline analyzer's results.
 
-This same endpoint's Wazuh Agent is also connected to the project's Wazuh Manager (which runs locally via Docker on a home machine) over a private Tailscale mesh VPN, so no home-network port is exposed. Wazuh's own rule engine has generated real alerts from this endpoint's telemetry, including a MITRE-mapped authentication event and genuine CIS Benchmark compliance findings — see the [Azure Windows Server Lab](../../Cloud-Security/Azure-Windows-Server-Lab/README.md#real-wazuh-agent-connection) for the full write-up and evidence.
+## Analyst Takeaway
+
+A useful endpoint detector should identify suspicious behavior while allowing an analyst to distinguish malicious activity from legitimate administrative actions. This lab therefore preserves both the detection result and the contextual explanation.
+
+## Limitations
+
+The real capture is a small lab dataset, not an enterprise-scale endpoint dataset. Absence of malicious activity in the capture is not evidence that the detector would identify every malicious technique. Broader validation requires additional authorized attack simulations, benign baselines and live SIEM correlation.

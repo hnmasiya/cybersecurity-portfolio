@@ -1,50 +1,59 @@
 # Active Directory Security Event Detection Lab
 
-This project demonstrates an Active Directory security-event analysis
-workflow, validated against both synthetic Windows Security event log
-records and real telemetry from a live Azure Domain Controller.
+> **Evidence classification: Real telemetry + synthetic validation**
 
-## Detections
+This lab analyzes Windows Security events for common identity and privilege-related security signals. It uses both controlled synthetic records and real telemetry exported from the deployed Azure Domain Controller.
 
-- Brute Force Authentication Attempt (repeated Event ID 4625 for one account)
-- Kerberos Pre-Authentication Failure Burst (repeated Event ID 4771)
-- Possible Kerberoasting Activity (multiple RC4-encrypted TGS requests for
-  distinct SPNs — Event ID 4769)
-- Privileged Group Membership Change (Event ID 4728 / 4732 / 4756)
-- New User Account Created (Event ID 4720)
-- Special Privileges Assigned to New Logon (Event ID 4672)
-- Security Audit Log Cleared (Event ID 1102)
+## Detection Coverage
 
-Each finding is mapped to MITRE ATT&CK.
+- Repeated failed authentication — Event ID `4625`
+- Kerberos pre-authentication failure burst — `4771`
+- Possible Kerberoasting indicators — `4769`
+- Privileged group membership changes — `4728`, `4732`, `4756`
+- New user account creation — `4720`
+- Special privileges assigned to a new logon — `4672`
+- Security audit log cleared — `1102`
+
+Each analytic is mapped to relevant MITRE ATT&CK context in the supporting analysis.
 
 ## Validation
 
-**Synthetic:**
+Synthetic data:
 
-`python3 Scripts/ad_security_event_analyzer.py --input Data/synthetic-ad-events.json --output Evidence/ad-analysis.json`
+```bash
+python3 Scripts/ad_security_event_analyzer.py --input Data/synthetic-ad-events.json --output Evidence/ad-analysis.json
+```
 
-Results are written to `Evidence/ad-analysis.json`.
+Real telemetry:
 
-**Real telemetry:**
+```bash
+python3 Scripts/ad_security_event_analyzer.py --input ../../Cloud-Security/Azure-Windows-Server-Lab/Evidence/raw-security-events.json --output ../../Cloud-Security/Azure-Windows-Server-Lab/Evidence/real-ad-analysis.json
+```
 
-`python3 Scripts/ad_security_event_analyzer.py --input ../../Cloud-Security/Azure-Windows-Server-Lab/Evidence/raw-security-events.json --output ../../Cloud-Security/Azure-Windows-Server-Lab/Evidence/real-ad-analysis.json`
+The real capture contains **409 Windows Security events and 392 findings**. Those findings are deliberately retained and investigated rather than presented as proof of compromise.
 
-409 real Windows Security events exported from a live Azure Domain
-Controller ([`Cloud-Security/Azure-Windows-Server-Lab`](../../Cloud-Security/Azure-Windows-Server-Lab/README.md))
-via `Export-SecurityEventLog.ps1`, producing 392 findings (1 CRITICAL, 16
-HIGH, 375 MEDIUM) — see that lab's README for the full breakdown and honest
-interpretation of what those findings actually mean (mostly legitimate
-administrative/service activity, correctly flagged but not an intrusion).
+## Real-Data Triage
 
-## Current status
+The documented results include:
 
-**Complete — validated against both synthetic and real data.**
+- 375 medium findings dominated by `SYSTEM`, machine-account and normal service/interactive activity.
+- 16 high findings associated largely with the AD DS forest-promotion process and resulting group changes.
+- 1 critical audit-log-cleared finding associated with lab configuration/promotion activity rather than a confirmed attacker action.
 
-The synthetic dataset includes benign noise (single failed logons, non-RC4
-service ticket requests) alongside the attack patterns above, to demonstrate
-the detection logic does not fire on ordinary activity. The real dataset
-demonstrates the same logic running against actual Windows Security
-telemetry from a deployed Domain Controller, including correctly-flagged
-findings that turned out to be authorized administrative activity on
-investigation — a realistic SOC triage scenario, not a cherry-picked clean
-result.
+This demonstrates an important SOC skill: **detection output is an investigation starting point, not a verdict**.
+
+## Evidence
+
+- `Data/synthetic-ad-events.json` — controlled test input
+- `Evidence/ad-analysis.json` — synthetic analysis
+- Azure lab `Evidence/raw-security-events.json` — real Windows Security telemetry
+- Azure lab `Evidence/real-ad-analysis.json` — real-data analysis
+- `Scripts/ad_security_event_analyzer.py` — detection/analysis logic
+
+## Analyst Workflow
+
+**Event → analytic match → account/host context → related activity → benign explanation or escalation → documented finding**
+
+## Limitations
+
+The real dataset is from a controlled personal lab and is not representative of enterprise volume or attacker diversity. Findings are therefore suitable as portfolio evidence of detection analysis and triage methodology, not as proof of production incident-response experience.
