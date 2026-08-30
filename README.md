@@ -66,7 +66,7 @@ For major projects, documentation aims to cover:
 2. Environment and tooling
 3. Procedure or attack simulation
 4. Evidence collected
-5. Detection or analysis performed
+5. Detection/analysis performed
 6. Findings and security impact
 7. MITRE ATT&CK or relevant framework mapping
 8. Remediation and hardening
@@ -119,6 +119,16 @@ That foundation informs my approach to security: understand the environment, ide
 
 **Primary:** SOC Analyst · Security Operations Analyst · Cybersecurity Analyst  
 **Secondary:** Detection Engineering · Incident Response · Threat Hunting · Security Automation · Junior Security Engineering
+
+<!-- START_SECTION:activity -->
+### Recent Portfolio Activity
+
+- **Portfolio protection and ownership notice** — copyright and usage notice maintained
+- **Automated resume build** — recruiter-facing resume maintained through repository automation
+- **Live detection validation** — Windows/Sysmon/Wazuh LSASS detection evidence published
+- **Recruiter accuracy pass** — portfolio content standardized for consistency and evidence clarity
+- **Lab portfolio expansion** — security operations, DFIR, network, cloud, application, and automation work consolidated
+<!-- END_SECTION:activity -->
 
 ## 🌐 Portfolio
 
