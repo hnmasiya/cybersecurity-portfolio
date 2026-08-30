@@ -59,6 +59,13 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
   <li>Configured File Integrity Monitoring (FIM) across critical Linux system binaries and configuration files.</li>
 </ul>
 
+<div class="project-title">Windows Sysmon / Wazuh LSASS Detection Validation</div>
+<ul>
+  <li>Captured and validated live Sysmon Event ID 10 telemetry from a self-owned Windows Server lab through Wazuh Agent 003 (dc01-lab).</li>
+  <li>Correlated PowerShell process access to <code>lsass.exe</code> with custom Wazuh rule <code>100312</code> (Level 13), including observed event records 17575 and 17580 and <code>GrantedAccess: 0x1010</code>.</li>
+  <li>Mapped the investigation to MITRE ATT&amp;CK T1003.001 (LSASS Memory) and T1059.001 (PowerShell), while explicitly distinguishing observed LSASS access from proof of successful credential dumping.</li>
+</ul>
+
 <div class="project-title">Active Directory Security Event Automation</div>
 <ul>
   <li>Developed Python tools to parse Windows Security XML event logs (4624, 4625, 4728).</li>
