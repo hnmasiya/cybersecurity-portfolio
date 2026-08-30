@@ -53,8 +53,8 @@ jobs:
           # PAT from a real collaborator avoids that gate entirely.
           GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Hazvinei Nomatter Masiya"
+          git config user.email "norman.masiya@gmail.com"
 
           git add Resume_Hazvinei_Masiya.pdf
 
@@ -75,7 +75,7 @@ jobs:
 
           PR_URL=$(gh pr create --base main --head "$BRANCH" \
             --title "auto: build updated resume PDF" \
-            --body "Automated rebuild of \`Resume_Hazvinei_Masiya.pdf\` from the updated \`Resume_Hazvinei_Masiya.md\`.")
+            --body "Automated rebuild of \`Resume_Hazvinei_Masiya.pdf\` from the updated \`Resume_Hazvinei_Masiya.md\`." )
 
           # `gh pr checks --watch` exits immediately with "no checks
           # reported" if called before GitHub has registered any check
