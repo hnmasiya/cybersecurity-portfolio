@@ -1,209 +1,144 @@
-# Hazvinei Nomatter Masiya
+# Cybersecurity Portfolio — Hazvinei Nomatter Masiya
 
-## Cybersecurity Analyst · Security Operations · Detection & Automation
+## SOC Analysis • Detection Engineering • Incident Response • Security Automation
 
-**Enterprise IT Professional | CompTIA Security+ Certified | Google Cybersecurity**
+**Cybersecurity Analyst | CompTIA Security+ Certified | 12+ Years Enterprise IT**
 
-12+ years of professional IT experience supporting Windows environments, infrastructure, access control, endpoint security, system hardening, troubleshooting, and business-critical operations — now focused on cybersecurity, security operations, detection, investigation, and automation.
+I bring 12+ years of professional enterprise IT and infrastructure experience into cybersecurity, with hands-on work focused on **security operations, detection engineering, incident investigation, Windows/Active Directory security, network security, cloud security, and automation**.
 
-Hands-on work across security operations, detection engineering, incident response, digital forensics, Windows and Active Directory security, network security, cloud security, and security automation.
+This repository is an evidence-focused technical portfolio. Projects identify their evidence basis as **observed, synthetic, or methodology/architecture-based** so that recruiters can distinguish demonstrated telemetry from simulated exercises and design work.
 
----
+## Start Here
 
-## 🎯 What I Bring to a SOC / Security Team
+### 🛡️ SOC & Detection
+- **Wazuh SIEM** — alert triage, custom rules, File Integrity Monitoring and security-event analysis
+- **Windows + Sysmon** — endpoint telemetry, process activity and detection validation
+- **Detection Engineering** — attack simulation, rule development, validation and MITRE ATT&CK mapping
 
-**Target roles:** SOC Analyst (L1–L2) · Security Analyst · Security Operations · Detection Engineering · Threat Hunting  
-**Proven:** Wazuh SIEM + custom detection rules · Live attack simulations with captured alerts · Incident response & DFIR workflows · 12+ years enterprise infrastructure experience  
-**Evidence:** 23 security labs and projects, with evidence clearly differentiated as observed, synthetic, or methodology/architecture-based.
+### 🚨 Incident Response & DFIR
+- LSASS process-access investigation mapped to **MITRE ATT&CK T1003.001**
+- Linux forensic investigation and evidence verification
+- Windows memory-forensics exercises
+- Incident-response workflows covering investigation, containment, evidence handling and recovery planning
 
-## 🏆 Portfolio Highlights
+### 🖥️ Windows & Active Directory Security
+- Windows Security event analysis
+- Active Directory identity and access-control scenarios
+- Least privilege and privilege monitoring
+- Endpoint hardening and security configuration
 
-**23 Security Labs | Evidence-Backed Security Portfolio**
+### 🌐 Network Security
+- Wireshark / tshark PCAP analysis
+- Nmap reconnaissance and network-security analysis
+- Traffic investigation and IOC extraction
 
-- **Real Infrastructure** — Azure Domain Controller + Wazuh SIEM + Sysmon endpoint monitoring over Tailscale mesh VPN
-- **Live Detection Validation** — Real Windows/Sysmon telemetry correlated with Wazuh detections, including LSASS process-access investigation mapped to MITRE ATT&CK T1003.001
-- **Credible Findings** — Real Windows Security events, PCAP traffic, Sysmon telemetry, detection alerts, and investigation evidence documented where applicable
+### ☁️ Cloud & Infrastructure Security
+- GCP secure landing-zone architecture
+- Terraform infrastructure-as-code
+- VPC and IAM security concepts
+- Infrastructure security controls and hardening
 
-### Key Technical Wins
+### ⚙️ Security Automation
+- Python security tooling
+- Bash and PowerShell workflows
+- Security-log parsing
+- Detection and evidence-processing automation
+- Automated repository quality and validation checks
 
-- Debugged and fixed a Sysmon `STATUS_STACK_BUFFER_OVERRUN` crash caused by field-name validation issues in Events 7 and 9
-- Built working detections for T1003 (Credential Access), T1053/T1547 (Persistence), and T1059 (Execution)
-- Validated live Windows/Sysmon/Wazuh detection of PowerShell process access targeting LSASS with custom rule `100312`, Level 13, mapped to T1003.001
-- Resolved Wazuh false positives, pre-existing rule conflicts, rule-group naming inconsistencies, and stale event subscriptions
-- Clearly distinguish observed telemetry from synthetic fixtures and methodology/architecture-based work
+## Featured Evidence
 
-📊 [📖 Read Sysmon Case Study](#sysmon-case-study) · [🔍 Browse Security Portfolio](#-security-portfolio) · [📋 View Portfolio Structure](#-portfolio-structure) · [🔗 Live Portfolio](https://masiya-hub.org)
+| Priority | Project Area | What to Look For |
+|---|---|---|
+| **1** | **SOC / SIEM** | Windows → Sysmon → Wazuh telemetry, detections and alert investigation |
+| **2** | **Detection Engineering** | Attack simulation, custom detections, validation and MITRE mapping |
+| **3** | **Incident Response / DFIR** | Investigation workflow, evidence handling and forensic analysis |
+| **4** | **Windows / AD Security** | Authentication events, privilege monitoring and identity security |
+| **5** | **Network Security** | PCAP investigation, reconnaissance and IOC analysis |
+| **6** | **Cloud Security** | Secure GCP architecture and Terraform controls |
+| **7** | **Application Security** | DVWA and OWASP Juice Shop assessments |
+| **8** | **Automation** | Python/Bash/PowerShell security workflows and validation tooling |
 
----
+## Evidence Standard
 
-## 🔐 Security Portfolio
+For major projects, documentation aims to cover:
 
-This repository documents practical security investigations, detection engineering projects, incident-response exercises, security assessments, automation, and infrastructure security work.
+1. Objective and security scenario
+2. Environment and tooling
+3. Procedure or attack simulation
+4. Evidence collected
+5. Detection/analysis performed
+6. Findings and security impact
+7. MITRE ATT&CK or relevant framework mapping
+8. Remediation and hardening
+9. Validation and expected outcome
+10. Lessons learned
 
-### Security Operations & Detection
+Projects are explicitly distinguished as **professional experience, independent hands-on work, or coursework** where applicable. No simulated activity is presented as client or production work.
 
-- **Wazuh SIEM Detection Lab** — custom detection rules, File Integrity Monitoring, security event analysis
-- **Sysmon Detection Engineering** — process and network activity detection
-- **Active Directory Security** — Windows security events, privilege monitoring, identity security
-- **Threat Hunting** — IOC analysis, suspicious activity investigation, MITRE ATT&CK mapping
+## Core Technologies
 
-### Offensive Security
+**SIEM & Detection:** Wazuh · Sysmon · Sigma · MITRE ATT&CK  
+**DFIR:** Volatility · AVML · forensic analysis  
+**Windows / Identity:** Windows Server · Active Directory · PowerShell · Microsoft 365  
+**Network Security:** Wireshark · tshark · Nmap · TCP/IP  
+**Application Security:** Burp Suite · OWASP · DVWA · OWASP Juice Shop  
+**Cloud / IaC:** GCP · Terraform · VPC · IAM  
+**Automation:** Python · Bash · PowerShell
 
-- **Attack Simulation & Detection Engineering Lab** — MITRE ATT&CK techniques across real, self-owned platforms, paired with custom Wazuh detection rules and documented validation evidence
+## Repository Structure
 
-### Incident Response & Digital Forensics
+- `SIEM/` — Wazuh detection engineering and alert investigation
+- `Endpoint-Security/` — Windows/Sysmon detection engineering
+- `Active-Directory/` — Windows and AD security
+- `Incident-Response/` — investigation and response workflows
+- `DFIR/` — forensic investigation and IOC analysis
+- `Threat-Hunting/` — hypothesis-driven security investigations
+- `Network-Security/` — PCAP analysis and reconnaissance
+- `Web-Security/` — DVWA and OWASP Juice Shop assessments
+- `Cloud-Security/` — cloud security and infrastructure-as-code
+- `Security-Automation/` / `Automation/` — security tooling and repeatable workflows
+- `AppSec-DevSecOps/` — application and pipeline security work
+- `Executive-Security-Reporting/` — security findings translated for decision-makers
+- `Coursework/` — coursework and learning exercises kept separate from evidence-backed labs
+- `tests/` — automated tests for portfolio automation tooling
+- `.github/workflows/` — repository quality, security and maintenance automation
 
-- **Enterprise Ransomware Incident Response** — investigation workflow, containment, evidence handling, recovery planning
-- **Linux DFIR Investigation** — forensic evidence analysis, SHA-256 verification, timeline reconstruction
-- **Windows Memory Forensics** — memory acquisition and analysis
-- **Advanced Threat Operations** — threat hunting, malware-related investigation, Linux and container security
-
-### Network Security
-
-- **PCAP Network Security Analysis** — traffic investigation, scanning detection, IOC extraction
-- **Wireshark / tshark**
-- **Nmap**
-- Network reconnaissance and security analysis
-
-### Application Security
-
-- **DVWA Security Assessments**
-- OWASP-based web security testing
-- Burp Suite
-- Vulnerability identification and evidence-driven reporting
-
-### Cloud & Infrastructure Security
-
-- **GCP Secure Landing Zone** — org policy guardrails, folder structure, Shared VPC, centralized logging
-- Terraform Infrastructure as Code
-- Cloud security architecture
-- IAM security and least privilege
-- Cloud Security Posture Management
-
-### Security Automation
-
-- Python
-- Bash
-- PowerShell
-- Security log parsing
-- Detection tooling
-- Evidence-processing automation
-- Pytest unit test suite covering the automation scripts (`tests/`)
-
----
-
-## 🧰 Core Technologies
-
-| Area | Technologies |
-|---|---|
-| SIEM & Detection | Wazuh, Sysmon, Sigma |
-| DFIR | Volatility, AVML, forensic analysis |
-| Network Security | Wireshark, tshark, Nmap |
-| Windows Security | Windows Server, Active Directory, PowerShell |
-| Linux | Linux administration, DFIR, security tooling |
-| Application Security | Burp Suite, OWASP, DVWA |
-| Cloud | GCP, AWS security concepts |
-| Infrastructure as Code | Terraform |
-| Automation | Python, Bash, PowerShell |
-| Frameworks | MITRE ATT&CK, OWASP |
-
----
-
-## 🏆 Certifications
+## Certifications
 
 - **CompTIA Security+ — SY0-701**
 - **Google Cybersecurity Professional Certificate**
 - **Google IT Support Professional Certificate**
 
-## 🧪 Hands-On Cybersecurity Training
+## Professional Foundation
 
-- **TryHackMe** — Hands-on cybersecurity labs and security training  
-  [View TryHackMe Profile →](https://tryhackme.com/p/norman.masiya)
+My cybersecurity work builds on 12+ years of enterprise IT operations across Windows environments, Active Directory, access control, endpoint protection, system hardening, patch management, infrastructure troubleshooting and business-critical support.
 
-## 🎓 Education
+That foundation informs my approach to security: understand the environment, identify risk, protect systems, detect abnormal activity, investigate evidence, and remediate the underlying issue.
 
----
+## Career Focus
 
-## 📂 Portfolio Structure
-
-The repository is organized around practical security domains:
-
-- `SIEM/` — Wazuh detection engineering, alert investigation, File Integrity Monitoring
-- `Security-Automation/` — Python tooling for alert triage, enrichment, log anomaly detection, file integrity monitoring
-- `Threat-Hunting/` — hypothesis-driven hunts and offline detection validation
-- `Endpoint-Security/` — Windows/Sysmon detection engineering
-- `Incident-Response/` — investigation workflow, containment, evidence handling
-- `DFIR/` — Linux forensic investigation, IOC extraction
-- `Network-Security/` — PCAP analysis, Wireshark, Nmap
-- `Web-Security/` — DVWA and OWASP Juice Shop assessments, PortSwigger Academy
-- `Active-Directory/` — Windows/AD security lab
-- `Cloud-Security/` — cloud security fundamentals; Terraform/PowerShell IaC for an Azure Windows Server lab and a GCP Secure Landing Zone
-- `Linux-Security/` — Linux host hardening audit lab, validated against a real personal host
-- `Docker-Labs/` — container configuration security audit lab, validated against a real Docker host
-- `Offensive-Security/` — real attack simulation and detection engineering lab, validated against live infrastructure, plus a methodology pentest report
-- `AppSec-DevSecOps/`, `Enterprise-Security/` — supporting domain reports
-- `Scripts/` — repository automation and quality-check tooling
-- `tests/` — pytest suite covering the automation scripts above
-- `Coursework/` — Google Cybersecurity Professional Certificate labs and early independent follow-on projects, kept separate from the evidence-backed labs above
-
-Projects contain technical documentation, investigation methodology, configurations, scripts, reports, and supporting evidence where applicable.
-
-Work is identified where appropriate as observed, synthetic, or architecture/methodology-based.
-
----
+**Primary:** SOC Analyst · Security Operations Analyst · Cybersecurity Analyst  
+**Secondary:** Detection Engineering · Incident Response · Threat Hunting · Security Automation · Junior Security Engineering
 
 <!-- START_SECTION:activity -->
 ### Recent Portfolio Activity
 
-- **Portfolio protection and ownership notice** — copyright and usage notice added
-- **Automated resume build** — current recruiter-facing resume maintained through repository automation
+- **Portfolio protection and ownership notice** — copyright and usage notice maintained
+- **Automated resume build** — recruiter-facing resume maintained through repository automation
 - **Live detection validation** — Windows/Sysmon/Wazuh LSASS detection evidence published
 - **Recruiter accuracy pass** — portfolio content standardized for consistency and evidence clarity
 - **Lab portfolio expansion** — security operations, DFIR, network, cloud, application, and automation work consolidated
 <!-- END_SECTION:activity -->
 
-## 🎯 Career Focus
+## 🌐 Portfolio
 
-Currently targeting opportunities in:
-
-- SOC Analyst
-- Security Analyst
-- Security Operations
-- Detection Engineering
-- Incident Response
-- Digital Forensics
-- Information Security
-- Security Engineering
-
-My background combines 12+ years of professional enterprise IT experience with hands-on cybersecurity engineering and security operations work.
-
----
-
-## 🌐 Portfolio Website
-
-**https://masiya-hub.org**
-
-The interactive portfolio provides a recruiter-friendly overview of my security projects, technical capabilities, certifications, and supporting evidence.
-
----
-
-## 📫 Contact
-
-**Location:** Harare, Zimbabwe  
-Open to local and international cybersecurity opportunities.
-
-**Email:** norman.masiya@gmail.com  
+**Live portfolio:** https://masiya-hub.org/  
+**GitHub profile:** https://github.com/hnmasiya  
 **LinkedIn:** https://www.linkedin.com/in/hazvinei-masiya/
 
----
+## ⚠️ Responsible Security Use
 
-## ⚠️ Disclaimer
-
-This repository is maintained for professional portfolio and educational purposes.
-
-Security testing is performed only against systems and environments that are intentionally authorized for testing. Where projects use simulated or synthetic scenarios, this is identified in the accompanying documentation.
-
----
+All security testing is performed only against systems and environments intentionally authorized for testing. Simulated and synthetic scenarios are identified in their accompanying documentation.
 
 ## © Portfolio Ownership
 
