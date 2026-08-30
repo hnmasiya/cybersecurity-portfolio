@@ -4,7 +4,7 @@
 
 Enterprise IT Professional | CompTIA Security+ | Google Cybersecurity
 
-12+ years of hands-on enterprise IT experience (since March 2014) supporting Windows environments, infrastructure, access control, endpoint security, system hardening, troubleshooting, and business-critical operations — now focused on cybersecurity, security operations, detection, investigation, and automation.
+12+ years of professional IT experience supporting Windows environments, infrastructure, access control, endpoint security, system hardening, troubleshooting, and business-critical operations — now focused on cybersecurity, security operations, detection, investigation, and automation.
 
 Hands-on work across security operations, detection engineering, incident response, digital forensics, Windows and Active Directory security, network security, cloud security, and security automation.
 
@@ -14,23 +14,24 @@ Hands-on work across security operations, detection engineering, incident respon
 
 **Ready for:** SOC Analyst (L1-L2) | Detection Engineer (L2-L3) | Security Analyst | Threat Hunting  
 **Proven:** Real Wazuh SIEM setup + custom detection rules | Live attack simulations with captured alerts | Incident response & DFIR workflows | 12+ years enterprise infrastructure  
-**Evidence:** 23 labs backed by real data — 409 Windows events, 52 PCAP packets, 6/6 attack simulations validated against live infrastructure
+**Evidence:** 23 security labs and projects with evidence differentiated as observed, synthetic, or methodology/architecture-based
 
 ## 🏆 Portfolio Highlights
 
-**23/23 Security Labs — 100% Evidence-Backed**
+**23 Security Labs | Evidence-Backed Security Portfolio**
 
-✅ **Real Infrastructure** — Deployed Azure Domain Controller + Wazuh SIEM + Sysmon endpoint monitoring over Tailscale mesh VPN
+✅ **Real Infrastructure** — Azure Domain Controller + Wazuh SIEM + Sysmon endpoint monitoring over Tailscale mesh VPN
 
-✅ **Live Attack Simulations** — 6 of 6 attack scenarios trigger real Wazuh alerts (3 MITRE techniques × 2 platforms: Linux + Windows)
+✅ **Live Detection Validation** — Real Windows/Sysmon telemetry correlated with Wazuh detections, including LSASS process-access investigation mapped to MITRE T1003.001
 
-✅ **Credible Findings** — 409 real Windows Security events analyzed, 52 PCAP packets extracted, real Sysmon telemetry correlated with detections
+✅ **Credible Findings** — Real Windows Security events, PCAP traffic, Sysmon telemetry, detection alerts, and investigation evidence documented where applicable
 
 **Key Technical Wins**
 - Debugged & fixed Sysmon `STATUS_STACK_BUFFER_OVERRUN` crash (root cause: field name validation in Events 7 & 9)
 - Built working detections for T1003 (Credential Access), T1053/T1547 (Persistence), T1059 (Execution)
-- Resolved 4 real issues in the loop: Wazuh false positives, pre-existing rule conflicts, rule group naming inconsistencies, stale event subscriptions
-- All labs tested against synthetic fixtures *and* real infrastructure — no shortcuts
+- Validated live Windows/Sysmon/Wazuh detection of PowerShell process access targeting LSASS with custom rule `100312`, Level 13, mapped to T1003.001
+- Resolved real issues including Wazuh false positives, pre-existing rule conflicts, rule group naming inconsistencies, and stale event subscriptions
+- Clearly distinguish observed telemetry from synthetic fixtures and methodology/architecture-based work
 
 📊 [📖 Read Sysmon Case Study](#sysmon-case-study) | [🔍 Browse Key Labs](#-security-portfolio) | [📋 Full Lab Index](#-portfolio-structure) | [🔗 Live Portfolio](https://masiya-hub.org)
 
@@ -49,7 +50,7 @@ This repository documents practical security investigations, detection engineeri
 
 ### Offensive Security
 
-- **Attack Simulation & Detection Engineering Lab** — 3 MITRE ATT&CK techniques (Execution, Persistence, Credential Access) validated across 2 real, self-owned platforms, each paired with a real custom Wazuh detection rule
+- **Attack Simulation & Detection Engineering Lab** — MITRE ATT&CK techniques across real, self-owned platforms, paired with custom Wazuh detection rules and documented validation evidence
 
 ### Incident Response & Digital Forensics
 
@@ -120,6 +121,7 @@ This repository documents practical security investigations, detection engineeri
 
 - **TryHackMe** — Hands-on cybersecurity labs and security training  
   [View TryHackMe Profile →](https://tryhackme.com/p/norman.masiya)
+
 ## 🎓 Education
 
 - **National Diploma in Information Communication Technology**
@@ -147,7 +149,7 @@ The repository is organized around practical security domains:
 - `AppSec-DevSecOps/`, `Enterprise-Security/` — supporting domain reports
 - `Scripts/` — repository automation and quality-check tooling
 - `tests/` — pytest suite covering the automation scripts above
-- `Coursework/` — Google Cybersecurity Professional Certificate labs (2023) and early independent follow-on projects, kept separate from the evidence-backed labs above
+- `Coursework/` — Google Cybersecurity Professional Certificate labs and early independent follow-on projects, kept separate from the evidence-backed labs above
 
 Projects contain technical documentation, investigation methodology, configurations, scripts, reports, and supporting evidence where applicable.
 
@@ -157,11 +159,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* auto: build updated resume PDF (#94) (15 hours ago)
-* docs: add National Diploma to current resume (#93) (15 hours ago)
-* Merge pull request #92 from hnmasiya/reconcile-main-20260829-111647 (15 hours ago)
-* Merge GitHub main with local portfolio history (15 hours ago)
-* docs: final recruiter accuracy pass (15 hours ago)
+* auto: build updated resume PDF (#94)
+* docs: add National Diploma to current resume (#93)
+* Merge pull request #92 from hnmasiya/reconcile-main-20260829-111647
+* Merge GitHub main with local portfolio history
+* docs: final recruiter accuracy pass
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
@@ -177,7 +179,7 @@ Currently targeting opportunities in:
 - Information Security
 - Security Engineering
 
-My background combines enterprise IT operations experience with hands-on cybersecurity engineering and security operations work.
+My background combines 12+ years of professional enterprise IT experience with hands-on cybersecurity engineering and security operations work.
 
 ---
 
@@ -196,6 +198,8 @@ The interactive portfolio provides a recruiter-friendly overview of my security 
 Open to local and international cybersecurity opportunities.
 
 **Email:** norman.masiya@gmail.com
+
+**LinkedIn:** https://www.linkedin.com/in/hazvinei-masiya/
 
 ---
 
