@@ -157,9 +157,11 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* Merge: Standardize portfolio for recruiter review (14 minutes ago)
-* chore: standardize portfolio for recruiter review (16 minutes ago)
-* Merge: Permanent fix for Wazuh rule loading errors (3 hours ago)
+* auto: build updated resume PDF (#94) (15 hours ago)
+* docs: add National Diploma to current resume (#93) (15 hours ago)
+* Merge pull request #92 from hnmasiya/reconcile-main-20260829-111647 (15 hours ago)
+* Merge GitHub main with local portfolio history (15 hours ago)
+* docs: final recruiter accuracy pass (15 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
