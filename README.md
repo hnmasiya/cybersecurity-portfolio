@@ -2,7 +2,7 @@
 
 ## Cybersecurity Analyst · Security Operations · Detection & Automation
 
-Enterprise IT Professional | CompTIA Security+ | Google Cybersecurity
+**Enterprise IT Professional | CompTIA Security+ Certified | Google Cybersecurity**
 
 12+ years of professional IT experience supporting Windows environments, infrastructure, access control, endpoint security, system hardening, troubleshooting, and business-critical operations — now focused on cybersecurity, security operations, detection, investigation, and automation.
 
@@ -10,30 +10,29 @@ Hands-on work across security operations, detection engineering, incident respon
 
 ---
 
-## 🎯 What I Bring to a SOC/Security Team
+## 🎯 What I Bring to a SOC / Security Team
 
-**Ready for:** SOC Analyst (L1-L2) | Detection Engineer (L2-L3) | Security Analyst | Threat Hunting  
-**Proven:** Real Wazuh SIEM setup + custom detection rules | Live attack simulations with captured alerts | Incident response & DFIR workflows | 12+ years enterprise infrastructure  
-**Evidence:** 23 security labs and projects with evidence differentiated as observed, synthetic, or methodology/architecture-based
+**Target roles:** SOC Analyst (L1–L2) · Security Analyst · Security Operations · Detection Engineering · Threat Hunting  
+**Proven:** Wazuh SIEM + custom detection rules · Live attack simulations with captured alerts · Incident response & DFIR workflows · 12+ years enterprise infrastructure experience  
+**Evidence:** 23 security labs and projects, with evidence clearly differentiated as observed, synthetic, or methodology/architecture-based.
 
 ## 🏆 Portfolio Highlights
 
 **23 Security Labs | Evidence-Backed Security Portfolio**
 
-✅ **Real Infrastructure** — Azure Domain Controller + Wazuh SIEM + Sysmon endpoint monitoring over Tailscale mesh VPN
+- **Real Infrastructure** — Azure Domain Controller + Wazuh SIEM + Sysmon endpoint monitoring over Tailscale mesh VPN
+- **Live Detection Validation** — Real Windows/Sysmon telemetry correlated with Wazuh detections, including LSASS process-access investigation mapped to MITRE ATT&CK T1003.001
+- **Credible Findings** — Real Windows Security events, PCAP traffic, Sysmon telemetry, detection alerts, and investigation evidence documented where applicable
 
-✅ **Live Detection Validation** — Real Windows/Sysmon telemetry correlated with Wazuh detections, including LSASS process-access investigation mapped to MITRE T1003.001
+### Key Technical Wins
 
-✅ **Credible Findings** — Real Windows Security events, PCAP traffic, Sysmon telemetry, detection alerts, and investigation evidence documented where applicable
-
-**Key Technical Wins**
-- Debugged & fixed Sysmon `STATUS_STACK_BUFFER_OVERRUN` crash (root cause: field name validation in Events 7 & 9)
-- Built working detections for T1003 (Credential Access), T1053/T1547 (Persistence), T1059 (Execution)
+- Debugged and fixed a Sysmon `STATUS_STACK_BUFFER_OVERRUN` crash caused by field-name validation issues in Events 7 and 9
+- Built working detections for T1003 (Credential Access), T1053/T1547 (Persistence), and T1059 (Execution)
 - Validated live Windows/Sysmon/Wazuh detection of PowerShell process access targeting LSASS with custom rule `100312`, Level 13, mapped to T1003.001
-- Resolved real issues including Wazuh false positives, pre-existing rule conflicts, rule group naming inconsistencies, and stale event subscriptions
+- Resolved Wazuh false positives, pre-existing rule conflicts, rule-group naming inconsistencies, and stale event subscriptions
 - Clearly distinguish observed telemetry from synthetic fixtures and methodology/architecture-based work
 
-📊 [📖 Read Sysmon Case Study](#sysmon-case-study) | [🔍 Browse Key Labs](#-security-portfolio) | [📋 Full Lab Index](#-portfolio-structure) | [🔗 Live Portfolio](https://masiya-hub.org)
+📊 [📖 Read Sysmon Case Study](#sysmon-case-study) · [🔍 Browse Security Portfolio](#-security-portfolio) · [📋 View Portfolio Structure](#-portfolio-structure) · [🔗 Live Portfolio](https://masiya-hub.org)
 
 ---
 
@@ -116,7 +115,6 @@ This repository documents practical security investigations, detection engineeri
 - **Google Cybersecurity Professional Certificate**
 - **Google IT Support Professional Certificate**
 
----
 ## 🧪 Hands-On Cybersecurity Training
 
 - **TryHackMe** — Hands-on cybersecurity labs and security training  
@@ -124,7 +122,7 @@ This repository documents practical security investigations, detection engineeri
 
 ## 🎓 Education
 
-- **National Diploma in Information Communication Technology**
+- **National Diploma in Information Communication Technology**  
   Harare Polytechnic
 
 ---
@@ -158,12 +156,13 @@ Work is identified where appropriate as observed, synthetic, or architecture/met
 ---
 
 <!-- START_SECTION:activity -->
-### Recent Lab & Security Updates
-* auto: build updated resume PDF (#94)
-* docs: add National Diploma to current resume (#93)
-* Merge pull request #92 from hnmasiya/reconcile-main-20260829-111647
-* Merge GitHub main with local portfolio history
-* docs: final recruiter accuracy pass
+### Recent Portfolio Activity
+
+- **Portfolio protection and ownership notice** — copyright and usage notice added
+- **Automated resume build** — current recruiter-facing resume maintained through repository automation
+- **Live detection validation** — Windows/Sysmon/Wazuh LSASS detection evidence published
+- **Recruiter accuracy pass** — portfolio content standardized for consistency and evidence clarity
+- **Lab portfolio expansion** — security operations, DFIR, network, cloud, application, and automation work consolidated
 <!-- END_SECTION:activity -->
 
 ## 🎯 Career Focus
@@ -193,12 +192,10 @@ The interactive portfolio provides a recruiter-friendly overview of my security 
 
 ## 📫 Contact
 
-**Location:** Harare, Zimbabwe
-
+**Location:** Harare, Zimbabwe  
 Open to local and international cybersecurity opportunities.
 
-**Email:** norman.masiya@gmail.com
-
+**Email:** norman.masiya@gmail.com  
 **LinkedIn:** https://www.linkedin.com/in/hazvinei-masiya/
 
 ---
@@ -208,3 +205,9 @@ Open to local and international cybersecurity opportunities.
 This repository is maintained for professional portfolio and educational purposes.
 
 Security testing is performed only against systems and environments that are intentionally authorized for testing. Where projects use simulated or synthetic scenarios, this is identified in the accompanying documentation.
+
+---
+
+## © Portfolio Ownership
+
+Original portfolio materials are protected by the repository's copyright and usage notice. Public availability is intended for professional review and does not grant permission to reproduce, republish, redistribute, present the work as your own, or commercially reuse original portfolio materials without permission.
