@@ -122,9 +122,6 @@ This repository documents practical security investigations, detection engineeri
 
 ## 🎓 Education
 
-- **National Diploma in Information Communication Technology**  
-  Harare Polytechnic
-
 ---
 
 ## 📂 Portfolio Structure
