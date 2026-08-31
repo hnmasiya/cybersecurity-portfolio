@@ -121,13 +121,12 @@ That foundation informs my approach to security: understand the environment, ide
 **Secondary:** Detection Engineering · Incident Response · Threat Hunting · Security Automation · Junior Security Engineering
 
 <!-- START_SECTION:activity -->
-### Recent Portfolio Activity
-
-- **Portfolio protection and ownership notice** — copyright and usage notice maintained
-- **Automated resume build** — recruiter-facing resume maintained through repository automation
-- **Live detection validation** — Windows/Sysmon/Wazuh LSASS detection evidence published
-- **Recruiter accuracy pass** — portfolio content standardized for consistency and evidence clarity
-- **Lab portfolio expansion** — security operations, DFIR, network, cloud, application, and automation work consolidated
+### Recent Lab & Security Updates
+* Finalize recruiter-focused security portfolio (#111) (7 hours ago)
+* Strengthen Wazuh detection engineering documentation (#110) (7 hours ago)
+* Improve recruiter-facing portfolio README (#109) (7 hours ago)
+* docs: remove outdated diploma reference from README (#108) (11 hours ago)
+* auto: build updated resume PDF (#107) (11 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🌐 Portfolio
