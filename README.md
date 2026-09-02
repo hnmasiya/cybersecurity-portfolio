@@ -122,11 +122,11 @@ That foundation informs my approach to security: understand the environment, ide
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* auto: update dynamic lab activity feed (#112) (24 hours ago)
-* Finalize recruiter-focused security portfolio (#111) (31 hours ago)
-* Strengthen Wazuh detection engineering documentation (#110) (31 hours ago)
-* Improve recruiter-facing portfolio README (#109) (31 hours ago)
-* docs: remove outdated diploma reference from README (#108) (35 hours ago)
+* auto: update dynamic lab activity feed (#113) (24 hours ago)
+* auto: update dynamic lab activity feed (#112) (2 days ago)
+* Finalize recruiter-focused security portfolio (#111) (2 days ago)
+* Strengthen Wazuh detection engineering documentation (#110) (2 days ago)
+* Improve recruiter-facing portfolio README (#109) (2 days ago)
 <!-- END_SECTION:activity -->
 
 ## 🌐 Portfolio
