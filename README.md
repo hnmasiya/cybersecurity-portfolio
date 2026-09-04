@@ -2,9 +2,9 @@
 
 ## SOC Analysis • Detection Engineering • Incident Response • Security Automation
 
-**Cybersecurity Analyst | CompTIA Security+ Certified | 12+ Years Enterprise IT**
+**CompTIA Security+ Certified Cybersecurity Analyst | 12+ Years Enterprise IT**
 
-I bring 12+ years of professional enterprise IT and infrastructure experience into cybersecurity, with hands-on work focused on **security operations, detection engineering, incident investigation, Windows/Active Directory security, network security, cloud security, and automation**.
+I bring 12+ years of professional enterprise IT and infrastructure experience into cybersecurity. My paid professional background is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated below come from independent, authorized hands-on labs, technical projects, and coursework. My work focuses on **security operations, detection engineering, incident investigation, Windows/Active Directory security, network security, cloud security, and automation**.
 
 This repository is an evidence-focused technical portfolio. Projects identify their evidence basis as **observed, synthetic, or methodology/architecture-based** so that recruiters can distinguish demonstrated telemetry from simulated exercises and design work.
 
@@ -73,7 +73,7 @@ For major projects, documentation aims to cover:
 9. Validation and expected outcome
 10. Lessons learned
 
-Projects are explicitly distinguished as **professional experience, independent hands-on work, or coursework** where applicable. No simulated activity is presented as client or production work.
+Projects are explicitly distinguished as **professional experience, independent hands-on work, or coursework** where applicable. No simulated activity is presented as client or production work, and self-owned lab infrastructure is not described as production infrastructure.
 
 ## Core Technologies
 

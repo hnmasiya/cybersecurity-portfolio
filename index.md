@@ -14,7 +14,7 @@ title: "Enterprise Cybersecurity & SOC Operations Portfolio"
 
 ## 👤 About Me
 
-I am a **CompTIA Security+ certified IT professional with 12+ years of enterprise IT experience** (since March 2014), building on that foundation with a strong hands-on cybersecurity focus across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.
+I am a **CompTIA Security+ certified enterprise IT professional with 12+ years of experience** (since March 2014), deliberately transitioning that foundation into cybersecurity. My paid professional experience is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated in this portfolio come from independent, authorized hands-on labs, technical projects, and coursework across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.
 
 My professional background includes supporting **enterprise sites and business-critical IT infrastructure**, with experience across Windows Server, Active Directory, endpoint security, networking, access control, system hardening, patch management, troubleshooting, and infrastructure operations.
 
@@ -238,17 +238,18 @@ The repository contains supporting screenshots and structured security reports.
 
 ### 🎯 Attack Simulation & Detection Engineering Lab
 
-**Evidence-backed — 6 of 6 technique/platform combinations validated with live-fired alerts**
+**Evidence-backed — 6 of 6 technique/platform combinations validated with live-fired alerts on self-owned lab infrastructure**
 
 * 3 real MITRE ATT&CK techniques — Execution (T1059), Persistence (T1053/T1547), and Credential Access (T1003)
 * 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server 2022 Domain Controller
-* All 6 Linux/Windows technique combinations executed against the live targets
+* All 6 Linux/Windows technique combinations executed against those authorized live targets
 * Custom Wazuh detection rules validated against genuine telemetry and live-fired alerts
+* **Scope clarification:** these are self-owned lab targets, not client or production infrastructure
 * Real simulation scripts for Linux and Windows with explicit cleanup procedures
 * Detection-engineering troubleshooting documented, including false-positive analysis, rule precedence, telemetry gaps, agent-state issues, and deployment validation
 * Credential-access testing documented with an explicit safety boundary around real credential material
 
-**Current status:** Complete — all 6 combinations are evidence-backed with timestamped live alerts preserved in the lab's `Evidence/` directory. The project demonstrates the full attack → telemetry → detection rule → Wazuh alert → validation workflow across both Linux and Windows.
+**Current status:** Complete — all 6 combinations are evidence-backed with timestamped live alerts preserved in the lab's `Evidence/` directory. The project demonstrates the full attack → telemetry → detection rule → Wazuh alert → validation workflow across both Linux and Windows. The validation was performed only against authorized, self-owned lab infrastructure.
 
 [View Attack Simulation & Detection Engineering Lab](./Offensive-Security/Attack-Simulation-Detection-Lab/README.md)
 
