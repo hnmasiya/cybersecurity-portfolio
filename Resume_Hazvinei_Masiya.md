@@ -1,4 +1,4 @@
-<!-- Resume maintained as the current August 2026 version. -->
+<!-- Resume maintained as the current September 2026 version. -->
 
 <style>
   @page { size: letter; margin: 0.35in; }
@@ -28,48 +28,48 @@
 </div>
 
 <h2>Professional Summary</h2>
-CompTIA Security+ certified IT professional with 12+ years of progressive experience across enterprise IT infrastructure, systems administration, network engineering, and security-conscious technical support — including enterprise SD-WAN deployment and network migrations. Independently developed SIEM detection engineering, threat hunting, and security automation skills (Wazuh, Sysmon, Python), demonstrated in a public, tested portfolio at masiya-hub.org.
+CompTIA Security+ certified enterprise IT professional with 12+ years of experience across enterprise IT infrastructure, systems administration, network engineering, and security-conscious technical support. I am deliberately transitioning that enterprise foundation into cybersecurity, with independent hands-on work in SIEM detection engineering, threat hunting, incident investigation, DFIR, Windows/Sysmon telemetry, and security automation using Wazuh, Sysmon, Python, Bash, and PowerShell. Professional employment experience and independent security-lab work are clearly distinguished throughout the portfolio.
 
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
-  <li><b>SIEM & Detection Engineering:</b> Wazuh SIEM, Sysmon XML Rules, Custom Alert Pipelines, FIM (File Integrity Monitoring)</li>
-  <li><b>DFIR & Threat Hunting:</b> Linux Auth/Syslog Forensics, PCAP Packet Analysis (Tshark/Wireshark), Hash Verification, MITRE ATT&CK Mapping</li>
-  <li><b>Security Automation & Scripting:</b> Python (Automated IOC & Log Parsers), Bash, PowerShell, YAML</li>
-  <li><b>Network & Systems Security:</b> Active Directory (GPO, Event Log Analysis), Dell Versa SD-WAN, Sophos XG, Aruba/Cisco Racking & VOS Upgrades</li>
-  <li><b>Cloud & DevSecOps:</b> GCP Multi-Tier Architecture (Terraform IaC, Cloud NAT, No Public IP Assigned to Internal Database Tier), GitHub Actions CI/CD</li>
+  <li><b>SIEM & Detection Engineering:</b> Wazuh SIEM, Sysmon XML Rules, Custom Alert Pipelines, FIM (File Integrity Monitoring), MITRE ATT&CK mapping</li>
+  <li><b>DFIR & Threat Hunting:</b> Linux Auth/Syslog Forensics, PCAP Packet Analysis (Tshark/Wireshark), Hash Verification, evidence preservation and investigation workflows</li>
+  <li><b>Security Automation & Scripting:</b> Python (IOC and log parsers), Bash, PowerShell, YAML, deterministic validation workflows</li>
+  <li><b>Network & Systems Security:</b> Active Directory (GPO, Event Log Analysis), Dell Versa SD-WAN, Sophos XG, Aruba/Cisco infrastructure, access control and hardening</li>
+  <li><b>Cloud & DevSecOps:</b> Azure Windows security lab, GCP Terraform architecture, GitHub Actions CI/CD, cloud security controls</li>
 </ul>
 
 <h2>Security Engineering Projects & Artifacts</h2>
 
-<div class="project-title">PCAP Traffic & Triage Automation</div>
+<div class="project-title">Windows Sysmon / Wazuh LSASS Detection Validation</div>
 <ul>
-  <li>Processed captured network traffic using Tshark and custom Python parsing scripts to identify suspicious HTTP requests, hosts, protocols, and indicators of compromise.</li>
-  <li>Automated detection of web application scans, SQL injection payloads (MITRE T1190), and command execution attempts.</li>
+  <li>Captured and validated Sysmon Event ID 10 telemetry from a self-owned Windows Server lab through Wazuh Agent 003 (dc01-lab).</li>
+  <li>Correlated process access to <code>lsass.exe</code> with custom Wazuh detection logic, including observed event records and <code>GrantedAccess</code> values.</li>
+  <li>Mapped the investigation to MITRE ATT&amp;CK T1003.001 and T1059.001 while explicitly distinguishing observed LSASS access from proof of successful credential dumping.</li>
+</ul>
+
+<div class="project-title">Wazuh SIEM Rules & FIM Lab</div>
+<ul>
+  <li>Authored custom XML detection rules for authentication and privilege-related activity and validated rule behavior against controlled test events.</li>
+  <li>Configured File Integrity Monitoring across critical Linux system binaries and configuration files and documented validation methodology.</li>
 </ul>
 
 <div class="project-title">Linux Incident Response & DFIR</div>
 <ul>
   <li>Analyzed Linux authentication and system logs to reconstruct post-incident attack timelines.</li>
-  <li>Verified SHA-256 evidence chain integrity and mapped unauthorized SSH key sessions to MITRE T1078.</li>
-</ul>
-
-<div class="project-title">Wazuh SIEM Rules & FIM Lab</div>
-<ul>
-  <li>Authored custom XML detection rules to flag sudo privilege escalation and validated them against test events.</li>
-  <li>Configured File Integrity Monitoring (FIM) across critical Linux system binaries and configuration files.</li>
-</ul>
-
-<div class="project-title">Windows Sysmon / Wazuh LSASS Detection Validation</div>
-<ul>
-  <li>Captured and validated live Sysmon Event ID 10 telemetry from a self-owned Windows Server lab through Wazuh Agent 003 (dc01-lab).</li>
-  <li>Correlated PowerShell process access to <code>lsass.exe</code> with custom Wazuh rule <code>100312</code> (Level 13), including observed event records 17575 and 17580 and <code>GrantedAccess: 0x1010</code>.</li>
-  <li>Mapped the investigation to MITRE ATT&amp;CK T1003.001 (LSASS Memory) and T1059.001 (PowerShell), while explicitly distinguishing observed LSASS access from proof of successful credential dumping.</li>
+  <li>Verified SHA-256 evidence integrity and mapped unauthorized SSH activity to MITRE ATT&amp;CK.</li>
 </ul>
 
 <div class="project-title">Active Directory Security Event Automation</div>
 <ul>
-  <li>Developed Python tools to parse Windows Security XML event logs (4624, 4625, 4728).</li>
-  <li>Automated real-time alerts for unauthorized 'Domain Admins' group membership modifications (MITRE T1098).</li>
+  <li>Developed Python tooling to parse Windows Security XML event logs (4624, 4625, 4728).</li>
+  <li>Automated identification of suspicious authentication and privileged group-membership activity for investigation.</li>
+</ul>
+
+<div class="project-title">PCAP Traffic & Triage Automation</div>
+<ul>
+  <li>Processed captured network traffic using Tshark and custom Python parsing scripts to identify suspicious HTTP requests, hosts, protocols, and indicators of compromise.</li>
+  <li>Automated triage of web-application scanning and SQL-injection patterns in controlled laboratory traffic.</li>
 </ul>
 
 <h2>Professional Experience</h2>
@@ -80,9 +80,9 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
 </div>
 <ul>
   <li>Investigate and resolve security-relevant incidents, including malware alerts, unauthorized access attempts, and connectivity disruptions.</li>
-  <li>Support vulnerability mitigation through structured patch management, maintaining compliant and up-to-date systems across client networks.</li>
-  <li>Deliver 1st and 2nd line IT support across multiple client environments, including secure endpoint deployment, desktop/laptop diagnostics, and hardened onboarding processes.</li>
-  <li>Develop IT support documentation and incident-handling procedures to standardize response consistency and reduce resolution time.</li>
+  <li>Support vulnerability mitigation through structured patch management and secure endpoint deployment across client environments.</li>
+  <li>Deliver 1st and 2nd line IT support across multiple client environments, including desktop/laptop diagnostics and hardened onboarding processes.</li>
+  <li>Develop IT support documentation and incident-handling procedures to standardize response consistency.</li>
 </ul>
 
 <div class="job-header">
@@ -91,13 +91,13 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
 </div>
 <ul>
   <li>Provide enterprise IT support, infrastructure administration, and network operations across client environments, including Active Directory administration, RBAC, and least-privilege access control.</li>
-  <li>Monitor endpoint, network, and system activity for anomalies, applying security-analyst triage principles to identify and escalate security-relevant incidents.</li>
-  <li>Deploy and configure enterprise Dell Versa SD-WAN appliances, including Versa Operating System (VOS) upgrades, IP configuration, live migration support, and connectivity validation.</li>
+  <li>Monitor endpoint, network, and system activity for anomalies, applying security-aware triage principles to identify and escalate security-relevant incidents.</li>
+  <li>Deploy and configure enterprise Dell Versa SD-WAN appliances, including Versa Operating System (VOS) upgrades, IP configuration, migration support, and connectivity validation.</li>
   <li>Deliver endpoint protection, patch deployment, and vulnerability mitigation across client networks; troubleshoot Microsoft 365 and application issues.</li>
   <li>Maintain technical documentation and SOP development to standardize client support delivery.</li>
   <li>Client project — Network Infrastructure Upgrade, Mastercard Zimbabwe (Mar–Apr 2022): installed sensor LAN cabling, decommissioned legacy Cisco switches/controllers/APs, and racked/installed new Aruba controllers, switches, and access points.</li>
-  <li>Client project — SD-WAN Circuit Deployment, SITA AERO (Jul 2026): racked, powered on, and configured two Dell Versa VEP1485 SD-WAN appliances via console CLI (IP/subnet/gateway configuration), cabled per installation diagram, and connected each device to a dedicated internet circuit; verified connectivity on both.</li>
-  <li>Client project — Qatar Airways VOS Upgrade &amp; SD-WAN Migration, Harare Airport Back Office &amp; City Office (Aug 2026): performed VOS upgrading, device onboarding, and SD-WAN migration on Dell VEP1425 appliances across both sites.</li>
+  <li>Client project — SD-WAN Circuit Deployment, SITA AERO (Jul 2026): configured two Dell Versa VEP1485 appliances via console CLI, connected each to a dedicated internet circuit, and verified connectivity.</li>
+  <li>Client project — Qatar Airways VOS Upgrade &amp; SD-WAN Migration, Harare Airport Back Office &amp; City Office (Aug 2026): performed VOS upgrading, device onboarding, and SD-WAN migration on Dell VEP1425 appliances.</li>
 </ul>
 
 <div class="job-header">
@@ -117,7 +117,7 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
 <ul>
   <li>Delivered desktop, network, and infrastructure support across multiple client environments; managed user access controls and permissions.</li>
   <li>Applied security patches, supported vulnerability remediation, and investigated authentication/access-control issues.</li>
-  <li>Client project — IT Equipment Deployment and Configuration, Ericsson Zimbabwe (Nov 2016–Dec 2018): re-imaged laptop fleets to company standards, joined devices to the domain, configured email access, and installed network switches/access points.</li>
+  <li>Client project — IT Equipment Deployment and Configuration, Ericsson Zimbabwe (Nov 2016–Dec 2018): re-imaged laptop fleets, joined devices to the domain, configured email access, and installed network switches/access points.</li>
 </ul>
 
 <div class="job-header">
@@ -135,7 +135,7 @@ CompTIA Security+ certified IT professional with 12+ years of progressive experi
   <span class="job-title">IT System Migration and Setup (Contract)</span> | <span class="company">Abbeydale Group</span>
 </div>
 <ul>
-  <li>Engaged as outside technical support prior to formally joining shermanit: migrated servers to improve application performance and reliability, installed new HP switches, re-imaged PCs to organizational standards, joined computers to the domain, connected VoIP phones, decommissioned outdated computers with secure data disposal, and reconnected IP cameras to new PoE switches.</li>
+  <li>Engaged as outside technical support prior to formally joining shermanit: migrated servers, installed HP switches, re-imaged PCs, joined computers to the domain, connected VoIP phones, decommissioned outdated computers with secure data disposal, and reconnected IP cameras to new PoE switches.</li>
 </ul>
 
 <h2>Certifications & Education</h2>
