@@ -26,7 +26,7 @@ Plus real evidence linking to your existing labs:
 - 23/23 labs (already complete)
 - Azure Windows Server lab with Sysmon & Wazuh
 - 409 real Windows Security events analyzed
-- 6 of 6 attack simulations with live alerts
+- 6 of 6 attack simulations with live alerts on self-owned, authorized lab targets
 - 52 PCAP packets from your network testing
 
 ## Next Steps (Choose One)
@@ -62,7 +62,7 @@ Example:
 ```
 T1059 (Command & Scripting Interpreter)
   Status: OBSERVED ← Updated from METHODOLOGY
-  Evidence: Azure-Windows-Server-Lab/Attack-Simulation (6 of 6 combos)
+  Evidence: Azure-Windows-Server-Lab/Attack-Simulation (6 of 6 combos; self-owned lab validation)
 ```
 
 ## Verification
