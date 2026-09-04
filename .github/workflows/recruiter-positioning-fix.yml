@@ -1,0 +1,70 @@
+name: Apply recruiter positioning fixes
+on:
+  push:
+    branches: [fix/recruiter-positioning-evidence-integrity]
+    paths-ignore:
+      - '.github/workflows/recruiter-positioning-fix.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply safe text fixes
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          replacements = {
+            'README.md': [
+              ('I bring 12+ years of professional enterprise IT and infrastructure experience into cybersecurity, with hands-on work focused on **security operations, detection engineering, incident investigation, Windows/Active Directory security, network security, cloud security, and automation**.', 'I bring 12+ years of professional enterprise IT and infrastructure experience into cybersecurity. My paid professional background is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated below come from independent, authorized hands-on labs, technical projects, and coursework. My work focuses on **security operations, detection engineering, incident investigation, Windows/Active Directory security, network security, cloud security, and automation**.'),
+              ('No simulated activity is presented as client or production work.', 'No simulated activity is presented as client or production work, and self-owned lab infrastructure is not described as production infrastructure.'),
+            ],
+            'index.md': [
+              ('I am a **CompTIA Security+ certified IT professional with 12+ years of enterprise IT experience** (since March 2014), building on that foundation with a strong hands-on cybersecurity focus across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.', 'I am a **CompTIA Security+ certified enterprise IT professional with 12+ years of experience** (since March 2014), deliberately transitioning that foundation into cybersecurity. My paid professional experience is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated in this portfolio come from independent, authorized hands-on labs, technical projects, and coursework across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.'),
+              ('### 🎯 Attack Simulation & Detection Engineering Lab\n\n**Evidence-backed — 6 of 6 technique/platform combinations validated with live-fired alerts**', '### 🎯 Attack Simulation & Detection Engineering Lab\n\n**Evidence-backed — 6 of 6 technique/platform combinations validated with live-fired alerts on self-owned lab infrastructure**'),
+              ('* 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server 2022 Domain Controller\n* All 6 Linux/Windows technique combinations executed against the live targets\n* Custom Wazuh detection rules validated against genuine telemetry and live-fired alerts', '* 2 real, self-owned targets: the home-lab Linux host and the Azure Windows Server 2022 Domain Controller\n* All 6 Linux/Windows technique combinations executed against those authorized live targets\n* Custom Wazuh detection rules validated against genuine telemetry and live-fired alerts\n* **Scope clarification:** these are self-owned lab targets, not client or production infrastructure'),
+              ('**Current status:** Complete — all 6 combinations are evidence-backed with timestamped live alerts preserved in the lab\'s `Evidence/` directory. The project demonstrates the full attack → telemetry → detection rule → Wazuh alert → validation workflow across both Linux and Windows.', '**Current status:** Complete — all 6 combinations are evidence-backed with timestamped live alerts preserved in the lab\'s `Evidence/` directory. The project demonstrates the full attack → telemetry → detection rule → Wazuh alert → validation workflow across both Linux and Windows. The validation was performed only against authorized, self-owned lab infrastructure.'),
+            ],
+            'setup-tools/QUICK-START.md': [
+              ('- 6 of 6 attack simulations with live alerts', '- 6 of 6 attack simulations with live alerts on self-owned, authorized lab targets'),
+              ('  Evidence: Azure-Windows-Server-Lab/Attack-Simulation (6 of 6 combos)', '  Evidence: Azure-Windows-Server-Lab/Attack-Simulation (6 of 6 combos; self-owned lab validation)'),
+            ],
+            'Offensive-Security/Attack-Simulation-Detection-Lab/README.md': [
+              ('> **Status: 6 of 6 combinations evidence-backed with live-fired alerts.**', '> **Status: 6 of 6 combinations evidence-backed with live-fired alerts on authorized, self-owned lab infrastructure.**'),
+              ('Nothing here is claimed as done until it has real, timestamped evidence behind it.', 'Nothing here is claimed as done until it has real, timestamped evidence behind it. These results are lab validation, not client or production security operations.'),
+            ],
+          }
+          for name, reps in replacements.items():
+              p = Path(name); s = p.read_text()
+              for old, new in reps:
+                  if old not in s: raise SystemExit(f'Missing expected text in {name}: {old[:100]!r}')
+                  s = s.replace(old, new)
+              p.write_text(s)
+          p = Path('index.html'); s = p.read_text()
+          reps = [
+            ('<div class="hero-subtitle">Cybersecurity Analyst · Security Operations · Detection & Automation</div>', '<div class="hero-subtitle">Enterprise IT Professional → Cybersecurity · Security Operations · Detection & Automation</div>'),
+            ('SOC & Detection Engineering professional with 12+ years enterprise IT infrastructure experience. Real Wazuh SIEM deployment + live attack simulations. 6 of 6 detection combos proven against production infrastructure. Ready for immediate SOC Analyst, Detection Engineer, or Threat Hunting roles.', 'Enterprise IT professional with 12+ years of enterprise IT infrastructure experience, deliberately transitioning into cybersecurity. Hands-on cybersecurity capability is demonstrated through independent, authorized labs in Wazuh SIEM, detection engineering, incident investigation, DFIR, Windows/Sysmon telemetry, network security, cloud security, and automation. The portfolio clearly separates professional IT experience from independent security work.'),
+            ('12+ years supporting Windows/Linux environments, infrastructure, Active Directory, endpoint security, system hardening — now focused on detection engineering, incident response, threat hunting, digital forensics, and security automation.', '12+ years supporting Windows/Linux environments, infrastructure, Active Directory, endpoint security, system hardening and business-critical IT operations — now applying that foundation to detection engineering, incident response, threat hunting, digital forensics and security automation.'),
+            ('<div class="metric-badge">🎯 6 of 6 Technique/Platform Combinations Evidence-Backed</div>', '<div class="metric-badge">🎯 6 of 6 Technique/Platform Combinations — Live Validation on Self-Owned Lab Targets</div>'),
+            ('T1059 Execution on Linux has a real, captured Wazuh alert - running it live surfaced a genuine false positive against Wazuh\'s own internal health checks, fixed with a decoded-field exclusion confirmed against real data, not guessed. The other 5 combinations have real, runnable simulation scripts and detection rules written, execution still pending.', 'All 6 technique/platform combinations have preserved live-alert evidence from authorized tests against self-owned Linux and Windows lab targets. The evidence is lab validation, not client or production infrastructure.'),
+            ('All 6 technique/platform combinations are evidence-backed with timestamped live alerts preserved in the lab Evidence directory.', 'All 6 technique/platform combinations are evidence-backed with timestamped live alerts preserved in the lab Evidence directory from authorized, self-owned lab testing.'),
+            ('<span class="project-badge badge-live">Complete</span>\n                        </div>\n                        <div class="metric-badge">🎯 6 of 6 Technique/Platform Combinations', '<span class="project-badge badge-live">Live Lab Evidence</span>\n                        </div>\n                        <div class="metric-badge">🎯 6 of 6 Technique/Platform Combinations'),
+            ('Available for Security Operations Center (SOC), Threat Hunting, and Security Engineering positions.', 'Targeting SOC Analyst, Security Operations Analyst, Cybersecurity Analyst, Detection Engineering, Threat Hunting, and Security Engineering opportunities.'),
+          ]
+          for old, new in reps:
+              if old not in s: raise SystemExit(f'Missing expected homepage text: {old[:120]!r}')
+              s = s.replace(old, new)
+          p.write_text(s)
+          PY
+      - name: Verify
+        run: |
+          ! grep -Rni --exclude-dir=.git -E 'proven against production infrastructure' index.html index.md README.md Offensive-Security/Attack-Simulation-Detection-Lab/README.md setup-tools/QUICK-START.md
+      - name: Commit fixes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md index.md index.html setup-tools/QUICK-START.md Offensive-Security/Attack-Simulation-Detection-Lab/README.md
+          git diff --cached --quiet || git commit -m 'Align recruiter positioning and evidence claims'
+          git push
