@@ -1,4 +1,4 @@
-name: Auto-Build Resume & Deploy Site
+name: Auto-Build Resumes & Deploy Site
 
 on:
   push:
@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - 'Resume_Hazvinei_Masiya.md'
+      - 'Resume_IT_Support_Infrastructure.md'
+      - 'resumes.html'
+      - '.github/workflows/auto-update.yml'
   workflow_dispatch:
 
 permissions:
@@ -32,57 +35,59 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libreoffice
 
-      - name: Convert Resume Markdown to PDF
+      - name: Build Both Resume PDFs
         run: |
-          if [ -f "Resume_Hazvinei_Masiya.md" ]; then
-            libreoffice --headless --convert-to pdf \
-              --outdir . \
-              Resume_Hazvinei_Masiya.md
-          else
-            echo "Resume markdown not found."
-            exit 1
-          fi
+          set -e
+          for resume in Resume_Hazvinei_Masiya.md Resume_IT_Support_Infrastructure.md; do
+            if [ -f "$resume" ]; then
+              libreoffice --headless --convert-to pdf --outdir . "$resume"
+            else
+              echo "Missing resume source: $resume"
+              exit 1
+            fi
+          done
+          mv -f Resume_Hazvinei_Masiya.pdf Resume_Cybersecurity_SOC.pdf
 
-      - name: Commit, Open PR, and Merge Updated Resume PDF
+      - name: Add Two-Resume Selector to Homepage
+        run: |
+          set -e
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+          old = '<a href="https://masiya-hub.org/Resume_Hazvinei_Masiya.pdf" class="btn-cta btn-outline" target="_blank">📄 Resume</a>'
+          new = '<a href="resumes.html" class="btn-cta btn-outline" target="_blank">📄 Resumes</a>'
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'href="resumes.html"' not in text:
+              raise SystemExit('Could not find the existing Resume CTA or an existing resumes.html link.')
+          p.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit, Open PR, and Merge Updated Resume Assets
         env:
-          # A PR opened with the default GITHUB_TOKEN is attributed to
-          # github-actions[bot], and GitHub holds pull_request-triggered
-          # check runs on a bot-opened PR for manual approval even in the
-          # PR's own (non-fork) repo - confirmed by actually running this
-          # workflow and seeing every check sit at "action_required". A
-          # PAT from a real collaborator avoids that gate entirely.
           GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
+          set -e
           git config user.name "Hazvinei Nomatter Masiya"
           git config user.email "norman.masiya@gmail.com"
 
-          git add Resume_Hazvinei_Masiya.pdf
+          git add Resume_Cybersecurity_SOC.pdf Resume_IT_Support_Infrastructure.pdf index.html resumes.html Resume_Hazvinei_Masiya.md Resume_IT_Support_Infrastructure.md .github/workflows/auto-update.yml
 
           if git diff --cached --quiet; then
-            echo "[PASS] Resume PDF is already up to date."
+            echo "[PASS] Resume assets and homepage are already up to date."
             exit 0
           fi
 
-          # main requires PRs with passing status checks - a direct push is
-          # rejected by branch protection, so this opens a PR and waits for
-          # its checks instead. Commit message intentionally has no
-          # [skip ci]: skipping CI would mean the required checks never
-          # report, and the merge below would hang waiting for them.
-          BRANCH="auto/resume-pdf-$(date -u +%Y%m%d%H%M%S)"
+          BRANCH="auto/two-resumes-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"
-          git commit -m "auto: build updated resume PDF"
+          git commit -m "auto: publish two recruiter-ready resumes"
           git push origin "$BRANCH"
 
           PR_URL=$(gh pr create --base main --head "$BRANCH" \
-            --title "auto: build updated resume PDF" \
-            --body "Automated rebuild of \`Resume_Hazvinei_Masiya.pdf\` from the updated \`Resume_Hazvinei_Masiya.md\`." )
+            --title "auto: publish two recruiter-ready resumes" \
+            --body "Automated build of the IT Support & Infrastructure and Cybersecurity & SOC PDFs, plus the recruiter-facing two-resume selector on the portfolio homepage." )
 
-          # `gh pr checks --watch` exits immediately with "no checks
-          # reported" if called before GitHub has registered any check
-          # runs for the new commit yet - a short race right after push.
-          # Poll until at least one check shows up before handing off to
-          # --watch, instead of a single fixed sleep that could still lose
-          # the race under load.
           for i in $(seq 1 10); do
             if gh pr checks "$PR_URL" >/dev/null 2>&1; then
               break
