@@ -122,11 +122,11 @@ That foundation informs my approach to security: understand the environment, ide
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* auto: update dynamic lab activity feed (#115) (24 hours ago)
-* auto: update dynamic lab activity feed (#114) (2 days ago)
-* auto: update dynamic lab activity feed (#113) (3 days ago)
-* auto: update dynamic lab activity feed (#112) (4 days ago)
-* Finalize recruiter-focused security portfolio (#111) (4 days ago)
+* auto: publish two recruiter-ready resumes (#120) (16 hours ago)
+* Add two recruiter-ready resume paths (#119) (16 hours ago)
+* auto: build updated resume PDF (#118) (17 hours ago)
+* Align cybersecurity recruiter positioning and evidence language (#117) (17 hours ago)
+* auto: update dynamic lab activity feed (#116) (24 hours ago)
 <!-- END_SECTION:activity -->
 
 ## 🌐 Portfolio
