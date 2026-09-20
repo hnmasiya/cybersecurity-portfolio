@@ -1,21 +1,21 @@
 <!-- Single cybersecurity-first resume source. Enterprise IT/infrastructure experience is integrated into the cybersecurity profile. -->
 
 <style>
-  @page { size: letter; margin: 0.35in; }
-  body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 8.8pt; line-height: 1.22; color: #0f172a; margin: 0; }
-  .header { text-align: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 3px; margin-bottom: 4px; }
-  h1 { font-size: 15pt; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a; }
-  .subtitle { font-size: 9.5pt; font-weight: bold; color: #2563eb; margin-top: 1px; }
-  .contact { font-size: 8pt; color: #334155; margin-top: 2px; }
-  h2 { font-size: 9pt; text-transform: uppercase; color: #0f172a; border-bottom: 1px solid #cbd5e1; margin: 5px 0 2px 0; padding-bottom: 1px; letter-spacing: 0.5px; }
-  p, ul { margin: 0 0 2px 0; }
-  ul { padding-left: 12px; }
-  li { margin-bottom: 1px; }
-  .job-header { margin-top: 2px; font-size: 9pt; }
+  @page { size: letter; margin: 0.28in 0.32in; }
+  body { font-family: 'Times New Roman', Times, serif; font-size: 8.4pt; line-height: 1.14; color: #0f172a; margin: 0; }
+  .header { text-align: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 3px; }
+  h1 { font-size: 14pt; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a; }
+  .subtitle { font-size: 9pt; font-weight: bold; color: #2563eb; margin-top: 1px; }
+  .contact { font-size: 7.6pt; color: #334155; margin-top: 2px; }
+  h2 { font-size: 8.5pt; text-transform: uppercase; color: #0f172a; border-bottom: 1px solid #cbd5e1; margin: 4px 0 1px 0; padding-bottom: 1px; letter-spacing: 0.5px; }
+  p, ul { margin: 0 0 1px 0; }
+  ul { padding-left: 11px; }
+  li { margin-bottom: 0.5px; }
+  .job-header { margin-top: 1.5px; font-size: 8.6pt; }
   .job-title { font-weight: bold; color: #0f172a; }
   .company { font-style: italic; color: #334155; }
   .date { float: right; font-weight: bold; color: #2563eb; }
-  .project-title { font-weight: bold; color: #1e293b; font-size: 8.8pt; margin-top: 2px; }
+  .project-title { font-weight: bold; color: #1e293b; font-size: 8.4pt; margin-top: 1.5px; }
 </style>
 
 <div class="header">
@@ -73,7 +73,7 @@ CompTIA Security+ certified enterprise IT professional with 12+ years of experie
   <li>Automated triage of web-application scanning and SQL-injection patterns in controlled laboratory traffic.</li>
 </ul>
 
-<h2>Professional Experience</h2>
+<div style="page-break-before: always;"></div>\n<h2>Professional Experience</h2>
 
 <div class="job-header">
   <span class="date">Jan 2025 – Present</span>
