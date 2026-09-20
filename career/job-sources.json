@@ -1,0 +1,68 @@
+{
+  "policy": "Only report a source as active when it is actually accessible to the discovery mechanism used.",
+  "source_classes": [
+    {
+      "name": "Public job APIs",
+      "examples": [
+        "Arbeitnow",
+        "Remotive"
+      ],
+      "status": "active",
+      "coverage": "Global/remote where the API exposes matching roles"
+    },
+    {
+      "name": "Employer career sites and ATS pages",
+      "examples": [
+        "Greenhouse",
+        "Lever",
+        "Ashby",
+        "Workday-hosted career pages",
+        "company career sites"
+      ],
+      "status": "discoverable-via-web",
+      "coverage": "Search and verify the original employer/ATS posting before application"
+    },
+    {
+      "name": "Major job boards",
+      "examples": [
+        "LinkedIn Jobs",
+        "Indeed",
+        "Glassdoor",
+        "ZipRecruiter",
+        "Wellfound",
+        "Dice"
+      ],
+      "status": "web-search-dependent",
+      "coverage": "Use only when the current search mechanism can access the listing; never claim exhaustive board coverage"
+    },
+    {
+      "name": "Specialist/government sources",
+      "examples": [
+        "CyberSecJobs",
+        "ClearanceJobs",
+        "USAJOBS",
+        "EU government portals",
+        "UK public-sector portals",
+        "Canadian government portals",
+        "Australian/New Zealand government portals"
+      ],
+      "status": "web-search-dependent",
+      "coverage": "Search where accessible and applicable; clearance/citizenship requirements must be explicitly verified"
+    },
+    {
+      "name": "Recruiters and specialist cybersecurity firms",
+      "examples": [
+        "cybersecurity staffing and specialist recruitment firms"
+      ],
+      "status": "web-search-dependent",
+      "coverage": "Treat recruiter listings as leads and verify the end employer and application source"
+    }
+  ],
+  "verification_rules": [
+    "Prefer the original employer or official ATS URL.",
+    "Record the source URL and canonical application URL separately.",
+    "Do not infer visa sponsorship from location, job-board labels, or recruiter assumptions.",
+    "Label sponsorship Confirmed, Unclear, or Not offered with evidence.",
+    "If a board blocks access, record that limitation rather than claiming coverage."
+  ]
+}
