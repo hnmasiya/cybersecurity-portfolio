@@ -10,6 +10,7 @@ on:
       - 'scripts/job_intelligence.py'
       - 'scripts/application_report.py'
       - 'scripts/tailoring_brief.py'
+      - 'scripts/tailored_applications.py'
       - '.github/workflows/career-intelligence.yml'
 
 permissions:
@@ -31,23 +32,28 @@ jobs:
           python-version: '3.13'
       - name: Collect and filter jobs
         run: python scripts/job_intelligence.py
-      - name: Upload job reports
+      - name: Generate tailored CVs and cover letters
+        run: python scripts/tailored_applications.py career/reports/jobs-$(date -u +%Y-%m-%d).csv
+      - name: Upload job and application packages
         uses: actions/upload-artifact@v4
         with:
-          name: cybersecurity-job-intelligence
+          name: cybersecurity-job-intelligence-and-tailored-applications
           path: career/reports/
-      - name: Publish current job report
+      - name: Publish current reports through a protected PR
+        env:
+          GH_TOKEN: \${{ github.token }}
         run: |
-          cp career/reports/jobs-$(date -u +%Y-%m-%d).md career/latest-jobs.md
+          date=$(date -u +%Y-%m-%d)
+          cp career/reports/jobs-\${date}.md career/latest-jobs.md
           git config user.name 'Hazvinei Nomatter Masiya'
           git config user.email 'norman.masiya@gmail.com'
-          git add career/latest-jobs.md
+          git add career/latest-jobs.md career/reports/tailored/\${date}
           git diff --cached --quiet && exit 0
           branch="auto/career-intelligence-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$branch"
-          git commit -m 'auto: update cybersecurity job intelligence'
+          git commit -m 'auto: update job matches and tailored applications'
           git push origin "$branch"
-          gh pr create --base main --head "$branch" --title 'auto: update cybersecurity job intelligence' --body 'Automated job-discovery report update. Sources are public job APIs; verify the original employer/ATS posting before applying.'
+          gh pr create --base main --head "$branch" --title 'auto: update job matches and tailored applications' --body 'Automated cybersecurity job discovery and evidence-based tailoring. Verify the original employer/ATS posting before applying. No applications are submitted automatically.'
 
   application-report:
     name: Weekly Application Tracker
