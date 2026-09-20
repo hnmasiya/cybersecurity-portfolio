@@ -103,6 +103,30 @@ Projects are explicitly distinguished as **professional experience, independent 
 - `tests/` — automated tests for portfolio automation tooling
 - `.github/workflows/` — repository quality, security and maintenance automation
 
+## Forage Cybersecurity Job Simulations
+
+These are **virtual job simulations completed through Forage** and are listed separately from paid employment and independent technical labs.
+
+### Mastercard Cybersecurity Job Simulation — Forage
+**Completed:** September 20, 2026
+
+- Designed a phishing email simulation using a realistic security-awareness scenario.
+- Interpreted phishing simulation results and identified teams requiring additional awareness training from the supplied campaign data.
+- Produced a phishing-awareness training presentation covering phishing tactics, red flags, reporting and prevention.
+- Skills demonstrated: cybersecurity, security awareness, phishing analysis, security training, data analysis, data visualization, communication, problem solving and strategy.
+- [View the dedicated Mastercard simulation repository](https://github.com/hnmasiya/mastercard-cybersecurity-job-simulation)
+
+### Datacom Cyber Security Operations Job Simulation — Forage
+**Completed:** September 20, 2026
+
+- Investigated a simulated cyberattack and documented findings, indicators, response priorities and security recommendations.
+- Conducted a comprehensive cybersecurity risk assessment using a 5×5 likelihood/consequence approach.
+- Assessed phishing, ransomware, third-party exposure, e-commerce/AWS and remote-access risks in the simulated client environment.
+- Skills demonstrated: information security, OSINT, research, risk assessment, risk management, security analysis, analytical skills and communication.
+- [View the dedicated Datacom simulation repository](https://github.com/hnmasiya/Datacom-Cyber-Security-Operations-Job-Simulation)
+
+> **Evidence note:** These programs were Forage virtual job simulations, not employment with Mastercard or Datacom. Completion certificates are retained as evidence of program completion.
+
 ## Certifications
 
 - **CompTIA Security+ — SY0-701**

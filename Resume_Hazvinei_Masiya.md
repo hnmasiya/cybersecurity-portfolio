@@ -141,6 +141,24 @@ CompTIA Security+ certified enterprise IT professional with 12+ years of experie
   <li>Engaged as outside technical support prior to formally joining shermanit: migrated servers, installed HP switches, re-imaged PCs, joined computers to the domain, connected VoIP phones, decommissioned outdated computers with secure data disposal, and reconnected IP cameras to new PoE switches.</li>
 </ul>
 
+<h2>Cybersecurity Virtual Experience</h2>
+
+<div class="project-title">Mastercard Cybersecurity Job Simulation — Forage | Completed September 20, 2026</div>
+<ul>
+  <li>Designed a phishing email simulation and analyzed supplied phishing-campaign results to support security-awareness training.</li>
+  <li>Created a phishing-awareness presentation covering phishing tactics, red flags, reporting and prevention.</li>
+  <li><b>Skills:</b> cybersecurity, security awareness, phishing analysis, security training, data analysis, data visualization, communication, problem solving and strategy.</li>
+</ul>
+
+<div class="project-title">Datacom Cyber Security Operations Job Simulation — Forage | Completed September 20, 2026</div>
+<ul>
+  <li>Investigated a simulated cyberattack and documented findings, indicators, response priorities and security recommendations.</li>
+  <li>Conducted a comprehensive cybersecurity risk assessment using a 5×5 likelihood/consequence approach across phishing, ransomware, third-party exposure, e-commerce/AWS and remote-access risks.</li>
+  <li><b>Skills:</b> information security, OSINT, research, risk assessment, risk management, security analysis, analytical skills and communication.</li>
+</ul>
+
+<blockquote>Forage virtual job simulations; not employment with Mastercard or Datacom.</blockquote>
+
 <h2>Certifications & Education</h2>
 <ul>
   <li><b>CompTIA Security+ (SY0-701)</b> — CompTIA</li>
