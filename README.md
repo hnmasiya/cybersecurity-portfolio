@@ -172,6 +172,7 @@ Original portfolio materials are protected by the repository's copyright and usa
 
 _Generated from public, non-fork, non-archived repositories owned by `hnmasiya`. Descriptions are taken from repository metadata or README content; no project claims or metrics are invented._
 
+- **[mastercard-cybersecurity-job-simulation](https://github.com/hnmasiya/mastercard-cybersecurity-job-simulation)** — Mastercard Cybersecurity Job Simulation — Forage Completed: September 20, 2026 This repository documents my completion of the Mastercard Cybersecurity Job Simulation on Forage. The simulation placed me in a Security Awareness Team scenar...
 - **[ad-security-log-parser](https://github.com/hnmasiya/ad-security-log-parser)** — Python security tooling for Windows Security Event Log analysis and privileged group-change detection
 - **[gcp-terraform-secure-vpc](https://github.com/hnmasiya/gcp-terraform-secure-vpc)** — Terraform-based cloud security architecture with strict IAM policies and firewall rules
 - **[wazuh-siem-detection-lab](https://github.com/hnmasiya/wazuh-siem-detection-lab)** — Custom Wazuh SIEM detection rules mapped to MITRE ATT&CK framework and log analysis
