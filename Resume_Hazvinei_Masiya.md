@@ -73,7 +73,8 @@ CompTIA Security+ certified enterprise IT professional with 12+ years of experie
   <li>Automated triage of web-application scanning and SQL-injection patterns in controlled laboratory traffic.</li>
 </ul>
 
-<div style="page-break-before: always;"></div>\n<h2>Professional Experience</h2>
+<div style="page-break-before: always;"></div>
+<h2>Professional Experience</h2>
 
 <div class="job-header">
   <span class="date">Jan 2025 – Present</span>
