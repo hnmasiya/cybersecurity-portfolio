@@ -129,7 +129,7 @@ jobs:
             echo "HTTP $code" | tee -a "$REPORT"
             case "$code" in
               2*|3*) ;;
-              403|429) echo "WARN: server blocked/limited automated check." | tee -a "$REPORT" ;;
+              403|429|999) echo "WARN: server blocked/limited automated check." | tee -a "$REPORT" ;;
               *) echo "FAIL: unreachable or unexpected HTTP status." | tee -a "$REPORT"; FAILED=1 ;;
             esac
             echo | tee -a "$REPORT"
