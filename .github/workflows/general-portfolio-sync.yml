@@ -133,7 +133,7 @@ jobs:
           fi
           BRANCH="auto/portfolio-sync-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"
-          git commit -m 'auto: sync public GitHub project index [skip ci]'
+          git commit -m 'auto: sync public GitHub project index'
           git push origin "$BRANCH"
           PR_URL=$(gh pr create --base main --head "$BRANCH" --title 'auto: sync public GitHub project index' --body 'Automated synchronization of the portfolio public GitHub project index. Source data is limited to public, non-fork, non-archived repositories owned by hnmasiya; descriptions come from GitHub metadata or README content.')
           echo "Waiting for required PR checks to appear..."
