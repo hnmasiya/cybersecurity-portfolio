@@ -166,3 +166,14 @@ All security testing is performed only against systems and environments intentio
 ## © Portfolio Ownership
 
 Original portfolio materials are protected by the repository's copyright and usage notice. Public availability is intended for professional review and does not grant permission to reproduce, republish, redistribute, present the work as your own, or commercially reuse original portfolio materials without permission.
+
+<!-- AUTO_PORTFOLIO_PROJECT_INDEX_START -->
+## Automatically Synced Public GitHub Projects
+
+_Generated from public, non-fork, non-archived repositories owned by `hnmasiya`. Descriptions are taken from repository metadata or README content; no project claims or metrics are invented._
+
+- **[ad-security-log-parser](https://github.com/hnmasiya/ad-security-log-parser)** — Python security tooling for Windows Security Event Log analysis and privileged group-change detection
+- **[gcp-terraform-secure-vpc](https://github.com/hnmasiya/gcp-terraform-secure-vpc)** — Terraform-based cloud security architecture with strict IAM policies and firewall rules
+- **[wazuh-siem-detection-lab](https://github.com/hnmasiya/wazuh-siem-detection-lab)** — Custom Wazuh SIEM detection rules mapped to MITRE ATT&CK framework and log analysis
+
+<!-- AUTO_PORTFOLIO_PROJECT_INDEX_END -->
