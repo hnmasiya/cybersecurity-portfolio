@@ -1,0 +1,27 @@
+name: Career Preparation
+
+on:
+  schedule:
+    - cron: '30 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: career-preparation
+  cancel-in-progress: false
+
+jobs:
+  interview-pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python scripts/interview_pack.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weekly-cybersecurity-interview-pack
+          path: career/reports/interview-weekly.md

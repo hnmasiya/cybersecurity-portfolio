@@ -1,0 +1,66 @@
+name: Career Intelligence
+
+on:
+  schedule:
+    - cron: '15 6 * * 1-5'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'career/**'
+      - 'scripts/job_intelligence.py'
+      - 'scripts/application_report.py'
+      - 'scripts/tailoring_brief.py'
+      - '.github/workflows/career-intelligence.yml'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: career-intelligence
+  cancel-in-progress: false
+
+jobs:
+  job-discovery:
+    name: Global Cybersecurity Job Discovery
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Collect and filter jobs
+        run: python scripts/job_intelligence.py
+      - name: Upload job reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: cybersecurity-job-intelligence
+          path: career/reports/
+      - name: Publish current job report
+        run: |
+          cp career/reports/jobs-$(date -u +%Y-%m-%d).md career/latest-jobs.md
+          git config user.name 'Hazvinei Nomatter Masiya'
+          git config user.email 'norman.masiya@gmail.com'
+          git add career/latest-jobs.md
+          git diff --cached --quiet && exit 0
+          branch="auto/career-intelligence-$(date -u +%Y%m%d%H%M%S)"
+          git checkout -b "$branch"
+          git commit -m 'auto: update cybersecurity job intelligence'
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title 'auto: update cybersecurity job intelligence' --body 'Automated job-discovery report update. Sources are public job APIs; verify the original employer/ATS posting before applying.'
+
+  application-report:
+    name: Weekly Application Tracker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Build weekly report
+        run: python scripts/application_report.py
+      - name: Upload application report
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-application-report
+          path: career/reports/application-weekly.md

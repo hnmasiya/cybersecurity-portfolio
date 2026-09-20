@@ -1,0 +1,21 @@
+{
+  "profile": {
+    "candidate": "Hazvinei Nomatter Masiya",
+    "primary_roles": ["SOC Analyst", "Security Operations Analyst", "Cybersecurity Analyst"],
+    "secondary_roles": ["Detection Engineer", "Incident Response", "Threat Hunter", "Security Automation", "Junior Security Engineer", "IT Security Analyst"],
+    "keywords": ["SOC", "SIEM", "Wazuh", "Sysmon", "MITRE ATT&CK", "incident response", "threat hunting", "DFIR", "Windows", "Active Directory", "IAM", "Python", "PowerShell", "network security", "cloud security"],
+    "experience_years": 12,
+    "security_certifications": ["CompTIA Security+", "Google Cybersecurity Professional Certificate"]
+  },
+  "locations": ["Worldwide", "Remote", "United Kingdom", "Europe", "Canada", "United States", "Australia", "New Zealand", "Africa"],
+  "sources": [
+    {"name": "Arbeitnow Global/Europe", "url": "https://www.arbeitnow.com/api/job-board-api", "type": "arbeitnow"},
+    {"name": "Arbeitnow UK", "url": "https://www.arbeitnow.co.uk/api/job-board-api", "type": "arbeitnow"},
+    {"name": "Remotive", "url": "https://remotive.com/api/remote-jobs", "type": "remotive"}
+  ],
+  "filters": {
+    "include_terms": ["soc analyst", "security analyst", "cybersecurity analyst", "security operations", "detection engineer", "threat hunter", "incident response", "security engineer", "information security", "cyber security", "siem", "security operations center"],
+    "exclude_terms": ["senior director", "director of", "vice president", "vp ", "chief information security officer", "ciso"],
+    "max_results": 30
+  }
+}
