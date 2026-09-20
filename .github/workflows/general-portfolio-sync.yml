@@ -1,0 +1,139 @@
+name: General Portfolio Sync
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: general-portfolio-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout portfolio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.AUTOMATION_PAT }}
+
+      - name: Build public GitHub project index
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64, json, os, re, subprocess
+          from pathlib import Path
+          from datetime import datetime, timezone
+
+          OWNER = 'hnmasiya'
+          EXCLUDE = {'cybersecurity-portfolio'}
+
+          def gh_json(args):
+              return json.loads(subprocess.check_output(['gh', 'api', *args], text=True))
+
+          repos = gh_json([f'/users/{OWNER}/repos?per_page=100&sort=updated&direction=desc&type=owner'])
+          projects = []
+          for repo in repos:
+              if repo.get('private') or repo.get('archived') or repo.get('fork'):
+                  continue
+              name = repo['name']
+              if name in EXCLUDE:
+                  continue
+              description = (repo.get('description') or '').strip()
+              readme_excerpt = ''
+              try:
+                  raw = gh_json([f'/repos/{OWNER}/{name}/readme'])
+                  decoded = base64.b64decode(raw['content']).decode('utf-8', 'replace')
+                  lines = []
+                  for line in decoded.splitlines():
+                      s = line.strip()
+                      if not s or s.startswith('#') or s.startswith('![') or s.startswith('[!['):
+                          continue
+                      s = re.sub(r'[*_`>#]', '', s)
+                      if s.startswith('[') and '](' in s:
+                          continue
+                      lines.append(s)
+                      if len(' '.join(lines)) >= 220:
+                          break
+                  readme_excerpt = ' '.join(lines).strip()
+              except Exception:
+                  pass
+              if not description:
+                  description = readme_excerpt
+              description = re.sub(r'\s+', ' ', description).strip()
+              if len(description) > 240:
+                  description = description[:237].rstrip() + '...'
+              projects.append({
+                  'name': name,
+                  'description': description,
+                  'url': repo['html_url'],
+                  'updated_at': repo['updated_at'],
+                  'topics': repo.get('topics', []),
+              })
+
+          projects.sort(key=lambda x: x['updated_at'], reverse=True)
+          payload = {
+              'generated_at': datetime.now(timezone.utc).isoformat(),
+              'source': f'https://github.com/{OWNER}',
+              'scope': 'public, non-fork, non-archived repositories owned by hnmasiya',
+              'projects': projects,
+          }
+          Path('portfolio-projects.json').write_text(json.dumps(payload, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          start = '<!-- AUTO_PORTFOLIO_PROJECT_INDEX_START -->'
+          end = '<!-- AUTO_PORTFOLIO_PROJECT_INDEX_END -->'
+          readme = Path('README.md').read_text(encoding='utf-8')
+          rows = [start, '## Automatically Synced Public GitHub Projects', '', '_Generated from public, non-fork, non-archived repositories owned by `hnmasiya`. Descriptions are taken from repository metadata or README content; no project claims or metrics are invented._', '']
+          for p in projects:
+              desc = p['description'] or 'No repository description provided.'
+              rows.append(f"- **[{p['name']}]({p['url']})** — {desc}")
+          rows += ['', end]
+          generated = '\n'.join(rows)
+          if start in readme and end in readme:
+              before = readme.split(start, 1)[0].rstrip()
+              after = readme.split(end, 1)[1].lstrip()
+              readme = before + '\n\n' + generated + '\n\n' + after
+          else:
+              readme = readme.rstrip() + '\n\n' + generated + '\n'
+          Path('README.md').write_text(readme, encoding='utf-8')
+          PY
+
+      - name: Validate generated project index
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('portfolio-projects.json').read_text(encoding='utf-8'))
+          assert isinstance(data['projects'], list)
+          for item in data['projects']:
+              assert item['name'] and item['url']
+          print(f"[PASS] Validated {len(data['projects'])} public GitHub projects.")
+          PY
+
+      - name: Commit and merge synchronized portfolio changes
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
+        run: |
+          set -euo pipefail
+          git config user.name 'Hazvinei Nomatter Masiya'
+          git config user.email 'norman.masiya@gmail.com'
+          git add README.md portfolio-projects.json
+          if git diff --cached --quiet; then
+            echo '[PASS] Portfolio index is already synchronized.'
+            exit 0
+          fi
+          BRANCH="auto/portfolio-sync-$(date -u +%Y%m%d%H%M%S)"
+          git checkout -b "$BRANCH"
+          git commit -m 'auto: sync public GitHub project index [skip ci]'
+          git push origin "$BRANCH"
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title 'auto: sync public GitHub project index' --body 'Automated synchronization of the portfolio public GitHub project index. Source data is limited to public, non-fork, non-archived repositories owned by hnmasiya; descriptions come from GitHub metadata or README content.')
+          gh pr checks "$PR_URL" --watch --fail-fast
+          gh pr merge "$PR_URL" --squash --delete-branch
