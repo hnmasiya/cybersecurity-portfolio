@@ -38,6 +38,12 @@ jobs:
         with:
           name: cybersecurity-job-intelligence-and-tailored-applications
           path: career/reports/
+      - name: Restore alert state
+        uses: actions/cache@v4
+        with:
+          path: .career-alert-state.txt
+          key: career-alert-state-${{ github.run_id }}
+          restore-keys: career-alert-state-
       - name: Notify high-relevance matches
         env:
           JOB_CSV: career/reports/jobs-$(date -u +%Y-%m-%d).csv
@@ -47,6 +53,7 @@ jobs:
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_STATE: .career-alert-state.txt
         run: |
           if [ -z "$NOTIFY_EMAIL" ]; then echo "JOB_ALERT_EMAIL secret not configured; notification skipped."; exit 0; fi
           python scripts/notify_jobs.py
