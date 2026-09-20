@@ -42,11 +42,11 @@ jobs:
             echo "[-] ERROR: Resume_Hazvinei_Masiya.md is missing!"
             exit 1
           fi
-          if [ ! -f "Resume_Hazvinei_Masiya.pdf" ]; then
-            echo "[-] ERROR: Resume_Hazvinei_Masiya.pdf is missing!"
+          if [ ! -f "Resume_Cybersecurity_SOC.pdf" ]; then
+            echo "[-] ERROR: Resume_Cybersecurity_SOC.pdf is missing!"
             exit 1
           fi
-          echo "[+] Resume Markdown and compiled PDF verified."
+          echo "[+] Resume Markdown and consolidated cybersecurity PDF verified."
 
       - name: 3. Dynamic README Markers Audit
         run: |
