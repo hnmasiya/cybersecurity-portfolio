@@ -1,4 +1,4 @@
-<!-- Resume maintained as the current September 2026 version. -->
+<!-- Single cybersecurity-first resume source. Enterprise IT/infrastructure experience is integrated into the cybersecurity profile. -->
 
 <style>
   @page { size: letter; margin: 0.35in; }
@@ -28,14 +28,15 @@
 </div>
 
 <h2>Professional Summary</h2>
-CompTIA Security+ certified enterprise IT professional with 12+ years of experience across enterprise IT infrastructure, systems administration, network engineering, and security-conscious technical support. I am deliberately transitioning that enterprise foundation into cybersecurity, with independent hands-on work in SIEM detection engineering, threat hunting, incident investigation, DFIR, Windows/Sysmon telemetry, and security automation using Wazuh, Sysmon, Python, Bash, and PowerShell. Professional employment experience and independent security-lab work are clearly distinguished throughout the portfolio.
+CompTIA Security+ certified enterprise IT professional with 12+ years of experience across enterprise IT support, infrastructure, systems administration, network engineering, access control, endpoint security, and security-conscious technical operations. I am deliberately applying that enterprise foundation to cybersecurity, with independent hands-on work in SIEM detection engineering, threat hunting, incident investigation, DFIR, Windows/Sysmon telemetry, and security automation using Wazuh, Sysmon, Python, Bash, and PowerShell. Professional employment experience and independent security-lab work are clearly distinguished throughout the portfolio.
 
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
   <li><b>SIEM & Detection Engineering:</b> Wazuh SIEM, Sysmon XML Rules, Custom Alert Pipelines, FIM (File Integrity Monitoring), MITRE ATT&CK mapping</li>
   <li><b>DFIR & Threat Hunting:</b> Linux Auth/Syslog Forensics, PCAP Packet Analysis (Tshark/Wireshark), Hash Verification, evidence preservation and investigation workflows</li>
   <li><b>Security Automation & Scripting:</b> Python (IOC and log parsers), Bash, PowerShell, YAML, deterministic validation workflows</li>
-  <li><b>Network & Systems Security:</b> Active Directory (GPO, Event Log Analysis), Dell Versa SD-WAN, Sophos XG, Aruba/Cisco infrastructure, access control and hardening</li>
+  <li><b>Enterprise IT & Systems Security:</b> Windows 10/11, Windows Server, Active Directory, Group Policy, Microsoft 365, RBAC, least privilege, endpoint hardening, patch management, authentication and access control</li>
+  <li><b>Network & Infrastructure Security:</b> LAN/WAN, Dell Versa SD-WAN (VEP1425/VEP1485), VOS, Cisco, Aruba, Sophos XG, network deployment, connectivity validation and infrastructure migration</li>
   <li><b>Cloud & DevSecOps:</b> Azure Windows security lab, GCP Terraform architecture, GitHub Actions CI/CD, cloud security controls</li>
 </ul>
 
@@ -79,9 +80,9 @@ CompTIA Security+ certified enterprise IT professional with 12+ years of experie
   <span class="job-title">Information Technology Support Specialist</span> | <span class="company">Netvantage Partners</span>
 </div>
 <ul>
-  <li>Investigate and resolve security-relevant incidents, including malware alerts, unauthorized access attempts, and connectivity disruptions.</li>
-  <li>Support vulnerability mitigation through structured patch management and secure endpoint deployment across client environments.</li>
-  <li>Deliver 1st and 2nd line IT support across multiple client environments, including desktop/laptop diagnostics and hardened onboarding processes.</li>
+  <li>Deliver 1st and 2nd line technical support across client environments, resolving hardware, software, Windows endpoint, authentication, and connectivity issues.</li>
+  <li>Support Active Directory accounts, user access, secure onboarding, structured patch management, and vulnerability mitigation across client systems.</li>
+  <li>Investigate and escalate security-relevant incidents, including malware alerts and unauthorized access attempts, using security-aware triage.</li>
   <li>Develop IT support documentation and incident-handling procedures to standardize response consistency.</li>
 </ul>
 
@@ -90,11 +91,12 @@ CompTIA Security+ certified enterprise IT professional with 12+ years of experie
   <span class="job-title">IT Support Specialist (Contract & Consulting)</span> | <span class="company">Zuetech Technology Solutions</span>
 </div>
 <ul>
-  <li>Provide enterprise IT support, infrastructure administration, and network operations across client environments, including Active Directory administration, RBAC, and least-privilege access control.</li>
+  <li>Provide enterprise IT support, infrastructure administration, network operations, and onsite client deployment services across multiple environments.</li>
+  <li>Administer Active Directory, RBAC, least-privilege access, Group Policy and Microsoft 365; troubleshoot authentication, endpoint and application issues.</li>
   <li>Monitor endpoint, network, and system activity for anomalies, applying security-aware triage principles to identify and escalate security-relevant incidents.</li>
-  <li>Deploy and configure enterprise Dell Versa SD-WAN appliances, including Versa Operating System (VOS) upgrades, IP configuration, migration support, and connectivity validation.</li>
-  <li>Deliver endpoint protection, patch deployment, and vulnerability mitigation across client networks; troubleshoot Microsoft 365 and application issues.</li>
-  <li>Maintain technical documentation and SOP development to standardize client support delivery.</li>
+  <li>Deploy and configure Dell Versa SD-WAN appliances, including VOS upgrades, IP configuration, migration support, and connectivity validation.</li>
+  <li>Deliver endpoint protection, patch deployment, vulnerability mitigation, and technical documentation across client networks.</li>
+  <li>Install and configure Yeastar P-Series PBX/UCaaS solutions for reseller clients as part of enterprise communications and infrastructure deployments.</li>
   <li>Client project — Network Infrastructure Upgrade, Mastercard Zimbabwe (Mar–Apr 2022): installed sensor LAN cabling, decommissioned legacy Cisco switches/controllers/APs, and racked/installed new Aruba controllers, switches, and access points.</li>
   <li>Client project — SD-WAN Circuit Deployment, SITA AERO (Jul 2026): configured two Dell Versa VEP1485 appliances via console CLI, connected each to a dedicated internet circuit, and verified connectivity.</li>
   <li>Client project — Qatar Airways VOS Upgrade &amp; SD-WAN Migration, Harare Airport Back Office &amp; City Office (Aug 2026): performed VOS upgrading, device onboarding, and SD-WAN migration on Dell VEP1425 appliances.</li>
@@ -144,4 +146,5 @@ CompTIA Security+ certified enterprise IT professional with 12+ years of experie
   <li><b>Google Cybersecurity Professional Certificate</b> — Google</li>
   <li><b>Google IT Support Professional Certificate</b> — Google</li>
   <li><b>BSc in Computer Science</b> — Unicaf University (In Progress)</li>
+  <li><b>National Diploma in Information Communication Technology</b> — Harare Polytechnic</li>
 </ul>
