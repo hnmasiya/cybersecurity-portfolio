@@ -8,7 +8,6 @@ on:
     paths:
       - 'career/**'
       - 'scripts/job_intelligence.py'
-      - 'scripts/application_report.py'
       - 'scripts/tailoring_brief.py'
       - '.github/workflows/career-intelligence.yml'
 
@@ -43,8 +42,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           cp career/reports/jobs-$(date -u +%Y-%m-%d).md career/latest-jobs.md
-          git config user.name 'Hazvinei Nomatter Masiya'
-          git config user.email 'norman.masiya@gmail.com'
+          git config user.name 'career-intelligence-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add career/latest-jobs.md
           git diff --cached --quiet && exit 0
           branch="auto/career-intelligence-$(date -u +%Y%m%d%H%M%S)"
