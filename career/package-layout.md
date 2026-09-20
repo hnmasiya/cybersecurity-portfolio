@@ -1,6 +1,6 @@
-# Standard Package Layout
+# Private Career Package Layout
 
-For each approved vacancy use:
+These records belong in a private career workspace:
 
 Applications/<Employer>/<Role>/
 - Job-Description.md
@@ -11,4 +11,4 @@ Applications/<Employer>/<Role>/
 - Application-Record.md
 - Interview-Assessment-Pack.md
 
-Use sanitized directory names. Never store passwords, MFA codes, session cookies, API keys, or other secrets.
+Use sanitized directory names. Never store passwords, MFA codes, session cookies, API keys, or other secrets anywhere in the package. Never put real application history or personal career records into the public portfolio repository.

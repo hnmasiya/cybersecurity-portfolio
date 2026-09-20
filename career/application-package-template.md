@@ -1,4 +1,6 @@
-# Application Package
+# Private Application Package Template
+
+This template describes the package that belongs in the private career workspace, not this public repository.
 
 ## Vacancy
 - Job ID:
@@ -33,6 +35,23 @@
 - PDF text extractability:
 - Unsupported claims:
 
+## Interview Assessment Pack
+- 10–20 likely technical questions:
+- 10 behavioral questions:
+- Role-specific questions:
+- SOC/cybersecurity scenarios where relevant:
+- STAR answer guidance:
+- Employer-requirement questions:
+- Technology-specific questions:
+- Verified-experience questions:
+- GitHub project questions:
+- Forage simulation questions:
+- Screening questions:
+- Practical/technical assessment preparation:
+- Questions to ask the interviewer:
+- Evidence-safe model answers:
+- Claims/experience that must not be made:
+
 ## Files
 - Job description snapshot
 - Tailored two-page resume
@@ -40,6 +59,7 @@
 - GitHub evidence
 - Sponsorship evidence
 - Application record
+- Interview/assessment pack
 
 ## Approval
 - Approval status: Pending / Approved / Declined

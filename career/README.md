@@ -1,31 +1,39 @@
-# Career Automation System
+# Career Operations System
 
-This directory is the persistent control plane for the cybersecurity job-search and application workflow.
+This public directory documents the architecture and evidence-safe methodology for the career operations system.
+
+## Public/private separation
+
+This repository is public and must contain only reusable architecture, templates, validation logic, sanitized examples, and portfolio-facing documentation.
+
+**Never store real job applications or personal career records here.**
+
+The private career workspace must contain actual job discoveries, application tracker records, employer/application history, application dates and statuses, tailored resumes and cover letters, sponsorship evidence, interview questions and answer preparation, recruiter information, follow-up dates, and personal contact information.
+
+The public repository may demonstrate the system without exposing those records.
 
 ## Pipeline
 
-Job discovery -> canonicalization -> duplicate detection -> sponsorship verification -> profile/GitHub evidence matching -> requirement-gap analysis -> tailored application package -> ATS readiness -> approval -> authorized submission where supported -> application tracking -> deadline/follow-up monitoring -> interview/assessment preparation.
-
-## Source coverage
-
-See job-sources.json. A source is only reported as active when the current discovery mechanism can actually access it. Board names in the registry are coverage targets, not a claim of exhaustive scraping.
+Job discovery -> canonicalization -> duplicate detection -> sponsorship verification -> verified profile/GitHub evidence matching -> requirement-gap analysis -> tailored application package -> ATS readiness -> job-specific interview preparation -> user approval -> authorized submission -> application tracking -> deadline/follow-up monitoring.
 
 ## Application tracker
 
-applications.csv is the persistent application record. It stores the canonical vacancy identity, source/application URLs, sponsorship evidence, match evidence, ATS status, package versions, application state and follow-up dates.
+application-schema.csv defines the fields for the private application tracker. The real tracker must not be committed to this public repository.
 
-## Packages
+The tracker is designed to record employer, role, country/location, work arrangement, source/application URL, posting/deadline, sponsorship status and evidence, match evidence, gaps, resume/cover-letter versions, GitHub evidence, ATS status, application status, dates applied, follow-ups, next action, and notes.
 
-Use package-layout.md and application-package-template.md.
+## Interview preparation
 
-## ATS
+Every high-relevance vacancy should receive a job-specific interview pack in the private workspace containing 10–20 likely technical questions, 10 behavioral questions, role-specific questions, SOC/cybersecurity scenarios where relevant, STAR answer guidance, questions derived from employer requirements, technology-specific questions, questions grounded in verified candidate experience, GitHub project questions, Forage virtual job simulation questions, likely screening questions, practical/technical assessment preparation, questions for the interviewer, evidence-safe model answer guidance, and explicit no-claim/evidence-gap reminders.
 
-ats-rules.json defines evidence-safe readiness checks. The validator reports PASS or NEEDS REVISION; it does not invent a numerical ATS score.
+## ATS and submission
 
-## Submission
+ats-rules.json defines evidence-safe readiness checks. submission-policy.md defines safe submission rules. No CAPTCHA, MFA, anti-bot, access-control, or screening-question bypass is permitted.
 
-See submission-policy.md. No CAPTCHA, MFA, anti-bot, access-control, or screening-question bypass is permitted. If an authorized integration is unavailable, the workflow stops at approval and provides the official application URL.
+## Evidence and privacy
 
-## Privacy and evidence
+Never store passwords, MFA codes, session cookies, API keys, private contact information, application history, recruiter data, or tailored personal documents in this public repository. Training simulations must remain clearly labeled as simulations/virtual work experiences rather than employment.
 
-Never store passwords, MFA codes, session cookies, API keys, or private contact information in public repository files. Training simulations must remain clearly labeled as simulations/virtual work experiences rather than employment.
+## Portfolio-facing description
+
+Career Operations System — automated job discovery, evidence-based matching, ATS validation, application tracking, job-specific interview preparation, and follow-up monitoring, with private career records kept outside this public portfolio repository.
