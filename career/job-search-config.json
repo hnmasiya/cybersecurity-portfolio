@@ -7,15 +7,25 @@
     "experience_years": 12,
     "security_certifications": ["CompTIA Security+", "Google Cybersecurity Professional Certificate"]
   },
-  "locations": ["Worldwide", "Remote", "United Kingdom", "Europe", "Canada", "United States", "Australia", "New Zealand", "Africa"],
+  "regions": {
+    "North America": ["United States", "Canada", "Mexico"],
+    "Europe": ["United Kingdom", "Ireland", "Germany", "France", "Netherlands", "Belgium", "Spain", "Portugal", "Italy", "Sweden", "Norway", "Denmark", "Finland", "Switzerland", "Austria", "Poland", "Czechia", "Romania"],
+    "EMEA": ["Africa", "Middle East", "Israel", "United Arab Emirates", "Saudi Arabia", "Qatar", "South Africa", "Kenya", "Nigeria", "Zimbabwe"],
+    "Australasia": ["Australia", "New Zealand"]
+  },
   "sources": [
     {"name": "Arbeitnow Global/Europe", "url": "https://www.arbeitnow.com/api/job-board-api", "type": "arbeitnow"},
     {"name": "Arbeitnow UK", "url": "https://www.arbeitnow.co.uk/api/job-board-api", "type": "arbeitnow"},
-    {"name": "Remotive", "url": "https://remotive.com/api/remote-jobs", "type": "remotive"}
+    {"name": "Remotive", "url": "https://remotive.com/api/remote-jobs", "type": "remotive"},
+    {"name": "Greenhouse public boards", "url": "https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs?content=true", "type": "greenhouse", "requires_secret": "GREENHOUSE_BOARD_TOKENS"},
+    {"name": "Adzuna", "url": "https://api.adzuna.com/v1/api/jobs/{country}/search/1", "type": "adzuna", "requires_secrets": ["ADZUNA_APP_ID", "ADZUNA_APP_KEY"]}
   ],
+  "polling": {"minutes": 15, "note": "Near-real-time polling; external feeds and GitHub Actions scheduling can be delayed. This cannot guarantee detection at the exact instant a job is posted."},
   "filters": {
     "include_terms": ["soc analyst", "security analyst", "cybersecurity analyst", "security operations", "detection engineer", "threat hunter", "incident response", "security engineer", "information security", "cyber security", "siem", "security operations center"],
     "exclude_terms": ["senior director", "director of", "vice president", "vp ", "chief information security officer", "ciso"],
-    "max_results": 30
+    "high_relevance_threshold": 70,
+    "ats_threshold": 85,
+    "max_results": 50
   }
 }
