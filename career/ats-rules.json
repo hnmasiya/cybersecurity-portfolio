@@ -1,0 +1,25 @@
+{
+  "required_checks": [
+    "job_title_alignment",
+    "required_keywords",
+    "required_skills",
+    "certifications",
+    "education",
+    "experience_requirements",
+    "location_and_work_authorization",
+    "formatting",
+    "pdf_text_extractability",
+    "mandatory_requirements",
+    "unsupported_claims"
+  ],
+  "pass_rule": "PASS only when no mandatory requirement is falsely represented, the document is machine-readable, and no critical unsupported claim is present.",
+  "revision_rule": "NEEDS REVISION when a mandatory requirement is missing, unclear, unsupported, or the document is not reliably machine-readable.",
+  "forbidden_inference": [
+    "Do not invent clearance.",
+    "Do not invent visa sponsorship.",
+    "Do not invent years of experience.",
+    "Do not invent metrics.",
+    "Do not convert training/simulations into employment.",
+    "Do not claim a tool was used unless supported by evidence."
+  ]
+}
