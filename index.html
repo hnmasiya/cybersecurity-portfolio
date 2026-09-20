@@ -1147,6 +1147,17 @@ Caller User: 'bad_actor_admin'</code>
                 </div>
             </div>
         </section>
+
+        <!-- Auto-synced Public GitHub Projects -->
+        <section id="github-projects">
+            <div class="section-header">
+                <h2 class="section-title">Public GitHub Projects</h2>
+            </div>
+            <div id="auto-project-grid" class="grid-2" aria-live="polite">
+                <div class="card"><p>Loading synchronized GitHub projects…</p></div>
+            </div>
+        </section>
+
         <!-- Capabilities Snapshot -->
         <section id="snapshot">
             <div class="section-header">
@@ -1467,6 +1478,32 @@ Caller User: 'bad_actor_admin'</code>
                 box.scrollTop = box.scrollHeight;
             }
         }
+
+        // Auto-synced public GitHub project index
+        async function loadAutoSyncedProjects() {
+            const grid = document.getElementById('auto-project-grid');
+            if (!grid) return;
+            try {
+                const response = await fetch('portfolio-projects.json', { cache: 'no-store' });
+                if (!response.ok) throw new Error('Project index unavailable');
+                const data = await response.json();
+                const projects = Array.isArray(data.projects) ? data.projects : [];
+                if (!projects.length) {
+                    grid.innerHTML = '<div class="card"><p>No public GitHub projects are currently indexed.</p></div>';
+                    return;
+                }
+                grid.innerHTML = projects.map(project => {
+                    const safeName = String(project.name || 'Project').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+                    const safeDescription = String(project.description || 'No repository description provided.').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+                    const safeUrl = String(project.url || '#');
+                    return '<div class="card project-item" data-category="github"><div><h3 class="project-title">' + safeName + '</h3><p class="project-desc">' + safeDescription + '</p></div><div class="card-footer"><a href="' + safeUrl + '" target="_blank" rel="noopener noreferrer" class="btn-link">View Repository →</a></div></div>';
+                }).join('');
+            } catch (error) {
+                grid.innerHTML = '<div class="card"><p>GitHub project index is temporarily unavailable. The portfolio repository remains the source of record.</p></div>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadAutoSyncedProjects);
     </script>
 </body>
 </html>
