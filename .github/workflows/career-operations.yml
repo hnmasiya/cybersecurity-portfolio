@@ -1,0 +1,33 @@
+name: Career Operations
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: career-operations
+  cancel-in-progress: false
+
+jobs:
+  validate-and-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Check application duplicates
+        run: python scripts/dedupe_applications.py
+      - name: Monitor deadlines and follow-ups
+        run: python scripts/deadline_monitor.py
+      - name: Build application report
+        run: python scripts/application_report.py
+      - name: Upload career operations report
+        uses: actions/upload-artifact@v4
+        with:
+          name: career-operations
+          path: career/reports/
