@@ -43,8 +43,11 @@ jobs:
           git config user.email 'norman.masiya@gmail.com'
           git add career/latest-jobs.md
           git diff --cached --quiet && exit 0
+          branch="auto/career-intelligence-$(date -u +%Y%m%d%H%M%S)"
+          git checkout -b "$branch"
           git commit -m 'auto: update cybersecurity job intelligence'
-          git push
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title 'auto: update cybersecurity job intelligence' --body 'Automated job-discovery report update. Sources are public job APIs; verify the original employer/ATS posting before applying.'
 
   application-report:
     name: Weekly Application Tracker
