@@ -2,15 +2,12 @@ name: Career Intelligence
 
 on:
   schedule:
-    - cron: '15 6 * * 1-5'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
   push:
     paths:
       - 'career/**'
-      - 'scripts/job_intelligence.py'
-      - 'scripts/application_report.py'
-      - 'scripts/tailoring_brief.py'
-      - 'scripts/tailored_applications.py'
+      - 'scripts/**'
       - '.github/workflows/career-intelligence.yml'
 
 permissions:
@@ -34,26 +31,40 @@ jobs:
         run: python scripts/job_intelligence.py
       - name: Generate tailored CVs and cover letters
         run: python scripts/tailored_applications.py career/reports/jobs-$(date -u +%Y-%m-%d).csv
+      - name: Run ATS readiness gate
+        run: python scripts/enrich_job_results.py career/reports/jobs-$(date -u +%Y-%m-%d).csv
       - name: Upload job and application packages
         uses: actions/upload-artifact@v4
         with:
           name: cybersecurity-job-intelligence-and-tailored-applications
           path: career/reports/
+      - name: Notify high-relevance matches
+        env:
+          JOB_CSV: career/reports/jobs-$(date -u +%Y-%m-%d).csv
+          HIGH_RELEVANCE_THRESHOLD: '70'
+          NOTIFY_EMAIL: ${{ secrets.JOB_ALERT_EMAIL }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: |
+          if [ -z "$NOTIFY_EMAIL" ]; then echo "JOB_ALERT_EMAIL secret not configured; notification skipped."; exit 0; fi
+          python scripts/notify_jobs.py
       - name: Publish current reports through a protected PR
         env:
-          GH_TOKEN: \${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           date=$(date -u +%Y-%m-%d)
-          cp career/reports/jobs-\${date}.md career/latest-jobs.md
+          cp career/reports/jobs-${date}.md career/latest-jobs.md
           git config user.name 'Hazvinei Nomatter Masiya'
           git config user.email 'norman.masiya@gmail.com'
-          git add career/latest-jobs.md career/reports/tailored/\${date}
+          git add career/latest-jobs.md career/reports/jobs-${date}.csv career/reports/tailored/${date}
           git diff --cached --quiet && exit 0
           branch="auto/career-intelligence-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$branch"
           git commit -m 'auto: update job matches and tailored applications'
           git push origin "$branch"
-          gh pr create --base main --head "$branch" --title 'auto: update job matches and tailored applications' --body 'Automated cybersecurity job discovery and evidence-based tailoring. Verify the original employer/ATS posting before applying. No applications are submitted automatically.'
+          gh pr create --base main --head "$branch" --title 'auto: update job matches and tailored applications' --body 'Automated cybersecurity job discovery, ATS readiness checks and evidence-based tailoring. Verify the original employer/ATS posting before applying. No applications are submitted automatically.'
 
   application-report:
     name: Weekly Application Tracker
