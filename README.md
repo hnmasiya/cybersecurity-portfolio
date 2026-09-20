@@ -177,3 +177,4 @@ _Generated from public, non-fork, non-archived repositories owned by `hnmasiya`.
 - **[wazuh-siem-detection-lab](https://github.com/hnmasiya/wazuh-siem-detection-lab)** — Custom Wazuh SIEM detection rules mapped to MITRE ATT&CK framework and log analysis
 
 <!-- AUTO_PORTFOLIO_PROJECT_INDEX_END -->
+
