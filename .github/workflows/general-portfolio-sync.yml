@@ -135,5 +135,17 @@ jobs:
           git commit -m 'auto: sync public GitHub project index [skip ci]'
           git push origin "$BRANCH"
           PR_URL=$(gh pr create --base main --head "$BRANCH" --title 'auto: sync public GitHub project index' --body 'Automated synchronization of the portfolio public GitHub project index. Source data is limited to public, non-fork, non-archived repositories owned by hnmasiya; descriptions come from GitHub metadata or README content.')
+          echo "Waiting for required PR checks to appear..."
+          for i in $(seq 1 24); do
+            if gh pr checks "$PR_URL" >/tmp/pr-checks.txt 2>&1; then
+              if grep -Eq "pending|queued|in_progress|expected" /tmp/pr-checks.txt; then
+                sleep 5
+                continue
+              fi
+              break
+            fi
+            sleep 5
+          done
+
           gh pr checks "$PR_URL" --watch --fail-fast
           gh pr merge "$PR_URL" --squash --delete-branch
