@@ -1,0 +1,237 @@
+name: Portfolio Trust Monitor
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '17 2 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-trust-monitor
+  cancel-in-progress: false
+
+jobs:
+  public-exposure-audit:
+    name: Public Exposure & Privacy Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan tracked public files
+        shell: bash
+        run: |
+          set -u
+          mkdir -p automation-reports
+          REPORT="automation-reports/public-exposure-audit.txt"
+          : > "$REPORT"
+
+          echo "Portfolio Public Exposure & Privacy Audit" >> "$REPORT"
+          echo "Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$REPORT"
+          echo >> "$REPORT"
+          echo "This audit is read-only. It does not delete, modify, or publish files." >> "$REPORT"
+          echo >> "$REPORT"
+
+          patterns=(
+            '-----BEGIN (RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----'
+            'AKIA[0-9A-Z]{16}'
+            'ghp_[A-Za-z0-9_]{30,}'
+            'github_pat_[A-Za-z0-9_]{20,}'
+            'xox[baprs]-[A-Za-z0-9-]{10,}'
+            'password[[:space:]]*[:=][[:space:]]*["'\''\x60][^"'\''\x60]{6,}'
+            'api[_-]?key[[:space:]]*[:=][[:space:]]*["'\''\x60][^"'\''\x60]{10,}'
+          )
+
+          FOUND=0
+          for pattern in "${patterns[@]}"; do
+            if git grep -nEI "$pattern" -- ':!.git' >> "$REPORT" 2>/dev/null; then
+              FOUND=1
+            fi
+          done
+
+          echo >> "$REPORT"
+          echo "Potential personal contact exposure (review manually; not automatically treated as a secret):" >> "$REPORT"
+          if git grep -nEI '[[:alnum:]._%+-]+@[[:alnum:].-]+\.[A-Za-z]{2,}' -- ':!.git' ':!*.lock' >> "$REPORT" 2>/dev/null; then
+            :
+          else
+            echo "None found." >> "$REPORT"
+          fi
+
+          echo >> "$REPORT"
+          echo "Potential phone-number exposure (review manually):" >> "$REPORT"
+          if git grep -nEI '\+[0-9][0-9 ()-]{7,}[0-9]' -- ':!.git' ':!*.lock' >> "$REPORT" 2>/dev/null; then
+            :
+          else
+            echo "None found." >> "$REPORT"
+          fi
+
+          echo >> "$REPORT"
+          if [ "$FOUND" -eq 1 ]; then
+            echo "STATUS: REVIEW REQUIRED - potential credential-like material detected." >> "$REPORT"
+          else
+            echo "STATUS: PASS - no high-confidence credential patterns detected." >> "$REPORT"
+          fi
+
+          cat "$REPORT"
+
+      - name: Upload exposure audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-exposure-audit
+          path: automation-reports/public-exposure-audit.txt
+
+  link-monitor:
+    name: Automatic Broken-Link Monitor
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check portfolio URLs
+        shell: bash
+        run: |
+          set -u
+          mkdir -p automation-reports
+          REPORT="automation-reports/link-monitor.txt"
+          : > "$REPORT"
+
+          urls=(
+            "https://masiya-hub.org"
+            "https://hnmasiya.github.io/cybersecurity-portfolio/"
+            "https://github.com/hnmasiya"
+            "https://www.linkedin.com/in/hazvinei-masiya"
+          )
+
+          if [ -f portfolio-projects.json ]; then
+            while IFS= read -r url; do
+              urls+=("$url")
+            done < <(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path("portfolio-projects.json").read_text(encoding="utf-8"))
+          for item in data.get("projects", []):
+              if item.get("url"):
+                  print(item["url"])
+          PY
+            )
+          fi
+
+          FAILED=0
+          for url in "${urls[@]}"; do
+            echo "Checking $url" | tee -a "$REPORT"
+            code=$(curl -L -sS -o /dev/null -w '%{http_code}' --connect-timeout 10 --max-time 25 --retry 2 "$url" || true)
+            echo "HTTP $code" | tee -a "$REPORT"
+            case "$code" in
+              2*|3*) ;;
+              403|429|999) echo "WARN: server blocked/limited automated check." | tee -a "$REPORT" ;;
+              *) echo "FAIL: unreachable or unexpected HTTP status." | tee -a "$REPORT"; FAILED=1 ;;
+            esac
+            echo | tee -a "$REPORT"
+          done
+
+          if [ "$FAILED" -eq 1 ]; then
+            echo "STATUS: FAIL - one or more portfolio links require attention." | tee -a "$REPORT"
+            exit 1
+          fi
+          echo "STATUS: PASS - all monitored links responded successfully or returned an explicitly tolerated automated-access response." | tee -a "$REPORT"
+
+      - name: Upload link report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: broken-link-monitor
+          path: automation-reports/link-monitor.txt
+
+  project-evidence-validator:
+    name: Project Evidence Validator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate public project index and evidence references
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p automation-reports
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          report = []
+          errors = []
+
+          index = Path("portfolio-projects.json")
+          if not index.exists():
+              errors.append("portfolio-projects.json is missing")
+          else:
+              data = json.loads(index.read_text(encoding="utf-8"))
+              projects = data.get("projects")
+              if not isinstance(projects, list):
+                  errors.append("portfolio-projects.json: projects is not a list")
+              else:
+                  seen = set()
+                  for item in projects:
+                      name = item.get("name", "")
+                      url = item.get("url", "")
+                      if not name or not url:
+                          errors.append(f"Project entry missing name or URL: {item!r}")
+                          continue
+                      if name in seen:
+                          errors.append(f"Duplicate project name: {name}")
+                      seen.add(name)
+                      parsed = urlparse(url)
+                      if parsed.scheme != "https" or parsed.netloc != "github.com":
+                          errors.append(f"Project URL is not an HTTPS GitHub URL: {name} -> {url}")
+                  report.append(f"Indexed public projects: {len(projects)}")
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          if "<!-- AUTO_PORTFOLIO_PROJECT_INDEX_START -->" not in readme:
+              errors.append("README.md is missing AUTO_PORTFOLIO_PROJECT_INDEX_START marker")
+          if "<!-- AUTO_PORTFOLIO_PROJECT_INDEX_END -->" not in readme:
+              errors.append("README.md is missing AUTO_PORTFOLIO_PROJECT_INDEX_END marker")
+
+          # Evidence integrity checks: detect common claims that should have a source
+          # without inventing evidence or requiring a particular certificate format.
+          source_tokens = [
+              "certificate", "certification", "forage", "job simulation",
+              "virtual experience", "completed", "project"
+          ]
+          tracked = [p for p in Path(".").rglob("*") if p.is_file() and ".git" not in p.parts]
+          claim_files = []
+          for path in tracked:
+              if path.suffix.lower() not in {".md", ".html", ".json", ".txt"}:
+                  continue
+              try:
+                  text = path.read_text(encoding="utf-8", errors="ignore")
+              except Exception:
+                  continue
+              if any(token in text.lower() for token in source_tokens):
+                  claim_files.append(str(path))
+
+          report.append(f"Claim/evidence-bearing text files detected: {len(claim_files)}")
+          report.append("Evidence validator does not fabricate, rewrite, or delete evidence.")
+
+          Path("automation-reports/project-evidence-validator.txt").write_text(
+              "\n".join(report + (["STATUS: PASS"] if not errors else ["STATUS: FAIL"] + errors)) + "\n",
+              encoding="utf-8"
+          )
+
+          if errors:
+              raise SystemExit("\n".join(errors))
+          PY
+
+      - name: Upload evidence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-evidence-validator
+          path: automation-reports/project-evidence-validator.txt
