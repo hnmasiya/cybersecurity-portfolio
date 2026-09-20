@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-09-20T10:00:33.031085+00:00",
+  "source": "https://github.com/hnmasiya",
+  "scope": "public, non-fork, non-archived repositories owned by hnmasiya",
+  "projects": [
+    {
+      "name": "ad-security-log-parser",
+      "description": "Python security tooling for Windows Security Event Log analysis and privileged group-change detection",
+      "url": "https://github.com/hnmasiya/ad-security-log-parser",
+      "updated_at": "2026-08-30T12:19:37Z",
+      "topics": [
+        "active-directory",
+        "blue-team",
+        "cybersecurity",
+        "log-analysis",
+        "python",
+        "security-operations"
+      ]
+    },
+    {
+      "name": "gcp-terraform-secure-vpc",
+      "description": "Terraform-based cloud security architecture with strict IAM policies and firewall rules",
+      "url": "https://github.com/hnmasiya/gcp-terraform-secure-vpc",
+      "updated_at": "2026-08-30T12:19:35Z",
+      "topics": [
+        "cloud-security",
+        "gcp",
+        "iam",
+        "infrastructure-as-code",
+        "terraform",
+        "vpc"
+      ]
+    },
+    {
+      "name": "wazuh-siem-detection-lab",
+      "description": "Custom Wazuh SIEM detection rules mapped to MITRE ATT&CK framework and log analysis",
+      "url": "https://github.com/hnmasiya/wazuh-siem-detection-lab",
+      "updated_at": "2026-08-30T12:19:20Z",
+      "topics": [
+        "detection-engineering",
+        "mitre-attack",
+        "siem",
+        "soc",
+        "threat-hunting",
+        "wazuh"
+      ]
+    }
+  ]
+}
