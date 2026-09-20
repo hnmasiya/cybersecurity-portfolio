@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-09-20T10:06:15.132184+00:00",
+  "generated_at": "2026-09-20T10:06:55.440322+00:00",
   "source": "https://github.com/hnmasiya",
   "scope": "public, non-fork, non-archived repositories owned by hnmasiya",
   "projects": [
+    {
+      "name": "mastercard-cybersecurity-job-simulation",
+      "description": "Mastercard Cybersecurity Job Simulation — Forage Completed: September 20, 2026 This repository documents my completion of the Mastercard Cybersecurity Job Simulation on Forage. The simulation placed me in a Security Awareness Team scenar...",
+      "url": "https://github.com/hnmasiya/mastercard-cybersecurity-job-simulation",
+      "updated_at": "2026-09-20T10:06:25Z",
+      "topics": []
+    },
     {
       "name": "ad-security-log-parser",
       "description": "Python security tooling for Windows Security Event Log analysis and privileged group-change detection",
