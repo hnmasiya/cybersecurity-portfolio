@@ -1,4 +1,5 @@
 <!-- Single cybersecurity-first resume source. Enterprise IT/infrastructure experience is integrated into the cybersecurity profile. -->
+<!-- Resume PDF build sync: 2026-09-21 -->
 
 <style>
   @page { size: letter; margin: 0.28in 0.32in; }
