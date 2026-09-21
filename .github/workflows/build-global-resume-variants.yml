@@ -67,6 +67,20 @@ jobs:
 
           PR_URL=$(gh pr create             --base main             --head "$BRANCH"             --title "auto: publish global resume variants"             --body "Automated publication of the nine regional resume PDFs generated from the verified master resume.")
 
+          echo "Waiting for required PR checks to register..."
+          for i in $(seq 1 30); do
+            CHECKS_OUTPUT=$(gh pr checks "$PR_URL" 2>&1 || true)
+            if ! echo "$CHECKS_OUTPUT" | grep -q "no checks reported"; then
+              break
+            fi
+            sleep 10
+          done
+
+          if echo "$CHECKS_OUTPUT" | grep -q "no checks reported"; then
+            echo "Timed out waiting for required checks to register."
+            exit 1
+          fi
+
           gh pr checks "$PR_URL" --watch --fail-fast
           gh pr merge "$PR_URL" --squash --delete-branch
 
