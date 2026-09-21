@@ -59,10 +59,7 @@ jobs:
             echo "[PASS] All global resume PDFs are already published."
             exit 0
           fi
-        env:
-          GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
-        run: |
-          set -e
+
           BRANCH="auto/global-resume-variants-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"
           git commit -m "auto: publish global resume variants"
