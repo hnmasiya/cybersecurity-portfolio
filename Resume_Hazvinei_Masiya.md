@@ -2,21 +2,86 @@
 <!-- Resume PDF build sync: 2026-09-21 -->
 
 <style>
-  @page { size: letter; margin: 0.28in 0.32in; }
-  body { font-family: 'Times New Roman', Times, serif; font-size: 8.4pt; line-height: 1.14; color: #0f172a; margin: 0; }
-  .header { text-align: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 3px; }
-  h1 { font-size: 14pt; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a; }
-  .subtitle { font-size: 9pt; font-weight: bold; color: #2563eb; margin-top: 1px; }
-  .contact { font-size: 7.6pt; color: #334155; margin-top: 2px; }
-  h2 { font-size: 8.5pt; text-transform: uppercase; color: #0f172a; border-bottom: 1px solid #cbd5e1; margin: 4px 0 1px 0; padding-bottom: 1px; letter-spacing: 0.5px; }
-  p, ul { margin: 0 0 1px 0; }
-  ul { padding-left: 11px; }
-  li { margin-bottom: 0.5px; }
-  .job-header { margin-top: 1.5px; font-size: 8.6pt; }
-  .job-title { font-weight: bold; color: #0f172a; }
-  .company { font-style: italic; color: #334155; }
-  .date { float: right; font-weight: bold; color: #2563eb; }
-  .project-title { font-weight: bold; color: #1e293b; font-size: 8.4pt; margin-top: 1.5px; }
+  @page { size: A4; margin: 0.48in 0.55in 0.48in 0.55in; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9.2pt;
+    line-height: 1.25;
+    color: #243447;
+    margin: 0;
+  }
+  .header {
+    border-bottom: 2px solid #17365d;
+    padding: 0 0 8px 0;
+    margin: 0 0 9px 0;
+  }
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+    line-height: 1;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #17365d;
+  }
+  .subtitle {
+    font-size: 10.5pt;
+    font-weight: bold;
+    color: #2f6690;
+    margin-bottom: 5px;
+  }
+  .contact {
+    font-size: 8.2pt;
+    line-height: 1.35;
+    color: #4b5d70;
+  }
+  h2 {
+    font-size: 10pt;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #17365d;
+    border-bottom: 1px solid #b8c7d9;
+    margin: 9px 0 4px 0;
+    padding: 0 0 3px 0;
+    letter-spacing: 0.8px;
+  }
+  p, ul { margin: 0 0 3px 0; }
+  ul { padding-left: 16px; }
+  li { margin-bottom: 1.5px; }
+  .job-header {
+    margin-top: 5px;
+    padding-bottom: 1px;
+    font-size: 9.4pt;
+    line-height: 1.25;
+  }
+  .job-title { font-weight: bold; color: #17365d; }
+  .company { font-style: normal; color: #40566f; }
+  .date {
+    float: right;
+    font-weight: bold;
+    color: #2f6690;
+    font-size: 8.5pt;
+  }
+  .project-title {
+    font-weight: bold;
+    color: #17365d;
+    font-size: 9.3pt;
+    margin-top: 5px;
+    margin-bottom: 1px;
+  }
+  code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 8.5pt;
+    color: #17365d;
+  }
+  blockquote {
+    margin: 5px 0;
+    padding: 4px 8px;
+    border-left: 3px solid #2f6690;
+    background: #f3f6f9;
+    color: #526579;
+    font-size: 8.2pt;
+  }
 </style>
 
 <div class="header">
