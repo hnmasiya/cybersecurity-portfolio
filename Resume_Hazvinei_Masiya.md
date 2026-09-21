@@ -165,4 +165,6 @@ CompTIA Security+ certified enterprise IT professional with 12+ years of experie
   <li><b>Google Cybersecurity Professional Certificate</b> — Google</li>
   <li><b>Google IT Support Professional Certificate</b> — Google</li>
   <li><b>BSc in Computer Science</b> — Unicaf University (In Progress)</li>
+  <li><b>Diploma in Information Technology</b> — Macmaine School of Computing</li>
+  <li><b>Diploma in PC Maintenance and Networking</b> — Macmaine School of Computing</li>
 </ul>
