@@ -127,11 +127,32 @@ These are **virtual job simulations completed through Forage** and are listed se
 
 > **Evidence note:** These programs were Forage virtual job simulations, not employment with Mastercard or Datacom. Completion certificates are retained as evidence of program completion.
 
-## Certifications
+## Certifications & Professional Credentials
 
-- **CompTIA Security+ — SY0-701**
-- **Google Cybersecurity Professional Certificate**
-- **Google IT Support Professional Certificate**
+### Cybersecurity & AI Security
+
+- **CompTIA Security+ Certification (SY0-701)** — CompTIA | Issued July 2026 | Expires July 2029
+- **Introduction to AI Security** — AI Security University | Issued September 2026 | Credential ID: 7b4063a9-8d67-48aa-a520-d0246c8180cb
+- **GRC Fundamentals** — CyberExam | Issued July 2026 | Credential ID: CE-2026-509566
+- **ICSI | CNS Certified Network Security Specialist** — DensinityOne | Issued April 2020 | Credential ID: 17094358
+- **Junior Cybersecurity Analyst Career Path** — Cisco | Issued July 2023
+- **Introduction to Cybersecurity** — Cisco | Issued July 2023
+
+### Google, IBM & AI Credentials
+
+- **Google Cybersecurity Specialization by Google** — Coursera | Issued July 2023 | Credential ID: V6XBG8932LUH
+- **Google IT Support Specialization by Google** — Coursera | Issued June 2025 | Credential ID: NMYMY9JFLCX8
+- **Introduction to Generative AI** — Google | Issued July 2025 | Credential ID: 16990276
+- **Google AI Essentials by Google** — Coursera | Issued July 2025 | Credential ID: Z5KRK2EECS8Q
+- **Artificial Intelligence Fundamentals by IBM** — IBM | Issued June 2025
+- **Google Cybersecurity Professional Certificate** — Google
+- **Google IT Support Professional Certificate** — Google
+
+### Cybersecurity Job Simulation
+
+- **Mastercard — Cybersecurity Job Simulation** — Forage | Issued September 2026 | Credential ID: c6HXyP6y7XvatYzre
+
+> **Evidence note:** Credentials and virtual job simulations are listed based on the credential records shown in my professional profile. Virtual job simulations are not employment with the named companies.
 
 ## Professional Foundation
 
