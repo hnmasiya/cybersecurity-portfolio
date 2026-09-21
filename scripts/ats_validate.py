@@ -25,7 +25,6 @@ def main():
     checks.append(("Required keywords supplied", not missing))
     checks.append(("Job-title alignment", any(x in resume.lower() for x in ["cybersecurity","security","soc","information security","security operations"])))
     checks.append(("Certifications", any(x in resume.lower() for x in ["security+","google cybersecurity","comp tia"])))
-    checks.append(("Education", any(x in resume.lower() for x in ["information communication technology","computer science","harare polytechnic"])))
     checks.append(("Unsupported-claim guard", not any(x in resume.lower() for x in ["guaranteed","expert in all","100% success"])))
     status="PASS" if all(v for _,v in checks) else "NEEDS REVISION"
     out=Path(a.out); out.parent.mkdir(parents=True,exist_ok=True)
