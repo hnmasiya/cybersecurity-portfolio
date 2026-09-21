@@ -82,7 +82,6 @@ jobs:
 
           projects.sort(key=lambda x: x['updated_at'], reverse=True)
           payload = {
-              'generated_at': datetime.now(timezone.utc).isoformat(),
               'source': f'https://github.com/{OWNER}',
               'scope': 'public, non-fork, non-archived repositories owned by hnmasiya',
               'projects': projects,
