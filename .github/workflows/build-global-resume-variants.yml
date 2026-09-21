@@ -1,4 +1,4 @@
-name: Build Global Resume Variants
+name: Build and Publish Global Resume Variants
 
 on:
   push:
@@ -6,12 +6,16 @@ on:
     paths:
       - 'Resume_Hazvinei_Masiya.md'
       - 'scripts/build-resume-variants.py'
-      - 'resume-variants/**'
       - '.github/workflows/build-global-resume-variants.yml'
   workflow_dispatch:
 
 permissions:
   contents: write
+  pull-requests: write
+
+concurrency:
+  group: global-resume-variants
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -19,8 +23,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.AUTOMATION_PAT }}
 
-      - name: Generate country/application variants
+      - name: Generate application variants
         run: python3 scripts/build-resume-variants.py
 
       - name: Install LibreOffice
@@ -30,26 +37,38 @@ jobs:
 
       - name: Build PDFs
         run: |
+          set -e
           rm -rf dist/resumes/pdf
           mkdir -p dist/resumes/pdf
           for file in dist/resumes/*.md; do
             libreoffice --headless --convert-to pdf --outdir dist/resumes/pdf "$file"
           done
+          test "$(find dist/resumes/pdf -maxdepth 1 -name '*.pdf' | wc -l)" -eq 9
 
-      - name: Publish PDFs to portfolio
+      - name: Commit, open PR, run checks, and merge
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
           set -e
           mkdir -p resume-variants/pdf
-          cp dist/resumes/pdf/*.pdf resume-variants/pdf/
+          cp -f dist/resumes/pdf/*.pdf resume-variants/pdf/
           git config user.name "Hazvinei Nomatter Masiya"
           git config user.email "norman.masiya@gmail.com"
           git add resume-variants/pdf/*.pdf
           if git diff --cached --quiet; then
-            echo "No resume PDF changes to publish."
+            echo "[PASS] All global resume PDFs are already published."
             exit 0
           fi
+
+          BRANCH="auto/global-resume-variants-$(date -u +%Y%m%d%H%M%S)"
+          git checkout -b "$BRANCH"
           git commit -m "auto: publish global resume variants"
-          git push origin main
+          git push origin "$BRANCH"
+
+          PR_URL=$(gh pr create             --base main             --head "$BRANCH"             --title "auto: publish global resume variants"             --body "Automated publication of the nine regional resume PDFs generated from the verified master resume.")
+
+          gh pr checks "$PR_URL" --watch --fail-fast
+          gh pr merge "$PR_URL" --squash --delete-branch
 
       - name: Publish build artifact
         uses: actions/upload-artifact@v4
