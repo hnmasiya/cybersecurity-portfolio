@@ -154,6 +154,12 @@ These are **virtual job simulations completed through Forage** and are listed se
 
 > **Evidence note:** Credentials and virtual job simulations are listed based on the credential records shown in my professional profile. Virtual job simulations are not employment with the named companies.
 
+## Education
+
+- **Diploma in Information Technology** — Macmaine School of Computing
+- **Diploma in PC Maintenance and Networking** — Macmaine School of Computing
+- **BSc in Computer Science** — Unicaf University (In Progress)
+
 ## Professional Foundation
 
 My cybersecurity work builds on 12+ years of enterprise IT operations across Windows environments, Active Directory, access control, endpoint protection, system hardening, patch management, infrastructure troubleshooting and business-critical support.
