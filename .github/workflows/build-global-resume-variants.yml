@@ -81,9 +81,8 @@ jobs:
           fi
 
           gh pr checks "$PR_URL" --watch --fail-fast
-          gh pr merge "$PR_URL" --squash --delete-branch
-
-      - name: Publish build artifact
+          echo "PR created successfully. Manual approval is required before merge."
+- name: Publish build artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: global-resume-variants
