@@ -1,0 +1,8 @@
+# Security-sensitive paths
+# These owners are enforced when repository rules require CODEOWNER review.
+.github/workflows/ @hnmasiya
+.github/CODEOWNERS @hnmasiya
+.github/dependabot.yml @hnmasiya
+SECURITY.md @hnmasiya
+Scripts/portfolio_quality_check.py @hnmasiya
+Scripts/run-audit.sh @hnmasiya

@@ -1,17 +1,29 @@
 # Security Policy
 
-## Purpose
+## Scope
+This repository is a public cybersecurity portfolio. Security reports concerning the repository, GitHub Actions workflows, generated site assets, or published portfolio infrastructure are welcome.
 
-This repository contains cybersecurity learning labs, defensive security exercises, and security documentation.
+## Reporting a Vulnerability
+Please do not disclose suspected credentials, authentication bypasses, or exploitable vulnerabilities in a public issue.
 
-## Responsible Use
+Use GitHub's private vulnerability reporting/security advisory mechanism when available. Include the affected file or workflow, concise reproduction steps, security impact, evidence sufficient to validate the finding, and suggested mitigation.
 
-All demonstrations are performed in authorized laboratory environments only.
+Never include live secrets or personal authentication data in a report.
 
-## Reporting Security Issues
+## Repository Change Control
+The default branch is protected by an active GitHub ruleset. Security-sensitive changes should use the repository's controlled change process.
 
-If you discover an issue with this repository, please create an issue describing:
+Security-sensitive paths include:
+- .github/workflows/
+- .github/CODEOWNERS
+- .github/dependabot.yml
+- SECURITY.md
+- security scanning and audit scripts
 
-- affected file
-- security concern
-- recommended improvement
+## Secret Handling
+Never commit passwords, API keys, personal access tokens, private keys, session tokens, or other credentials. GitHub Actions credentials must be stored as GitHub Actions secrets and granted only the minimum permissions required.
+
+If a secret is accidentally committed, treat it as compromised immediately and rotate or revoke it. Removing it from the current tree does not make historical exposure safe.
+
+## Safe Disclosure
+Allow reasonable time for validation and remediation before public disclosure. Do not access accounts, systems, or data that you do not own or have explicit authorization to test.
