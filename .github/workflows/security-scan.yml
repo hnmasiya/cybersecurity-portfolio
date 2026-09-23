@@ -49,3 +49,5 @@ jobs:
       - name: Python Code Style (Flake8)
         run: |
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+# CI retriggered after repository Actions policy was updated to require immutable SHA pins.
