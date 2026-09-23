@@ -44,7 +44,7 @@ jobs:
           done
           test "$(find dist/resumes/pdf -maxdepth 1 -name '*.pdf' | wc -l)" -eq 9
 
-      - name: Commit, open PR, run checks, and merge
+      - name: Commit, open PR, and run checks
         env:
           GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
@@ -82,7 +82,8 @@ jobs:
 
           gh pr checks "$PR_URL" --watch --fail-fast
           echo "PR created successfully. Manual approval is required before merge."
-- name: Publish build artifact
+
+      - name: Publish build artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: global-resume-variants
