@@ -2,13 +2,30 @@
 
 ## SOC Analysis • Detection Engineering • Incident Response • Security Automation
 
-**CompTIA Security+ Certified Cybersecurity Analyst | 12+ Years Enterprise IT**
+**CompTIA Security+ Certified | 12+ Years Enterprise IT | Cybersecurity Portfolio**
 
-I bring 12+ years of professional enterprise IT and infrastructure experience into cybersecurity. My paid professional background is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated below come from independent, authorized hands-on labs, technical projects, and coursework. My work focuses on **security operations, detection engineering, incident investigation, Windows/Active Directory security, network security, cloud security, and automation**.
+Hands-on cybersecurity portfolio focused on **SOC operations, detection engineering, incident investigation, Windows/Active Directory security, network security, cloud security, DFIR, and security automation**.
 
-This repository is an evidence-focused technical portfolio. Projects identify their evidence basis as **observed, synthetic, or methodology/architecture-based** so that recruiters can distinguish demonstrated telemetry from simulated exercises and design work.
+My professional foundation is enterprise IT/infrastructure. The cybersecurity work here is clearly separated into **professional experience, independent authorized labs, coursework, and virtual job simulations**. Evidence is labeled **observed, synthetic, or methodology/architecture-based** so reviewers can quickly distinguish demonstrated telemetry from simulated or design work.
 
-## Start Here
+### Recruiter / Hiring Manager Quick View
+- **SOC / SIEM:** Wazuh, Windows Security, Sysmon, alert triage, custom detections
+- **Detection Engineering:** attack simulation, rule development, validation, MITRE ATT&CK mapping
+- **DFIR / IR:** evidence preservation, forensic analysis, IOC extraction, investigation workflows
+- **Windows / AD:** authentication events, privilege monitoring, least privilege, hardening
+- **Network Security:** Nmap, Wireshark/tshark, PCAP analysis, reconnaissance
+- **Cloud Security:** GCP, Terraform, IAM, VPC controls and landing-zone architecture
+- **Automation:** Python, Bash, PowerShell and repeatable validation workflows
+
+### Start Here
+**[SOC Evidence Map](SOC-ANALYST-EVIDENCE-MAP.md)** · **[Security Tools Inventory](SECURITY-TOOLS-INVENTORY.md)** · **[Featured Labs](#featured-evidence)** · **[Certifications](#certifications--professional-credentials)** · **[Resume](Resume_Hazvinei_Masiya.md)** · **[Live Portfolio](https://masiya-hub.org/)**
+
+### CI / Security Controls
+[![Security Scan](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/security-scan.yml/badge.svg)](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/security-scan.yml)
+[![Portfolio Quality](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/portfolio-quality.yml/badge.svg)](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/portfolio-quality.yml)
+[![Trust Monitor](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/portfolio-trust-monitor.yml/badge.svg)](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/portfolio-trust-monitor.yml)
+
+## Featured Evidence
 
 ### 🛡️ SOC & Detection
 - **Wazuh SIEM** — alert triage, custom rules, File Integrity Monitoring and security-event analysis
@@ -49,12 +66,12 @@ This repository is an evidence-focused technical portfolio. Projects identify th
 
 | Priority | Project Area | What to Look For |
 |---|---|---|
-| **1** | **SOC / SIEM** | Windows → Sysmon → Wazuh telemetry, detections and alert investigation |
-| **2** | **Detection Engineering** | Attack simulation, custom detections, validation and MITRE mapping |
-| **3** | **Incident Response / DFIR** | Investigation workflow, evidence handling and forensic analysis |
-| **4** | **Windows / AD Security** | Authentication events, privilege monitoring and identity security |
-| **5** | **Network Security** | PCAP investigation, reconnaissance and IOC analysis |
-| **6** | **Cloud Security** | Secure GCP architecture and Terraform controls |
+| **1** | **SOC / SIEM** | [Windows → Sysmon → Wazuh](SIEM/Wazuh/) telemetry, detections and alert investigation |
+| **2** | **Detection Engineering** | [Attack simulation + custom Wazuh rules](Offensive-Security/Attack-Simulation-Detection-Lab/), validation and MITRE mapping |
+| **3** | **Incident Response / DFIR** | [Investigation workflow](Incident-Response/), evidence handling and forensic analysis |
+| **4** | **Windows / AD Security** | [Windows / AD security](Active-Directory/), authentication events and privilege monitoring |
+| **5** | **Network Security** | [Nmap + Wireshark/PCAP](Network-Security/), reconnaissance and IOC analysis |
+| **6** | **Cloud Security** | [GCP + Terraform](Cloud-Security/), IAM/VPC controls and landing-zone architecture |
 | **7** | **Application Security** | DVWA and OWASP Juice Shop assessments |
 | **8** | **Automation** | Python/Bash/PowerShell security workflows and validation tooling |
 
