@@ -62,7 +62,7 @@ My professional foundation is enterprise IT/infrastructure. The cybersecurity ca
 
 ### SOC & Detection
 - **[Wazuh SIEM](SIEM/Wazuh/)** — alert triage, custom rules, file-integrity monitoring and security-event analysis.
-- **[Windows + Sysmon](SIEM/Wazuh/Windows-Sysmon/)** — endpoint telemetry and detection validation.
+- **[Windows + Sysmon](Endpoint-Security/Windows-Sysmon-Detection-Lab/)** — endpoint telemetry and detection validation.
 - **[Attack Simulation & Detection Engineering](Offensive-Security/Attack-Simulation-Detection-Lab/)** — controlled simulations, custom detections and MITRE ATT&CK mapping.
 
 ### Incident Response & DFIR
