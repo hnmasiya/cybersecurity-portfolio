@@ -12,9 +12,7 @@ on:
       - '.github/workflows/career-intelligence.yml'
 
 permissions:
-  contents: write
-  pull-requests: write
-  issues: write
+  contents: read
 
 concurrency:
   group: career-intelligence
