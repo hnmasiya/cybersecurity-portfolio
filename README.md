@@ -2,13 +2,13 @@
 
 # HAZVINEI NOMATTER MASIYA
 
-### Cybersecurity Analyst · Security Operations · Detection Engineering
+### Cybersecurity Analyst · Security Operations · Detection Engineering · DFIR
 
-**CompTIA Security+ Certified · 12+ Years Enterprise IT · BSc Computer Science in Progress**
+**12+ Years Enterprise IT · CompTIA Security+ Certified · BSc Computer Science — In Progress**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-masiya--hub.org-10b981?style=for-the-badge&logo=googlechrome&logoColor=white)](https://masiya-hub.org/)
-[![GitHub](https://img.shields.io/badge/GitHub-hnmasiya-111827?style=for-the-badge&logo=github)](https://github.com/hnmasiya)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Hazvinei%20Masiya-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hazvinei-masiya/)
+[![GitHub](https://img.shields.io/badge/GitHub-hnmasiya-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hnmasiya)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hazvinei-masiya/)
 [![Security Scan](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/security-scan.yml/badge.svg)](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/security-scan.yml)
 [![Portfolio Quality](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/portfolio-quality.yml/badge.svg)](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/portfolio-quality.yml)
 
@@ -18,11 +18,30 @@
 
 ## 👋 Profile
 
-I am a **CompTIA Security+ certified enterprise IT professional with 12+ years of experience**, deliberately applying my infrastructure and systems background to cybersecurity.
+CompTIA Security+ certified enterprise IT professional with **12+ years of experience**, deliberately applying an infrastructure and systems background to cybersecurity.
 
-My professional foundation is enterprise IT/infrastructure. The cybersecurity capability demonstrated in this repository is separated into **independent authorized labs, technical projects, coursework and virtual job simulations**. Evidence is labeled by scope so reviewers can distinguish observed telemetry from synthetic, offline or methodology-based work.
+This repository is an **evidence-first technical portfolio** covering SOC operations, detection engineering, DFIR, Windows/Active Directory security, network security, cloud security, application security and automation.
 
-> **Core approach:** understand the environment → identify risk → collect telemetry → detect abnormal activity → investigate evidence → remediate → validate.
+Professional experience, independent authorized labs, coursework and virtual job simulations are kept distinct so reviewers can understand the scope of each claim.
+
+> **Core approach:** Environment → Risk → Telemetry → Detection → Investigation → Remediation → Validation
+
+---
+
+## 🧭 Start Here
+
+### Evidence Hubs
+
+| Focus | Entry point |
+|---|---|
+| 🛡️ **SOC Operations** | [Wazuh · Windows/Sysmon · alert triage · investigation](https://masiya-hub.org/soc-analyst.html) |
+| 🎯 **Detection Engineering** | [Detection logic · validation · MITRE ATT&CK](https://masiya-hub.org/detection-engineering.html) |
+| 🔎 **DFIR / Incident Response** | [Forensics · evidence handling · IOC analysis](https://masiya-hub.org/dfir-incident-response.html) |
+| 🌐 **Network Security** | [Nmap · Wireshark · PCAP · traffic analysis](https://masiya-hub.org/network-security.html) |
+
+### Repository Indexes
+
+**[SOC Evidence Map](SOC-ANALYST-EVIDENCE-MAP.md)** · **[Security Tools Inventory](SECURITY-TOOLS-INVENTORY.md)** · **[Resume](Resume_Hazvinei_Masiya.md)** · **[Live Portfolio](https://masiya-hub.org/)**
 
 ---
 
@@ -30,13 +49,14 @@ My professional foundation is enterprise IT/infrastructure. The cybersecurity ca
 
 | Area | Demonstrated focus | Key technologies |
 |---|---|---|
-| **SOC / SIEM** | Monitoring, alert triage, log analysis, investigation | Wazuh, Windows Security, Sysmon |
-| **Detection Engineering** | Rule development, validation, attack simulation, ATT&CK mapping | Wazuh, Sigma, MITRE ATT&CK |
-| **DFIR / IR** | Evidence handling, forensic analysis, IOC extraction, investigation workflows | Volatility, AVML, Linux/Windows forensics |
-| **Windows / AD** | Authentication events, privilege monitoring, least privilege, hardening | Windows Server, AD, PowerShell |
-| **Network Security** | Reconnaissance, PCAP analysis, traffic inspection | Nmap, Wireshark, tshark |
-| **Cloud Security** | Secure architecture, IAM/VPC controls, infrastructure as code | GCP, Terraform |
-| **Automation** | Security tooling and repeatable validation | Python, Bash, PowerShell |
+| **SOC / SIEM** | Monitoring, alert triage, log analysis, investigation | Wazuh · Windows Security · Sysmon |
+| **Detection Engineering** | Rule development, validation, attack simulation | Wazuh · Sigma · MITRE ATT&CK |
+| **DFIR / IR** | Evidence handling, forensics, IOC extraction | Volatility · AVML · Linux/Windows |
+| **Windows / AD** | Authentication, privilege monitoring, hardening | Windows Server · AD · PowerShell |
+| **Network Security** | Reconnaissance, PCAP and traffic analysis | Nmap · Wireshark · tshark |
+| **Cloud Security** | Secure architecture, IAM/VPC controls, IaC | GCP · Terraform |
+| **Application Security** | Authorized web-security assessment | Burp Suite · OWASP · DVWA · Juice Shop |
+| **Automation** | Repeatable security tooling | Python · Bash · PowerShell |
 
 ---
 
@@ -70,15 +90,15 @@ My professional foundation is enterprise IT/infrastructure. The cybersecurity ca
 - **[Windows Memory Forensics](DFIR/Windows-Memory-Forensics/)** — memory-analysis exercises.
 - **[Incident Response](Incident-Response/)** — investigation, containment, evidence handling and recovery planning.
 
-### Windows / Active Directory
+### Windows / Identity
 - **[Active Directory Security](Active-Directory/)** — identity, access control, authentication and privilege-monitoring scenarios.
 - **[Endpoint Security](Endpoint-Security/)** — Windows/Sysmon security telemetry and hardening work.
 
-### Network & Cloud
+### Network / Cloud
 - **[Network Security](Network-Security/)** — Nmap reconnaissance, Wireshark/tshark and PCAP analysis.
 - **[Cloud Security](Cloud-Security/)** — GCP security architecture, Terraform, IAM and VPC controls.
 
-### Application Security & Automation
+### Application Security / Automation
 - **[Web Security](Web-Security/)** — DVWA and OWASP Juice Shop assessments.
 - **[Security Automation](Security-Automation/)** — Python, Bash and PowerShell workflows.
 - **[AppSec / DevSecOps](AppSec-DevSecOps/)** — application and pipeline security work.
@@ -168,7 +188,9 @@ Python · Bash · PowerShell
 
 My cybersecurity work builds on **12+ years of enterprise IT operations** across Windows environments, Active Directory, access control, endpoint protection, system hardening, patch management, infrastructure troubleshooting and business-critical support.
 
-This foundation informs the security workflow used throughout the portfolio: **environment → risk → telemetry → detection → investigation → remediation → validation**.
+That foundation informs the security workflow used throughout this portfolio:
+
+**Environment → Risk → Telemetry → Detection → Investigation → Remediation → Validation**
 
 ---
 
@@ -178,14 +200,22 @@ This foundation informs the security workflow used throughout the portfolio: **e
 
 **Secondary:** Detection Engineering · Incident Response · Threat Hunting · Security Automation · Junior Security Engineering
 
+**Open to international opportunities and relocation.**
+
 ---
 
-## 🔄 Recent Lab & Security Updates
+## 🔄 Portfolio Automation
+
+This repository also contains automation for maintaining portfolio quality, evidence validation, security checks and public project synchronization.
+
+The goal is simple: **changes should remain reviewable, reproducible and evidence-backed.**
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
 * Automated activity is maintained by the repository workflow.
 <!-- END_SECTION:activity -->
+
+ 
 
 ---
 
@@ -193,9 +223,9 @@ This foundation informs the security workflow used throughout the portfolio: **e
 
 | Resource | Link |
 |---|---|
-| **Live portfolio** | https://masiya-hub.org/ |
-| **GitHub profile** | https://github.com/hnmasiya |
-| **LinkedIn** | https://www.linkedin.com/in/hazvinei-masiya/ |
+| **Live portfolio** | [masiya-hub.org](https://masiya-hub.org/) |
+| **GitHub profile** | [github.com/hnmasiya](https://github.com/hnmasiya) |
+| **LinkedIn** | [linkedin.com/in/hazvinei-masiya](https://www.linkedin.com/in/hazvinei-masiya/) |
 
 ---
 
