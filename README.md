@@ -60,22 +60,6 @@ Professional experience, independent authorized labs, coursework and virtual job
 
 ---
 
-## 🧭 Start Here
-
-**Evidence hubs**
-- 🛡️ **[SOC Analyst](https://masiya-hub.org/soc-analyst.html)** — security operations, SIEM and investigation
-- 🎯 **[Detection Engineering](https://masiya-hub.org/detection-engineering.html)** — detections, validation and ATT&CK
-- 🔎 **[DFIR & Incident Response](https://masiya-hub.org/dfir-incident-response.html)** — forensics and response
-- 🌐 **[Network Security](https://masiya-hub.org/network-security.html)** — Nmap, Wireshark and PCAP
-
-**Repository indexes**
-- **[SOC Analyst Evidence Map](SOC-ANALYST-EVIDENCE-MAP.md)**
-- **[Security Tools Inventory](SECURITY-TOOLS-INVENTORY.md)**
-- **[Featured Evidence](#featured-evidence)**
-- **[Certifications](#certifications--professional-credentials)**
-- **[Education](#education)**
-- **[Resume](Resume_Hazvinei_Masiya.md)**
-
 ---
 
 ## 🛡️ Featured Evidence
@@ -130,22 +114,22 @@ Major projects aim to document:
 Wazuh · Sysmon · Sigma · MITRE ATT&CK
 
 **DFIR**  
-Volatility · AVML · forensic analysis · IOC extraction
+Volatility · AVML · forensic analysis · IOC extraction · SHA-256 integrity verification
 
 **Windows / Identity**  
-Windows Server · Active Directory · PowerShell · Microsoft 365
+Windows Server · Active Directory · Group Policy · PowerShell · Microsoft 365 · RBAC / least privilege
 
 **Network Security**  
-Wireshark · tshark · Nmap · TCP/IP
+Nmap · Wireshark · tshark · TCP/IP
 
 **Application Security**  
-Burp Suite · OWASP · DVWA · OWASP Juice Shop
+Burp Suite · OWASP · DVWA · OWASP Juice Shop · Bandit
 
 **Cloud / IaC**  
-GCP · Terraform · VPC · IAM
+GCP · Terraform · VPC · IAM · Azure Windows Server
 
 **Automation**  
-Python · Bash · PowerShell
+Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage automation · PCAP analysis
 
 ---
 
@@ -204,18 +188,14 @@ That foundation informs the security workflow used throughout this portfolio:
 
 ---
 
-## 🔄 Portfolio Automation
+## 🔄 Portfolio Maintenance
 
-This repository also contains automation for maintaining portfolio quality, evidence validation, security checks and public project synchronization.
-
-The goal is simple: **changes should remain reviewable, reproducible and evidence-backed.**
+Automated checks validate portfolio quality, evidence integrity and security controls. Visitor-facing content is kept focused on technical evidence, projects and professional credentials.
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
 * Automated activity is maintained by the repository workflow.
 <!-- END_SECTION:activity -->
-
- 
 
 ---
 
