@@ -147,4 +147,4 @@ jobs:
           done
 
           gh pr checks "$PR_URL" --watch --fail-fast
-          gh pr merge "$PR_URL" --squash --delete-branch
+          echo "PR created successfully. Manual approval is required before merge."
