@@ -1,6 +1,6 @@
 # Cybersecurity Job Intelligence — 2026-09-23
 
-Generated: 2026-09-23T11:40:40Z
+Generated: 2026-09-23T11:42:38Z
 
 Discovery results only. Verify the original employer/ATS posting before applying.
 
