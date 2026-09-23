@@ -1,0 +1,8 @@
+# Security-sensitive paths
+# Keep ownership explicit for security-critical repository changes.
+.github/workflows/ @hnmasiya
+.github/CODEOWNERS @hnmasiya
+.github/dependabot.yml @hnmasiya
+SECURITY.md @hnmasiya
+Scripts/portfolio_quality_check.py @hnmasiya
+Scripts/run-audit.sh @hnmasiya
