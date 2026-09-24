@@ -1,8 +1,8 @@
 # Splunk SOC Lab 01 — SSH Authentication Threat Hunting
 
-> **Evidence classification: Synthetic / offline preparation**
+> **Evidence classification: Executed local training lab using synthetic data**
 >
-> This lab is the first hands-on Splunk lab added to the portfolio track. The dataset is synthetic and safe for training. It is **not** live Splunk telemetry and must not be described as live evidence until the searches are actually executed in a Splunk environment.
+> Lab 01 has now been executed in an authorized local Splunk Enterprise 10.4.3 instance. The dataset is synthetic and safe for training. The results document the observed synthetic telemetry only and must not be represented as real customer or employer telemetry.
 
 ## Objective
 
@@ -46,6 +46,7 @@ Important fields:
 4. Use the synthetic sourcetype value already present in the data.
 5. Send the data to a dedicated lab index, preferably a non-production index such as `splunk_lab`.
 6. Confirm that events are searchable before continuing.
+7. For the portfolio execution, use the dedicated `splunk_lab` index and custom `splunk:lab:ssh_auth` sourcetype.
 
 > Do not upload real customer, employer, credential, or private infrastructure data into this training dataset.
 
@@ -135,20 +136,33 @@ Complete a short investigation note containing:
 - Recommended next investigative step
 - MITRE ATT&CK mapping where justified
 
-## Completion criteria
+## Execution status
 
-This lab becomes **completed evidence** only after all of the following exist:
+**Investigation execution: complete. Dashboard evidence: pending.**
 
-- [ ] Dataset successfully ingested into Splunk
-- [ ] Base search executed
-- [ ] Failure aggregation executed
-- [ ] Source/account analysis executed
-- [ ] Timeline search executed
-- [ ] At least one visualization or table captured
-- [ ] Analyst findings written from observed results
-- [ ] Screenshots or sanitized exported evidence retained
-- [ ] Evidence is dated and traceable to this lab
-- [ ] Portfolio status updated from preparation/in-progress only after execution
+Observed execution results:
+
+- 31 synthetic events indexed successfully.
+- 21 failure events identified.
+- 10 successful authentication events identified.
+- `10.10.10.25` generated the highest failure count with 8 failures.
+- `admin` was the most frequently failed target account with 7 failures overall.
+- The focused `10.10.10.25` timeline contained 9 events: 8 failures and 1 successful `admin` authentication.
+
+### Completion criteria
+
+- [x] Dataset successfully ingested into Splunk
+- [x] Base search executed
+- [x] Failure aggregation executed
+- [x] Source/account analysis executed
+- [x] Timeline search executed
+- [x] At least one visualization or table captured
+- [x] Analyst findings written from observed results
+- [x] Screenshots or sanitized exported evidence retained
+- [x] Evidence is traceable to this lab execution
+- [ ] SOC monitoring dashboard screenshot captured
+
+See `reports/SOC-Investigation-Report.md` for the investigation narrative and `dashboard/SOC-SSH-Authentication-Monitoring.md` for the dashboard build plan.
 
 ## Evidence directory
 
