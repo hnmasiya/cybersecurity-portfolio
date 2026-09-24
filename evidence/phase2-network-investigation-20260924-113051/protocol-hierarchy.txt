@@ -1,0 +1,12 @@
+
+===================================================================
+Protocol Hierarchy Statistics
+Filter: 
+
+eth                                      frames:37 bytes:3924
+  ip                                     frames:37 bytes:3924
+    tcp                                  frames:37 bytes:3924
+      http                               frames:6 bytes:1272
+        data-text-lines                  frames:3 bytes:843
+          tcp.segments                   frames:3 bytes:843
+===================================================================
