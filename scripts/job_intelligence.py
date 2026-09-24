@@ -146,7 +146,6 @@ def run():
         key=lambda x: (-x["match_score"], x["title"].lower(), x["company"].lower())
     )[:CONFIG["filters"]["max_results"]]
 
-    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     csv_path = OUT / f"jobs-{date}.csv"
@@ -163,7 +162,7 @@ def run():
     lines = [
         f"# Cybersecurity Job Intelligence — {date}",
         "",
-        f"Generated: {stamp}",
+        "Generated: __TIMESTAMP__",
         "",
         "Discovery results only. Verify the original employer/ATS posting before applying.",
         "",
@@ -184,7 +183,21 @@ def run():
             f"- **Job:** {job['url']}",
             "",
         ]
-    md_path.write_text("\n".join(lines), encoding="utf-8")
+
+    new_content = "\n".join(lines)
+    existing = md_path.read_text(encoding="utf-8") if md_path.exists() else ""
+    normalized = re.sub(r"(?m)^Generated: .*?$", "Generated: __TIMESTAMP__", existing)
+
+    if md_path.exists() and normalized == new_content:
+        print("[PASS] Report content unchanged; preserved existing Generated timestamp.")
+    else:
+        stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        md_path.write_text(
+            new_content.replace("Generated: __TIMESTAMP__", f"Generated: {stamp}", 1),
+            encoding="utf-8"
+        )
+        print("[PASS] Report content changed; refreshed Generated timestamp.")
+
     print(f"Generated {len(selected)} job matches")
     print(md_path)
     print(csv_path)
