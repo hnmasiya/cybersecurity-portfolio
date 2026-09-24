@@ -30,4 +30,3 @@ timestamp,sourcetype,host,event_type,src_ip,user,action,service,status,process,m
 2026-09-24T06:42:52Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.49,analyst,login,ssh,success,sshd,Successful SSH authentication
 2026-09-24T06:45:17Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.50,devops,login,ssh,success,sshd,Successful SSH authentication
 2026-09-24T06:46:09Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.51,admin,login,ssh,failure,sshd,Failed SSH authentication
-

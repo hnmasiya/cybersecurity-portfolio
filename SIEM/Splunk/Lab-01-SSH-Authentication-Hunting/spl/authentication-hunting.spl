@@ -64,4 +64,3 @@ index=splunk_lab sourcetype="splunk:lab:ssh_auth" status=failure
 ```
 
 > Note: Query 08 is a laboratory heuristic, not a production detection threshold. Thresholds should be validated and tuned against real organizational baselines.
-

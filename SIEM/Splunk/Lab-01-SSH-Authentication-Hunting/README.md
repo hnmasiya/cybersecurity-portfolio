@@ -167,4 +167,3 @@ After this lab is executed and documented, the Splunk track will continue into:
 **Lab 02 — Windows / Sysmon Event Investigation**
 
 That lab will focus on process creation, PowerShell activity, parent-child relationships, and detection-oriented SPL.
-

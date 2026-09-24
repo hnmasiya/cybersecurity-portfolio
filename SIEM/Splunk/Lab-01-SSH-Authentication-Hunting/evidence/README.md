@@ -25,4 +25,3 @@ Every retained artifact should make it possible to answer:
 - What limitations remained?
 
 Do not store credentials, tokens, private infrastructure details, or unrelated screenshots.
-
