@@ -1,5 +1,5 @@
 <!-- Single cybersecurity-first resume source. Global master template for country-specific variants. -->
-<!-- Resume PDF build sync: 2026-09-21 -->
+<!-- Resume source reviewed with portfolio automation cleanup: 2026-09-24 -->
 
 <style>
   @page { size: A4; margin: 0.45in 0.55in; }
