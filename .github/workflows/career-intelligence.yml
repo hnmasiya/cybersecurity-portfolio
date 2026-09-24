@@ -16,7 +16,7 @@ permissions:
 
 concurrency:
   group: career-intelligence
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   job-discovery:
@@ -60,6 +60,18 @@ jobs:
           git config user.email 'norman.masiya@gmail.com'
           git add career/latest-jobs.md
           git diff --cached --quiet && exit 0
+
+          OPEN_JOB_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: update cybersecurity job intelligence\"" --json number --jq 'length')"
+          if [[ "$OPEN_JOB_PRS" -gt 0 ]]; then
+            echo "[PASS] A job-intelligence PR is already open; skipping duplicate PR creation."
+            exit 0
+          fi
+
+          OPEN_JOB_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: update cybersecurity job intelligence\"" --json number --jq 'length')"
+          if [[ "$OPEN_JOB_PRS" -gt 0 ]]; then
+            echo "[PASS] Job-intelligence PR already open; skipping duplicate."
+            exit 0
+          fi
 
           BRANCH="auto/career-intelligence-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"

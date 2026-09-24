@@ -14,8 +14,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: portfolio-automation
-  cancel-in-progress: false
+  group: cybersecurity-resume-build
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -27,6 +27,19 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.AUTOMATION_PAT }}
+
+      - name: Configure verified commit signing
+        env:
+          AUTOMATION_SIGNING_KEY: ${{ secrets.AUTOMATION_SIGNING_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "$AUTOMATION_SIGNING_KEY"
+          install -d -m 700 "$RUNNER_TEMP/automation-signing"
+          printf '%s\n' "$AUTOMATION_SIGNING_KEY" > "$RUNNER_TEMP/automation-signing/id_ed25519"
+          chmod 600 "$RUNNER_TEMP/automation-signing/id_ed25519"
+          git config --global gpg.format ssh
+          git config --global user.signingkey "$RUNNER_TEMP/automation-signing/id_ed25519"
+          git config --global commit.gpgsign true
 
       - name: Install LibreOffice
         run: |
@@ -58,7 +71,7 @@ jobs:
           p.write_text(text, encoding='utf-8')
           PY
 
-      - name: Commit, Open PR, and Merge Updated Resume Asset
+      - name: Commit and Open PR for Updated Resume Asset
         env:
           GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
@@ -73,10 +86,31 @@ jobs:
             exit 0
           fi
 
+          OPEN_RESUME_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: publish consolidated cybersecurity resume\"" --json number --jq 'length')"
+          if [[ "$OPEN_RESUME_PRS" -gt 0 ]]; then
+            echo "[PASS] A consolidated-resume PR is already open; skipping duplicate PR creation."
+            exit 0
+          fi
+
+          OPEN_RESUME_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: publish consolidated cybersecurity resume\"" --json number --jq 'length')"
+          if [[ "$OPEN_RESUME_PRS" -gt 0 ]]; then
+            echo "[PASS] Consolidated-resume PR already open; skipping duplicate."
+            exit 0
+          fi
+
           BRANCH="auto/cybersecurity-resume-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"
-          git commit -m "auto: publish consolidated cybersecurity resume"
+          git commit -S -m "auto: publish consolidated cybersecurity resume"
           git push origin "$BRANCH"
+
+          SHA="$(git rev-parse HEAD)"
+          VERIFIED="false"
+          for _ in 1 2 3 4 5; do
+            VERIFIED="$(gh api "repos/${{ github.repository }}/commits/$SHA" --jq '.commit.verification.verified' 2>/dev/null || echo false)"
+            [[ "$VERIFIED" == "true" ]] && break
+            sleep 2
+          done
+          [[ "$VERIFIED" == "true" ]] || { echo "[FAIL] GitHub did not verify the automation commit signature."; exit 1; }
 
           PR_URL=$(gh pr create --base main --head "$BRANCH"             --title "auto: publish consolidated cybersecurity resume"             --body "Automated build of the single cybersecurity-first resume PDF, integrating verified enterprise IT and infrastructure experience and removing the separate IT Support & Infrastructure resume." )
 
