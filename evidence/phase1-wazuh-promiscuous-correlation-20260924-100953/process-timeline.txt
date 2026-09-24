@@ -1,0 +1,380 @@
+    PID    PPID USER                      STARTED     ELAPSED COMMAND         COMMAND
+      1       0 root     Thu Sep 24 06:31:53 2026    03:38:00 systemd         /sbin/init splash
+      2       0 root     Thu Sep 24 06:31:53 2026    03:38:00 kthreadd        [kthreadd]
+      3       2 root     Thu Sep 24 06:31:53 2026    03:38:00 pool_workqueue_ [pool_workqueue_release]
+      4       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-rcu_g [kworker/R-rcu_gp]
+      5       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-sync_ [kworker/R-sync_wq]
+      6       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-kvfre [kworker/R-kvfree_rcu_reclaim]
+      7       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-slub_ [kworker/R-slub_flushwq]
+      8       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-netns [kworker/R-netns]
+     10       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/0:0H-kb [kworker/0:0H-kblockd]
+     13       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-mm_pe [kworker/R-mm_percpu_wq]
+     14       2 root     Thu Sep 24 06:31:53 2026    03:38:00 ksoftirqd/0     [ksoftirqd/0]
+     15       2 root     Thu Sep 24 06:31:53 2026    03:38:00 rcu_preempt     [rcu_preempt]
+     16       2 root     Thu Sep 24 06:31:53 2026    03:38:00 rcu_exp_par_gp_ [rcu_exp_par_gp_kthread_worker/0]
+     17       2 root     Thu Sep 24 06:31:53 2026    03:38:00 rcu_exp_gp_kthr [rcu_exp_gp_kthread_worker]
+     18       2 root     Thu Sep 24 06:31:53 2026    03:38:00 migration/0     [migration/0]
+     19       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kprobe-optimize [kprobe-optimizer]
+     20       2 root     Thu Sep 24 06:31:53 2026    03:38:00 idle_inject/0   [idle_inject/0]
+     21       2 root     Thu Sep 24 06:31:53 2026    03:38:00 cpuhp/0         [cpuhp/0]
+     22       2 root     Thu Sep 24 06:31:53 2026    03:38:00 cpuhp/1         [cpuhp/1]
+     23       2 root     Thu Sep 24 06:31:53 2026    03:38:00 idle_inject/1   [idle_inject/1]
+     24       2 root     Thu Sep 24 06:31:53 2026    03:38:00 migration/1     [migration/1]
+     25       2 root     Thu Sep 24 06:31:53 2026    03:38:00 ksoftirqd/1     [ksoftirqd/1]
+     27       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/1:0H-kb [kworker/1:0H-kblockd]
+     28       2 root     Thu Sep 24 06:31:53 2026    03:38:00 cpuhp/2         [cpuhp/2]
+     29       2 root     Thu Sep 24 06:31:53 2026    03:38:00 idle_inject/2   [idle_inject/2]
+     30       2 root     Thu Sep 24 06:31:53 2026    03:38:00 migration/2     [migration/2]
+     31       2 root     Thu Sep 24 06:31:53 2026    03:38:00 ksoftirqd/2     [ksoftirqd/2]
+     33       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/2:0H-kb [kworker/2:0H-kblockd]
+     34       2 root     Thu Sep 24 06:31:53 2026    03:38:00 cpuhp/3         [cpuhp/3]
+     35       2 root     Thu Sep 24 06:31:53 2026    03:38:00 idle_inject/3   [idle_inject/3]
+     36       2 root     Thu Sep 24 06:31:53 2026    03:38:00 migration/3     [migration/3]
+     37       2 root     Thu Sep 24 06:31:53 2026    03:38:00 ksoftirqd/3     [ksoftirqd/3]
+     39       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/3:0H-kb [kworker/3:0H-kblockd]
+     40       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kdevtmpfs       [kdevtmpfs]
+     41       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-inet_ [kworker/R-inet_frag_wq]
+     42       2 root     Thu Sep 24 06:31:53 2026    03:38:00 rcu_tasks_kthre [rcu_tasks_kthread]
+     43       2 root     Thu Sep 24 06:31:53 2026    03:38:00 rcu_tasks_rude_ [rcu_tasks_rude_kthread]
+     44       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kauditd         [kauditd]
+     45       2 root     Thu Sep 24 06:31:53 2026    03:38:00 khungtaskd      [khungtaskd]
+     46       2 root     Thu Sep 24 06:31:53 2026    03:38:00 oom_reaper      [oom_reaper]
+     49       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-write [kworker/R-writeback]
+     51       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kcompactd0      [kcompactd0]
+     52       2 root     Thu Sep 24 06:31:53 2026    03:38:00 ksmd            [ksmd]
+     53       2 root     Thu Sep 24 06:31:53 2026    03:38:00 khugepaged      [khugepaged]
+     54       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-kbloc [kworker/R-kblockd]
+     55       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-blkcg [kworker/R-blkcg_punt_bio]
+     56       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-kinte [kworker/R-kintegrityd]
+     57       2 root     Thu Sep 24 06:31:53 2026    03:38:00 irq/9-acpi      [irq/9-acpi]
+     60       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-tpm_d [kworker/R-tpm_dev_wq]
+     61       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-ata_s [kworker/R-ata_sff]
+     62       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-md_bi [kworker/R-md_bitmap]
+     63       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-md_ll [kworker/R-md_llbitmap_io]
+     64       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-md_ll [kworker/R-md_llbitmap_unplug]
+     65       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-edac- [kworker/R-edac-poller]
+     66       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-devfr [kworker/R-devfreq_wq]
+     67       2 root     Thu Sep 24 06:31:53 2026    03:38:00 watchdogd       [watchdogd]
+     68       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-quota [kworker/R-quota_events_unbound]
+     69       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kswapd0         [kswapd0]
+     70       2 root     Thu Sep 24 06:31:53 2026    03:38:00 ecryptfs-kthrea [ecryptfs-kthread]
+     71       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-kthro [kworker/R-kthrotld]
+     72       2 root     Thu Sep 24 06:31:53 2026    03:38:00 kworker/R-acpi_ [kworker/R-acpi_thermal_pm]
+     77       2 root     Thu Sep 24 06:32:00 2026    03:37:53 kworker/R-mld   [kworker/R-mld]
+     78       2 root     Thu Sep 24 06:32:00 2026    03:37:53 kworker/R-ipv6_ [kworker/R-ipv6_addrconf]
+     79       2 root     Thu Sep 24 06:32:00 2026    03:37:53 kworker/R-kstrp [kworker/R-kstrp]
+     92       2 root     Thu Sep 24 06:32:00 2026    03:37:53 kworker/R-charg [kworker/R-charger_manager]
+    152       2 root     Thu Sep 24 06:32:00 2026    03:37:53 scsi_eh_0       [scsi_eh_0]
+    153       2 root     Thu Sep 24 06:32:00 2026    03:37:53 kworker/R-scsi_ [kworker/R-scsi_tmf_0]
+    155       2 root     Thu Sep 24 06:32:00 2026    03:37:53 scsi_eh_1       [scsi_eh_1]
+    156       2 root     Thu Sep 24 06:32:00 2026    03:37:53 kworker/R-scsi_ [kworker/R-scsi_tmf_1]
+    167       2 root     Thu Sep 24 06:32:01 2026    03:37:52 kworker/R-ktpac [kworker/R-ktpacpid]
+    170       2 root     Thu Sep 24 06:32:01 2026    03:37:52 kworker/0:1H-i9 [kworker/0:1H-i915_cleanup]
+    209       2 root     Thu Sep 24 06:32:01 2026    03:37:52 kworker/3:1H-i9 [kworker/3:1H-i915_cleanup]
+    210       2 root     Thu Sep 24 06:32:01 2026    03:37:52 kworker/1:1H-i9 [kworker/1:1H-i915_cleanup]
+    216       2 root     Thu Sep 24 06:32:01 2026    03:37:52 jbd2/sda7-8     [jbd2/sda7-8]
+    217       2 root     Thu Sep 24 06:32:01 2026    03:37:52 kworker/R-ext4- [kworker/R-ext4-rsv-conversion]
+    263       1 root     Thu Sep 24 06:32:02 2026    03:37:51 systemd-journal /usr/lib/systemd/systemd-journald
+    324       1 root     Thu Sep 24 06:32:02 2026    03:37:51 systemd-udevd   /usr/lib/systemd/systemd-udevd
+    338       2 root     Thu Sep 24 06:32:03 2026    03:37:50 kworker/2:1H-kb [kworker/2:1H-kblockd]
+    358       2 root     Thu Sep 24 06:32:03 2026    03:37:50 kworker/1:2-mm_ [kworker/1:2-mm_percpu_wq]
+    381       2 root     Thu Sep 24 06:32:03 2026    03:37:50 psimon          [psimon]
+    476       2 root     Thu Sep 24 06:32:03 2026    03:37:50 irq/131-mei_me  [irq/131-mei_me]
+    512       2 root     Thu Sep 24 06:32:03 2026    03:37:49 kworker/R-cfg80 [kworker/R-cfg80211]
+    594       1 systemd+ Thu Sep 24 06:32:04 2026    03:37:49 systemd-oomd    /usr/lib/systemd/systemd-oomd
+    598       1 systemd+ Thu Sep 24 06:32:04 2026    03:37:49 systemd-resolve /usr/lib/systemd/systemd-resolved
+    600       1 systemd+ Thu Sep 24 06:32:04 2026    03:37:49 systemd-timesyn /usr/lib/systemd/systemd-timesyncd
+    626       1 root     Thu Sep 24 06:32:04 2026    03:37:49 auditd          /sbin/auditd
+    725       2 root     Thu Sep 24 06:32:04 2026    03:37:49 kworker/R-ttm   [kworker/R-ttm]
+    746       2 root     Thu Sep 24 06:32:05 2026    03:37:48 irq/132-iwlwifi [irq/132-iwlwifi]
+    750       2 root     Thu Sep 24 06:32:05 2026    03:37:48 card1-crtc0     [card1-crtc0]
+    751       2 root     Thu Sep 24 06:32:05 2026    03:37:48 card1-crtc1     [card1-crtc1]
+    752       2 root     Thu Sep 24 06:32:05 2026    03:37:48 card1-crtc2     [card1-crtc2]
+    823       1 root     Thu Sep 24 06:32:05 2026    03:37:48 accounts-daemon /usr/libexec/accounts-daemon
+    846       1 avahi    Thu Sep 24 06:32:05 2026    03:37:48 avahi-daemon    avahi-daemon: running [normann-ThinkPad-X260.local]
+    847       1 root     Thu Sep 24 06:32:05 2026    03:37:48 bluetoothd      /usr/libexec/bluetooth/bluetoothd
+    849       1 root     Thu Sep 24 06:32:05 2026    03:37:48 cron            /usr/sbin/cron -f -P
+    850       1 message+ Thu Sep 24 06:32:05 2026    03:37:48 dbus-daemon     @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+    854       1 gnome-r+ Thu Sep 24 06:32:05 2026    03:37:48 gnome-remote-de /usr/libexec/gnome-remote-desktop-daemon --system
+    860       1 root     Thu Sep 24 06:32:05 2026    03:37:48 networkd-dispat /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+    862       1 polkitd  Thu Sep 24 06:32:05 2026    03:37:48 polkitd         /usr/lib/polkit-1/polkitd --no-debug
+    863       1 root     Thu Sep 24 06:32:05 2026    03:37:48 power-profiles- /usr/libexec/power-profiles-daemon
+    870       1 root     Thu Sep 24 06:32:05 2026    03:37:48 snapd           /usr/lib/snapd/snapd
+    926       1 root     Thu Sep 24 06:32:05 2026    03:37:48 switcheroo-cont /usr/libexec/switcheroo-control
+    929       1 root     Thu Sep 24 06:32:05 2026    03:37:48 systemd-logind  /usr/lib/systemd/systemd-logind
+    931       1 root     Thu Sep 24 06:32:05 2026    03:37:48 systemd-machine /usr/lib/systemd/systemd-machined
+    932       1 root     Thu Sep 24 06:32:05 2026    03:37:48 thermald        /usr/sbin/thermald --systemd --dbus-enable --adaptive
+    933       1 root     Thu Sep 24 06:32:05 2026    03:37:48 touchegg        /usr/bin/touchegg --daemon
+    934       1 root     Thu Sep 24 06:32:05 2026    03:37:48 udisksd         /usr/libexec/udisks2/udisksd
+    935       1 root     Thu Sep 24 06:32:05 2026    03:37:48 virtlockd       /usr/sbin/virtlockd
+    938       1 root     Thu Sep 24 06:32:05 2026    03:37:48 virtlogd        /usr/sbin/virtlogd
+    958     846 avahi    Thu Sep 24 06:32:05 2026    03:37:48 avahi-daemon    avahi-daemon: chroot helper
+    966       1 root     Thu Sep 24 06:32:06 2026    03:37:47 NetworkManager  /usr/sbin/NetworkManager --no-daemon
+    967       1 root     Thu Sep 24 06:32:06 2026    03:37:47 wpa_supplicant  /usr/sbin/wpa_supplicant -u -s -O DIR=/run/wpa_supplicant GROUP=netdev
+   1015       1 syslog   Thu Sep 24 06:32:06 2026    03:37:47 rsyslogd        /usr/sbin/rsyslogd -n -iNONE
+   1133       1 root     Thu Sep 24 06:32:06 2026    03:37:47 ModemManager    /usr/sbin/ModemManager
+   1342       1 root     Thu Sep 24 06:32:11 2026    03:37:42 cupsd           /usr/sbin/cupsd -l
+   1349       1 root     Thu Sep 24 06:32:11 2026    03:37:42 tailscaled      /usr/sbin/tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/run/tailscale/tailscaled.sock --port=41641
+   1351       1 root     Thu Sep 24 06:32:11 2026    03:37:42 unattended-upgr /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+   1362       1 kernoops Thu Sep 24 06:32:11 2026    03:37:42 kerneloops      /usr/sbin/kerneloops --test
+   1377       1 root     Thu Sep 24 06:32:11 2026    03:37:42 containerd      /usr/bin/containerd
+   1402       1 kernoops Thu Sep 24 06:32:12 2026    03:37:41 kerneloops      /usr/sbin/kerneloops
+   1422       1 root     Thu Sep 24 06:32:12 2026    03:37:41 lightdm         /usr/sbin/lightdm
+   1430    1342 lp       Thu Sep 24 06:32:12 2026    03:37:41 dbus            /usr/lib/cups/notifier/dbus dbus://
+   1432    1342 lp       Thu Sep 24 06:32:12 2026    03:37:41 dbus            /usr/lib/cups/notifier/dbus dbus://
+   1434    1342 lp       Thu Sep 24 06:32:12 2026    03:37:41 dbus            /usr/lib/cups/notifier/dbus dbus://
+   1435       1 cups-br+ Thu Sep 24 06:32:12 2026    03:37:41 cups-browsed    /usr/sbin/cups-browsed
+   1455    1422 root     Thu Sep 24 06:32:12 2026    03:37:41 Xorg            /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+   1469       1 root     Thu Sep 24 06:32:12 2026    03:37:41 apache2         /usr/sbin/apache2 -k start
+   1483       1 root     Thu Sep 24 06:32:12 2026    03:37:41 agetty          /sbin/agetty -o -p -- \u --noclear - linux
+   1530       2 root     Thu Sep 24 06:32:13 2026    03:37:40 kworker/R-iprt- [kworker/R-iprt-VBoxWQueue]
+   1531       2 root     Thu Sep 24 06:32:13 2026    03:37:40 iprt-VBoxTscThr [iprt-VBoxTscThread]
+   1555    1469 www-data Thu Sep 24 06:32:13 2026    03:37:40 apache2         /usr/sbin/apache2 -k start
+   1557    1469 www-data Thu Sep 24 06:32:13 2026    03:37:40 apache2         /usr/sbin/apache2 -k start
+   1560    1469 www-data Thu Sep 24 06:32:13 2026    03:37:40 apache2         /usr/sbin/apache2 -k start
+   1573    1469 www-data Thu Sep 24 06:32:13 2026    03:37:40 apache2         /usr/sbin/apache2 -k start
+   1582    1469 www-data Thu Sep 24 06:32:13 2026    03:37:40 apache2         /usr/sbin/apache2 -k start
+   1603       1 mysql    Thu Sep 24 06:32:13 2026    03:37:40 mariadbd        /usr/sbin/mariadbd
+   1672       1 root     Thu Sep 24 06:32:14 2026    03:37:39 wazuh-execd     /var/ossec/bin/wazuh-execd
+   1681       1 root     Thu Sep 24 06:32:14 2026    03:37:39 dockerd         /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+   1726       2 root     Thu Sep 24 06:32:14 2026    03:37:39 kworker/R-dio/s [kworker/R-dio/sda7]
+   1744       1 libvirt+ Thu Sep 24 06:32:14 2026    03:37:39 dnsmasq         /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+   1745    1744 root     Thu Sep 24 06:32:14 2026    03:37:39 dnsmasq         /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+   1754       1 root     Thu Sep 24 06:32:14 2026    03:37:39 thermal-auto-op /bin/bash /usr/local/sbin/thermal-auto-optimizer
+   1821       1 wazuh    Thu Sep 24 06:32:15 2026    03:37:38 wazuh-agentd    /var/ossec/bin/wazuh-agentd
+   1958       1 root     Thu Sep 24 06:32:16 2026    03:37:37 wazuh-syscheckd /var/ossec/bin/wazuh-syscheckd
+   2151       1 root     Thu Sep 24 06:32:17 2026    03:37:36 wazuh-logcollec /var/ossec/bin/wazuh-logcollector
+   2190       1 root     Thu Sep 24 06:32:17 2026    03:37:36 wazuh-modulesd  /var/ossec/bin/wazuh-modulesd
+   2512       1 rtkit    Thu Sep 24 06:32:19 2026    03:37:34 rtkit-daemon    /usr/libexec/rtkit-daemon
+   2708       2 root     Thu Sep 24 06:32:20 2026    03:37:33 krfcommd        [krfcommd]
+   2784       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id 87f68a4aea4e175d53f163d6549338bce0b8ec0abb37d6441fc5149d8e8a00c9 -address /run/containerd/containerd.sock
+   2829       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id d95d191479ac0fba34f5754fa6b4c2b4c3076b1da68e8163377a9ae0be4071b0 -address /run/containerd/containerd.sock
+   2830       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id f03b27a5e6c4b923cfacd43775fd15e15f8391bb45e87c14bcc699dfde9fbf3b -address /run/containerd/containerd.sock
+   2843       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id 65fad5cd98b2e0e47d11031a4258dfc459d163f381f70c1781598a05a3e4e7e3 -address /run/containerd/containerd.sock
+   2859       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id 57802887a79ded5274d3d51004c1b20ff5c09be1ed2e4efe5a25317e53352f88 -address /run/containerd/containerd.sock
+   2868       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id cdee3e939e3c94e0b6e0e3800b0b30acb0ad7308304b5172c59ef522ed5bfa13 -address /run/containerd/containerd.sock
+   2877       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id 4e584288711faab48500dd40a355a98cf68f97bb4a2f3bcc7d4b84b0aa51a6ef -address /run/containerd/containerd.sock
+   2890       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id f79ee47e7c27b15eeb9c44214e1748fe01221e4ef4ded25ece94bd2ff75c9e90 -address /run/containerd/containerd.sock
+   2891       1 root     Thu Sep 24 06:32:21 2026    03:37:32 containerd-shim /usr/bin/containerd-shim-runc-v2 -namespace moby -id 0def9492e2315f0395f16669bccfbb2761a1b81bae9323027c8b6e4205f0c7c4 -address /run/containerd/containerd.sock
+   3050    2830 65532    Thu Sep 24 06:32:22 2026    03:37:31 MainThread      /nodejs/bin/node /juice-shop/build/app.js
+   3057    2784 root     Thu Sep 24 06:32:22 2026    03:37:31 s6-svscan       s6-svscan -t0 /var/run/s6/services
+   3092    2843 root     Thu Sep 24 06:32:22 2026    03:37:31 portainer       /portainer
+   3110    2868 root     Thu Sep 24 06:32:22 2026    03:37:31 ollama          /bin/ollama serve
+   3111    2890 root     Thu Sep 24 06:32:22 2026    03:37:31 s6-svscan       /package/admin/s6/command/s6-svscan -d4 -- /run/service
+   3132    2859 root     Thu Sep 24 06:32:22 2026    03:37:31 hbbr            hbbr
+   3140    2891 normann  Thu Sep 24 06:32:22 2026    03:37:31 entrypoint.sh   /bin/bash /entrypoint.sh
+   3180    2877 normann  Thu Sep 24 06:32:23 2026    03:37:30 java            /usr/share/wazuh-indexer/jdk/bin/java -Xshare:auto -Dopensearch.networkaddress.cache.ttl=60 -Dopensearch.networkaddress.cache.negative.ttl=10 -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -XX:+ShowCodeDetailsInExceptionMessages -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dio.netty.allocator.numDirectArenas=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.security.manager=allow -Djava.locale.providers=SPI,COMPAT -XX:+UseG1GC -XX:G1ReservePercent=25 -XX:InitiatingHeapOccupancyPercent=30 -Djava.io.tmpdir=/tmp/opensearch-17753986977326153069 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/lib/wazuh-indexer -XX:ErrorFile=/var/log/wazuh-indexer/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=/var/log/wazuh-indexer/gc.log:utctime,pid,tags:filecount=32,filesize=64m -Djava.security.manager=allow --add-modules=jdk.incubator.vector -Djava.util.concurrent.ForkJoinPool.common.threadFactory=org.opensearch.secure_sm.SecuredForkJoinWorkerThreadFactory -Dclk.tck=100 -Djdk.attach.allowAttachSelf=true -Djava.security.policy=file:///usr/share/wazuh-indexer/opensearch-performance-analyzer/opensearch_security.policy --add-opens=jdk.attach/sun.tools.attach=ALL-UNNAMED -Xms1g -Xmx1g -XX:MaxDirectMemorySize=536870912 -Dopensearch.path.home=/usr/share/wazuh-indexer -Dopensearch.path.conf=/usr/share/wazuh-indexer/config -Dopensearch.distribution.type=rpm -Dopensearch.bundled_jdk=true -cp /usr/share/wazuh-indexer/lib/* org.opensearch.bootstrap.OpenSearch
+   3181    2829 root     Thu Sep 24 06:32:23 2026    03:37:30 hbbs            hbbs -r 100.104.119.57:21117
+   3199       1 root     Thu Sep 24 06:32:23 2026    03:37:30 upowerd         /usr/libexec/upowerd
+   3206    1681 root     Thu Sep 24 06:32:23 2026    03:37:30 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 3000 -container-ip 172.19.0.2 -container-port 3000 -use-listen-fd
+   3213    1681 root     Thu Sep 24 06:32:23 2026    03:37:30 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 3000 -container-ip 172.19.0.2 -container-port 3000 -use-listen-fd
+   3386    1681 root     Thu Sep 24 06:32:24 2026    03:37:29 docker-proxy    /usr/bin/docker-proxy -proto udp -host-ip 0.0.0.0 -host-port 514 -container-ip 172.18.0.2 -container-port 514 -use-listen-fd
+   3393    1681 root     Thu Sep 24 06:32:24 2026    03:37:29 docker-proxy    /usr/bin/docker-proxy -proto udp -host-ip :: -host-port 514 -container-ip 172.18.0.2 -container-port 514 -use-listen-fd
+   3419    1681 root     Thu Sep 24 06:32:25 2026    03:37:28 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 1514 -container-ip 172.18.0.2 -container-port 1514 -use-listen-fd
+   3426    1681 root     Thu Sep 24 06:32:25 2026    03:37:28 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 1514 -container-ip 172.18.0.2 -container-port 1514 -use-listen-fd
+   3441    1681 root     Thu Sep 24 06:32:25 2026    03:37:28 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 1515 -container-ip 172.18.0.2 -container-port 1515 -use-listen-fd
+   3448    1681 root     Thu Sep 24 06:32:25 2026    03:37:28 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 1515 -container-ip 172.18.0.2 -container-port 1515 -use-listen-fd
+   3465    1681 root     Thu Sep 24 06:32:25 2026    03:37:28 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 55000 -container-ip 172.18.0.2 -container-port 55000 -use-listen-fd
+   3472    1681 root     Thu Sep 24 06:32:25 2026    03:37:28 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 55000 -container-ip 172.18.0.2 -container-port 55000 -use-listen-fd
+   3497       1 colord   Thu Sep 24 06:32:25 2026    03:37:28 colord          /usr/libexec/colord
+   3503    1681 root     Thu Sep 24 06:32:25 2026    03:37:28 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 443 -container-ip 172.18.0.3 -container-port 5601 -use-listen-fd
+   3509    1681 root     Thu Sep 24 06:32:25 2026    03:37:28 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 443 -container-ip 172.18.0.3 -container-port 5601 -use-listen-fd
+   3564    1422 root     Thu Sep 24 06:32:26 2026    03:37:27 lightdm         lightdm --session-child 13 20
+   3571    1681 root     Thu Sep 24 06:32:26 2026    03:37:27 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9443 -container-ip 172.19.0.3 -container-port 9443 -use-listen-fd
+   3584    1681 root     Thu Sep 24 06:32:26 2026    03:37:27 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 9443 -container-ip 172.19.0.3 -container-port 9443 -use-listen-fd
+   3589    3057 root     Thu Sep 24 06:32:26 2026    03:37:27 s6-supervise    s6-supervise s6-fdholderd
+   3675    1681 root     Thu Sep 24 06:32:27 2026    03:37:26 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 3001 -container-ip 172.19.0.4 -container-port 3000 -use-listen-fd
+   3683    1681 root     Thu Sep 24 06:32:27 2026    03:37:26 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 3001 -container-ip 172.19.0.4 -container-port 3000 -use-listen-fd
+   3811    1681 root     Thu Sep 24 06:32:27 2026    03:37:26 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9200 -container-ip 172.18.0.4 -container-port 9200 -use-listen-fd
+   3825    1681 root     Thu Sep 24 06:32:27 2026    03:37:26 docker-proxy    /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 9200 -container-ip 172.18.0.4 -container-port 9200 -use-listen-fd
+   3909    3111 root     Thu Sep 24 06:32:28 2026    03:37:25 s6-supervise    s6-supervise s6-linux-init-shutdownd
+   3910    3909 root     Thu Sep 24 06:32:28 2026    03:37:25 s6-linux-init-s /package/admin/s6-linux-init/command/s6-linux-init-shutdownd -d3 -c /run/s6/basedir -g 3000 -C -B
+   4010    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise s6rc-fdholder
+   4011    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-cron
+   4013    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise s6rc-oneshot-runner
+   4014    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-xsettingsd
+   4015    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-de
+   4016    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-selkies
+   4017    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-nginx
+   4018    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-pulseaudio
+   4019    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-watchdog
+   4020    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-xorg
+   4021    3111 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-supervise    s6-supervise svc-docker
+   4049    4013 root     Thu Sep 24 06:32:29 2026    03:37:24 s6-ipcserverd   /package/admin/s6/command/s6-ipcserverd -1 -- /package/admin/s6/command/s6-ipcserver-access -v0 -E -l0 -i data/rules -- /package/admin/s6/command/s6-sudod -t 30000 -- /package/admin/s6-rc/command/s6-rc-oneshot-run -l ../.. --
+   4356    4018 normann  Thu Sep 24 06:32:36 2026    03:37:17 pulseaudio      /usr/bin/pulseaudio --log-level=0 --log-target=stderr --exit-idle-time=-1
+   4361    4020 root     Thu Sep 24 06:32:36 2026    03:37:17 bash            bash ./run svc-xorg
+   4367    4011 root     Thu Sep 24 06:32:36 2026    03:37:17 busybox         busybox crond -f -S -l 5
+   4368    4017 root     Thu Sep 24 06:32:36 2026    03:37:17 nginx           nginx: master process /usr/sbin/nginx -g daemon off;
+   4369    4021 root     Thu Sep 24 06:32:36 2026    03:37:17 bash            bash ./run svc-docker
+   4374    4019 root     Thu Sep 24 06:32:36 2026    03:37:17 sleep           sleep infinity
+   4379    4014 root     Thu Sep 24 06:32:36 2026    03:37:17 bash            bash ./run svc-xsettingsd
+   4387    4016 normann  Thu Sep 24 06:32:36 2026    03:37:17 selkies         /lsiopy/bin/python3 /lsiopy/bin/selkies --addr=localhost --mode=websockets
+   4390    4369 root     Thu Sep 24 06:32:36 2026    03:37:17 sleep           sleep infinity
+   4419    4361 root     Thu Sep 24 06:32:36 2026    03:37:17 sleep           sleep infinity
+   4420    4379 root     Thu Sep 24 06:32:36 2026    03:37:17 sleep           sleep infinity
+   4428    4356 normann  Thu Sep 24 06:32:37 2026    03:37:16 gsettings-helpe /usr/libexec/pulse/gsettings-helper
+   4433    4368 syslog   Thu Sep 24 06:32:37 2026    03:37:16 nginx           nginx: worker process
+   4434    4368 syslog   Thu Sep 24 06:32:37 2026    03:37:16 nginx           nginx: worker process
+   4435    4368 syslog   Thu Sep 24 06:32:37 2026    03:37:16 nginx           nginx: worker process
+   4436    4368 syslog   Thu Sep 24 06:32:37 2026    03:37:16 nginx           nginx: worker process
+   4698    4015 root     Thu Sep 24 06:32:48 2026    03:37:05 bash            bash ./run svc-de
+   4700    4698 normann  Thu Sep 24 06:32:48 2026    03:37:05 bash            /bin/bash /defaults/startwm_wayland.sh
+   4701    4700 normann  Thu Sep 24 06:32:48 2026    03:37:05 labwc           labwc
+   4727    3111 normann  Thu Sep 24 06:32:50 2026    03:37:03 sh              sh /config/.config/labwc/autostart
+   4728    4727 normann  Thu Sep 24 06:32:50 2026    03:37:03 wireshark       wireshark
+   4752       1 normann  Thu Sep 24 06:32:51 2026    03:37:02 systemd         /usr/lib/systemd/systemd --user
+   4755    4752 normann  Thu Sep 24 06:32:51 2026    03:37:02 (sd-pam)        (sd-pam)
+   4815    3111 normann  Thu Sep 24 06:32:53 2026    03:37:00 Xwayland        Xwayland :1 -rootless -core -terminate 10 -listenfd 15 -listenfd 16 -displayfd 31 -wm 28
+   4850    3140 normann  Thu Sep 24 06:32:53 2026    03:37:00 node            /usr/share/wazuh-dashboard/node/bin/node --no-warnings --max-http-header-size=65536 /usr/share/wazuh-dashboard/src/cli/dist -c /usr/share/wazuh-dashboard/config/opensearch_dashboards.yml
+   4853    3111 normann  Thu Sep 24 06:32:53 2026    03:37:00 dbus-launch     dbus-launch --autolaunch c34dab329768b8ff3fcd74c86a5af51f --binary-syntax --close-stderr
+   4859    3111 normann  Thu Sep 24 06:32:53 2026    03:37:00 dbus-daemon     /usr/bin/dbus-daemon --syslog-only --fork --print-pid 5 --print-address 7 --session
+   4904    4752 normann  Thu Sep 24 06:32:54 2026    03:36:59 pipewire        /usr/bin/pipewire
+   4905    4752 normann  Thu Sep 24 06:32:54 2026    03:36:59 pipewire        /usr/bin/pipewire -c filter-chain.conf
+   4907    4752 normann  Thu Sep 24 06:32:54 2026    03:36:59 wireplumber     /usr/bin/wireplumber
+   4908    4752 normann  Thu Sep 24 06:32:54 2026    03:36:59 pipewire-pulse  /usr/bin/pipewire-pulse
+   4910    4752 normann  Thu Sep 24 06:32:54 2026    03:36:59 gnome-keyring-d /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring
+   4915    4752 normann  Thu Sep 24 06:32:54 2026    03:36:59 dbus-daemon     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+   4931    3564 normann  Thu Sep 24 06:32:55 2026    03:36:58 gnome-session-b /usr/libexec/gnome-session-binary --session=zorin
+   5028    4752 normann  Thu Sep 24 06:32:56 2026    03:36:57 xdg-permission- /usr/libexec/xdg-permission-store
+   5080    4752 normann  Thu Sep 24 06:32:57 2026    03:36:56 gvfsd           /usr/libexec/gvfsd
+   5086    4752 normann  Thu Sep 24 06:32:57 2026    03:36:56 gvfsd-fuse      /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+   5096    4752 normann  Thu Sep 24 06:32:57 2026    03:36:56 at-spi-bus-laun /usr/libexec/at-spi-bus-launcher
+   5105    5096 normann  Thu Sep 24 06:32:57 2026    03:36:56 dbus-daemon     /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_0
+   5122    4752 normann  Thu Sep 24 06:32:58 2026    03:36:55 gcr-ssh-agent   /usr/libexec/gcr-ssh-agent --base-dir /run/user/1000/gcr
+   5123    4752 normann  Thu Sep 24 06:32:58 2026    03:36:55 gnome-session-c /usr/libexec/gnome-session-ctl --monitor
+   5144    4752 normann  Thu Sep 24 06:32:58 2026    03:36:55 gnome-session-b /usr/libexec/gnome-session-binary --systemd-service --session=zorin
+   5177    4752 normann  Thu Sep 24 06:32:59 2026    03:36:54 gnome-shell     /usr/bin/gnome-shell
+   5269    5177 normann  Thu Sep 24 06:33:02 2026    03:36:51 mutter-x11-fram /usr/libexec/mutter-x11-frames
+   5286    4752 normann  Thu Sep 24 06:33:02 2026    03:36:51 at-spi2-registr /usr/libexec/at-spi2-registryd --use-gnome-session
+   5349    4752 normann  Thu Sep 24 06:33:06 2026    03:36:47 gnome-shell-cal /usr/libexec/gnome-shell-calendar-server
+   5356    4752 normann  Thu Sep 24 06:33:06 2026    03:36:47 evolution-sourc /usr/libexec/evolution-source-registry
+   5373    4752 normann  Thu Sep 24 06:33:07 2026    03:36:46 goa-daemon      /usr/libexec/goa-daemon
+   5382    4752 normann  Thu Sep 24 06:33:07 2026    03:36:46 gjs             /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+   5388    4752 normann  Thu Sep 24 06:33:07 2026    03:36:46 goa-identity-se /usr/libexec/goa-identity-service
+   5391    4752 normann  Thu Sep 24 06:33:07 2026    03:36:46 evolution-calen /usr/libexec/evolution-calendar-factory
+   5415       1 geoclue  Thu Sep 24 06:33:08 2026    03:36:45 geoclue         /usr/libexec/geoclue
+   5423    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 ibus-daemon     /usr/bin/ibus-daemon --panel disable --xim
+   5424    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-a11y-settin /usr/libexec/gsd-a11y-settings
+   5431    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-color       /usr/libexec/gsd-color
+   5432    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-datetime    /usr/libexec/gsd-datetime
+   5433    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-housekeepin /usr/libexec/gsd-housekeeping
+   5435    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-keyboard    /usr/libexec/gsd-keyboard
+   5436    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-media-keys  /usr/libexec/gsd-media-keys
+   5437    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-power       /usr/libexec/gsd-power
+   5440    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-print-notif /usr/libexec/gsd-print-notifications
+   5446    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-rfkill      /usr/libexec/gsd-rfkill
+   5451    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-screensaver /usr/libexec/gsd-screensaver-proxy
+   5452    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-sharing     /usr/libexec/gsd-sharing
+   5453    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-smartcard   /usr/libexec/gsd-smartcard
+   5455    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-sound       /usr/libexec/gsd-sound
+   5457    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-wacom       /usr/libexec/gsd-wacom
+   5458    4752 normann  Thu Sep 24 06:33:08 2026    03:36:45 gsd-xsettings   /usr/libexec/gsd-xsettings
+   5485    4752 normann  Thu Sep 24 06:33:08 2026    03:36:44 evolution-addre /usr/libexec/evolution-addressbook-factory
+   5537    5144 normann  Thu Sep 24 06:33:09 2026    03:36:44 gnome-software  /usr/bin/gnome-software --gapplication-service
+   5544    5144 normann  Thu Sep 24 06:33:09 2026    03:36:44 evolution-alarm /usr/libexec/evolution-data-server/evolution-alarm-notify
+   5558    5144 normann  Thu Sep 24 06:33:09 2026    03:36:44 xscreensaver    /usr/bin/xscreensaver -nosplash
+   5576    5558 normann  Thu Sep 24 06:33:10 2026    03:36:43 xscreensaver-sy xscreensaver-systemd
+   5578    5144 normann  Thu Sep 24 06:33:10 2026    03:36:43 touchegg        /usr/bin/touchegg
+   5583    5144 normann  Thu Sep 24 06:33:10 2026    03:36:43 gsd-disk-utilit /usr/libexec/gsd-disk-utility-notify
+   5595    5144 normann  Thu Sep 24 06:33:10 2026    03:36:43 remmina         /usr/bin/remmina -i
+   5606    5144 normann  Thu Sep 24 06:33:10 2026    03:36:43 indicator-messa /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+   5618    5144 normann  Thu Sep 24 06:33:10 2026    03:36:43 indicator-appli /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+   5634    5423 normann  Thu Sep 24 06:33:10 2026    03:36:43 ibus-memconf    /usr/libexec/ibus-memconf
+   5636    5423 normann  Thu Sep 24 06:33:10 2026    03:36:43 ibus-extension- /usr/libexec/ibus-extension-gtk3
+   5646    4752 normann  Thu Sep 24 06:33:10 2026    03:36:43 ibus-x11        /usr/libexec/ibus-x11 --kill-daemon
+   5650    4752 normann  Thu Sep 24 06:33:11 2026    03:36:42 ibus-portal     /usr/libexec/ibus-portal
+   5665    4752 normann  Thu Sep 24 06:33:11 2026    03:36:42 gsd-printer     /usr/libexec/gsd-printer
+   5797    4752 normann  Thu Sep 24 06:33:13 2026    03:36:40 gvfs-udisks2-vo /usr/libexec/gvfs-udisks2-volume-monitor
+   5841    4752 normann  Thu Sep 24 06:33:14 2026    03:36:39 gvfs-mtp-volume /usr/libexec/gvfs-mtp-volume-monitor
+   5849    4752 normann  Thu Sep 24 06:33:14 2026    03:36:39 gvfs-gphoto2-vo /usr/libexec/gvfs-gphoto2-volume-monitor
+   5852    4752 normann  Thu Sep 24 06:33:14 2026    03:36:39 xdg-desktop-por /usr/libexec/xdg-desktop-portal
+   5859    4752 normann  Thu Sep 24 06:33:14 2026    03:36:39 gvfs-afc-volume /usr/libexec/gvfs-afc-volume-monitor
+   5876    4752 normann  Thu Sep 24 06:33:15 2026    03:36:38 xdg-document-po /usr/libexec/xdg-document-portal
+   5888    4752 normann  Thu Sep 24 06:33:15 2026    03:36:38 gvfs-goa-volume /usr/libexec/gvfs-goa-volume-monitor
+   5890    5876 root     Thu Sep 24 06:33:15 2026    03:36:38 fusermount3     fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+   5924    4752 normann  Thu Sep 24 06:33:16 2026    03:36:37 gjs             /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.ScreenSaver
+   5944    4752 normann  Thu Sep 24 06:33:16 2026    03:36:37 tracker-miner-f /usr/libexec/tracker-miner-fs-3
+   5945    4752 normann  Thu Sep 24 06:33:16 2026    03:36:37 xdg-desktop-por /usr/libexec/xdg-desktop-portal-gnome
+   5992    5423 normann  Thu Sep 24 06:33:19 2026    03:36:34 ibus-engine-sim /usr/libexec/ibus-engine-simple
+   6027    4752 normann  Thu Sep 24 06:33:22 2026    03:36:31 gvfsd-metadata  /usr/libexec/gvfsd-metadata
+   6091    4752 normann  Thu Sep 24 06:33:24 2026    03:36:29 xdg-desktop-por /usr/libexec/xdg-desktop-portal-gtk
+   6092    4752 normann  Thu Sep 24 06:33:24 2026    03:36:29 dconf-service   /usr/libexec/dconf-service
+   6119    4752 normann  Thu Sep 24 06:33:25 2026    03:36:28 gjs             gjs -m /usr/share/gnome-shell/extensions/zorin-connect@zorinos.com/service/daemon.js
+   6193       1 root     Thu Sep 24 06:33:28 2026    03:36:25 fwupd           /usr/libexec/fwupd/fwupd
+   6319    4728 normann  Thu Sep 24 06:33:37 2026    03:36:16 dumpcap         /usr/bin/dumpcap --log-level MESSAGE --application-flavor wireshark -S -Z 22
+   6367    3057 dnsmasq  Thu Sep 24 06:33:41 2026    03:36:12 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   6371    6367 dnsmasq  Thu Sep 24 06:33:42 2026    03:36:11 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   6377    6367 dnsmasq  Thu Sep 24 06:33:42 2026    03:36:11 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   6384    6367 dnsmasq  Thu Sep 24 06:33:42 2026    03:36:11 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   6387    6367 dnsmasq  Thu Sep 24 06:33:42 2026    03:36:11 python3         /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+   6475    3057 root     Thu Sep 24 06:33:47 2026    03:36:06 wazuh-authd     /var/ossec/bin/wazuh-authd
+   6516    3057 dnsmasq  Thu Sep 24 06:33:48 2026    03:36:05 wazuh-db        /var/ossec/bin/wazuh-db
+   6518    5177 normann  Thu Sep 24 06:33:48 2026    03:36:05 gjs             gjs /usr/share/gnome-shell/extensions/zorin-desktop-icons@zorinos.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/zorin-desktop-icons@zorinos.com/app
+   6578    3057 root     Thu Sep 24 06:33:49 2026    03:36:04 wazuh-execd     /var/ossec/bin/wazuh-execd
+   6616    3057 dnsmasq  Thu Sep 24 06:33:50 2026    03:36:03 wazuh-analysisd /var/ossec/bin/wazuh-analysisd
+   6741    3057 root     Thu Sep 24 06:33:52 2026    03:36:01 wazuh-syscheckd /var/ossec/bin/wazuh-syscheckd
+   6814    3057 dnsmasq  Thu Sep 24 06:33:53 2026    03:36:00 wazuh-remoted   /var/ossec/bin/wazuh-remoted
+   6852    5080 normann  Thu Sep 24 06:33:54 2026    03:35:59 gvfsd-trash     /usr/libexec/gvfsd-trash --spawner :1.15 /org/gtk/gvfs/exec_spaw/0
+   6991    3057 root     Thu Sep 24 06:33:56 2026    03:35:57 wazuh-logcollec /var/ossec/bin/wazuh-logcollector
+   7061    3057 dnsmasq  Thu Sep 24 06:33:57 2026    03:35:56 wazuh-monitord  /var/ossec/bin/wazuh-monitord
+   7104    3057 root     Thu Sep 24 06:33:58 2026    03:35:55 wazuh-modulesd  /var/ossec/bin/wazuh-modulesd
+   7661    3057 root     Thu Sep 24 06:34:02 2026    03:35:51 s6-supervise    s6-supervise filebeat
+   7662    3057 root     Thu Sep 24 06:34:02 2026    03:35:51 s6-supervise    s6-supervise ossec-logs
+   7672    7661 root     Thu Sep 24 06:34:02 2026    03:35:51 filebeat        /usr/share/filebeat/bin/filebeat -e -c /etc/filebeat/filebeat.yml -path.home /usr/share/filebeat -path.config /etc/filebeat -path.data /var/lib/filebeat -path.logs /var/log/filebeat
+   7673    7662 root     Thu Sep 24 06:34:02 2026    03:35:51 tail            /usr/bin/coreutils --coreutils-prog-shebang=tail /usr/bin/tail -F /var/ossec/logs/ossec.log
+   8301    5144 normann  Thu Sep 24 06:34:09 2026    03:35:43 update-notifier /usr/bin/update-notifier
+   9012    4752 normann  Thu Sep 24 06:34:27 2026    03:35:26 gnome-calendar  /usr/bin/gnome-calendar --gapplication-service
+   9019    4752 normann  Thu Sep 24 06:34:27 2026    03:35:26 seahorse        /usr/bin/seahorse --gapplication-service
+   9229    4752 normann  Thu Sep 24 06:34:40 2026    03:35:13 gnome-terminal- /usr/libexec/gnome-terminal-server
+  10984    4752 normann  Thu Sep 24 06:35:54 2026    03:33:59 bwrap           bwrap --args 43 -- /app/bin/chrome
+  10996    4752 normann  Thu Sep 24 06:35:55 2026    03:33:58 flatpak-session /usr/libexec/flatpak-session-helper
+  11004    4752 normann  Thu Sep 24 06:35:55 2026    03:33:58 p11-kit-server  server --sh -n /run/user/1000/.flatpak-helper/pkcs11-flatpak-10996 --provider p11-kit-trust.so pkcs11:model=p11-kit-trust?write-protected=yes
+  11009    4752 normann  Thu Sep 24 06:35:55 2026    03:33:58 bwrap           bwrap --args 43 -- xdg-dbus-proxy --args=45
+  11010   11009 normann  Thu Sep 24 06:35:55 2026    03:33:58 xdg-dbus-proxy  xdg-dbus-proxy --args=45
+  11019   10984 normann  Thu Sep 24 06:35:55 2026    03:33:58 bwrap           bwrap --args 43 -- /app/bin/chrome
+  11026   11019 normann  Thu Sep 24 06:35:56 2026    03:33:57 chrome          /app/extra/chrome --disable-features=WebAssemblyTrapHandler,DesktopPWAsRunOnOsLogin
+  11046    4752 normann  Thu Sep 24 06:35:57 2026    03:33:56 flatpak-portal  /usr/libexec/flatpak-portal
+  11085   11019 normann  Thu Sep 24 06:35:58 2026    03:33:55 chrome_crashpad /app/extra/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/normann/.var/app/com.google.Chrome/config/google-chrome/Crash Reports --metrics-dir=/home/normann/.var/app/com.google.Chrome/config/google-chrome --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Freedesktop SDK 25.08 (Flatpak runtime) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=154.0.8037.57 --initial-client-fd=10 --shared-client-connection
+  11089   11019 normann  Thu Sep 24 06:35:58 2026    03:33:55 chrome_crashpad /app/extra/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/normann/.var/app/com.google.Chrome/config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Freedesktop SDK 25.08 (Flatpak runtime) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=154.0.8037.57 --initial-client-fd=4 --shared-client-connection
+  11095   11026 normann  Thu Sep 24 06:35:58 2026    03:33:55 chrome          /app/extra/chrome --type=zygote --no-zygote-sandbox --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+  11097   11026 normann  Thu Sep 24 06:35:58 2026    03:33:55 zypak-sandbox   [zypak-sandbox] <defunct>
+  11100   11019 normann  Thu Sep 24 06:35:58 2026    03:33:55 cat             cat
+  11101   11019 normann  Thu Sep 24 06:35:58 2026    03:33:55 cat             cat
+  11105   11046 normann  Thu Sep 24 06:35:58 2026    03:33:55 bwrap           bwrap --args 43 -- /app/bin/zypak-helper child - /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+  11165   11019 normann  Thu Sep 24 06:36:00 2026    03:33:53 bwrap           bwrap --args 43 -- /app/bin/zypak-helper child - /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+  11179   11165 normann  Thu Sep 24 06:36:01 2026    03:33:52 chrome          /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+  11254   11095 normann  Thu Sep 24 06:36:03 2026    03:33:50 chrome          /app/extra/chrome --type=gpu-process --gpu-recent-crash-count=0 --ozone-platform=x11 --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable --gpu-preferences=YAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAASAAAAAAAAAABAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAAAEAAAAAAAAACAAAAAAAAAAMAAAAAQAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --metrics-shmem-handle=4,i,2069769231485689018,8408109832844237515,262144 --field-trial-handle=3,i,2941738409670613098,9007339394903071866,262144 --disable-features=DesktopPWAsRunOnOsLogin,WebAssemblyTrapHandler --variations-seed-version=20260923-010043.286000-production --pseudonymization-salt-handle=7,i,2475081412184968185,1811600828800793559,4 --trace-process-track-uuid=3190708988185955192
+  11259   11026 normann  Thu Sep 24 06:36:03 2026    03:33:50 chrome          /app/extra/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-GB --service-sandbox-type=none --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,9055602955646955277,16863088718682620270,524288 --field-trial-handle=3,i,2941738409670613098,9007339394903071866,262144 --disable-features=DesktopPWAsRunOnOsLogin,WebAssemblyTrapHandler --variations-seed-version=20260923-010043.286000-production --pseudonymization-salt-handle=7,i,2475081412184968185,1811600828800793559,4 --trace-process-track-uuid=3190708989122997041
+  11311   11179 normann  Thu Sep 24 06:36:06 2026    03:33:47 chrome          /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+  11344   11179 normann  Thu Sep 24 06:36:07 2026    03:33:46 chrome          /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+  11459   11004 normann  Thu Sep 24 06:36:13 2026    03:33:40 p11-kit-remote  p11-kit-remote --provider p11-kit-trust.so pkcs11:model=p11-kit-trust?write-protected=yes
+  11511   11179 normann  Thu Sep 24 06:36:20 2026    03:33:33 chrome          /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+  14704    5080 normann  Thu Sep 24 06:39:39 2026    03:30:14 gvfsd-network   /usr/libexec/gvfsd-network --spawner :1.15 /org/gtk/gvfs/exec_spaw/1
+  14717    5080 normann  Thu Sep 24 06:39:39 2026    03:30:14 gvfsd-dnssd     /usr/libexec/gvfsd-dnssd --spawner :1.15 /org/gtk/gvfs/exec_spaw/2
+  20389       2 root     Thu Sep 24 06:43:48 2026    03:26:05 psimon          [psimon]
+  25822    4910 normann  Thu Sep 24 06:58:08 2026    03:11:45 ssh-agent       /usr/bin/ssh-agent -D -a /run/user/1000/keyring/.ssh
+  44983       2 root     Thu Sep 24 08:10:01 2026    01:59:52 kworker/2:2-cgr [kworker/2:2-cgroup_release]
+  46971       2 root     Thu Sep 24 08:14:49 2026    01:55:04 kworker/0:1-eve [kworker/0:1-events]
+  47571       2 root     Thu Sep 24 08:17:02 2026    01:52:51 kworker/3:2-i91 [kworker/3:2-i915-unordered]
+  50138   11179 normann  Thu Sep 24 08:27:06 2026    01:42:47 chrome          /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+  57631    9229 normann  Thu Sep 24 08:46:18 2026    01:23:35 bash            bash
+  58572       2 root     Thu Sep 24 08:49:03 2026    01:20:50 kworker/u17:1-i [kworker/u17:1-i915_flip]
+  68380       2 root     Thu Sep 24 09:18:16 2026       51:37 kworker/u16:2-e [kworker/u16:2-ext4-rsv-conversion]
+  69719       2 root     Thu Sep 24 09:22:18 2026       47:35 kworker/u17:0-r [kworker/u17:0-rb_allocator]
+  70959       2 root     Thu Sep 24 09:26:43 2026       43:09 kworker/R-ib-co [kworker/R-ib-comp-wq]
+  70960       2 root     Thu Sep 24 09:26:43 2026       43:09 kworker/R-ib-co [kworker/R-ib-comp-unb-wq]
+  70961       2 root     Thu Sep 24 09:26:43 2026       43:09 kworker/R-ib_mc [kworker/R-ib_mcast]
+  70962       2 root     Thu Sep 24 09:26:43 2026       43:09 kworker/R-ib_nl [kworker/R-ib_nl_sa_wq]
+  74540       2 root     Thu Sep 24 09:41:49 2026       28:04 kworker/u16:1-e [kworker/u16:1-events_unbound]
+  76322       2 root     Thu Sep 24 09:45:35 2026       24:18 kworker/2:0-cgr [kworker/2:0-cgroup_free]
+  76550       2 root     Thu Sep 24 09:46:27 2026       23:26 kworker/u16:3-e [kworker/u16:3-events_power_efficient]
+  78505       2 root     Thu Sep 24 09:55:07 2026       14:46 kworker/u16:0-f [kworker/u16:0-flush-8:0]
+  79588       2 root     Thu Sep 24 10:00:01 2026       09:52 kworker/2:1-eve [kworker/2:1-events]
+  80138       2 root     Thu Sep 24 10:02:26 2026       07:27 kworker/0:2-cgr [kworker/0:2-cgroup_free]
+  80166       2 root     Thu Sep 24 10:02:27 2026       07:26 kworker/1:1-cgr [kworker/1:1-cgroup_free]
+  80530       2 root     Thu Sep 24 10:04:02 2026       05:51 kworker/3:0-i91 [kworker/3:0-i915-unordered]
+  80747       2 root     Thu Sep 24 10:04:59 2026       04:54 kworker/u17:2   [kworker/u17:2]
+  82352       2 root     Thu Sep 24 10:09:02 2026       00:51 kworker/0:0     [kworker/0:0]
+  82545    1754 root     Thu Sep 24 10:09:52 2026       00:01 sleep           sleep 10
+  82546   57631 normann  Thu Sep 24 10:09:52 2026       00:01 bash            bash scripts/phase1-wazuh-promiscuous-correlation.sh
+  82722   82546 normann  Thu Sep 24 10:09:53 2026       00:00 ps              ps -eo pid,ppid,user,lstart,etime,comm,args --sort=lstart

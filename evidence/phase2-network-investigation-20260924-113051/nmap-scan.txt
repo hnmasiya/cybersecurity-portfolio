@@ -1,0 +1,9 @@
+# Nmap 7.94SVN scan initiated Thu Sep 24 11:30:55 2026 as: nmap -Pn -n -sT -sV --version-light -p 8765 -oN /home/normann/cybersecurity-portfolio/evidence/phase2-network-investigation-20260924-113051/nmap-scan.txt -oX /home/normann/cybersecurity-portfolio/evidence/phase2-network-investigation-20260924-113051/nmap-scan.xml 127.0.0.1
+Nmap scan report for 127.0.0.1
+Host is up (0.00029s latency).
+
+PORT     STATE SERVICE VERSION
+8765/tcp open  http    SimpleHTTPServer 0.6 (Python 3.12.3)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Sep 24 11:31:02 2026 -- 1 IP address (1 host up) scanned in 7.11 seconds

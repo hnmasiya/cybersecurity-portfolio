@@ -1,0 +1,87 @@
+===== HOST =====
+ Static hostname: normann-ThinkPad-X260
+       Icon name: computer-laptop
+         Chassis: laptop 💻
+      Machine ID: 7775724dccfb413d9ce18684edbaf2c3
+         Boot ID: 1e1caaddd7f14c79899ff80a45e239c4
+Operating System: Zorin OS 18.1
+          Kernel: Linux 7.0.0-31-generic
+    Architecture: x86-64
+ Hardware Vendor: Lenovo
+  Hardware Model: ThinkPad X260
+Firmware Version: R02ET77W (1.50 )
+   Firmware Date: Wed 2023-01-18
+    Firmware Age: 3y 8month 6d
+
+===== KERNEL =====
+Linux normann-ThinkPad-X260 7.0.0-31-generic #31~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Aug 10 09:38:02 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+
+===== DATE =====
+2026-09-24T11:30:51+02:00
+
+===== USER =====
+uid=1000(normann) gid=1000(normann) groups=1000(normann),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),117(lpadmin),125(sambashare),126(docker),128(wireshark),131(libvirt),993(kvm)
+
+===== LOOPBACK =====
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+
+===== ROUTING =====
+default via 192.168.2.1 dev wlp4s0 proto dhcp src 192.168.2.208 metric 600 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+172.18.0.0/16 dev br-a2271a130ada proto kernel scope link src 172.18.0.1 
+172.19.0.0/16 dev br-74fc0d306f28 proto kernel scope link src 172.19.0.1 
+172.20.0.0/16 dev br-88705b111e42 proto kernel scope link src 172.20.0.1 linkdown 
+172.21.0.0/16 dev br-ecf0923415df proto kernel scope link src 172.21.0.1 linkdown 
+172.22.0.0/16 dev br-73292914fa33 proto kernel scope link src 172.22.0.1 
+172.23.0.0/16 dev br-0512d055ab83 proto kernel scope link src 172.23.0.1 linkdown 
+192.168.2.0/24 dev wlp4s0 proto kernel scope link src 192.168.2.208 metric 600 
+192.168.122.0/24 dev virbr0 proto kernel scope link src 192.168.122.1 linkdown 
+
+===== LISTENING SOCKETS BEFORE LAB =====
+State  Recv-Q Send-Q               Local Address:Port  Peer Address:PortProcess                        
+LISTEN 0      32                   192.168.122.1:53         0.0.0.0:*                                  
+LISTEN 0      4096                     127.0.0.1:34737      0.0.0.0:*                                  
+LISTEN 0      4096                    127.0.0.54:53         0.0.0.0:*                                  
+LISTEN 0      4096                       0.0.0.0:3001       0.0.0.0:*                                  
+LISTEN 0      4096                       0.0.0.0:3000       0.0.0.0:*                                  
+LISTEN 0      4096                     127.0.0.1:631        0.0.0.0:*                                  
+LISTEN 0      4096                100.104.119.57:42163      0.0.0.0:*                                  
+LISTEN 0      4096                       0.0.0.0:55000      0.0.0.0:*                                  
+LISTEN 0      80                       127.0.0.1:3306       0.0.0.0:*                                  
+LISTEN 0      4096                       0.0.0.0:9443       0.0.0.0:*                                  
+LISTEN 0      4096                       0.0.0.0:1515       0.0.0.0:*                                  
+LISTEN 0      4096                       0.0.0.0:1514       0.0.0.0:*                                  
+LISTEN 0      4096                       0.0.0.0:9200       0.0.0.0:*                                  
+LISTEN 0      4096                 127.0.0.53%lo:53         0.0.0.0:*                                  
+LISTEN 0      4096                       0.0.0.0:443        0.0.0.0:*                                  
+LISTEN 0      4096                          [::]:3001          [::]:*                                  
+LISTEN 0      4096                          [::]:3000          [::]:*                                  
+LISTEN 0      4096   [fd7a:115c:a1e0::743a:773b]:48961         [::]:*                                  
+LISTEN 0      4096                          [::]:55000         [::]:*                                  
+LISTEN 0      10                               *:1716             *:*    users:(("gjs",pid=6119,fd=15))
+LISTEN 0      4096                          [::]:9443          [::]:*                                  
+LISTEN 0      4096                          [::]:1515          [::]:*                                  
+LISTEN 0      4096                          [::]:1514          [::]:*                                  
+LISTEN 0      4096                         [::1]:631           [::]:*                                  
+LISTEN 0      4096                          [::]:9200          [::]:*                                  
+LISTEN 0      511                              *:80               *:*                                  
+LISTEN 0      4096                          [::]:443           [::]:*                                  
+
+===== NMAP =====
+Nmap version 7.94SVN ( https://nmap.org )
+Platform: x86_64-pc-linux-gnu
+Compiled with: liblua-5.4.6 openssl-3.0.13 libssh2-1.11.0 libz-1.3 libpcre2-10.42 libpcap-1.10.4 nmap-libdnet-1.12 ipv6
+Compiled without:
+
+===== TSHARK =====
+TShark (Wireshark) 4.2.2 (Git v4.2.2 packaged as 4.2.2-1.1build3).
+
+Copyright 1998-2024 Gerald Combs <gerald@wireshark.org> and contributors.
+
+===== PYTHON =====
+Python 3.12.3

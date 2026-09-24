@@ -1,0 +1,9 @@
+2026/09/24 06:32:14 wazuh-agentd: ERROR: (1216): Unable to connect to '[127.0.0.1]:1514/tcp': 'Transport endpoint is not connected'.
+2026/09/24 06:32:16 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache2/error.log'.
+2026/09/24 06:32:24 wazuh-logcollector: WARNING: Target 'agent' message queue is full (1024). Log lines may be lost.
+2026/09/24 06:32:56 wazuh-agentd: ERROR: SSL error (1). Connection refused by the manager. Maybe the port specified is incorrect.
+2026/09/24 06:33:06 wazuh-agentd: WARNING: (4101): Waiting for server reply (not started). Tried: '127.0.0.1'. Ensure that the manager version is 'v4.14.8' or higher.
+2026/09/24 06:33:06 wazuh-agentd: WARNING: Unable to connect to any server.
+2026/09/24 06:33:46 wazuh-agentd: ERROR: SSL error (1). Connection refused by the manager. Maybe the port specified is incorrect.
+2026/09/24 06:33:56 wazuh-agentd: WARNING: (4101): Waiting for server reply (not started). Tried: '127.0.0.1'. Ensure that the manager version is 'v4.14.8' or higher.
+2026/09/24 06:33:56 wazuh-agentd: WARNING: Unable to connect to any server.

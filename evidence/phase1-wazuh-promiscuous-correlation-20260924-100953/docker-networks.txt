@@ -1,0 +1,10 @@
+NETWORK ID     NAME                      DRIVER    SCOPE
+111b5b463049   bridge                    bridge    local
+74fc0d306f28   cyberlab_lab_net          bridge    local
+942d48eda11b   host                      host      local
+1b416c0059c4   none                      null      local
+88705b111e42   rustdesk-server_default   bridge    local
+a2271a130ada   single-node_default       bridge    local
+0512d055ab83   zurovia-ai_default        bridge    local
+ecf0923415df   zurovia-ai_local          bridge    local
+73292914fa33   zurovia-ai_offline        bridge    local

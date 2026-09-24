@@ -1,0 +1,4 @@
+NAMES                           IMAGE                          STATUS
+single-node-wazuh.dashboard-1   wazuh/wazuh-dashboard:4.14.7   Up 2 hours
+single-node-wazuh.manager-1     wazuh/wazuh-manager:4.14.7     Up 2 hours
+single-node-wazuh.indexer-1     wazuh/wazuh-indexer:4.14.7     Up 2 hours

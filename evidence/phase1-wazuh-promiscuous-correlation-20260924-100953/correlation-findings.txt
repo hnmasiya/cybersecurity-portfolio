@@ -1,0 +1,23 @@
+RULE 80710 CORRELATION FINDINGS
+
+Historical alert count: 6
+Historical first alert: 2026-09-24T04:34:28.091+0000
+Historical last alert:  2026-09-24T04:34:28.242+0000
+
+Current primary-interface PROMISC:
+NO
+
+Current Docker-veth PROMISC:
+YES
+
+Current packet-capture processes:
+PRESENT
+
+Historical process attribution:
+NOT ESTABLISHED
+
+Historical causation:
+NOT ESTABLISHED BY AVAILABLE TELEMETRY
+
+Compromise:
+NOT ESTABLISHED

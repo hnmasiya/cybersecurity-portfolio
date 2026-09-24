@@ -1,0 +1,16 @@
+Rule ID | Count | Description
+----------------------------------------------
+     26 5501	PAM: Login session opened.
+     20 2904	Dpkg (Debian Package) half configured.
+     18 5502	PAM: Login session closed.
+     18 5402	Successful sudo to ROOT executed.
+     15 591	Log file rotated.
+     11 2902	New dpkg (Debian Package) installed.
+      6 80710	Auditd: Device enables promiscuous mode.
+      3 80730	Auditd: SELinux permission check.
+      2 92604	Processes running for all users were queried with ps command.
+      2 533	Listened ports status (netstat) changed (new port opened or closed).
+      1 503	Wazuh agent started.
+      1 502	Wazuh server started.
+      1 19015	CIS Benchmark for Amazon Linux 2023 Benchmark v1.0.0.: Ensure sudo is installed.: Status changed from 'not applicable' to passed
+      1 19003	SCA summary: CIS Benchmark for Amazon Linux 2023 Benchmark v1.0.0.: Score less than 80% (53)

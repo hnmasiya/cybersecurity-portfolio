@@ -1,0 +1,4 @@
+TIMESTAMP	RULE	LEVEL	DESCRIPTION	AGENT	DECODER	LOCATION
+2026-09-24T06:47:09.509+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:47:09.509+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:47:09.510+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
