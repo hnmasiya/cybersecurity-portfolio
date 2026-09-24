@@ -1,0 +1,296 @@
+name: Lab to Portfolio Sync
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: lab-to-portfolio-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout portfolio
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.AUTOMATION_PAT }}
+
+      - name: Build automatic portfolio data
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          import base64
+          import html
+          import json
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+          from datetime import datetime, timezone
+
+          OWNER = "hnmasiya"
+          EXCLUDE = {"cybersecurity-portfolio", OWNER}
+          SECURITY_HINTS = {
+              "cyber", "security", "soc", "siem", "dfir", "incident",
+              "detection", "threat", "wazuh", "sigma", "network",
+              "forensics", "pentest", "vulnerability", "cloud-security",
+              "appsec", "devsecops", "malware", "blue-team", "red-team",
+              "nmap", "wireshark", "burp", "terraform", "iam", "sysmon"
+          }
+
+          def gh_json(args):
+              return json.loads(
+                  subprocess.check_output(
+                      ["gh", "api", *args],
+                      text=True,
+                      stderr=subprocess.DEVNULL
+                  )
+              )
+
+          def clean_text(value):
+              value = html.unescape(value or "")
+              value = re.sub(r"<[^>]+>", " ", value)
+              value = re.sub(r"\s+", " ", value).strip()
+              return value
+
+          def readme_excerpt(repo):
+              try:
+                  raw = gh_json([f"/repos/{OWNER}/{repo}/readme"])
+                  decoded = base64.b64decode(raw["content"]).decode("utf-8", "replace")
+                  lines = []
+                  for line in decoded.splitlines():
+                      s = line.strip()
+                      if not s or s.startswith("#") or s.startswith("!["):
+                          continue
+                      s = clean_text(s)
+                      s = re.sub(r"[*_`>#]", "", s)
+                      if s.startswith("[") and "](" in s:
+                          continue
+                      if s:
+                          lines.append(s)
+                      if len(" ".join(lines)) >= 300:
+                          break
+                  return " ".join(lines).strip()
+              except Exception:
+                  return ""
+
+          repos = gh_json([
+              f"/users/{OWNER}/repos?per_page=100&sort=updated&direction=desc&type=owner"
+          ])
+
+          projects = []
+          for repo in repos:
+              if repo.get("private") or repo.get("archived") or repo.get("fork"):
+                  continue
+
+              name = repo["name"]
+              if name in EXCLUDE:
+                  continue
+
+              topics = [str(x).lower() for x in repo.get("topics", [])]
+              description = clean_text(repo.get("description") or "")
+              excerpt = readme_excerpt(name)
+
+              haystack = " ".join([
+                  name.lower(),
+                  description.lower(),
+                  excerpt.lower(),
+                  " ".join(topics)
+              ])
+
+              is_security = any(hint in haystack for hint in SECURITY_HINTS)
+
+              # Only publish repositories that look like cybersecurity/security work.
+              # This avoids turning unrelated repositories into portfolio projects.
+              if not is_security:
+                  continue
+
+              final_description = description or excerpt
+              if not final_description:
+                  final_description = "Security project — see repository documentation."
+
+              if len(final_description) > 260:
+                  final_description = final_description[:257].rstrip() + "..."
+
+              projects.append({
+                  "name": name,
+                  "description": final_description,
+                  "url": repo["html_url"],
+                  "updated_at": repo["updated_at"],
+                  "topics": repo.get("topics", []),
+              })
+
+          projects.sort(key=lambda x: x["updated_at"], reverse=True)
+
+          payload = {
+              "generated_at": datetime.now(timezone.utc).isoformat(),
+              "source": f"https://github.com/{OWNER}",
+              "scope": "public, non-fork, non-archived security-related repositories owned by hnmasiya",
+              "projects": projects,
+          }
+
+          Path("portfolio-projects.json").write_text(
+              json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8"
+          )
+
+          # README automatic index
+          start = "<!-- AUTO_PORTFOLIO_PROJECT_INDEX_START -->"
+          end = "<!-- AUTO_PORTFOLIO_PROJECT_INDEX_END -->"
+
+          readme_path = Path("README.md")
+          readme = readme_path.read_text(encoding="utf-8")
+
+          rows = [
+              start,
+              "## Automatically Synced Security Projects",
+              "",
+              "_Generated from public, non-fork, non-archived security-related repositories owned by `hnmasiya`. Claims are sourced from repository metadata or README content._",
+              ""
+          ]
+
+          for p in projects:
+              rows.append(
+                  f"- **[{p['name']}]({p['url']})** — {p['description']}"
+              )
+
+          rows += ["", end]
+          generated = "\n".join(rows)
+
+          if start in readme and end in readme:
+              before = readme.split(start, 1)[0].rstrip()
+              after = readme.split(end, 1)[1].lstrip()
+              readme = before + "\n\n" + generated + "\n\n" + after
+          else:
+              readme = readme.rstrip() + "\n\n" + generated + "\n"
+
+          readme_path.write_text(readme, encoding="utf-8")
+
+          # Static HTML section for masiya-hub.org
+          index_path = Path("index.html")
+          index = index_path.read_text(encoding="utf-8")
+
+          hstart = "<!-- AUTO_SECURITY_PROJECTS_START -->"
+          hend = "<!-- AUTO_SECURITY_PROJECTS_END -->"
+
+          cards = [
+              hstart,
+              '<section id="live-security-projects" class="container">',
+              '  <div class="section-header">',
+              '    <h2 class="section-title">Live Security Projects</h2>',
+              '  </div>',
+              '  <div class="grid-2">'
+          ]
+
+          for p in projects:
+              title = html.escape(p["name"])
+              desc = html.escape(p["description"])
+              url = html.escape(p["url"], quote=True)
+              updated = html.escape(p["updated_at"][:10])
+
+              cards += [
+                  '    <article class="card">',
+                  f'      <div><span class="project-badge badge-live">AUTO-SYNCED</span>',
+                  f'      <h3 class="project-title">{title}</h3>',
+                  f'      <p class="project-desc">{desc}</p>',
+                  f'      <div class="metric-badge">Updated {updated}</div></div>',
+                  '      <div class="card-footer">',
+                  f'        <a class="btn-link" href="{url}" target="_blank" rel="noopener">View GitHub →</a>',
+                  '      </div>',
+                  '    </article>'
+              ]
+
+          cards += [
+              '  </div>',
+              '</section>',
+              hend
+          ]
+
+          html_section = "\n".join(cards)
+
+          if hstart in index and hend in index:
+              before = index.split(hstart, 1)[0].rstrip()
+              after = index.split(hend, 1)[1].lstrip()
+              index = before + "\n\n" + html_section + "\n\n" + after
+          else:
+              # Insert before the first major footer if one exists; otherwise append.
+              marker = "</main>"
+              if marker in index:
+                  index = index.replace(marker, html_section + "\n" + marker, 1)
+              else:
+                  index = index.rstrip() + "\n\n" + html_section + "\n"
+
+          index_path.write_text(index, encoding="utf-8")
+
+          print(f"[PASS] Generated {len(projects)} security project entries.")
+          PY
+
+      - name: Validate generated portfolio
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path("portfolio-projects.json").read_text(encoding="utf-8"))
+          assert isinstance(data.get("projects"), list)
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          index = Path("index.html").read_text(encoding="utf-8")
+
+          assert "<!-- AUTO_PORTFOLIO_PROJECT_INDEX_START -->" in readme
+          assert "<!-- AUTO_PORTFOLIO_PROJECT_INDEX_END -->" in readme
+          assert "<!-- AUTO_SECURITY_PROJECTS_START -->" in index
+          assert "<!-- AUTO_SECURITY_PROJECTS_END -->" in index
+
+          for item in data["projects"]:
+              assert item["name"]
+              assert item["url"].startswith("https://github.com/")
+
+          print(f"[PASS] Validated {len(data['projects'])} security projects.")
+          print("[PASS] README automatic project index present.")
+          print("[PASS] masiya-hub.org automatic project section present.")
+          PY
+
+      - name: Create portfolio update PR
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
+        run: |
+          set -euo pipefail
+
+          git config user.name "Hazvinei Nomatter Masiya"
+          git config user.email "norman.masiya@gmail.com"
+
+          git add portfolio-projects.json README.md index.html
+
+          if git diff --cached --quiet; then
+            echo "[PASS] Portfolio is already synchronized."
+            exit 0
+          fi
+
+          BRANCH="auto/lab-portfolio-sync-$(date -u +%Y%m%d%H%M%S)"
+
+          git checkout -b "$BRANCH"
+          git commit -m "auto: sync security labs to portfolio"
+          git push origin "$BRANCH"
+
+          PR_URL=$(gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "auto: sync security labs to portfolio" \
+            --body "Automated portfolio synchronization. New or updated public security repositories were detected and reflected in portfolio-projects.json, README.md, and the live portfolio index. No project claims are invented; descriptions come from repository metadata or README content.")
+
+          echo "Created portfolio sync PR: $PR_URL"
+          echo "Existing repository branch protection remains in force."
