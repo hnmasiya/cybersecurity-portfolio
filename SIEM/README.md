@@ -5,7 +5,7 @@ This directory contains architectural documentation, ingestion configurations, a
 
 ## 📁 Active Modules
 * **[Wazuh SIEM Deployments](./Wazuh/Reports/Alert-Investigation.md)** — Central host intrusion monitoring and SSH brute-force log analysis.
-* **[Splunk SOC Lab Track](./Splunk/)** — Hands-on Splunk investigation track; Lab 01 currently contains a synthetic SSH-authentication dataset and SPL query pack. Splunk execution evidence is required before the work is classified as completed.
+* **[Splunk SOC Lab Track](./Splunk/)** — Hands-on Splunk investigation track; Lab 01 has been executed locally against synthetic SSH-authentication telemetry, with retained investigation evidence and a dashboard build plan. Dashboard evidence remains pending.
 
 ## Evidence classification
 
