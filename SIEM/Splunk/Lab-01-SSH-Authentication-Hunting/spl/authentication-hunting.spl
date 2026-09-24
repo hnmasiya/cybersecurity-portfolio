@@ -64,3 +64,30 @@ index=splunk_lab sourcetype="splunk:lab:ssh_auth" status=failure
 ```
 
 > Note: Query 08 is a laboratory heuristic, not a production detection threshold. Thresholds should be validated and tuned against real organizational baselines.
+
+
+## 09. Failure-to-success correlation
+
+~~~spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth"
+| sort 0 _time
+| transaction src_ip user maxspan=5m
+| search eventcount>1
+| table src_ip user eventcount duration
+| sort - eventcount
+~~~
+
+## 10. Successful SSH authentication
+
+~~~spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth" status=success
+| table timestamp src_ip user host
+~~~
+
+## 11. Focused source timeline
+
+~~~spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth" src_ip=10.10.10.25
+| sort 0 _time
+| table timestamp user status message
+~~~
