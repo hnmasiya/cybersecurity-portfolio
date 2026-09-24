@@ -1,0 +1,283 @@
+Sep 23 16:22:38 normann-ThinkPad-X260 lightdm[2207]: pam_unix(lightdm-greeter:session): session opened for user lightdm(uid=128) by (uid=0)
+Sep 23 16:22:39 normann-ThinkPad-X260 (systemd)[2270]: pam_unix(systemd-user:session): session opened for user lightdm(uid=128) by lightdm(uid=0)
+Sep 23 16:23:05 normann-ThinkPad-X260 lightdm[2207]: pam_unix(lightdm-greeter:session): session closed for user lightdm
+Sep 23 16:23:05 normann-ThinkPad-X260 lightdm[3827]: pam_unix(lightdm:session): session opened for user normann(uid=1000) by (uid=0)
+Sep 23 16:23:06 normann-ThinkPad-X260 (systemd)[4282]: pam_unix(systemd-user:session): session opened for user normann(uid=1000) by normann(uid=0)
+Sep 23 16:23:16 normann-ThinkPad-X260 (sd-pam)[2279]: pam_unix(systemd-user:session): session closed for user lightdm
+Sep 23 16:25:01 normann-ThinkPad-X260 CRON[9303]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 16:25:02 normann-ThinkPad-X260 CRON[9303]: pam_unix(cron:session): session closed for user root
+Sep 23 16:28:23 normann-ThinkPad-X260 pkexec[12688]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 16:30:01 normann-ThinkPad-X260 CRON[13884]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 16:30:01 normann-ThinkPad-X260 CRON[13884]: pam_unix(cron:session): session closed for user root
+Sep 23 16:33:08 normann-ThinkPad-X260 zorin-auto-gnome-update[16229]: sudo/noble-updates,noble-security 1.9.15p5-3ubuntu5.24.04.3 amd64 [upgradable from: 1.9.15p5-3ubuntu5.24.04.2]
+Sep 23 16:33:31 normann-ThinkPad-X260 zorin-auto-gnome-update[16229]:   openjdk-21-jre-headless python3-libxml2 rsyslog sudo
+Sep 23 16:33:32 normann-ThinkPad-X260 pkexec[17823]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 16:34:11 normann-ThinkPad-X260 zorin-auto-gnome-update[16229]: Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 sudo amd64 1.9.15p5-3ubuntu5.24.04.3 [949 kB]
+Sep 23 16:34:32 normann-ThinkPad-X260 AptDaemon[18490]: INFO: CommitPackages() was called: dbus.Array([dbus.String('linux-headers-7.0.0-34-generic#auto'), dbus.String('linux-hwe-7.0-headers-7.0.0-34#auto'), dbus.String('linux-hwe-7.0-tools-7.0.0-34#auto'), dbus.String('linux-image-7.0.0-34-generic#auto'), dbus.String('linux-modules-7.0.0-34-generic#auto'), dbus.String('linux-tools-7.0.0-34-generic#auto')], signature=dbus.Signature('s')), dbus.Array([dbus.String('')], signature=dbus.Signature('s')), dbus.Array([dbus.String('')], signature=dbus.Signature('s')), dbus.Array([dbus.String('')], signature=dbus.Signature('s')), dbus.Array([dbus.String('clamav'), dbus.String('clamav-base'), dbus.String('clamav-freshclam'), dbus.String('firefox'), dbus.String('ghostscript'), dbus.String('gir1.2-glib-2.0'), dbus.String('gir1.2-gst-plugins-base-1.0'), dbus.String('gstreamer1.0-alsa'), dbus.String('gstreamer1.0-gl'), dbus.String('gstreamer1.0-gtk3'), dbus.String('gstreamer1.0-plugins-base'), dbus.String('gstreamer1.0-plugins-base-apps'), dbus.String('gstreamer1.0-plugins-base:i386'), dbus.String('gstreamer1.0-plugins-good'), dbus.String('gstreamer1.0-plugins-good:i386'), dbus.String('gstreamer1.0-x'), dbus.String('gstreamer1.0-x:i386'), dbus.String('libclamav12'), dbus.String('libexpat1'), dbus.String('libexpat1-dev'), dbus.String('libexpat1:i386'), dbus.String('libglib2.0-0t64'), dbus.String('libglib2.0-0t64:i386'), dbus.String('libglib2.0-bin'), dbus.String('libglib2.0-data'), dbus.String('libgs-common'), dbus.String('libgs10'), dbus.String('libgs10-common'), dbus.String('libgstreamer-gl1.0-0'), dbus.String('libgstreamer-plugins-base1.0-0'), dbus.String('libgstreamer-plugins-base1.0-0:i386'), dbus.String('libgstreamer-plugins-good1.0-0'), dbus.String('libgstreamer-plugins-good1.0-0:i386'), dbus.String('libxml2'), dbus.String('libxml2-dev'), dbus.String('libxml2-utils'), dbus.String('libxml2:i386'), dbus.String('linux-generic-hwe-24.04'), dbus.String('linux-headers-generic-hwe-24.04'), dbus.String('linux-image-generic-hwe-24.04'), dbus.String('linux-libc-dev'), dbus.String('linux-tools-common'), dbus.String('openjdk-21-jre'), dbus.String('openjdk-21-jre-headless'), dbus.String('python3-libxml2'), dbus.String('rsyslog'), dbus.String('sudo')], signature=dbus.Signature('s')), dbus.Array([dbus.String('')], signature=dbus.Signature('s'))
+Sep 23 16:34:32 normann-ThinkPad-X260 org.debian.apt[18490]: 16:34:32 AptDaemon [INFO]: CommitPackages() was called: dbus.Array([dbus.String('linux-headers-7.0.0-34-generic#auto'), dbus.String('linux-hwe-7.0-headers-7.0.0-34#auto'), dbus.String('linux-hwe-7.0-tools-7.0.0-34#auto'), dbus.String('linux-image-7.0.0-34-generic#auto'), dbus.String('linux-modules-7.0.0-34-generic#auto'), dbus.String('linux-tools-7.0.0-34-generic#auto')], signature=dbus.Signature('s')), dbus.Array([dbus.String('')], signature=dbus.Signature('s')), dbus.Array([dbus.String('')], signature=dbus.Signature('s')), dbus.Array([dbus.String('')], signature=dbus.Signature('s')), dbus.Array([dbus.String('clamav'), dbus.String('clamav-base'), dbus.String('clamav-freshclam'), dbus.String('firefox'), dbus.String('ghostscript'), dbus.String('gir1.2-glib-2.0'), dbus.String('gir1.2-gst-plugins-base-1.0'), dbus.String('gstreamer1.0-alsa'), dbus.String('gstreamer1.0-gl'), dbus.String('gstreamer1.0-gtk3'), dbus.String('gstreamer1.0-plugins-base'), dbus.String('gstreamer1.0-plugins-base-apps'), dbus.String('gstreamer1.0-plugins-base:i386'), dbus.String('gstreamer1.0-plugins-good'), dbus.String('gstreamer1.0-plugins-good:i386'), dbus.String('gstreamer1.0-x'), dbus.String('gstreamer1.0-x:i386'), dbus.String('libclamav12'), dbus.String('libexpat1'), dbus.String('libexpat1-dev'), dbus.String('libexpat1:i386'), dbus.String('libglib2.0-0t64'), dbus.String('libglib2.0-0t64:i386'), dbus.String('libglib2.0-bin'), dbus.String('libglib2.0-data'), dbus.String('libgs-common'), dbus.String('libgs10'), dbus.String('libgs10-common'), dbus.String('libgstreamer-gl1.0-0'), dbus.String('libgstreamer-plugins-base1.0-0'), dbus.String('libgstreamer-plugins-base1.0-0:i386'), dbus.String('libgstreamer-plugins-good1.0-0'), dbus.String('libgstreamer-plugins-good1.0-0:i386'), dbus.String('libxml2'), dbus.String('libxml2-dev'), dbus.String('libxml2-utils'), dbus.String('libxml2:i386'), dbus.String('linux-generic-hwe-24.04'), dbus.String('linux-headers-generic-hwe-24.04'), dbus.String('linux-image-generic-hwe-24.04'), dbus.String('linux-libc-dev'), dbus.String('linux-tools-common'), dbus.String('openjdk-21-jre'), dbus.String('openjdk-21-jre-headless'), dbus.String('python3-libxml2'), dbus.String('rsyslog'), dbus.String('sudo')], signature=dbus.Signature('s')), dbus.Array([dbus.String('')], signature=dbus.Signature('s'))
+Sep 23 16:34:35 normann-ThinkPad-X260 AptDaemon.Worker[18490]: INFO: Committing packages: dbus.Array([dbus.String('linux-headers-7.0.0-34-generic#auto'), dbus.String('linux-hwe-7.0-headers-7.0.0-34#auto'), dbus.String('linux-hwe-7.0-tools-7.0.0-34#auto'), dbus.String('linux-image-7.0.0-34-generic#auto'), dbus.String('linux-modules-7.0.0-34-generic#auto'), dbus.String('linux-tools-7.0.0-34-generic#auto')], signature=dbus.Signature('s')), dbus.Array([], signature=dbus.Signature('s')), dbus.Array([], signature=dbus.Signature('s')), dbus.Array([], signature=dbus.Signature('s')), dbus.Array([dbus.String('clamav'), dbus.String('clamav-base'), dbus.String('clamav-freshclam'), dbus.String('firefox'), dbus.String('ghostscript'), dbus.String('gir1.2-glib-2.0'), dbus.String('gir1.2-gst-plugins-base-1.0'), dbus.String('gstreamer1.0-alsa'), dbus.String('gstreamer1.0-gl'), dbus.String('gstreamer1.0-gtk3'), dbus.String('gstreamer1.0-plugins-base'), dbus.String('gstreamer1.0-plugins-base-apps'), dbus.String('gstreamer1.0-plugins-base:i386'), dbus.String('gstreamer1.0-plugins-good'), dbus.String('gstreamer1.0-plugins-good:i386'), dbus.String('gstreamer1.0-x'), dbus.String('gstreamer1.0-x:i386'), dbus.String('libclamav12'), dbus.String('libexpat1'), dbus.String('libexpat1-dev'), dbus.String('libexpat1:i386'), dbus.String('libglib2.0-0t64'), dbus.String('libglib2.0-0t64:i386'), dbus.String('libglib2.0-bin'), dbus.String('libglib2.0-data'), dbus.String('libgs-common'), dbus.String('libgs10'), dbus.String('libgs10-common'), dbus.String('libgstreamer-gl1.0-0'), dbus.String('libgstreamer-plugins-base1.0-0'), dbus.String('libgstreamer-plugins-base1.0-0:i386'), dbus.String('libgstreamer-plugins-good1.0-0'), dbus.String('libgstreamer-plugins-good1.0-0:i386'), dbus.String('libxml2'), dbus.String('libxml2-dev'), dbus.String('libxml2-utils'), dbus.String('libxml2:i386'), dbus.String('linux-generic-hwe-24.04'), dbus.String('linux-headers-generic-hwe-24.04'), dbus.String('linux-image-generic-hwe-24.04'), dbus.String('linux-libc-dev'), dbus.String('linux-tools-common'), dbus.String('openjdk-21-jre'), dbus.String('openjdk-21-jre-headless'), dbus.String('python3-libxml2'), dbus.String('rsyslog'), dbus.String('sudo')], signature=dbus.Signature('s')), dbus.Array([], signature=dbus.Signature('s'))
+Sep 23 16:34:35 normann-ThinkPad-X260 org.debian.apt[18490]: 16:34:35 AptDaemon.Worker [INFO]: Committing packages: dbus.Array([dbus.String('linux-headers-7.0.0-34-generic#auto'), dbus.String('linux-hwe-7.0-headers-7.0.0-34#auto'), dbus.String('linux-hwe-7.0-tools-7.0.0-34#auto'), dbus.String('linux-image-7.0.0-34-generic#auto'), dbus.String('linux-modules-7.0.0-34-generic#auto'), dbus.String('linux-tools-7.0.0-34-generic#auto')], signature=dbus.Signature('s')), dbus.Array([], signature=dbus.Signature('s')), dbus.Array([], signature=dbus.Signature('s')), dbus.Array([], signature=dbus.Signature('s')), dbus.Array([dbus.String('clamav'), dbus.String('clamav-base'), dbus.String('clamav-freshclam'), dbus.String('firefox'), dbus.String('ghostscript'), dbus.String('gir1.2-glib-2.0'), dbus.String('gir1.2-gst-plugins-base-1.0'), dbus.String('gstreamer1.0-alsa'), dbus.String('gstreamer1.0-gl'), dbus.String('gstreamer1.0-gtk3'), dbus.String('gstreamer1.0-plugins-base'), dbus.String('gstreamer1.0-plugins-base-apps'), dbus.String('gstreamer1.0-plugins-base:i386'), dbus.String('gstreamer1.0-plugins-good'), dbus.String('gstreamer1.0-plugins-good:i386'), dbus.String('gstreamer1.0-x'), dbus.String('gstreamer1.0-x:i386'), dbus.String('libclamav12'), dbus.String('libexpat1'), dbus.String('libexpat1-dev'), dbus.String('libexpat1:i386'), dbus.String('libglib2.0-0t64'), dbus.String('libglib2.0-0t64:i386'), dbus.String('libglib2.0-bin'), dbus.String('libglib2.0-data'), dbus.String('libgs-common'), dbus.String('libgs10'), dbus.String('libgs10-common'), dbus.String('libgstreamer-gl1.0-0'), dbus.String('libgstreamer-plugins-base1.0-0'), dbus.String('libgstreamer-plugins-base1.0-0:i386'), dbus.String('libgstreamer-plugins-good1.0-0'), dbus.String('libgstreamer-plugins-good1.0-0:i386'), dbus.String('libxml2'), dbus.String('libxml2-dev'), dbus.String('libxml2-utils'), dbus.String('libxml2:i386'), dbus.String('linux-generic-hwe-24.04'), dbus.String('linux-headers-generic-hwe-24.04'), dbus.String('linux-image-generic-hwe-24.04'), dbus.String('linux-libc-dev'), dbus.String('linux-tools-common'), dbus.String('openjdk-21-jre'), dbus.String('openjdk-21-jre-headless'), dbus.String('python3-libxml2'), dbus.String('rsyslog'), dbus.String('sudo')], signature=dbus.Signature('s')), dbus.Array([], signature=dbus.Signature('s'))
+Sep 23 16:35:01 normann-ThinkPad-X260 CRON[18985]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 16:35:01 normann-ThinkPad-X260 CRON[18985]: pam_unix(cron:session): session closed for user root
+Sep 23 16:39:01 normann-ThinkPad-X260 CRON[21820]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 16:39:01 normann-ThinkPad-X260 CRON[21820]: pam_unix(cron:session): session closed for user root
+Sep 23 16:40:20 normann-ThinkPad-X260 zorin-auto-gnome-update[16229]: Preparing to unpack …/12-sudo_1.9.15p5-3ubuntu5.24.04.3_amd64.deb…
+Sep 23 16:40:20 normann-ThinkPad-X260 zorin-auto-gnome-update[16229]: Unpacking sudo (1.9.15p5-3ubuntu5.24.04.3) over (1.9.15p5-3ubuntu5.24.04.2)…
+Sep 23 16:41:45 normann-ThinkPad-X260 zorin-auto-gnome-update[16229]: Setting up sudo (1.9.15p5-3ubuntu5.24.04.3)…
+Sep 23 16:42:38 normann-ThinkPad-X260 pkexec[26507]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 16:45:01 normann-ThinkPad-X260 CRON[27335]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 16:45:01 normann-ThinkPad-X260 CRON[27335]: pam_unix(cron:session): session closed for user root
+Sep 23 16:45:44 normann-ThinkPad-X260 pkexec[27546]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 16:55:01 normann-ThinkPad-X260 CRON[31204]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 16:55:01 normann-ThinkPad-X260 CRON[31204]: pam_unix(cron:session): session closed for user root
+Sep 23 17:03:31 normann-ThinkPad-X260 pkexec[34460]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 17:05:01 normann-ThinkPad-X260 CRON[34828]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:05:01 normann-ThinkPad-X260 CRON[34828]: pam_unix(cron:session): session closed for user root
+Sep 23 17:06:30 normann-ThinkPad-X260 pkexec[36086]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 17:09:01 normann-ThinkPad-X260 CRON[36807]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:09:01 normann-ThinkPad-X260 CRON[36807]: pam_unix(cron:session): session closed for user root
+Sep 23 17:15:01 normann-ThinkPad-X260 CRON[38303]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:15:01 normann-ThinkPad-X260 CRON[38303]: pam_unix(cron:session): session closed for user root
+Sep 23 17:17:01 normann-ThinkPad-X260 CRON[38779]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:19:16 normann-ThinkPad-X260 CRON[38779]: pam_unix(cron:session): session closed for user root
+Sep 23 17:25:01 normann-ThinkPad-X260 CRON[40769]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:25:01 normann-ThinkPad-X260 CRON[40769]: pam_unix(cron:session): session closed for user root
+Sep 23 17:30:01 normann-ThinkPad-X260 CRON[42037]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:30:01 normann-ThinkPad-X260 CRON[42037]: pam_unix(cron:session): session closed for user root
+Sep 23 17:35:01 normann-ThinkPad-X260 CRON[43189]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:35:01 normann-ThinkPad-X260 CRON[43189]: pam_unix(cron:session): session closed for user root
+Sep 23 17:39:01 normann-ThinkPad-X260 CRON[44130]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:39:01 normann-ThinkPad-X260 CRON[44130]: pam_unix(cron:session): session closed for user root
+Sep 23 17:45:01 normann-ThinkPad-X260 CRON[45701]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:45:01 normann-ThinkPad-X260 CRON[45701]: pam_unix(cron:session): session closed for user root
+Sep 23 17:55:01 normann-ThinkPad-X260 CRON[48199]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 17:55:01 normann-ThinkPad-X260 CRON[48199]: pam_unix(cron:session): session closed for user root
+Sep 23 18:05:01 normann-ThinkPad-X260 CRON[51922]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:05:01 normann-ThinkPad-X260 CRON[51922]: pam_unix(cron:session): session closed for user root
+Sep 23 18:06:36 normann-ThinkPad-X260 pkexec[53167]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 18:09:01 normann-ThinkPad-X260 CRON[55629]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:09:01 normann-ThinkPad-X260 CRON[55629]: pam_unix(cron:session): session closed for user root
+Sep 23 18:09:34 normann-ThinkPad-X260 pkexec[56375]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 18:15:01 normann-ThinkPad-X260 CRON[62703]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:15:01 normann-ThinkPad-X260 CRON[62703]: pam_unix(cron:session): session closed for user root
+Sep 23 18:17:01 normann-ThinkPad-X260 CRON[63453]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:19:16 normann-ThinkPad-X260 CRON[63453]: pam_unix(cron:session): session closed for user root
+Sep 23 18:25:01 normann-ThinkPad-X260 CRON[65353]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:25:01 normann-ThinkPad-X260 CRON[65353]: pam_unix(cron:session): session closed for user root
+Sep 23 18:30:01 normann-ThinkPad-X260 CRON[66548]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:30:01 normann-ThinkPad-X260 CRON[66548]: pam_unix(cron:session): session closed for user root
+Sep 23 18:35:02 normann-ThinkPad-X260 CRON[67748]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:35:02 normann-ThinkPad-X260 CRON[67748]: pam_unix(cron:session): session closed for user root
+Sep 23 18:39:01 normann-ThinkPad-X260 CRON[68690]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:39:01 normann-ThinkPad-X260 CRON[68690]: pam_unix(cron:session): session closed for user root
+Sep 23 18:45:01 normann-ThinkPad-X260 CRON[70257]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:45:01 normann-ThinkPad-X260 CRON[70257]: pam_unix(cron:session): session closed for user root
+Sep 23 18:55:01 normann-ThinkPad-X260 CRON[72595]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 18:55:01 normann-ThinkPad-X260 CRON[72595]: pam_unix(cron:session): session closed for user root
+Sep 23 19:05:01 normann-ThinkPad-X260 CRON[75913]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:05:01 normann-ThinkPad-X260 CRON[75913]: pam_unix(cron:session): session closed for user root
+Sep 23 19:06:30 normann-ThinkPad-X260 pkexec[76257]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 19:09:01 normann-ThinkPad-X260 CRON[77820]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:09:01 normann-ThinkPad-X260 CRON[77820]: pam_unix(cron:session): session closed for user root
+Sep 23 19:09:31 normann-ThinkPad-X260 pkexec[78007]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 19:15:01 normann-ThinkPad-X260 CRON[79480]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:15:01 normann-ThinkPad-X260 CRON[79480]: pam_unix(cron:session): session closed for user root
+Sep 23 19:17:01 normann-ThinkPad-X260 CRON[79911]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:19:17 normann-ThinkPad-X260 CRON[79911]: pam_unix(cron:session): session closed for user root
+Sep 23 19:25:01 normann-ThinkPad-X260 CRON[81809]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:25:01 normann-ThinkPad-X260 CRON[81809]: pam_unix(cron:session): session closed for user root
+Sep 23 19:30:01 normann-ThinkPad-X260 CRON[82928]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:30:01 normann-ThinkPad-X260 CRON[82928]: pam_unix(cron:session): session closed for user root
+Sep 23 19:35:01 normann-ThinkPad-X260 CRON[84111]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:35:01 normann-ThinkPad-X260 CRON[84111]: pam_unix(cron:session): session closed for user root
+Sep 23 19:39:01 normann-ThinkPad-X260 CRON[85021]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:39:01 normann-ThinkPad-X260 CRON[85021]: pam_unix(cron:session): session closed for user root
+Sep 23 19:45:01 normann-ThinkPad-X260 CRON[86575]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 19:45:01 normann-ThinkPad-X260 CRON[86575]: pam_unix(cron:session): session closed for user root
+Sep 23 20:52:19 normann-ThinkPad-X260 lightdm[2010]: pam_unix(lightdm-greeter:session): session opened for user lightdm(uid=128) by (uid=0)
+Sep 23 20:52:19 normann-ThinkPad-X260 (systemd)[2095]: pam_unix(systemd-user:session): session opened for user lightdm(uid=128) by lightdm(uid=0)
+Sep 23 21:49:32 normann-ThinkPad-X260 lightdm[1929]: pam_unix(lightdm-greeter:session): session opened for user lightdm(uid=128) by (uid=0)
+Sep 23 21:49:32 normann-ThinkPad-X260 (systemd)[2045]: pam_unix(systemd-user:session): session opened for user lightdm(uid=128) by lightdm(uid=0)
+Sep 23 21:50:00 normann-ThinkPad-X260 lightdm[1929]: pam_unix(lightdm-greeter:session): session closed for user lightdm
+Sep 23 21:50:00 normann-ThinkPad-X260 lightdm[3209]: pam_unix(lightdm:session): session opened for user normann(uid=1000) by (uid=0)
+Sep 23 21:50:00 normann-ThinkPad-X260 (systemd)[4578]: pam_unix(systemd-user:session): session opened for user normann(uid=1000) by normann(uid=0)
+Sep 23 21:51:29 normann-ThinkPad-X260 pkexec[8480]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 21:54:38 normann-ThinkPad-X260 pkexec[12155]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 21:55:01 normann-ThinkPad-X260 CRON[12482]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 21:55:01 normann-ThinkPad-X260 CRON[12482]: pam_unix(cron:session): session closed for user root
+Sep 23 22:00:26 normann-ThinkPad-X260 pkexec[18064]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 22:03:26 normann-ThinkPad-X260 pkexec[20299]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 22:05:01 normann-ThinkPad-X260 CRON[21264]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:05:01 normann-ThinkPad-X260 CRON[21264]: pam_unix(cron:session): session closed for user root
+Sep 23 22:09:01 normann-ThinkPad-X260 CRON[22462]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:09:01 normann-ThinkPad-X260 CRON[22462]: pam_unix(cron:session): session closed for user root
+Sep 23 22:15:01 normann-ThinkPad-X260 CRON[23938]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:15:01 normann-ThinkPad-X260 CRON[23938]: pam_unix(cron:session): session closed for user root
+Sep 23 22:17:01 normann-ThinkPad-X260 CRON[24436]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:17:11 normann-ThinkPad-X260 CRON[24436]: pam_unix(cron:session): session closed for user root
+Sep 23 22:25:01 normann-ThinkPad-X260 CRON[26663]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:25:01 normann-ThinkPad-X260 CRON[26663]: pam_unix(cron:session): session closed for user root
+Sep 23 22:30:01 normann-ThinkPad-X260 CRON[29851]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:30:01 normann-ThinkPad-X260 CRON[29851]: pam_unix(cron:session): session closed for user root
+Sep 23 22:30:26 normann-ThinkPad-X260 pkexec[30060]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 22:35:01 normann-ThinkPad-X260 CRON[31216]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:35:01 normann-ThinkPad-X260 CRON[31216]: pam_unix(cron:session): session closed for user root
+Sep 23 22:39:01 normann-ThinkPad-X260 CRON[32242]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:39:01 normann-ThinkPad-X260 CRON[32242]: pam_unix(cron:session): session closed for user root
+Sep 23 22:45:01 normann-ThinkPad-X260 CRON[33695]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:45:01 normann-ThinkPad-X260 CRON[33695]: pam_unix(cron:session): session closed for user root
+Sep 23 22:55:01 normann-ThinkPad-X260 CRON[36307]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 22:55:01 normann-ThinkPad-X260 CRON[36307]: pam_unix(cron:session): session closed for user root
+Sep 23 23:03:25 normann-ThinkPad-X260 pkexec[39412]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 23:05:01 normann-ThinkPad-X260 CRON[39792]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:05:01 normann-ThinkPad-X260 CRON[39792]: pam_unix(cron:session): session closed for user root
+Sep 23 23:09:01 normann-ThinkPad-X260 CRON[40738]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:09:01 normann-ThinkPad-X260 CRON[40738]: pam_unix(cron:session): session closed for user root
+Sep 23 23:15:01 normann-ThinkPad-X260 CRON[42214]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:15:01 normann-ThinkPad-X260 CRON[42214]: pam_unix(cron:session): session closed for user root
+Sep 23 23:17:01 normann-ThinkPad-X260 CRON[42686]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:19:16 normann-ThinkPad-X260 CRON[42686]: pam_unix(cron:session): session closed for user root
+Sep 23 23:25:01 normann-ThinkPad-X260 CRON[44819]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:25:01 normann-ThinkPad-X260 CRON[44819]: pam_unix(cron:session): session closed for user root
+Sep 23 23:30:01 normann-ThinkPad-X260 CRON[46923]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:30:01 normann-ThinkPad-X260 CRON[46923]: pam_unix(cron:session): session closed for user root
+Sep 23 23:30:25 normann-ThinkPad-X260 pkexec[47081]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 23 23:35:01 normann-ThinkPad-X260 CRON[48198]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:35:01 normann-ThinkPad-X260 CRON[48198]: pam_unix(cron:session): session closed for user root
+Sep 23 23:39:01 normann-ThinkPad-X260 CRON[49126]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:39:01 normann-ThinkPad-X260 CRON[49126]: pam_unix(cron:session): session closed for user root
+Sep 23 23:45:01 normann-ThinkPad-X260 CRON[50594]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:45:01 normann-ThinkPad-X260 CRON[50594]: pam_unix(cron:session): session closed for user root
+Sep 23 23:55:01 normann-ThinkPad-X260 CRON[53079]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:55:01 normann-ThinkPad-X260 CRON[53079]: pam_unix(cron:session): session closed for user root
+Sep 23 23:59:01 normann-ThinkPad-X260 CRON[53972]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 23 23:59:01 normann-ThinkPad-X260 CRON[53972]: pam_unix(cron:session): session closed for user root
+Sep 24 00:03:25 normann-ThinkPad-X260 pkexec[56265]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 06:32:15 normann-ThinkPad-X260 lightdm[1907]: pam_unix(lightdm-greeter:session): session opened for user lightdm(uid=128) by (uid=0)
+Sep 24 06:32:15 normann-ThinkPad-X260 (systemd)[1980]: pam_unix(systemd-user:session): session opened for user lightdm(uid=128) by lightdm(uid=0)
+Sep 24 06:32:51 normann-ThinkPad-X260 lightdm[1907]: pam_unix(lightdm-greeter:session): session closed for user lightdm
+Sep 24 06:32:51 normann-ThinkPad-X260 lightdm[3564]: pam_unix(lightdm:session): session opened for user normann(uid=1000) by (uid=0)
+Sep 24 06:32:52 normann-ThinkPad-X260 (systemd)[4752]: pam_unix(systemd-user:session): session opened for user normann(uid=1000) by normann(uid=0)
+Sep 24 06:33:02 normann-ThinkPad-X260 (sd-pam)[1993]: pam_unix(systemd-user:session): session closed for user lightdm
+Sep 24 06:34:53 normann-ThinkPad-X260 pkexec[9412]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 06:35:01 normann-ThinkPad-X260 CRON[9681]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 06:35:01 normann-ThinkPad-X260 CRON[9681]: pam_unix(cron:session): session closed for user root
+Sep 24 06:37:37 normann-ThinkPad-X260 pkexec[12626]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 06:39:01 normann-ThinkPad-X260 CRON[13894]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 06:39:01 normann-ThinkPad-X260 CRON[13894]: pam_unix(cron:session): session closed for user root
+Sep 24 06:43:20 normann-ThinkPad-X260 pkexec[19024]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 06:45:01 normann-ThinkPad-X260 CRON[21410]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 06:45:01 normann-ThinkPad-X260 CRON[21410]: pam_unix(cron:session): session closed for user root
+Sep 24 06:46:20 normann-ThinkPad-X260 pkexec[22304]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 06:55:01 normann-ThinkPad-X260 CRON[25076]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 06:55:01 normann-ThinkPad-X260 CRON[25076]: pam_unix(cron:session): session closed for user root
+Sep 24 07:05:01 normann-ThinkPad-X260 CRON[27544]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:05:01 normann-ThinkPad-X260 CRON[27544]: pam_unix(cron:session): session closed for user root
+Sep 24 07:09:01 normann-ThinkPad-X260 CRON[28514]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:09:01 normann-ThinkPad-X260 CRON[28514]: pam_unix(cron:session): session closed for user root
+Sep 24 07:13:19 normann-ThinkPad-X260 pkexec[30459]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 07:15:01 normann-ThinkPad-X260 CRON[30832]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:15:01 normann-ThinkPad-X260 CRON[30832]: pam_unix(cron:session): session closed for user root
+Sep 24 07:17:01 normann-ThinkPad-X260 CRON[31279]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:18:58 normann-ThinkPad-X260 CRON[31279]: pam_unix(cron:session): session closed for user root
+Sep 24 07:25:01 normann-ThinkPad-X260 CRON[33176]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:25:01 normann-ThinkPad-X260 CRON[33176]: pam_unix(cron:session): session closed for user root
+Sep 24 07:30:01 normann-ThinkPad-X260 CRON[34376]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:30:01 normann-ThinkPad-X260 CRON[34376]: pam_unix(cron:session): session closed for user root
+Sep 24 07:35:01 normann-ThinkPad-X260 CRON[35660]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:35:01 normann-ThinkPad-X260 CRON[35660]: pam_unix(cron:session): session closed for user root
+Sep 24 07:39:01 normann-ThinkPad-X260 CRON[36566]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:39:01 normann-ThinkPad-X260 CRON[36566]: pam_unix(cron:session): session closed for user root
+Sep 24 07:45:01 normann-ThinkPad-X260 CRON[38907]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:45:01 normann-ThinkPad-X260 CRON[38907]: pam_unix(cron:session): session closed for user root
+Sep 24 07:46:17 normann-ThinkPad-X260 pkexec[39198]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 07:55:01 normann-ThinkPad-X260 CRON[41462]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 07:55:01 normann-ThinkPad-X260 CRON[41462]: pam_unix(cron:session): session closed for user root
+Sep 24 08:05:01 normann-ThinkPad-X260 CRON[43821]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:05:01 normann-ThinkPad-X260 CRON[43821]: pam_unix(cron:session): session closed for user root
+Sep 24 08:09:01 normann-ThinkPad-X260 CRON[44698]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:09:01 normann-ThinkPad-X260 CRON[44698]: pam_unix(cron:session): session closed for user root
+Sep 24 08:13:17 normann-ThinkPad-X260 pkexec[46579]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:14:59 normann-ThinkPad-X260 sudo[46939]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/ss -tulpn
+Sep 24 08:14:59 normann-ThinkPad-X260 sudo[46939]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:14:59 normann-ThinkPad-X260 sudo[46939]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:15:01 normann-ThinkPad-X260 CRON[47075]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:15:01 normann-ThinkPad-X260 CRON[47075]: pam_unix(cron:session): session closed for user root
+Sep 24 08:15:37 normann-ThinkPad-X260 sudo[47220]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/ss -lntup
+Sep 24 08:15:37 normann-ThinkPad-X260 sudo[47220]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:15:37 normann-ThinkPad-X260 sudo[47220]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:17:01 normann-ThinkPad-X260 CRON[47541]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:19:17 normann-ThinkPad-X260 CRON[47541]: pam_unix(cron:session): session closed for user root
+Sep 24 08:19:32 normann-ThinkPad-X260 sudo[48196]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/systemctl status wazuh-agent --no-pager
+Sep 24 08:19:32 normann-ThinkPad-X260 sudo[48196]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:19:33 normann-ThinkPad-X260 sudo[48196]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:19:44 normann-ThinkPad-X260 sudo[48226]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/systemctl status docker --no-pager
+Sep 24 08:19:44 normann-ThinkPad-X260 sudo[48226]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:19:44 normann-ThinkPad-X260 sudo[48226]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:20:53 normann-ThinkPad-X260 sudo[48506]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/var/ossec/bin/wazuh-control status
+Sep 24 08:20:53 normann-ThinkPad-X260 sudo[48506]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:20:54 normann-ThinkPad-X260 sudo[48506]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:21:11 normann-ThinkPad-X260 sudo[48609]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/grep -nE <server>|<address>|<port>|<protocol>|<log_format>|<localfile> /var/ossec/etc/ossec.conf
+Sep 24 08:21:11 normann-ThinkPad-X260 sudo[48609]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:21:11 normann-ThinkPad-X260 sudo[48609]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:21:23 normann-ThinkPad-X260 sudo[48650]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/tail -50 /var/ossec/logs/ossec.log
+Sep 24 08:21:23 normann-ThinkPad-X260 sudo[48650]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:21:23 normann-ThinkPad-X260 sudo[48650]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:21:39 normann-ThinkPad-X260 sudo[48715]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/grep -n <localfile> /var/ossec/etc/ossec.conf
+Sep 24 08:21:39 normann-ThinkPad-X260 sudo[48715]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:21:39 normann-ThinkPad-X260 sudo[48715]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:21:51 normann-ThinkPad-X260 sudo[48751]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/grep -nE auth.log|syslog|secure|audit|apache|nginx|docker /var/ossec/etc/ossec.conf
+Sep 24 08:21:51 normann-ThinkPad-X260 sudo[48751]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:21:51 normann-ThinkPad-X260 sudo[48751]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:24:11 normann-ThinkPad-X260 sudo[49451]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/var/ossec/bin/wazuh-control info
+Sep 24 08:24:11 normann-ThinkPad-X260 sudo[49451]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:24:11 normann-ThinkPad-X260 sudo[49451]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:24:20 normann-ThinkPad-X260 sudo[49495]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/var/ossec/bin/wazuh-agentd -V
+Sep 24 08:24:20 normann-ThinkPad-X260 sudo[49495]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:24:20 normann-ThinkPad-X260 sudo[49495]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:25:02 normann-ThinkPad-X260 CRON[49657]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:25:02 normann-ThinkPad-X260 CRON[49657]: pam_unix(cron:session): session closed for user root
+Sep 24 08:29:29 normann-ThinkPad-X260 sudo[50687]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-baseline.sh
+Sep 24 08:29:29 normann-ThinkPad-X260 sudo[50687]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:29:39 normann-ThinkPad-X260 sudo[50687]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:30:01 normann-ThinkPad-X260 CRON[51495]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:30:01 normann-ThinkPad-X260 CRON[51495]: pam_unix(cron:session): session closed for user root
+Sep 24 08:35:01 normann-ThinkPad-X260 CRON[53299]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:35:01 normann-ThinkPad-X260 CRON[53299]: pam_unix(cron:session): session closed for user root
+Sep 24 08:35:21 normann-ThinkPad-X260 sudo[53375]:  normann : TTY=pts/1 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-telemetry-validation.sh
+Sep 24 08:35:21 normann-ThinkPad-X260 sudo[53375]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]:     root : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=0)
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:35:42 normann-ThinkPad-X260 sudo[53375]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:39:01 normann-ThinkPad-X260 CRON[54450]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:39:01 normann-ThinkPad-X260 CRON[54450]: pam_unix(cron:session): session closed for user root
+Sep 24 08:40:56 normann-ThinkPad-X260 sudo[54945]:  normann : TTY=pts/1 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-manager-alert-validation.sh
+Sep 24 08:40:56 normann-ThinkPad-X260 sudo[54945]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:40:59 normann-ThinkPad-X260 sudo[55329]:     root : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 08:40:59 normann-ThinkPad-X260 sudo[55329]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=0)
+Sep 24 08:40:59 normann-ThinkPad-X260 sudo[55329]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:41:31 normann-ThinkPad-X260 sudo[54945]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:45:01 normann-ThinkPad-X260 CRON[57240]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:45:01 normann-ThinkPad-X260 CRON[57240]: pam_unix(cron:session): session closed for user root
+Sep 24 08:46:19 normann-ThinkPad-X260 pkexec[57624]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:47:07 normann-ThinkPad-X260 sudo[57775]:  normann : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-manager-alert-validation.sh
+Sep 24 08:47:07 normann-ThinkPad-X260 sudo[57775]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]:     root : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=0)
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:47:41 normann-ThinkPad-X260 sudo[57775]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:50:48 normann-ThinkPad-X260 sudo[58989]:  normann : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-soc-investigation.sh
+Sep 24 08:50:48 normann-ThinkPad-X260 sudo[58989]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:50:51 normann-ThinkPad-X260 sudo[58989]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:55:01 normann-ThinkPad-X260 CRON[60110]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:55:01 normann-ThinkPad-X260 CRON[60110]: pam_unix(cron:session): session closed for user root
+Sep 24 09:05:01 normann-ThinkPad-X260 CRON[63453]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 09:05:01 normann-ThinkPad-X260 CRON[63453]: pam_unix(cron:session): session closed for user root
+Sep 24 09:09:01 normann-ThinkPad-X260 CRON[64909]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 09:09:01 normann-ThinkPad-X260 CRON[64909]: pam_unix(cron:session): session closed for user root
+Sep 24 09:13:18 normann-ThinkPad-X260 pkexec[67038]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 09:15:01 normann-ThinkPad-X260 CRON[67568]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 09:15:01 normann-ThinkPad-X260 CRON[67568]: pam_unix(cron:session): session closed for user root
+Sep 24 09:17:01 normann-ThinkPad-X260 CRON[68030]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 09:19:14 normann-ThinkPad-X260 CRON[68030]: pam_unix(cron:session): session closed for user root

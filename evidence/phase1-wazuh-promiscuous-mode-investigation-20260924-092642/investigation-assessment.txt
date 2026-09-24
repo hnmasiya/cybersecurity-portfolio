@@ -1,0 +1,36 @@
+RULE 80710 — CONTEXTUAL INVESTIGATION
+
+Alert:
+  Wazuh Rule 80710
+  "Auditd: Device enables promiscuous mode."
+  Level: 10
+
+Observed frequency:
+  Six alerts were observed in the Lab 3.1 evidence.
+
+Investigation approach:
+  1. Preserve the original Wazuh alerts.
+  2. Capture current network interface state.
+  3. Inspect interface PROMISC flags.
+  4. Capture socket/process context.
+  5. Check packet-capture tooling and active packet-capture processes.
+  6. Correlate available Auditd telemetry.
+  7. Correlate relevant system journal telemetry.
+
+Disposition principle:
+  The Rule 80710 alert is treated as a high-severity contextual
+  signal requiring investigation.
+
+  Presence of Rule 80710 alone does NOT establish malicious activity,
+  unauthorized packet capture, or compromise.
+
+  A final disposition must be based on correlated endpoint,
+  Auditd, process, network-interface, and user/session evidence.
+
+Current-state limitation:
+  Current interface state does not by itself prove what happened at
+  the historical alert timestamp.
+
+Historical causation limitation:
+  This investigation does not infer a process, user, or intent unless
+  the available telemetry directly supports that conclusion.

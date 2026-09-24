@@ -1,0 +1,21 @@
+DEVICE           TYPE      STATE                   CONNECTION      
+wlp4s0           wifi      connected               The Musketeers  
+tailscale0       tun       connected (externally)  tailscale0      
+br-73292914fa33  bridge    connected (externally)  br-73292914fa33 
+br-74fc0d306f28  bridge    connected (externally)  br-74fc0d306f28 
+br-a2271a130ada  bridge    connected (externally)  br-a2271a130ada 
+lo               loopback  connected (externally)  lo              
+br-0512d055ab83  bridge    connected (externally)  br-0512d055ab83 
+br-88705b111e42  bridge    connected (externally)  br-88705b111e42 
+br-ecf0923415df  bridge    connected (externally)  br-ecf0923415df 
+docker0          bridge    connected (externally)  docker0         
+virbr0           bridge    connected (externally)  virbr0          
+p2p-dev-wlp4s0   wifi-p2p  disconnected            --              
+enp0s31f6        ethernet  unavailable             --              
+veth06925d7      ethernet  unmanaged               --              
+veth4f17583      ethernet  unmanaged               --              
+veth57fe4b4      ethernet  unmanaged               --              
+veth707d42d      ethernet  unmanaged               --              
+vethb6a6cd7      ethernet  unmanaged               --              
+vethdf14d20      ethernet  unmanaged               --              
+vethfb8d1c9      ethernet  unmanaged               --              

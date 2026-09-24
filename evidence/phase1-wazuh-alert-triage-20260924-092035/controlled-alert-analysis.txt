@@ -1,0 +1,6 @@
+CONTROLLED LAB ALERTS
+=====================
+
+2026-09-24T06:47:09.509+0000	5402	level=3	Successful sudo to ROOT executed.	agent=normann-ThinkPad-X260	decoder=sudo	location=journald
+2026-09-24T06:47:09.509+0000	5502	level=3	PAM: Login session closed.	agent=normann-ThinkPad-X260	decoder=pam	location=journald
+2026-09-24T06:47:09.510+0000	5501	level=3	PAM: Login session opened.	agent=normann-ThinkPad-X260	decoder=pam	location=journald

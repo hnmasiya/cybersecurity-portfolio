@@ -1,0 +1,7 @@
+LAB4 CONTROLLED INCIDENT MARKER
+Incident ID: LAB4-20260924-101415
+Created: 2026-09-24T10:14:15+02:00
+Purpose: Controlled SOC incident-response simulation
+Owner: normann
+This file is a temporary lab artifact.
+LAB4 privileged validation

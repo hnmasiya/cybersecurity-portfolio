@@ -1,0 +1,26 @@
+LAB 5 — WAZUH DETECTION ENGINEERING
+
+Detection name:
+lab5-detection-engineering
+
+Rule ID:
+100500
+
+Detection condition:
+The Wazuh manager detects the exact controlled marker:
+LAB5-DETECTION-ENGINEERING
+
+Detection severity:
+7
+
+Purpose:
+Validate the complete lifecycle of a custom Wazuh detection:
+design, deployment, event generation, alert validation, negative testing,
+and evidence documentation.
+
+False-positive control:
+A similar but non-matching marker is generated:
+LAB5-BENIGN-NONMATCH
+
+This rule is deliberately narrow and is not intended to represent a
+production malicious-behavior detector.

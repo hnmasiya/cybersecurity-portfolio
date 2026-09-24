@@ -1,0 +1,9 @@
+INCIDENT_ID=LAB4-20260924-101415
+ACTIVITY_START=2026-09-24T10:14:16+02:00
+USER=normann
+HOST=normann-ThinkPad-X260
+UID=1000
+PWD=/home/normann/cybersecurity-portfolio
+ACTION=controlled privileged command execution
+ACTIVITY_END=2026-09-24T10:14:21+02:00
+SUDO_EXIT_CODE=0

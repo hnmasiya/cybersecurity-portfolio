@@ -1,0 +1,1 @@
+single-node-wazuh.manager-1 Up 4 hours
