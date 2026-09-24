@@ -194,7 +194,11 @@ Automated checks validate portfolio quality, evidence integrity and security con
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* Automated activity is maintained by the repository workflow.
+* docs: streamline recruiter-facing README (#1285) (4 hours ago)
+* docs: align security tools inventory with portfolio evidence (#1284) (4 hours ago)
+* ui: polish GitHub and portfolio presentation (#1283) (5 hours ago)
+* privacy: route public contact through LinkedIn (#1282) (7 hours ago)
+* auto: sync public GitHub project index (#1280) (7 hours ago)
 <!-- END_SECTION:activity -->
 
 ---
