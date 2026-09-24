@@ -1,0 +1,18 @@
+title: Multiple Linux SSH Authentication Failures
+id: 6a6dbec7-1c08-4e5e-a0d5-1a5b8d1b3c11
+status: experimental
+description: Detect repeated SSH authentication failures in Linux authentication logs.
+logsource:
+  product: linux
+  service: sshd
+detection:
+  selection:
+    message|contains: "Failed password"
+  condition: selection
+falsepositives:
+  - User error
+  - Password rotation
+level: low
+tags:
+  - attack.credential_access
+  - attack.t1110

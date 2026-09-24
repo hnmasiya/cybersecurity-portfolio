@@ -1,0 +1,16 @@
+title: Linux Privileged Command Execution
+id: 8f7f6b2c-6d0f-4e0b-bf5b-0d7e0f2c9f44
+status: experimental
+description: Detect sudo command execution for investigation and audit visibility.
+logsource:
+  product: linux
+  service: sudo
+detection:
+  selection:
+    message|contains: "COMMAND="
+  condition: selection
+falsepositives:
+  - Routine administration
+level: informational
+tags:
+  - attack.privilege_escalation
