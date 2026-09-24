@@ -218,12 +218,12 @@ All security testing is performed only against systems and environments intentio
 Original portfolio materials are protected by the repository's copyright and usage notice. Public availability is intended for professional review and does not grant permission to reproduce, republish, redistribute, present the work as your own, or commercially reuse original portfolio materials without permission.
 
 <!-- AUTO_PORTFOLIO_PROJECT_INDEX_START -->
-## Automatically Synced Security Projects
+## Automatically Synced Public GitHub Projects
 
-_Generated from public, non-fork, non-archived security-related repositories owned by `hnmasiya`. Claims are sourced from repository metadata or README content._
+_Generated from public, non-fork, non-archived repositories owned by `hnmasiya`. Descriptions are taken from repository metadata or README content; no project claims or metrics are invented._
 
-- **[mastercard-cybersecurity-job-simulation](https://github.com/hnmasiya/mastercard-cybersecurity-job-simulation)** — Mastercard Cybersecurity Job Simulation — Forage Completed: September 20, 2026 - Format: Forage virtual job simulation - Focus: security awareness, phishing analysis, simulation design and training - Scenario: Security Awareness Team - Skills: phishing anal...
-- **[Datacom-Cyber-Security-Operations-Job-Simulation](https://github.com/hnmasiya/Datacom-Cyber-Security-Operations-Job-Simulation)** — Datacom Cyber Security Operations Job Simulation — Forage Completed: September 20, 2026 - Format: Forage virtual job simulation - Focus: cyberattack investigation, risk assessment, security analysis and recommendations - Scenario work: simulated ransomware...
+- **[mastercard-cybersecurity-job-simulation](https://github.com/hnmasiya/mastercard-cybersecurity-job-simulation)** — Mastercard Cybersecurity Job Simulation — Forage Completed: September 20, 2026 - Format: Forage virtual job simulation - Focus: security awareness, phishing analysis, simulation design and training - Scenario: Security Awareness Team
+- **[Datacom-Cyber-Security-Operations-Job-Simulation](https://github.com/hnmasiya/Datacom-Cyber-Security-Operations-Job-Simulation)** — Datacom Cyber Security Operations Job Simulation — Forage Completed: September 20, 2026 - Format: Forage virtual job simulation - Focus: cyberattack investigation, risk assessment, security analysis and recommendations - Scenario work: s...
 - **[gcp-terraform-secure-vpc](https://github.com/hnmasiya/gcp-terraform-secure-vpc)** — Terraform-based cloud security architecture with strict IAM policies and firewall rules
 - **[ad-security-log-parser](https://github.com/hnmasiya/ad-security-log-parser)** — Python security tooling for Windows Security Event Log analysis and privileged group-change detection
 - **[wazuh-siem-detection-lab](https://github.com/hnmasiya/wazuh-siem-detection-lab)** — Custom Wazuh SIEM detection rules mapped to MITRE ATT&CK framework and log analysis
