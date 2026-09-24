@@ -2,6 +2,7 @@
 
 ## SIEM & Detection
 - Wazuh — SIEM monitoring, alert triage, custom detection rules and FIM
+- Splunk — SOC investigation and SPL training; Lab 01 in progress with synthetic data, not yet claimed as completed
 - Sysmon — Windows endpoint telemetry and process-event validation
 - Sigma — detection-rule concepts and rule development
 - MITRE ATT&CK — technique mapping and detection/investigation context
@@ -64,4 +65,4 @@
 ## Planned / Not Yet Started
 - Nessus / OpenVAS — planned; not yet started
 
-> Inventory scope: tools and technologies represented by the portfolio, professional IT background, authorized labs, coursework, or documented security exercises. Planned items are explicitly separated from completed work.
+> Inventory scope: tools and technologies represented by the portfolio, professional IT background, authorized labs, coursework, or documented security exercises. Planned and in-progress items are explicitly separated from completed work.

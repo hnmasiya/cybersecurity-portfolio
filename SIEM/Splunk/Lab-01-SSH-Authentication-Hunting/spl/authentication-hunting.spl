@@ -1,0 +1,67 @@
+# Splunk SPL — Lab 01 Query Pack
+
+## 01. Baseline
+
+```spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth"
+```
+
+## 02. Failed authentication count by source
+
+```spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth" status=failure
+| stats count as failures by src_ip
+| sort - failures
+```
+
+## 03. Failed authentication count by source and account
+
+```spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth" status=failure
+| stats count as failures by src_ip user
+| sort - failures
+```
+
+## 04. Failure-to-success comparison
+
+```spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth"
+| stats count as events count(eval(status="failure")) as failures count(eval(status="success")) as successes by src_ip
+| eval failure_rate=round((failures/events)*100,2)
+| sort - failures
+```
+
+## 05. Focused timeline for the primary candidate
+
+```spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth" src_ip=10.10.10.25
+| sort 0 timestamp
+| table timestamp src_ip user action service status message
+```
+
+## 06. Source-level investigation summary
+
+```spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth"
+| stats earliest(timestamp) as first_seen latest(timestamp) as last_seen count as events count(eval(status="failure")) as failures count(eval(status="success")) as successes values(user) as targeted_users by src_ip
+| sort - failures
+```
+
+## 07. Authentication activity over time
+
+```spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth"
+| timechart span=1m count by status
+```
+
+## 08. Focused suspicious-pattern search
+
+```spl
+index=splunk_lab sourcetype="splunk:lab:ssh_auth" status=failure
+| stats count as failures values(user) as users by src_ip
+| where failures >= 5
+| sort - failures
+```
+
+> Note: Query 08 is a laboratory heuristic, not a production detection threshold. Thresholds should be validated and tuned against real organizational baselines.
+

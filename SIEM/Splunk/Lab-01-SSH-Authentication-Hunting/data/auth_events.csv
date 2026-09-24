@@ -1,0 +1,33 @@
+timestamp,sourcetype,host,event_type,src_ip,user,action,service,status,process,message
+2026-09-24T06:20:01Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.40,alice,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:21:12Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.41,bob,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:21:18Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.41,bob,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:22:44Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.42,charlie,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:25:03Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,root,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:25:08Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,admin,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:25:14Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,admin,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:25:22Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,admin,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:25:31Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,root,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:25:39Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,admin,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:25:48Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,admin,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:26:02Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,admin,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:28:11Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.25,admin,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:29:03Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.43,alice,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:30:14Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.43,alice,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:31:20Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.44,service_backup,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:31:42Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.44,service_backup,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:33:02Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.45,dave,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:33:08Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.45,dave,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:33:14Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.45,dave,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:33:21Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.45,dave,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:34:10Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.45,dave,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:36:40Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.46,erica,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:38:05Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.47,root,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:38:21Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.47,root,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:38:37Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.47,root,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:41:02Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.48,ops,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:42:15Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.49,analyst,login,ssh,failure,sshd,Failed SSH authentication
+2026-09-24T06:42:52Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.49,analyst,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:45:17Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.50,devops,login,ssh,success,sshd,Successful SSH authentication
+2026-09-24T06:46:09Z,splunk:lab:ssh_auth,lab-linux-01,ssh_auth,10.10.10.51,admin,login,ssh,failure,sshd,Failed SSH authentication
+
