@@ -1,4 +1,4 @@
-# Nmap 7.94SVN scan initiated Thu Sep 24 11:30:55 2026 as: nmap -Pn -n -sT -sV --version-light -p 8765 -oN /home/normann/cybersecurity-portfolio/evidence/phase2-network-investigation-20260924-113051/nmap-scan.txt -oX /home/normann/cybersecurity-portfolio/evidence/phase2-network-investigation-20260924-113051/nmap-scan.xml 127.0.0.1
+# Nmap 7.94SVN scan initiated Thu Sep 24 11:30:55 2026 as: nmap -Pn -n -sT -sV --version-light -p 8765 -oN <PORTFOLIO_PATH>/evidence/phase2-network-investigation-20260924-113051/nmap-scan.txt -oX <PORTFOLIO_PATH>/evidence/phase2-network-investigation-20260924-113051/nmap-scan.xml 127.0.0.1
 Nmap scan report for 127.0.0.1
 Host is up (0.00029s latency).
 

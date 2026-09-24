@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.94SVN scan initiated Thu Sep 24 11:30:55 2026 as: nmap -Pn -n -sT -sV -&#45;version-light -p 8765 -oN /home/normann/cybersecurity-portfolio/evidence/phase2-network-investigation-20260924-113051/nmap-scan.txt -oX /home/normann/cybersecurity-portfolio/evidence/phase2-network-investigation-20260924-113051/nmap-scan.xml 127.0.0.1 -->
-<nmaprun scanner="nmap" args="nmap -Pn -n -sT -sV -&#45;version-light -p 8765 -oN /home/normann/cybersecurity-portfolio/evidence/phase2-network-investigation-20260924-113051/nmap-scan.txt -oX /home/normann/cybersecurity-portfolio/evidence/phase2-network-investigation-20260924-113051/nmap-scan.xml 127.0.0.1" start="1790242255" startstr="Thu Sep 24 11:30:55 2026" version="7.94SVN" xmloutputversion="1.05">
+<!-- Nmap 7.94SVN scan initiated Thu Sep 24 11:30:55 2026 as: nmap -Pn -n -sT -sV -&#45;version-light -p 8765 -oN PORTFOLIO_PATH/evidence/phase2-network-investigation-20260924-113051/nmap-scan.txt -oX PORTFOLIO_PATH/evidence/phase2-network-investigation-20260924-113051/nmap-scan.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="nmap -Pn -n -sT -sV -&#45;version-light -p 8765 -oN PORTFOLIO_PATH/evidence/phase2-network-investigation-20260924-113051/nmap-scan.txt -oX PORTFOLIO_PATH/evidence/phase2-network-investigation-20260924-113051/nmap-scan.xml 127.0.0.1" start="1790242255" startstr="Thu Sep 24 11:30:55 2026" version="7.94SVN" xmloutputversion="1.05">
 <scaninfo type="connect" protocol="tcp" numservices="1" services="8765"/>
 <verbose level="0"/>
 <debugging level="0"/>
