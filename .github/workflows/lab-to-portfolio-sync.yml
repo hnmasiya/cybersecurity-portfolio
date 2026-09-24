@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: lab-to-portfolio-sync
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   sync:
@@ -199,9 +199,9 @@ jobs:
           generated = "\n".join(rows)
 
           if start in readme and end in readme:
-              before = readme.split(start, 1)[0].rstrip()
-              after = readme.split(end, 1)[1].lstrip()
-              readme = before + "\n\n" + generated + "\n\n" + after
+              before = readme.split(start, 1)[0]
+              after = readme.split(end, 1)[1]
+              readme = before + generated + after
           else:
               readme = readme.rstrip() + "\n\n" + generated + "\n"
 
@@ -250,9 +250,9 @@ jobs:
           html_section = "\n".join(cards)
 
           if hstart in index and hend in index:
-              before = index.split(hstart, 1)[0].rstrip()
-              after = index.split(hend, 1)[1].lstrip()
-              index = before + "\n\n" + html_section + "\n\n" + after
+              before = index.split(hstart, 1)[0]
+              after = index.split(hend, 1)[1]
+              index = before + html_section + after
           else:
               # Insert before the first major footer if one exists; otherwise append.
               marker = "</main>"
@@ -306,6 +306,25 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "[PASS] Portfolio is already synchronized."
+            exit 0
+          fi
+
+          OPEN_SYNC_PRS="$(gh pr list \
+            --repo "${{ github.repository }}" \
+            --base main \
+            --state open \
+            --search "in:title auto: sync security labs to portfolio" \
+            --json number \
+            --jq 'length')"
+
+          if [[ "$OPEN_SYNC_PRS" != "0" ]]; then
+            echo "[PASS] An open portfolio sync PR already exists; skipping duplicate PR creation."
+            exit 0
+          fi
+
+          OPEN_LAB_SYNC_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: sync security labs to portfolio\"" --json number --jq 'length')"
+          if [[ "$OPEN_LAB_SYNC_PRS" -gt 0 ]]; then
+            echo "[PASS] Lab-sync PR already open; skipping duplicate."
             exit 0
           fi
 

@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: global-resume-variants
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -25,6 +25,19 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.AUTOMATION_PAT }}
+
+      - name: Configure verified commit signing
+        env:
+          AUTOMATION_SIGNING_KEY: ${{ secrets.AUTOMATION_SIGNING_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "$AUTOMATION_SIGNING_KEY"
+          install -d -m 700 "$RUNNER_TEMP/automation-signing"
+          printf '%s\n' "$AUTOMATION_SIGNING_KEY" > "$RUNNER_TEMP/automation-signing/id_ed25519"
+          chmod 600 "$RUNNER_TEMP/automation-signing/id_ed25519"
+          git config --global gpg.format ssh
+          git config --global user.signingkey "$RUNNER_TEMP/automation-signing/id_ed25519"
+          git config --global commit.gpgsign true
 
       - name: Generate application variants
         run: python3 scripts/build-resume-variants.py
@@ -44,7 +57,7 @@ jobs:
           done
           test "$(find dist/resumes/pdf -maxdepth 1 -name '*.pdf' | wc -l)" -eq 9
 
-      - name: Commit, open PR, run checks, and merge
+      - name: Commit and open PR, then run checks
         env:
           GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
@@ -59,10 +72,31 @@ jobs:
             exit 0
           fi
 
+          OPEN_VARIANT_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: publish global resume variants\"" --json number --jq 'length')"
+          if [[ "$OPEN_VARIANT_PRS" -gt 0 ]]; then
+            echo "[PASS] A global-resume-variants PR is already open; skipping duplicate PR creation."
+            exit 0
+          fi
+
+          OPEN_VARIANT_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: publish global resume variants\"" --json number --jq 'length')"
+          if [[ "$OPEN_VARIANT_PRS" -gt 0 ]]; then
+            echo "[PASS] Global-resume-variants PR already open; skipping duplicate."
+            exit 0
+          fi
+
           BRANCH="auto/global-resume-variants-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"
-          git commit -m "auto: publish global resume variants"
+          git commit -S -m "auto: publish global resume variants"
           git push origin "$BRANCH"
+
+          SHA="$(git rev-parse HEAD)"
+          VERIFIED="false"
+          for _ in 1 2 3 4 5; do
+            VERIFIED="$(gh api "repos/${{ github.repository }}/commits/$SHA" --jq '.commit.verification.verified' 2>/dev/null || echo false)"
+            [[ "$VERIFIED" == "true" ]] && break
+            sleep 2
+          done
+          [[ "$VERIFIED" == "true" ]] || { echo "[FAIL] GitHub did not verify the automation commit signature."; exit 1; }
 
           PR_URL=$(gh pr create             --base main             --head "$BRANCH"             --title "auto: publish global resume variants"             --body "Automated publication of the nine regional resume PDFs generated from the verified master resume.")
 
