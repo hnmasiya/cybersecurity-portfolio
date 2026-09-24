@@ -1,101 +1,45 @@
-# Cybersecurity Job Intelligence — 2026-09-23
+# Cybersecurity Job Intelligence — 2026-09-24
 
-Generated: 2026-09-23T11:40:40Z
+Generated: 2026-09-24T11:49:16Z
 
 Discovery results only. Verify the original employer/ATS posting before applying.
 
-## 1. Junior Security Operations Engineering Consultant (m/w/d)
-- **Company:** NVISO
-- **Location:** Frankfurt am Main
+## 1. DevOps Specialist (m/w/d, befristet auf 2 Jahre))
+- **Company:** Lecos GmbH
+- **Location:** Leipzig
 - **Remote:** False
-- **Match signals:** soc analyst, security operations, detection engineer, incident response, cyber security, siem, security operations center
+- **Match signals:** security engineer
 - **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.com/jobs/companies/nviso/junior-security-operations-engineering-consultant-frankfurt-am-main-279479
+- **Job:** https://www.arbeitnow.com/jobs/companies/lecos-gmbh/devops-specialist-befristet-auf-2-jahre-leipzig-185168
 
-## 2. Security Research Engineer
-- **Company:** Artemis
-- **Location:** Remote
-- **Remote:** False
-- **Match signals:** detection engineer, incident response, security engineer, siem
-- **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.fr/jobs/companies/artemis/remote-security-research-engineer-50305
-
-## 3. Security Research Engineer
-- **Company:** Artemis
-- **Location:** Remote
-- **Remote:** False
-- **Match signals:** detection engineer, incident response, security engineer, siem
-- **Source:** Arbeitnow UK
-- **Job:** https://www.arbeitnow.co.uk/jobs/companies/artemis/remote-security-research-engineer-478343
-
-## 4. Senior Security Engineer I, Customer Trust EMEA (Remote Eligible in the UK)
-- **Company:** smartsheet
-- **Location:** -REMOTE
-- **Remote:** False
-- **Match signals:** security operations, incident response, security engineer
-- **Source:** Arbeitnow UK
-- **Job:** https://www.arbeitnow.co.uk/jobs/companies/smartsheet/senior-security-engineer-i-customer-trust-emea-remote-eligible-in-the-uk-72338
-
-## 5. Senior Threat Intelligence Consultant (m/w/d)
-- **Company:** NVISO
-- **Location:** Frankfurt am Main
-- **Remote:** False
-- **Match signals:** detection engineer, incident response, cyber security
-- **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.com/jobs/companies/nviso/senior-threat-intelligence-consultant-frankfurt-am-main-417131
-
-## 6. Automatisierungsingenieur (m/w/d) Verfahrenstechnik / Produktionsanlagen in Karlsruhe (1718)
-- **Company:** BRÜGGEN ENGINEERING GmbH
-- **Location:** Karlsruhe
+## 2. Enterprise Account Executive - Israel
+- **Company:** Pigment
+- **Location:** Paris
 - **Remote:** False
 - **Match signals:** siem
 - **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.com/jobs/companies/bruggen-engineering-gmbh/automatisierungsingenieur-verfahrenstechnik-produktionsanlagen-in-karlsruhe-1718-171512
+- **Job:** https://www.arbeitnow.fr/jobs/companies/pigment/enterprise-account-executive-israel-paris-369090
 
-## 7. Channel Sales Manager
-- **Company:** Artemis
-- **Location:** London
-- **Remote:** False
-- **Match signals:** security engineer
-- **Source:** Arbeitnow UK
-- **Job:** https://www.arbeitnow.co.uk/jobs/companies/artemis/channel-sales-manager-london-202048
-
-## 8. Enterprise Account Executive
-- **Company:** incident.io
-- **Location:** London
-- **Remote:** False
-- **Match signals:** incident response
-- **Source:** Arbeitnow UK
-- **Job:** https://www.arbeitnow.co.uk/jobs/companies/incidentio/enterprise-account-executive-london-1772
-
-## 9. Graduate Site Reliability Engineer
-- **Company:** Axon
-- **Location:** Sydney, Australia
-- **Remote:** False
-- **Match signals:** incident response
-- **Source:** Arbeitnow UK
-- **Job:** https://www.arbeitnow.co.uk/jobs/companies/axon/graduate-site-reliability-engineer-sydney-australia-42294
-
-## 10. L3 Support Engineer
-- **Company:** Nebius
-- **Location:** Béthune, Pas-de-Calais
+## 3. Senior Cloud Infrastructure Engineer
+- **Company:** Voodoo
+- **Location:** Paris
 - **Remote:** False
 - **Match signals:** incident response
 - **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.fr/jobs/companies/nebius/l3-support-engineer-bethune-pas-de-calais-222668
+- **Job:** https://www.arbeitnow.fr/jobs/companies/voodoo/senior-cloud-infrastructure-engineer-paris-33428
 
-## 11. Purview Expert (m/w/d)
-- **Company:** NVISO
-- **Location:** Frankfurt am Main
-- **Remote:** False
-- **Match signals:** cyber security
-- **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.com/jobs/companies/nviso/purview-expert-frankfurt-am-main-481471
-
-## 12. Staff AI Engineer - EU
-- **Company:** typeform
-- **Location:** Not stated
+## 4. Senior Site Reliability Engineer
+- **Company:** Camunda
+- **Location:** Remote
 - **Remote:** False
 - **Match signals:** incident response
-- **Source:** Arbeitnow UK
-- **Job:** https://www.arbeitnow.co.uk/jobs/companies/typeform/staff-ai-engineer-eu-150061
+- **Source:** Arbeitnow Global/Europe
+- **Job:** https://www.arbeitnow.fr/jobs/companies/camunda/remote-senior-site-reliability-engineer-367794
+
+## 5. Solutions Engineer - Germany
+- **Company:** Neuralconcept
+- **Location:** Munich
+- **Remote:** False
+- **Match signals:** siem
+- **Source:** Arbeitnow Global/Europe
+- **Job:** https://www.arbeitnow.com/jobs/companies/neuralconcept/solutions-engineer-germany-munich-199006
