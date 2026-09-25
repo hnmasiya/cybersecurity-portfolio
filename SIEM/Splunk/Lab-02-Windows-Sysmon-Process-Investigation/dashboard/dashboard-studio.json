@@ -1,17 +1,17 @@
 {
   "visualizations": {
     "viz_total": {
-      "type": "singlevalue",
+      "type": "splunk.singlevalue",
       "dataSources": {"primary": "ds_total"},
       "options": {"majorColor": "#2E7D32"}
     },
     "viz_powershell": {
-      "type": "singlevalue",
+      "type": "splunk.singlevalue",
       "dataSources": {"primary": "ds_powershell"},
       "options": {"majorColor": "#1565C0"}
     },
     "viz_suspicious": {
-      "type": "singlevalue",
+      "type": "splunk.singlevalue",
       "dataSources": {"primary": "ds_suspicious"},
       "options": {"majorColor": "#C62828"}
     },
