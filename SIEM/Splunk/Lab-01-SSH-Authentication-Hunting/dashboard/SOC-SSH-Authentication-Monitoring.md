@@ -94,12 +94,47 @@ index=splunk_lab sourcetype="splunk:lab:ssh_auth" src_ip=10.10.10.25
 
 Visualization: Table.
 
-## Dashboard evidence requirement
+## Execution and validation
 
-Capture one screenshot showing the completed dashboard with the panel titles and representative results visible.
+The dashboard was executed in a locally authorized Splunk Enterprise 10.4.3 instance against the synthetic Lab 01 dataset.
 
-Save it as:
+Validated dataset:
 
-`evidence/07-soc-ssh-authentication-dashboard.png`
+| Metric | Result |
+|---|---:|
+| Total authentication events | 31 |
+| Failed authentication events | 21 |
+| Successful authentication events | 10 |
+
+Validated dashboard structure:
+
+| Component | Result |
+|---|---:|
+| Visualizations | 7 |
+| Data sources | 7 |
+| Tabs | 1 — SOC Overview |
+| Layout panels | 7 |
+| Unresolved dashboard tokens | 0 |
+| Invalid `legendDisplay` options | 0 |
+
+The dashboard was repaired through the Splunk REST API after Dashboard Studio schema and token-validation errors were identified during execution. The final saved definition was read back and validated after the REST update returned HTTP 200.
+
+The dashboard therefore represents executed portfolio evidence rather than a design-only mock-up.
+
+### Final dashboard panels
+
+1. **Total Authentication Events** — Single Value — 31
+2. **Failed vs Successful Authentication** — Column — 21 failures / 10 successes
+3. **Top Failed Source IPs** — Bar — 10.10.10.25 leads with 8 failures
+4. **Top Targeted Accounts** — Bar — admin leads with 7 failures
+5. **Authentication Timeline** — Line
+6. **Suspicious Sources / High-Failure Sources** — Table — 10.10.10.25 has 8 failures across 9 events
+7. **Source / User Authentication Investigation** — Table
+
+### Evidence capture
+
+A completed dashboard was visually captured during execution. Retain the sanitized screenshot locally or add it to this directory as:
+
+`07-soc-ssh-authentication-dashboard.png`
 
 Do not include passwords, tokens, session cookies, or unrelated private data in the screenshot.
