@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:s="http://dev.splunk.com/ns/rest" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
   <title>views</title>
   <id>https://127.0.0.1:8089/servicesNS/admin/search/data/ui/views</id>
-  <updated>2026-09-25T11:12:25+02:00</updated>
+  <updated>2026-09-25T11:14:22+02:00</updated>
   <generator build="4174a2deda5d" version="10.4.3"/>
   <author>
     <name>Splunk</name>
@@ -19,7 +19,7 @@
   <entry>
     <title>soc_windows_sysmon_process_investigation</title>
     <id>https://127.0.0.1:8089/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation</id>
-    <updated>2026-09-25T11:12:25+02:00</updated>
+    <updated>2026-09-25T11:14:22+02:00</updated>
     <link href="/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="alternate"/>
     <author>
       <name>admin</name>
