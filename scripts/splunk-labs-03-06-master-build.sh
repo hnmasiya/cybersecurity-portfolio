@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-SCRIPT_VERSION="1.0.0"
+SCRIPT_VERSION="2.1.0"
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SPLUNK_HOME="/opt/splunk"
 SPLUNK_USER="admin"
@@ -196,16 +196,166 @@ print("Artifact validation: PASS")
 PY
 
 if [[ "$RUN_SPLUNK" == "1" && -x "$SPLUNK_HOME/bin/splunk" && -n "$SPLUNK_PASSWORD" ]]; then
+  SPLUNK_AUTH="$SPLUNK_USER:$SPLUNK_PASSWORD"
+
+  splunk_cli() {
+    "$SPLUNK_HOME/bin/splunk" "$@" -auth "$SPLUNK_AUTH"
+  }
+
+  search_count() {
+    local index="$1" sourcetype="$2"
+    splunk_cli search "search index=$index sourcetype=\"$sourcetype\" | stats count AS event_count" \
+      -earliest -15m -output csv 2>/dev/null \
+      | awk -F',' 'NR==2 {gsub(/"/,"",$1); print $1}'
+  }
+
+  wait_for_splunk() {
+    local i
+    for i in {1..30}; do
+      if splunk_cli status >/dev/null 2>&1; then return 0; fi
+      sleep 2
+    done
+    return 1
+  }
+
+  ensure_index() {
+    local index="$1"
+    splunk_cli add index "$index" >/dev/null 2>&1 || true
+  }
+
+  repair_index_storage() {
+    local index="$1"
+    local db_root="$SPLUNK_HOME/var/lib/splunk"
+    local path="$db_root/$index"
+    local stamp backup
+
+    if [[ ! -d "$path" ]]; then
+      log "Index storage $path does not exist; no filesystem repair required."
+      return 0
+    fi
+
+    stamp="$(date '+%Y%m%d-%H%M%S')"
+    backup="$db_root/$index.backup-$stamp"
+
+    log "Backing up broken index storage: $path -> $backup"
+    "$SPLUNK_HOME/bin/splunk" stop >/dev/null 2>&1 || true
+    sleep 3
+    sudo mv "$path" "$backup"
+    sudo chown -R splunk:splunk "$backup"
+    sudo -u splunk "$SPLUNK_HOME/bin/splunk" start >/dev/null 2>&1
+    wait_for_splunk || { log "ERROR: Splunk did not return after index repair."; return 1; }
+    sleep 5
+    log "Index storage recreated from indexes.conf: $index"
+  }
+
+  probe_index() {
+    local index="$1" sourcetype="$2" token="$3"
+    local probe_dir="/tmp/splunk-lab-probe-$index"
+    local probe_file="$probe_dir/probe-$token.txt"
+    mkdir -p "$probe_dir"
+    printf '%s\n' "SPLUNK_LAB_PROBE token=$token" | sudo tee "$probe_file" >/dev/null
+    sudo chown splunk:splunk "$probe_file"
+    sudo chmod 644 "$probe_file"
+
+    splunk_cli add oneshot "$probe_file" \
+      -index "$index" \
+      -sourcetype "$sourcetype" \
+      -rename-source "$probe_file" >/dev/null 2>&1 || true
+
+    for _ in {1..15}; do
+      if splunk_cli search "search index=$index sourcetype=\"$sourcetype\" \"SPLUNK_LAB_PROBE\" token=$token | stats count AS event_count" \
+          -earliest -5m -output csv 2>/dev/null | awk -F',' 'NR==2 {gsub(/"/,"",$1); if ($1+0 >= 1) found=1} END {exit(found?0:1)}'; then
+        rm -rf "$probe_dir"
+        return 0
+      fi
+      sleep 2
+    done
+
+    rm -rf "$probe_dir"
+    return 1
+  }
+
+  ensure_index splunk_lab_web
+  ensure_index splunk_lab_detection
+  ensure_index splunk_lab_monitoring
+  ensure_index splunk_lab_case
+
+  log "Running Splunk ingestion preflight."
+
+  if ! probe_index splunk_lab_web splunk:lab:web "$(date +%s)-web"; then
+    log "WARNING: splunk_lab_web failed ingestion preflight."
+    log "Repairing only the synthetic Splunk lab index storage."
+    repair_index_storage splunk_lab_web
+    ensure_index splunk_lab_web
+    if ! probe_index splunk_lab_web splunk:lab:web "$(date +%s)-web-repaired"; then
+      log "ERROR: splunk_lab_web still fails ingestion after repair."
+      exit 1
+    fi
+    log "splunk_lab_web ingestion preflight: PASS after repair."
+  else
+    log "splunk_lab_web ingestion preflight: PASS."
+  fi
+
   log "Importing synthetic datasets into local Splunk."
-  "$SPLUNK_HOME/bin/splunk" add index splunk_lab_web -auth "$SPLUNK_USER:$SPLUNK_PASSWORD" >/dev/null 2>&1 || true
-  "$SPLUNK_HOME/bin/splunk" add index splunk_lab_detection -auth "$SPLUNK_USER:$SPLUNK_PASSWORD" >/dev/null 2>&1 || true
-  "$SPLUNK_HOME/bin/splunk" add index splunk_lab_monitoring -auth "$SPLUNK_USER:$SPLUNK_PASSWORD" >/dev/null 2>&1 || true
-  "$SPLUNK_HOME/bin/splunk" add index splunk_lab_case -auth "$SPLUNK_USER:$SPLUNK_PASSWORD" >/dev/null 2>&1 || true
-  "$SPLUNK_HOME/bin/splunk" add oneshot "$LAB3/data/http_access_events.csv" -index splunk_lab_web -sourcetype splunk:lab:web -auth "$SPLUNK_USER:$SPLUNK_PASSWORD" >/dev/null 2>&1 || true
-  "$SPLUNK_HOME/bin/splunk" add oneshot "$LAB4/data/detection_test_events.csv" -index splunk_lab_detection -sourcetype splunk:lab:detection -auth "$SPLUNK_USER:$SPLUNK_PASSWORD" >/dev/null 2>&1 || true
-  "$SPLUNK_HOME/bin/splunk" add oneshot "$LAB5/data/soc_monitoring_metrics.csv" -index splunk_lab_monitoring -sourcetype splunk:lab:socmetrics -auth "$SPLUNK_USER:$SPLUNK_PASSWORD" >/dev/null 2>&1 || true
-  "$SPLUNK_HOME/bin/splunk" add oneshot "$LAB6/data/end_to_end_case_events.csv" -index splunk_lab_case -sourcetype splunk:lab:case -auth "$SPLUNK_USER:$SPLUNK_PASSWORD" >/dev/null 2>&1 || true
-  log "Synthetic datasets submitted to Splunk."
+
+  ingest_csv_rows() {
+    local csv_file="$1" index="$2" sourcetype="$3" expected="$4" lab_tag="$5"
+    local stage="/tmp/splunk-lab-$lab_tag-rows"
+    rm -rf "$stage"
+    mkdir -p "$stage"
+
+    python3 - "$csv_file" "$stage" <<'PY'
+import csv, pathlib, sys
+src, out = map(pathlib.Path, sys.argv[1:])
+with src.open(encoding="utf-8", newline="") as f:
+    rows = list(csv.reader(f))
+if len(rows) < 2:
+    raise SystemExit(f"CSV has no data rows: {src}")
+for i, row in enumerate(rows[1:], 1):
+    (out / f"event-{i:03d}.txt").write_text(",".join(row) + "\n", encoding="utf-8")
+print(len(rows)-1)
+PY
+
+    local submitted=0
+    local file
+    while IFS= read -r -d '' file; do
+      sudo chown splunk:splunk "$file"
+      sudo chmod 644 "$file"
+      splunk_cli add oneshot "$file" \
+        -index "$index" \
+        -sourcetype "$sourcetype" \
+        -rename-source "$file" >/dev/null 2>&1
+      submitted=$((submitted + 1))
+    done < <(find "$stage" -type f -name 'event-*.txt' -print0 | sort -z)
+
+    [[ "$submitted" -eq "$expected" ]] || {
+      log "ERROR: $lab_tag submitted $submitted rows; expected $expected."
+      return 1
+    }
+
+    local found=0
+    for _ in {1..20}; do
+      found="$(search_count "$index" "$sourcetype" || echo 0)"
+      [[ "$found" =~ ^[0-9]+$ ]] || found=0
+      if (( found == expected )); then
+        log "$lab_tag ingestion validation: PASS ($found/$expected events)"
+        rm -rf "$stage"
+        return 0
+      fi
+      sleep 2
+    done
+
+    log "ERROR: $lab_tag ingestion validation failed: expected $expected, found $found."
+    rm -rf "$stage"
+    return 1
+  }
+
+  ingest_csv_rows "$LAB3/data/http_access_events.csv" splunk_lab_web splunk:lab:web 15 lab03
+  ingest_csv_rows "$LAB4/data/detection_test_events.csv" splunk_lab_detection splunk:lab:detection 6 lab04
+  ingest_csv_rows "$LAB5/data/soc_monitoring_metrics.csv" splunk_lab_monitoring splunk:lab:socmetrics 24 lab05
+  ingest_csv_rows "$LAB6/data/end_to_end_case_events.csv" splunk_lab_case splunk:lab:case 6 lab06
+
+  log "All Splunk ingestion validations: PASS."
 else
   log "Splunk import skipped. Set SPLUNK_PASSWORD in this script before local import."
 fi
