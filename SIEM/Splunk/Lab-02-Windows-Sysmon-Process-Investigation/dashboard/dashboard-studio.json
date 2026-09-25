@@ -20,7 +20,6 @@
       "dataSources": {"primary": "ds_top_processes"},
       "options": {
         "barSpacing": 20,
-        "legendDisplay": "off",
         "xAxisTitleText": "Process",
         "yAxisTitleText": "Events"
       }
@@ -30,7 +29,6 @@
       "dataSources": {"primary": "ds_parent_child"},
       "options": {
         "barSpacing": 20,
-        "legendDisplay": "off",
         "xAxisTitleText": "Parent → Child",
         "yAxisTitleText": "Events"
       }
@@ -39,7 +37,6 @@
       "type": "splunk.line",
       "dataSources": {"primary": "ds_timeline"},
       "options": {
-        "legendDisplay": "bottom",
         "xAxisTitleText": "Time",
         "yAxisTitleText": "Process Events"
       }
@@ -99,31 +96,101 @@
     }
   },
   "layout": {
+    "options": {
+      "showTitleAndDescription": true,
+      "submitButton": false
+    },
     "tabs": {
       "items": [
         {
           "label": "SOC Overview",
-          "layoutId": "layout_soc_overview"
+          "layoutId": "layout_1"
         }
       ]
     },
     "layoutDefinitions": {
-      "layout_soc_overview": {
-        "type": "grid",
+      "layout_1": {
+        "type": "absolute",
+        "options": {
+          "display": "auto-scale",
+          "width": 1200,
+          "height": 1260
+        },
         "structure": [
-          {"item": "viz_total", "type": "block", "position": {"x": 0, "y": 0, "w": 4, "h": 2}},
-          {"item": "viz_powershell", "type": "block", "position": {"x": 4, "y": 0, "w": 4, "h": 2}},
-          {"item": "viz_suspicious", "type": "block", "position": {"x": 8, "y": 0, "w": 4, "h": 2}},
-          {"item": "viz_top_processes", "type": "block", "position": {"x": 0, "y": 2, "w": 6, "h": 5}},
-          {"item": "viz_parent_child", "type": "block", "position": {"x": 6, "y": 2, "w": 6, "h": 5}},
-          {"item": "viz_timeline", "type": "block", "position": {"x": 0, "y": 7, "w": 12, "h": 5}},
-          {"item": "viz_investigation", "type": "block", "position": {"x": 0, "y": 12, "w": 12, "h": 7}}
+          {
+            "item": "viz_total",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "w": 380,
+              "h": 150
+            }
+          },
+          {
+            "item": "viz_powershell",
+            "type": "block",
+            "position": {
+              "x": 410,
+              "y": 0,
+              "w": 380,
+              "h": 150
+            }
+          },
+          {
+            "item": "viz_suspicious",
+            "type": "block",
+            "position": {
+              "x": 820,
+              "y": 0,
+              "w": 380,
+              "h": 150
+            }
+          },
+          {
+            "item": "viz_top_processes",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 180,
+              "w": 580,
+              "h": 320
+            }
+          },
+          {
+            "item": "viz_parent_child",
+            "type": "block",
+            "position": {
+              "x": 620,
+              "y": 180,
+              "w": 580,
+              "h": 320
+            }
+          },
+          {
+            "item": "viz_timeline",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 530,
+              "w": 1200,
+              "h": 300
+            }
+          },
+          {
+            "item": "viz_investigation",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 860,
+              "w": 1200,
+              "h": 400
+            }
+          }
         ]
       }
     }
   },
   "title": "SOC Windows / Sysmon Process Investigation",
   "description": "Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02.",
-  "defaults": {},
-  "inputs": {}
 }
