@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-SCRIPT_VERSION="2.1.0"
-REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+SCRIPT_VERSION="2.1.1"
+REPO_ROOT="${REPO_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
 SPLUNK_HOME="/opt/splunk"
 SPLUNK_USER="admin"
-SPLUNK_PASSWORD=""
+SPLUNK_PASSWORD="${SPLUNK_PASSWORD:-}"
 RUN_SPLUNK="1"
 
 LAB3="$REPO_ROOT/SIEM/Splunk/Lab-03-Web-Attack-HTTP-Investigation"
@@ -357,7 +357,7 @@ PY
 
   log "All Splunk ingestion validations: PASS."
 else
-  log "Splunk import skipped. Set SPLUNK_PASSWORD in this script before local import."
+  log "Splunk import skipped. Export SPLUNK_PASSWORD before running the script."
 fi
 
 printf '\n============================================================\n'
