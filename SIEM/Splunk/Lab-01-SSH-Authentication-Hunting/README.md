@@ -161,6 +161,7 @@ Observed execution results:
 - [x] Screenshots or sanitized exported evidence retained
 - [x] Evidence is traceable to this lab execution
 - [x] SOC monitoring dashboard executed and validated
+- [x] SOC monitoring dashboard screenshot captured
 - [x] Dashboard structure validated: 7 visualizations, 7 data sources, 1 tab, 7 layout panels
 - [x] Dashboard data validated: 31 total events, 21 failures, 10 successes
 - [x] Dashboard schema/token validation completed with zero unresolved token references
