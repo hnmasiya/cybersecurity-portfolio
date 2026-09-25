@@ -194,7 +194,11 @@ Automated checks validate portfolio quality, evidence integrity and security con
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* Automated activity is maintained by the repository workflow.
+* feat: add Splunk SOC lab 01 (31 minutes ago)
+* auto: update cybersecurity job intelligence (#1320) (7 hours ago)
+* auto: publish global resume variants (#1319) (7 hours ago)
+* auto: publish consolidated cybersecurity resume (#1318) (7 hours ago)
+* fix: make career intelligence reports idempotent (#1317) (7 hours ago)
 <!-- END_SECTION:activity -->
 
 ---
