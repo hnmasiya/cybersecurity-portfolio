@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<response>
-  <messages>
-    <msg type="ERROR">Argument "isVisible" is not supported by this handler.</msg>
-  </messages>
-</response>
+<!--This is to override browser formatting; see server.conf[httpServer] to disable. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .-->
+<?xml-stylesheet type="text/xml" href="/static/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:s="http://dev.splunk.com/ns/rest" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <title>views</title>
+  <id>https://127.0.0.1:8089/servicesNS/admin/search/data/ui/views</id>
+  <updated>2026-09-25T09:55:30+02:00</updated>
+  <generator build="4174a2deda5d" version="10.4.3"/>
+  <author>
+    <name>Splunk</name>
+  </author>
+  <link href="/servicesNS/admin/search/data/ui/views/_new" rel="create"/>
+  <link href="/servicesNS/admin/search/data/ui/views/_reload" rel="_reload"/>
+  <link href="/servicesNS/admin/search/data/ui/views/_acl" rel="_acl"/>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <s:messages/>
+  <entry>
+    <title>soc_windows_sysmon_process_investigation</title>
+    <id>https://127.0.0.1:8089/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation</id>
+    <updated>2026-09-25T09:55:30+02:00</updated>
+    <link href="/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="alternate"/>
+    <author>
+      <name>admin</name>
+    </author>
+    <link href="/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="list"/>
+    <link href="/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation/_reload" rel="_reload"/>
+    <link href="/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="edit"/>
+    <link href="/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="remove"/>
+    <link href="/servicesNS/admin/search/data/ui/views/soc_windows_sysmon_process_investigation/move" rel="move"/>
+    <content type="text/xml">
+      <s:dict>
+        <s:key name="applicationSuite"/>
+        <s:key name="dashboardType">0</s:key>
+        <s:key name="description">Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02.</s:key>
+        <s:key name="disabled">0</s:key>
+        <s:key name="eai:acl">
+          <s:dict>
+            <s:key name="app">search</s:key>
+            <s:key name="can_change_perms">1</s:key>
+            <s:key name="can_list">1</s:key>
+            <s:key name="can_share_app">1</s:key>
+            <s:key name="can_share_global">1</s:key>
+            <s:key name="can_share_user">1</s:key>
+            <s:key name="can_write">1</s:key>
+            <s:key name="modifiable">1</s:key>
+            <s:key name="owner">admin</s:key>
+            <s:key name="perms"/>
+            <s:key name="removable">1</s:key>
+            <s:key name="sharing">user</s:key>
+          </s:dict>
+        </s:key>
+        <s:key name="eai:appName">search</s:key>
+        <s:key name="eai:data"><![CDATA[<dashboard version="1.1"><label>SOC Windows / Sysmon Process Investigation</label><description>Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02.</description><definition>{&quot;visualizations&quot;:{&quot;viz_total&quot;:{&quot;type&quot;:&quot;singlevalue&quot;,&quot;dataSources&quot;:{&quot;primary&quot;:&quot;ds_total&quot;},&quot;options&quot;:{&quot;majorColor&quot;:&quot;#2E7D32&quot;}},&quot;viz_powershell&quot;:{&quot;type&quot;:&quot;singlevalue&quot;,&quot;dataSources&quot;:{&quot;primary&quot;:&quot;ds_powershell&quot;},&quot;options&quot;:{&quot;majorColor&quot;:&quot;#1565C0&quot;}},&quot;viz_suspicious&quot;:{&quot;type&quot;:&quot;singlevalue&quot;,&quot;dataSources&quot;:{&quot;primary&quot;:&quot;ds_suspicious&quot;},&quot;options&quot;:{&quot;majorColor&quot;:&quot;#C62828&quot;}},&quot;viz_top_processes&quot;:{&quot;type&quot;:&quot;splunk.bar&quot;,&quot;dataSources&quot;:{&quot;primary&quot;:&quot;ds_top_processes&quot;},&quot;options&quot;:{&quot;barSpacing&quot;:20,&quot;legendDisplay&quot;:&quot;off&quot;,&quot;xAxisTitleText&quot;:&quot;Process&quot;,&quot;yAxisTitleText&quot;:&quot;Events&quot;}},&quot;viz_parent_child&quot;:{&quot;type&quot;:&quot;splunk.bar&quot;,&quot;dataSources&quot;:{&quot;primary&quot;:&quot;ds_parent_child&quot;},&quot;options&quot;:{&quot;barSpacing&quot;:20,&quot;legendDisplay&quot;:&quot;off&quot;,&quot;xAxisTitleText&quot;:&quot;Parent \u2192 Child&quot;,&quot;yAxisTitleText&quot;:&quot;Events&quot;}},&quot;viz_timeline&quot;:{&quot;type&quot;:&quot;splunk.line&quot;,&quot;dataSources&quot;:{&quot;primary&quot;:&quot;ds_timeline&quot;},&quot;options&quot;:{&quot;legendDisplay&quot;:&quot;bottom&quot;,&quot;xAxisTitleText&quot;:&quot;Time&quot;,&quot;yAxisTitleText&quot;:&quot;Process Events&quot;}},&quot;viz_investigation&quot;:{&quot;type&quot;:&quot;splunk.table&quot;,&quot;dataSources&quot;:{&quot;primary&quot;:&quot;ds_investigation&quot;},&quot;options&quot;:{&quot;count&quot;:15,&quot;showRowNumbers&quot;:false,&quot;wrap&quot;:true}}},&quot;dataSources&quot;:{&quot;ds_total&quot;:{&quot;type&quot;:&quot;ds.search&quot;,&quot;options&quot;:{&quot;query&quot;:&quot;index=splunk_lab_sysmon sourcetype=\&quot;splunk:lab:sysmon\&quot; event_id=1 | stats count as total_events&quot;}},&quot;ds_powershell&quot;:{&quot;type&quot;:&quot;ds.search&quot;,&quot;options&quot;:{&quot;query&quot;:&quot;index=splunk_lab_sysmon sourcetype=\&quot;splunk:lab:sysmon\&quot; event_id=1 | search image=\&quot;*powershell.exe\&quot; | stats count as powershell_events&quot;}},&quot;ds_suspicious&quot;:{&quot;type&quot;:&quot;ds.search&quot;,&quot;options&quot;:{&quot;query&quot;:&quot;index=splunk_lab_sysmon sourcetype=\&quot;splunk:lab:sysmon\&quot; event_id=1 | eval suspicious=if(match(lower(command_line),\&quot;encodedcommand|executionpolicy\\s+bypass|downloadstring|invoke-expression|iex\\s|frombase64string\&quot;) OR match(lower(image),\&quot;mshta\\.exe|rundll32\\.exe|regsvr32\\.exe|wscript\\.exe|cscript\\.exe\&quot;),1,0) | where suspicious=1 | stats count as suspicious_events&quot;}},&quot;ds_top_processes&quot;:{&quot;type&quot;:&quot;ds.search&quot;,&quot;options&quot;:{&quot;query&quot;:&quot;index=splunk_lab_sysmon sourcetype=\&quot;splunk:lab:sysmon\&quot; event_id=1 | stats count as events by image | sort - events | head 10&quot;}},&quot;ds_parent_child&quot;:{&quot;type&quot;:&quot;ds.search&quot;,&quot;options&quot;:{&quot;query&quot;:&quot;index=splunk_lab_sysmon sourcetype=\&quot;splunk:lab:sysmon\&quot; event_id=1 | eval relationship=parent_image.\&quot; \u2192 \&quot;.image | stats count as events by relationship | sort - events | head 10&quot;}},&quot;ds_timeline&quot;:{&quot;type&quot;:&quot;ds.search&quot;,&quot;options&quot;:{&quot;query&quot;:&quot;index=splunk_lab_sysmon sourcetype=\&quot;splunk:lab:sysmon\&quot; event_id=1 | timechart span=1m count by host&quot;}},&quot;ds_investigation&quot;:{&quot;type&quot;:&quot;ds.search&quot;,&quot;options&quot;:{&quot;query&quot;:&quot;index=splunk_lab_sysmon sourcetype=\&quot;splunk:lab:sysmon\&quot; event_id=1 | eval suspicious=if(match(lower(command_line),\&quot;encodedcommand|executionpolicy\\s+bypass|downloadstring|invoke-expression|iex\\s|frombase64string\&quot;) OR match(lower(image),\&quot;mshta\\.exe|rundll32\\.exe|regsvr32\\.exe|wscript\\.exe|cscript\\.exe\&quot;),1,0) | where suspicious=1 | table timestamp host user parent_image image command_line integrity_level | sort 0 timestamp&quot;}}},&quot;layout&quot;:{&quot;tabs&quot;:{&quot;items&quot;:[{&quot;label&quot;:&quot;SOC Overview&quot;,&quot;layoutId&quot;:&quot;layout_soc_overview&quot;}]},&quot;layoutDefinitions&quot;:{&quot;layout_soc_overview&quot;:{&quot;type&quot;:&quot;grid&quot;,&quot;structure&quot;:[{&quot;item&quot;:&quot;viz_total&quot;,&quot;type&quot;:&quot;block&quot;,&quot;position&quot;:{&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:4,&quot;h&quot;:2}},{&quot;item&quot;:&quot;viz_powershell&quot;,&quot;type&quot;:&quot;block&quot;,&quot;position&quot;:{&quot;x&quot;:4,&quot;y&quot;:0,&quot;w&quot;:4,&quot;h&quot;:2}},{&quot;item&quot;:&quot;viz_suspicious&quot;,&quot;type&quot;:&quot;block&quot;,&quot;position&quot;:{&quot;x&quot;:8,&quot;y&quot;:0,&quot;w&quot;:4,&quot;h&quot;:2}},{&quot;item&quot;:&quot;viz_top_processes&quot;,&quot;type&quot;:&quot;block&quot;,&quot;position&quot;:{&quot;x&quot;:0,&quot;y&quot;:2,&quot;w&quot;:6,&quot;h&quot;:5}},{&quot;item&quot;:&quot;viz_parent_child&quot;,&quot;type&quot;:&quot;block&quot;,&quot;position&quot;:{&quot;x&quot;:6,&quot;y&quot;:2,&quot;w&quot;:6,&quot;h&quot;:5}},{&quot;item&quot;:&quot;viz_timeline&quot;,&quot;type&quot;:&quot;block&quot;,&quot;position&quot;:{&quot;x&quot;:0,&quot;y&quot;:7,&quot;w&quot;:12,&quot;h&quot;:5}},{&quot;item&quot;:&quot;viz_investigation&quot;,&quot;type&quot;:&quot;block&quot;,&quot;position&quot;:{&quot;x&quot;:0,&quot;y&quot;:12,&quot;w&quot;:12,&quot;h&quot;:7}}]}}}}</definition></dashboard>]]></s:key>
+        <s:key name="eai:digest">d70fe22103fb109266f297bed50e3028</s:key>
+        <s:key name="eai:type">views</s:key>
+        <s:key name="eai:userName">admin</s:key>
+        <s:key name="embed.enabled">0</s:key>
+        <s:key name="embed.expiry">0</s:key>
+        <s:key name="isDashboard">1</s:key>
+        <s:key name="isVisible">1</s:key>
+        <s:key name="label">SOC Windows / Sysmon Process Investigation</s:key>
+        <s:key name="rootNode">dashboard</s:key>
+        <s:key name="version">1.1</s:key>
+      </s:dict>
+    </content>
+  </entry>
+</feed>
+
+--- ACL response ---
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is to override browser formatting; see server.conf[httpServer] to disable. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .-->
+<?xml-stylesheet type="text/xml" href="/static/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:s="http://dev.splunk.com/ns/rest" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <title>views</title>
+  <id>https://127.0.0.1:8089/servicesNS/admin/search/data/ui/views</id>
+  <updated>2026-09-25T09:55:30+02:00</updated>
+  <generator build="4174a2deda5d" version="10.4.3"/>
+  <author>
+    <name>Splunk</name>
+  </author>
+  <link href="/servicesNS/admin/search/data/ui/views/_new" rel="create"/>
+  <link href="/servicesNS/admin/search/data/ui/views/_reload" rel="_reload"/>
+  <link href="/servicesNS/admin/search/data/ui/views/_acl" rel="_acl"/>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <s:messages/>
+  <entry>
+    <title>soc_windows_sysmon_process_investigation</title>
+    <id>https://127.0.0.1:8089/servicesNS/nobody/search/data/ui/views/soc_windows_sysmon_process_investigation</id>
+    <updated>2026-09-25T09:55:30+02:00</updated>
+    <link href="/servicesNS/nobody/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="alternate"/>
+    <author>
+      <name>admin</name>
+    </author>
+    <link href="/servicesNS/nobody/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="list"/>
+    <link href="/servicesNS/nobody/search/data/ui/views/soc_windows_sysmon_process_investigation/_reload" rel="_reload"/>
+    <link href="/servicesNS/nobody/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="edit"/>
+    <link href="/servicesNS/nobody/search/data/ui/views/soc_windows_sysmon_process_investigation" rel="remove"/>
+    <link href="/servicesNS/nobody/search/data/ui/views/soc_windows_sysmon_process_investigation/move" rel="move"/>
+    <content type="text/xml">
+      <s:dict>
+        <s:key name="eai:acl">
+          <s:dict>
+            <s:key name="app">search</s:key>
+            <s:key name="can_change_perms">1</s:key>
+            <s:key name="can_list">1</s:key>
+            <s:key name="can_share_app">1</s:key>
+            <s:key name="can_share_global">1</s:key>
+            <s:key name="can_share_user">1</s:key>
+            <s:key name="can_write">1</s:key>
+            <s:key name="modifiable">1</s:key>
+            <s:key name="owner">admin</s:key>
+            <s:key name="perms">
+              <s:dict>
+                <s:key name="read">
+                  <s:list>
+                    <s:item>*</s:item>
+                  </s:list>
+                </s:key>
+              </s:dict>
+            </s:key>
+            <s:key name="removable">1</s:key>
+            <s:key name="sharing">app</s:key>
+          </s:dict>
+        </s:key>
+      </s:dict>
+    </content>
+  </entry>
+</feed>
+REST dashboard endpoint validated.
