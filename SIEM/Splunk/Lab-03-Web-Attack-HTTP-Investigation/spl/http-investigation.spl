@@ -1,0 +1,10 @@
+index=splunk_lab_web sourcetype="splunk:lab:web"
+| stats count as events count(eval(status>=400)) as errors values(attack_type) as attack_types by client_ip
+| sort - errors - events
+
+index=splunk_lab_web sourcetype="splunk:lab:web" attack_type!="-"
+| stats count by attack_type client_ip
+| sort - count
+
+index=splunk_lab_web sourcetype="splunk:lab:web" attack_type IN ("SQLi","XSS","Traversal","CommandInjection")
+| table _time client_ip method uri status attack_type

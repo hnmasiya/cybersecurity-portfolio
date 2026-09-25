@@ -177,8 +177,11 @@ manifest={"script_version":"1.0.0","labs":[
 {"lab":"04","index":"splunk_lab_detection","sourcetype":"splunk:lab:detection","events":6},
 {"lab":"05","index":"splunk_lab_monitoring","sourcetype":"splunk:lab:socmetrics","events":24},
 {"lab":"06","index":"splunk_lab_case","sourcetype":"splunk:lab:case","events":6}]}
-(L3.parents[3]/"SIEM/Splunk/labs-03-06-manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
-print("Generated Labs 03-06 artifacts.")
+repo = Path.cwd()
+(repo/"SIEM/Splunk/labs-03-06-manifest.json").write_text(
+    json.dumps(manifest, indent=2) + "\n",
+    encoding="utf-8"
+)
 PY
 
 python3 - "$LAB3" "$LAB4" "$LAB5" "$LAB6" <<'PY'

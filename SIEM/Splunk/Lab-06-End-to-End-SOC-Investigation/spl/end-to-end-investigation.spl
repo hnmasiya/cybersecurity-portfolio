@@ -1,0 +1,9 @@
+index=splunk_lab_case sourcetype="splunk:lab:case"
+| sort 0 _time
+| table _time host user source event_type severity indicator stage
+
+index=splunk_lab_case sourcetype="splunk:lab:case"
+| stats count values(stage) as stages values(indicator) as indicators by host user
+
+index=splunk_lab_case sourcetype="splunk:lab:case" severity IN ("high","critical")
+| stats count by event_type severity stage
