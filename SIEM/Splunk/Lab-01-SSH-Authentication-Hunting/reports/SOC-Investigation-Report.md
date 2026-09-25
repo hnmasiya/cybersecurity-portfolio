@@ -179,10 +179,12 @@ The following screenshots document the executed investigation:
 - Successful SSH logins
 - Focused investigation of `10.10.10.25`
 
-A dashboard screenshot should be added after the SOC monitoring dashboard is created.
+The SOC monitoring dashboard was executed and visually verified after the investigation queries were completed.
 
 ## Lab conclusion
 
-**Investigation executed successfully.**
+**Investigation and SOC dashboard execution completed successfully.**
+
+The dashboard execution validated 31 synthetic authentication events, including 21 failures and 10 successes, across seven visualizations and seven data sources. The dashboard was saved through the Splunk REST API and read back successfully with a valid Dashboard Studio definition.
 
 The lab demonstrates ingestion, structured CSV parsing, field extraction, SPL-based authentication hunting, source/account analysis, timeline reconstruction, and analyst interpretation using synthetic SSH telemetry.
