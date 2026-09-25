@@ -2,22 +2,39 @@
   "visualizations": {
     "viz_total": {
       "type": "splunk.singlevalue",
-      "dataSources": {"primary": "ds_total"},
-      "options": {"majorColor": "#2E7D32"}
+      "dataSources": {
+        "primary": "ds_total"
+      },
+      "options": {
+        "majorColor": "#2E7D32"
+      },
+      "title": "Total Process Events"
     },
     "viz_powershell": {
       "type": "splunk.singlevalue",
-      "dataSources": {"primary": "ds_powershell"},
-      "options": {"majorColor": "#1565C0"}
+      "dataSources": {
+        "primary": "ds_powershell"
+      },
+      "options": {
+        "majorColor": "#1565C0"
+      },
+      "title": "PowerShell Events"
     },
     "viz_suspicious": {
       "type": "splunk.singlevalue",
-      "dataSources": {"primary": "ds_suspicious"},
-      "options": {"majorColor": "#C62828"}
+      "dataSources": {
+        "primary": "ds_suspicious"
+      },
+      "options": {
+        "majorColor": "#C62828"
+      },
+      "title": "Suspicious Process Events"
     },
     "viz_top_processes": {
       "type": "splunk.bar",
-      "dataSources": {"primary": "ds_top_processes"},
+      "dataSources": {
+        "primary": "ds_top_processes"
+      },
       "options": {
         "barSpacing": 20,
         "xAxisTitleText": "Process",
@@ -26,7 +43,9 @@
     },
     "viz_parent_child": {
       "type": "splunk.bar",
-      "dataSources": {"primary": "ds_parent_child"},
+      "dataSources": {
+        "primary": "ds_parent_child"
+      },
       "options": {
         "barSpacing": 20,
         "xAxisTitleText": "Parent → Child",
@@ -35,7 +54,9 @@
     },
     "viz_timeline": {
       "type": "splunk.line",
-      "dataSources": {"primary": "ds_timeline"},
+      "dataSources": {
+        "primary": "ds_timeline"
+      },
       "options": {
         "xAxisTitleText": "Time",
         "yAxisTitleText": "Process Events"
@@ -43,7 +64,9 @@
     },
     "viz_investigation": {
       "type": "splunk.table",
-      "dataSources": {"primary": "ds_investigation"},
+      "dataSources": {
+        "primary": "ds_investigation"
+      },
       "options": {
         "count": 15,
         "showRowNumbers": false,
@@ -192,5 +215,5 @@
     }
   },
   "title": "SOC Windows / Sysmon Process Investigation",
-  "description": "Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02.",
+  "description": "Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02."
 }

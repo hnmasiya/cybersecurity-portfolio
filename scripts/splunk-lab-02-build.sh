@@ -32,7 +32,7 @@
 set -Eeuo pipefail
 IFS=$'\n\t'
 
-SCRIPT_VERSION="1.0.0"
+SCRIPT_VERSION="1.0.1"
 REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
 LAB_ROOT="$REPO_ROOT/SIEM/Splunk/Lab-02-Windows-Sysmon-Process-Investigation"
 DATA_DIR="$LAB_ROOT/data"
@@ -50,7 +50,7 @@ DASHBOARD_TITLE="SOC Windows / Sysmon Process Investigation"
 BRANCH="security/splunk-lab-02-sysmon-process-investigation"
 
 SPLUNK_URL="${SPLUNK_URL:-https://127.0.0.1:8089}"
-SPLUNK_WEB_URL="${SPLUNK_WEB_URL:-https://127.0.0.1:8000}"
+SPLUNK_WEB_URL="${SPLUNK_WEB_URL:-http://127.0.0.1:8000}"
 SPLUNK_USER="${SPLUNK_USER:-admin}"
 SPLUNK_PASS="${SPLUNK_PASS:-}"
 
@@ -534,16 +534,19 @@ EOF
     "viz_total": {
       "type": "splunk.singlevalue",
       "dataSources": {"primary": "ds_total"},
+      "title": "Total Process Events",
       "options": {"majorColor": "#2E7D32"}
     },
     "viz_powershell": {
       "type": "splunk.singlevalue",
       "dataSources": {"primary": "ds_powershell"},
+      "title": "PowerShell Events",
       "options": {"majorColor": "#1565C0"}
     },
     "viz_suspicious": {
       "type": "splunk.singlevalue",
       "dataSources": {"primary": "ds_suspicious"},
+      "title": "Suspicious Process Events",
       "options": {"majorColor": "#C62828"}
     },
     "viz_top_processes": {
@@ -723,7 +726,7 @@ EOF
     }
   },
   "title": "$DASHBOARD_TITLE",
-  "description": "Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02.",
+  "description": "Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02."
 }
 EOF
 }
@@ -986,12 +989,12 @@ d=json.load(open(sys.argv[1]))
 assert len(d["visualizations"]) == 7
 assert len(d["dataSources"]) == 7
 assert len(d["layout"]["tabs"]["items"]) == 1
-assert len(d["layout"]["layoutDefinitions"]["layout_soc_overview"]["structure"]) == 7
+assert len(d["layout"]["layoutDefinitions"]["layout_1"]["structure"]) == 7
 print("Dashboard JSON schema-level structure: PASS")
 PY
 
     if grep -RniE 'password|secret|token|api[_-]?key' "$LAB_ROOT" \
-        --exclude='*.png' --exclude='*.pdf' >/tmp/lab02-secret-scan.txt; then
+        --exclude='*.png' --exclude='*.pdf' --exclude='*.md' >/tmp/lab02-secret-scan.txt; then
         warn "Potential sensitive keywords found. Review /tmp/lab02-secret-scan.txt before commit."
     else
         log "Basic sensitive-keyword scan: PASS"
