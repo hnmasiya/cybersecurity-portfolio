@@ -2,7 +2,7 @@
 
 ## SIEM & Detection
 - Wazuh — SIEM monitoring, alert triage, custom detection rules and FIM
-- Splunk — SOC investigation and SPL training; Lab 01 executed locally with synthetic SSH telemetry, investigation report captured, SOC dashboard evidence pending
+- Splunk — SOC investigation and SPL training; Lab 01 executed locally with synthetic SSH telemetry, investigation report and SOC monitoring dashboard validated
 - Sysmon — Windows endpoint telemetry and process-event validation
 - Sigma — detection-rule concepts and rule development
 - MITRE ATT&CK — technique mapping and detection/investigation context
