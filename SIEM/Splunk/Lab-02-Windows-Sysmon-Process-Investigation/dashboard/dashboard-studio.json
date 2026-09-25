@@ -121,5 +121,9 @@
         ]
       }
     }
-  }
+  },
+  "title": "SOC Windows / Sysmon Process Investigation",
+  "description": "Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02.",
+  "defaults": {},
+  "inputs": {}
 }
