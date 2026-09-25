@@ -1,6 +1,6 @@
 # Splunk Lab 01 Evidence Capture
 
-This directory is intentionally empty until the lab is executed.
+This directory contains sanitized evidence records for the executed Lab 01 investigation. The dashboard was also executed and visually verified in the local Splunk instance.
 
 ## Capture after execution
 
@@ -12,6 +12,7 @@ Save only sanitized, reproducible evidence such as:
 - `04-timeline.png`
 - `05-timechart.png`
 - `investigation-report.md`
+- `07-soc-ssh-authentication-dashboard.png` — sanitized final dashboard screenshot
 
 ## Evidence standard
 
