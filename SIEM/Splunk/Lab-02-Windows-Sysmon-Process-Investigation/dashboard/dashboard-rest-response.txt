@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <response>
   <messages>
-    <msg type="ERROR">Argument "description" is not supported by this handler.</msg>
+    <msg type="ERROR">Argument "isVisible" is not supported by this handler.</msg>
   </messages>
 </response>
