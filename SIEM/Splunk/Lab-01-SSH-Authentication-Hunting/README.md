@@ -138,7 +138,7 @@ Complete a short investigation note containing:
 
 ## Execution status
 
-**Investigation execution: complete. Dashboard evidence: pending.**
+**Investigation execution: complete. SOC dashboard execution: complete.**
 
 Observed execution results:
 
@@ -160,9 +160,12 @@ Observed execution results:
 - [x] Analyst findings written from observed results
 - [x] Screenshots or sanitized exported evidence retained
 - [x] Evidence is traceable to this lab execution
-- [ ] SOC monitoring dashboard screenshot captured
+- [x] SOC monitoring dashboard executed and validated
+- [x] Dashboard structure validated: 7 visualizations, 7 data sources, 1 tab, 7 layout panels
+- [x] Dashboard data validated: 31 total events, 21 failures, 10 successes
+- [x] Dashboard schema/token validation completed with zero unresolved token references
 
-See `reports/SOC-Investigation-Report.md` for the investigation narrative and `dashboard/SOC-SSH-Authentication-Monitoring.md` for the dashboard build plan.
+See `reports/SOC-Investigation-Report.md` for the investigation narrative and `dashboard/SOC-SSH-Authentication-Monitoring.md` for the executed dashboard specification and validation record.
 
 ## Evidence directory
 
