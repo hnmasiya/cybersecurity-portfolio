@@ -122,7 +122,7 @@ jobs:
             --head "$BRANCH" \
             --title 'auto: update cybersecurity job intelligence and tailored applications' \
             --body 'Automated cybersecurity job discovery, evidence-based tailoring and ATS readiness checks. Verify the original employer/ATS posting before applying. No applications are submitted automatically.'
-          
+
   application-report:
     name: Weekly Application Tracker
     runs-on: ubuntu-latest
