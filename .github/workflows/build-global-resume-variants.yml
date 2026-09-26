@@ -1,11 +1,13 @@
-name: Build and Publish Global Resume Variants
+name: Build and Publish Automatic Country Resume Variants
 
 on:
   push:
     branches: [main]
     paths:
       - 'Resume_Hazvinei_Masiya.md'
+      - 'resume-variants/country-profiles.json'
       - 'scripts/build-resume-variants.py'
+      - 'scripts/validate-resume-pages.py'
       - '.github/workflows/build-global-resume-variants.yml'
   workflow_dispatch:
 
@@ -13,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: global-resume-variants
+  group: automatic-country-resume-variants
   cancel-in-progress: true
 
 jobs:
@@ -39,54 +41,54 @@ jobs:
           git config --global user.signingkey "$RUNNER_TEMP/automation-signing/id_ed25519"
           git config --global commit.gpgsign true
 
-      - name: Generate application variants
+      - name: Generate country and fallback variants
         run: python3 scripts/build-resume-variants.py
 
-      - name: Install LibreOffice
+      - name: Install PDF build and validation tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y libreoffice
+          sudo apt-get install -y libreoffice poppler-utils
 
       - name: Build PDFs
         run: |
-          set -e
+          set -euo pipefail
           rm -rf dist/resumes/pdf
           mkdir -p dist/resumes/pdf
           for file in dist/resumes/*.md; do
             libreoffice --headless --convert-to pdf --outdir dist/resumes/pdf "$file"
           done
-          test "$(find dist/resumes/pdf -maxdepth 1 -name '*.pdf' | wc -l)" -eq 9
+          count="$(find dist/resumes/pdf -maxdepth 1 -name '*.pdf' | wc -l)"
+          echo "[INFO] Generated $count PDFs"
+          test "$count" -ge 20
 
-      - name: Commit and open PR, then run checks
+      - name: Enforce exactly two pages
+        run: python3 scripts/validate-resume-pages.py dist/resumes/pdf --expected 2
+
+      - name: Publish validated PDFs through PR
         env:
           GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
-          set -e
+          set -euo pipefail
           mkdir -p resume-variants/pdf
           cp -f dist/resumes/pdf/*.pdf resume-variants/pdf/
           git config user.name "Hazvinei Nomatter Masiya"
           git config user.email "norman.masiya@gmail.com"
           git add resume-variants/pdf/*.pdf
+
           if git diff --cached --quiet; then
-            echo "[PASS] All global resume PDFs are already published."
+            echo "[PASS] All validated country resume PDFs are already published."
             exit 0
           fi
 
-          OPEN_VARIANT_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: publish global resume variants\"" --json number --jq 'length')"
-          if [[ "$OPEN_VARIANT_PRS" -gt 0 ]]; then
-            echo "[PASS] A global-resume-variants PR is already open; skipping duplicate PR creation."
+          OPEN_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search 'in:title "auto: publish country resume variants"' --json number --jq 'length')"
+          if [[ "$OPEN_PRS" -gt 0 ]]; then
+            echo "[PASS] Country-resume publication PR already open; skipping duplicate."
             exit 0
           fi
 
-          OPEN_VARIANT_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: publish global resume variants\"" --json number --jq 'length')"
-          if [[ "$OPEN_VARIANT_PRS" -gt 0 ]]; then
-            echo "[PASS] Global-resume-variants PR already open; skipping duplicate."
-            exit 0
-          fi
-
-          BRANCH="auto/global-resume-variants-$(date -u +%Y%m%d%H%M%S)"
+          BRANCH="auto/country-resume-variants-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"
-          git commit -S -m "auto: publish global resume variants"
+          git commit -S -m "auto: publish country resume variants"
           git push origin "$BRANCH"
 
           SHA="$(git rev-parse HEAD)"
@@ -96,31 +98,27 @@ jobs:
             [[ "$VERIFIED" == "true" ]] && break
             sleep 2
           done
-          [[ "$VERIFIED" == "true" ]] || { echo "[FAIL] GitHub did not verify the automation commit signature."; exit 1; }
+          [[ "$VERIFIED" == "true" ]] || { echo "[FAIL] Automation commit signature was not verified."; exit 1; }
 
-          PR_URL=$(gh pr create             --base main             --head "$BRANCH"             --title "auto: publish global resume variants"             --body "Automated publication of the nine regional resume PDFs generated from the verified master resume.")
+          PR_URL="$(gh pr create --base main --head "$BRANCH" --title "auto: publish country resume variants" --body "Automated publication of validated country and regional resume PDFs generated from the verified master resume. Every PDF passed the exact two-page quality gate.")"
 
-          echo "Waiting for required PR checks to register..."
           for i in $(seq 1 30); do
-            CHECKS_OUTPUT=$(gh pr checks "$PR_URL" 2>&1 || true)
-            if ! echo "$CHECKS_OUTPUT" | grep -q "no checks reported"; then
-              break
-            fi
+            CHECKS_OUTPUT="$(gh pr checks "$PR_URL" 2>&1 || true)"
+            if ! echo "$CHECKS_OUTPUT" | grep -q "no checks reported"; then break; fi
             sleep 10
           done
-
+          echo "$CHECKS_OUTPUT"
           if echo "$CHECKS_OUTPUT" | grep -q "no checks reported"; then
-            echo "Timed out waiting for required checks to register."
+            echo "[FAIL] Timed out waiting for required checks."
             exit 1
           fi
-
           gh pr checks "$PR_URL" --watch --fail-fast
-          echo "PR created successfully. Manual approval is required before merge."
+          echo "PR created successfully. Manual approval remains required before merge."
 
       - name: Publish build artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: global-resume-variants
+          name: automatic-country-resume-variants
           path: dist/resumes/
           if-no-files-found: error
           retention-days: 30
