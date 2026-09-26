@@ -81,6 +81,7 @@ jobs:
             echo "JOB_ALERT_EMAIL secret not configured; notification skipped."
             exit 0
           fi
+          export JOB_CSV="career/reports/jobs-$(date -u +%Y-%m-%d).csv"
           python scripts/notify_jobs.py
 
       - name: Publish current reports through a protected PR
