@@ -37,8 +37,6 @@ CompTIA Security+ certified cybersecurity professional with 12+ years of enterpr
 <div>
   <span class="variant">Global / International</span><span class="variant">Africa</span><span class="variant">UK / Europe</span><span class="variant">North America</span><span class="variant">Canada</span><span class="variant">Australia / New Zealand</span><span class="variant">Middle East</span><span class="variant">Asia-Pacific</span>
 </div>
-<p style="margin-top:4px;">This master resume uses internationally transferable terminology and ATS-friendly structure. Country-specific application versions can adjust only local conventions such as CV/resume terminology, work-authorization wording, address format, date style, and job-title wording—without changing or inventing career evidence.</p>
-
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
 <li><b>SIEM & Detection Engineering:</b> Wazuh SIEM, Sysmon XML Rules, Custom Alert Pipelines, FIM, MITRE ATT&CK mapping</li>
