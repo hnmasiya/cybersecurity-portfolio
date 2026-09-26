@@ -17,3 +17,22 @@ career/applications.csv
 .env.*
 *.pem
 *.key
+
+# Local engineering / validation artifacts
+/backups/
+/logs/
+*-diagnostic-*.tar.gz
+splunk-labs-03-06-CLEAN-REBUILD.sh
+splunk-labs-03-06-CLEAN-REBUILD.sh.pre-*
+splunk-labs-03-06-MASTER-REBUILD-VALIDATE.sh
+splunk-labs-03-06-MASTER-REBUILD-VALIDATE.sh.pre-*
+splunk-labs-03-06-rebuild-validate-FINAL.sh
+splunk-labs-03-06-rebuild-validate-FINAL-v2.sh
+splunk-labs-03-06-rebuild-validate-FINAL-v2.sh.pre-*
+scripts/splunk-labs-03-06-master-build.sh.before-*
+scripts/splunk-labs-04-06-final-validate.sh
+scripts/splunk-labs-04-06-master-build.sh
+scripts/splunk-labs-complete.sh
+scripts/splunk-master-audit.sh
+reports/splunk-audit-*.txt
+reports/splunk-audit-*/

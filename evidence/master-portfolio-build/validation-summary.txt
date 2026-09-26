@@ -1,0 +1,41 @@
+Cybersecurity Portfolio Master Build v1.0.0
+UTC: 2026-09-26T13:21:57Z
+Repository: /home/normann/cybersecurity-portfolio
+PASS=35 WARN=2 FAIL=0
+PASS|Repository component: index.md
+PASS|Repository component: SIEM README
+PASS|Repository component: Splunk README
+PASS|Repository component: Scripts
+PASS|Repository component: Web Security
+PASS|Repository component: Cloud Security
+PASS|Repository component: SOC
+PASS|Bash syntax validation: 21 scripts
+PASS|Portfolio domain: DVWA
+PASS|Portfolio domain: SIEM
+PASS|Portfolio domain: Wazuh
+PASS|Portfolio domain: Splunk
+PASS|Portfolio domain: Network Security
+PASS|Portfolio domain: Cloud Security
+PASS|Portfolio domain: SOC
+PASS|Portfolio domain: Security Automation
+PASS|Portfolio domain: Coursework
+PASS|Splunk Lab 01 exists
+PASS|Splunk Lab 02 exists
+PASS|Splunk Lab 03 exists
+PASS|Splunk Lab 04 exists
+PASS|Splunk Lab 05 exists
+PASS|Splunk Lab 06 exists
+PASS|Retained builder: scripts/splunk-lab-02-build.sh
+PASS|Retained builder: scripts/splunk-labs-03-06-master-build.sh
+PASS|Splunk Lab 01 artifact set complete
+PASS|Splunk JSON syntax validation: 2 files
+PASS|Dashboard Studio structural definitions detected
+PASS|Cross-domain evidence: DVWA
+PASS|Cross-domain evidence: Wazuh
+PASS|Cross-domain evidence: Splunk
+WARN|Cross-domain path absent: Nmap -> Nmap
+WARN|Cross-domain path absent: Wireshark -> Wireshark
+PASS|Cross-domain evidence: MITRE ATT&CK
+PASS|Cross-domain evidence: Cloud Security
+PASS|Master catalog generated: CYBERSECURITY-LAB-CATALOG.md
+PASS|Splunk Labs 03-06 artifact validation

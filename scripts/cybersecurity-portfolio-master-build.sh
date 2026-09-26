@@ -107,14 +107,32 @@ SIEM/Splunk/Lab-05-Dashboarding-SOC-Monitoring
 SIEM/Splunk/Lab-06-End-to-End-SOC-Investigation
 EOF
 
+# Retained executable builders.
+# Lab 01 is an executed artifact-based lab and intentionally has no
+# dedicated builder script. Do not manufacture a compatibility builder
+# solely for validation.
 while IFS= read -r builder; do
-  if [[ -f "$ROOT/$builder" ]]; then pass "Retained builder: $builder"
-  else fail "Required builder missing: $builder"; fi
+  if [[ -f "$ROOT/$builder" ]]; then
+    pass "Retained builder: $builder"
+  else
+    fail "Required builder missing: $builder"
+  fi
 done <<'EOF'
-scripts/splunk-lab-01-build.sh
 scripts/splunk-lab-02-build.sh
 scripts/splunk-labs-03-06-master-build.sh
 EOF
+
+# Lab 01 artifact completeness is validated independently.
+LAB01="$ROOT/SIEM/Splunk/Lab-01-SSH-Authentication-Hunting"
+if [[ -f "$LAB01/README.md" &&
+      -f "$LAB01/data/auth_events.csv" &&
+      -f "$LAB01/spl/authentication-hunting.spl" &&
+      -f "$LAB01/reports/SOC-Investigation-Report.md" &&
+      -f "$LAB01/evidence/README.md" ]]; then
+  pass "Splunk Lab 01 artifact set complete"
+else
+  fail "Splunk Lab 01 artifact set incomplete"
+fi
 
 # Dashboard safety preflight
 log "Running dashboard preflight."
