@@ -1,47 +1,31 @@
-# Cybersecurity Job Intelligence — 2026-09-25
+# Cybersecurity Job Intelligence — 2026-09-26
 
-Generated: 2026-09-25T14:55:38Z
+Generated: 2026-09-26T14:00:35Z
 
 Discovery results only. Verify the original employer/ATS posting before applying.
 
 Strict relevance filter: a security-specific signal must appear in the job title; generic roles do not qualify from description-only keyword matches.
 
-## 1. Senior Product Security Engineer
-- **Company:** chainguard
-- **Location:** Not stated
+## 1. Senior Information Security Analyst
+- **Company:** Cirrus
+- **Location:** Edinburgh, Scotland
 - **Remote:** False
-- **Match signals:** security engineer, product security, security, security, penetration testing, iam, identity, cloud security, security controls, security engineering
-- **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.co.uk/jobs/companies/chainguard/senior-product-security-engineer-337135
+- **Match signals:** security analyst, information security, security, security, siem, detection, incident response, vulnerability management, identity, network security, security engineering
+- **Source:** Arbeitnow UK
+- **Job:** https://www.arbeitnow.co.uk/jobs/companies/cirrus/senior-information-security-analyst-edinburgh-scotland-49436
 
-## 2. Principal Engineer, Product Security
-- **Company:** commercetools
-- **Location:** London
+## 2. Security Engineering Manager
+- **Company:** Thought Machine
+- **Location:** United Kingdom, London
 - **Remote:** False
-- **Match signals:** product security, security, security, identity, application security, devsecops
+- **Match signals:** security engineer, security, security, application security, security engineering
 - **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.co.uk/jobs/companies/commercetools/principal-engineer-product-security-london-63422
+- **Job:** https://www.arbeitnow.co.uk/jobs/companies/thought-machine/security-engineering-manager-london-182303
 
-## 3. IT-Security Engineer (gn)
-- **Company:** Workidentity
-- **Location:** Hamburg
-- **Remote:** False
-- **Match signals:** security engineer, security, security, siem
-- **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.com/jobs/companies/workidentity/it-security-engineer-gn-hamburg-205067
-
-## 4. Senior IT Security Administrator (gn)
-- **Company:** Workidentity
-- **Location:** Hamburg
-- **Remote:** False
-- **Match signals:** security, security, siem, vulnerability management, iam, cloud security
-- **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.com/jobs/companies/workidentity/senior-it-security-administrator-gn-hamburg-135911
-
-## 5. Staff Information Security Manager (w/m/d)
-- **Company:** IONOS SE
+## 3. Working Student – European Security Programme (m/f/d)
+- **Company:** Ecfr
 - **Location:** Berlin
 - **Remote:** False
-- **Match signals:** information security, security, siem, vulnerability management, iam, identity
+- **Match signals:** security
 - **Source:** Arbeitnow Global/Europe
-- **Job:** https://www.arbeitnow.com/jobs/companies/ionos-se/staff-information-security-manager-berlin-365031
+- **Job:** https://www.arbeitnow.com/jobs/companies/ecfr/working-student-european-security-programme-berlin-176088
