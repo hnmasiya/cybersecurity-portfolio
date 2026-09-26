@@ -8,11 +8,14 @@ on:
     paths:
       - 'career/job-search-config.json'
       - 'scripts/job_intelligence.py'
-      - 'scripts/tailoring_brief.py'
+      - 'scripts/tailored_applications.py'
+      - 'scripts/enrich_job_results.py'
+      - 'scripts/ats_validate.py'
+      - 'scripts/notify_jobs.py'
       - '.github/workflows/career-intelligence.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: career-intelligence
@@ -44,38 +47,65 @@ jobs:
 
       - name: Collect and filter jobs
         run: python scripts/job_intelligence.py
-      - name: Upload job reports
+      - name: Generate tailored CVs and cover letters
+        run: python scripts/tailored_applications.py career/reports/jobs-$(date -u +%Y-%m-%d).csv
+      - name: Run ATS readiness gate
+        run: python scripts/enrich_job_results.py career/reports/jobs-$(date -u +%Y-%m-%d).csv
+      - name: Upload job and application packages
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: cybersecurity-job-intelligence
+          name: cybersecurity-job-intelligence-and-tailored-applications
           path: career/reports/
-      - name: Publish current job report
+          if-no-files-found: error
+
+      - name: Restore alert state
+        uses: actions/cache@v4
+        with:
+          path: .career-alert-state.txt
+          key: career-alert-state-${{ github.run_id }}
+          restore-keys: |
+            career-alert-state-
+
+      - name: Notify high-relevance matches
+        env:
+          JOB_CSV: career/reports/jobs-$(date -u +%Y-%m-%d).csv
+          HIGH_RELEVANCE_THRESHOLD: '70'
+          NOTIFY_EMAIL: ${{ secrets.JOB_ALERT_EMAIL }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_STATE: .career-alert-state.txt
+        run: |
+          if [ -z "$NOTIFY_EMAIL" ]; then
+            echo "JOB_ALERT_EMAIL secret not configured; notification skipped."
+            exit 0
+          fi
+          export JOB_CSV="career/reports/jobs-$(date -u +%Y-%m-%d).csv"
+          python scripts/notify_jobs.py
+
+      - name: Publish current reports through a protected PR
         if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push')
         env:
           GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
           set -euo pipefail
-          cp career/reports/jobs-$(date -u +%Y-%m-%d).md career/latest-jobs.md
+          date=$(date -u +%Y-%m-%d)
+          cp career/reports/jobs-${date}.md career/latest-jobs.md
           git config user.name 'Hazvinei Nomatter Masiya'
           git config user.email 'norman.masiya@gmail.com'
-          git add career/latest-jobs.md
+          git add career/latest-jobs.md career/reports/jobs-${date}.csv career/reports/tailored/${date}
           git diff --cached --quiet && exit 0
 
-          OPEN_JOB_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: update cybersecurity job intelligence\"" --json number --jq 'length')"
-          if [[ "$OPEN_JOB_PRS" -gt 0 ]]; then
-            echo "[PASS] A job-intelligence PR is already open; skipping duplicate PR creation."
-            exit 0
-          fi
-
-          OPEN_JOB_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --search "in:title \"auto: update cybersecurity job intelligence\"" --json number --jq 'length')"
-          if [[ "$OPEN_JOB_PRS" -gt 0 ]]; then
-            echo "[PASS] Job-intelligence PR already open; skipping duplicate."
+          OPEN_AUTOMATED_PRS="$(gh pr list --repo "${{ github.repository }}" --base main --state open --json headRefName --jq '[.[] | select(.headRefName | startswith("auto/career-intelligence-"))] | length')"
+          if [[ "$OPEN_AUTOMATED_PRS" -gt 0 ]]; then
+            echo "[PASS] A Career Intelligence publication PR is already open; skipping duplicate PR creation."
             exit 0
           fi
 
           BRANCH="auto/career-intelligence-$(date -u +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"
-          git commit -S -m 'auto: update cybersecurity job intelligence'
+          git commit -S -m 'auto: update cybersecurity job intelligence and tailored applications'
           git push origin "$BRANCH"
 
           SHA="$(git rev-parse HEAD)"
@@ -90,5 +120,22 @@ jobs:
           gh pr create \
             --base main \
             --head "$BRANCH" \
-            --title 'auto: update cybersecurity job intelligence' \
-            --body 'Automated job-discovery report update. Sources are public job APIs; verify the original employer/ATS posting before applying. Commits are SSH-signed and verified.'
+            --title 'auto: update cybersecurity job intelligence and tailored applications' \
+            --body 'Automated cybersecurity job discovery, evidence-based tailoring and ATS readiness checks. Verify the original employer/ATS posting before applying. No applications are submitted automatically.'
+
+  application-report:
+    name: Weekly Application Tracker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13'
+      - name: Build weekly report
+        run: python scripts/application_report.py
+      - name: Upload application report
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: weekly-application-report
+          path: career/reports/application-weekly.md
+          if-no-files-found: error

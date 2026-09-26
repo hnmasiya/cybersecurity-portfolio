@@ -37,17 +37,49 @@
       "Google Cybersecurity Professional Certificate"
     ]
   },
-  "locations": [
-    "Worldwide",
-    "Remote",
-    "United Kingdom",
-    "Europe",
-    "Canada",
-    "United States",
-    "Australia",
-    "New Zealand",
-    "Africa"
-  ],
+  "regions": {
+    "North America": [
+      "United States",
+      "Canada",
+      "Mexico"
+    ],
+    "Europe": [
+      "United Kingdom",
+      "Ireland",
+      "Germany",
+      "France",
+      "Netherlands",
+      "Belgium",
+      "Spain",
+      "Portugal",
+      "Italy",
+      "Sweden",
+      "Norway",
+      "Denmark",
+      "Finland",
+      "Switzerland",
+      "Austria",
+      "Poland",
+      "Czechia",
+      "Romania"
+    ],
+    "EMEA": [
+      "Africa",
+      "Middle East",
+      "Israel",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "Qatar",
+      "South Africa",
+      "Kenya",
+      "Nigeria",
+      "Zimbabwe"
+    ],
+    "Australasia": [
+      "Australia",
+      "New Zealand"
+    ]
+  },
   "sources": [
     {
       "name": "Arbeitnow Global/Europe",
@@ -63,6 +95,21 @@
       "name": "Remotive",
       "url": "https://remotive.com/api/remote-jobs",
       "type": "remotive"
+    },
+    {
+      "name": "Greenhouse public boards",
+      "url": "https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs?content=true",
+      "type": "greenhouse",
+      "requires_secret": "GREENHOUSE_BOARD_TOKENS"
+    },
+    {
+      "name": "Adzuna",
+      "url": "https://api.adzuna.com/v1/api/jobs/{country}/search/1",
+      "type": "adzuna",
+      "requires_secrets": [
+        "ADZUNA_APP_ID",
+        "ADZUNA_APP_KEY"
+      ]
     }
   ],
   "filters": {
@@ -165,6 +212,11 @@
       "firewall",
       "security engineering"
     ],
-    "max_results": 30
+    "max_results": 50
+  },
+  "application_generation": {
+    "max_jobs": 10,
+    "ats_required_terms": [],
+    "ats_output": "ats-readiness.md"
   }
 }

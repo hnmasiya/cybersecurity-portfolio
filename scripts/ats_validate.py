@@ -1,39 +1,57 @@
 #!/usr/bin/env python3
-"""Evidence-safe ATS readiness validator. No numeric score is produced."""
-import argparse, re, sys
+"""Evidence-safe ATS readiness validator.
+
+This is a deterministic quality gate, not a prediction of employer ATS ranking
+or hiring outcome. It reads only the supplied resume and job posting.
+"""
+import argparse
+import re
 from pathlib import Path
 
-def text(path):
+def text(path: str) -> str:
     return Path(path).read_text(encoding="utf-8", errors="ignore")
 
-def words(s):
-    return set(re.findall(r"[a-z0-9][a-z0-9+#./-]{2,}", s.lower()))
+def words(value: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9][a-z0-9+#./-]{2,}", value.lower()))
 
-def main():
-    p=argparse.ArgumentParser()
-    p.add_argument("--job",required=True)
-    p.add_argument("--resume",required=True)
-    p.add_argument("--required",default="")
-    p.add_argument("--out",default="career/reports/ats-readiness.md")
-    a=p.parse_args()
-    job=text(a.job); resume=text(a.resume)
-    j=words(job); r=words(resume)
-    required=[x.strip().lower() for x in a.required.split(",") if x.strip()]
-    missing=[x for x in required if x not in resume.lower()]
-    checks=[]
-    checks.append(("PDF/text extractability", bool(resume.strip())))
-    checks.append(("Required keywords supplied", not missing))
-    checks.append(("Job-title alignment", any(x in resume.lower() for x in ["cybersecurity","security","soc","information security","security operations"])))
-    checks.append(("Certifications", any(x in resume.lower() for x in ["security+","google cybersecurity","comp tia"])))
-    checks.append(("Unsupported-claim guard", not any(x in resume.lower() for x in ["guaranteed","expert in all","100% success"])))
-    status="PASS" if all(v for _,v in checks) else "NEEDS REVISION"
-    out=Path(a.out); out.parent.mkdir(parents=True,exist_ok=True)
-    lines=["# ATS Readiness",f"Status: **{status}**","","> This is a rule-based readiness check, not a guarantee of ATS acceptance.",""]
-    for name,ok in checks: lines.append(f"- {'PASS' if ok else 'NEEDS REVISION'} — {name}")
-    if missing: lines += ["","Missing supplied required terms: "+", ".join(missing)]
-    out.write_text("\n".join(lines)+"\n",encoding="utf-8")
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--job", required=True)
+    parser.add_argument("--resume", required=True)
+    parser.add_argument("--required", default="")
+    parser.add_argument("--out", required=True)
+    args = parser.parse_args()
+
+    job = text(args.job)
+    resume = text(args.resume)
+    required = [x.strip().lower() for x in args.required.split(",") if x.strip()]
+    missing = [x for x in required if x not in resume.lower()]
+
+    checks = [
+        ("Resume is readable", bool(resume.strip())),
+        ("Required supplied terms are present", not missing),
+        ("Security role alignment", any(x in resume.lower() for x in ("cybersecurity","security","soc","information security","security operations"))),
+        ("Security certification evidence", any(x in resume.lower() for x in ("security+","google cybersecurity","google it support"))),
+        ("Unsupported-claim guard", not any(x in resume.lower() for x in ("guaranteed","expert in all","100% success"))),
+        ("Job posting supplied", bool(words(job))),
+    ]
+    status = "PASS" if all(ok for _, ok in checks) else "NEEDS REVISION"
+
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    lines = [
+        "# ATS Readiness",
+        f"Status: **{status}**",
+        "",
+        "> Deterministic internal quality gate only; this does not guarantee ATS acceptance, ranking or selection.",
+        "",
+    ]
+    lines.extend(f"- {'PASS' if ok else 'NEEDS REVISION'} — {name}" for name, ok in checks)
+    if missing:
+        lines += ["", "Missing required supplied terms:", *[f"- {item}" for item in missing]]
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(status)
-    return 0 if status=="PASS" else 2
+    return 0 if status == "PASS" else 2
 
-if __name__=="__main__":
+if __name__ == "__main__":
     raise SystemExit(main())
