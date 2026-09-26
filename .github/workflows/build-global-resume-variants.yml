@@ -113,7 +113,8 @@ jobs:
             exit 1
           fi
           gh pr checks "$PR_URL" --watch --fail-fast
-          echo "PR created successfully. Manual approval remains required before merge."
+          gh pr merge "$PR_URL" --auto --squash --delete-branch
+          echo "PR created and auto-merge requested. It will merge after required checks/reviews pass."
 
       - name: Publish build artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
