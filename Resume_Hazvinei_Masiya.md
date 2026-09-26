@@ -1,22 +1,22 @@
 <!-- Single cybersecurity-first resume source. Country-aware variants are generated automatically. -->
-<!-- Resume source reviewed with portfolio automation cleanup: 2026-09-26 -->
+<!-- Resume source reviewed with portfolio automation cleanup: 2026-09-27 -->
 
 <style>
-  @page { size: A4; margin: 0.45in 0.55in; }
-  body { font-family: Arial, Helvetica, sans-serif; font-size: 9.1pt; line-height: 1.24; color: #243447; margin: 0; }
-  .header { border-bottom: 2px solid #17365d; padding-bottom: 8px; margin-bottom: 8px; }
-  h1 { font-size: 20pt; line-height: 1; margin: 0 0 4px; text-transform: uppercase; letter-spacing: .6px; color: #17365d; }
-  .subtitle { font-size: 10.5pt; font-weight: bold; color: #2f6690; margin-bottom: 4px; }
-  .contact { font-size: 8.1pt; line-height: 1.35; color: #4b5d70; }
-  .availability { margin-top: 4px; font-size: 8.2pt; font-weight: bold; color: #17365d; }
-  h2 { font-size: 10pt; line-height: 1.1; text-transform: uppercase; color: #17365d; border-bottom: 1px solid #b8c7d9; margin: 8px 0 4px; padding-bottom: 3px; letter-spacing: .8px; }
-  p, ul { margin: 0 0 3px; } ul { padding-left: 16px; } li { margin-bottom: 1.5px; }
-  .job-header { margin-top: 5px; padding-bottom: 1px; font-size: 9.4pt; line-height: 1.25; }
+  @page { size: A4; margin: 0.30in 0.42in; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 8.3pt; line-height: 1.12; color: #243447; margin: 0; }
+  .header { border-bottom: 2px solid #17365d; padding-bottom: 5px; margin-bottom: 5px; }
+  h1 { font-size: 18pt; line-height: 1; margin: 0 0 2px; text-transform: uppercase; letter-spacing: .6px; color: #17365d; }
+  .subtitle { font-size: 9.4pt; font-weight: bold; color: #2f6690; margin-bottom: 4px; }
+  .contact { font-size: 7.4pt; line-height: 1.2; color: #4b5d70; }
+  .availability { margin-top: 2px; font-size: 7.6pt; font-weight: bold; color: #17365d; }
+  h2 { font-size: 9pt; line-height: 1.05; text-transform: uppercase; color: #17365d; border-bottom: 1px solid #b8c7d9; margin: 5px 0 2px; padding-bottom: 3px; letter-spacing: .8px; }
+  p, ul { margin: 0 0 2px; } ul { padding-left: 14px; } li { margin-bottom: 0.5px; }
+  .job-header { margin-top: 3px; padding-bottom: 0; font-size: 7.8pt; line-height: 1.1; }
   .job-title { font-weight: bold; color: #17365d; } .company { color: #40566f; }
-  .date { float: right; font-weight: bold; color: #2f6690; font-size: 8.4pt; }
-  .project-title { font-weight: bold; color: #17365d; font-size: 9.3pt; margin-top: 5px; margin-bottom: 1px; }
+  .date { float: right; font-weight: bold; color: #2f6690; font-size: 7.5pt; }
+  .project-title { font-weight: bold; color: #17365d; font-size: 8.6pt; margin-top: 3px; margin-bottom: 0; }
   code { font-family: Consolas, "Courier New", monospace; font-size: 8.5pt; color: #17365d; }
-  blockquote { margin: 5px 0; padding: 4px 8px; border-left: 3px solid #2f6690; background: #f3f6f9; color: #526579; font-size: 8.2pt; }
+  blockquote { margin: 5px 0; padding: 4px 8px; border-left: 3px solid #2f6690; background: #f3f6f9; color: #526579; font-size: 7.4pt; }
 </style>
 
 <div class="header">
@@ -56,7 +56,7 @@ CompTIA Security+ certified cybersecurity professional with 12+ years of enterpr
 <div class="project-title">PCAP Traffic & Triage Automation</div>
 <ul><li>Processed captured network traffic using Tshark and custom Python parsing scripts to identify suspicious HTTP requests, hosts, protocols, and indicators of compromise.</li><li>Automated triage of web-application scanning and SQL-injection patterns in controlled laboratory traffic.</li></ul>
 
-<div style="page-break-before: always;"></div>
+
 <h2>Professional Experience</h2>
 <div class="job-header"><span class="date">Jan 2025 – Present</span><span class="job-title">Information Technology Support Specialist</span> | <span class="company">Netvantage Partners</span></div>
 <ul><li>Deliver 1st and 2nd line technical support across client environments, resolving hardware, software, Windows endpoint, authentication, and connectivity issues.</li><li>Support Active Directory accounts, user access, secure onboarding, structured patch management, and vulnerability mitigation across client systems.</li><li>Investigate and escalate security-relevant incidents, including malware alerts and unauthorized access attempts, using security-aware triage.</li><li>Develop IT support documentation and incident-handling procedures to standardize response consistency.</li></ul>
