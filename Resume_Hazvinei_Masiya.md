@@ -34,7 +34,7 @@ CompTIA Security+ certified cybersecurity professional with 12+ years of enterpr
 
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
-<li><b>SIEM & Detection Engineering:</b> Wazuh SIEM, Sysmon XML Rules, Custom Alert Pipelines, FIM, MITRE ATT&CK mapping</li>
+<li><b>SIEM & Detection Engineering:</b> Wazuh SIEM, Splunk/SPL, Sysmon XML Rules, Custom Alert Pipelines, FIM, MITRE ATT&CK mapping</li>
 <li><b>DFIR & Threat Hunting:</b> Linux Auth/Syslog Forensics, PCAP Packet Analysis (Tshark/Wireshark), Hash Verification, evidence preservation and investigation workflows</li>
 <li><b>Security Automation & Scripting:</b> Python, Bash, PowerShell, YAML, deterministic validation workflows</li>
 <li><b>Enterprise IT & Systems Security:</b> Windows 10/11, Windows Server, Active Directory, Group Policy, Microsoft 365, RBAC, least privilege, endpoint hardening, patch management, authentication and access control</li>
@@ -47,6 +47,8 @@ CompTIA Security+ certified cybersecurity professional with 12+ years of enterpr
 <ul><li>Captured and validated Sysmon Event ID 10 telemetry from a self-owned Windows Server lab through Wazuh Agent 003 (dc01-lab).</li><li>Correlated process access to <code>lsass.exe</code> with custom Wazuh detection logic, including observed event records and <code>GrantedAccess</code> values.</li><li>Mapped the investigation to MITRE ATT&amp;CK T1003.001 and T1059.001 while distinguishing observed LSASS access from proof of successful credential dumping.</li></ul>
 <div class="project-title">Wazuh SIEM Rules & FIM Lab</div>
 <ul><li>Authored custom XML detection rules for authentication and privilege-related activity and validated rule behavior against controlled test events.</li><li>Configured File Integrity Monitoring across critical Linux system binaries and configuration files and documented validation methodology.</li></ul>
+<div class="project-title">Splunk SOC Lab Track</div>
+<ul><li>Completed a six-lab Splunk SOC track covering SSH authentication hunting, Windows/Sysmon process investigation, web-attack investigation, SPL detection engineering, SOC monitoring/dashboarding, and end-to-end incident investigation.</li><li>Built and validated SPL searches, detection/alert logic, dashboards, synthetic telemetry ingestion, investigation reports, and reproducible evidence; portfolio artifacts distinguish controlled local training from production experience.</li></ul>
 <div class="project-title">Linux Incident Response & DFIR</div>
 <ul><li>Analyzed Linux authentication and system logs to reconstruct post-incident attack timelines.</li><li>Verified SHA-256 evidence integrity and mapped unauthorized SSH activity to MITRE ATT&amp;CK.</li></ul>
 <div class="project-title">Active Directory Security Event Automation</div>
