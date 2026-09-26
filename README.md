@@ -34,7 +34,7 @@ Professional experience, independent authorized labs, coursework and virtual job
 
 | Focus | Entry point |
 |---|---|
-| 🛡️ **SOC Operations** | [Wazuh · Windows/Sysmon · alert triage · investigation](https://masiya-hub.org/soc-analyst.html) |
+| 🛡️ **SOC Operations** | [Wazuh · Splunk · Windows/Sysmon · alert triage · investigation](https://masiya-hub.org/soc-analyst.html) |
 | 🎯 **Detection Engineering** | [Detection logic · validation · MITRE ATT&CK](https://masiya-hub.org/detection-engineering.html) |
 | 🔎 **DFIR / Incident Response** | [Forensics · evidence handling · IOC analysis](https://masiya-hub.org/dfir-incident-response.html) |
 | 🌐 **Network Security** | [Nmap · Wireshark · PCAP · traffic analysis](https://masiya-hub.org/network-security.html) |
@@ -49,7 +49,7 @@ Professional experience, independent authorized labs, coursework and virtual job
 
 | Area | Demonstrated focus | Key technologies |
 |---|---|---|
-| **SOC / SIEM** | Monitoring, alert triage, log analysis, investigation | Wazuh · Windows Security · Sysmon |
+| **SOC / SIEM** | Monitoring, alert triage, log analysis, investigation | Wazuh · Splunk · Windows Security · Sysmon |
 | **Detection Engineering** | Rule development, validation, attack simulation | Wazuh · Sigma · MITRE ATT&CK |
 | **DFIR / IR** | Evidence handling, forensics, IOC extraction | Volatility · AVML · Linux/Windows |
 | **Windows / AD** | Authentication, privilege monitoring, hardening | Windows Server · AD · PowerShell |
@@ -66,6 +66,7 @@ Professional experience, independent authorized labs, coursework and virtual job
 
 ### SOC & Detection
 - **[Wazuh SIEM](SIEM/Wazuh/)** — alert triage, custom rules, file-integrity monitoring and security-event analysis.
+- **[Splunk SOC Lab Track](SIEM/Splunk/)** — six connected labs covering authentication hunting, endpoint/process investigation, web attack investigation, SPL detection engineering, SOC monitoring and end-to-end incident investigation.
 - **[Windows + Sysmon](Endpoint-Security/Windows-Sysmon-Detection-Lab/)** — endpoint telemetry and detection validation.
 - **[Attack Simulation & Detection Engineering](Offensive-Security/Attack-Simulation-Detection-Lab/)** — controlled simulations, custom detections and MITRE ATT&CK mapping.
 
@@ -111,7 +112,7 @@ Major projects aim to document:
 ## 🧰 Core Technology Stack
 
 **SIEM & Detection**  
-Wazuh · Sysmon · Sigma · MITRE ATT&CK
+Wazuh · Splunk · Sysmon · Sigma · MITRE ATT&CK
 
 **DFIR**  
 Volatility · AVML · forensic analysis · IOC extraction · SHA-256 integrity verification
