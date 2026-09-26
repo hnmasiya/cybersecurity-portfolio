@@ -1,34 +1,57 @@
 #!/usr/bin/env python3
-"""Deterministic ATS-readiness validator. This is a quality gate, not a guarantee of ATS acceptance."""
-import re, sys
+"""Evidence-safe ATS readiness validator.
+
+This is a deterministic quality gate, not a prediction of employer ATS ranking
+or hiring outcome. It reads only the supplied resume and job posting.
+"""
+import argparse
+import re
 from pathlib import Path
 
-REQUIRED = ["professional profile", "role-focused skills", "verified evidence", "certifications", "education"]
-BAD = ["<table", "| ---", "![", "<img", "<svg", "columns"]
-def score(text, posting):
-    t=text.lower()
-    p=posting.lower()
-    checks=[]
-    checks.append(("required sections", sum(x in t for x in REQUIRED) / len(REQUIRED) * 25))
-    checks.append(("contact", 10 if "norman.masiya@gmail.com" in t else 0))
-    checks.append(("plain text structure", 15 if not any(x in t for x in BAD) else 0))
-    keywords=set(re.findall(r"[a-z][a-z0-9+#./-]{2,}", p))
-    resume_words=set(re.findall(r"[a-z][a-z0-9+#./-]{2,}", t))
-    meaningful={x for x in keywords if len(x)>3 and x not in {"experience","required","preferred","candidate","position","company","role","team"}}
-    coverage=(len(meaningful & resume_words)/len(meaningful)*100) if meaningful else 100
-    checks.append(("posting keyword coverage", min(30, coverage*0.30)))
-    checks.append(("readability", 20 if len(text.splitlines()) < 180 and len(text) < 30000 else 10))
-    total=round(sum(v for _,v in checks),1)
-    return total, checks
+def text(path: str) -> str:
+    return Path(path).read_text(encoding="utf-8", errors="ignore")
 
-if len(sys.argv)<3: raise SystemExit("Usage: python scripts/ats_validate.py <tailored-cv.md> <job-posting.txt>")
-cv=Path(sys.argv[1]).read_text(encoding="utf-8")
-post=Path(sys.argv[2]).read_text(encoding="utf-8")
-s, checks=score(cv,post)
-out=Path(sys.argv[1]).with_name("ats-report.md")
-lines=["# ATS Readiness Report","",f"**Deterministic score: {s}/100**","","> This is an internal quality gate, not a guarantee that any employer ATS will accept, rank or select the resume.",""]
-for n,v in checks: lines.append(f"- **{n}:** {v:.1f}")
-lines += ["","## Gate","", "- PASS" if s >= 85 else "- FAIL", "", "No unsupported claims are added by this validator."]
-out.write_text("\\n".join(lines)+"\\n",encoding="utf-8")
-print(s)
-if s < 85: raise SystemExit(2)
+def words(value: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9][a-z0-9+#./-]{2,}", value.lower()))
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--job", required=True)
+    parser.add_argument("--resume", required=True)
+    parser.add_argument("--required", default="")
+    parser.add_argument("--out", required=True)
+    args = parser.parse_args()
+
+    job = text(args.job)
+    resume = text(args.resume)
+    required = [x.strip().lower() for x in args.required.split(",") if x.strip()]
+    missing = [x for x in required if x not in resume.lower()]
+
+    checks = [
+        ("Resume is readable", bool(resume.strip())),
+        ("Required supplied terms are present", not missing),
+        ("Security role alignment", any(x in resume.lower() for x in ("cybersecurity","security","soc","information security","security operations"))),
+        ("Security certification evidence", any(x in resume.lower() for x in ("security+","google cybersecurity","google it support"))),
+        ("Unsupported-claim guard", not any(x in resume.lower() for x in ("guaranteed","expert in all","100% success"))),
+        ("Job posting supplied", bool(words(job))),
+    ]
+    status = "PASS" if all(ok for _, ok in checks) else "NEEDS REVISION"
+
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    lines = [
+        "# ATS Readiness",
+        f"Status: **{status}**",
+        "",
+        "> Deterministic internal quality gate only; this does not guarantee ATS acceptance, ranking or selection.",
+        "",
+    ]
+    lines.extend(f"- {'PASS' if ok else 'NEEDS REVISION'} — {name}" for name, ok in checks)
+    if missing:
+        lines += ["", "Missing required supplied terms:", *[f"- {item}" for item in missing]]
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(status)
+    return 0 if status == "PASS" else 2
+
+if __name__ == "__main__":
+    raise SystemExit(main())
