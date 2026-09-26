@@ -619,7 +619,7 @@
             <div class="btn-cta-group">
                 <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" rel="noopener" class="btn-cta btn-primary">Contact on LinkedIn</a>
                 <a href="#work" class="btn-cta btn-outline">Explore Work</a>
-                <a href="resumes.html" class="btn-cta btn-outline" target="_blank" rel="noopener">📄 Resume</a>
+                <a id="resume-download" href="resume-variants/pdf/global.pdf" class="btn-cta btn-outline" download>📄 Resume</a>
                 <a href="https://github.com/hnmasiya" target="_blank" class="btn-cta btn-outline">GitHub</a>
             </div>
 
@@ -1345,5 +1345,43 @@ Caller User: 'bad_actor_admin'</code>
     </script>
 
 
+
+<script>
+/* Select an existing published two-page resume variant without leaving the homepage. */
+(async()=>{
+  const link=document.getElementById("resume-download");
+  if(!link) return;
+  const countryToVariant={
+    CA:"canada",US:"united-states",GB:"uk",
+    AU:"australia-new-zealand",NZ:"australia-new-zealand",
+    DE:"europe",FR:"europe",NL:"europe",IE:"europe",CH:"europe",
+    AE:"middle-east",QA:"middle-east",SA:"middle-east",
+    ZA:"africa",ZW:"africa",NG:"africa",KE:"africa",
+    IN:"asia-pacific",SG:"asia-pacific",JP:"asia-pacific",KR:"asia-pacific",
+    BR:"global",MX:"united-states"
+  };
+  const regionCountries={
+    europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
+    africa:new Set("DZ AO BW CM EG ET GH KE MW MZ NA RW SN TZ UG ZM ZW ZA NG".split(" ")),
+    middleEast:new Set("BH IL JO KW LB OM QA SA AE".split(" ")),
+    asiaPacific:new Set("BD CN HK ID JP KH KR LK MY MM NP PH PK SG TH TW VN AU NZ".split(" "))
+  };
+  function variantFor(code){
+    if(countryToVariant[code]) return countryToVariant[code];
+    if(regionCountries.europe.has(code)) return "europe";
+    if(regionCountries.africa.has(code)) return "africa";
+    if(regionCountries.middleEast.has(code)) return "middle-east";
+    if(regionCountries.asiaPacific.has(code)) return "asia-pacific";
+    return "global";
+  }
+  try{
+    const response=await fetch("https://ipapi.co/country/",{cache:"no-store"});
+    const code=(await response.text()).trim().toUpperCase();
+    link.href=`resume-variants/pdf/${variantFor(code)}.pdf`;
+  }catch(_){
+    link.href="resume-variants/pdf/global.pdf";
+  }
+})();
+</script>
 </body>
 </html>

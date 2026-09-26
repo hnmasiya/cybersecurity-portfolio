@@ -16,16 +16,19 @@
 <section class="card">
 <h2>Resume</h2>
 <div class="download">
-<a id="download" class="btn" href="resume-variants/pdf/international-resume.pdf" target="_blank" rel="noopener">📄 View / Download Resume</a>
+<a id="download" class="btn" href="resume-variants/pdf/global.pdf" target="_blank" rel="noopener">📄 View / Download Resume</a>
 </div>
 </section>
 </main>
 <script>
 const countryToVariant={
-CA:"canada",US:"united-states",GB:"uk",DE:"germany",FR:"france",NL:"netherlands",IE:"ireland",CH:"switzerland",
-AU:"australia-new-zealand",NZ:"australia-new-zealand",AE:"middle-east",QA:"middle-east",SA:"middle-east",
-ZA:"africa",ZW:"africa",NG:"africa",KE:"africa",IN:"asia-pacific",SG:"asia-pacific",
-JP:"asia-pacific",KR:"asia-pacific",BR:"global",MX:"united-states"
+CA:"canada",US:"united-states",GB:"uk",
+AU:"australia-new-zealand",NZ:"australia-new-zealand",
+DE:"europe",FR:"europe",NL:"europe",IE:"europe",CH:"europe",
+AE:"middle-east",QA:"middle-east",SA:"middle-east",
+ZA:"africa",ZW:"africa",NG:"africa",KE:"africa",
+IN:"asia-pacific",SG:"asia-pacific",JP:"asia-pacific",KR:"asia-pacific",
+BR:"global",MX:"united-states"
 };
 const regionCountries={
 europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
@@ -34,11 +37,11 @@ middleEast:new Set("BH IL JO KW LB OM QA SA AE".split(" ")),
 asiaPacific:new Set("BD CN HK ID JP KH KR LK MY MM NP PH PK SG TH TW VN AU NZ".split(" "))
 };
 function fallbackVariant(code){
- if(regionCountries.europe.has(code)) return "european-cv";
- if(regionCountries.africa.has(code)) return "african-cv";
- if(regionCountries.middleEast.has(code)) return "middle-east-resume";
- if(regionCountries.asiaPacific.has(code)) return "asia-pacific-resume";
- return "international-resume";
+ if(regionCountries.europe.has(code)) return "europe";
+ if(regionCountries.africa.has(code)) return "africa";
+ if(regionCountries.middleEast.has(code)) return "middle-east";
+ if(regionCountries.asiaPacific.has(code)) return "asia-pacific";
+ return "global";
 }
 function setResume(code){
  const slug=countryToVariant[code]||fallbackVariant(code);
