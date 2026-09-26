@@ -1,5 +1,5 @@
-<!-- Single cybersecurity-first resume source. Global master template for country-specific variants. -->
-<!-- Resume source reviewed with portfolio automation cleanup: 2026-09-24 -->
+<!-- Single cybersecurity-first resume source. Country-aware variants are generated automatically. -->
+<!-- Resume source reviewed with portfolio automation cleanup: 2026-09-26 -->
 
 <style>
   @page { size: A4; margin: 0.45in 0.55in; }
@@ -17,7 +17,6 @@
   .project-title { font-weight: bold; color: #17365d; font-size: 9.3pt; margin-top: 5px; margin-bottom: 1px; }
   code { font-family: Consolas, "Courier New", monospace; font-size: 8.5pt; color: #17365d; }
   blockquote { margin: 5px 0; padding: 4px 8px; border-left: 3px solid #2f6690; background: #f3f6f9; color: #526579; font-size: 8.2pt; }
-  .variant { display: inline-block; border: 1px solid #b8c7d9; padding: 3px 6px; margin: 2px 3px 0 0; font-size: 7.8pt; color: #40566f; }
 </style>
 
 <div class="header">
@@ -27,16 +26,12 @@
     Harare, Zimbabwe &nbsp;|&nbsp; norman.masiya@gmail.com &nbsp;|&nbsp; +263 77 521 6823 / +263 71 866 2162<br>
     <b>GitHub:</b> https://github.com/hnmasiya &nbsp;|&nbsp; <b>Portfolio:</b> https://masiya-hub.org &nbsp;|&nbsp; <b>LinkedIn:</b> https://www.linkedin.com/in/hazvinei-masiya/
   </div>
-  <div class="availability">Global opportunities: Remote · Hybrid · On-site · Relocation</div>
+  <div class="availability">Remote · Hybrid · On-site · Relocation</div>
 </div>
 
 <h2>Professional Summary</h2>
 CompTIA Security+ certified cybersecurity professional with 12+ years of enterprise IT experience spanning infrastructure, systems administration, network engineering, access control, endpoint security, and security-conscious technical operations. Hands-on cybersecurity work includes SIEM detection engineering, threat hunting, incident investigation, DFIR, Windows/Sysmon telemetry, network traffic analysis, and security automation using Wazuh, Sysmon, Python, Bash, and PowerShell. Employment experience and independent security-lab work are clearly distinguished.
 
-<h2>Global Application Profile</h2>
-<div>
-  <span class="variant">Global / International</span><span class="variant">Africa</span><span class="variant">UK / Europe</span><span class="variant">North America</span><span class="variant">Canada</span><span class="variant">Australia / New Zealand</span><span class="variant">Middle East</span><span class="variant">Asia-Pacific</span>
-</div>
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
 <li><b>SIEM & Detection Engineering:</b> Wazuh SIEM, Sysmon XML Rules, Custom Alert Pipelines, FIM, MITRE ATT&CK mapping</li>
