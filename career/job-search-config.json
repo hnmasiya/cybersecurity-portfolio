@@ -216,12 +216,7 @@
   },
   "application_generation": {
     "max_jobs": 10,
-    "ats_required_terms": [
-      "cybersecurity",
-      "security",
-      "soc",
-      "security operations"
-    ],
+    "ats_required_terms": [],
     "ats_output": "ats-readiness.md"
   }
 }
