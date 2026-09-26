@@ -1,0 +1,15 @@
+{
+  "track": "Microsoft Defender XDR + Microsoft Sentinel",
+  "script_version": "1.0.0",
+  "status": "PREPARATION",
+  "evidence_policy": "Only genuinely executed cloud activity may be marked EXECUTED.",
+  "labs": [
+    {"lab":"01","name":"Sentinel Foundations","status":"PREPARATION"},
+    {"lab":"02","name":"KQL Threat Hunting","status":"PREPARATION"},
+    {"lab":"03","name":"Detection Engineering","status":"PREPARATION"},
+    {"lab":"04","name":"Incident Investigation","status":"PREPARATION"},
+    {"lab":"05","name":"Defender XDR Advanced Hunting","status":"PREPARATION"},
+    {"lab":"06","name":"Response Automation","status":"PREPARATION"},
+    {"lab":"07","name":"End-to-End SOC Case","status":"PREPARATION"}
+  ]
+}
