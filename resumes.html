@@ -22,10 +22,10 @@
 </main>
 <script>
 const countryToVariant={
-CA:"canadian-resume",US:"us-resume",GB:"uk-cv",DE:"german-cv",FR:"french-cv",NL:"dutch-cv",IE:"irish-cv",CH:"swiss-cv",
-AU:"australian-resume",NZ:"new-zealand-resume",AE:"uae-resume",QA:"qatar-resume",SA:"saudi-arabia-resume",
-ZA:"south-african-cv",ZW:"zimbabwe-cv",NG:"nigerian-cv",KE:"kenyan-cv",IN:"indian-resume",SG:"singapore-resume",
-JP:"japan-resume",KR:"south-korea-resume",BR:"brazil-resume",MX:"mexico-resume"
+CA:"canada",US:"united-states",GB:"uk",DE:"germany",FR:"france",NL:"netherlands",IE:"ireland",CH:"switzerland",
+AU:"australia-new-zealand",NZ:"australia-new-zealand",AE:"middle-east",QA:"middle-east",SA:"middle-east",
+ZA:"africa",ZW:"africa",NG:"africa",KE:"africa",IN:"asia-pacific",SG:"asia-pacific",
+JP:"asia-pacific",KR:"asia-pacific",BR:"global",MX:"united-states"
 };
 const regionCountries={
 europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
@@ -43,7 +43,7 @@ function fallbackVariant(code){
 function setResume(code){
  const slug=countryToVariant[code]||fallbackVariant(code);
  document.getElementById("download").href="resume-variants/pdf/"+slug+".pdf";
- document.getElementById("status").textContent="Resume prepared automatically.";
+ 
 }
 fetch("https://ipapi.co/country/",{cache:"no-store"})
  .then(r=>r.ok?r.text():Promise.reject(new Error("country lookup failed")))
