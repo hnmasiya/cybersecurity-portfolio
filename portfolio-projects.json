@@ -1,41 +1,27 @@
 {
-  "generated_at": "2026-09-20T10:20:43.878989+00:00",
+  "generated_at": "2026-09-24T10:07:30.045110+00:00",
   "source": "https://github.com/hnmasiya",
-  "scope": "public, non-fork, non-archived repositories owned by hnmasiya",
+  "scope": "public, non-fork, non-archived security-related repositories owned by hnmasiya",
   "projects": [
     {
       "name": "mastercard-cybersecurity-job-simulation",
-      "description": "Mastercard Cybersecurity Job Simulation — Forage Completed: September 20, 2026 This repository documents my completion of the Mastercard Cybersecurity Job Simulation on Forage. The simulation placed me in a Security Awareness Team scenar...",
+      "description": "Mastercard Cybersecurity Job Simulation — Forage Completed: September 20, 2026 - Format: Forage virtual job simulation - Focus: security awareness, phishing analysis, simulation design and training - Scenario: Security Awareness Team - Skills: phishing anal...",
       "url": "https://github.com/hnmasiya/mastercard-cybersecurity-job-simulation",
-      "updated_at": "2026-09-20T10:09:43Z",
+      "updated_at": "2026-09-23T11:39:08Z",
       "topics": []
     },
     {
       "name": "Datacom-Cyber-Security-Operations-Job-Simulation",
-      "description": "Datacom Cyber Security Operations Job Simulation — Forage Completed: September 20, 2026 This repository documents my completed Datacom Cyber Security Operations Job Simulation on the Forage platform. The simulation provided practical, sc...",
+      "description": "Datacom Cyber Security Operations Job Simulation — Forage Completed: September 20, 2026 - Format: Forage virtual job simulation - Focus: cyberattack investigation, risk assessment, security analysis and recommendations - Scenario work: simulated ransomware...",
       "url": "https://github.com/hnmasiya/Datacom-Cyber-Security-Operations-Job-Simulation",
-      "updated_at": "2026-09-20T10:07:03Z",
+      "updated_at": "2026-09-23T11:39:05Z",
       "topics": []
-    },
-    {
-      "name": "ad-security-log-parser",
-      "description": "Python security tooling for Windows Security Event Log analysis and privileged group-change detection",
-      "url": "https://github.com/hnmasiya/ad-security-log-parser",
-      "updated_at": "2026-08-30T12:19:37Z",
-      "topics": [
-        "active-directory",
-        "blue-team",
-        "cybersecurity",
-        "log-analysis",
-        "python",
-        "security-operations"
-      ]
     },
     {
       "name": "gcp-terraform-secure-vpc",
       "description": "Terraform-based cloud security architecture with strict IAM policies and firewall rules",
       "url": "https://github.com/hnmasiya/gcp-terraform-secure-vpc",
-      "updated_at": "2026-08-30T12:19:35Z",
+      "updated_at": "2026-09-23T11:39:03Z",
       "topics": [
         "cloud-security",
         "gcp",
@@ -46,10 +32,24 @@
       ]
     },
     {
+      "name": "ad-security-log-parser",
+      "description": "Python security tooling for Windows Security Event Log analysis and privileged group-change detection",
+      "url": "https://github.com/hnmasiya/ad-security-log-parser",
+      "updated_at": "2026-09-23T11:39:00Z",
+      "topics": [
+        "active-directory",
+        "blue-team",
+        "cybersecurity",
+        "log-analysis",
+        "python",
+        "security-operations"
+      ]
+    },
+    {
       "name": "wazuh-siem-detection-lab",
       "description": "Custom Wazuh SIEM detection rules mapped to MITRE ATT&CK framework and log analysis",
       "url": "https://github.com/hnmasiya/wazuh-siem-detection-lab",
-      "updated_at": "2026-08-30T12:19:20Z",
+      "updated_at": "2026-09-23T11:38:56Z",
       "topics": [
         "detection-engineering",
         "mitre-attack",

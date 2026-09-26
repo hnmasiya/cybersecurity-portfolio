@@ -1,0 +1,77 @@
+2026-09-24T04:34:55.212+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T04:35:41.637+0000	000	wazuh.manager	19015	3	CIS Benchmark for Amazon Linux 2023 Benchmark v1.0.0.: Ensure sudo is installed.: Status changed from 'not applicable' to passed	sca	sca
+2026-09-24T04:37:39.031+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T04:43:21.950+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T04:46:22.456+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T05:13:19.353+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T05:46:19.600+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:13:19.352+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:15:01.288+0000	002	normann-ThinkPad-X260	92604	6	Processes running for all users were queried with ps command.	auditd	/var/log/audit/audit.log
+2026-09-24T06:15:01.465+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:15:01.467+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:15:01.467+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:15:17.340+0000	002	normann-ThinkPad-X260	92604	6	Processes running for all users were queried with ps command.	auditd	/var/log/audit/audit.log
+2026-09-24T06:15:37.493+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:15:37.494+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:15:37.495+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:19:33.719+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:19:33.721+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:19:33.722+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:19:45.733+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:19:45.735+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:19:45.737+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:20:53.812+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:20:53.813+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:20:55.815+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:21:13.842+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:21:13.843+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:21:13.851+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:21:23.847+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:21:23.850+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:21:23.851+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:21:39.867+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:21:39.868+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:21:39.870+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:21:51.888+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:21:51.890+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:21:51.892+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:24:12.031+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:24:12.035+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:24:12.035+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:24:22.047+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:24:22.049+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:24:22.050+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:29:30.527+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:29:30.527+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:29:40.338+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:35:22.716+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:35:22.718+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:35:26.820+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:35:26.820+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:35:26.820+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:35:42.745+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:40:57.077+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:40:57.081+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:41:01.088+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:41:01.088+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:41:01.088+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:41:33.108+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:46:19.423+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:47:07.465+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:47:07.466+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:47:09.509+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:47:09.509+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:47:09.510+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:47:43.506+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:50:49.666+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:50:49.667+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:50:51.666+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T07:13:19.035+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T07:26:45.713+0000	002	normann-ThinkPad-X260	92604	6	Processes running for all users were queried with ps command.	auditd	/var/log/audit/audit.log
+2026-09-24T07:46:18.872+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T08:08:14.484+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T08:09:56.431+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T08:14:18.747+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T08:14:22.753+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T08:14:22.754+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T08:14:22.755+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald

@@ -1,0 +1,60 @@
+type=PROCTITLE msg=audit(1790232429.661:120660): proctitle=6175736561726368002D747300726563656E74002D6D004558454356452C50524F435449544C452C53595343414C4C
+type=PATH msg=audit(1790232429.661:120660): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1790232429.661:120660): item=0 name="/usr/sbin/ausearch" inode=19537727 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.661:120660): cwd="/home/normann/cybersecurity-portfolio"
+type=EXECVE msg=audit(1790232429.661:120660): argc=5 a0="ausearch" a1="-ts" a2="recent" a3="-m" a4="EXECVE,PROCTITLE,SYSCALL"
+type=SYSCALL msg=audit(1790232429.661:120660): arch=c000003e syscall=59 success=yes exit=0 a0=597a9bdda5e0 a1=597a9bdccda0 a2=597a9bdcbe30 a3=597a9bdd7820 items=2 ppid=57794 pid=58009 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=2 comm="ausearch" exe="/usr/sbin/ausearch" subj=unconfined key="exec_cmd"
+----
+time->Thu Sep 24 08:47:09 2026
+type=PROCTITLE msg=audit(1790232429.662:120661): proctitle=746565002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F65766964656E63652F7068617365312D77617A75682D6D616E616765722D616C6572742D76616C69646174696F6E2D32303236303932342D3038343730372F61756469742D657865637574696F6E2D6576656E74732E
+type=PATH msg=audit(1790232429.662:120661): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1790232429.662:120661): item=0 name="/usr/bin/tee" inode=19541950 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.662:120661): cwd="/home/normann/cybersecurity-portfolio"
+type=EXECVE msg=audit(1790232429.662:120661): argc=2 a0="tee" a1="/home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-manager-alert-validation-20260924-084707/audit-execution-events.txt"
+type=SYSCALL msg=audit(1790232429.662:120661): arch=c000003e syscall=59 success=yes exit=0 a0=597a9bdd7b60 a1=597a9bdd7820 a2=597a9bdcbe30 a3=8 items=2 ppid=57794 pid=58011 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=2 comm="tee" exe="/usr/bin/tee" subj=unconfined key="exec_cmd"
+----
+time->Thu Sep 24 08:47:09 2026
+type=PROCTITLE msg=audit(1790232429.662:120662): proctitle=7461696C002D6E003630
+type=PATH msg=audit(1790232429.662:120662): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1790232429.662:120662): item=0 name="/usr/bin/tail" inode=19541949 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.662:120662): cwd="/home/normann/cybersecurity-portfolio"
+type=EXECVE msg=audit(1790232429.662:120662): argc=3 a0="tail" a1="-n" a2="60"
+type=SYSCALL msg=audit(1790232429.662:120662): arch=c000003e syscall=59 success=yes exit=0 a0=597a9bdd7b20 a1=597a9bdd69a0 a2=597a9bdcbe30 a3=8 items=2 ppid=57794 pid=58010 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=2 comm="tail" exe="/usr/bin/tail" subj=unconfined key="exec_cmd"
+----
+time->Thu Sep 24 08:47:09 2026
+type=PROCTITLE msg=audit(1790232429.931:120663): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=PATH msg=audit(1790232429.931:120663): item=0 name="/command/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.931:120663): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=SYSCALL msg=audit(1790232429.931:120663): arch=c000003e syscall=59 success=no exit=-2 a0=75de5ec65a30 a1=75de5e6a6f10 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=58012 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"
+----
+time->Thu Sep 24 08:47:09 2026
+type=PROCTITLE msg=audit(1790232429.931:120664): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=PATH msg=audit(1790232429.931:120664): item=0 name="/lsiopy/bin/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.931:120664): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=SYSCALL msg=audit(1790232429.931:120664): arch=c000003e syscall=59 success=no exit=-2 a0=75de5e6a6a50 a1=75de5e6a6f10 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=58012 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"
+----
+time->Thu Sep 24 08:47:09 2026
+type=PROCTITLE msg=audit(1790232429.931:120665): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=PATH msg=audit(1790232429.931:120665): item=0 name="/usr/local/sbin/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.931:120665): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=SYSCALL msg=audit(1790232429.931:120665): arch=c000003e syscall=59 success=no exit=-2 a0=75de5e6a6cb0 a1=75de5e6a6f10 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=58012 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"
+----
+time->Thu Sep 24 08:47:09 2026
+type=PROCTITLE msg=audit(1790232429.931:120666): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=PATH msg=audit(1790232429.931:120666): item=0 name="/usr/local/bin/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.931:120666): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=SYSCALL msg=audit(1790232429.931:120666): arch=c000003e syscall=59 success=no exit=-2 a0=75de5e6a6f30 a1=75de5e6a6f10 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=58012 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"
+----
+time->Thu Sep 24 08:47:09 2026
+type=PROCTITLE msg=audit(1790232429.931:120667): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=PATH msg=audit(1790232429.931:120667): item=0 name="/usr/sbin/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.931:120667): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=SYSCALL msg=audit(1790232429.931:120667): arch=c000003e syscall=59 success=no exit=-2 a0=75de5e6a6c90 a1=75de5e6a6f10 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=58012 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"
+----
+time->Thu Sep 24 08:47:09 2026
+type=PROCTITLE msg=audit(1790232429.931:120668): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=PATH msg=audit(1790232429.931:120668): item=1 name="/lib/ld-musl-x86_64.so.1" inode=1990166 dev=00:4f mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(1790232429.931:120668): item=0 name="/usr/bin/wl-paste" inode=2001855 dev=00:4f mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1790232429.931:120668): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=EXECVE msg=audit(1790232429.931:120668): argc=2 a0="wl-paste" a1="--list-types"
+type=SYSCALL msg=audit(1790232429.931:120668): arch=c000003e syscall=59 success=yes exit=0 a0=75de5e6a6cf0 a1=75de5e6a6f10 a2=75de5e6ac030 a3=0 items=2 ppid=4387 pid=58012 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="wl-paste" exe="/usr/bin/wl-paste" subj=docker-default key="exec_cmd"

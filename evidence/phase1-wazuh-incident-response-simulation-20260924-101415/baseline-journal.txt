@@ -1,0 +1,100 @@
+Sep 24 10:09:01 normann-ThinkPad-X260 CRON[82294]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+Sep 24 10:09:01 normann-ThinkPad-X260 CRON[82293]: pam_unix(cron:session): session closed for user root
+Sep 24 10:09:02 normann-ThinkPad-X260 systemd[1]: Starting phpsessionclean.service - Clean php session files...
+Sep 24 10:09:03 normann-ThinkPad-X260 systemd[1]: phpsessionclean.service: Deactivated successfully.
+Sep 24 10:09:03 normann-ThinkPad-X260 systemd[1]: Finished phpsessionclean.service - Clean php session files.
+Sep 24 10:09:10 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=146098 PROTO=UDP SPT=50357 DPT=10001 LEN=181 
+Sep 24 10:09:21 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=01:00:5e:00:00:01:cc:2d:21:a2:69:40:08:00 SRC=192.168.2.238 DST=224.0.0.1 LEN=28 TOS=0x00 PREC=0x00 TTL=1 ID=0 DF PROTO=2 
+Sep 24 10:09:30 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=31039 PROTO=UDP SPT=54526 DPT=10001 LEN=181 
+Sep 24 10:09:45 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=290 TOS=0x00 PREC=0x00 TTL=64 ID=212 DF PROTO=UDP SPT=37445 DPT=5514 LEN=270 
+Sep 24 10:09:49 normann-ThinkPad-X260 auditd[626]: Audit daemon rotating log files
+Sep 24 10:09:54 normann-ThinkPad-X260 sudo[82701]:  normann : a password is required ; TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 10:09:55 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=1026147 PROTO=UDP SPT=45789 DPT=10001 LEN=181 
+Sep 24 10:09:58 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=38618 PROTO=TCP SPT=57336 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 10:10:02 normann-ThinkPad-X260 systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+Sep 24 10:10:02 normann-ThinkPad-X260 systemd[1]: sysstat-collect.service: Deactivated successfully.
+Sep 24 10:10:02 normann-ThinkPad-X260 systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+Sep 24 10:10:05 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=968350 PROTO=UDP SPT=33962 DPT=10001 LEN=181 
+Sep 24 10:10:21 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=01:00:5e:00:00:01:cc:2d:21:a2:69:40:08:00 SRC=192.168.2.238 DST=224.0.0.1 LEN=28 TOS=0x00 PREC=0x00 TTL=1 ID=0 DF PROTO=2 
+Sep 24 10:10:25 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=858162 PROTO=UDP SPT=50144 DPT=10001 LEN=181 
+Sep 24 10:10:40 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=290 TOS=0x00 PREC=0x00 TTL=64 ID=2020 DF PROTO=UDP SPT=37445 DPT=5514 LEN=270 
+Sep 24 10:10:50 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=266684 PROTO=UDP SPT=49210 DPT=10001 LEN=181 
+Sep 24 10:10:57 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:53568 => 146.190.225.48:80); no associated peer node
+Sep 24 10:10:57 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=41395 PROTO=TCP SPT=57338 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 10:11:02 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:53568 => 146.190.225.48:80); no associated peer node
+Sep 24 10:11:06 normann-ThinkPad-X260 kernel: workqueue: delayed_fput hogged CPU for >10000us 131 times, consider switching to WQ_UNBOUND
+Sep 24 10:11:08 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:53568 => 146.190.225.48:80); no associated peer node
+Sep 24 10:11:10 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=406272 PROTO=UDP SPT=44212 DPT=10001 LEN=181 
+Sep 24 10:11:16 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:53568 => 146.190.225.48:80); no associated peer node
+Sep 24 10:11:20 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=2897 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 
+Sep 24 10:11:30 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=932040 PROTO=UDP SPT=34297 DPT=10001 LEN=181 
+Sep 24 10:11:45 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=899681 PROTO=UDP SPT=41775 DPT=10001 LEN=181 
+Sep 24 10:11:45 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=44093 PROTO=TCP SPT=57340 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 10:12:00 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=44572 PROTO=TCP SPT=57340 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 10:12:06 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=939743 PROTO=UDP SPT=43774 DPT=10001 LEN=181 
+Sep 24 10:12:22 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=01:00:5e:00:00:01:cc:2d:21:a2:69:40:08:00 SRC=192.168.2.238 DST=224.0.0.1 LEN=28 TOS=0x00 PREC=0x00 TTL=1 ID=0 DF PROTO=2 
+Sep 24 10:12:26 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=710668 PROTO=UDP SPT=52253 DPT=10001 LEN=181 
+Sep 24 10:12:41 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=44621 PROTO=TCP SPT=57342 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 10:13:10 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=290 TOS=0x00 PREC=0x00 TTL=64 ID=7779 DF PROTO=UDP SPT=37445 DPT=5514 LEN=270 
+Sep 24 10:13:16 normann-ThinkPad-X260 systemd[1]: Starting zorin-repository-health.service - Check Zorin OS repository health...
+Sep 24 10:13:16 normann-ThinkPad-X260 zorin-repository-health[83929]: ===== Repository health: 2026-09-24T10:13:16+02:00 =====
+Sep 24 10:13:16 normann-ThinkPad-X260 zorin-repository-health[83929]: OS: Zorin OS 18.1
+Sep 24 10:13:16 normann-ThinkPad-X260 zorin-repository-health[83929]: --- APT update ---
+Sep 24 10:13:17 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:1 https://packages.wazuh.com/4.x/apt stable InRelease
+Sep 24 10:13:17 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:2 https://brave-browser-apt-release.s3.brave.com stable InRelease
+Sep 24 10:13:17 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:3 http://archive.ubuntu.com/ubuntu noble InRelease
+Sep 24 10:13:17 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+Sep 24 10:13:17 normann-ThinkPad-X260 zorin-repository-health[83929]: Get:5 https://pkgs.tailscale.com/stable/ubuntu noble InRelease
+Sep 24 10:13:17 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Sep 24 10:13:17 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Sep 24 10:13:17 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:8 https://ppa.launchpadcontent.net/zorinos/apps/ubuntu noble InRelease
+Sep 24 10:13:18 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:9 https://ppa.launchpadcontent.net/zorinos/drivers/ubuntu noble InRelease
+Sep 24 10:13:18 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:10 https://packages.zorinos.com/stable noble InRelease
+Sep 24 10:13:18 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:11 https://ppa.launchpadcontent.net/zorinos/patches/ubuntu noble InRelease
+Sep 24 10:13:18 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:12 https://ppa.launchpadcontent.net/zorinos/stable/ubuntu noble InRelease
+Sep 24 10:13:18 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:13 https://packages.mozilla.org/apt mozilla InRelease
+Sep 24 10:13:18 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:14 https://packages.zorinos.com/patches noble InRelease
+Sep 24 10:13:19 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:15 https://packages.zorinos.com/apps noble InRelease
+Sep 24 10:13:19 normann-ThinkPad-X260 zorin-repository-health[83929]: Hit:16 https://packages.zorinos.com/drivers noble InRelease
+Sep 24 10:13:21 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=248494 PROTO=UDP SPT=39309 DPT=10001 LEN=181 
+Sep 24 10:13:22 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=01:00:5e:00:00:01:cc:2d:21:a2:69:40:08:00 SRC=192.168.2.238 DST=224.0.0.1 LEN=28 TOS=0x00 PREC=0x00 TTL=1 ID=0 DF PROTO=2 
+Sep 24 10:13:22 normann-ThinkPad-X260 systemd[4752]: Started vte-spawn-6b6e15a4-b39c-4dc5-bdf7-84ac141fc1b2.scope - VTE child process 84608 launched by gnome-terminal-server process 9229.
+Sep 24 10:13:23 normann-ThinkPad-X260 dbus-daemon[850]: [system] Activating via systemd: service name='org.freedesktop.PackageKit' unit='packagekit.service' requested by ':1.248' (uid=0 pid=84795 comm="/usr/bin/gdbus call --system --dest org.freedeskto" label="unconfined")
+Sep 24 10:13:23 normann-ThinkPad-X260 systemd[1]: Starting packagekit.service - PackageKit Daemon...
+Sep 24 10:13:23 normann-ThinkPad-X260 PackageKit[84799]: daemon start
+Sep 24 10:13:23 normann-ThinkPad-X260 dbus-daemon[850]: [system] Successfully activated service 'org.freedesktop.PackageKit'
+Sep 24 10:13:23 normann-ThinkPad-X260 systemd[1]: Started packagekit.service - PackageKit Daemon.
+Sep 24 10:13:23 normann-ThinkPad-X260 zorin-repository-health[83929]: Fetched 6,649 B in 7s (979 B/s)
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: Reading package lists...
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: --- Held packages ---
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: --- Broken packages ---
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: dpkg audit clean.
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: --- Pending reboot ---
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: No reboot currently required.
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: --- Repository sources ---
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://archive.ubuntu.com/ubuntu/ noble main restricted
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://archive.ubuntu.com/ubuntu/ noble-updates main restricted
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://archive.ubuntu.com/ubuntu/ noble universe
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://archive.ubuntu.com/ubuntu/ noble-updates universe
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://archive.ubuntu.com/ubuntu/ noble multiverse
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://archive.ubuntu.com/ubuntu/ noble-updates multiverse
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://archive.ubuntu.com/ubuntu/ noble-backports main restricted universe multiverse
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://security.ubuntu.com/ubuntu noble-security main restricted
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://security.ubuntu.com/ubuntu noble-security universe
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb http://security.ubuntu.com/ubuntu noble-security multiverse
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb [signed-by=/usr/share/keyrings/tailscale-archive-keyring.gpg] https://pkgs.tailscale.com/stable/ubuntu noble main
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb https://packages.zorinos.com/stable noble main
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb https://packages.zorinos.com/patches noble main
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb https://packages.zorinos.com/apps noble main
+Sep 24 10:13:29 normann-ThinkPad-X260 zorin-repository-health[83929]: deb https://packages.zorinos.com/drivers noble main restricted
+Sep 24 10:13:29 normann-ThinkPad-X260 systemd[1]: zorin-repository-health.service: Deactivated successfully.
+Sep 24 10:13:29 normann-ThinkPad-X260 systemd[1]: Finished zorin-repository-health.service - Check Zorin OS repository health.
+Sep 24 10:13:29 normann-ThinkPad-X260 systemd[1]: zorin-repository-health.service: Consumed 13.280s CPU time.
+Sep 24 10:13:36 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=650542 PROTO=UDP SPT=46950 DPT=10001 LEN=181 
+Sep 24 10:13:37 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=49201 PROTO=TCP SPT=57344 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 10:13:46 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=61069 PROTO=UDP SPT=52420 DPT=10001 LEN=181 
+Sep 24 10:13:56 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=34804 PROTO=UDP SPT=33824 DPT=10001 LEN=181 
+Sep 24 10:14:06 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=99975 PROTO=UDP SPT=40988 DPT=10001 LEN=181 
+Sep 24 10:14:06 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=8980 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 

@@ -12,6 +12,14 @@ title: "Enterprise Cybersecurity & SOC Operations Portfolio"
 
 ---
 
+## 🎯 Recruiter Quick Start
+
+If you are reviewing this portfolio for a cybersecurity role, start with the **[SOC Analyst Evidence Map](./SOC-ANALYST-EVIDENCE-MAP.md)**. It maps common hiring signals to the specific labs, reports, scripts and retained evidence that demonstrate them.
+
+**Fast path:** [SOC Evidence Map](./SOC-ANALYST-EVIDENCE-MAP.md) → [Flagship SOC Investigation](./SOC/Flagship-Investigation/) → [Wazuh Detection Engineering](./SIEM/Wazuh/Detection-Engineering-Lab/) → [Azure Windows/AD Lab](./Cloud-Security/Azure-Windows-Server-Lab/) → [Network Security](./Network-Security/) → [Security Automation](./Security-Automation/)
+
+**Evidence standard:** live observations, controlled laboratory validation, synthetic/offline testing and architecture/methodology are explicitly separated. Portfolio work is not represented as production incident experience unless the evidence supports that claim.
+
 ## 👤 About Me
 
 I am a **CompTIA Security+ certified enterprise IT professional with 12+ years of experience** (since March 2014), deliberately transitioning that foundation into cybersecurity. My paid professional experience is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated in this portfolio come from independent, authorized hands-on labs, technical projects, and coursework across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.

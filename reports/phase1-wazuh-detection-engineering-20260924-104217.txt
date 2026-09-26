@@ -1,0 +1,170 @@
+
+================================================================
+1. ENVIRONMENT VALIDATION
+================================================================
+[PASS] Git repository detected: /home/normann/cybersecurity-portfolio
+[PASS] Docker is available and accessible
+[PASS] Wazuh manager detected: single-node-wazuh.manager-1
+
+================================================================
+2. DETECTION DESIGN
+================================================================
+LAB 5 — WAZUH DETECTION ENGINEERING
+
+Detection name:
+lab5-detection-engineering
+
+Rule ID:
+100500
+
+Detection condition:
+The Wazuh manager detects the exact controlled marker:
+LAB5-DETECTION-ENGINEERING
+
+Detection severity:
+7
+
+Purpose:
+Validate the complete lifecycle of a custom Wazuh detection:
+design, deployment, event generation, alert validation, negative testing,
+and evidence documentation.
+
+False-positive control:
+A similar but non-matching marker is generated:
+LAB5-BENIGN-NONMATCH
+
+This rule is deliberately narrow and is not intended to represent a
+production malicious-behavior detector.
+[PASS] Detection specification documented
+
+================================================================
+3. EXISTING RULE STATE
+================================================================
+Existing dedicated Lab 5 rule detected.
+[PASS] Existing Lab 5 rule state preserved
+
+================================================================
+4. RULE BACKUP
+================================================================
+Backup: /var/ossec/etc/rules/lab5-detection-engineering.xml.bak-20260924-104217
+[PASS] Existing dedicated rule backed up
+
+================================================================
+5. CUSTOM RULE DEPLOYMENT
+================================================================
+[PASS] Custom Wazuh detection deployed
+
+================================================================
+6. RULE VALIDATION
+================================================================
+[PASS] Deployed rule contains expected detection marker
+
+================================================================
+7. WAZUH MANAGER RELOAD
+================================================================
+
+================================================================
+7. MANAGER HEALTH VALIDATION
+================================================================
+[PASS] Wazuh manager container is running
+[PASS] Wazuh analysis engine is running
+
+================================================================
+8. PRE-TEST ALERT BASELINE
+================================================================
+Manager alert baseline: 161
+[PASS] Alert baseline captured
+
+================================================================
+9. POSITIVE DETECTION TEST
+================================================================
+[PASS] Positive test event generated
+
+================================================================
+10. POSITIVE ALERT VERIFICATION
+================================================================
+[PASS] Custom detection generated 1 alert(s)
+
+================================================================
+11. POSITIVE ALERT METADATA
+================================================================
+2026-09-24T08:43:02.616+0000	002	normann-ThinkPad-X260	100500	7	LAB5: Controlled detection engineering test marker detected.		journald	Sep 24 08:43:02 normann-ThinkPad-X260 lab5-detection[98041]: LAB5-DETECTION-ENGINEERING controlled-positive-test incident_id=20260924-104217
+[PASS] Expected custom rule ID 100500 confirmed
+
+================================================================
+12. NEGATIVE FALSE-POSITIVE TEST
+================================================================
+[PASS] Negative test event generated
+
+================================================================
+13. NEGATIVE ALERT VERIFICATION
+================================================================
+[PASS] Negative test produced no matching custom detection alert
+
+================================================================
+14. DETECTION PERFORMANCE SUMMARY
+================================================================
+LAB 5 DETECTION PERFORMANCE
+
+Rule ID: 100500
+Positive marker: LAB5-DETECTION-ENGINEERING
+Negative marker: LAB5-BENIGN-NONMATCH
+Positive alerts: 1
+Negative matching alerts: 0
+
+Positive detection expected: YES
+Negative detection expected: NO
+
+RESULT: DETECTION BEHAVIOR VALIDATED
+[PASS] Positive/negative detection behavior validated
+
+================================================================
+15. PORTFOLIO DETECTION DOCUMENTATION
+================================================================
+[PASS] Portfolio detection documentation generated
+
+================================================================
+16. EVIDENCE MANIFEST
+================================================================
+alert-baseline-count.txt
+deployed-rule.xml
+detection-design.txt
+detection-performance.txt
+evidence-manifest.txt
+existing-rule-before.txt
+existing-rule-state.txt
+negative-marker-alerts.jsonl
+negative-test.txt
+portfolio-detection.md
+positive-alert-metadata.tsv
+positive-detection-alerts.jsonl
+positive-test.txt
+post-negative-alerts.jsonl
+post-positive-alerts.jsonl
+restart-context.txt
+rule-after-deployment.xml
+wazuh-analysisd-process.txt
+wazuh-container-status.txt
+wazuh-restart-output.txt
+[PASS] Evidence manifest contains 20 files
+
+================================================================
+17. FINAL VALIDATION
+================================================================
+PASS: 19
+WARN: 0
+FAIL: 0
+
+Rule ID: 100500
+Incident marker: LAB5-DETECTION-ENGINEERING
+Completed: 2026-09-24T10:43:19+02:00
+
+Report:   /home/normann/cybersecurity-portfolio/reports/phase1-wazuh-detection-engineering-20260924-104217.txt
+Evidence: /home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-detection-engineering-20260924-104217
+
+Important:
+  The custom rule was designed specifically for controlled validation.
+  The positive event was intentionally generated by this lab.
+  The detection must not be interpreted as evidence of compromise.
+
+RESULT: LAB 5 DETECTION ENGINEERING COMPLETED WITHOUT HARD FAILURES

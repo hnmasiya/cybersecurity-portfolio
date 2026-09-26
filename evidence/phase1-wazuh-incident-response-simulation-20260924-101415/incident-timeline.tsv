@@ -1,0 +1,5 @@
+TIMESTAMP	EVENT
+2026-09-24T10:14:15+02:00	Incident initialized
+2026-09-24T10:14:16+02:00	Controlled privileged activity started
+2026-09-24T10:14:21+02:00	Controlled privileged activity completed
+2026-09-24T10:14:24+02:00	Containment action applied

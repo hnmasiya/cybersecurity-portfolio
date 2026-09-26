@@ -1,0 +1,10 @@
+NAME                            CPU %     MEM USAGE / LIMIT    MEM %
+zurovia-ai-ollama-1             0.00%     16.89MiB / 7.61GiB   0.22%
+single-node-wazuh.dashboard-1   0.06%     201.4MiB / 7.61GiB   2.58%
+single-node-wazuh.manager-1     1.53%     376.3MiB / 7.61GiB   4.83%
+single-node-wazuh.indexer-1     11.34%    1.288GiB / 7.61GiB   16.93%
+hbbs                            0.12%     2.195MiB / 7.61GiB   0.03%
+hbbr                            0.02%     1MiB / 7.61GiB       0.01%
+portainer                       0.05%     24.78MiB / 7.61GiB   0.32%
+juice-shop                      0.95%     142.1MiB / 7.61GiB   1.82%
+wireshark                       5.06%     201.4MiB / 7.61GiB   2.58%

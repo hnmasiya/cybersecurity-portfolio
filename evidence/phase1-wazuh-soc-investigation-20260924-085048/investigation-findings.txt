@@ -1,0 +1,37 @@
+SOC INVESTIGATION FINDINGS
+==========================
+
+Incident classification:
+Controlled security telemetry validation / lab activity.
+
+Host:
+normann-ThinkPad-X260
+
+Observed activity:
+1. Successful sudo execution to root.
+2. PAM session opened.
+3. PAM session closed.
+
+Wazuh evidence:
+- Rule 5402
+- Rule 5501
+- Rule 5502
+
+Severity:
+All three observed alerts were Wazuh level 3 in the controlled validation.
+
+Analyst interpretation:
+The events form a coherent privilege/session sequence.
+The telemetry demonstrates that Wazuh can identify and forward
+privilege-related and authentication/session events to the manager.
+
+Security conclusion:
+No compromise is established by this evidence.
+The activity was deliberately generated for SOC validation.
+
+Recommended analyst follow-up:
+- Correlate the originating user and terminal/session.
+- Review Auditd EXECVE records for the associated command.
+- Review surrounding authentication events.
+- Establish whether the activity is expected for the account.
+- Escalate only if surrounding evidence indicates unauthorized activity.

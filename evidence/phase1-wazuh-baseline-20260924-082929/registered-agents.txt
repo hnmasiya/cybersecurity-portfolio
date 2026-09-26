@@ -1,0 +1,5 @@
+
+Available agents: 
+   ID: 002, Name: normann-ThinkPad-X260, IP: any
+   ID: 003, Name: dc01-lab, IP: any
+

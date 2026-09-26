@@ -1,49 +1,38 @@
-# Secrets
+# Private career data
+career/Applications/
+career/private/
+career/reports/private/
+**/Tailored-Resume.pdf
+**/Cover-Letter.pdf
+**/Sponsorship-Evidence.md
+**/Interview-Assessment-Pack.md
+**/Application-Record.md
+**/Job-Description.md
+
+# Local/private trackers
+career/applications.csv
+
+# Secrets and credentials
 .env
-*.key
+.env.*
 *.pem
-*.pfx
-*.secret
+*.key
 
-# Credentials
-passwords.txt
-credentials.txt
-# Operating system
-.DS_Store
-Thumbs.db
-# Virtual machines
-*.ova
-*.iso
-# Logs
-*.log
-# Temporary files
-*.tmp
-# Local SOC report remediation working files
-REPORT-BACKUPS/
-UPGRADED-SOC-REPORT-DRAFTS/
-__pycache__/
-*.pyc
-*.pyo
-.pytest_cache/
-*.backup-*
-# Audit logs
-portfolio-master-audit-*.txt
-remediation-plan-*.txt
-PORTFOLIO-MASTER-AUDIT/
-.venv/
-Advanced-Threat-Operations/
-
-!*.tfvars.example
-
-# Terraform
-.terraform/
-*.tfstate
-*.tfstate.*
-*.tfplan
-terraform.tfvars
-*.tfvars
-!terraform.tfvars.example
-crash.log
-crash.*.log
-.claude/
-.cursor/
+# Local engineering / validation artifacts
+/backups/
+/logs/
+*-diagnostic-*.tar.gz
+splunk-labs-03-06-CLEAN-REBUILD.sh
+splunk-labs-03-06-CLEAN-REBUILD.sh.pre-*
+splunk-labs-03-06-MASTER-REBUILD-VALIDATE.sh
+splunk-labs-03-06-MASTER-REBUILD-VALIDATE.sh.pre-*
+splunk-labs-03-06-rebuild-validate-FINAL.sh
+splunk-labs-03-06-rebuild-validate-FINAL-v2.sh
+splunk-labs-03-06-rebuild-validate-FINAL-v2.sh.pre-*
+scripts/splunk-labs-03-06-master-build.sh.before-*
+scripts/splunk-labs-04-06-final-validate.sh
+scripts/splunk-labs-04-06-master-build.sh
+scripts/splunk-labs-complete.sh
+scripts/splunk-master-audit.sh
+reports/splunk-audit-*.txt
+reports/splunk-audit-*/

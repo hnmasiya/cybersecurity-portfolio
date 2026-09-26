@@ -1,0 +1,48 @@
+name: Career Operations
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: career-operations
+  cancel-in-progress: false
+
+jobs:
+  validate-public-career-system:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13'
+      - name: Validate public career architecture
+        run: |
+          test -f career/application-schema.csv
+          test -f career/application-package-template.md
+          test -f career/INTERVIEW-PACK-SPEC.md
+          test ! -f career/applications.csv
+          test ! -d career/Applications
+          test ! -d career/private
+          python scripts/ats_validate.py --help
+      - name: Validate interview specification
+        run: |
+          grep -q "10–20 likely technical questions" career/INTERVIEW-PACK-SPEC.md
+          grep -q "10 behavioral questions" career/INTERVIEW-PACK-SPEC.md
+          grep -q "Forage" career/INTERVIEW-PACK-SPEC.md
+      - name: Build public career architecture report
+        run: |
+          mkdir -p career/reports
+          printf '%s\n' '# Public Career Operations Check' > career/reports/public-career-operations.md
+          printf '%s\n' '' >> career/reports/public-career-operations.md
+          printf '%s\n' '- Public repository contains architecture/templates only.' >> career/reports/public-career-operations.md
+          printf '%s\n' '- Real application records and interview packs belong in the private career workspace.' >> career/reports/public-career-operations.md
+      - name: Upload public architecture report
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: public-career-operations
+          path: career/reports/

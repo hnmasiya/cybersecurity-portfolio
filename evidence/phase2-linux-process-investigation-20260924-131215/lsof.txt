@@ -1,0 +1,58 @@
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/65fad5cd98b2e0e47d11031a4258dfc459d163f381f70c1781598a05a3e4e7e3
+      Output information may be incomplete.
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/d95d191479ac0fba34f5754fa6b4c2b4c3076b1da68e8163377a9ae0be4071b0
+      Output information may be incomplete.
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/87f68a4aea4e175d53f163d6549338bce0b8ec0abb37d6441fc5149d8e8a00c9
+      Output information may be incomplete.
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/f03b27a5e6c4b923cfacd43775fd15e15f8391bb45e87c14bcc699dfde9fbf3b
+      Output information may be incomplete.
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/cdee3e939e3c94e0b6e0e3800b0b30acb0ad7308304b5172c59ef522ed5bfa13
+      Output information may be incomplete.
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/0def9492e2315f0395f16669bccfbb2761a1b81bae9323027c8b6e4205f0c7c4
+      Output information may be incomplete.
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/57802887a79ded5274d3d51004c1b20ff5c09be1ed2e4efe5a25317e53352f88
+      Output information may be incomplete.
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/4e584288711faab48500dd40a355a98cf68f97bb4a2f3bcc7d4b84b0aa51a6ef
+      Output information may be incomplete.
+lsof: WARNING: can't stat() overlay file system /var/lib/docker/rootfs/overlayfs/f79ee47e7c27b15eeb9c44214e1748fe01221e4ef4ded25ece94bd2ff75c9e90
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/be0c6905f4d8
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/093f14a9444a
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/012632a12f4a
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/6fe3152aeb84
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/a61142be04c1
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/ee044b54b32c
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/c2accf888490
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/41bc1d34d0d3
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/1618afb26a7c
+      Output information may be incomplete.
+COMMAND    PID    USER   FD   TYPE  DEVICE SIZE/OFF     NODE NAME
+python3 179582 <USER>  cwd    DIR     8,7    12288  6947721 <REPO>
+python3 179582 <USER>  rtd    DIR     8,7     4096        2 /
+python3 179582 <USER>  txt    REG     8,7  8020928 19530368 /usr/bin/python3.12
+python3 179582 <USER>  mem    REG     8,7  5309400 19536783 /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+python3 179582 <USER>  mem    REG     8,7   202904 19543402 /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+python3 179582 <USER>  mem    REG     8,7   696512 19536785 /usr/lib/x86_64-linux-gnu/libssl.so.3
+python3 179582 <USER>  mem    REG     8,7  5719296 19530159 /usr/lib/locale/locale-archive
+python3 179582 <USER>  mem    REG     8,7    78944 19529871 /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+python3 179582 <USER>  mem    REG     8,7    49256 19664890 /usr/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so
+python3 179582 <USER>  mem    REG     8,7   221360 19665150 /usr/lib/python3.12/lib-dynload/_ssl.cpython-312-x86_64-linux-gnu.so
+python3 179582 <USER>  mem    REG     8,7  2129424 19530919 /usr/lib/x86_64-linux-gnu/libc.so.6
+python3 179582 <USER>  mem    REG     8,7   186624 19531638 /usr/lib/x86_64-linux-gnu/libexpat.so.1.9.1
+python3 179582 <USER>  mem    REG     8,7   113000 19529809 /usr/lib/x86_64-linux-gnu/libz.so.1.3
+python3 179582 <USER>  mem    REG     8,7   952616 19537626 /usr/lib/x86_64-linux-gnu/libm.so.6
+python3 179582 <USER>  mem    REG     8,7    32112 19664873 /usr/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so
+python3 179582 <USER>  mem    REG     8,7    27028 19665692 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+python3 179582 <USER>  mem    REG     8,7   236616 19530154 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+python3 179582 <USER>    0r   CHR     1,3      0t0        5 /dev/null
+python3 179582 <USER>    1u   CHR   136,0      0t0        3 /dev/pts/0
+python3 179582 <USER>    2u   CHR   136,0      0t0        3 /dev/pts/0
+python3 179582 <USER>    3u  IPv4 3306451      0t0      TCP 127.0.0.1:18765 (LISTEN)

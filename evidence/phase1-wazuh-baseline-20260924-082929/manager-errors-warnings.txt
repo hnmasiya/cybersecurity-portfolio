@@ -1,0 +1,100 @@
+2026/09/23 18:53:37 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-system-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:38 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-processes-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:38 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-ports-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:39 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hotfixes-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:39 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hardware-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:40 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-protocols-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:41 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-interfaces-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:41 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-networks-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:42 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-users-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:42 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-groups-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:43 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-browser-extensions-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:43 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-services-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:46 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:25 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-vulnerabilities-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:25 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-packages-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:25 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-system-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:26 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-processes-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:27 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-ports-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:27 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hotfixes-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:27 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hardware-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:28 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-protocols-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:28 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-interfaces-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:28 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-networks-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:29 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-users-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:29 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-groups-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:30 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-browser-extensions-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:31 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-services-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:56:32 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-wazuh.manager.
+2026/09/23 19:56:32 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-wazuh.manager.
+2026/09/23 19:56:34 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-wazuh.manager.
+2026/09/23 19:56:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-wazuh.manager.
+2026/09/23 19:56:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-wazuh.manager.
+2026/09/23 19:56:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-wazuh.manager.
+2026/09/23 19:56:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-wazuh.manager.
+2026/09/23 19:56:38 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-wazuh.manager.
+2026/09/24 04:34:03 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-packages-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:03 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-vulnerabilities-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:04 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-system-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:06 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-processes-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:07 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-ports-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:08 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hotfixes-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:09 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hardware-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:09 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-protocols-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:10 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-interfaces-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:11 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-networks-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:12 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-users-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:13 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-groups-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:14 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-browser-extensions-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:15 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-services-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:39:06 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-wazuh.manager.
+2026/09/24 04:39:06 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-wazuh.manager.
+2026/09/24 04:39:07 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-wazuh.manager.
+2026/09/24 04:39:08 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-wazuh.manager.
+2026/09/24 04:39:10 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-wazuh.manager.
+2026/09/24 04:39:10 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-wazuh.manager.
+2026/09/24 04:39:12 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-wazuh.manager.
+2026/09/24 04:39:12 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-wazuh.manager.
+2026/09/24 04:39:13 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-wazuh.manager.
+2026/09/24 04:39:14 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-wazuh.manager.
+2026/09/24 04:39:15 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-wazuh.manager.
+2026/09/24 04:39:16 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-wazuh.manager.
+2026/09/24 04:39:17 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-wazuh.manager.
+2026/09/24 04:39:18 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-wazuh.manager.

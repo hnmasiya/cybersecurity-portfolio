@@ -1,0 +1,199 @@
+{
+  "visualizations": {
+    "viz_total": {
+      "type": "splunk.singlevalue",
+      "dataSources": {"primary": "ds_total"},
+      "title": "Total Process Events",
+      "options": {"majorColor": "#2E7D32"}
+    },
+    "viz_powershell": {
+      "type": "splunk.singlevalue",
+      "dataSources": {"primary": "ds_powershell"},
+      "title": "PowerShell Events",
+      "options": {"majorColor": "#1565C0"}
+    },
+    "viz_suspicious": {
+      "type": "splunk.singlevalue",
+      "dataSources": {"primary": "ds_suspicious"},
+      "title": "Suspicious Process Events",
+      "options": {"majorColor": "#C62828"}
+    },
+    "viz_top_processes": {
+      "type": "splunk.bar",
+      "dataSources": {"primary": "ds_top_processes"},
+      "options": {
+        "barSpacing": 20,
+        "xAxisTitleText": "Process",
+        "yAxisTitleText": "Events"
+      }
+    },
+    "viz_parent_child": {
+      "type": "splunk.bar",
+      "dataSources": {"primary": "ds_parent_child"},
+      "options": {
+        "barSpacing": 20,
+        "xAxisTitleText": "Parent → Child",
+        "yAxisTitleText": "Events"
+      }
+    },
+    "viz_timeline": {
+      "type": "splunk.line",
+      "dataSources": {"primary": "ds_timeline"},
+      "options": {
+        "xAxisTitleText": "Time",
+        "yAxisTitleText": "Process Events"
+      }
+    },
+    "viz_investigation": {
+      "type": "splunk.table",
+      "dataSources": {"primary": "ds_investigation"},
+      "options": {
+        "count": 15,
+        "showRowNumbers": false,
+        "wrap": true
+      }
+    }
+  },
+  "dataSources": {
+    "ds_total": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=splunk_lab_sysmon sourcetype=\"splunk:lab:sysmon\" event_id=1 | stats count as total_events"
+      }
+    },
+    "ds_powershell": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=splunk_lab_sysmon sourcetype=\"splunk:lab:sysmon\" event_id=1 | search image=\"*powershell.exe\" | stats count as powershell_events"
+      }
+    },
+    "ds_suspicious": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=splunk_lab_sysmon sourcetype=\"splunk:lab:sysmon\" event_id=1 | eval suspicious=if(match(lower(command_line),\"encodedcommand|executionpolicy\\s+bypass|downloadstring|invoke-expression|iex\\s|frombase64string\") OR match(lower(image),\"mshta\\.exe|rundll32\\.exe|regsvr32\\.exe|wscript\\.exe|cscript\\.exe\"),1,0) | where suspicious=1 | stats count as suspicious_events"
+      }
+    },
+    "ds_top_processes": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=splunk_lab_sysmon sourcetype=\"splunk:lab:sysmon\" event_id=1 | stats count as events by image | sort - events | head 10"
+      }
+    },
+    "ds_parent_child": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=splunk_lab_sysmon sourcetype=\"splunk:lab:sysmon\" event_id=1 | eval relationship=parent_image.\" → \".image | stats count as events by relationship | sort - events | head 10"
+      }
+    },
+    "ds_timeline": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=splunk_lab_sysmon sourcetype=\"splunk:lab:sysmon\" event_id=1 | timechart span=1m count by host"
+      }
+    },
+    "ds_investigation": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=splunk_lab_sysmon sourcetype=\"splunk:lab:sysmon\" event_id=1 | eval suspicious=if(match(lower(command_line),\"encodedcommand|executionpolicy\\s+bypass|downloadstring|invoke-expression|iex\\s|frombase64string\") OR match(lower(image),\"mshta\\.exe|rundll32\\.exe|regsvr32\\.exe|wscript\\.exe|cscript\\.exe\"),1,0) | where suspicious=1 | table timestamp host user parent_image image command_line integrity_level | sort 0 timestamp"
+      }
+    }
+  },
+  "layout": {
+    "options": {
+      "showTitleAndDescription": true,
+      "submitButton": false
+    },
+    "tabs": {
+      "items": [
+        {
+          "label": "SOC Overview",
+          "layoutId": "layout_1"
+        }
+      ]
+    },
+    "layoutDefinitions": {
+      "layout_1": {
+        "type": "absolute",
+        "options": {
+          "display": "auto-scale",
+          "width": 1200,
+          "height": 1260
+        },
+        "structure": [
+          {
+            "item": "viz_total",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "w": 380,
+              "h": 150
+            }
+          },
+          {
+            "item": "viz_powershell",
+            "type": "block",
+            "position": {
+              "x": 410,
+              "y": 0,
+              "w": 380,
+              "h": 150
+            }
+          },
+          {
+            "item": "viz_suspicious",
+            "type": "block",
+            "position": {
+              "x": 820,
+              "y": 0,
+              "w": 380,
+              "h": 150
+            }
+          },
+          {
+            "item": "viz_top_processes",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 180,
+              "w": 580,
+              "h": 320
+            }
+          },
+          {
+            "item": "viz_parent_child",
+            "type": "block",
+            "position": {
+              "x": 620,
+              "y": 180,
+              "w": 580,
+              "h": 320
+            }
+          },
+          {
+            "item": "viz_timeline",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 530,
+              "w": 1200,
+              "h": 300
+            }
+          },
+          {
+            "item": "viz_investigation",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 860,
+              "w": 1200,
+              "h": 400
+            }
+          }
+        ]
+      }
+    }
+  },
+  "title": "SOC Windows / Sysmon Process Investigation",
+  "description": "Synthetic Windows Sysmon process investigation dashboard for Splunk SOC Lab 02."
+}
