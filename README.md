@@ -45,6 +45,12 @@ Professional experience, independent authorized labs, coursework and virtual job
 
 ---
 
+## 🎯 Portfolio Highlights
+
+**23/23 Security Labs** are represented in the public portfolio, with evidence classification preserved for live, controlled/synthetic, offline-validation, architecture/methodology, and virtual-experience work.
+
+Use the [Cybersecurity Lab Catalog](CYBERSECURITY-LAB-CATALOG.md) and [Master Lab Completion & Evidence Register](LAB-COMPLETION-MASTER.md) to navigate the complete inventory without treating methodology or planned work as executed evidence.
+
 ## ⚡ Recruiter Quick View
 
 | Area | Demonstrated focus | Key technologies |
@@ -195,11 +201,11 @@ Automated checks validate portfolio quality, evidence integrity and security con
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* feat: add Splunk SOC lab 01 (31 minutes ago)
-* auto: update cybersecurity job intelligence (#1320) (7 hours ago)
-* auto: publish global resume variants (#1319) (7 hours ago)
-* auto: publish consolidated cybersecurity resume (#1318) (7 hours ago)
-* fix: make career intelligence reports idempotent (#1317) (7 hours ago)
+* Splunk SOC Lab Track — six connected SOC investigation labs
+* Windows / Sysmon endpoint detection — real and synthetic validation
+* Wazuh detection engineering — offline rule validation and live endpoint evidence
+* Azure Windows Server / Active Directory — deployed lab with retained telemetry
+* Network, DFIR, cloud, web-security and automation evidence maintained in the public portfolio
 <!-- END_SECTION:activity -->
 
 ---
