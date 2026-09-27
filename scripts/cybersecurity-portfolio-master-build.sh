@@ -173,8 +173,8 @@ done <<'EOF'
 DVWA|Web-Security/DVWA
 Wazuh|SIEM/Wazuh
 Splunk|SIEM/Splunk
-Nmap|Nmap
-Wireshark|Wireshark
+Nmap|Network-Security/Nmap
+Wireshark|Network-Security/Wireshark
 MITRE ATT&CK|SOC/MITRE-ATT&CK
 Cloud Security|Cloud-Security
 EOF
