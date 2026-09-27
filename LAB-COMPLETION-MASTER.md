@@ -96,10 +96,10 @@ A lab is publicly labelled COMPLETE only when all applicable gates below are sat
 |---|---|---|
 | Splunk Lab 01 — SSH Authentication Hunting | COMPLETED | 31 synthetic events; SPL; report; dashboard validation; evidence retained. |
 | Splunk Lab 02 — Windows/Sysmon Process Investigation | COMPLETED with presentation gap | Investigation/detection artifacts exist; dashboard screenshot remains intentionally unchecked. |
-| Splunk Lab 03 — Web Attack / HTTP Investigation | COMPLETED at track level; README reconciliation needed | 15 validated events and artifacts; individual README still says prepared. |
-| Splunk Lab 04 — Detection Engineering / SPL Alert Logic | COMPLETED at track level; README reconciliation needed | 6 validated events, rules and report; individual README still says prepared. |
-| Splunk Lab 05 — Dashboarding / SOC Monitoring | COMPLETED at track level; README reconciliation needed | 24 validated events and monitoring artifacts; individual README still says prepared. |
-| Splunk Lab 06 — End-to-End SOC Investigation | COMPLETED at track level; README reconciliation needed | 6 validated case events, SPL and incident report; individual README still says prepared. |
+| Splunk Lab 03 — Web Attack / HTTP Investigation | COMPLETED — CONTROLLED / SYNTHETIC | 15 synthetic events, retained SPL, investigation report and track-level validation; dashboard visual export intentionally not claimed. |
+| Splunk Lab 04 — Detection Engineering / SPL Alert Logic | COMPLETED — CONTROLLED / SYNTHETIC | 6 synthetic events, retained detection SPL and validation report; dashboard visual export intentionally not claimed. |
+| Splunk Lab 05 — Dashboarding / SOC Monitoring | COMPLETED — CONTROLLED / SYNTHETIC | 24 synthetic monitoring events, retained SPL and monitoring report; dashboard visual export intentionally not claimed. |
+| Splunk Lab 06 — End-to-End SOC Investigation | COMPLETED — CONTROLLED / SYNTHETIC | 6 synthetic case events, retained investigation SPL and incident report; dashboard visual export intentionally not claimed. |
 | Wazuh Detection Engineering — Offline | COMPLETED — OFFLINE VALIDATION | XML rules, validator, JSON/CSV evidence; live Manager validation is separate. |
 | Wazuh live endpoint integration | COMPLETED — LIVE / REAL LAB | Azure endpoint connected to Wazuh Manager via Tailscale with real alert/SCA evidence. |
 | Windows / Sysmon Endpoint Detection | COMPLETED — LIVE / REAL LAB + SYNTHETIC | 16 real events and 5 findings; offline validation also retained. |
