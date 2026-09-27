@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strict resume PDF quality gate: every published variant must be exactly 2 pages."""
+"""Strict resume PDF quality gate: Canada is 1 page; all other variants are 2 pages."""
 import argparse
 import subprocess
 from pathlib import Path
@@ -22,13 +22,14 @@ def main():
     failed=[]
     for pdf in pdfs:
         count=pages(pdf)
-        ok=count==a.expected
-        print(f"[{'PASS' if ok else 'FAIL'}] {pdf.name}: {count} page(s)")
+        expected = 1 if pdf.name.lower() == 'canadian-resume.pdf' else a.expected
+        ok=count==expected
+        print(f"[{'PASS' if ok else 'FAIL'}] {pdf.name}: {count} page(s) (expected {expected})")
         if not ok: failed.append((pdf.name,count))
     if failed:
-        print("\n[FAIL] Every published resume must be exactly 2 pages.")
+        print("\n[FAIL] Canada must be exactly 1 page; all other published variants must be exactly 2 pages.")
         return 2
-    print(f"\n[PASS] {len(pdfs)} resume PDFs validated at exactly {a.expected} pages.")
+    print(f"\n[PASS] {len(pdfs)} resume PDFs validated with Canada at 1 page and all other variants at {a.expected} pages.")
     return 0
 if __name__=="__main__":
     raise SystemExit(main())
