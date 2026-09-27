@@ -32,6 +32,8 @@
   },
   "US": {
     "label": "US Resume",
+    "target_pages": 2,
+    "max_pages": 2,
     "page_size": "LETTER",
     "margin": "0.30in 0.42in",
     "document_term": "Resume",
@@ -62,7 +64,8 @@
   },
   "CA": {
     "label": "Canadian Resume",
-    "one_page": true,
+    "target_pages": 1,
+    "max_pages": 2,
     "one_page": true,
     "page_size": "LETTER",
     "margin": "0.30in 0.42in",
@@ -94,6 +97,8 @@
   },
   "GB": {
     "label": "UK CV",
+    "target_pages": 2,
+    "max_pages": 2,
     "page_size": "A4",
     "margin": "0.30in 0.42in",
     "document_term": "CV",
