@@ -1,0 +1,8 @@
+index=splunk_lab_detection sourcetype="splunk:lab:detection" disposition="alert"
+| stats count values(technique) as mitre values(command_line) as commands by rule_id severity host user process
+| sort - severity - count
+
+index=splunk_lab_detection sourcetype="splunk:lab:detection"
+| eval detection_family=case(match(process,"powershell"),"PowerShell",match(process,"mshta"),"LOLBIN/mshta",match(process,"rundll32"),"LOLBIN/rundll32",match(process,"cmd"),"Command Shell",1=1,"Other")
+| stats count by detection_family
+| sort - count

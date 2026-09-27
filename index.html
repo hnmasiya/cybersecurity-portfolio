@@ -6,6 +6,34 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
 
+    <meta name="description" content="Hazvinei Nomatter Masiya — Cybersecurity Analyst portfolio covering SOC operations, Wazuh SIEM, Splunk/SPL, detection engineering, DFIR, incident response, Windows/Active Directory, network security, cloud security and security automation.">
+    <meta name="author" content="Hazvinei Nomatter Masiya">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://masiya-hub.org/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hazvinei Nomatter Masiya — Cybersecurity Portfolio">
+    <meta property="og:title" content="Hazvinei Nomatter Masiya | Cybersecurity Analyst & Security Operations">
+    <meta property="og:description" content="Evidence-backed cybersecurity portfolio covering SOC operations, Wazuh SIEM, Splunk/SPL, detection engineering, DFIR, Windows/AD, network and cloud security.">
+    <meta property="og:url" content="https://masiya-hub.org/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hazvinei Nomatter Masiya | Cybersecurity Analyst & Security Operations">
+    <meta name="twitter:description" content="Evidence-backed cybersecurity portfolio covering SOC operations, Wazuh SIEM, detection engineering, DFIR, Windows/AD, network and cloud security.">
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Person",
+      "name":"Hazvinei Nomatter Masiya",
+      "url":"https://masiya-hub.org/",
+      "jobTitle":"Cybersecurity Analyst",
+      "sameAs":[
+        "https://github.com/hnmasiya",
+        "https://www.linkedin.com/in/hazvinei-masiya/"
+      ],
+      "knowsAbout":[
+        "Cybersecurity","SOC Operations","SIEM","Wazuh","Detection Engineering","Digital Forensics and Incident Response","Incident Response","Threat Hunting","Windows Security","Active Directory","Network Security","Cloud Security","Security Automation"
+      ]
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hazvinei Nomatter Masiya | Cybersecurity Analyst & Security Operations</title>
@@ -85,36 +113,6 @@
             background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(6, 182, 212, 0.03) 50%, rgba(0,0,0,0) 80%);
             pointer-events: none;
             z-index: 0;
-        }
-
-        /* Top Reading Progress Bar */
-        #progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
-            width: 0%;
-            z-index: 1001;
-            transition: width 0.1s ease-out;
-        }
-
-        /* Keyboard Hints Banner */
-        .kb-hint-banner {
-            background: rgba(16, 185, 129, 0.08);
-            border-bottom: 1px solid var(--border);
-            text-align: center;
-            padding: 0.35rem;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--accent-green);
-        }
-        .kbd-key {
-            background: var(--bg-terminal);
-            border: 1px solid var(--border-highlight);
-            padding: 0.1rem 0.4rem;
-            border-radius: 3px;
-            color: var(--text-primary);
         }
 
         /* Header Navigation */
@@ -498,25 +496,9 @@
         }
 
         /* Back To Top Button */
-        #backToTop {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-highlight);
-            color: var(--accent-green);
-            padding: 0.6rem 0.9rem;
-            border-radius: 8px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.85rem;
-            cursor: pointer;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-        #backToTop.show { opacity: 1; pointer-events: auto; }
-        #backToTop:hover { border-color: var(--accent-green); background: rgba(16, 185, 129, 0.1); }
+        
+        
+        
 
         footer {
             border-top: 1px solid var(--border);
@@ -532,7 +514,7 @@
            Responsive: Tablet & Mobile
            ============================================ */
         @media (max-width: 768px) {
-            .kb-hint-banner { font-size: 0.65rem; padding: 0.3rem 0.5rem; }
+            
             .code-snippet { overflow-wrap: anywhere; }
 
             .nav-container {
@@ -579,7 +561,7 @@
 
             .card-footer { flex-wrap: wrap; gap: 0.75rem; }
 
-            #backToTop { bottom: 1.25rem; right: 1.25rem; padding: 0.5rem 0.75rem; font-size: 0.8rem; }
+            
         }
 
         @media (max-width: 420px) {
@@ -589,55 +571,8 @@
         }
     </style>
 
-<script>
-// --- CLIENT-SIDE TERMINAL SECURITY HARDENING ---
-(function() {
-    "use strict";
-
-    // Enforce HTML Entity Sanitization to prevent DOM XSS / HTML Injection
-    window.sanitizeInput = function(str) {
-        if (typeof str !== "string") return "";
-        return str
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#x27;")
-            .replace(/\//g, "&#x2F;");
-    };
-
-    // Immutable Allowed Command List
-    const ALLOWED_COMMANDS = Object.freeze([
-        "help", "about", "bio", "skills", "projects", "experience", 
-        "work", "contact", "cv", "resume", "wazuh", "rules", 
-        "pcap", "triage", "ad", "events", "logs", "evidence", 
-        "clear", "cls", "history", "whoami", "date", "uptime"
-    ]);
-
-    // Read-Only Input Dispatcher
-    window.processSecureCommand = function(rawCmd) {
-        const cleanCmd = window.sanitizeInput(rawCmd.trim().toLowerCase());
-        const baseCmd = cleanCmd.split(" ")[0];
-
-        if (baseCmd === "") return "";
-
-        if (!ALLOWED_COMMANDS.includes(baseCmd)) {
-            return `<span style="color:#ff5252;">[SECURITY NOTICE] Command not recognized or restricted: "${cleanCmd}". Type help for authorized commands.</span>`;
-        }
-        return null; // Signals allowed command to main execution logic
-    };
-})();
-</script>
-
 </head>
 <body>
-
-    <div id="progress-bar"></div>
-
-    <div class="kb-hint-banner">
-        💡 Quick Navigation: Press <span class="kbd-key">1</span> Work | <span class="kbd-key">2</span> Skills | <span class="kbd-key">3</span> Certs | <span class="kbd-key">4</span> Contact | <span class="kbd-key">T</span> Theme
-    </div>
-
     <header>
         <div class="nav-container">
             <a href="./" class="logo">
@@ -647,12 +582,12 @@
             <nav>
                 <ul>
                     <li><a href="#work">Work & Projects</a></li>
+                    <li><a href="#evidence-hubs">Evidence Hubs</a></li>
                     <li><a href="#forage">Virtual Experience</a></li>
                     <li><a href="#snapshot">Capabilities</a></li>
                     <li><a href="#certs">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="btn-nav-action" onclick="openTerminalModal()">💻 CLI Terminal</button>
                 <button class="btn-nav-action" onclick="toggleTheme()">🌓 Theme</button>
             </nav>
         </div>
@@ -667,7 +602,7 @@
 
             <div class="hero-meta">
                 <span>📍 Harare, Zimbabwe</span>
-                <span>📧 <a href="mailto:norman.masiya@gmail.com" style="color:inherit; text-decoration:none;">norman.masiya@gmail.com</a></span>
+                <span>📧 Contact via LinkedIn</span>
                 <span>📞 +263 77 521 6823 / +263 71 866 2162</span>
             </div>
 
@@ -682,21 +617,41 @@
             </p>
 
             <div class="btn-cta-group">
-                <a href="mailto:norman.masiya@gmail.com" class="btn-cta btn-primary">📧 Contact Me</a>
+                <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" rel="noopener" class="btn-cta btn-primary">Contact on LinkedIn</a>
                 <a href="#work" class="btn-cta btn-outline">Explore Work</a>
-                <a href="Resume_Cybersecurity_SOC.pdf" class="btn-cta btn-outline" target="_blank" rel="noopener">📄 Resume</a>
+                <a id="resume-download" href="resume-variants/pdf/global.pdf" class="btn-cta btn-outline" download>📄 Resume</a>
                 <a href="https://github.com/hnmasiya" target="_blank" class="btn-cta btn-outline">GitHub</a>
-                <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="btn-cta btn-outline">LinkedIn</a>
             </div>
 
-            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(16, 185, 129, 0.08); border-radius: 8px;">
-                <div style="font-size: 0.9em; font-weight: 600; color: var(--text-muted); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">⚡ Key Labs</div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.95em;">
-                    <a href="#work" onclick="filterWork('live', event); return false;" style="color: var(--accent-green); text-decoration: none; padding: 0.5rem; border-left: 2px solid var(--accent-green); padding-left: 1rem;">→ Wazuh SIEM Detection Lab</a>
-                    <a href="#work" onclick="filterWork('live', event); return false;" style="color: var(--accent-green); text-decoration: none; padding: 0.5rem; border-left: 2px solid var(--accent-green); padding-left: 1rem;">→ Sysmon Endpoint Detection</a>
-                    <a href="#work" onclick="filterWork('live', event); return false;" style="color: var(--accent-green); text-decoration: none; padding: 0.5rem; border-left: 2px solid var(--accent-green); padding-left: 1rem;">→ Attack Simulation & Detection</a>
-                    <a href="#work" onclick="filterWork('live', event); return false;" style="color: var(--accent-green); text-decoration: none; padding: 0.5rem; border-left: 2px solid var(--accent-green); padding-left: 1rem;">→ Threat Hunting Lab</a>
-                </div>
+                    </section>
+
+        <!-- Evidence Hubs -->
+        <section id="evidence-hubs">
+            <div class="section-header">
+                <h2 class="section-title">Evidence Hubs</h2>
+                <p style="color:var(--text-secondary);margin:.5rem 0 1.5rem;max-width:760px;">Focused entry points for recruiters and technical reviewers. Each hub links directly to source evidence in the repository and preserves the portfolio's evidence-scope standard.</p>
+            </div>
+            <div class="grid-4">
+                <a class="glass-card" href="soc-analyst.html">
+                    <div class="project-icon">🛡️</div><h3>SOC Operations</h3>
+                    <p>Wazuh, Windows telemetry, alert triage and investigation workflows.</p>
+                    <span class="card-link">Open evidence hub →</span>
+                </a>
+                <a class="glass-card" href="detection-engineering.html">
+                    <div class="project-icon">🎯</div><h3>Detection Engineering</h3>
+                    <p>Detection logic, attack simulation, validation and MITRE ATT&CK mapping.</p>
+                    <span class="card-link">Open evidence hub →</span>
+                </a>
+                <a class="glass-card" href="dfir-incident-response.html">
+                    <div class="project-icon">🔎</div><h3>DFIR & IR</h3>
+                    <p>Forensics, evidence handling, timelines, IOC extraction and response.</p>
+                    <span class="card-link">Open evidence hub →</span>
+                </a>
+                <a class="glass-card" href="network-security.html">
+                    <div class="project-icon">🌐</div><h3>Network Security</h3>
+                    <p>Nmap, Wireshark, PCAP analysis and network assessment evidence.</p>
+                    <span class="card-link">Open evidence hub →</span>
+                </a>
             </div>
         </section>
 
@@ -818,6 +773,28 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
                     <div class="card-footer">
                         <button class="btn-quicklook" onclick="showModal('Wazuh SIEM Lab', 'Built custom XML detection rules for privilege escalation and configured File Integrity Monitoring on critical system configurations.')">Overview</button>
                         <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Wazuh/Detection-Engineering-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- Splunk SOC Lab Track -->
+                <div class="card project-item" data-category="synthetic">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Splunk SOC Lab Track</h3>
+                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
+                        </div>
+                        <div class="metric-badge">📊 Six Connected SOC Labs · SPL Detection & Investigation</div>
+                        <p class="project-desc">Completed a six-lab Splunk SOC track covering SSH authentication hunting, Windows/Sysmon process investigation, web-attack investigation, SPL detection engineering, SOC monitoring/dashboarding, and end-to-end incident investigation using controlled synthetic telemetry.</p>
+                        <div class="tag-group">
+                            <span class="tag">Splunk</span>
+                            <span class="tag">SPL</span>
+                            <span class="tag">SOC Investigation</span>
+                            <span class="tag">Detection Engineering</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Splunk SOC Lab Track', 'Six connected, controlled training labs covering authentication hunting, Windows/Sysmon investigation, web attacks, SPL detection logic, SOC monitoring and end-to-end incident investigation. Evidence is synthetic/local training, not production employment experience.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk" target="_blank" rel="noopener noreferrer" class="btn-link">View Splunk Labs →</a>
                     </div>
                 </div>
 
@@ -1219,7 +1196,8 @@ Caller User: 'bad_actor_admin'</code>
                 <div class="card snapshot-card">
                     <h4>SIEM & Detection</h4>
                     <ul>
-                        <li>Wazuh & Sysmon XML Rules</li>
+                        <li>Wazuh & Splunk/SPL Detection</li>
+                        <li>Sysmon XML Rules</li>
                         <li>Log Triage Automation</li>
                         <li>File Integrity Monitoring</li>
                         <li>Custom Alert Pipelines</li>
@@ -1292,8 +1270,7 @@ Caller User: 'bad_actor_admin'</code>
                     Targeting SOC Analyst, Security Operations Analyst, Cybersecurity Analyst, Detection Engineering, Threat Hunting, and Security Engineering opportunities.
                 </p>
                 <div class="btn-cta-group" style="justify-content: center;">
-                    <a href="mailto:norman.masiya@gmail.com" class="btn-cta btn-primary">Send Email</a>
-                    <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" class="btn-cta btn-outline">Connect on LinkedIn</a>
+                    <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" rel="noopener" class="btn-cta btn-primary">Contact on LinkedIn</a>
                 </div>
             </div>
         </section>
@@ -1308,56 +1285,14 @@ Caller User: 'bad_actor_admin'</code>
         </div>
     </div>
 
-    <!-- Interactive Terminal CLI Modal -->
-    <div id="terminalModal" class="modal-overlay" onclick="closeTerminalModal(event)">
-        <div class="modal-content">
-            <button class="modal-close" onclick="hideTerminalModal()">&times;</button>
-            <h3 style="color: var(--accent-green); font-family:'IBM Plex Mono', monospace;">Interactive SOC Shell</h3>
-            <p style="color: var(--text-muted); font-size: 0.8rem; font-family:'IBM Plex Mono', monospace; margin-top:0.25rem;">
-                Type 'help' to see list of supported commands.
-            </p>
-            
-            <div id="terminal-box">
-                <div>Hazvinei Nomatter Masiya Portfolio Shell v1.0 [SOC-OS]</div>
-                <div>Type 'help' for available commands.</div>
-                <div id="terminal-history"></div>
-                <div class="terminal-input-line">
-                    <span>user@masiya-hub:~$</span>
-                    <input type="text" id="terminal-input" onkeydown="handleTerminalCommand(event)" autofocus>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating Back to Top Button -->
-    <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
-
     <footer>
         <div class="container">
             <p>© 2026 Hazvinei Nomatter Masiya • Harare, Zimbabwe</p>
+            <p style="margin-top:.5rem"><a href="soc-analyst.html">SOC</a> · <a href="detection-engineering.html">Detection</a> · <a href="dfir-incident-response.html">DFIR</a> · <a href="network-security.html">Network</a> · <a href="https://github.com/hnmasiya" target="_blank" rel="noopener">GitHub</a></p>
         </div>
     </footer>
 
     <script>
-        // Reading Progress Indicator & Scroll-to-Top
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("progress-bar").style.width = scrolled + "%";
-
-            let topBtn = document.getElementById("backToTop");
-            if (winScroll > 300) {
-                topBtn.classList.add("show");
-            } else {
-                topBtn.classList.remove("show");
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
         // Copy Terminal Snippets
         function copyTerminal(btn) {
             let snippet = btn.closest('.terminal-preview').querySelector('.code-snippet').innerText;
@@ -1396,63 +1331,6 @@ Caller User: 'bad_actor_admin'</code>
             });
         }
 
-        // Reliable keyboard navigation
-        function navigateToSection(id) {
-            const target = document.getElementById(id);
-            if (!target) return false;
-
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-
-            if (history.replaceState) {
-                history.replaceState(null, '', '#' + id);
-            } else {
-                window.location.hash = '#' + id;
-            }
-
-            return true;
-        }
-
-        document.addEventListener('keydown', function(e) {
-            const tag = e.target && e.target.tagName
-                ? e.target.tagName.toUpperCase()
-                : '';
-
-            if (
-                tag === 'INPUT' ||
-                tag === 'TEXTAREA' ||
-                (e.target && e.target.isContentEditable)
-            ) {
-                return;
-            }
-
-            switch (e.key) {
-                case '1':
-                    e.preventDefault();
-                    navigateToSection('work');
-                    break;
-                case '2':
-                    e.preventDefault();
-                    navigateToSection('snapshot');
-                    break;
-                case '3':
-                    e.preventDefault();
-                    navigateToSection('certs');
-                    break;
-                case '4':
-                    e.preventDefault();
-                    navigateToSection('contact');
-                    break;
-                case 't':
-                case 'T':
-                    e.preventDefault();
-                    toggleTheme();
-                    break;
-            }
-        });
-
         // Overview Modal
         function showModal(title, desc) {
             document.getElementById('modalTitle').innerText = title;
@@ -1461,75 +1339,6 @@ Caller User: 'bad_actor_admin'</code>
         }
         function hideModal() { document.getElementById('modal').style.display = 'none'; }
         function closeModal(e) { if (e.target.classList.contains('modal-overlay')) hideModal(); }
-
-        // Interactive CLI Terminal Functions
-        function openTerminalModal() {
-            const modal = document.getElementById('terminalModal');
-            const input = document.getElementById('terminal-input');
-
-            if (!modal) return;
-
-            modal.style.display = 'flex';
-            modal.setAttribute('aria-hidden', 'false');
-
-            if (input) {
-                setTimeout(function() {
-                    input.focus();
-                }, 50);
-            }
-        }
-
-        function hideTerminalModal() {
-            const modal = document.getElementById('terminalModal');
-
-            if (!modal) return;
-
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
-        }
-
-        function closeTerminalModal(e) {
-            if (e && e.target && e.target.classList.contains('modal-overlay')) {
-                hideTerminalModal();
-            }
-        }
-
-        function handleTerminalCommand(e) {
-            if (e.key === 'Enter') {
-                const input = document.getElementById('terminal-input');
-                const history = document.getElementById('terminal-history');
-                const cmd = input.value.trim().toLowerCase();
-
-                let response = '';
-                if (cmd === 'help') {
-                    response = "Available commands:<br>&nbsp;&nbsp;whoami&nbsp;&nbsp;&nbsp;- Print candidate overview<br>&nbsp;&nbsp;skills&nbsp;&nbsp;&nbsp;&nbsp;- List technical stack<br>&nbsp;&nbsp;certs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- View certifications<br>&nbsp;&nbsp;contact&nbsp;&nbsp;&nbsp;- Show email and phone<br>&nbsp;&nbsp;clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Clear screen";
-                } else if (cmd === 'whoami') {
-                    response = "Hazvinei Nomatter Masiya | Cybersecurity Analyst & Security Operations (CompTIA Security+ Certified) | 12+ years enterprise IT";
-                } else if (cmd === 'skills') {
-                    response = "SIEM (Wazuh, Sysmon), Log Analysis, Python Automation, Linux DFIR, Wireshark, GCP Terraform, Active Directory.";
-                } else if (cmd === 'certs') {
-                    response = "• CompTIA Security+ (SY0-701)<br>• Google Cybersecurity Certificate<br>• Google IT Support Professional<br>• BSc Computer Science (In Progress)";
-                } else if (cmd === 'contact') {
-                    response = "Email: norman.masiya@gmail.com | Phone: +263 77 521 6823 / +263 71 866 2162 | Location: Harare, Zimbabwe";
-                } else if (cmd === 'clear') {
-                    history.innerHTML = '';
-                    input.value = '';
-                    return;
-                } else if (cmd !== '') {
-                    response = `Command not recognized: '${cmd}'. Type 'help' for options.`;
-                }
-
-                if (cmd !== '') {
-                    const safeInput = window.sanitizeInput(input.value);
-                    history.innerHTML += `<div style="margin-top:0.5rem; color:#94a3b8;">user@masiya-hub:~$ ${safeInput}</div>`;
-                    if (response) history.innerHTML += `<div style="color:#10b981;">${response}</div>`;
-                }
-
-                input.value = '';
-                const box = document.getElementById('terminal-box');
-                box.scrollTop = box.scrollHeight;
-            }
-        }
 
         // Auto-synced public GitHub project index
         async function loadAutoSyncedProjects() {
@@ -1557,5 +1366,45 @@ Caller User: 'bad_actor_admin'</code>
 
         document.addEventListener('DOMContentLoaded', loadAutoSyncedProjects);
     </script>
+
+
+
+<script>
+/* Select an existing published two-page resume variant without leaving the homepage. */
+(async()=>{
+  const link=document.getElementById("resume-download");
+  if(!link) return;
+  const countryToVariant={
+    CA:"canada",US:"united-states",GB:"uk",
+    AU:"australia-new-zealand",NZ:"australia-new-zealand",
+    DE:"europe",FR:"europe",NL:"europe",IE:"europe",CH:"europe",
+    AE:"middle-east",QA:"middle-east",SA:"middle-east",
+    ZA:"africa",ZW:"africa",NG:"africa",KE:"africa",
+    IN:"asia-pacific",SG:"asia-pacific",JP:"asia-pacific",KR:"asia-pacific",
+    BR:"global",MX:"united-states"
+  };
+  const regionCountries={
+    europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
+    africa:new Set("DZ AO BW CM EG ET GH KE MW MZ NA RW SN TZ UG ZM ZW ZA NG".split(" ")),
+    middleEast:new Set("BH IL JO KW LB OM QA SA AE".split(" ")),
+    asiaPacific:new Set("BD CN HK ID JP KH KR LK MY MM NP PH PK SG TH TW VN AU NZ".split(" "))
+  };
+  function variantFor(code){
+    if(countryToVariant[code]) return countryToVariant[code];
+    if(regionCountries.europe.has(code)) return "europe";
+    if(regionCountries.africa.has(code)) return "africa";
+    if(regionCountries.middleEast.has(code)) return "middle-east";
+    if(regionCountries.asiaPacific.has(code)) return "asia-pacific";
+    return "global";
+  }
+  try{
+    const response=await fetch("https://ipapi.co/country/",{cache:"no-store"});
+    const code=(await response.text()).trim().toUpperCase();
+    link.href=`resume-variants/pdf/${variantFor(code)}.pdf`;
+  }catch(_){
+    link.href="resume-variants/pdf/global.pdf";
+  }
+})();
+</script>
 </body>
 </html>

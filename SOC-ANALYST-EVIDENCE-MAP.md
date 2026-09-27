@@ -27,6 +27,28 @@ This document maps practical SOC capabilities to specific repository evidence.
 | Cloud Landing Zone Architecture | `Cloud-Security/GCP-Landing-Zone-Lab/` |
 | Attack Simulation & Detection Engineering | `Offensive-Security/Attack-Simulation-Detection-Lab/` |
 
+
+## Recruiter Quick View
+
+Use this page as the shortest route from a SOC capability to the underlying evidence.
+
+| Hiring signal | Start here | Evidence type |
+|---|---|---|
+| SOC / SIEM monitoring | [Wazuh SIEM](./SIEM/Wazuh/) | Live / lab evidence |
+| Detection engineering | [Detection Engineering Lab](./SIEM/Wazuh/Detection-Engineering-Lab/) | Controlled validation |
+| End-to-end investigation | [Flagship SOC Investigation](./SOC/Flagship-Investigation/) | Controlled laboratory + live telemetry |
+| Windows / AD security | [Azure Windows Server Lab](./Cloud-Security/Azure-Windows-Server-Lab/) | Deployed lab |
+| Threat hunting | [Detection Validation Lab](./Threat-Hunting/Detection-Validation-Lab/) | Synthetic / offline |
+| Network security | [Network Evidence](./Network-Security/) | Live self-owned lab evidence |
+| Cloud security | [GCP Secure Landing Zone](./Cloud-Security/GCP-Landing-Zone-Lab/) | Architecture / not yet deployed |
+| Security automation | [Security Automation](./Security-Automation/) | Lab / project evidence |
+
+### Suggested recruiter path
+
+**Profile → this evidence map → flagship investigation → Wazuh detection engineering → Windows/AD → network/cloud/automation evidence.**
+
+This map is intentionally evidence-first: each capability links to work that is explicitly classified as live, controlled, synthetic/offline, or architecture/methodology.
+
 ## Evidence Classification
 
 **Live:** Wazuh server deployment, now with a live, connected Windows endpoint. Azure Windows Server Lab (`Cloud-Security/Azure-Windows-Server-Lab/`) is a real, deployed Windows Server 2022 Domain Controller in Azure, hardened per its audit-policy baseline, with 409 real Security events exported and analyzed (392 findings), real Sysmon telemetry (16 events, 5 findings) captured after installing Sysmon with the SwiftOnSecurity configuration, and its Wazuh Agent connected to the project's Wazuh Manager over a Tailscale mesh VPN, generating real MITRE-mapped alerts and CIS Benchmark SCA findings. Linux Host Hardening Lab (`Linux-Security/Hardening-Lab/`) is validated against a real personal Linux host. Container Configuration Audit Lab (`Docker-Labs/Container-Audit-Lab/`) is validated against a real home-lab Docker host. Nmap (`Network-Security/Nmap/`) is a real full-TCP-range scan against the same self-owned home-lab host. Wireshark (`Network-Security/Wireshark/`) contains a real packet capture of the project's own Juice Shop traffic. AppSec/SAST (`AppSec-DevSecOps/SAST-Reports/`) contains a real Bandit scan of this portfolio's own Python codebase.
