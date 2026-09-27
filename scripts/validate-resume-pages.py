@@ -47,7 +47,8 @@ def main():
         count = pages(pdf)
         target, maximum = policy.get(pdf.name.lower(), (a.expected, 2))
         ok = count == target and count <= maximum
-        print(f"[{"PASS" if ok else "FAIL"}] {pdf.name}: {count} page(s) (target {target}, max {maximum})")
+        status = 'PASS' if ok else 'FAIL'
+        print(f"[{status}] {pdf.name}: {count} page(s) (target {target}, max {maximum})")
         if not ok:
             failed.append((pdf.name, count, target, maximum))
     if failed:
