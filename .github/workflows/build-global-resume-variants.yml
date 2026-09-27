@@ -18,6 +18,14 @@ on:
       - 'scripts/validate-resume-pages.py'
       - '.github/workflows/build-global-resume-variants.yml'
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Resume_Hazvinei_Masiya.md'
+      - 'resume-variants/**'
+      - 'scripts/build-resume-variants.py'
+      - 'scripts/validate-resume-pages.py'
+      - '.github/workflows/build-global-resume-variants.yml'
 
 permissions:
   contents: read
