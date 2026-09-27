@@ -9,10 +9,18 @@ on:
       - 'scripts/build-resume-variants.py'
       - 'scripts/validate-resume-pages.py'
       - '.github/workflows/build-global-resume-variants.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Resume_Hazvinei_Masiya.md'
+      - 'resume-variants/country-profiles.json'
+      - 'scripts/build-resume-variants.py'
+      - 'scripts/validate-resume-pages.py'
+      - '.github/workflows/build-global-resume-variants.yml'
   workflow_dispatch:
-
 permissions:
   contents: read
+  pull-requests: write
 
 concurrency:
   group: automatic-country-resume-variants
@@ -65,6 +73,7 @@ jobs:
         run: python3 scripts/validate-resume-pages.py dist/resumes/pdf --expected 2
 
       - name: Publish validated PDFs through PR
+        if: github.event_name == 'push'
         env:
           GH_TOKEN: ${{ secrets.AUTOMATION_PAT }}
         run: |
@@ -113,9 +122,11 @@ jobs:
             exit 1
           fi
           gh pr checks "$PR_URL" --watch --fail-fast
-          echo "PR created successfully. Manual approval remains required before merge."
+          gh pr merge "$PR_URL" --auto --squash --delete-branch
+          echo "PR created and auto-merge requested. It will merge after required checks/reviews pass."
 
       - name: Publish build artifact
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: automatic-country-resume-variants

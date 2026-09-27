@@ -1,26 +1,709 @@
 {
-  "default":{"label":"International Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "CA":{"label":"Canadian Resume","page_size":"LETTER","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "US":{"label":"US Resume","page_size":"LETTER","language":"en","date_style":"month_year","contact_style":"city_state_country","photo":false},
-  "GB":{"label":"UK CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "DE":{"label":"German CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "FR":{"label":"French CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "NL":{"label":"Dutch CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "IE":{"label":"Irish CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "CH":{"label":"Swiss CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "AU":{"label":"Australian Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "NZ":{"label":"New Zealand Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "AE":{"label":"UAE Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "QA":{"label":"Qatar Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "SA":{"label":"Saudi Arabia Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "ZA":{"label":"South African CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "ZW":{"label":"Zimbabwe CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "NG":{"label":"Nigerian CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "KE":{"label":"Kenyan CV","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "IN":{"label":"Indian Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "SG":{"label":"Singapore Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "JP":{"label":"Japan Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "KR":{"label":"South Korea Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "BR":{"label":"Brazil Resume","page_size":"A4","language":"en","date_style":"month_year","contact_style":"city_country","photo":false},
-  "MX":{"label":"Mexico Resume","page_size":"LETTER","language":"en","date_style":"month_year","contact_style":"city_country","photo":false}
+  "default": {
+    "label": "International Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "Resume",
+    "title_term": "IT Professional | Cybersecurity Professional | Founder",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Core Competencies & Technical Skills",
+    "projects_heading": "Selected Cybersecurity Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": false,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "security operations",
+      "detection engineering",
+      "IT infrastructure",
+      "automation"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser",
+      "Linux Incident Response / DFIR",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "US": {
+    "label": "US Resume",
+    "page_size": "LETTER",
+    "margin": "0.30in 0.42in",
+    "document_term": "Resume",
+    "title_term": "Cybersecurity Professional | Security Operations | Detection Engineering",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Core Competencies",
+    "projects_heading": "Selected Cybersecurity Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": false,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "SIEM",
+      "detection engineering",
+      "security automation",
+      "enterprise IT"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser",
+      "Linux Incident Response / DFIR"
+    ],
+    "locale": "intl"
+  },
+  "CA": {
+    "label": "Canadian Resume",
+    "page_size": "LETTER",
+    "margin": "0.30in 0.42in",
+    "document_term": "Resume",
+    "title_term": "Cybersecurity & IT Infrastructure Professional",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Core Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "IT infrastructure",
+      "client support",
+      "security operations",
+      "risk"
+    ],
+    "project_priority": [
+      "Wazuh SIEM Detection Engineering",
+      "Splunk SOC Lab Track",
+      "Active Directory Security Log Parser",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "GB": {
+    "label": "UK CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | Security Operations | IT Infrastructure",
+    "summary_heading": "Personal Statement",
+    "experience_heading": "Employment History",
+    "skills_heading": "Technical Skills",
+    "projects_heading": "Selected Technical Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications & Professional Development",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "information security",
+      "security operations",
+      "IT infrastructure",
+      "detection",
+      "professional development"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Linux Incident Response / DFIR",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser"
+    ],
+    "locale": "uk"
+  },
+  "IE": {
+    "label": "Irish CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | Security Operations | IT Infrastructure",
+    "summary_heading": "Personal Statement",
+    "experience_heading": "Employment History",
+    "skills_heading": "Technical Skills",
+    "projects_heading": "Selected Technical Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications & Professional Development",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "information security",
+      "security operations",
+      "IT infrastructure",
+      "detection"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Linux Incident Response / DFIR",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser"
+    ],
+    "locale": "uk"
+  },
+  "AU": {
+    "label": "Australian Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Core Competencies",
+    "projects_heading": "Key Achievements & Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "key selection criteria",
+      "stakeholder support",
+      "risk",
+      "infrastructure"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC",
+      "Active Directory Security Log Parser"
+    ],
+    "locale": "intl"
+  },
+  "NZ": {
+    "label": "New Zealand Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Key Achievements & Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "stakeholder support",
+      "risk",
+      "infrastructure"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC",
+      "Active Directory Security Log Parser"
+    ],
+    "locale": "intl"
+  },
+  "DE": {
+    "label": "German CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education & Training",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "IT security",
+      "technical competence",
+      "enterprise infrastructure",
+      "certifications"
+    ],
+    "project_priority": [
+      "Wazuh SIEM Detection Engineering",
+      "Splunk SOC Lab Track",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC",
+      "Linux Incident Response / DFIR"
+    ],
+    "locale": "intl"
+  },
+  "FR": {
+    "label": "French CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education & Training",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "technical skills",
+      "infrastructure",
+      "risk"
+    ],
+    "project_priority": [
+      "Wazuh SIEM Detection Engineering",
+      "Splunk SOC Lab Track",
+      "Linux Incident Response / DFIR",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "NL": {
+    "label": "Dutch CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education & Training",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "IT infrastructure",
+      "security operations",
+      "technical skills"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Active Directory Security Log Parser",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "CH": {
+    "label": "Swiss CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education & Training",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "technical competence",
+      "certifications",
+      "languages"
+    ],
+    "project_priority": [
+      "Wazuh SIEM Detection Engineering",
+      "Splunk SOC Lab Track",
+      "GCP Secure Multi-Tier VPC",
+      "Windows Sysmon / LSASS Detection",
+      "Linux Incident Response / DFIR"
+    ],
+    "locale": "intl"
+  },
+  "AE": {
+    "label": "UAE Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "Curriculum Vitae",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Core Competencies",
+    "projects_heading": "Key Projects",
+    "education_heading": "Educational Qualifications",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "enterprise IT",
+      "cybersecurity",
+      "certifications",
+      "networking",
+      "security operations"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC",
+      "Active Directory Security Log Parser"
+    ],
+    "locale": "intl"
+  },
+  "QA": {
+    "label": "Qatar Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "Curriculum Vitae",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Core Competencies",
+    "projects_heading": "Key Projects",
+    "education_heading": "Educational Qualifications",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "enterprise IT",
+      "cybersecurity",
+      "certifications",
+      "networking",
+      "international client delivery"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC",
+      "Active Directory Security Log Parser"
+    ],
+    "locale": "intl"
+  },
+  "SA": {
+    "label": "Saudi Arabia Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "Curriculum Vitae",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Core Competencies",
+    "projects_heading": "Key Projects",
+    "education_heading": "Educational Qualifications",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "enterprise IT",
+      "cybersecurity",
+      "certifications",
+      "networking",
+      "security operations"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC",
+      "Active Directory Security Log Parser"
+    ],
+    "locale": "intl"
+  },
+  "ZW": {
+    "label": "Zimbabwe CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "IT Professional | Cybersecurity Professional | Founder",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Skills",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Professional Certifications",
+    "include_languages": true,
+    "include_references": true,
+    "emphasis": [
+      "Zimbabwe enterprise IT",
+      "cybersecurity",
+      "SME consulting",
+      "risk management",
+      "client delivery"
+    ],
+    "project_priority": [
+      "Wazuh SIEM Detection Engineering",
+      "Splunk SOC Lab Track",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "ZA": {
+    "label": "South African CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Key Skills",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Professional Certifications",
+    "include_languages": true,
+    "include_references": true,
+    "emphasis": [
+      "enterprise IT",
+      "cybersecurity",
+      "client delivery",
+      "risk",
+      "infrastructure"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "NG": {
+    "label": "Nigerian CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Key Skills",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": true,
+    "emphasis": [
+      "cybersecurity",
+      "enterprise IT",
+      "risk",
+      "client delivery"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser",
+      "Linux Incident Response / DFIR"
+    ],
+    "locale": "intl"
+  },
+  "KE": {
+    "label": "Kenyan CV",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Key Skills",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": true,
+    "emphasis": [
+      "cybersecurity",
+      "enterprise IT",
+      "risk",
+      "client delivery"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser",
+      "Linux Incident Response / DFIR"
+    ],
+    "locale": "intl"
+  },
+  "IN": {
+    "label": "Indian Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "Resume",
+    "title_term": "Cybersecurity Professional | Security Operations | IT Infrastructure",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "technical skills",
+      "certifications",
+      "automation"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Active Directory Security Log Parser",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "SG": {
+    "label": "Singapore Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "Resume",
+    "title_term": "Cybersecurity Professional | Security Operations | IT Infrastructure",
+    "summary_heading": "Professional Summary",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "security operations",
+      "technical skills",
+      "enterprise infrastructure"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "GCP Secure Multi-Tier VPC",
+      "Active Directory Security Log Parser"
+    ],
+    "locale": "intl"
+  },
+  "JP": {
+    "label": "Japan Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "Curriculum Vitae",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "technical competence",
+      "cybersecurity",
+      "certifications",
+      "continuous learning"
+    ],
+    "project_priority": [
+      "Wazuh SIEM Detection Engineering",
+      "Splunk SOC Lab Track",
+      "Windows Sysmon / LSASS Detection",
+      "Linux Incident Response / DFIR",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "KR": {
+    "label": "South Korea Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "Curriculum Vitae",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "technical competence",
+      "cybersecurity",
+      "certifications",
+      "continuous learning"
+    ],
+    "project_priority": [
+      "Wazuh SIEM Detection Engineering",
+      "Splunk SOC Lab Track",
+      "Windows Sysmon / LSASS Detection",
+      "Linux Incident Response / DFIR",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "BR": {
+    "label": "Brazil Resume",
+    "page_size": "A4",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education & Training",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "IT infrastructure",
+      "security operations",
+      "technical skills"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  },
+  "MX": {
+    "label": "Mexico Resume",
+    "page_size": "LETTER",
+    "margin": "0.30in 0.42in",
+    "document_term": "CV",
+    "title_term": "Cybersecurity Professional | IT Infrastructure | Security Operations",
+    "summary_heading": "Professional Profile",
+    "experience_heading": "Professional Experience",
+    "skills_heading": "Technical Competencies",
+    "projects_heading": "Selected Projects",
+    "education_heading": "Education & Training",
+    "certifications_heading": "Certifications",
+    "include_languages": true,
+    "include_references": false,
+    "emphasis": [
+      "cybersecurity",
+      "IT infrastructure",
+      "security operations",
+      "technical skills"
+    ],
+    "project_priority": [
+      "Splunk SOC Lab Track",
+      "Wazuh SIEM Detection Engineering",
+      "Windows Sysmon / LSASS Detection",
+      "Active Directory Security Log Parser",
+      "GCP Secure Multi-Tier VPC"
+    ],
+    "locale": "intl"
+  }
 }

@@ -44,7 +44,7 @@ jobs:
       - name: Install LibreOffice
         run: |
           sudo apt-get update
-          sudo apt-get install -y libreoffice
+          sudo apt-get install -y libreoffice poppler-utils
 
       - name: Build Consolidated Cybersecurity Resume PDF
         run: |
@@ -56,6 +56,13 @@ jobs:
             exit 1
           fi
           mv -f Resume_Hazvinei_Masiya.pdf Resume_Cybersecurity_SOC.pdf
+
+      - name: Enforce consolidated resume is exactly two pages
+        run: |
+          set -euo pipefail
+          PAGES="$(pdfinfo Resume_Cybersecurity_SOC.pdf | awk '/^Pages:/ {print $2}')"
+          echo "[INFO] Consolidated resume: ${PAGES} page(s)"
+          test "$PAGES" -eq 2
 
       - name: Ensure Homepage Uses Single Resume
         run: |
@@ -122,4 +129,5 @@ jobs:
           done
 
           gh pr checks "$PR_URL" --watch --fail-fast
-          echo "PR created successfully. Manual approval is required before merge."
+          gh pr merge "$PR_URL" --auto --squash --delete-branch
+          echo "PR created and auto-merge requested. It will merge after required checks/reviews pass."
