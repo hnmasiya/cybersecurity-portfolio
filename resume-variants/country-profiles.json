@@ -13,6 +13,7 @@
     "certifications_heading": "Certifications",
     "include_languages": false,
     "include_references": false,
+    "one_page": true,
     "emphasis": [
       "cybersecurity",
       "security operations",
@@ -62,6 +63,7 @@
   },
   "CA": {
     "label": "Canadian Resume",
+    "one_page": true,
     "page_size": "LETTER",
     "margin": "0.30in 0.42in",
     "document_term": "Resume",
