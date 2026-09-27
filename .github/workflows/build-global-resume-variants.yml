@@ -21,6 +21,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 concurrency:
   group: automatic-country-resume-variants
