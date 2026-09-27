@@ -137,13 +137,38 @@ def regionally_adapt(text: str, profile: dict) -> str:
     return text
 
 
+
+def compact_one_page_canadian(text: str) -> str:
+    """Compress only the generated Canadian variant to one-page layout."""
+    text = re.sub(r"<style>.*?</style>", """<style>
+@page { size: LETTER; margin: 0.16in 0.22in; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 6.0pt; line-height: 0.94; color: #243447; margin: 0; }
+.header { border-bottom: 1px solid #17365d; padding-bottom: 2px; margin-bottom: 2px; }
+h1 { font-size: 13pt; line-height: 1; margin: 0 0 1px; }
+.subtitle { font-size: 7pt; margin-bottom: 1px; }
+.contact { font-size: 5.6pt; line-height: 1; }
+.availability { display: none; }
+h2 { font-size: 6.8pt; line-height: 1; margin: 2px 0 1px; padding-bottom: 1px; }
+p, ul { margin: 0 0 1px; } ul { padding-left: 9px; } li { margin-bottom: 0; }
+.job-header { margin-top: 1px; font-size: 5.8pt; line-height: .95; }
+.date { font-size: 5.6pt; }
+.project-title { font-size: 6.1pt; margin-top: 1px; }
+code { font-size: 5.7pt; }
+blockquote { margin: 1px 0; padding: 1px 3px; font-size: 5.3pt; }
+</style>""", text, count=1, flags=re.S)
+    text = re.sub(r'<div class="availability">.*?</div>', "", text, count=1, flags=re.S)
+    return text
+
 # Generate one canonical file per explicit country profile.
 generated = 0
 for code, profile in profiles.items():
     if code == "default":
         continue
+    rendered = regionally_adapt(source, profile)
+    if profile.get("one_page"):
+        rendered = compact_one_page_canadian(rendered)
     (OUT / f"{slug(profile['label'])}.md").write_text(
-        regionally_adapt(source, profile),
+        rendered,
         encoding="utf-8",
     )
     generated += 1

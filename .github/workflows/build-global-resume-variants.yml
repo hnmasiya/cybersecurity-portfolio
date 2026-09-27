@@ -69,8 +69,8 @@ jobs:
           echo "[INFO] Generated $count PDFs"
           test "$count" -ge 20
 
-      - name: Enforce exactly two pages
-        run: python3 scripts/validate-resume-pages.py dist/resumes/pdf --expected 2
+      - name: Enforce country page policy (hard maximum two pages)
+        run: python3 scripts/validate-resume-pages.py dist/resumes/pdf --expected 2 --profiles resume-variants/country-profiles.json
 
       - name: Publish validated PDFs through PR
         if: github.event_name == 'push'
@@ -109,7 +109,7 @@ jobs:
           done
           [[ "$VERIFIED" == "true" ]] || { echo "[FAIL] Automation commit signature was not verified."; exit 1; }
 
-          PR_URL="$(gh pr create --base main --head "$BRANCH" --title "auto: publish country resume variants" --body "Automated publication of validated country and regional resume PDFs generated from the verified master resume. Every PDF passed the exact two-page quality gate.")"
+          PR_URL="$(gh pr create --base main --head "$BRANCH" --title "auto: publish country resume variants" --body "Automated publication of validated country and regional resume PDFs generated from the verified master resume. Every PDF passed its country-specific page target and the hard two-page maximum.")"
 
           for i in $(seq 1 30); do
             CHECKS_OUTPUT="$(gh pr checks "$PR_URL" 2>&1 || true)"
