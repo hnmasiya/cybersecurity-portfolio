@@ -1,0 +1,53 @@
+===== CONTROLLED HTTP REQUEST 1 =====
+2026-09-24T11:31:04+02:00
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 24 Sep 2026 09:31:04 GMT
+Content-type: text/html
+Content-Length: 215
+Last-Modified: Thu, 24 Sep 2026 09:30:53 GMT
+
+<!doctype html>
+<html>
+<head><title>Phase 2 Network Investigation</title></head>
+<body>
+<h1>Controlled Phase 2 Network Investigation Test Service</h1>
+<p>Local-only traffic generation for Lab 6.</p>
+</body>
+</html>
+
+===== CONTROLLED HTTP REQUEST 2 =====
+2026-09-24T11:31:04+02:00
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 24 Sep 2026 09:31:04 GMT
+Content-type: text/html
+Content-Length: 215
+Last-Modified: Thu, 24 Sep 2026 09:30:53 GMT
+
+<!doctype html>
+<html>
+<head><title>Phase 2 Network Investigation</title></head>
+<body>
+<h1>Controlled Phase 2 Network Investigation Test Service</h1>
+<p>Local-only traffic generation for Lab 6.</p>
+</body>
+</html>
+
+===== CONTROLLED HTTP REQUEST 3 =====
+2026-09-24T11:31:04+02:00
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.3
+Date: Thu, 24 Sep 2026 09:31:04 GMT
+Content-type: text/html
+Content-Length: 215
+Last-Modified: Thu, 24 Sep 2026 09:30:53 GMT
+
+<!doctype html>
+<html>
+<head><title>Phase 2 Network Investigation</title></head>
+<body>
+<h1>Controlled Phase 2 Network Investigation Test Service</h1>
+<p>Local-only traffic generation for Lab 6.</p>
+</body>
+</html>

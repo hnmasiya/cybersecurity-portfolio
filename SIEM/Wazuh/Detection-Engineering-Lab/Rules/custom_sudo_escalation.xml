@@ -1,0 +1,12 @@
+<!-- Custom Wazuh Rule: Detect Sudo Privilege Escalation -->
+<group name="local,syslog,sudo,">
+  <rule id="100001" level="10">
+    <if_sid>5402</if_sid>
+    <match>COMMAND=/bin/bash|COMMAND=/bin/sh</match>
+    <description>Possible privilege escalation: User executed shell via sudo</description>
+    <mitre>
+      <id>T1078</id>
+      <id>T1548.003</id>
+    </mitre>
+  </rule>
+</group>

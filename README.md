@@ -1,0 +1,243 @@
+<div align="center">
+
+# HAZVINEI NOMATTER MASIYA
+
+### Cybersecurity Analyst · Security Operations · Detection Engineering · DFIR
+
+**12+ Years Enterprise IT · CompTIA Security+ Certified · BSc Computer Science — In Progress**
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-masiya--hub.org-10b981?style=for-the-badge&logo=googlechrome&logoColor=white)](https://masiya-hub.org/)
+[![GitHub](https://img.shields.io/badge/GitHub-hnmasiya-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hnmasiya)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hazvinei-masiya/)
+[![Security Scan](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/security-scan.yml/badge.svg)](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/security-scan.yml)
+[![Portfolio Quality](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/portfolio-quality.yml/badge.svg)](https://github.com/hnmasiya/cybersecurity-portfolio/actions/workflows/portfolio-quality.yml)
+
+</div>
+
+---
+
+## 👋 Profile
+
+CompTIA Security+ certified enterprise IT professional with **12+ years of experience**, deliberately applying an infrastructure and systems background to cybersecurity.
+
+This repository is an **evidence-first technical portfolio** covering SOC operations, detection engineering, DFIR, Windows/Active Directory security, network security, cloud security, application security and automation.
+
+Professional experience, independent authorized labs, coursework and virtual job simulations are kept distinct so reviewers can understand the scope of each claim.
+
+> **Core approach:** Environment → Risk → Telemetry → Detection → Investigation → Remediation → Validation
+
+---
+
+## 🧭 Start Here
+
+### Evidence Hubs
+
+| Focus | Entry point |
+|---|---|
+| 🛡️ **SOC Operations** | [Wazuh · Splunk · Windows/Sysmon · alert triage · investigation](https://masiya-hub.org/soc-analyst.html) |
+| 🎯 **Detection Engineering** | [Detection logic · validation · MITRE ATT&CK](https://masiya-hub.org/detection-engineering.html) |
+| 🔎 **DFIR / Incident Response** | [Forensics · evidence handling · IOC analysis](https://masiya-hub.org/dfir-incident-response.html) |
+| 🌐 **Network Security** | [Nmap · Wireshark · PCAP · traffic analysis](https://masiya-hub.org/network-security.html) |
+
+### Repository Indexes
+
+**[SOC Evidence Map](SOC-ANALYST-EVIDENCE-MAP.md)** · **[Security Tools Inventory](SECURITY-TOOLS-INVENTORY.md)** · **[Resume](Resume_Hazvinei_Masiya.md)** · **[Live Portfolio](https://masiya-hub.org/)**
+
+---
+
+## 🎯 Portfolio Highlights
+
+**23/23 Security Labs** are represented in the public portfolio, with evidence classification preserved for live, controlled/synthetic, offline-validation, architecture/methodology, and virtual-experience work.
+
+Use the [Cybersecurity Lab Catalog](CYBERSECURITY-LAB-CATALOG.md) and [Master Lab Completion & Evidence Register](LAB-COMPLETION-MASTER.md) to navigate the complete inventory without treating methodology or planned work as executed evidence.
+
+## ⚡ Recruiter Quick View
+
+| Area | Demonstrated focus | Key technologies |
+|---|---|---|
+| **SOC / SIEM** | Monitoring, alert triage, log analysis, investigation | Wazuh · Splunk · Windows Security · Sysmon |
+| **Detection Engineering** | Rule development, validation, attack simulation | Wazuh · Sigma · MITRE ATT&CK |
+| **DFIR / IR** | Evidence handling, forensics, IOC extraction | Volatility · AVML · Linux/Windows |
+| **Windows / AD** | Authentication, privilege monitoring, hardening | Windows Server · AD · PowerShell |
+| **Network Security** | Reconnaissance, PCAP and traffic analysis | Nmap · Wireshark · tshark |
+| **Cloud Security** | Secure architecture, IAM/VPC controls, IaC | GCP · Terraform |
+| **Application Security** | Authorized web-security assessment | Burp Suite · OWASP · DVWA · Juice Shop |
+| **Automation** | Repeatable security tooling | Python · Bash · PowerShell |
+
+---
+
+---
+
+## 🛡️ Featured Evidence
+
+### SOC & Detection
+- **[Wazuh SIEM](SIEM/Wazuh/)** — alert triage, custom rules, file-integrity monitoring and security-event analysis.
+- **[Splunk SOC Lab Track](SIEM/Splunk/)** — six connected labs covering authentication hunting, endpoint/process investigation, web attack investigation, SPL detection engineering, SOC monitoring and end-to-end incident investigation.
+- **[Windows + Sysmon](Endpoint-Security/Windows-Sysmon-Detection-Lab/)** — endpoint telemetry and detection validation.
+- **[Attack Simulation & Detection Engineering](Offensive-Security/Attack-Simulation-Detection-Lab/)** — controlled simulations, custom detections and MITRE ATT&CK mapping.
+
+### Incident Response & DFIR
+- **[Linux Forensics](DFIR/Linux-Forensics/)** — investigation, evidence handling and IOC workflows.
+- **[Windows Memory Forensics](DFIR/Windows-Memory-Forensics/)** — memory-analysis exercises.
+- **[Incident Response](Incident-Response/)** — investigation, containment, evidence handling and recovery planning.
+
+### Windows / Identity
+- **[Active Directory Security](Active-Directory/)** — identity, access control, authentication and privilege-monitoring scenarios.
+- **[Endpoint Security](Endpoint-Security/)** — Windows/Sysmon security telemetry and hardening work.
+
+### Network / Cloud
+- **[Network Security](Network-Security/)** — Nmap reconnaissance, Wireshark/tshark and PCAP analysis.
+- **[Cloud Security](Cloud-Security/)** — GCP security architecture, Terraform, IAM and VPC controls.
+
+### Application Security / Automation
+- **[Web Security](Web-Security/)** — DVWA and OWASP Juice Shop assessments.
+- **[Security Automation](Security-Automation/)** — Python, Bash and PowerShell workflows.
+- **[AppSec / DevSecOps](AppSec-DevSecOps/)** — application and pipeline security work.
+
+---
+
+## 📐 Evidence Standard
+
+Major projects aim to document:
+
+1. Objective and security scenario
+2. Environment and tooling
+3. Procedure or controlled attack simulation
+4. Evidence collected
+5. Detection or analysis performed
+6. Findings and security impact
+7. MITRE ATT&CK or relevant framework mapping
+8. Remediation and hardening
+9. Validation and expected outcome
+10. Lessons learned
+
+**Evidence boundaries matter:** professional experience, independent hands-on work, coursework and virtual job simulations are kept distinct. Simulated activity is not presented as client or production work.
+
+---
+
+## 🧰 Core Technology Stack
+
+**SIEM & Detection**  
+Wazuh · Splunk · Sysmon · Sigma · MITRE ATT&CK
+
+**DFIR**  
+Volatility · AVML · forensic analysis · IOC extraction · SHA-256 integrity verification
+
+**Windows / Identity**  
+Windows Server · Active Directory · Group Policy · PowerShell · Microsoft 365 · RBAC / least privilege
+
+**Network Security**  
+Nmap · Wireshark · tshark · TCP/IP
+
+**Application Security**  
+Burp Suite · OWASP · DVWA · OWASP Juice Shop · Bandit
+
+**Cloud / IaC**  
+GCP · Terraform · VPC · IAM · Azure Windows Server
+
+**Automation**  
+Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage automation · PCAP analysis
+
+---
+
+## 🎓 Certifications & Professional Credentials
+
+### Cybersecurity & Security
+- **CompTIA Security+ (SY0-701)** — Certified
+- **Introduction to AI Security** — AI Security University
+- **GRC Fundamentals** — CyberExam
+- **ICSI | CNS Certified Network Security Specialist**
+- **Junior Cybersecurity Analyst Career Path** — Cisco
+- **Introduction to Cybersecurity** — Cisco
+
+### Google, IBM & AI
+- **Google Cybersecurity Specialization**
+- **Google IT Support Specialization**
+- **Google Cybersecurity Professional Certificate**
+- **Google IT Support Professional Certificate**
+- **Introduction to Generative AI** — Google
+- **Google AI Essentials**
+- **Artificial Intelligence Fundamentals** — IBM
+
+### Virtual Experience
+- **Mastercard Cybersecurity Job Simulation** — Forage
+- **Datacom Cyber Security Operations Job Simulation** — Forage
+
+> Virtual job simulations are listed separately from paid employment and independent technical labs.
+
+---
+
+## 🎓 Education
+
+- **BSc in Computer Science** — Unicaf University · In Progress
+- **Diploma in Information Technology** — Macmaine School of Computing
+- **Diploma in PC Maintenance and Networking** — Macmaine School of Computing
+
+---
+
+## 💼 Professional Foundation
+
+My cybersecurity work builds on **12+ years of enterprise IT operations** across Windows environments, Active Directory, access control, endpoint protection, system hardening, patch management, infrastructure troubleshooting and business-critical support.
+
+That foundation informs the security workflow used throughout this portfolio:
+
+**Environment → Risk → Telemetry → Detection → Investigation → Remediation → Validation**
+
+---
+
+## 🎯 Career Focus
+
+**Primary:** SOC Analyst · Security Operations Analyst · Cybersecurity Analyst
+
+**Secondary:** Detection Engineering · Incident Response · Threat Hunting · Security Automation · Junior Security Engineering
+
+**Open to international opportunities and relocation.**
+
+---
+
+## 🔄 Portfolio Maintenance
+
+Automated checks validate portfolio quality, evidence integrity and security controls. Visitor-facing content is kept focused on technical evidence, projects and professional credentials.
+
+<!-- START_SECTION:activity -->
+### Recent Lab & Security Updates
+* Splunk SOC Lab Track — six connected SOC investigation labs
+* Windows / Sysmon endpoint detection — real and synthetic validation
+* Wazuh detection engineering — offline rule validation and live endpoint evidence
+* Azure Windows Server / Active Directory — deployed lab with retained telemetry
+* Network, DFIR, cloud, web-security and automation evidence maintained in the public portfolio
+<!-- END_SECTION:activity -->
+
+---
+
+## 🌐 Portfolio
+
+| Resource | Link |
+|---|---|
+| **Live portfolio** | [masiya-hub.org](https://masiya-hub.org/) |
+| **GitHub profile** | [github.com/hnmasiya](https://github.com/hnmasiya) |
+| **LinkedIn** | [linkedin.com/in/hazvinei-masiya](https://www.linkedin.com/in/hazvinei-masiya/) |
+
+---
+
+## 🔐 Responsible Security Use
+
+All security testing is performed only against systems and environments intentionally authorized for testing. Simulated and synthetic scenarios are identified in their accompanying documentation.
+
+## © Portfolio Ownership
+
+Original portfolio materials are protected by the repository's copyright and usage notice. Public availability is intended for professional review and does not grant permission to reproduce, republish, redistribute, present the work as your own, or commercially reuse original portfolio materials without permission.
+
+<!-- AUTO_PORTFOLIO_PROJECT_INDEX_START -->
+## Automatically Synced Security Projects
+
+_Generated from public, non-fork, non-archived security-related repositories owned by `hnmasiya`. Claims are sourced from repository metadata or README content._
+
+- **[mastercard-cybersecurity-job-simulation](https://github.com/hnmasiya/mastercard-cybersecurity-job-simulation)** — Mastercard Cybersecurity Job Simulation — Forage Completed: September 20, 2026 - Format: Forage virtual job simulation - Focus: security awareness, phishing analysis, simulation design and training - Scenario: Security Awareness Team - Skills: phishing anal...
+- **[Datacom-Cyber-Security-Operations-Job-Simulation](https://github.com/hnmasiya/Datacom-Cyber-Security-Operations-Job-Simulation)** — Datacom Cyber Security Operations Job Simulation — Forage Completed: September 20, 2026 - Format: Forage virtual job simulation - Focus: cyberattack investigation, risk assessment, security analysis and recommendations - Scenario work: simulated ransomware...
+- **[gcp-terraform-secure-vpc](https://github.com/hnmasiya/gcp-terraform-secure-vpc)** — Terraform-based cloud security architecture with strict IAM policies and firewall rules
+- **[ad-security-log-parser](https://github.com/hnmasiya/ad-security-log-parser)** — Python security tooling for Windows Security Event Log analysis and privileged group-change detection
+- **[wazuh-siem-detection-lab](https://github.com/hnmasiya/wazuh-siem-detection-lab)** — Custom Wazuh SIEM detection rules mapped to MITRE ATT&CK framework and log analysis
+
+<!-- AUTO_PORTFOLIO_PROJECT_INDEX_END -->
+

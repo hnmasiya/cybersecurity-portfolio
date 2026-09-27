@@ -1,0 +1,5 @@
+frame.number|frame.time_relative|ip.src|ip.dst|tcp.srcport|tcp.dstport|http.request.method|http.host|http.request.uri|http.user_agent|http.referer
+4|0.000112000|127.0.0.1|127.0.0.1|42266|18080|GET|lab.local|/|Mozilla/5.0 SOC-Lab-Normal|
+16|0.008278000|127.0.0.1|127.0.0.1|42282|18080|GET|malicious.example.test|/download/payload.bin?cmd=%2Fbin%2Fsh%20-c%20id|SOC-Lab-SuspiciousScanner/1.0|
+29|0.017039000|127.0.0.1|127.0.0.1|42294|18080|GET|malicious.example.test|/search?id=1%27%20OR%20%271%27%3D%271|python-requests/2.x SOC-Lab|http://malicious.example.test/
+42|0.024988000|127.0.0.1|127.0.0.1|42302|18080|GET|malicious.example.test|/etc/passwd|SOC-Lab-Scanner/1.0|

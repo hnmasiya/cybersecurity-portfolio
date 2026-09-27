@@ -1,0 +1,376 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.3  0.1  24544 15124 ?        Ss   06:31   0:37 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    06:31   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    06:31   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-kvfree_rcu_reclaim]
+root           7  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-slub_flushwq]
+root           8  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-netns]
+root          10  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/0:0H-kblockd]
+root          13  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-mm_percpu_wq]
+root          14  0.0  0.0      0     0 ?        S    06:31   0:03 [ksoftirqd/0]
+root          15  0.1  0.0      0     0 ?        I    06:31   0:19 [rcu_preempt]
+root          16  0.0  0.0      0     0 ?        S    06:31   0:00 [rcu_exp_par_gp_kthread_worker/0]
+root          17  0.0  0.0      0     0 ?        S    06:31   0:00 [rcu_exp_gp_kthread_worker]
+root          18  0.0  0.0      0     0 ?        S    06:31   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    06:31   0:00 [kprobe-optimizer]
+root          20  0.0  0.0      0     0 ?        S    06:31   0:00 [idle_inject/0]
+root          21  0.0  0.0      0     0 ?        S    06:31   0:00 [cpuhp/0]
+root          22  0.0  0.0      0     0 ?        S    06:31   0:00 [cpuhp/1]
+root          23  0.0  0.0      0     0 ?        S    06:31   0:00 [idle_inject/1]
+root          24  0.0  0.0      0     0 ?        S    06:31   0:00 [migration/1]
+root          25  0.0  0.0      0     0 ?        S    06:31   0:02 [ksoftirqd/1]
+root          27  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/1:0H-kblockd]
+root          28  0.0  0.0      0     0 ?        S    06:31   0:00 [cpuhp/2]
+root          29  0.0  0.0      0     0 ?        S    06:31   0:00 [idle_inject/2]
+root          30  0.0  0.0      0     0 ?        S    06:31   0:00 [migration/2]
+root          31  0.0  0.0      0     0 ?        S    06:31   0:01 [ksoftirqd/2]
+root          33  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/2:0H-kblockd]
+root          34  0.0  0.0      0     0 ?        S    06:31   0:00 [cpuhp/3]
+root          35  0.0  0.0      0     0 ?        S    06:31   0:00 [idle_inject/3]
+root          36  0.0  0.0      0     0 ?        S    06:31   0:00 [migration/3]
+root          37  0.8  0.0      0     0 ?        S    06:31   1:27 [ksoftirqd/3]
+root          39  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/3:0H-kblockd]
+root          40  0.0  0.0      0     0 ?        S    06:31   0:00 [kdevtmpfs]
+root          41  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-inet_frag_wq]
+root          42  0.0  0.0      0     0 ?        I    06:31   0:00 [rcu_tasks_kthread]
+root          43  0.0  0.0      0     0 ?        I    06:31   0:00 [rcu_tasks_rude_kthread]
+root          44  0.0  0.0      0     0 ?        S    06:31   0:07 [kauditd]
+root          45  0.0  0.0      0     0 ?        S    06:31   0:00 [khungtaskd]
+root          46  0.0  0.0      0     0 ?        S    06:31   0:00 [oom_reaper]
+root          49  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-writeback]
+root          51  0.2  0.0      0     0 ?        S    06:31   0:25 [kcompactd0]
+root          52  0.0  0.0      0     0 ?        SN   06:31   0:00 [ksmd]
+root          53  0.0  0.0      0     0 ?        SN   06:31   0:00 [khugepaged]
+root          54  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-kblockd]
+root          55  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-blkcg_punt_bio]
+root          56  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-kintegrityd]
+root          57  0.1  0.0      0     0 ?        S    06:31   0:13 [irq/9-acpi]
+root          60  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-tpm_dev_wq]
+root          61  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-ata_sff]
+root          62  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-md_bitmap]
+root          63  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-md_llbitmap_io]
+root          64  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-md_llbitmap_unplug]
+root          65  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-edac-poller]
+root          66  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-devfreq_wq]
+root          67  0.0  0.0      0     0 ?        S    06:31   0:00 [watchdogd]
+root          68  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-quota_events_unbound]
+root          69  0.1  0.0      0     0 ?        S    06:31   0:12 [kswapd0]
+root          70  0.0  0.0      0     0 ?        S    06:31   0:00 [ecryptfs-kthread]
+root          71  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-kthrotld]
+root          72  0.0  0.0      0     0 ?        I<   06:31   0:00 [kworker/R-acpi_thermal_pm]
+root          77  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-mld]
+root          78  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-ipv6_addrconf]
+root          79  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-kstrp]
+root          92  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-charger_manager]
+root         152  0.0  0.0      0     0 ?        S    06:32   0:00 [scsi_eh_0]
+root         153  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-scsi_tmf_0]
+root         155  0.0  0.0      0     0 ?        S    06:32   0:00 [scsi_eh_1]
+root         156  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-scsi_tmf_1]
+root         167  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-ktpacpid]
+root         170  0.0  0.0      0     0 ?        I<   06:32   0:01 [kworker/0:1H-i915_cleanup]
+root         209  0.0  0.0      0     0 ?        I<   06:32   0:01 [kworker/3:1H-i915_cleanup]
+root         210  0.0  0.0      0     0 ?        I<   06:32   0:03 [kworker/1:1H-kblockd]
+root         216  0.0  0.0      0     0 ?        S    06:32   0:08 [jbd2/sda7-8]
+root         217  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-ext4-rsv-conversion]
+root         263  0.0  0.2  50916 19792 ?        S<s  06:32   0:04 /usr/lib/systemd/systemd-journald
+root         324  0.0  0.1  30876  8348 ?        Ss   06:32   0:01 /usr/lib/systemd/systemd-udevd
+root         338  0.0  0.0      0     0 ?        I<   06:32   0:01 [kworker/2:1H-kblockd]
+root         358  0.0  0.0      0     0 ?        I    06:32   0:08 [kworker/1:2-events]
+root         381  0.0  0.0      0     0 ?        S    06:32   0:00 [psimon]
+root         476  0.0  0.0      0     0 ?        S    06:32   0:00 [irq/131-mei_me]
+root         512  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-cfg80211]
+systemd+     594  0.0  0.0  17580  7616 ?        Ss   06:32   0:09 /usr/lib/systemd/systemd-oomd
+systemd+     598  0.0  0.1  21804 13156 ?        Ss   06:32   0:04 /usr/lib/systemd/systemd-resolved
+systemd+     600  0.0  0.1  91416  8220 ?        Ssl  06:32   0:00 /usr/lib/systemd/systemd-timesyncd
+root         626  0.7  0.0  12824  3196 ?        S<sl 06:32   1:16 /sbin/auditd
+root         725  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-ttm]
+root         746  0.1  0.0      0     0 ?        S    06:32   0:20 [irq/132-iwlwifi]
+root         750  0.0  0.0      0     0 ?        S    06:32   0:00 [card1-crtc0]
+root         751  0.0  0.0      0     0 ?        S    06:32   0:00 [card1-crtc1]
+root         752  0.0  0.0      0     0 ?        S    06:32   0:00 [card1-crtc2]
+root         823  0.0  0.1 313572  8004 ?        Ssl  06:32   0:01 /usr/libexec/accounts-daemon
+avahi        846  0.0  0.0   8820  4620 ?        Ss   06:32   0:01 avahi-daemon: running [normann-ThinkPad-X260.local]
+root         847  0.0  0.0  13676  6820 ?        Ss   06:32   0:00 /usr/libexec/bluetooth/bluetoothd
+root         849  0.0  0.0   9436  2888 ?        Ss   06:32   0:00 /usr/sbin/cron -f -P
+message+     850  0.2  0.0  12640  7816 ?        Ss   06:32   0:26 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+gnome-r+     854  0.0  0.1 439108 15516 ?        Ssl  06:32   0:00 /usr/libexec/gnome-remote-desktop-daemon --system
+root         860  0.0  0.2  40696 21704 ?        Ss   06:32   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+polkitd      862  0.0  0.1 392016 13336 ?        Ssl  06:32   0:03 /usr/lib/polkit-1/polkitd --no-debug
+root         863  0.0  0.0 313508  7416 ?        Ssl  06:32   0:00 /usr/libexec/power-profiles-daemon
+root         870  0.1  0.3 2146904 26528 ?       Ssl  06:32   0:11 /usr/lib/snapd/snapd
+root         926  0.0  0.0 309860  6452 ?        Ssl  06:32   0:00 /usr/libexec/switcheroo-control
+root         929  0.0  0.1  18208  9040 ?        Ss   06:32   0:01 /usr/lib/systemd/systemd-logind
+root         931  0.0  0.0  17612  7852 ?        Ss   06:32   0:01 /usr/lib/systemd/systemd-machined
+root         932  0.0  0.1 424892 10900 ?        Ssl  06:32   0:01 /usr/sbin/thermald --systemd --dbus-enable --adaptive
+root         933  0.3  0.1 405920 14036 ?        Ssl  06:32   0:31 /usr/bin/touchegg --daemon
+root         934  0.0  0.1 470120 15060 ?        Ssl  06:32   0:04 /usr/libexec/udisks2/udisksd
+root         935  0.0  0.1  73908 14348 ?        Ss   06:32   0:00 /usr/sbin/virtlockd
+root         938  0.0  0.1  73912 14460 ?        Ss   06:32   0:00 /usr/sbin/virtlogd
+avahi        958  0.0  0.0   8448  1512 ?        S    06:32   0:00 avahi-daemon: chroot helper
+root         966  0.0  0.2 485720 21140 ?        Ssl  06:32   0:10 /usr/sbin/NetworkManager --no-daemon
+root         967  0.0  0.1  18176 11388 ?        Ss   06:32   0:01 /usr/sbin/wpa_supplicant -u -s -O DIR=/run/wpa_supplicant GROUP=netdev
+syslog      1015  0.0  0.0 222712  5960 ?        Ssl  06:32   0:01 /usr/sbin/rsyslogd -n -iNONE
+root        1133  0.0  0.1 392116 13084 ?        Ssl  06:32   0:00 /usr/sbin/ModemManager
+root        1342  0.0  0.1  38424 11844 ?        Ss   06:32   0:00 /usr/sbin/cupsd -l
+root        1349  0.7  0.3 1355856 29624 ?       Ssl  06:32   1:19 /usr/sbin/tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/run/tailscale/tailscaled.sock --port=41641
+root        1351  0.0  0.3 118024 24044 ?        Ssl  06:32   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+kernoops    1362  0.0  0.0  12760  2484 ?        Ss   06:32   0:00 /usr/sbin/kerneloops --test
+root        1377  0.9  0.4 2463724 36564 ?       Ssl  06:32   1:35 /usr/bin/containerd
+kernoops    1402  0.0  0.0  12760  2440 ?        Ss   06:32   0:00 /usr/sbin/kerneloops
+root        1422  0.0  0.0 306364  7048 ?        SLsl 06:32   0:00 /usr/sbin/lightdm
+lp          1430  0.0  0.0  16852  6608 ?        S    06:32   0:00 /usr/lib/cups/notifier/dbus dbus://
+lp          1432  0.0  0.0  16852  6632 ?        S    06:32   0:00 /usr/lib/cups/notifier/dbus dbus://
+lp          1434  0.0  0.0  16852  6616 ?        S    06:32   0:00 /usr/lib/cups/notifier/dbus dbus://
+cups-br+    1435  0.0  0.2 268512 18424 ?        Ssl  06:32   0:00 /usr/sbin/cups-browsed
+root        1455  8.9  1.1 758480 90100 tty7     Rsl+ 06:32  15:33 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+root        1469  0.0  0.2 232804 20316 ?        Ss   06:32   0:01 /usr/sbin/apache2 -k start
+root        1483  0.0  0.0   8716  1956 tty1     Ss+  06:32   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+root        1530  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-iprt-VBoxWQueue]
+root        1531  0.0  0.0      0     0 ?        S    06:32   0:00 [iprt-VBoxTscThread]
+www-data    1555  0.0  0.1 233528 13204 ?        S    06:32   0:00 /usr/sbin/apache2 -k start
+www-data    1557  0.0  0.1 233528 13224 ?        S    06:32   0:00 /usr/sbin/apache2 -k start
+www-data    1560  0.0  0.1 233528 13228 ?        S    06:32   0:00 /usr/sbin/apache2 -k start
+www-data    1573  0.0  0.1 233480 11376 ?        S    06:32   0:00 /usr/sbin/apache2 -k start
+www-data    1582  0.0  0.1 233480 11372 ?        S    06:32   0:00 /usr/sbin/apache2 -k start
+mysql       1603  0.0  0.7 1351196 59232 ?       Ssl  06:32   0:03 /usr/sbin/mariadbd
+root        1672  0.0  0.0  27440  2732 ?        Sl   06:32   0:00 /var/ossec/bin/wazuh-execd
+root        1681  1.0  1.1 3533292 88608 ?       Ssl  06:32   1:50 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root        1726  0.0  0.0      0     0 ?        I<   06:32   0:00 [kworker/R-dio/sda7]
+libvirt+    1744  0.0  0.0  11532  2816 ?        S    06:32   0:00 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+root        1745  0.0  0.0  11504  1256 ?        S    06:32   0:00 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+root        1754  0.0  0.0   9952  3664 ?        Ss   06:32   0:04 /bin/bash /usr/local/sbin/thermal-auto-optimizer
+wazuh       1821  2.1  0.1 250324  8624 ?        Sl   06:32   3:43 /var/ossec/bin/wazuh-agentd
+root        1958  2.5  0.1 349128 14492 ?        SNl  06:32   4:28 /var/ossec/bin/wazuh-syscheckd
+root        2151  0.3  0.2 1325700 17508 ?       Sl   06:32   0:38 /var/ossec/bin/wazuh-logcollector
+root        2190  0.2  0.2 816220 20672 ?        Sl   06:32   0:29 /var/ossec/bin/wazuh-modulesd
+rtkit       2512  0.0  0.0  22956  3456 ?        SNsl 06:32   0:00 /usr/libexec/rtkit-daemon
+root        2708  0.0  0.0      0     0 ?        S<   06:32   0:00 [krfcommd]
+root        2784  0.0  0.1 1233872 11372 ?       Sl   06:32   0:03 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 87f68a4aea4e175d53f163d6549338bce0b8ec0abb37d6441fc5149d8e8a00c9 -address /run/containerd/containerd.sock
+root        2829  0.0  0.1 1233872 10660 ?       Sl   06:32   0:02 /usr/bin/containerd-shim-runc-v2 -namespace moby -id d95d191479ac0fba34f5754fa6b4c2b4c3076b1da68e8163377a9ae0be4071b0 -address /run/containerd/containerd.sock
+root        2830  0.0  0.1 1233872 10520 ?       Sl   06:32   0:03 /usr/bin/containerd-shim-runc-v2 -namespace moby -id f03b27a5e6c4b923cfacd43775fd15e15f8391bb45e87c14bcc699dfde9fbf3b -address /run/containerd/containerd.sock
+root        2843  0.0  0.1 1233936 10572 ?       Sl   06:32   0:03 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 65fad5cd98b2e0e47d11031a4258dfc459d163f381f70c1781598a05a3e4e7e3 -address /run/containerd/containerd.sock
+root        2859  0.0  0.1 1233872 10528 ?       Sl   06:32   0:02 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 57802887a79ded5274d3d51004c1b20ff5c09be1ed2e4efe5a25317e53352f88 -address /run/containerd/containerd.sock
+root        2868  0.1  0.1 1233872 11516 ?       Sl   06:32   0:10 /usr/bin/containerd-shim-runc-v2 -namespace moby -id cdee3e939e3c94e0b6e0e3800b0b30acb0ad7308304b5172c59ef522ed5bfa13 -address /run/containerd/containerd.sock
+root        2877  0.0  0.1 1233872 10684 ?       Sl   06:32   0:03 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 4e584288711faab48500dd40a355a98cf68f97bb4a2f3bcc7d4b84b0aa51a6ef -address /run/containerd/containerd.sock
+root        2890  0.0  0.1 1233872 10464 ?       Sl   06:32   0:02 /usr/bin/containerd-shim-runc-v2 -namespace moby -id f79ee47e7c27b15eeb9c44214e1748fe01221e4ef4ded25ece94bd2ff75c9e90 -address /run/containerd/containerd.sock
+root        2891  0.0  0.1 1233872 10528 ?       Sl   06:32   0:02 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 0def9492e2315f0395f16669bccfbb2761a1b81bae9323027c8b6e4205f0c7c4 -address /run/containerd/containerd.sock
+65532       3050  1.7  1.5 10174048 127048 ?     Ssl  06:32   3:05 /nodejs/bin/node /juice-shop/build/app.js
+root        3057  0.0  0.0    212    52 ?        Ss   06:32   0:00 s6-svscan -t0 /var/run/s6/services
+root        3092  0.0  0.4 1324720 34456 ?       Ssl  06:32   0:08 /portainer
+root        3110  0.0  0.3 1969156 30144 ?       Ssl  06:32   0:03 /bin/ollama serve
+root        3111  0.0  0.0    448    68 ?        Ss   06:32   0:00 /package/admin/s6/command/s6-svscan -d4 -- /run/service
+root        3132  0.0  0.0  16000  1900 ?        Ssl  06:32   0:03 hbbr
+normann     3140  0.0  0.0   4292  2612 ?        Ss   06:32   0:00 /bin/bash /entrypoint.sh
+normann     3180  7.9 16.6 5015668 1328632 ?     Ssl  06:32  13:53 /usr/share/wazuh-indexer/jdk/bin/java -Xshare:auto -Dopensearch.networkaddress.cache.ttl=60 -Dopensearch.networkaddress.cache.negative.ttl=10 -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -XX:+ShowCodeDetailsInExceptionMessages -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dio.netty.allocator.numDirectArenas=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.security.manager=allow -Djava.locale.providers=SPI,COMPAT -XX:+UseG1GC -XX:G1ReservePercent=25 -XX:InitiatingHeapOccupancyPercent=30 -Djava.io.tmpdir=/tmp/opensearch-17753986977326153069 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/lib/wazuh-indexer -XX:ErrorFile=/var/log/wazuh-indexer/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=/var/log/wazuh-indexer/gc.log:utctime,pid,tags:filecount=32,filesize=64m -Djava.security.manager=allow --add-modules=jdk.incubator.vector -Djava.util.concurrent.ForkJoinPool.common.threadFactory=org.opensearch.secure_sm.SecuredForkJoinWorkerThreadFactory -Dclk.tck=100 -Djdk.attach.allowAttachSelf=true -Djava.security.policy=file:///usr/share/wazuh-indexer/opensearch-performance-analyzer/opensearch_security.policy --add-opens=jdk.attach/sun.tools.attach=ALL-UNNAMED -Xms1g -Xmx1g -XX:MaxDirectMemorySize=536870912 -Dopensearch.path.home=/usr/share/wazuh-indexer -Dopensearch.path.conf=/usr/share/wazuh-indexer/config -Dopensearch.distribution.type=rpm -Dopensearch.bundled_jdk=true -cp /usr/share/wazuh-indexer/lib/* org.opensearch.bootstrap.OpenSearch
+root        3181  0.0  0.0  34888  6432 ?        Ssl  06:32   0:09 hbbs -r 100.104.119.57:21117
+root        3199  0.0  0.1 317312  9792 ?        Ssl  06:32   0:03 /usr/libexec/upowerd
+root        3206  0.0  0.0 1818916 4488 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 3000 -container-ip 172.19.0.2 -container-port 3000 -use-listen-fd
+root        3213  0.0  0.0 1745184 4428 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 3000 -container-ip 172.19.0.2 -container-port 3000 -use-listen-fd
+root        3386  0.0  0.0 1818916 4600 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto udp -host-ip 0.0.0.0 -host-port 514 -container-ip 172.18.0.2 -container-port 514 -use-listen-fd
+root        3393  0.0  0.0 1745184 4612 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto udp -host-ip :: -host-port 514 -container-ip 172.18.0.2 -container-port 514 -use-listen-fd
+root        3419  0.4  0.0 1745440 4964 ?        Sl   06:32   0:45 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 1514 -container-ip 172.18.0.2 -container-port 1514 -use-listen-fd
+root        3426  0.0  0.0 1671452 4352 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 1514 -container-ip 172.18.0.2 -container-port 1514 -use-listen-fd
+root        3441  0.0  0.0 1745184 4732 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 1515 -container-ip 172.18.0.2 -container-port 1515 -use-listen-fd
+root        3448  0.0  0.0 1745184 4504 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 1515 -container-ip 172.18.0.2 -container-port 1515 -use-listen-fd
+root        3465  0.0  0.0 1745184 4472 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 55000 -container-ip 172.18.0.2 -container-port 55000 -use-listen-fd
+root        3472  0.0  0.0 1745184 4380 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 55000 -container-ip 172.18.0.2 -container-port 55000 -use-listen-fd
+colord      3497  0.0  0.1 320200 13904 ?        Ssl  06:32   0:01 /usr/libexec/colord
+root        3503  0.0  0.0 1818916 4544 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 443 -container-ip 172.18.0.3 -container-port 5601 -use-listen-fd
+root        3509  0.0  0.0 1745184 4476 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 443 -container-ip 172.18.0.3 -container-port 5601 -use-listen-fd
+root        3564  0.0  0.1 234528  8476 ?        Sl   06:32   0:00 lightdm --session-child 13 20
+root        3571  0.0  0.0 1818916 4556 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9443 -container-ip 172.19.0.3 -container-port 9443 -use-listen-fd
+root        3584  0.0  0.0 1818916 4612 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 9443 -container-ip 172.19.0.3 -container-port 9443 -use-listen-fd
+root        3589  0.0  0.0    212    52 ?        S    06:32   0:00 s6-supervise s6-fdholderd
+root        3675  0.0  0.0 1745184 4496 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 3001 -container-ip 172.19.0.4 -container-port 3000 -use-listen-fd
+root        3683  0.0  0.0 1745184 4432 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 3001 -container-ip 172.19.0.4 -container-port 3000 -use-listen-fd
+root        3811  0.0  0.0 1745184 4556 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9200 -container-ip 172.18.0.4 -container-port 9200 -use-listen-fd
+root        3825  0.0  0.0 1745184 4564 ?        Sl   06:32   0:00 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 9200 -container-ip 172.18.0.4 -container-port 9200 -use-listen-fd
+root        3909  0.0  0.0    228    68 ?        S    06:32   0:00 s6-supervise s6-linux-init-shutdownd
+root        3910  0.0  0.0    216    32 ?        Ss   06:32   0:00 /package/admin/s6-linux-init/command/s6-linux-init-shutdownd -d3 -c /run/s6/basedir -g 3000 -C -B
+root        4010  0.0  0.0    228    68 ?        S    06:32   0:00 s6-supervise s6rc-fdholder
+root        4011  0.0  0.0    228    68 ?        S    06:32   0:00 s6-supervise svc-cron
+root        4013  0.0  0.0    228    68 ?        S    06:32   0:00 s6-supervise s6rc-oneshot-runner
+root        4014  0.0  0.0    228    68 ?        S    06:32   0:00 s6-supervise svc-xsettingsd
+root        4015  0.0  0.0    228    72 ?        S    06:32   0:00 s6-supervise svc-de
+root        4016  0.0  0.0    228    64 ?        S    06:32   0:00 s6-supervise svc-selkies
+root        4017  0.0  0.0    228    72 ?        S    06:32   0:00 s6-supervise svc-nginx
+root        4018  0.0  0.0    228    72 ?        S    06:32   0:00 s6-supervise svc-pulseaudio
+root        4019  0.0  0.0    228    68 ?        S    06:32   0:00 s6-supervise svc-watchdog
+root        4020  0.0  0.0    228    72 ?        S    06:32   0:00 s6-supervise svc-xorg
+root        4021  0.0  0.0    228    68 ?        S    06:32   0:00 s6-supervise svc-docker
+root        4049  0.0  0.0    216    44 ?        Ss   06:32   0:00 /package/admin/s6/command/s6-ipcserverd -1 -- /package/admin/s6/command/s6-ipcserver-access -v0 -E -l0 -i data/rules -- /package/admin/s6/command/s6-sudod -t 30000 -- /package/admin/s6-rc/command/s6-rc-oneshot-run -l ../.. --
+normann     4356  0.0  0.0  75928  4932 ?        Ssl  06:32   0:00 /usr/bin/pulseaudio --log-level=0 --log-target=stderr --exit-idle-time=-1
+root        4361  0.0  0.0   2404  1728 ?        Ss   06:32   0:00 bash ./run svc-xorg
+root        4367  0.0  0.0   1640   944 ?        Ss   06:32   0:00 busybox crond -f -S -l 5
+root        4368  0.0  0.0  12692  6148 ?        Ss   06:32   0:00 nginx: master process /usr/sbin/nginx -g daemon off;
+root        4369  0.0  0.0   2400  1712 ?        Ss   06:32   0:00 bash ./run svc-docker
+root        4374  0.0  0.0   9260  2472 ?        Ss   06:32   0:00 sleep infinity
+root        4379  0.0  0.0   2396  1732 ?        Ss   06:32   0:00 bash ./run svc-xsettingsd
+normann     4387  3.9  0.8 237492 64536 ?        Ssl  06:32   6:50 /lsiopy/bin/python3 /lsiopy/bin/selkies --addr=localhost --mode=websockets
+root        4390  0.0  0.0   9260  2524 ?        S    06:32   0:00 sleep infinity
+root        4419  0.0  0.0   9260  2516 ?        S    06:32   0:00 sleep infinity
+root        4420  0.0  0.0   9260  2408 ?        S    06:32   0:00 sleep infinity
+normann     4428  0.0  0.0  10548  4400 ?        Sl   06:32   0:00 /usr/libexec/pulse/gsettings-helper
+syslog      4433  0.0  0.0  13156  3208 ?        S    06:32   0:00 nginx: worker process
+syslog      4434  0.0  0.0  13156  3208 ?        S    06:32   0:00 nginx: worker process
+syslog      4435  0.0  0.0  13156  3208 ?        S    06:32   0:00 nginx: worker process
+syslog      4436  0.0  0.0  13156  3172 ?        S    06:32   0:00 nginx: worker process
+root        4698  0.0  0.0   2408  1792 ?        Ss   06:32   0:00 bash ./run svc-de
+normann     4700  0.0  0.0   2404  1800 ?        S    06:32   0:00 /bin/bash /defaults/startwm_wayland.sh
+normann     4701  0.2  0.7 280604 59196 ?        Sl   06:32   0:23 labwc
+normann     4727  0.0  0.0   1652   916 ?        S    06:32   0:00 sh /config/.config/labwc/autostart
+normann     4728  0.4  1.7 515760 142464 ?       Sl   06:32   0:49 wireshark
+normann     4752  0.0  0.1  22132 12984 ?        Ss   06:32   0:05 /usr/lib/systemd/systemd --user
+normann     4755  0.0  0.0  21560  3588 ?        S    06:32   0:00 (sd-pam)
+normann     4815  0.0  0.5 251260 42828 ?        S    06:32   0:00 Xwayland :1 -rootless -core -terminate 10 -listenfd 15 -listenfd 16 -displayfd 31 -wm 28
+normann     4850  0.9  2.0 11546328 164480 ?     Sl   06:32   1:36 /usr/share/wazuh-dashboard/node/bin/node --no-warnings --max-http-header-size=65536 /usr/share/wazuh-dashboard/src/cli/dist -c /usr/share/wazuh-dashboard/config/opensearch_dashboards.yml
+normann     4853  0.0  0.0   2792  1100 ?        S    06:32   0:00 dbus-launch --autolaunch c34dab329768b8ff3fcd74c86a5af51f --binary-syntax --close-stderr
+normann     4859  0.0  0.0   1508   948 ?        Ss   06:32   0:00 /usr/bin/dbus-daemon --syslog-only --fork --print-pid 5 --print-address 7 --session
+normann     4904  0.0  0.1 113984 10424 ?        S<sl 06:32   0:00 /usr/bin/pipewire
+normann     4905  0.0  0.0  97752  5040 ?        Ssl  06:32   0:00 /usr/bin/pipewire -c filter-chain.conf
+normann     4907  0.0  0.2 566904 21304 ?        S<sl 06:32   0:00 /usr/bin/wireplumber
+normann     4908  0.0  0.1 109960  9664 ?        S<sl 06:32   0:00 /usr/bin/pipewire-pulse
+normann     4910  0.0  0.1 538020 10200 ?        SLsl 06:32   0:01 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring
+normann     4915  0.1  0.0  10800  6080 ?        Ss   06:32   0:12 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+normann     4931  0.0  0.1 298256 15476 ?        Ssl  06:32   0:00 /usr/libexec/gnome-session-binary --session=zorin
+normann     5028  0.0  0.0 309324  6092 ?        Ssl  06:32   0:00 /usr/libexec/xdg-permission-store
+normann     5080  0.0  0.0 314304  7156 ?        Ssl  06:32   0:00 /usr/libexec/gvfsd
+normann     5086  0.0  0.0 534484  6772 ?        Sl   06:32   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+normann     5096  0.0  0.1 383100  8292 ?        Ssl  06:32   0:00 /usr/libexec/at-spi-bus-launcher
+normann     5105  0.0  0.0   9520  5064 ?        S    06:32   0:01 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_0
+normann     5122  0.0  0.0 162668  6436 ?        Ssl  06:32   0:00 /usr/libexec/gcr-ssh-agent --base-dir /run/user/1000/gcr
+normann     5123  0.0  0.0  91564  5340 ?        Ssl  06:32   0:00 /usr/libexec/gnome-session-ctl --monitor
+normann     5144  0.0  0.1 668292 15620 ?        Ssl  06:32   0:00 /usr/libexec/gnome-session-binary --systemd-service --session=zorin
+normann     5177 10.3  2.7 4421456 217244 ?      Ssl  06:32  18:02 /usr/bin/gnome-shell
+normann     5269  0.0  0.8 1027572 68540 ?       Sl   06:33   0:10 /usr/libexec/mutter-x11-frames
+normann     5286  0.0  0.0 236068  7716 ?        Sl   06:33   0:05 /usr/libexec/at-spi2-registryd --use-gnome-session
+normann     5349  0.0  0.1 658656 13912 ?        Sl   06:33   0:00 /usr/libexec/gnome-shell-calendar-server
+normann     5356  0.0  0.4 1282020 38816 ?       Ssl  06:33   0:00 /usr/libexec/evolution-source-registry
+normann     5373  0.0  0.2 546848 20212 ?        Sl   06:33   0:00 /usr/libexec/goa-daemon
+normann     5382  0.0  0.3 2588856 26096 ?       Sl   06:33   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+normann     5388  0.0  0.1 389136  8484 ?        Sl   06:33   0:00 /usr/libexec/goa-identity-service
+normann     5391  0.0  0.2 892788 22308 ?        Ssl  06:33   0:00 /usr/libexec/evolution-calendar-factory
+geoclue     5415  0.0  0.3 1021240 25228 ?       Ssl  06:33   0:05 /usr/libexec/geoclue
+normann     5423  0.7  0.1 388852 10948 ?        Ssl  06:33   1:21 /usr/bin/ibus-daemon --panel disable --xim
+normann     5424  0.0  0.0 383676  6380 ?        Ssl  06:33   0:00 /usr/libexec/gsd-a11y-settings
+normann     5431  0.0  0.2 450264 22624 ?        Ssl  06:33   0:01 /usr/libexec/gsd-color
+normann     5432  0.0  0.1 431824 11580 ?        Ssl  06:33   0:00 /usr/libexec/gsd-datetime
+normann     5433  0.0  0.0 459028  7660 ?        Ssl  06:33   0:01 /usr/libexec/gsd-housekeeping
+normann     5435  0.0  0.2 448616 21724 ?        Ssl  06:33   0:00 /usr/libexec/gsd-keyboard
+normann     5436  0.0  0.2 741928 23632 ?        Ssl  06:33   0:00 /usr/libexec/gsd-media-keys
+normann     5437  0.0  0.2 523948 23152 ?        Ssl  06:33   0:01 /usr/libexec/gsd-power
+normann     5440  0.0  0.1 323772 10880 ?        Ssl  06:33   0:00 /usr/libexec/gsd-print-notifications
+normann     5446  0.0  0.0 531096  6476 ?        Ssl  06:33   0:00 /usr/libexec/gsd-rfkill
+normann     5451  0.0  0.0 309572  5996 ?        Ssl  06:33   0:00 /usr/libexec/gsd-screensaver-proxy
+normann     5452  0.0  0.1 543488 12100 ?        Ssl  06:33   0:03 /usr/libexec/gsd-sharing
+normann     5453  0.0  0.0 385976  7592 ?        Ssl  06:33   0:00 /usr/libexec/gsd-smartcard
+normann     5455  0.0  0.1 393668  8548 ?        Ssl  06:33   0:00 /usr/libexec/gsd-sound
+normann     5457  0.0  0.2 449124 22152 ?        Ssl  06:33   0:00 /usr/libexec/gsd-wacom
+normann     5458  0.0  0.3 455380 28884 ?        Ssl  06:33   0:01 /usr/libexec/gsd-xsettings
+normann     5485  0.0  0.3 754756 28956 ?        Ssl  06:33   0:00 /usr/libexec/evolution-addressbook-factory
+normann     5537  2.0  7.4 1822964 594948 ?      Sl   06:33   3:30 /usr/bin/gnome-software --gapplication-service
+normann     5544  0.0  0.7 855500 63516 ?        Sl   06:33   0:01 /usr/libexec/evolution-data-server/evolution-alarm-notify
+normann     5558  0.2  0.0   4788  3300 ?        S    06:33   0:23 /usr/bin/xscreensaver -nosplash
+normann     5576  0.0  0.0   7864  3740 ?        S    06:33   0:00 xscreensaver-systemd
+normann     5578  0.0  0.1 266404 13308 ?        Sl   06:33   0:00 /usr/bin/touchegg
+normann     5583  0.0  0.0 305504  7420 ?        Sl   06:33   0:00 /usr/libexec/gsd-disk-utility-notify
+normann     5595  0.0  0.4 479820 34576 ?        SLl  06:33   0:01 /usr/bin/remmina -i
+normann     5606  0.0  0.0 387676  7888 ?        Sl   06:33   0:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+normann     5618  0.0  0.1 402128 11564 ?        Sl   06:33   0:00 /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+normann     5634  0.0  0.0 236656  5976 ?        Sl   06:33   0:00 /usr/libexec/ibus-memconf
+normann     5636  0.4  0.3 382196 24780 ?        Sl   06:33   0:46 /usr/libexec/ibus-extension-gtk3
+normann     5646  0.0  0.2 301264 19536 ?        Sl   06:33   0:00 /usr/libexec/ibus-x11 --kill-daemon
+normann     5650  0.2  0.1 663348  8388 ?        Sl   06:33   0:24 /usr/libexec/ibus-portal
+normann     5665  0.0  0.1 416264 14352 ?        Sl   06:33   0:00 /usr/libexec/gsd-printer
+normann     5797  0.0  0.1 389608 10904 ?        Ssl  06:33   0:02 /usr/libexec/gvfs-udisks2-volume-monitor
+normann     5841  0.0  0.0 309804  6160 ?        Ssl  06:33   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+normann     5849  0.0  0.0 310772  6620 ?        Ssl  06:33   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+normann     5852  0.0  0.1 701944 13864 ?        Ssl  06:33   0:00 /usr/libexec/xdg-desktop-portal
+normann     5859  0.0  0.0 389392  7756 ?        Ssl  06:33   0:00 /usr/libexec/gvfs-afc-volume-monitor
+normann     5876  0.0  0.0 685080  7768 ?        Ssl  06:33   0:00 /usr/libexec/xdg-document-portal
+normann     5888  0.0  0.0 309784  6136 ?        Ssl  06:33   0:00 /usr/libexec/gvfs-goa-volume-monitor
+root        5890  0.0  0.0   2716  2008 ?        Ss   06:33   0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+normann     5924  0.0  0.3 2597168 25856 ?       Sl   06:33   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.ScreenSaver
+normann     5944  0.0  0.2 736408 21944 ?        SNsl 06:33   0:03 /usr/libexec/tracker-miner-fs-3
+normann     5945  0.2  1.8 1998600 148344 ?      Ssl  06:33   0:25 /usr/libexec/xdg-desktop-portal-gnome
+normann     5992  0.1  0.0 236780  7256 ?        Sl   06:33   0:12 /usr/libexec/ibus-engine-simple
+normann     6027  0.0  0.0 236432  6676 ?        Ssl  06:33   0:00 /usr/libexec/gvfsd-metadata
+normann     6091  0.0  0.3 454108 27712 ?        Ssl  06:33   0:01 /usr/libexec/xdg-desktop-portal-gtk
+normann     6092  0.0  0.0 230388  6032 ?        Ssl  06:33   0:00 /usr/libexec/dconf-service
+normann     6119  0.0  0.6 2813692 50188 ?       Sl   06:33   0:02 gjs -m /usr/share/gnome-shell/extensions/zorin-connect@zorinos.com/service/daemon.js
+root        6193  0.1  0.5 555384 42376 ?        Ssl  06:33   0:11 /usr/libexec/fwupd/fwupd
+normann     6319  0.0  0.1  11564  9016 ?        S    06:33   0:01 /usr/bin/dumpcap --log-level MESSAGE --application-flavor wireshark -S -Z 22
+dnsmasq     6367  0.7  1.2 885592 99024 ?        Sl   06:33   1:13 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+dnsmasq     6371  0.1  0.7 153408 58236 ?        S    06:33   0:11 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+dnsmasq     6377  0.1  0.7 153384 58300 ?        S    06:33   0:12 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+dnsmasq     6384  0.0  0.7 226224 56800 ?        S    06:33   0:02 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+dnsmasq     6387  0.0  0.4 305268 38260 ?        S    06:33   0:00 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+root        6475  0.0  0.0 110112  6944 ?        Sl   06:33   0:00 /var/ossec/bin/wazuh-authd
+dnsmasq     6516  0.2  0.3 1218508 24472 ?       Sl   06:33   0:23 /var/ossec/bin/wazuh-db
+normann     6518  0.1  0.7 3020788 63244 ?       Sl   06:33   0:11 gjs /usr/share/gnome-shell/extensions/zorin-desktop-icons@zorinos.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/zorin-desktop-icons@zorinos.com/app
+root        6578  0.0  0.0  27848  2692 ?        Sl   06:33   0:00 /var/ossec/bin/wazuh-execd
+dnsmasq     6616  2.3  0.4 2477832 35996 ?       Sl   06:33   4:03 /var/ossec/bin/wazuh-analysisd
+root        6741  0.2  0.1 347740 11436 ?        SNl  06:33   0:21 /var/ossec/bin/wazuh-syscheckd
+dnsmasq     6814  2.1  0.2 1032272 17940 ?       Sl   06:33   3:39 /var/ossec/bin/wazuh-remoted
+normann     6852  0.0  0.1 535724  8628 ?        Sl   06:33   0:00 /usr/libexec/gvfsd-trash --spawner :1.15 /org/gtk/gvfs/exec_spaw/0
+root        6991  0.0  0.0 470508  7344 ?        Sl   06:33   0:02 /var/ossec/bin/wazuh-logcollector
+dnsmasq     7061  0.0  0.0  27824  3608 ?        Sl   06:33   0:01 /var/ossec/bin/wazuh-monitord
+root        7104  0.7  0.7 1072840 62572 ?       Sl   06:33   1:20 /var/ossec/bin/wazuh-modulesd
+root        7661  0.0  0.0    212    52 ?        S    06:34   0:00 s6-supervise filebeat
+root        7662  0.0  0.0    212    52 ?        S    06:34   0:00 s6-supervise ossec-logs
+root        7672  0.0  0.3 1431740 29764 ?       Ssl  06:34   0:07 /usr/share/filebeat/bin/filebeat -e -c /etc/filebeat/filebeat.yml -path.home /usr/share/filebeat -path.config /etc/filebeat -path.data /var/lib/filebeat -path.logs /var/log/filebeat
+root        7673  0.0  0.0   4980  2532 ?        Ss   06:34   0:00 /usr/bin/coreutils --coreutils-prog-shebang=tail /usr/bin/tail -F /var/ossec/logs/ossec.log
+normann     8301  0.0  0.3 529808 31120 ?        Sl   06:34   0:01 /usr/bin/update-notifier
+normann     9012  0.0  1.2 1558428 98260 ?       Sl   06:34   0:05 /usr/bin/gnome-calendar --gapplication-service
+normann     9019  0.0  0.4 469360 35772 ?        SLl  06:34   0:01 /usr/bin/seahorse --gapplication-service
+normann     9229  2.6  0.7 714944 62916 ?        Ssl  06:34   4:37 /usr/libexec/gnome-terminal-server
+normann    10984  0.0  0.0   3592  1968 ?        S    06:35   0:00 bwrap --args 43 -- /app/bin/chrome
+normann    10996  0.0  0.0 309884  6932 ?        Ssl  06:35   0:00 /usr/libexec/flatpak-session-helper
+normann    11004  0.0  0.0   4448   912 ?        Ss   06:35   0:00 server --sh -n /run/user/1000/.flatpak-helper/pkcs11-flatpak-10996 --provider p11-kit-trust.so pkcs11:model=p11-kit-trust?write-protected=yes
+normann    11009  0.0  0.0   3592  1904 ?        S    06:35   0:00 bwrap --args 43 -- xdg-dbus-proxy --args=45
+normann    11010  0.0  0.0 235696  5704 ?        Sl   06:35   0:05 xdg-dbus-proxy --args=45
+normann    11019  0.0  0.0   3720  1420 ?        S    06:35   0:00 bwrap --args 43 -- /app/bin/chrome
+normann    11026  4.0  4.0 55562068 320536 ?     Sl   06:35   6:56 /app/extra/chrome --disable-features=WebAssemblyTrapHandler,DesktopPWAsRunOnOsLogin
+normann    11046  0.0  0.2 370540 17044 ?        Ssl  06:35   0:00 /usr/libexec/flatpak-portal
+normann    11085  0.0  0.0 54550044 3452 ?       Sl   06:35   0:00 /app/extra/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/normann/.var/app/com.google.Chrome/config/google-chrome/Crash Reports --metrics-dir=/home/normann/.var/app/com.google.Chrome/config/google-chrome --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Freedesktop SDK 25.08 (Flatpak runtime) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=154.0.8037.57 --initial-client-fd=10 --shared-client-connection
+normann    11089  0.0  0.0 54540804 3192 ?       Sl   06:35   0:00 /app/extra/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/normann/.var/app/com.google.Chrome/config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Freedesktop SDK 25.08 (Flatpak runtime) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=154.0.8037.57 --initial-client-fd=4 --shared-client-connection
+normann    11095  0.0  0.7 54982872 56428 ?      S    06:35   0:00 /app/extra/chrome --type=zygote --no-zygote-sandbox --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+normann    11097  0.0  0.0      0     0 ?        Z    06:35   0:00 [zypak-sandbox] <defunct>
+normann    11100  0.0  0.0   5872  1876 ?        S    06:35   0:00 cat
+normann    11101  0.0  0.0   5872  1812 ?        S    06:35   0:00 cat
+normann    11105  0.0  0.0   3592  1964 ?        Ss   06:35   0:00 bwrap --args 43 -- /app/bin/zypak-helper child - /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+normann    11165  0.0  0.0   3716  1416 ?        S    06:36   0:00 bwrap --args 43 -- /app/bin/zypak-helper child - /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+normann    11179  0.0  0.7 54985656 62440 ?      S    06:36   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+normann    11254 23.5  1.8 55432116 145176 ?     Sl   06:36  40:06 /app/extra/chrome --type=gpu-process --gpu-recent-crash-count=0 --ozone-platform=x11 --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable --gpu-preferences=YAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAASAAAAAAAAAABAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAAAEAAAAAAAAACAAAAAAAAAAMAAAAAQAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --metrics-shmem-handle=4,i,2069769231485689018,8408109832844237515,262144 --field-trial-handle=3,i,2941738409670613098,9007339394903071866,262144 --disable-features=DesktopPWAsRunOnOsLogin,WebAssemblyTrapHandler --variations-seed-version=20260923-010043.286000-production --pseudonymization-salt-handle=7,i,2475081412184968185,1811600828800793559,4 --trace-process-track-uuid=3190708988185955192
+normann    11259  0.9  1.5 54967084 123864 ?     Sl   06:36   1:42 /app/extra/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-GB --service-sandbox-type=none --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,9055602955646955277,16863088718682620270,524288 --field-trial-handle=3,i,2941738409670613098,9007339394903071866,262144 --disable-features=DesktopPWAsRunOnOsLogin,WebAssemblyTrapHandler --variations-seed-version=20260923-010043.286000-production --pseudonymization-salt-handle=7,i,2475081412184968185,1811600828800793559,4 --trace-process-track-uuid=3190708989122997041
+normann    11311  0.0  0.5 55052276 46660 ?      Sl   06:36   0:02 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+normann    11344  0.0  1.7 1518393628 138160 ?   Sl   06:36   0:05 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+normann    11459  0.0  0.1  11136  9248 ?        S    06:36   0:01 p11-kit-remote --provider p11-kit-trust.so pkcs11:model=p11-kit-trust?write-protected=yes
+normann    11511 56.6  7.9 1518449044 633840 ?   Rl   06:36  96:28 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+normann    14704  0.0  0.1 388620  8820 ?        Sl   06:39   0:00 /usr/libexec/gvfsd-network --spawner :1.15 /org/gtk/gvfs/exec_spaw/1
+normann    14717  0.0  0.1 390564  8772 ?        Sl   06:39   0:00 /usr/libexec/gvfsd-dnssd --spawner :1.15 /org/gtk/gvfs/exec_spaw/2
+root       20389  0.0  0.0      0     0 ?        S    06:43   0:00 [psimon]
+root       24132  0.0  0.0      0     0 ?        I    06:52   0:05 [kworker/u16:4-events_unbound]
+normann    25822  0.0  0.0   8448  5972 ?        S    06:58   0:00 /usr/bin/ssh-agent -D -a /run/user/1000/keyring/.ssh
+root       37862  0.2  0.0      0     0 ?        I<   07:44   0:16 [kworker/u17:2-rb_allocator]
+root       44983  0.0  0.0      0     0 ?        I    08:10   0:03 [kworker/2:2-events]
+root       46971  0.0  0.0      0     0 ?        I    08:14   0:03 [kworker/0:1-events]
+root       47571  0.7  0.0      0     0 ?        I    08:17   0:30 [kworker/3:2-i915-unordered]
+normann    50138  0.0  0.9 1518359408 71972 ?    Sl   08:27   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=ab550170-fc4c-4c51-a9dc-b32cf69750cb, --change-stack-guard-on-fork=enable
+normann    57631  0.0  0.0  11720  6076 pts/2    Ss   08:46   0:01 bash
+root       58572  0.0  0.0      0     0 ?        I<   08:49   0:01 [kworker/u17:1-i915_flip]
+root       61494  0.0  0.0      0     0 ?        I    09:00   0:00 [kworker/2:1-cgroup_free]
+root       63946  0.0  0.0      0     0 ?        I    09:06   0:00 [kworker/u16:1-events_power_efficient]
+root       65652  0.0  0.0      0     0 ?        I    09:12   0:00 [kworker/u16:3-flush-8:0]
+root       67394  0.0  0.0      0     0 ?        I    09:14   0:00 [kworker/0:2-cgroup_free]
+root       68172  0.0  0.0      0     0 ?        I    09:17   0:00 [kworker/3:0-cgroup_free]
+root       68380  0.0  0.0      0     0 ?        I    09:18   0:00 [kworker/u16:2-events_unbound]
+root       68471  0.0  0.0      0     0 ?        I    09:18   0:00 [kworker/1:0]
+root       69712  0.0  0.0      0     0 ?        I    09:22   0:00 [kworker/0:0]
+root       69719  0.0  0.0      0     0 ?        I<   09:22   0:00 [kworker/u17:0-rb_allocator]
+root       70411  0.0  0.0      0     0 ?        I    09:25   0:00 [kworker/u16:0-events_power_efficient]
+normann    70707  6.5  0.0  10084  3804 pts/2    S+   09:26   0:00 bash scripts/phase1-wazuh-promiscuous-mode-investigation.sh
+root       70773  0.0  0.0   8300  2068 ?        S    09:26   0:00 sleep 10
+normann    70946  900  0.0  15080  5504 pts/2    R+   09:26   0:00 ps auxww

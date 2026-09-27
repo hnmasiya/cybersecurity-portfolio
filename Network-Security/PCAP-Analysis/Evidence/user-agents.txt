@@ -1,0 +1,4 @@
+Mozilla/5.0 SOC-Lab-Normal
+python-requests/2.x SOC-Lab
+SOC-Lab-Scanner/1.0
+SOC-Lab-SuspiciousScanner/1.0

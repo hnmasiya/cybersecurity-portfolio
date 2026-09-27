@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Wed Aug 26 20:37:40 2026 as: nmap -sV -sC -p- -oA home-lab-scan localhost -->
+<nmaprun scanner="nmap" args="nmap -sV -sC -p- -oA home-lab-scan localhost" start="1787769460" startstr="Wed Aug 26 20:37:40 2026" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<taskprogress task="Service scan" time="1787769524" percent="61.54" remaining="40" etc="1787769563"/>
+<taskprogress task="Service scan" time="1787769524" percent="61.54" remaining="40" etc="1787769563"/>
+<taskprogress task="Service scan" time="1787769527" percent="61.54" remaining="42" etc="1787769568"/>
+<taskprogress task="Service scan" time="1787769528" percent="61.54" remaining="42" etc="1787769570"/>
+<taskprogress task="Service scan" time="1787769529" percent="61.54" remaining="43" etc="1787769572"/>
+<taskprogress task="Service scan" time="1787769529" percent="61.54" remaining="43" etc="1787769572"/>
+<taskprogress task="Service scan" time="1787769532" percent="61.54" remaining="45" etc="1787769576"/>
+<taskprogress task="Service scan" time="1787769533" percent="61.54" remaining="46" etc="1787769578"/>
+<taskprogress task="Service scan" time="1787769534" percent="61.54" remaining="46" etc="1787769580"/>
+<taskprogress task="Service scan" time="1787769537" percent="61.54" remaining="48" etc="1787769585"/>
+<taskprogress task="Service scan" time="1787769539" percent="61.54" remaining="49" etc="1787769588"/>
+<taskprogress task="Service scan" time="1787769542" percent="61.54" remaining="51" etc="1787769593"/>
+<taskprogress task="Service scan" time="1787769547" percent="69.23" remaining="39" etc="1787769585"/>
+<taskprogress task="Service scan" time="1787769548" percent="76.92" remaining="27" etc="1787769574"/>
+<host starttime="1787769460" endtime="1787769580"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="user"/>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65522">
+<extrareasons reason="reset" count="65522" proto="tcp" ports="1-79,81-442,444-630,632-1513,1516-1715,1717-2999,3002-3305,3307-9199,9201-9442,9444-44432,44434-54999,55001-65535"/>
+</extraports>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.4.58" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.58</cpe></service><script id="http-title" output="Apache2 Ubuntu Default Page: It works"><elem key="title">Apache2 Ubuntu Default Page: It works</elem>
+</script><script id="http-server-header" output="Apache/2.4.58 (Ubuntu)"><elem>Apache/2.4.58 (Ubuntu)</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="https" servicefp="SF-Port443-TCP:V=7.94SVN%T=SSL%I=7%D=8/26%Time=6A8F3282%P=x86_64-pc-linux-gnu%r(GetRequest,157,&quot;HTTP/1\.1\x20302\x20Found\r\nlocation:\x20/app/login\?\r\nosd-name:\x20wazuh\.dashboard\r\nx-frame-options:\x20sameorigin\r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20must-revalidate\r\nset-cookie:\x20security_authentication=;\x20Max-Age=0;\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:00\x20GMT;\x20HttpOnly;\x20Path=/\r\ncontent-length:\x200\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:53\x20GMT\r\nConnection:\x20close\r\n\r\n&quot;)%r(HTTPOptions,146,&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nosd-name:\x20wazuh\.dashboard\r\nx-frame-options:\x20sameorigin\r\ncontent-type:\x20application/json;\x20charset=utf-8\r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20must-revalidate\r\ncontent-length:\x2060\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:54\x20GMT\r\nConnection:\x20close\r\n\r\n{\&quot;statusCode\&quot;:404,\&quot;error\&quot;:\&quot;Not\x20Found\&quot;,\&quot;message\&quot;:\&quot;Not\x20Found\&quot;}&quot;)%r(FourOhFourRequest,1C4,&quot;HTTP/1\.1\x20401\x20Unauthorized\r\nosd-name:\x20wazuh\.dashboard\r\nx-frame-options:\x20sameorigin\r\ncontent-type:\x20application/json;\x20charset=utf-8\r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20must-revalidate\r\nset-cookie:\x20security_authentication=;\x20Max-Age=0;\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:00\x20GMT;\x20HttpOnly;\x20Path=/\r\ncontent-length:\x2077\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:54\x20GMT\r\nConnection:\x20close\r\n\r\n{\&quot;statusCode\&quot;:401,\&quot;error\&quot;:\&quot;Unauthorized\&quot;,\&quot;message\&quot;:\&quot;Authentication\x20required\&quot;}&quot;)%r(tor-versions,1C,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n&quot;)%r(RTSPRequest,146,&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nosd-name:\x20wazuh\.dashboard\r\nx-frame-options:\x20sameorigin\r\ncontent-type:\x20application/json;\x20charset=utf-8\r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20must-revalidate\r\ncontent-length:\x2060\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:59\x20GMT\r\nConnection:\x20close\r\n\r\n{\&quot;statusCode\&quot;:404,\&quot;error\&quot;:\&quot;Not\x20Found\&quot;,\&quot;message\&quot;:\&quot;Not\x20Found\&quot;}&quot;);" tunnel="ssl" method="probed" conf="10"/><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=wazuh.dashboard/organizationName=Wazuh/countryName=US&#xa;Subject Alternative Name: DNS:wazuh.dashboard&#xa;Not valid before: 2026-08-05T11:03:22&#xa;Not valid after:  2036-08-02T11:03:22"><table key="subject">
+<elem key="commonName">wazuh.dashboard</elem>
+<elem key="countryName">US</elem>
+<elem key="localityName">California</elem>
+<elem key="organizationName">Wazuh</elem>
+<elem key="organizationalUnitName">Wazuh</elem>
+</table>
+<table key="issuer">
+<elem key="localityName">California</elem>
+<elem key="organizationName">Wazuh</elem>
+<elem key="organizationalUnitName">Wazuh</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C6E01760EA8651FF564B65C67CB77D503E4CE4AF4863AAFBC45479AF3392A9FBF87451911197A06206866A032333770D950B55D6BBAC2635B86F405EF7EAEBF64FAD962506C73818C9A0D4F4BA9C1AB27B67D8F7EA5AD44BEF646A0C5054CF5450CAF0B7CADCC6F83F43652B5A7A44AD0FECC950C962E96179B205194D4D1C35DCC886E3A5A89810E441E0A989A44510DEB779D6BF88270BC8C7E7BF0589E145FFCCAC86E3CF476066FF4A1E59AD08E9B8BF47AD060BD3C88E9BAACC840BFFA03EA53E020C44B303C97DE573F3816BB5996B8F7CC49B050EB3FC96874C94299F0BDD7BE094ED85DD774F1B473E8C43CDA208D9C91CE0CD28954F8631FE96CBA3</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">97:5D:BC:71:6E:52:11:64:A0:BD:56:59:02:6F:92:6E:72:4F:D1:1D</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Non Repudiation, Key Encipherment, Data Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:wazuh.dashboard</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">87:0C:18:E9:62:64:D8:52:A6:54:86:90:53:D8:47:7E:B0:48:7E:6F</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-08-05T11:03:22</elem>
+<elem key="notAfter">2036-08-02T11:03:22</elem>
+</table>
+<elem key="md5">668c19998195a6aba30e3c55067bdba7</elem>
+<elem key="sha1">42877728bba2f0bcf3797405adf7abf09e3a3327</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDlTCCAn2gAwIBAgIUP0jTVL6555B6eYnxhPf+DBYHwV8wDQYJKoZIhvcNAQEL&#xa;BQAwNTEOMAwGA1UECwwFV2F6dWgxDjAMBgNVBAoMBVdhenVoMRMwEQYDVQQHDApD&#xa;YWxpZm9ybmlhMB4XDTI2MDgwNTExMDMyMloXDTM2MDgwMjExMDMyMlowXDELMAkG&#xa;A1UEBhMCVVMxEzARBgNVBAcMCkNhbGlmb3JuaWExDjAMBgNVBAoMBVdhenVoMQ4w&#xa;DAYDVQQLDAVXYXp1aDEYMBYGA1UEAwwPd2F6dWguZGFzaGJvYXJkMIIBIjANBgkq&#xa;hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxuAXYOqGUf9WS2XGfLd9UD5M5K9IY6r7&#xa;xFR5rzOSqfv4dFGREZegYgaGagMjM3cNlQtV1rusJjW4b0Be9+rr9k+tliUGxzgY&#xa;yaDU9LqcGrJ7Z9j36lrUS+9kagxQVM9UUMrwt8rcxvg/Q2UrWnpErQ/syVDJYulh&#xa;ebIFGU1NHDXcyIbjpaiYEORB4KmJpEUQ3rd51r+IJwvIx+e/BYnhRf/MrIbjz0dg&#xa;Zv9KHlmtCOm4v0etBgvTyI6bqsyEC/+gPqU+AgxEswPJfeVz84FrtZlrj3zEmwUO&#xa;s/yWh0yUKZ8L3XvglO2F3XdPG0c+jEPNogjZyRzgzSiVT4Yx/pbLowIDAQABo3Yw&#xa;dDAfBgNVHSMEGDAWgBSXXbxxblIRZKC9VlkCb5Juck/RHTAJBgNVHRMEAjAAMAsG&#xa;A1UdDwQEAwIE8DAaBgNVHREEEzARgg93YXp1aC5kYXNoYm9hcmQwHQYDVR0OBBYE&#xa;FIcMGOliZNhSplSGkFPYR36wSH5vMA0GCSqGSIb3DQEBCwUAA4IBAQB9RrR6jfNH&#xa;JkgYiqDTYmaaLEhN/Ch5LZSiWBndRgX4FeZeD5nwqq/N/sPKfsQAvQCdnKa8PlKQ&#xa;ei0HovAUSF/P8MjjfqjadAC0/8KCexy3NFGv2thynRBWEbTF4l5XYApOlsBrhKx6&#xa;qUzGAwtNC+3e7BCJ8ATugM8HjJbLtY1UEqczoGAk+jZMDE9tyX+xTKOwx1X+4BOR&#xa;CDWvoRZu/raFD7dQBUb9kj7xFHTOz1nCwDU52GW0CZ0qQ44rkhgkjL6xNG+64tg/&#xa;NFgsONlcWKRAm6VVg7oLZ7GzCAN+LZ+cExOzDr1b02GwwwLtSPVvqa2y1YvUV40E&#xa;7YGer8UQjff9&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="tls-alpn" output="&#xa;  http/1.1"><elem>http/1.1</elem>
+</script><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.1 401 Unauthorized&#xa;    osd-name: wazuh.dashboard&#xa;    x-frame-options: sameorigin&#xa;    content-type: application/json; charset=utf-8&#xa;    cache-control: private, no-cache, no-store, must-revalidate&#xa;    set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Path=/&#xa;    content-length: 77&#xa;    Date: Wed, 26 Aug 2026 18:37:54 GMT&#xa;    Connection: close&#xa;    {&quot;statusCode&quot;:401,&quot;error&quot;:&quot;Unauthorized&quot;,&quot;message&quot;:&quot;Authentication required&quot;}&#xa;  GetRequest: &#xa;    HTTP/1.1 302 Found&#xa;    location: /app/login?&#xa;    osd-name: wazuh.dashboard&#xa;    x-frame-options: sameorigin&#xa;    cache-control: private, no-cache, no-store, must-revalidate&#xa;    set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Path=/&#xa;    content-length: 0&#xa;    Date: Wed, 26 Aug 2026 18:37:53 GMT&#xa;    Connection: close&#xa;  HTTPOptions: &#xa;    HTTP/1.1 404 Not Found&#xa;    osd-name: wazuh.dashboard&#xa;    x-frame-options: sameorigin&#xa;    content-type: application/json; charset=utf-8&#xa;    cache-control: private, no-cache, no-store, must-revalidate&#xa;    content-length: 60&#xa;    Date: Wed, 26 Aug 2026 18:37:54 GMT&#xa;    Connection: close&#xa;    {&quot;statusCode&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;message&quot;:&quot;Not Found&quot;}&#xa;  RTSPRequest: &#xa;    HTTP/1.1 404 Not Found&#xa;    osd-name: wazuh.dashboard&#xa;    x-frame-options: sameorigin&#xa;    content-type: application/json; charset=utf-8&#xa;    cache-control: private, no-cache, no-store, must-revalidate&#xa;    content-length: 60&#xa;    Date: Wed, 26 Aug 2026 18:37:59 GMT&#xa;    Connection: close&#xa;    {&quot;statusCode&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;message&quot;:&quot;Not Found&quot;}&#xa;  tor-versions: &#xa;    HTTP/1.1 400 Bad Request"><elem key="FourOhFourRequest">&#xa;    HTTP/1.1 401 Unauthorized&#xa;    osd-name: wazuh.dashboard&#xa;    x-frame-options: sameorigin&#xa;    content-type: application/json; charset=utf-8&#xa;    cache-control: private, no-cache, no-store, must-revalidate&#xa;    set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Path=/&#xa;    content-length: 77&#xa;    Date: Wed, 26 Aug 2026 18:37:54 GMT&#xa;    Connection: close&#xa;    {&quot;statusCode&quot;:401,&quot;error&quot;:&quot;Unauthorized&quot;,&quot;message&quot;:&quot;Authentication required&quot;}</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.1 302 Found&#xa;    location: /app/login?&#xa;    osd-name: wazuh.dashboard&#xa;    x-frame-options: sameorigin&#xa;    cache-control: private, no-cache, no-store, must-revalidate&#xa;    set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Path=/&#xa;    content-length: 0&#xa;    Date: Wed, 26 Aug 2026 18:37:53 GMT&#xa;    Connection: close</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.1 404 Not Found&#xa;    osd-name: wazuh.dashboard&#xa;    x-frame-options: sameorigin&#xa;    content-type: application/json; charset=utf-8&#xa;    cache-control: private, no-cache, no-store, must-revalidate&#xa;    content-length: 60&#xa;    Date: Wed, 26 Aug 2026 18:37:54 GMT&#xa;    Connection: close&#xa;    {&quot;statusCode&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;message&quot;:&quot;Not Found&quot;}</elem>
+<elem key="RTSPRequest">&#xa;    HTTP/1.1 404 Not Found&#xa;    osd-name: wazuh.dashboard&#xa;    x-frame-options: sameorigin&#xa;    content-type: application/json; charset=utf-8&#xa;    cache-control: private, no-cache, no-store, must-revalidate&#xa;    content-length: 60&#xa;    Date: Wed, 26 Aug 2026 18:37:59 GMT&#xa;    Connection: close&#xa;    {&quot;statusCode&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;message&quot;:&quot;Not Found&quot;}</elem>
+<elem key="tor-versions">&#xa;    HTTP/1.1 400 Bad Request</elem>
+</script><script id="http-title" output="Wazuh&#xa;Requested resource was /app/login?"><elem key="title">Wazuh</elem>
+<elem key="redirect_url">/app/login?</elem>
+</script></port>
+<port protocol="tcp" portid="631"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ipp" product="CUPS" version="2.4" method="probed" conf="10"><cpe>cpe:/a:apple:cups:2.4</cpe></service><script id="http-robots.txt" output="1 disallowed entry &#xa;/"/><script id="http-server-header" output="CUPS/2.4 IPP/2.1"><elem>CUPS/2.4 IPP/2.1</elem>
+</script><script id="http-title" output="Home - CUPS 2.4.7"><elem key="title">Home - CUPS 2.4.7</elem>
+</script></port>
+<port protocol="tcp" portid="1514"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="fujitsu-dtcns" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1515"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ifor-protocol" servicefp="SF-Port1515-TCP:V=7.94SVN%T=SSL%I=7%D=8/26%Time=6A8F3286%P=x86_64-pc-linux-gnu%r(GenericLines,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(GetRequest,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(HTTPOptions,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(RTSPRequest,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(Help,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(SSLSessionReq,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(TerminalServerCookie,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(TLSSessionReq,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(Kerberos,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(FourOhFourRequest,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(LPDString,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(LDAPSearchReq,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;)%r(SIPOptions,39,&quot;ERROR:\x20Invalid\x20request\x20for\x20new\x20agent\.\x20Unable\x20to\x20add\x20agent&quot;);" tunnel="ssl" method="table" conf="3"/><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=wazuh.manager&#xa;Not valid before: 2026-08-05T12:03:05&#xa;Not valid after:  2036-08-02T12:03:05"><table key="subject">
+<elem key="commonName">wazuh.manager</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">wazuh.manager</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">4096</elem>
+<elem key="modulus">D9FF4552C923FA617AA44BA091C075B34C8E83697E24727E0E6D97720ADD2667DBC00E9EEB5F7A462CBC892A39B55041FDDD57B77288A52B6232F59DF234C5B3C7376717F0E197212F424A4C2E825B0710C9F6F934B1EBE032370B07DE48B3DECEF195CE41F9EAC2C6379C1916E5C1CE7C608ACB22A9191E0D50D1414426EAA56F6E616872419F3D83CF56B7F341E11A054DB20540A569FC322A13E2B11C3030B411CB5BDCBDA0E65639D8F9FCD0D7733CFDD084CE2BC057E40545346B6C875A08E95BACA4DEA97F2713E59101998CE9E1C31D882ACAE4F61EAF60255F27709BAA9A811FD17464FDD675C51DBA5CBFEC037B0949DB6A4097CB9155D3FDEEF7B8C4E6E46DA4812A7A116777E67D44A1449B745F830E62DE18612BF89C1393BE06E18D3F6B47B71E214410CD48F59FF21DA16C3C87E82DF1F2F1B70595BB2ADE7BEBA5B3B3C74D8E3AF8C94C482D882F98559C6ACD45BCFEDA90965ACD68B789BAFB06A2941F73B51A6D0C117E21F4AA4013F9862848535646FB70CAC1F33E40FC0D3471D52BD44DF0D1A403F750614A570420A2F7295402E6621758CF298E035D4E9260225910A167C9DB35F2D33F8DD79C20C89B0CE623BE55E7BA7F5ED1F6C9DD232E8A9DB49EE3A6D395D56A45DEC60EC3FF96F05B2060F7A11125ABF0448DD30497615493A365DBA6F2B5E2A2550A1D7EDB49624FF3F55EAC9D692426D863</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">98:8D:B8:CF:00:25:DE:7A:6D:C0:2C:65:2B:62:68:FB:B5:F3:D3:AF</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">98:8D:B8:CF:00:25:DE:7A:6D:C0:2C:65:2B:62:68:FB:B5:F3:D3:AF</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:TRUE</elem>
+<elem key="critical">true</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-08-05T12:03:05</elem>
+<elem key="notAfter">2036-08-02T12:03:05</elem>
+</table>
+<elem key="md5">8e4215b55f4d48f5432574d8d379adae</elem>
+<elem key="sha1">4902aaf507feceae61c8c1c3d689adf0987f6767</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIFETCCAvmgAwIBAgIUHkiTdSnYJQunZ2OBIwtBtuHq24YwDQYJKoZIhvcNAQEL&#xa;BQAwGDEWMBQGA1UEAwwNd2F6dWgubWFuYWdlcjAeFw0yNjA4MDUxMjAzMDVaFw0z&#xa;NjA4MDIxMjAzMDVaMBgxFjAUBgNVBAMMDXdhenVoLm1hbmFnZXIwggIiMA0GCSqG&#xa;SIb3DQEBAQUAA4ICDwAwggIKAoICAQDZ/0VSySP6YXqkS6CRwHWzTI6DaX4kcn4O&#xa;bZdyCt0mZ9vADp7rX3pGLLyJKjm1UEH93Ve3coilK2Iy9Z3yNMWzxzdnF/DhlyEv&#xa;QkpMLoJbBxDJ9vk0sevgMjcLB95Is97O8ZXOQfnqwsY3nBkW5cHOfGCKyyKpGR4N&#xa;UNFBRCbqpW9uYWhyQZ89g89Wt/NB4RoFTbIFQKVp/DIqE+KxHDAwtBHLW9y9oOZW&#xa;Odj5/NDXczz90ITOK8BX5AVFNGtsh1oI6VuspN6pfycT5ZEBmYzp4cMdiCrK5PYe&#xa;r2AlXydwm6qagR/RdGT91nXFHbpcv+wDewlJ22pAl8uRVdP97ve4xObkbaSBKnoR&#xa;Z3fmfUShRJt0X4MOYt4YYSv4nBOTvgbhjT9rR7ceIUQQzUj1n/IdoWw8h+gt8fLx&#xa;twWVuyree+uls7PHTY46+MlMSC2IL5hVnGrNRbz+2pCWWs1ot4m6+wailB9ztRpt&#xa;DBF+IfSqQBP5hihIU1ZG+3DKwfM+QPwNNHHVK9RN8NGkA/dQYUpXBCCi9ylUAuZi&#xa;F1jPKY4DXU6SYCJZEKFnyds18tM/jdecIMibDOYjvlXnun9e0fbJ3SMuip20nuOm&#xa;05XVakXexg7D/5bwWyBg96ERJavwRI3TBJdhVJOjZdum8rXiolUKHX7bSWJP8/Ve&#xa;rJ1pJCbYYwIDAQABo1MwUTAdBgNVHQ4EFgQUmI24zwAl3nptwCxlK2Jo+7Xz068w&#xa;HwYDVR0jBBgwFoAUmI24zwAl3nptwCxlK2Jo+7Xz068wDwYDVR0TAQH/BAUwAwEB&#xa;/zANBgkqhkiG9w0BAQsFAAOCAgEAWUeDCIRbuzqD+kQruaQBukGaDgMDpsbJDBQi&#xa;3IgJRSq7x7w6iGHDZiQAEJx8ZmtMVq+cigVACAuO9tFoWIOZHUcFPjdOBpWhJwIW&#xa;okODzhHe2KSodw6urNiEfjXO0OnW8WEnARqV2zq+YT51t3RQXQFqyJK7xzd5VBLF&#xa;3Y8j7bv6oTFGcjMvysuOlAa/ju5K14QppHDZklySmlUaNvyef5wBAyWgZXxJJ1Sb&#xa;CqLigJMcKALbsXlv5DjvUVK6d7qmZp7W/sjlBp76igLQjILFOfJNoueXXcI42yki&#xa;m8YqS+hTwzQb3k7zyJkw/vWxBXqNFgI2KrT6RkENN5hXQoCM+1/GkUftrdUT/uOv&#xa;9dstLSS98bQNLKhdXDmISLe1zUrJeM/ind1QLOXQFhK1dPxATgTG6YczoYr6y6cJ&#xa;5mr4VMY1TDRk6C+k9XVMFgEyeZZftrezgYQ5JXaK5L1/+Mv6k8M18+KNsNnLrjhJ&#xa;3AmDaFOsLBI6NpTyP/AXx/GO6QuEHvV+Hc1kRqTqv2foTKpKEsYvy3QvQPdoyfoS&#xa;QF1MQoUfuat+Mo7sQ2bZgE2NXRApE0JA1VgpDZrFRKdES6uA221Yi5SnHI6ctVrJ&#xa;C6o7i/Y3NQfL+JuxtLpCvluQZ7jRw1yrEg4Wh+sng4DOjAp4z+asHvLa58nwxiCf&#xa;9HhLPwk=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServerCookie: &#xa;    ERROR: Invalid request for new agent. Unable to add agent"><elem key="FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServerCookie">&#xa;    ERROR: Invalid request for new agent. Unable to add agent</elem>
+</script></port>
+<port protocol="tcp" portid="1716"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="xmsg" method="table" conf="3"/></port>
+<port protocol="tcp" portid="3000"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ppp" servicefp="SF-Port3000-TCP:V=7.94SVN%I=7%D=8/26%Time=6A8F3280%P=x86_64-pc-linux-gnu%r(GetRequest,2866,&quot;HTTP/1\.1\x20200\x20OK\r\nAccess-Control-Allow-Origin:\x20\*\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\nFeature-Policy:\x20payment\x20&apos;self&apos;\r\nX-Recruiting:\x20/#/jobs\r\nAccept-Ranges:\x20bytes\r\nCache-Control:\x20public,\x20max-age=0\r\nLast-Modified:\x20Wed,\x2026\x20Aug\x202026\x2016:52:18\x20GMT\r\nETag:\x20W/\&quot;26af-1a03efc9e77\&quot;\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\nContent-Length:\x209903\r\nVary:\x20Accept-Encoding\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:52\x20GMT\r\nConnection:\x20close\r\n\r\n&lt;!-&#45;\n\x20\x20~\x20Copyright\x20\(c\)\x202014-2026\x20Bjoern\x20Kimminich\x20&amp;\x20the\x20OWASP\x20Juice\x20Shop\x20contributors\.\n\x20\x20~\x20SPDX-License-Identifier:\x20MIT\n\x20\x20-&#45;&gt;\n\n&lt;!doctype\x20html&gt;\n&lt;html\x20lang=\&quot;en\&quot;\x20data-beasties-container&gt;\n&lt;head&gt;\n\x20\x20&lt;meta\x20charset=\&quot;utf-8\&quot;&gt;\n\x20\x20&lt;title&gt;OWASP\x20Juice\x20Shop&lt;/title&gt;\n\x20\x20&lt;meta\x20name=\&quot;description\&quot;\x20content=\&quot;Probably\x20the\x20most\x20modern\x20and\x20sophisticated\x20insecure\x20web\x20application\&quot;&gt;\n\x20\x20&lt;meta\x20name=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20initial-scale=1\&quot;&gt;\n\x20\x20&lt;link\x20rel=\&quot;preconnect\&quot;\x20href=\&quot;htt&quot;)%r(Help,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(NCP,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(HTTPOptions,EA,&quot;HTTP/1\.1\x20204\x20No\x20Content\r\nAccess-Control-Allow-Origin:\x20\*\r\nAccess-Control-Allow-Methods:\x20GET,HEAD,PUT,PATCH,POST,DELETE\r\nVary:\x20Access-Control-Request-Headers\r\nContent-Length:\x200\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:52\x20GMT\r\nConnection:\x20close\r\n\r\n&quot;)%r(RTSPRequest,EA,&quot;HTTP/1\.1\x20204\x20No\x20Content\r\nAccess-Control-Allow-Origin:\x20\*\r\nAccess-Control-Allow-Methods:\x20GET,HEAD,PUT,PATCH,POST,DELETE\r\nVary:\x20Access-Control-Request-Headers\r\nContent-Length:\x200\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:52\x20GMT\r\nConnection:\x20close\r\n\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GetRequest: &#xa;    HTTP/1.1 200 OK&#xa;    Access-Control-Allow-Origin: *&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Frame-Options: SAMEORIGIN&#xa;    Feature-Policy: payment &apos;self&apos;&#xa;    X-Recruiting: /#/jobs&#xa;    Accept-Ranges: bytes&#xa;    Cache-Control: public, max-age=0&#xa;    Last-Modified: Wed, 26 Aug 2026 16:52:18 GMT&#xa;    ETag: W/&quot;26af-1a03efc9e77&quot;&#xa;    Content-Type: text/html; charset=UTF-8&#xa;    Content-Length: 9903&#xa;    Vary: Accept-Encoding&#xa;    Date: Wed, 26 Aug 2026 18:37:52 GMT&#xa;    Connection: close&#xa;    &lt;!-&#45;&#xa;    Copyright (c) 2014-2026 Bjoern Kimminich &amp; the OWASP Juice Shop contributors.&#xa;    SPDX-License-Identifier: MIT&#xa;    &lt;!doctype html&gt;&#xa;    &lt;html lang=&quot;en&quot; data-beasties-container&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xa;    &lt;title&gt;OWASP Juice Shop&lt;/title&gt;&#xa;    &lt;meta name=&quot;description&quot; content=&quot;Probably the most modern and sophisticated insecure web application&quot;&gt;&#xa;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&#xa;    &lt;link rel=&quot;preconnect&quot; href=&quot;htt&#xa;  HTTPOptions, RTSPRequest: &#xa;    HTTP/1.1 204 No Content&#xa;    Access-Control-Allow-Origin: *&#xa;    Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE&#xa;    Vary: Access-Control-Request-Headers&#xa;    Content-Length: 0&#xa;    Date: Wed, 26 Aug 2026 18:37:52 GMT&#xa;    Connection: close&#xa;  Help, NCP: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Connection: close"><elem key="GetRequest">&#xa;    HTTP/1.1 200 OK&#xa;    Access-Control-Allow-Origin: *&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Frame-Options: SAMEORIGIN&#xa;    Feature-Policy: payment &apos;self&apos;&#xa;    X-Recruiting: /#/jobs&#xa;    Accept-Ranges: bytes&#xa;    Cache-Control: public, max-age=0&#xa;    Last-Modified: Wed, 26 Aug 2026 16:52:18 GMT&#xa;    ETag: W/&quot;26af-1a03efc9e77&quot;&#xa;    Content-Type: text/html; charset=UTF-8&#xa;    Content-Length: 9903&#xa;    Vary: Accept-Encoding&#xa;    Date: Wed, 26 Aug 2026 18:37:52 GMT&#xa;    Connection: close&#xa;    &lt;!-&#45;&#xa;    Copyright (c) 2014-2026 Bjoern Kimminich &amp; the OWASP Juice Shop contributors.&#xa;    SPDX-License-Identifier: MIT&#xa;    &lt;!doctype html&gt;&#xa;    &lt;html lang=&quot;en&quot; data-beasties-container&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xa;    &lt;title&gt;OWASP Juice Shop&lt;/title&gt;&#xa;    &lt;meta name=&quot;description&quot; content=&quot;Probably the most modern and sophisticated insecure web application&quot;&gt;&#xa;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&#xa;    &lt;link rel=&quot;preconnect&quot; href=&quot;htt</elem>
+<elem key="HTTPOptions, RTSPRequest">&#xa;    HTTP/1.1 204 No Content&#xa;    Access-Control-Allow-Origin: *&#xa;    Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE&#xa;    Vary: Access-Control-Request-Headers&#xa;    Content-Length: 0&#xa;    Date: Wed, 26 Aug 2026 18:37:52 GMT&#xa;    Connection: close</elem>
+<elem key="Help, NCP">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Connection: close</elem>
+</script></port>
+<port protocol="tcp" portid="3001"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/html)."></script></port>
+<port protocol="tcp" portid="3306"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="mysql" product="MySQL" version="5.5.5-10.11.14-MariaDB-0ubuntu0.24.04.1" method="probed" conf="10"><cpe>cpe:/a:mariadb:mariadb:5.5.5-10.11.14-mariadb-0ubuntu0.24.04.1</cpe></service><script id="mysql-info" output="&#xa;  Protocol: 10&#xa;  Version: 5.5.5-10.11.14-MariaDB-0ubuntu0.24.04.1&#xa;  Thread ID: 33&#xa;  Capabilities flags: 63486&#xa;  Some Capabilities: IgnoreSpaceBeforeParenthesis, LongColumnFlag, Speaks41ProtocolOld, SupportsTransactions, Speaks41ProtocolNew, SupportsCompression, FoundRows, SupportsLoadDataLocal, IgnoreSigpipes, DontAllowDatabaseTableColumn, InteractiveClient, ConnectWithDatabase, ODBCClient, Support41Auth, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins&#xa;  Status: Autocommit&#xa;  Salt: =@js&apos;dB],b+L!\.kVKVM&#xa;  Auth Plugin Name: mysql_native_password"><elem key="Protocol">10</elem>
+<elem key="Version">5.5.5-10.11.14-MariaDB-0ubuntu0.24.04.1</elem>
+<elem key="Thread ID">33</elem>
+<elem key="Capabilities flags">63486</elem>
+<table key="Some Capabilities">
+<elem>IgnoreSpaceBeforeParenthesis</elem>
+<elem>LongColumnFlag</elem>
+<elem>Speaks41ProtocolOld</elem>
+<elem>SupportsTransactions</elem>
+<elem>Speaks41ProtocolNew</elem>
+<elem>SupportsCompression</elem>
+<elem>FoundRows</elem>
+<elem>SupportsLoadDataLocal</elem>
+<elem>IgnoreSigpipes</elem>
+<elem>DontAllowDatabaseTableColumn</elem>
+<elem>InteractiveClient</elem>
+<elem>ConnectWithDatabase</elem>
+<elem>ODBCClient</elem>
+<elem>Support41Auth</elem>
+<elem>SupportsMultipleStatments</elem>
+<elem>SupportsMultipleResults</elem>
+<elem>SupportsAuthPlugins</elem>
+</table>
+<elem key="Status">Autocommit</elem>
+<elem key="Salt">=@js&apos;dB],b+L!\.kVKVM</elem>
+<elem key="Auth Plugin Name">mysql_native_password</elem>
+</script></port>
+<port protocol="tcp" portid="9200"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="wap-wsp" servicefp="SF-Port9200-TCP:V=7.94SVN%T=SSL%I=7%D=8/26%Time=6A8F328B%P=x86_64-pc-linux-gnu%r(GetRequest,9B,&quot;HTTP/1\.0\x20401\x20Unauthorized\r\nWWW-Authenticate:\x20Basic\x20realm=\&quot;OpenSearch\x20Security\&quot;\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ncontent-length:\x2012\r\n\r\nUnauthorized&quot;)%r(HTTPOptions,67,&quot;HTTP/1\.0\x20200\x20OK\r\nAllow:\x20GET,HEAD,DELETE\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\ncontent-length:\x200\r\n\r\n&quot;)%r(RTSPRequest,129,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\ncontent-type:\x20application/json;\x20charset=UTF-8\r\ncontent-length:\x20201\r\n\r\n{\&quot;error\&quot;:{\&quot;root_cause\&quot;:\[{\&quot;type\&quot;:\&quot;illegal_argument_exception\&quot;,\&quot;reason\&quot;:\&quot;invalid\x20version\x20format:\x20RTSP/1\.0\&quot;}\],\&quot;type\&quot;:\&quot;illegal_argument_exception\&quot;,\&quot;reason\&quot;:\&quot;invalid\x20version\x20format:\x20RTSP/1\.0\&quot;},\&quot;status\&quot;:400}&quot;)%r(Help,12B,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\ncontent-type:\x20application/json;\x20charset=UTF-8\r\ncontent-length:\x20203\r\n\r\n{\&quot;error\&quot;:{\&quot;root_cause\&quot;:\[{\&quot;type\&quot;:\&quot;illegal_argument_exception\&quot;,\&quot;reason\&quot;:\&quot;text\x20is\x20empty\x20\(possibly\x20HTTP/0\.9\)\&quot;}\],\&quot;type\&quot;:\&quot;illegal_argument_exception\&quot;,\&quot;reason\&quot;:\&quot;text\x20is\x20empty\x20\(possibly\x20HTTP/0\.9\)\&quot;},\&quot;status\&quot;:400}&quot;)%r(SSLSessionReq,1B7,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\ncontent-type:\x20application/json;\x20charset=UTF-8\r\ncontent-length:\x20343\r\n\r\n{\&quot;error\&quot;:{\&quot;root_cause\&quot;:\[{\&quot;type\&quot;:\&quot;invalid_line_separator_exception\&quot;,\&quot;reason\&quot;:\&quot;Line\x20Feed\x20must\x20be\x20preceded\x20by\x20Carriage\x20Return\x20when\x20terminating\x20HTTP\x20start-\x20and\x20header\x20field-lines\&quot;}\],\&quot;type\&quot;:\&quot;invalid_line_separator_exception\&quot;,\&quot;reason\&quot;:\&quot;Line\x20Feed\x20must\x20be\x20preceded\x20by\x20Carriage\x20Return\x20when\x20terminating\x20HTTP\x20start-\x20and\x20header\x20field-lines\&quot;},\&quot;status\&quot;:400}&quot;)%r(TerminalServerCookie,12B,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\ncontent-type:\x20application/json;\x20charset=UTF-8\r\ncontent-length:\x20203\r\n\r\n{\&quot;error\&quot;:{\&quot;root_cause\&quot;:\[{\&quot;type\&quot;:\&quot;illegal_argument_exception\&quot;,\&quot;reason\&quot;:\&quot;text\x20is\x20empty\x20\(possibly\x20HTTP/0\.9\)\&quot;}\],\&quot;type\&quot;:\&quot;illegal_argument_exception\&quot;,\&quot;reason\&quot;:\&quot;text\x20is\x20empty\x20\(possibly\x20HTTP/0\.9\)\&quot;},\&quot;status\&quot;:400}&quot;);" tunnel="ssl" method="table" conf="3"/><script id="ssl-cert" output="Subject: commonName=wazuh.indexer/organizationName=Wazuh/countryName=US&#xa;Subject Alternative Name: DNS:wazuh.indexer&#xa;Not valid before: 2026-08-05T11:03:22&#xa;Not valid after:  2036-08-02T11:03:22"><table key="subject">
+<elem key="commonName">wazuh.indexer</elem>
+<elem key="countryName">US</elem>
+<elem key="localityName">California</elem>
+<elem key="organizationName">Wazuh</elem>
+<elem key="organizationalUnitName">Wazuh</elem>
+</table>
+<table key="issuer">
+<elem key="localityName">California</elem>
+<elem key="organizationName">Wazuh</elem>
+<elem key="organizationalUnitName">Wazuh</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">BAF3A4876542096A2B7259556B5B7F5B80339A01A9857560B8273C057C32CDA00DB994FF005F39E69801E38181756BC9B1280938769E786BE3D2842CB5D7F249A7A1CA4B8F6BCEFD4B279A7E8770B1515B6F277E1D25CAEE045425C1D7788CA940497F0E244325EA84EBE0C416CEE8DF512DF05855CF622A382609C2BDC9AC51F989363A86FF280D62D3BD96D462117DAE38B3C75D6979B981813027509A99B342E87808D0847992417D5E165ACAF1959EEF5E33C165927AFC542C857450DC19191B4E83A2F1BA7F5B3B4DABABF45A6CE1DFA568F7F916CDFDB9F1ADB0623BDCC67E7FB84703E3D17A23C6F5E448EDDA7C85208F1502C148BC84E24CC1855CB1</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">97:5D:BC:71:6E:52:11:64:A0:BD:56:59:02:6F:92:6E:72:4F:D1:1D</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Non Repudiation, Key Encipherment, Data Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:wazuh.indexer</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">7D:6F:74:2B:57:98:6C:D2:1A:12:50:DC:56:44:2F:DA:CA:11:E5:DB</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-08-05T11:03:22</elem>
+<elem key="notAfter">2036-08-02T11:03:22</elem>
+</table>
+<elem key="md5">6f1167b7f693dde9a4522795bab27379</elem>
+<elem key="sha1">91f5103fd1b95b04a00a83735f545d13a34e93ad</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDkTCCAnmgAwIBAgIUP0jTVL6555B6eYnxhPf+DBYHwV0wDQYJKoZIhvcNAQEL&#xa;BQAwNTEOMAwGA1UECwwFV2F6dWgxDjAMBgNVBAoMBVdhenVoMRMwEQYDVQQHDApD&#xa;YWxpZm9ybmlhMB4XDTI2MDgwNTExMDMyMloXDTM2MDgwMjExMDMyMlowWjELMAkG&#xa;A1UEBhMCVVMxEzARBgNVBAcMCkNhbGlmb3JuaWExDjAMBgNVBAoMBVdhenVoMQ4w&#xa;DAYDVQQLDAVXYXp1aDEWMBQGA1UEAwwNd2F6dWguaW5kZXhlcjCCASIwDQYJKoZI&#xa;hvcNAQEBBQADggEPADCCAQoCggEBALrzpIdlQglqK3JZVWtbf1uAM5oBqYV1YLgn&#xa;PAV8Ms2gDbmU/wBfOeaYAeOBgXVrybEoCTh2nnhr49KELLXX8kmnocpLj2vO/Usn&#xa;mn6HcLFRW28nfh0lyu4EVCXB13iMqUBJfw4kQyXqhOvgxBbO6N9RLfBYVc9iKjgm&#xa;CcK9yaxR+Yk2Oob/KA1i072W1GIRfa44s8ddaXm5gYEwJ1CambNC6HgI0IR5kkF9&#xa;XhZayvGVnu9eM8Flknr8VCyFdFDcGRkbToOi8bp/WztNq6v0Wmzh36Vo9/kWzf25&#xa;8a2wYjvcxn5/uEcD49F6I8b15Ejt2nyFII8VAsFIvITiTMGFXLECAwEAAaN0MHIw&#xa;HwYDVR0jBBgwFoAUl128cW5SEWSgvVZZAm+SbnJP0R0wCQYDVR0TBAIwADALBgNV&#xa;HQ8EBAMCBPAwGAYDVR0RBBEwD4INd2F6dWguaW5kZXhlcjAdBgNVHQ4EFgQUfW90&#xa;K1eYbNIaElDcVkQv2soR5dswDQYJKoZIhvcNAQELBQADggEBABqLjJXhVPom3VsG&#xa;n6ZtjMsKCpF9KEM6gdkVQuQQGmQsNAZP3bmIpDAtEp60cov8GkKSJskvxE4LrVgi&#xa;sBKPzT+MvlvNNZfQHT/Sy1cdrTykboX492muDL8v9tYlr5aKsUy5Rl5ZkstOD8mt&#xa;2puKAmq3FDYc/Gp1BkM+KDcBg++CdeY+n6FnkrRfbYb8cURQh/GQfWa7AFti3AyC&#xa;g3PVqOc+Vaon2yUOKBYYyb822UGWoKXUhg0JnknF0zGljpROUJjLxs/2f74mbvyQ&#xa;yFAGitTZ+OhuD6phHw1f+fx33IUnkcv7+JS2FV7K5WAm07toyA+Lte2rmmBhyZ9T&#xa;chnaAo0=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="fingerprint-strings" output="&#xa;  GetRequest: &#xa;    HTTP/1.0 401 Unauthorized&#xa;    WWW-Authenticate: Basic realm=&quot;OpenSearch Security&quot;&#xa;    content-type: text/plain; charset=UTF-8&#xa;    content-length: 12&#xa;    Unauthorized&#xa;  HTTPOptions: &#xa;    HTTP/1.0 200 OK&#xa;    Allow: GET,HEAD,DELETE&#xa;    content-type: text/plain; charset=UTF-8&#xa;    content-length: 0&#xa;  Help, TerminalServerCookie: &#xa;    HTTP/1.0 400 Bad Request&#xa;    content-type: application/json; charset=UTF-8&#xa;    content-length: 203&#xa;    {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;illegal_argument_exception&quot;,&quot;reason&quot;:&quot;text is empty (possibly HTTP/0.9)&quot;}],&quot;type&quot;:&quot;illegal_argument_exception&quot;,&quot;reason&quot;:&quot;text is empty (possibly HTTP/0.9)&quot;},&quot;status&quot;:400}&#xa;  RTSPRequest: &#xa;    HTTP/1.0 400 Bad Request&#xa;    content-type: application/json; charset=UTF-8&#xa;    content-length: 201&#xa;    {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;illegal_argument_exception&quot;,&quot;reason&quot;:&quot;invalid version format: RTSP/1.0&quot;}],&quot;type&quot;:&quot;illegal_argument_exception&quot;,&quot;reason&quot;:&quot;invalid version format: RTSP/1.0&quot;},&quot;status&quot;:400}&#xa;  SSLSessionReq: &#xa;    HTTP/1.0 400 Bad Request&#xa;    content-type: application/json; charset=UTF-8&#xa;    content-length: 343&#xa;    {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;invalid_line_separator_exception&quot;,&quot;reason&quot;:&quot;Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines&quot;}],&quot;type&quot;:&quot;invalid_line_separator_exception&quot;,&quot;reason&quot;:&quot;Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines&quot;},&quot;status&quot;:400}"><elem key="GetRequest">&#xa;    HTTP/1.0 401 Unauthorized&#xa;    WWW-Authenticate: Basic realm=&quot;OpenSearch Security&quot;&#xa;    content-type: text/plain; charset=UTF-8&#xa;    content-length: 12&#xa;    Unauthorized</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 200 OK&#xa;    Allow: GET,HEAD,DELETE&#xa;    content-type: text/plain; charset=UTF-8&#xa;    content-length: 0</elem>
+<elem key="Help, TerminalServerCookie">&#xa;    HTTP/1.0 400 Bad Request&#xa;    content-type: application/json; charset=UTF-8&#xa;    content-length: 203&#xa;    {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;illegal_argument_exception&quot;,&quot;reason&quot;:&quot;text is empty (possibly HTTP/0.9)&quot;}],&quot;type&quot;:&quot;illegal_argument_exception&quot;,&quot;reason&quot;:&quot;text is empty (possibly HTTP/0.9)&quot;},&quot;status&quot;:400}</elem>
+<elem key="RTSPRequest">&#xa;    HTTP/1.0 400 Bad Request&#xa;    content-type: application/json; charset=UTF-8&#xa;    content-length: 201&#xa;    {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;illegal_argument_exception&quot;,&quot;reason&quot;:&quot;invalid version format: RTSP/1.0&quot;}],&quot;type&quot;:&quot;illegal_argument_exception&quot;,&quot;reason&quot;:&quot;invalid version format: RTSP/1.0&quot;},&quot;status&quot;:400}</elem>
+<elem key="SSLSessionReq">&#xa;    HTTP/1.0 400 Bad Request&#xa;    content-type: application/json; charset=UTF-8&#xa;    content-length: 343&#xa;    {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;invalid_line_separator_exception&quot;,&quot;reason&quot;:&quot;Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines&quot;}],&quot;type&quot;:&quot;invalid_line_separator_exception&quot;,&quot;reason&quot;:&quot;Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines&quot;},&quot;status&quot;:400}</elem>
+</script></port>
+<port protocol="tcp" portid="9443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tungsten-https" servicefp="SF-Port9443-TCP:V=7.94SVN%T=SSL%I=7%D=8/26%Time=6A8F3282%P=x86_64-pc-linux-gnu%r(GetRequest,4034,&quot;HTTP/1\.0\x20200\x20OK\r\nAccept-Ranges:\x20bytes\r\nCache-Control:\x20max-age=31536000\r\nContent-Length:\x2014202\r\nContent-Security-Policy:\x20script-src\x20&apos;self&apos;\x20https://js\.hsforms\.net\x20https://www\.google\.com/recaptcha/\x20https://www\.gstatic\.com/recaptcha/;\x20object-src\x20&apos;none&apos;;\x20frame-ancestors\x20&apos;none&apos;;\x20frame-src\x20https://www\.google\.com/recaptcha/\x20https://www\.gstatic\.com/recaptcha/\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nLast-Modified:\x20Mon,\x2013\x20Jul\x202026\x2022:12:44\x20GMT\r\nPermissions-Policy:\x20accelerometer=\(\),ambient-light-sensor=\(\),attribution-reporting=\(\),autoplay=\(\),battery=\(\),browsing-topics=\(\),camera=\(\),captured-surface-control=\(\),ch-device-memory=\(\),ch-downlink=\(\),ch-dpr=\(\),ch-ect=\(\),ch-prefers-color-scheme=\(\),ch-prefers-reduced-motion=\(\),ch-prefers-reduced-transparency=\(\),ch-rtt=\(\),ch-save-data=\(\),ch-ua=\(\),ch-ua-arch=\(\),ch-ua-bitness=\(\),ch-ua-form-factors=\(\),ch-ua-full-version=\(\),ch-ua-full-version-list=\(\),ch-ua-mobil&quot;)%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(HTTPOptions,4034,&quot;HTTP/1\.0\x20200\x20OK\r\nAccept-Ranges:\x20bytes\r\nCache-Control:\x20max-age=31536000\r\nContent-Length:\x2014202\r\nContent-Security-Policy:\x20script-src\x20&apos;self&apos;\x20https://js\.hsforms\.net\x20https://www\.google\.com/recaptcha/\x20https://www\.gstatic\.com/recaptcha/;\x20object-src\x20&apos;none&apos;;\x20frame-ancestors\x20&apos;none&apos;;\x20frame-src\x20https://www\.google\.com/recaptcha/\x20https://www\.gstatic\.com/recaptcha/\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nLast-Modified:\x20Mon,\x2013\x20Jul\x202026\x2022:12:44\x20GMT\r\nPermissions-Policy:\x20accelerometer=\(\),ambient-light-sensor=\(\),attribution-reporting=\(\),autoplay=\(\),battery=\(\),browsing-topics=\(\),camera=\(\),captured-surface-control=\(\),ch-device-memory=\(\),ch-downlink=\(\),ch-dpr=\(\),ch-ect=\(\),ch-prefers-color-scheme=\(\),ch-prefers-reduced-motion=\(\),ch-prefers-reduced-transparency=\(\),ch-rtt=\(\),ch-save-data=\(\),ch-ua=\(\),ch-ua-arch=\(\),ch-ua-bitness=\(\),ch-ua-form-factors=\(\),ch-ua-full-version=\(\),ch-ua-full-version-list=\(\),ch-ua-mobil&quot;);" tunnel="ssl" method="table" conf="3"/><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: DNS:localhost, IP Address:0.0.0.0&#xa;Not valid before: 2026-07-26T11:40:11&#xa;Not valid after:  2031-07-26T11:40:11"><table key="subject">
+</table>
+<table key="issuer">
+</table>
+<table key="pubkey">
+<elem key="type">ec</elem>
+<elem key="bits">256</elem>
+<table key="ecdhparams">
+<table key="curve_params">
+<elem key="ec_curve_type">namedcurve</elem>
+<elem key="curve">prime256v1</elem>
+</table>
+</table>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:localhost, IP Address:0.0.0.0</elem>
+<elem key="critical">true</elem>
+</table>
+</table>
+<elem key="sig_algo">ecdsa-with-SHA256</elem>
+<table key="validity">
+<elem key="notBefore">2026-07-26T11:40:11</elem>
+<elem key="notAfter">2031-07-26T11:40:11</elem>
+</table>
+<elem key="md5">b3970890dfa37cdc52a788b451917b88</elem>
+<elem key="sha1">b9ed29f0383bbdb10fd2376102f588326a679d7a</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIBUDCB+KADAgECAhB2+dPtTjR8aTFtXwdhIjIfMAoGCCqGSM49BAMCMAAwHhcN&#xa;MjYwNzI2MTE0MDExWhcNMzEwNzI2MTE0MDExWjAAMFkwEwYHKoZIzj0CAQYIKoZI&#xa;zj0DAQcDQgAEC40ZnrvYmrOuZZ1xQcB/SMy4rPOPdrKIXspz7Bl23koi8CkvSPRz&#xa;h8ZVTnNfAam1bwnXznzrIF1VpcKsFgpio6NUMFIwDgYDVR0PAQH/BAQDAgWgMBMG&#xa;A1UdJQQMMAoGCCsGAQUFBwMBMAwGA1UdEwEB/wQCMAAwHQYDVR0RAQH/BBMwEYIJ&#xa;bG9jYWxob3N0hwQAAAAAMAoGCCqGSM49BAMCA0cAMEQCIBtWxuK85oeuHmDl2+Ua&#xa;DBbYQZ32m0bC7+DdxPnyzybKAiBJFlQil7sTeFFsN6JcWFl3jR/+hxqrvNZoq9si&#xa;JVw2wg==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="fingerprint-strings" output="&#xa;  GenericLines: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest, HTTPOptions: &#xa;    HTTP/1.0 200 OK&#xa;    Accept-Ranges: bytes&#xa;    Cache-Control: max-age=31536000&#xa;    Content-Length: 14202&#xa;    Content-Security-Policy: script-src &apos;self&apos; https://js.hsforms.net https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; object-src &apos;none&apos;; frame-ancestors &apos;none&apos;; frame-src https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Last-Modified: Mon, 13 Jul 2026 22:12:44 GMT&#xa;    Permissions-Policy: accelerometer=(),ambient-light-sensor=(),attribution-reporting=(),autoplay=(),battery=(),browsing-topics=(),camera=(),captured-surface-control=(),ch-device-memory=(),ch-downlink=(),ch-dpr=(),ch-ect=(),ch-prefers-color-scheme=(),ch-prefers-reduced-motion=(),ch-prefers-reduced-transparency=(),ch-rtt=(),ch-save-data=(),ch-ua=(),ch-ua-arch=(),ch-ua-bitness=(),ch-ua-form-factors=(),ch-ua-full-version=(),ch-ua-full-version-list=(),ch-ua-mobil"><elem key="GenericLines">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest, HTTPOptions">&#xa;    HTTP/1.0 200 OK&#xa;    Accept-Ranges: bytes&#xa;    Cache-Control: max-age=31536000&#xa;    Content-Length: 14202&#xa;    Content-Security-Policy: script-src &apos;self&apos; https://js.hsforms.net https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; object-src &apos;none&apos;; frame-ancestors &apos;none&apos;; frame-src https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Last-Modified: Mon, 13 Jul 2026 22:12:44 GMT&#xa;    Permissions-Policy: accelerometer=(),ambient-light-sensor=(),attribution-reporting=(),autoplay=(),battery=(),browsing-topics=(),camera=(),captured-surface-control=(),ch-device-memory=(),ch-downlink=(),ch-dpr=(),ch-ect=(),ch-prefers-color-scheme=(),ch-prefers-reduced-motion=(),ch-prefers-reduced-transparency=(),ch-rtt=(),ch-save-data=(),ch-ua=(),ch-ua-arch=(),ch-ua-bitness=(),ch-ua-form-factors=(),ch-ua-full-version=(),ch-ua-full-version-list=(),ch-ua-mobil</elem>
+</script></port>
+<port protocol="tcp" portid="44433"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" servicefp="SF-Port44433-TCP:V=7.94SVN%I=7%D=8/26%Time=6A8F327B%P=x86_64-pc-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:47\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(HTTPOptions,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:37:47\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(TerminalServerCookie,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(TLSSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Kerberos,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(FourOhFourRequest,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2026\x20Aug\x202026\x2018:38:12\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(LPDString,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(LDAPSearchReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 26 Aug 2026 18:38:12 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found&#xa;  GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest, HTTPOptions: &#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 26 Aug 2026 18:37:47 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found"><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 26 Aug 2026 18:38:12 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found</elem>
+<elem key="GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest, HTTPOptions">&#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 26 Aug 2026 18:37:47 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found</elem>
+</script></port>
+<port protocol="tcp" portid="55000"><state state="open" reason="syn-ack" reason_ttl="64"/></port>
+</ports>
+<times srtt="10" rttvar="0" to="100000"/>
+</host>
+<runstats><finished time="1787769580" timestr="Wed Aug 26 20:39:40 2026" summary="Nmap done at Wed Aug 26 20:39:40 2026; 1 IP address (1 host up) scanned in 120.10 seconds" elapsed="120.10" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
