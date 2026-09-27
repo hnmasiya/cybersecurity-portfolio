@@ -195,11 +195,11 @@ Automated checks validate portfolio quality, evidence integrity and security con
 
 <!-- START_SECTION:activity -->
 ### Recent Lab & Security Updates
-* feat: add Splunk SOC lab 01 (31 minutes ago)
-* auto: update cybersecurity job intelligence (#1320) (7 hours ago)
-* auto: publish global resume variants (#1319) (7 hours ago)
-* auto: publish consolidated cybersecurity resume (#1318) (7 hours ago)
-* fix: make career intelligence reports idempotent (#1317) (7 hours ago)
+* auto: publish country resume variants (#1357) (82 minutes ago)
+* fix: Canada resume one page (#1356) (85 minutes ago)
+* auto: publish country resume variants (#1355) (2 hours ago)
+* auto: publish consolidated cybersecurity resume (#1354) (2 hours ago)
+* Remove Netvantage and consolidate experience under Zuetech (#1352) (2 hours ago)
 <!-- END_SECTION:activity -->
 
 ---
