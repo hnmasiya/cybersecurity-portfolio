@@ -22,31 +22,27 @@
 </main>
 <script>
 const countryToVariant={
-CA:"canada",US:"united-states",GB:"uk",
-AU:"australia-new-zealand",NZ:"australia-new-zealand",
-DE:"europe",FR:"europe",NL:"europe",IE:"europe",CH:"europe",
-AE:"middle-east",QA:"middle-east",SA:"middle-east",
-ZA:"africa",ZW:"africa",NG:"africa",KE:"africa",
-IN:"asia-pacific",SG:"asia-pacific",JP:"asia-pacific",KR:"asia-pacific",
-BR:"global",MX:"united-states"
-};
-const regionCountries={
-europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
-africa:new Set("DZ AO BW CM EG ET GH KE MW MZ NA RW SN TZ UG ZM ZW ZA NG".split(" ")),
-middleEast:new Set("BH IL JO KW LB OM QA SA AE".split(" ")),
-asiaPacific:new Set("BD CN HK ID JP KH KR LK MY MM NP PH PK SG TH TW VN AU NZ".split(" "))
+US:"US Resume",CA:"Canadian Resume",GB:"UK CV",IE:"Irish CV",
+AU:"Australian Resume",NZ:"New Zealand Resume",
+DE:"German CV",FR:"French CV",NL:"Dutch CV",CH:"Swiss CV",
+AE:"UAE Resume",QA:"Qatar Resume",SA:"Saudi Arabia Resume",
+ZA:"South African CV",ZW:"Zimbabwe CV",NG:"Nigerian CV",KE:"Kenyan CV",
+IN:"Indian Resume",SG:"Singapore Resume",JP:"Japan Resume",KR:"South Korea Resume",
+BR:"Brazil Resume",MX:"Mexico Resume"
 };
 function fallbackVariant(code){
  if(regionCountries.europe.has(code)) return "europe";
  if(regionCountries.africa.has(code)) return "africa";
  if(regionCountries.middleEast.has(code)) return "middle-east";
  if(regionCountries.asiaPacific.has(code)) return "asia-pacific";
- return "global";
+ return "international";
 }
 function setResume(code){
- const slug=countryToVariant[code]||fallbackVariant(code);
- document.getElementById("download").href="resume-variants/pdf/"+slug+".pdf";
- 
+ const label=countryToVariant[code]||fallbackVariant(code);
+ const slug=label.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+ const link=document.getElementById("download");
+ link.href="resume-variants/pdf/"+slug+".pdf";
+ link.setAttribute("download","");
 }
 fetch("https://ipapi.co/country/",{cache:"no-store"})
  .then(r=>r.ok?r.text():Promise.reject(new Error("country lookup failed")))
