@@ -22,33 +22,62 @@
 </main>
 <script>
 const countryToVariant={
-US:"US Resume",CA:"Canadian Resume",GB:"UK CV",IE:"Irish CV",
-AU:"Australian Resume",NZ:"New Zealand Resume",
-DE:"German CV",FR:"French CV",NL:"Dutch CV",CH:"Swiss CV",
-AE:"UAE Resume",QA:"Qatar Resume",SA:"Saudi Arabia Resume",
-ZA:"South African CV",ZW:"Zimbabwe CV",NG:"Nigerian CV",KE:"Kenyan CV",
-IN:"Indian Resume",SG:"Singapore Resume",JP:"Japan Resume",KR:"South Korea Resume",
-BR:"Brazil Resume",MX:"Mexico Resume"
+US:"us-resume",CA:"canadian-resume",GB:"uk-cv",IE:"irish-cv",
+AU:"australian-resume",NZ:"new-zealand-resume",
+DE:"german-cv",FR:"french-cv",NL:"dutch-cv",CH:"swiss-cv",
+AE:"uae-resume",QA:"qatar-resume",SA:"saudi-arabia-resume",
+ZA:"south-african-cv",ZW:"zimbabwe-cv",NG:"nigerian-cv",KE:"kenyan-cv",
+IN:"indian-resume",SG:"singapore-resume",JP:"japan-resume",KR:"south-korea-resume",
+BR:"brazil-resume",MX:"mexico-resume"
 };
-function fallbackVariant(code){
+const regionCountries={
+europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
+africa:new Set("DZ AO BW CM EG ET GH KE MW MZ NA RW SN TZ UG ZM ZW ZA NG".split(" ")),
+middleEast:new Set("BH IL JO KW LB OM QA SA AE".split(" ")),
+asiaPacific:new Set("BD CN HK ID JP KH LK MY MM NP PH PK SG TH TW VN AU NZ".split(" "))
+};
+function variantFor(code){
+ if(countryToVariant[code]) return countryToVariant[code];
  if(regionCountries.europe.has(code)) return "europe";
  if(regionCountries.africa.has(code)) return "africa";
  if(regionCountries.middleEast.has(code)) return "middle-east";
  if(regionCountries.asiaPacific.has(code)) return "asia-pacific";
- return "international";
+ return "global";
 }
-function setResume(code){
- const label=countryToVariant[code]||fallbackVariant(code);
- const slug=label.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+function applyResumeLink(variant){
  const link=document.getElementById("download");
- link.href="resume-variants/pdf/"+slug+".pdf";
+ link.href="resume-variants/pdf/"+variant+".pdf";
  link.setAttribute("download","HN Masiya Resume.pdf");
  link.removeAttribute("target");
+ link.setAttribute("rel","noopener");
+ link.setAttribute("aria-label","Download HN Masiya Resume.pdf");
+ link.dataset.variant=variant;
 }
+async function downloadResume(event){
+ event.preventDefault();
+ const link=document.getElementById("download");
+ const variant=link.dataset.variant||"global";
+ try{
+   const response=await fetch(link.href,{cache:"no-store"});
+   if(!response.ok) throw new Error("resume download failed");
+   const blob=await response.blob();
+   const objectUrl=URL.createObjectURL(blob);
+   const anchor=document.createElement("a");
+   anchor.href=objectUrl;
+   anchor.download="HN Masiya Resume.pdf";
+   document.body.appendChild(anchor);
+   anchor.click();
+   anchor.remove();
+   setTimeout(()=>URL.revokeObjectURL(objectUrl),1000);
+ }catch(error){
+   window.location.href=link.href;
+ }
+}
+document.getElementById("download").addEventListener("click",downloadResume);
 fetch("https://ipapi.co/country/",{cache:"no-store"})
  .then(r=>r.ok?r.text():Promise.reject(new Error("country lookup failed")))
- .then(code=>setResume(code.trim().toUpperCase()))
- .catch(()=>setResume("ZZ"));
+ .then(code=>applyResumeLink(variantFor(code.trim().toUpperCase())))
+ .catch(()=>applyResumeLink("global"));
 </script>
 </body>
 </html>
