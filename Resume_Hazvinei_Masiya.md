@@ -21,7 +21,7 @@
 
 <div class="header">
   <h1>HAZVINEI NOMATTER MASIYA</h1>
-  <div class="subtitle">Cybersecurity Professional | Security Operations | Detection Engineering | Automation</div>
+  <div class="subtitle">Cybersecurity Professional | Security Operations | Detection Engineering | Incident Response | Automation</div>
   <div class="contact">
     Harare, Zimbabwe &nbsp;|&nbsp; norman.masiya@gmail.com &nbsp;|&nbsp; +263 77 521 6823 / +263 71 866 2162<br>
     <b>GitHub:</b> https://github.com/hnmasiya &nbsp;|&nbsp; <b>Portfolio:</b> https://masiya-hub.org &nbsp;|&nbsp; <b>LinkedIn:</b> https://www.linkedin.com/in/hazvinei-masiya/
@@ -30,12 +30,12 @@
 </div>
 
 <h2>Professional Summary</h2>
-CompTIA Security+ certified enterprise IT professional with 12+ years of experience spanning infrastructure, systems administration, networking, access control, endpoint security, and business-critical technical operations, deliberately transitioning that foundation into cybersecurity. Hands-on security work demonstrates SIEM monitoring, detection engineering, incident investigation, DFIR, Windows/Sysmon telemetry, network analysis, cloud security, vulnerability assessment, and automation using Wazuh, Splunk, Sysmon, Python, Bash, PowerShell, and Terraform. Professional employment and independent/authorized security-lab work are clearly distinguished.
+CompTIA Security+ certified enterprise IT professional with 12+ years of experience across enterprise infrastructure, systems administration, networking, access control, endpoint security, and business-critical technical operations, deliberately transitioning that foundation into cybersecurity and security operations. Hands-on security work demonstrates SIEM monitoring, detection engineering, incident investigation, DFIR, Windows/Sysmon telemetry, network analysis, vulnerability assessment, cloud security, and security automation using Wazuh, Splunk, Sysmon, Python, Bash, PowerShell, and Terraform. Combines practical enterprise infrastructure experience with evidence-backed security labs and clearly separates professional employment from independent and authorized security work.
 
 <h2>Core Competencies & Technical Stack</h2>
 <ul>
 <li><b>Security Operations & SIEM:</b> Wazuh SIEM, Splunk/SPL, Sysmon, alert triage, log analysis, security-event investigation, FIM</li>
-<li><b>Detection Engineering:</b> Custom Wazuh rules, Sysmon XML rules, Sigma concepts, MITRE ATT&CK mapping, detection validation</li>
+<li><b>Detection Engineering:</b> Custom Wazuh rules, Sysmon detection logic, Sigma concepts, MITRE ATT&CK mapping, detection validation</li>
 <li><b>Incident Response & DFIR:</b> Linux authentication/system forensics, PCAP analysis, IOC extraction, hash verification, evidence preservation, investigation workflows</li>
 <li><b>Enterprise Infrastructure Security:</b> Windows 10/11, Windows Server, Active Directory, Group Policy, Microsoft 365, RBAC, least privilege, endpoint hardening, patch management</li>
 <li><b>Network & Vulnerability Security:</b> Nmap, Wireshark/Tshark, Burp Suite, DVWA, OWASP Juice Shop, LAN/WAN, Dell Versa SD-WAN, Sophos XG</li>
