@@ -1,0 +1,168 @@
+
+================================================================
+1. ENVIRONMENT VALIDATION
+================================================================
+[PASS] Git repository detected: /home/normann/cybersecurity-portfolio
+[PASS] Docker is available and accessible
+[PASS] Wazuh manager detected: single-node-wazuh.manager-1
+
+================================================================
+2. INCIDENT INITIALIZATION
+================================================================
+Incident ID: LAB4-20260924-101415
+Lab artifact: /tmp/LAB4-20260924-101415/incident-marker.txt
+[PASS] Controlled incident artifact created
+
+================================================================
+3. PRE-ACTIVITY BASELINE
+================================================================
+[PASS] Pre-activity endpoint baseline captured
+
+================================================================
+4. CONTROLLED SECURITY ACTIVITY
+================================================================
+[PASS] Controlled privileged activity completed
+
+================================================================
+5. IMMEDIATE ACTIVITY EVIDENCE
+================================================================
+[PASS] Post-activity endpoint evidence captured
+
+================================================================
+6. WAZUH ALERT COLLECTION
+================================================================
+[PASS] Captured 147 Wazuh manager alerts
+
+================================================================
+7. INCIDENT-SCOPED ALERT ANALYSIS
+================================================================
+[PASS] Incident-scoped Wazuh alerts identified: 77
+
+================================================================
+8. AUDITD CORRELATION
+================================================================
+[PASS] Auditd activity correlated with incident window
+
+================================================================
+9. JOURNAL/PAM CORRELATION
+================================================================
+[PASS] Journal/PAM activity correlated
+
+================================================================
+10. PROCESS AND NETWORK CORRELATION
+================================================================
+[PASS] Relevant process evidence extracted
+[PASS] Network context captured
+
+================================================================
+11. MITRE ATT&CK CONTEXT
+================================================================
+[PASS] MITRE context documented with controlled-lab limitation
+
+================================================================
+12. CONTROLLED CONTAINMENT
+================================================================
+[PASS] Safe containment action applied to temporary lab artifact
+
+================================================================
+13. CONTAINMENT VERIFICATION
+================================================================
+Contained artifact mode: 0
+[PASS] Containment verified
+
+================================================================
+14. INCIDENT TIMELINE
+================================================================
+TIMESTAMP	EVENT
+2026-09-24T10:14:15+02:00	Incident initialized
+2026-09-24T10:14:16+02:00	Controlled privileged activity started
+2026-09-24T10:14:21+02:00	Controlled privileged activity completed
+2026-09-24T10:14:24+02:00	Containment action applied
+[PASS] Incident timeline generated
+
+================================================================
+15. INCIDENT DISPOSITION
+================================================================
+LAB4 INCIDENT DISPOSITION
+
+Incident ID:
+LAB4-20260924-101415
+
+Nature:
+Controlled SOC incident-response simulation.
+
+Ground truth:
+The analyst intentionally generated privileged command execution using sudo
+against a temporary lab artifact.
+
+Detection:
+Wazuh manager telemetry was collected after the activity.
+
+Investigation:
+Wazuh, Auditd, journald/PAM, process, and network evidence were collected
+where available.
+
+Containment:
+The temporary lab artifact was restricted with chmod 000.
+
+Verification:
+The containment state was checked after the response action.
+
+Security conclusion:
+This exercise does not represent a real compromise. It demonstrates the
+SOC workflow of detection, triage, evidence correlation, containment,
+verification, and documentation.
+
+ATT&CK context:
+T1548.003 may be used as investigative context because sudo was deliberately
+used. This is not a malicious-technique determination.
+[PASS] Incident disposition documented
+
+================================================================
+16. CLEANUP VERIFICATION
+================================================================
+[PASS] Temporary lab artifact cleaned up
+
+================================================================
+17. EVIDENCE MANIFEST
+================================================================
+baseline-journal.txt
+baseline-listening-sockets.txt
+baseline-network.txt
+baseline-processes.txt
+baseline-timestamp.txt
+evidence-manifest.txt
+generated-activity.txt
+incident-alerts.jsonl
+incident-alert-timeline.tsv
+incident-auditd-relevant.txt
+incident-disposition.txt
+incident-journal-relevant.txt
+incident-network-context.txt
+incident-process-relevant.txt
+incident-timeline.tsv
+lab-artifact-state.txt
+mitre-mapping.txt
+post-activity-auditd.txt
+post-activity-journal.txt
+post-activity-listening-sockets.txt
+post-activity-processes.txt
+response-action.txt
+response-verification.txt
+wazuh-alerts.jsonl
+[PASS] Evidence manifest contains 24 files
+
+================================================================
+18. FINAL VALIDATION
+================================================================
+PASS: 20
+WARN: 0
+FAIL: 0
+
+Incident ID: LAB4-20260924-101415
+Completed: 2026-09-24T10:14:25+02:00
+
+Report:   /home/normann/cybersecurity-portfolio/reports/phase1-wazuh-incident-response-simulation-20260924-101415.txt
+Evidence: /home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-incident-response-simulation-20260924-101415
+
+RESULT: LAB 4 INCIDENT RESPONSE SIMULATION COMPLETED WITHOUT HARD FAILURES

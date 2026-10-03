@@ -1,0 +1,43 @@
+{
+  "master_version": "1.0.0",
+  "preserves_individual_builders": true,
+  "child_builder": "scripts/splunk-labs-03-06-master-build.sh",
+  "splunk_labs": {
+    "01": {
+      "present": true,
+      "paths": [
+        "SIEM/Splunk/Lab-01-SSH-Authentication-Hunting"
+      ]
+    },
+    "02": {
+      "present": true,
+      "paths": [
+        "SIEM/Splunk/Lab-02-Windows-Sysmon-Process-Investigation"
+      ]
+    },
+    "03": {
+      "present": true,
+      "paths": [
+        "SIEM/Splunk/Lab-03-Web-Attack-HTTP-Investigation"
+      ]
+    },
+    "04": {
+      "present": true,
+      "paths": [
+        "SIEM/Splunk/Lab-04-Detection-Engineering-SPL-Alert-Logic"
+      ]
+    },
+    "05": {
+      "present": true,
+      "paths": [
+        "SIEM/Splunk/Lab-05-Dashboarding-SOC-Monitoring"
+      ]
+    },
+    "06": {
+      "present": true,
+      "paths": [
+        "SIEM/Splunk/Lab-06-End-to-End-SOC-Investigation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# Detection 01 — PowerShell with encoded command or execution-policy bypass
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| search image="*powershell.exe"
+| where match(lower(command_line),"encodedcommand|executionpolicy\s+bypass")
+| eval detection="PowerShell encoded command / execution policy bypass"
+| table timestamp host user parent_image image command_line detection
+
+# Detection 02 — Suspicious LOLBin execution
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| where match(lower(image),"mshta\.exe|rundll32\.exe|regsvr32\.exe|wscript\.exe|cscript\.exe")
+| eval detection="Potential LOLBin execution"
+| table timestamp host user parent_image image command_line detection
+
+# Detection 03 — Suspicious process ancestry
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| where match(lower(parent_image),"wscript\.exe|mshta\.exe|winword\.exe|excel\.exe")
+    AND match(lower(image),"powershell\.exe|cmd\.exe|mshta\.exe")
+| eval detection="Suspicious parent-child process chain"
+| table timestamp host user parent_image image command_line detection

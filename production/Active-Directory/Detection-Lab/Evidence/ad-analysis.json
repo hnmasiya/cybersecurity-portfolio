@@ -1,0 +1,105 @@
+{
+  "summary": {
+    "events_analyzed": 26,
+    "findings": 8,
+    "critical": 1,
+    "high": 5,
+    "medium": 2
+  },
+  "findings": [
+    {
+      "finding": "Brute Force Authentication Attempt",
+      "severity": "HIGH",
+      "target_user": "svc-backup",
+      "failed_attempts": 6,
+      "mitre_attack": {
+        "technique": "T1110",
+        "name": "Brute Force",
+        "tactic": "Credential Access"
+      }
+    },
+    {
+      "finding": "Kerberos Pre-Authentication Failure Burst",
+      "severity": "HIGH",
+      "target_user": "svc-sql",
+      "failure_count": 5,
+      "mitre_attack": {
+        "technique": "T1110",
+        "name": "Brute Force",
+        "tactic": "Credential Access"
+      }
+    },
+    {
+      "finding": "Possible Kerberoasting Activity",
+      "severity": "HIGH",
+      "target_user": "asmith",
+      "distinct_service_tickets": 3,
+      "rc4_ticket_requests": 3,
+      "mitre_attack": {
+        "technique": "T1558.003",
+        "name": "Kerberoasting",
+        "tactic": "Credential Access"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "tcontractor",
+      "group": "Domain Admins",
+      "actor": "helpdesk1",
+      "timestamp": "2026-08-20T09:30:00Z",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Privileged Group Membership Change",
+      "severity": "HIGH",
+      "target_user": "tcontractor",
+      "group": "Local Administrators",
+      "actor": "helpdesk1",
+      "timestamp": "2026-08-20T09:31:00Z",
+      "mitre_attack": {
+        "technique": "T1098",
+        "name": "Account Manipulation",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "New User Account Created",
+      "severity": "MEDIUM",
+      "target_user": "svc-newapp",
+      "actor": "admin.corp",
+      "timestamp": "2026-08-20T09:35:00Z",
+      "mitre_attack": {
+        "technique": "T1136",
+        "name": "Create Account",
+        "tactic": "Persistence"
+      }
+    },
+    {
+      "finding": "Special Privileges Assigned to New Logon",
+      "severity": "MEDIUM",
+      "target_user": "svc-newapp",
+      "timestamp": "2026-08-20T09:36:00Z",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "finding": "Security Audit Log Cleared",
+      "severity": "CRITICAL",
+      "actor": "admin.corp",
+      "timestamp": "2026-08-20T09:40:00Z",
+      "mitre_attack": {
+        "technique": "T1070.001",
+        "name": "Clear Windows Event Logs",
+        "tactic": "Defense Evasion"
+      }
+    }
+  ]
+}

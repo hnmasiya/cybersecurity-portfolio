@@ -1,0 +1,33 @@
+LAB4 INCIDENT DISPOSITION
+
+Incident ID:
+LAB4-20260924-101415
+
+Nature:
+Controlled SOC incident-response simulation.
+
+Ground truth:
+The analyst intentionally generated privileged command execution using sudo
+against a temporary lab artifact.
+
+Detection:
+Wazuh manager telemetry was collected after the activity.
+
+Investigation:
+Wazuh, Auditd, journald/PAM, process, and network evidence were collected
+where available.
+
+Containment:
+The temporary lab artifact was restricted with chmod 000.
+
+Verification:
+The containment state was checked after the response action.
+
+Security conclusion:
+This exercise does not represent a real compromise. It demonstrates the
+SOC workflow of detection, triage, evidence correlation, containment,
+verification, and documentation.
+
+ATT&CK context:
+T1548.003 may be used as investigative context because sudo was deliberately
+used. This is not a malicious-technique determination.

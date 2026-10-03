@@ -1,0 +1,4 @@
+event_id,base_sid,srcip,user,matched_rules,expected_rules,status
+EVT-001,5710,192.0.2.10,testadmin,100001;100002,100001;100002,PASS
+EVT-002,5710,192.0.2.11,analyst,100001;100002,100001;100002,PASS
+EVT-003,5000,192.0.2.20,labuser,,,PASS

@@ -1,0 +1,12 @@
+LAB 5 DETECTION PERFORMANCE
+
+Rule ID: 100500
+Positive marker: LAB5-DETECTION-ENGINEERING
+Negative marker: LAB5-BENIGN-NONMATCH
+Positive alerts: 1
+Negative matching alerts: 0
+
+Positive detection expected: YES
+Negative detection expected: NO
+
+RESULT: DETECTION BEHAVIOR VALIDATED

@@ -1,0 +1,26 @@
+{
+  "hunt_rules": [
+    {
+      "id": "HUNT-001",
+      "name": "Repeated Failed Authentication",
+      "condition": "event_code == 4625",
+      "threshold": 3,
+      "mitre": "T1110",
+      "severity": "high"
+    },
+    {
+      "id": "HUNT-002",
+      "name": "Encoded PowerShell",
+      "condition": "process image is powershell.exe and command line contains EncodedCommand",
+      "mitre": "T1059.001",
+      "severity": "high"
+    },
+    {
+      "id": "HUNT-003",
+      "name": "PowerShell Network Activity",
+      "condition": "powershell.exe produces network connection to TCP/443",
+      "mitre": "T1059.001",
+      "severity": "medium"
+    }
+  ]
+}

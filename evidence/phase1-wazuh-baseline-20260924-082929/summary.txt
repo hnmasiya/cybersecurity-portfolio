@@ -1,0 +1,16 @@
+Phase 1 Wazuh Baseline Summary
+==============================
+
+Timestamp: 20260924-082929
+Host: normann-ThinkPad-X260
+
+Agent Version: 4.14.8
+Manager Version: 4.14.7
+Indexer Version: 4.14.7
+Dashboard Version: 4.14.7
+
+PASS: 23
+WARN: 4
+FAIL: 0
+
+No configuration changes were performed.
