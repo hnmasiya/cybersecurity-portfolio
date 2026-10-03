@@ -1,0 +1,4 @@
+frame.number,ip.src,ip.dst,http.host,http.request.uri,http.user_agent,score,reasons
+16,127.0.0.1,127.0.0.1,malicious.example.test,/download/payload.bin?cmd=%2Fbin%2Fsh%20-c%20id,SOC-Lab-SuspiciousScanner/1.0,8,synthetic suspicious host; command-execution pattern; scanner-like user agent
+29,127.0.0.1,127.0.0.1,malicious.example.test,/search?id=1%27%20OR%20%271%27%3D%271,python-requests/2.x SOC-Lab,6,synthetic suspicious host; SQL-injection-like pattern
+42,127.0.0.1,127.0.0.1,malicious.example.test,/etc/passwd,SOC-Lab-Scanner/1.0,8,synthetic suspicious host; sensitive-file pattern; scanner-like user agent

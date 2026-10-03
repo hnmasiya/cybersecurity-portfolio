@@ -1,0 +1,4 @@
+Sep 24 10:14:16 normann-ThinkPad-X260 sudo[85106]:  normann : a password is required ; TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 10:14:21 normann-ThinkPad-X260 sudo[85107]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/sh -c 'printf \'LAB4 privileged validation\\n\' >> \'/tmp/LAB4-20260924-101415/incident-marker.txt\''
+Sep 24 10:14:21 normann-ThinkPad-X260 sudo[85107]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 10:14:21 normann-ThinkPad-X260 sudo[85107]: pam_unix(sudo:session): session closed for user root

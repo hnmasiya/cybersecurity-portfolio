@@ -1,0 +1,21 @@
+name: Weekly Link & Evidence Checker
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Every Monday at 8 AM
+  workflow_dispatch:
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Link Checker (Lychee)
+        uses: lycheeverse/lychee-action@2b973e86fc7b1f6b36a93795fe2c9c6ae1118621 # v1
+        with:
+          args: --verbose --no-progress './**/*.md' './**/*.html'
+          fail: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

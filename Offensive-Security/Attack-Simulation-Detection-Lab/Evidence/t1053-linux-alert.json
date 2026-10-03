@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-08-27T13:19:55.354+0000",
+  "rule": {
+    "level": 12,
+    "description": "Persistence: cron job spool modified",
+    "id": "100210",
+    "mitre": {
+      "id": ["T1053.003"],
+      "tactic": ["Execution", "Persistence", "Privilege Escalation"],
+      "technique": ["Cron"]
+    },
+    "groups": ["attack_sim", "persistence", "t1053", "t1547"]
+  },
+  "agent": {
+    "id": "002",
+    "name": "normann-ThinkPad-X260",
+    "ip": "127.0.0.1"
+  },
+  "manager": {
+    "name": "wazuh.manager"
+  },
+  "id": "1787836795.17898468",
+  "full_log": "File '/etc/cron.d/update-check' modified\nMode: scheduled\nChanged attributes: mtime\nOld modification time was: '1787836618', now it is '1787836749'\n",
+  "syscheck": {
+    "path": "/etc/cron.d/update-check",
+    "mode": "scheduled",
+    "size_after": "52",
+    "perm_after": "rw-r--r--",
+    "uid_after": "0",
+    "gid_after": "0",
+    "md5_after": "ec57d0f51b10a7b31c9813d35e9e0a2a",
+    "sha1_after": "09554166f32b3768ff9dc6ab1b6524e1408e5ccf",
+    "sha256_after": "b582b977be9204663f232310572d84985b3692f82079de1b83e676f34cb9a387",
+    "uname_after": "root",
+    "gname_after": "root",
+    "mtime_before": "2026-08-27T13:16:58",
+    "mtime_after": "2026-08-27T13:19:09",
+    "inode_after": 10226137,
+    "changed_attributes": ["mtime"],
+    "event": "modified"
+  },
+  "decoder": {
+    "name": "syscheck_integrity_changed"
+  },
+  "location": "syscheck",
+  "_note": "Real FIM alert for Scripts/linux-simulations.sh persistence, run on 2026-08-27. The persistence technique originally targeted the user's personal crontab (/var/spool/cron/crontabs), but this host's FIM only watches /etc, /usr/bin, /usr/sbin, /bin, /sbin, /boot by default - the technique was switched to write /etc/cron.d/update-check instead, already covered under the monitored /etc tree. Getting a real alert also required understanding a genuine Wazuh FIM behavior: the scan immediately following any wazuh-agent daemon restart is always treated as a fresh baseline and never generates alerts, regardless of whether the underlying FIM database already has history - restarting the agent to force a rescan (the first approach tried) silently absorbed the new file into the baseline instead of alerting on it. The fix was to shorten the scan frequency (43200s -> 30s), let the daemon settle into genuine periodic (non-restart-triggered) scans, and only then create the file - that's the alert captured here, decoder syscheck_integrity_changed, real checksums included. Captured verbatim via `docker exec single-node-wazuh.manager-1 grep \"100210\" /var/ossec/logs/alerts/alerts.json`, no content altered."
+}

@@ -1,0 +1,4 @@
+PID=179582
+PPID=179534
+CMDLINE=python3 /tmp/lab7-process.oOO1ps/server.py
+EXE=/usr/bin/python3.12
