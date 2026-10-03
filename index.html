@@ -1343,8 +1343,6 @@ Caller User: 'bad_actor_admin'</code>
     <!-- Floating Back to Top Button -->
     <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
 
-    <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
-
     <footer>
         <div class="container">
             <p>© 2026 Hazvinei Nomatter Masiya • Harare, Zimbabwe</p>
@@ -1419,12 +1417,28 @@ Caller User: 'bad_actor_admin'</code>
             const commands = {
                 help: [
                     'Available commands:',
-                    '  help     Show available commands',
-                    '  whoami   Show professional profile',
-                    '  skills   Show core security skills',
-                    '  certs    Show certifications',
-                    '  contact  Show contact options',
-                    '  clear    Clear terminal output'
+                    '  whoami          Show professional profile',
+                    '  skills          Show core security skills',
+                    '  certs           Show certifications',
+                    '  labs            List completed cybersecurity labs',
+                    '  lab <name>      Open lab evidence',
+                    '  projects        Show major portfolio projects',
+                    '  soc             Show SOC capabilities',
+                    '  siem            Show Wazuh / Splunk capabilities',
+                    '  detections      Show detection engineering work',
+                    '  dfir            Show DFIR / incident response work',
+                    '  threat-hunting  Show threat-hunting capabilities',
+                    '  mitre           Show MITRE ATT&CK work',
+                    '  network         Show network security work',
+                    '  websec          Show web security labs',
+                    '  cloud           Show cloud security work',
+                    '  automation      Show security automation work',
+                    '  evidence        Open Evidence Hubs',
+                    '  resume          Open resume',
+                    '  github          Open GitHub',
+                    '  linkedin        Open LinkedIn',
+                    '  contact         Show contact options',
+                    '  clear           Clear terminal output'
                 ],
                 whoami: [
                     'Hazvinei Nomatter Masiya',
@@ -1441,6 +1455,101 @@ Caller User: 'bad_actor_admin'</code>
                     'Google Cybersecurity Professional Certificate',
                     'Google IT Support Professional Certificate'
                 ],
+                labs: [
+                    '[ COMPLETED CYBERSECURITY LABS ]',
+                    '01  Splunk — SSH Authentication Hunting',
+                    '02  Splunk — Windows / Sysmon Process Investigation',
+                    '03  Splunk — Web Attack / HTTP Investigation',
+                    '04  Splunk — Detection Engineering / SPL Alert Logic',
+                    '05  Splunk — Dashboarding / SOC Monitoring',
+                    '06  Splunk — End-to-End SOC Investigation',
+                    '07  Wazuh SIEM',
+                    '08  Network Security / Nmap / Wireshark',
+                    '09  Web Security / DVWA',
+                    '10  OWASP Juice Shop',
+                    '11  Cloud Security / GCP / Terraform',
+                    '12  Security Automation',
+                    '',
+                    "Run 'lab <name>' to open the relevant evidence."
+                ],
+                projects: [
+                    'Wazuh SIEM Detection Lab',
+                    'Splunk SOC Investigation Series',
+                    'GCP Secure Landing Zone / Terraform',
+                    'Windows & Sysmon Detection Validation',
+                    'Network Security & Traffic Analysis',
+                    'Web Security / DVWA / OWASP Juice Shop',
+                    'Security Automation & IOC Analysis'
+                ],
+                soc: [
+                    '[ SOC CAPABILITIES ]',
+                    '✓ SIEM monitoring',
+                    '✓ Alert investigation',
+                    '✓ Detection engineering',
+                    '✓ Threat hunting',
+                    '✓ Incident response',
+                    '✓ Evidence-driven reporting'
+                ],
+                siem: [
+                    '[ SIEM ]',
+                    'Wazuh — SIEM / endpoint telemetry / custom detection',
+                    'Splunk — SPL hunting / investigation / dashboards / alert logic'
+                ],
+                detections: [
+                    '[ DETECTION ENGINEERING ]',
+                    '✓ Windows / Sysmon telemetry',
+                    '✓ Wazuh custom rules',
+                    '✓ Splunk SPL detection logic',
+                    '✓ Detection validation',
+                    '✓ MITRE ATT&CK mapping'
+                ],
+                dfir: [
+                    '[ DFIR / INCIDENT RESPONSE ]',
+                    '✓ Incident investigation',
+                    '✓ Linux DFIR',
+                    '✓ Windows telemetry analysis',
+                    '✓ PCAP / Tshark analysis',
+                    '✓ Evidence preservation and reporting'
+                ],
+                'threat-hunting': [
+                    '[ THREAT HUNTING ]',
+                    '✓ Authentication hunting',
+                    '✓ Endpoint/process hunting',
+                    '✓ Network traffic analysis',
+                    '✓ IOC-oriented investigation',
+                    '✓ MITRE ATT&CK-informed analysis'
+                ],
+                mitre: [
+                    '[ MITRE ATT&CK ]',
+                    'Detection and investigation work mapped to ATT&CK techniques.',
+                    'See the detection and SOC evidence for technique-level details.'
+                ],
+                network: [
+                    '[ NETWORK SECURITY ]',
+                    'Nmap reconnaissance',
+                    'Wireshark / Tshark packet analysis',
+                    'Network investigation and security assessment'
+                ],
+                websec: [
+                    '[ WEB SECURITY ]',
+                    'DVWA security testing',
+                    'OWASP Juice Shop assessment',
+                    'HTTP/web attack investigation'
+                ],
+                cloud: [
+                    '[ CLOUD SECURITY ]',
+                    'GCP Secure Landing Zone',
+                    'Terraform security controls',
+                    'Cloud VPC isolation and ingress restrictions',
+                    'Azure Windows security lab'
+                ],
+                automation: [
+                    '[ SECURITY AUTOMATION ]',
+                    'Python | Bash | PowerShell',
+                    'IOC parsing and security log automation',
+                    'Active Directory security event automation',
+                    'Infrastructure/security validation with Terraform'
+                ],
                 contact: [
                     'LinkedIn: linkedin.com/in/hazvinei-masiya',
                     'Portfolio: masiya-hub.org',
@@ -1451,6 +1560,57 @@ Caller User: 'bad_actor_admin'</code>
             if (command === 'clear') {
                 const history = document.getElementById('terminal-history');
                 if (history) history.innerHTML = '';
+                return;
+            }
+
+            const labRoutes = {
+                '01': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk',
+                '02': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk',
+                '03': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk',
+                '04': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk',
+                '05': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk',
+                '06': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk',
+                'wazuh': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Wazuh',
+                'splunk': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk',
+                'network': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Network-Security',
+                'nmap': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Network-Security',
+                'wireshark': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Network-Security',
+                'dvwa': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Web-Security/DVWA',
+                'juice-shop': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Web-Security',
+                'websec': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Web-Security',
+                'cloud': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security',
+                'automation': 'https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/scripts'
+            };
+
+            const parts = command.split(/\\s+/);
+            if (parts[0] === 'lab') {
+                const target = parts.slice(1).join(' ').trim();
+                if (!target) {
+                    commands.labs.forEach(line => appendTerminalLine(line));
+                } else if (labRoutes[target]) {
+                    appendTerminalLine('Opening lab evidence: ' + target + ' ...');
+                    window.open(labRoutes[target], '_blank', 'noopener');
+                } else {
+                    appendTerminalLine('Lab not found: ' + target);
+                    appendTerminalLine("Use 'labs' to list available labs, or 'lab wazuh', 'lab splunk', 'lab dvwa'.");
+                }
+                return;
+            }
+
+            const localRoutes = {
+                evidence: '#evidence-hubs',
+                resume: 'resumes.html',
+                github: 'https://github.com/hnmasiya',
+                linkedin: 'https://www.linkedin.com/in/hazvinei-masiya/'
+            };
+
+            if (localRoutes[command]) {
+                if (localRoutes[command].startsWith('#')) {
+                    hideTerminalModal();
+                    navigateToSection(localRoutes[command].slice(1));
+                } else {
+                    window.open(localRoutes[command], '_blank', 'noopener');
+                }
                 return;
             }
 
