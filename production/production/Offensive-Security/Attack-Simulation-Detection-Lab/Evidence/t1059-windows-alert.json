@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-08-27T18:01:32.501+0000",
+  "rule": {
+    "level": 13,
+    "description": "Custom Detection: PowerShell spawned encoded PowerShell command",
+    "id": "100201",
+    "mitre": {
+      "id": ["T1059.001", "T1027"],
+      "tactic": ["Execution", "Defense Evasion"],
+      "technique": ["PowerShell", "Obfuscated Files or Information"]
+    },
+    "groups": ["attack_sim", "execution", "t1059"]
+  },
+  "agent": {
+    "id": "003",
+    "name": "dc01-lab",
+    "ip": "100.79.229.99"
+  },
+  "manager": {
+    "name": "wazuh.manager"
+  },
+  "id": "1787853692.32989586",
+  "decoder": {
+    "name": "windows_eventchannel"
+  },
+  "data": {
+    "win": {
+      "system": {
+        "providerName": "Microsoft-Windows-Sysmon",
+        "eventID": "1",
+        "channel": "Microsoft-Windows-Sysmon/Operational",
+        "computer": "dc01-lab.lab.local"
+      },
+      "eventdata": {
+        "image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "commandLine": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -EncodedCommand VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAnAFcAQQBaAFUASAAtAE4AQQBUAEkAVgBFAC0ATABJAFYARQAtADEAOAAwADEAMgA5ACcA",
+        "user": "LAB\\hazvinei",
+        "parentImage": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      }
+    }
+  },
+  "_note": "Real, live-fired alert for Rules/execution-obfuscated-command.xml's Windows rule (100201), run against dc01-lab. The -EncodedCommand base64 payload decodes (UTF-16LE) to `Write-Output 'WAZUH-NATIVE-LIVE-180129'` - a distinctive marker from this live test session, confirming this is a genuine simulation run rather than incidental system activity. Rule 100201 fired 3 separate times across repeated test runs (firedtimes 1, 2, 3) with no shadowing from any other rule on this manager, unlike the Windows Persistence rule (100211), which required chaining under a pre-existing community Sysmon rule (92302) before it could win the match - see Rules/persistence-run-key-cron.xml and Evidence/t1053-windows-validation.json for that investigation. Captured verbatim via `docker exec single-node-wazuh.manager-1 sh -c 'grep -F \"EncodedCommand\" /var/ossec/logs/archives/archives.json'`, no content altered."
+}

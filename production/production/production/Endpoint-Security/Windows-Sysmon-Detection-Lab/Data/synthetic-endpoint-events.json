@@ -1,0 +1,67 @@
+[
+  {
+    "event_id": "EP-001",
+    "source": "Sysmon-Synthetic",
+    "sysmon_event_id": 1,
+    "host": "WIN-LAB-01",
+    "user": "analyst",
+    "image": "powershell.exe",
+    "command_line": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command Get-Process",
+    "parent_image": "explorer.exe",
+    "destination": "",
+    "expected_detection": "PowerShell execution"
+  },
+  {
+    "event_id": "EP-002",
+    "source": "Sysmon-Synthetic",
+    "sysmon_event_id": 1,
+    "host": "WIN-LAB-01",
+    "user": "analyst",
+    "image": "powershell.exe",
+    "command_line": "powershell.exe -NoProfile -EncodedCommand SQBFAFgA",
+    "parent_image": "winword.exe",
+    "destination": "",
+    "expected_detection": "Suspicious PowerShell execution"
+  },
+  {
+    "event_id": "EP-003",
+    "source": "Windows-Synthetic",
+    "windows_event_id": 4625,
+    "host": "WIN-LAB-01",
+    "user": "administrator",
+    "source_ip": "192.0.2.50",
+    "failure_reason": "Unknown user name or bad password",
+    "expected_detection": "Failed authentication"
+  },
+  {
+    "event_id": "EP-004",
+    "source": "Sysmon-Synthetic",
+    "sysmon_event_id": 3,
+    "host": "WIN-LAB-01",
+    "user": "analyst",
+    "image": "powershell.exe",
+    "destination_ip": "192.0.2.60",
+    "destination_port": 443,
+    "expected_detection": "PowerShell network connection"
+  },
+  {
+    "event_id": "EP-005",
+    "source": "Windows-Synthetic",
+    "windows_event_id": 4688,
+    "host": "WIN-LAB-01",
+    "user": "analyst",
+    "new_process": "cmd.exe",
+    "parent_process": "powershell.exe",
+    "command_line": "cmd.exe /c whoami",
+    "expected_detection": "Suspicious child process"
+  },
+  {
+    "event_id": "EP-006",
+    "source": "Windows-Synthetic",
+    "windows_event_id": 4624,
+    "host": "WIN-LAB-01",
+    "user": "analyst",
+    "source_ip": "192.0.2.20",
+    "expected_detection": "No alert"
+  }
+]

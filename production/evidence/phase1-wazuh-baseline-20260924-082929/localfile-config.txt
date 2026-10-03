@@ -1,0 +1,28 @@
+152:  <localfile>
+153:    <log_format>command</log_format>
+154:    <command>df -P</command>
+158:  <localfile>
+159:    <log_format>full_command</log_format>
+160:    <command>netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d</command>
+165:  <localfile>
+166:    <log_format>full_command</log_format>
+167:    <command>last -n 20</command>
+180:    <log_format>plain</log_format>
+186:  <localfile>
+187:    <log_format>journald</log_format>
+188:    <location>journald</location>
+191:  <localfile>
+192:    <log_format>apache</log_format>
+193:    <location>/var/log/apache2/error.log</location>
+196:  <localfile>
+197:    <log_format>apache</log_format>
+198:    <location>/var/log/apache2/access.log</location>
+201:  <localfile>
+202:    <log_format>audit</log_format>
+203:    <location>/var/log/audit/audit.log</location>
+206:  <localfile>
+207:    <log_format>syslog</log_format>
+208:    <location>/var/ossec/logs/active-responses.log</location>
+211:  <localfile>
+212:    <log_format>syslog</log_format>
+213:    <location>/var/log/dpkg.log</location>

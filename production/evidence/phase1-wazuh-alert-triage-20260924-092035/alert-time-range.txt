@@ -1,0 +1,5 @@
+Earliest alert:
+2026-09-24T04:34:26.649+0000	503	3	002	normann-ThinkPad-X260
+
+Latest alert:
+2026-09-24T07:19:59.860+0000	591	3	002	normann-ThinkPad-X260

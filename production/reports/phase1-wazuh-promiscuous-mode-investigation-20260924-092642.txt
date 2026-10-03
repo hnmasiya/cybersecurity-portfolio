@@ -1,0 +1,202 @@
+PHASE 1 LAB 3.2 — WAZUH RULE 80710 FOCUSED INVESTIGATION
+
+Started:       2026-09-24T09:26:42+02:00
+Repository:    /home/normann/cybersecurity-portfolio
+Evidence:      /home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-promiscuous-mode-investigation-20260924-092642
+Report:        /home/normann/cybersecurity-portfolio/reports/phase1-wazuh-promiscuous-mode-investigation-20260924-092642.txt
+Host:          normann-ThinkPad-X260
+Kernel:        Linux 7.0.0-31-generic
+
+================================================================
+1. ENVIRONMENT VALIDATION
+================================================================
+[PASS] Docker is available
+[PASS] Docker daemon is accessible
+[PASS] Wazuh manager container detected: single-node-wazuh.manager-1
+
+================================================================
+2. CAPTURE RULE 80710 ALERTS
+================================================================
+[PASS] Recent manager alert data captured
+[PASS] Captured all 6 observed Rule 80710 alerts
+
+================================================================
+3. RULE 80710 ALERT TIMELINE
+================================================================
+2026-09-24T04:34:28.091+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.108+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.182+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.186+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.188+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.242+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+[PASS] Rule 80710 timeline generated
+
+================================================================
+4. NETWORK INTERFACE STATE
+================================================================
+[PASS] Current network interface state captured
+[PASS] No currently reported PROMISC interface in ip-link state
+
+================================================================
+5. INTERFACE FLAG STATE
+================================================================
+Interface flag analysis
+
+br-0512d055ab83	0x1003	PROMISC=NO
+br-73292914fa33	0x1003	PROMISC=NO
+br-74fc0d306f28	0x1003	PROMISC=NO
+br-88705b111e42	0x1003	PROMISC=NO
+br-a2271a130ada	0x1003	PROMISC=NO
+br-ecf0923415df	0x1003	PROMISC=NO
+docker0	0x1003	PROMISC=NO
+enp0s31f6	0x1003	PROMISC=NO
+lo	0x9	PROMISC=NO
+tailscale0	0x1091	PROMISC=NO
+veth06925d7	0x1303	PROMISC=YES
+veth4f17583	0x1303	PROMISC=YES
+veth57fe4b4	0x1303	PROMISC=YES
+veth707d42d	0x1303	PROMISC=YES
+vethb6a6cd7	0x1303	PROMISC=YES
+vethdf14d20	0x1303	PROMISC=YES
+vethfb8d1c9	0x1303	PROMISC=YES
+virbr0	0x1003	PROMISC=NO
+wlp4s0	0x1003	PROMISC=NO
+
+================================================================
+6. SOCKET AND PROCESS CONTEXT
+================================================================
+[PASS] Current socket and process/network context captured
+[PASS] Current process inventory captured
+
+================================================================
+7. PACKET-CAPTURE TOOLING CONTEXT
+================================================================
+[PASS] tcpdump availability and interface inventory captured
+[PASS] Wireshark is installed
+
+================================================================
+8. NETWORKMANAGER CONTEXT
+================================================================
+[PASS] NetworkManager state captured
+
+================================================================
+9. AUDITD CORRELATION
+================================================================
+[PASS] Auditd network-relevant telemetry captured
+
+================================================================
+10. JOURNAL CORRELATION
+================================================================
+[PASS] Journal network-context telemetry captured
+
+================================================================
+11. USER-SPACE PACKET CAPTURE PROCESS CHECK
+================================================================
+tcpdump:
+
+dumpcap:
+6319 /usr/bin/dumpcap --log-level MESSAGE --application-flavor wireshark -S -Z 22
+
+tshark:
+
+wireshark:
+4728 wireshark
+[PASS] Packet-capture process check completed
+
+================================================================
+12. RULE 80710 CONTEXTUAL ASSESSMENT
+================================================================
+RULE 80710 — CONTEXTUAL INVESTIGATION
+
+Alert:
+  Wazuh Rule 80710
+  "Auditd: Device enables promiscuous mode."
+  Level: 10
+
+Observed frequency:
+  Six alerts were observed in the Lab 3.1 evidence.
+
+Investigation approach:
+  1. Preserve the original Wazuh alerts.
+  2. Capture current network interface state.
+  3. Inspect interface PROMISC flags.
+  4. Capture socket/process context.
+  5. Check packet-capture tooling and active packet-capture processes.
+  6. Correlate available Auditd telemetry.
+  7. Correlate relevant system journal telemetry.
+
+Disposition principle:
+  The Rule 80710 alert is treated as a high-severity contextual
+  signal requiring investigation.
+
+  Presence of Rule 80710 alone does NOT establish malicious activity,
+  unauthorized packet capture, or compromise.
+
+  A final disposition must be based on correlated endpoint,
+  Auditd, process, network-interface, and user/session evidence.
+
+Current-state limitation:
+  Current interface state does not by itself prove what happened at
+  the historical alert timestamp.
+
+Historical causation limitation:
+  This investigation does not infer a process, user, or intent unless
+  the available telemetry directly supports that conclusion.
+[PASS] Contextual assessment documented without asserting unsupported compromise
+
+================================================================
+13. EVIDENCE MANIFEST
+================================================================
+alerts-recent.jsonl
+audit.log
+audit-network-relevant.txt
+evidence-manifest.txt
+interface-flags.tsv
+investigation-assessment.txt
+ip-addresses.txt
+ip-link-brief.txt
+ip-link-details.txt
+journal-network-relevant.txt
+kernel-journal.txt
+nmcli-devices.txt
+nmcli-general.txt
+packet-capture-processes.txt
+process-list.txt
+promisc-interfaces.txt
+rule-80710-alerts.jsonl
+rule-80710-timeline.tsv
+ss-listening-sockets.txt
+ss-process-connections.txt
+tcpdump-interfaces.txt
+tcpdump-version.txt
+wireshark-version.txt
+[PASS] Evidence manifest generated with 23 files
+
+================================================================
+14. FINAL INVESTIGATION ASSESSMENT
+================================================================
+Rule 80710 investigation completed.
+
+Observed Rule 80710 alerts: 6
+
+Current interface PROMISC state:
+  No currently reported PROMISC interfaces
+
+Important:
+  Current-state evidence and historical alerts must not be conflated.
+  Rule 80710 remains a contextual investigation finding.
+  No compromise is established by this procedure alone.
+
+================================================================
+15. VALIDATION SUMMARY
+================================================================
+PASS: 18
+WARN: 0
+FAIL: 0
+
+Completed: 2026-09-24T09:35:10+02:00
+
+Report:   /home/normann/cybersecurity-portfolio/reports/phase1-wazuh-promiscuous-mode-investigation-20260924-092642.txt
+Evidence: /home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-promiscuous-mode-investigation-20260924-092642
+
+RESULT: RULE 80710 INVESTIGATION COMPLETED WITHOUT HARD FAILURES

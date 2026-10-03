@@ -1,0 +1,4 @@
+# Nmap 7.94SVN scan initiated Wed Aug 26 20:37:40 2026 as: nmap -sV -sC -p- -oA home-lab-scan localhost
+Host: 127.0.0.1 (localhost)	Status: Up
+Host: 127.0.0.1 (localhost)	Ports: 80/open/tcp//http//Apache httpd 2.4.58 ((Ubuntu))/, 443/open/tcp//ssl|https///, 631/open/tcp//ipp//CUPS 2.4/, 1514/open/tcp//fujitsu-dtcns?///, 1515/open/tcp//ssl|ifor-protocol?///, 1716/open/tcp//xmsg?///, 3000/open/tcp//ppp?///, 3001/open/tcp//http//nginx/, 3306/open/tcp//mysql//MySQL 5.5.5-10.11.14-MariaDB-0ubuntu0.24.04.1/, 9200/open/tcp//ssl|wap-wsp?///, 9443/open/tcp//ssl|tungsten-https?///, 44433/open/tcp//unknown///, 55000/open/tcp/////	Ignored State: closed (65522)
+# Nmap done at Wed Aug 26 20:39:40 2026 -- 1 IP address (1 host up) scanned in 120.10 seconds

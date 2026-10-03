@@ -1,0 +1,10 @@
+<group name="custom,authentication,">
+
+<rule id="100002" level="12">
+<match>Failed password</match>
+<description>
+Suspicious login attempt detected
+</description>
+</rule>
+
+</group>

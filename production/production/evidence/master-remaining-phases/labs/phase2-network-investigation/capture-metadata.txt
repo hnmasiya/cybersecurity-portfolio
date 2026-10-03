@@ -1,0 +1,5 @@
+Capture method: tshark
+Target: 127.0.0.1
+TCP port: 8765
+Run ID: 20260924T132530Z
+Capture file: localhost-http.pcap

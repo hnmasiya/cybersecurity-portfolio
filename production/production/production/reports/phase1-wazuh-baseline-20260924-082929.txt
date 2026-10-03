@@ -1,0 +1,384 @@
+============================================================
+WAZUH BASELINE & HEALTH AUDIT
+============================================================
+
+Script:       phase1-wazuh-baseline
+Timestamp:    2026-09-24 08:29:29 CAT
+Host:         normann-ThinkPad-X260
+Repository:   /home/normann/cybersecurity-portfolio
+
+PURPOSE
+-------
+Read-only baseline assessment of the local Wazuh deployment.
+
+NO CONFIGURATION CHANGES ARE PERFORMED BY THIS SCRIPT.
+
+============================================================
+
+Hostname:
+normann-ThinkPad-X260
+
+Kernel:
+Linux normann-ThinkPad-X260 7.0.0-31-generic #31~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Aug 10 09:38:02 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+
+Operating System:
+PRETTY_NAME="Zorin OS 18.1"
+NAME="Zorin OS"
+VERSION_ID="18"
+VERSION="18.1"
+VERSION_CODENAME=noble
+ID=zorin
+ID_LIKE="ubuntu debian"
+HOME_URL="https://zorin.com/os/"
+SUPPORT_URL="https://help.zorin.com/"
+BUG_REPORT_URL="https://zorin.com/os/feedback/"
+PRIVACY_POLICY_URL="https://zorin.com/legal/privacy/"
+UBUNTU_CODENAME=noble
+LOGO=zorin-logo
+
+CPU:
+Architecture:                            x86_64
+CPU(s):                                  4
+Model name:                              Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz
+CPU(s) scaling MHz:                      17%
+
+Memory:
+               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       4.9Gi       268Mi       325Mi       3.0Gi       2.7Gi
+Swap:          2.0Gi       454Mi       1.6Gi
+
+Disk:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda7       359G   98G  243G  29% /
+
+Systemd failed units:
+[PASS] No failed systemd units detected.
+Wazuh agent version:
+WAZUH_VERSION="v4.14.8"
+[PASS] Detected Wazuh agent version: 4.14.8
+
+Wazuh agent service:
+[PASS] wazuh-agent service is active.
+
+Wazuh agent process status:
+wazuh-modulesd is running...
+wazuh-logcollector is running...
+wazuh-syscheckd is running...
+wazuh-agentd is running...
+wazuh-execd is running...
+[PASS] Wazuh agent configuration exists: /var/ossec/etc/ossec.conf
+
+Configured manager endpoints:
+10:      <address>127.0.0.1</address>
+11:      <port>1514</port>
+12:      <protocol>tcp</protocol>
+
+Configured local log sources:
+152:  <localfile>
+153:    <log_format>command</log_format>
+154:    <command>df -P</command>
+158:  <localfile>
+159:    <log_format>full_command</log_format>
+160:    <command>netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d</command>
+165:  <localfile>
+166:    <log_format>full_command</log_format>
+167:    <command>last -n 20</command>
+180:    <log_format>plain</log_format>
+186:  <localfile>
+187:    <log_format>journald</log_format>
+188:    <location>journald</location>
+191:  <localfile>
+192:    <log_format>apache</log_format>
+193:    <location>/var/log/apache2/error.log</location>
+196:  <localfile>
+197:    <log_format>apache</log_format>
+198:    <location>/var/log/apache2/access.log</location>
+201:  <localfile>
+202:    <log_format>audit</log_format>
+203:    <location>/var/log/audit/audit.log</location>
+206:  <localfile>
+207:    <log_format>syslog</log_format>
+208:    <location>/var/ossec/logs/active-responses.log</location>
+211:  <localfile>
+212:    <log_format>syslog</log_format>
+213:    <location>/var/log/dpkg.log</location>
+
+Localfile blocks detected: 9
+[PASS] Wazuh is configured with 9 local log collection blocks.
+[PASS] Docker CLI detected.
+
+Wazuh containers:
+NAMES                           IMAGE                          STATUS
+single-node-wazuh.dashboard-1   wazuh/wazuh-dashboard:4.14.7   Up 2 hours
+single-node-wazuh.manager-1     wazuh/wazuh-manager:4.14.7     Up 2 hours
+single-node-wazuh.indexer-1     wazuh/wazuh-indexer:4.14.7     Up 2 hours
+
+Manager container:
+  Name:  single-node-wazuh.manager-1
+  Image: wazuh/wazuh-manager:4.14.7
+[PASS] Detected Wazuh manager version: 4.14.7
+
+Indexer container:
+  Name:  single-node-wazuh.indexer-1
+  Image: wazuh/wazuh-indexer:4.14.7
+[PASS] Detected Wazuh indexer version: 4.14.7
+
+Dashboard container:
+  Name:  single-node-wazuh.dashboard-1
+  Image: wazuh/wazuh-dashboard:4.14.7
+[PASS] Detected Wazuh dashboard version: 4.14.7
+Agent version:     4.14.8
+Manager version:   4.14.7
+Indexer version:   4.14.7
+Dashboard version: 4.14.7
+[WARN] VERSION MISMATCH: agent=4.14.8 manager=4.14.7
+
+ACTION REQUIRED:
+Investigate version alignment before performing upgrades.
+Do NOT blindly upgrade or downgrade the Wazuh stack.
+[PASS] Manager and indexer versions match.
+[PASS] Manager and dashboard versions match.
+Manager process status:
+wazuh-clusterd not running...
+wazuh-modulesd is running...
+wazuh-monitord is running...
+wazuh-logcollector is running...
+wazuh-remoted is running...
+wazuh-syscheckd is running...
+wazuh-analysisd is running...
+wazuh-maild not running...
+wazuh-execd is running...
+wazuh-db is running...
+wazuh-authd is running...
+wazuh-agentlessd not running...
+wazuh-integratord not running...
+wazuh-csyslogd not running...
+wazuh-apid is running...
+[PASS] Core Wazuh manager services are running.
+Registered agents:
+
+Available agents: 
+   ID: 002, Name: normann-ThinkPad-X260, IP: any
+   ID: 003, Name: dc01-lab, IP: any
+
+
+Registered agent records detected: 2
+[PASS] At least one Wazuh agent is registered.
+Netid State  Recv-Q Send-Q                      Local Address:Port  Peer Address:PortProcess                                                                                                                                                             
+udp   UNCONN 0      0                                 0.0.0.0:52484      0.0.0.0:*    users:(("avahi-daemon",pid=846,fd=14))                                                                                                                             
+udp   UNCONN 0      0                           192.168.122.1:53         0.0.0.0:*    users:(("dnsmasq",pid=1744,fd=5))                                                                                                                                  
+udp   UNCONN 0      0                              127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=598,fd=16))                                                                                                                          
+udp   UNCONN 0      0                           127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=598,fd=14))                                                                                                                          
+udp   UNCONN 0      0                          0.0.0.0%virbr0:67         0.0.0.0:*    users:(("dnsmasq",pid=1744,fd=3))                                                                                                                                  
+udp   UNCONN 0      0                                 0.0.0.0:514        0.0.0.0:*    users:(("docker-proxy",pid=3386,fd=7))                                                                                                                             
+udp   UNCONN 0      0                                 0.0.0.0:41641      0.0.0.0:*    users:(("tailscaled",pid=1349,fd=19))                                                                                                                              
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=111))                                                                                                                                
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=102))                                                                                                                                
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=101))                                                                                                                                
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=99))                                                                                                                                 
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=35))                                                                                                                                 
+udp   UNCONN 0      0                                 0.0.0.0:5353       0.0.0.0:*    users:(("avahi-daemon",pid=846,fd=12))                                                                                                                             
+udp   UNCONN 0      0                                    [::]:514           [::]:*    users:(("docker-proxy",pid=3393,fd=7))                                                                                                                             
+udp   UNCONN 0      0      [fe80::7b3e:91e0:2854:1f68]%wlp4s0:546           [::]:*    users:(("NetworkManager",pid=966,fd=28))                                                                                                                           
+udp   UNCONN 0      0                                    [::]:41641         [::]:*    users:(("tailscaled",pid=1349,fd=18))                                                                                                                              
+udp   UNCONN 0      0                                    [::]:5353          [::]:*    users:(("avahi-daemon",pid=846,fd=13))                                                                                                                             
+udp   UNCONN 0      0                                    [::]:54907         [::]:*    users:(("avahi-daemon",pid=846,fd=15))                                                                                                                             
+udp   UNCONN 0      0                                       *:1716             *:*    users:(("gjs",pid=6119,fd=16))                                                                                                                                     
+tcp   LISTEN 0      32                          192.168.122.1:53         0.0.0.0:*    users:(("dnsmasq",pid=1744,fd=6))                                                                                                                                  
+tcp   LISTEN 0      4096                            127.0.0.1:34737      0.0.0.0:*    users:(("containerd",pid=1377,fd=14))                                                                                                                              
+tcp   LISTEN 0      4096                           127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=598,fd=17))                                                                                                                          
+tcp   LISTEN 0      4096                              0.0.0.0:3001       0.0.0.0:*    users:(("docker-proxy",pid=3675,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                              0.0.0.0:3000       0.0.0.0:*    users:(("docker-proxy",pid=3206,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                            127.0.0.1:631        0.0.0.0:*    users:(("cupsd",pid=1342,fd=7))                                                                                                                                    
+tcp   LISTEN 0      4096                       100.104.119.57:42163      0.0.0.0:*    users:(("tailscaled",pid=1349,fd=26))                                                                                                                              
+tcp   LISTEN 0      4096                              0.0.0.0:55000      0.0.0.0:*    users:(("docker-proxy",pid=3465,fd=7))                                                                                                                             
+tcp   LISTEN 0      80                              127.0.0.1:3306       0.0.0.0:*    users:(("mariadbd",pid=1603,fd=28))                                                                                                                                
+tcp   LISTEN 0      4096                              0.0.0.0:9443       0.0.0.0:*    users:(("docker-proxy",pid=3571,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                              0.0.0.0:1515       0.0.0.0:*    users:(("docker-proxy",pid=3441,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                              0.0.0.0:1514       0.0.0.0:*    users:(("docker-proxy",pid=3419,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                              0.0.0.0:9200       0.0.0.0:*    users:(("docker-proxy",pid=3811,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                        127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=598,fd=15))                                                                                                                          
+tcp   LISTEN 0      4096                              0.0.0.0:443        0.0.0.0:*    users:(("docker-proxy",pid=3503,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                 [::]:3001          [::]:*    users:(("docker-proxy",pid=3683,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                 [::]:3000          [::]:*    users:(("docker-proxy",pid=3213,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096          [fd7a:115c:a1e0::743a:773b]:48961         [::]:*    users:(("tailscaled",pid=1349,fd=27))                                                                                                                              
+tcp   LISTEN 0      4096                                 [::]:55000         [::]:*    users:(("docker-proxy",pid=3472,fd=7))                                                                                                                             
+tcp   LISTEN 0      10                                      *:1716             *:*    users:(("gjs",pid=6119,fd=15))                                                                                                                                     
+tcp   LISTEN 0      4096                                 [::]:9443          [::]:*    users:(("docker-proxy",pid=3584,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                 [::]:1515          [::]:*    users:(("docker-proxy",pid=3448,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                 [::]:1514          [::]:*    users:(("docker-proxy",pid=3426,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                [::1]:631           [::]:*    users:(("cupsd",pid=1342,fd=6))                                                                                                                                    
+tcp   LISTEN 0      4096                                 [::]:9200          [::]:*    users:(("docker-proxy",pid=3825,fd=7))                                                                                                                             
+tcp   LISTEN 0      511                                     *:80               *:*    users:(("apache2",pid=1582,fd=4),("apache2",pid=1573,fd=4),("apache2",pid=1560,fd=4),("apache2",pid=1557,fd=4),("apache2",pid=1555,fd=4),("apache2",pid=1469,fd=4))
+tcp   LISTEN 0      4096                                 [::]:443           [::]:*    users:(("docker-proxy",pid=3509,fd=7))                                                                                                                             
+
+[PASS] Port 1514 is listening.
+[PASS] Port 1515 is listening.
+[PASS] Port 55000 is listening.
+[PASS] Port 9200 is listening.
+[PASS] Port 443 is listening.
+Indexer HTTPS response code: 401
+[PASS] Wazuh indexer HTTPS endpoint is reachable.
+
+Indexer response:
+UnauthorizedRecent agent connectivity events:
+2026/09/24 06:32:14 wazuh-agentd: ERROR: (1216): Unable to connect to '[127.0.0.1]:1514/tcp': 'Transport endpoint is not connected'.
+2026/09/24 06:32:56 wazuh-agentd: ERROR: SSL error (1). Connection refused by the manager. Maybe the port specified is incorrect.
+2026/09/24 06:33:06 wazuh-agentd: WARNING: (4101): Waiting for server reply (not started). Tried: '127.0.0.1'. Ensure that the manager version is 'v4.14.8' or higher.
+2026/09/24 06:33:06 wazuh-agentd: WARNING: Unable to connect to any server.
+2026/09/24 06:33:46 wazuh-agentd: ERROR: SSL error (1). Connection refused by the manager. Maybe the port specified is incorrect.
+2026/09/24 06:33:56 wazuh-agentd: WARNING: (4101): Waiting for server reply (not started). Tried: '127.0.0.1'. Ensure that the manager version is 'v4.14.8' or higher.
+2026/09/24 06:33:56 wazuh-agentd: WARNING: Unable to connect to any server.
+2026/09/24 06:33:56 wazuh-agentd: INFO: (4102): Connected to the server ([127.0.0.1]:1514/tcp).
+2026/09/24 06:33:57 wazuh-syscheckd: INFO: Agent is now online. Process unlocked, continuing...
+[PASS] Agent log contains successful manager connectivity events.
+2026/09/23 18:53:37 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-system-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:38 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-processes-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:38 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-ports-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:39 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hotfixes-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:39 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hardware-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:40 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-protocols-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:41 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-interfaces-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:41 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-networks-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:42 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-users-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:42 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-groups-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:43 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-browser-extensions-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:43 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-services-wazuh.manager', retrying until the connection is successful.
+2026/09/23 18:53:46 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 18:53:47 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:25 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-vulnerabilities-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:25 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-packages-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:25 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-system-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:26 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-processes-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:27 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-ports-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:27 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hotfixes-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:27 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hardware-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:28 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-protocols-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:28 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-interfaces-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:28 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-networks-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:29 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-users-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:29 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-groups-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:30 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-browser-extensions-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:31 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-services-wazuh.manager', retrying until the connection is successful.
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:51:35 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/23 19:56:32 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-wazuh.manager.
+2026/09/23 19:56:32 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-wazuh.manager.
+2026/09/23 19:56:34 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-wazuh.manager.
+2026/09/23 19:56:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-wazuh.manager.
+2026/09/23 19:56:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-wazuh.manager.
+2026/09/23 19:56:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-wazuh.manager.
+2026/09/23 19:56:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-wazuh.manager.
+2026/09/23 19:56:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-wazuh.manager.
+2026/09/23 19:56:38 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-wazuh.manager.
+2026/09/24 04:34:03 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-packages-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:03 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-vulnerabilities-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:04 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-system-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:06 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-processes-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:07 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-ports-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:08 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hotfixes-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:09 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-hardware-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:09 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-protocols-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:10 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-interfaces-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:11 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-networks-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:12 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-users-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:13 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-groups-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:14 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-browser-extensions-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:15 indexer-connector: WARNING: IndexerConnector initialization failed for index 'wazuh-states-inventory-services-wazuh.manager', retrying until the connection is successful.
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:15 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:34:26 indexer-connector: WARNING: Failed to sync agent '002': No available server
+2026/09/24 04:39:06 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-wazuh.manager.
+2026/09/24 04:39:06 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-wazuh.manager.
+2026/09/24 04:39:07 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-wazuh.manager.
+2026/09/24 04:39:08 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-wazuh.manager.
+2026/09/24 04:39:10 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-wazuh.manager.
+2026/09/24 04:39:10 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-wazuh.manager.
+2026/09/24 04:39:12 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-wazuh.manager.
+2026/09/24 04:39:12 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-wazuh.manager.
+2026/09/24 04:39:13 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-wazuh.manager.
+2026/09/24 04:39:14 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-wazuh.manager.
+2026/09/24 04:39:15 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-wazuh.manager.
+2026/09/24 04:39:16 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-wazuh.manager.
+2026/09/24 04:39:17 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-wazuh.manager.
+2026/09/24 04:39:18 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-wazuh.manager.
+
+Manager error/connection-related event count: 117
+[WARN] Manager contains 117 matching ERROR/connection-related events. Review evidence.
+2026/09/24 06:32:14 wazuh-agentd: ERROR: (1216): Unable to connect to '[127.0.0.1]:1514/tcp': 'Transport endpoint is not connected'.
+2026/09/24 06:32:16 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache2/error.log'.
+2026/09/24 06:32:24 wazuh-logcollector: WARNING: Target 'agent' message queue is full (1024). Log lines may be lost.
+2026/09/24 06:32:56 wazuh-agentd: ERROR: SSL error (1). Connection refused by the manager. Maybe the port specified is incorrect.
+2026/09/24 06:33:06 wazuh-agentd: WARNING: (4101): Waiting for server reply (not started). Tried: '127.0.0.1'. Ensure that the manager version is 'v4.14.8' or higher.
+2026/09/24 06:33:06 wazuh-agentd: WARNING: Unable to connect to any server.
+2026/09/24 06:33:46 wazuh-agentd: ERROR: SSL error (1). Connection refused by the manager. Maybe the port specified is incorrect.
+2026/09/24 06:33:56 wazuh-agentd: WARNING: (4101): Waiting for server reply (not started). Tried: '127.0.0.1'. Ensure that the manager version is 'v4.14.8' or higher.
+2026/09/24 06:33:56 wazuh-agentd: WARNING: Unable to connect to any server.
+[WARN] Not explicitly configured in ossec.conf: /var/log/auth.log
+[WARN] Not explicitly configured in ossec.conf: /var/log/syslog
+[PASS] Configured log source: /var/log/audit/audit.log
+[PASS] Configured log source: /var/log/apache2/access.log
+[PASS] Configured log source: /var/log/apache2/error.log
+NAME                            CPU %     MEM USAGE / LIMIT    MEM %
+zurovia-ai-ollama-1             0.00%     16.89MiB / 7.61GiB   0.22%
+single-node-wazuh.dashboard-1   0.06%     201.4MiB / 7.61GiB   2.58%
+single-node-wazuh.manager-1     1.53%     376.3MiB / 7.61GiB   4.83%
+single-node-wazuh.indexer-1     11.34%    1.288GiB / 7.61GiB   16.93%
+hbbs                            0.12%     2.195MiB / 7.61GiB   0.03%
+hbbr                            0.02%     1MiB / 7.61GiB       0.01%
+portainer                       0.05%     24.78MiB / 7.61GiB   0.32%
+juice-shop                      0.95%     142.1MiB / 7.61GiB   1.82%
+wireshark                       5.06%     201.4MiB / 7.61GiB   2.58%
+Checks passed : 23
+Warnings      : 4
+Failures      : 0
+
+Key findings:
+- Wazuh version alignment requires review:
+  Agent   : 4.14.8
+  Manager : 4.14.7
+- Warnings require investigation before further lab expansion.
+
+Evidence directory:
+/home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-baseline-20260924-082929
+
+Report:
+/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-baseline-20260924-082929.txt
+
+IMPORTANT:
+This audit did not intentionally modify Wazuh, Docker, networking,
+configuration files, services, packages, or security controls.
+
+============================================================
+END OF WAZUH BASELINE AUDIT
+============================================================

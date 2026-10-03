@@ -1,0 +1,28 @@
+Wazuh Telemetry & Detection Validation
+=======================================
+
+Timestamp: 20260924-083521
+Host: normann-ThinkPad-X260
+Test Tag: WAZUH_LAB_20260924-083521
+
+Alerts Before: 0
+Alerts After:  UNKNOWN
+New Alerts:    0
+
+PASS: 14
+WARN: 3
+FAIL: 1
+
+Tests performed:
+- File integrity telemetry
+- Privilege/sudo activity
+- Authentication/session telemetry
+- Process telemetry
+- Network listener telemetry
+- Apache HTTP telemetry
+- Journald telemetry
+- Auditd telemetry
+- Wazuh alert pipeline validation
+
+No Wazuh configuration changes were performed.
+Temporary test artifacts were removed.

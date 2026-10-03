@@ -1,0 +1,40 @@
+[
+  {
+    "id": "EDR-001",
+    "name": "Suspicious PowerShell",
+    "conditions": [
+      "image=powershell.exe",
+      "encoded-command OR execution-policy-bypass"
+    ],
+    "mitre": "T1059.001",
+    "severity": "high"
+  },
+  {
+    "id": "EDR-002",
+    "name": "PowerShell Network Connection",
+    "conditions": [
+      "image=powershell.exe",
+      "network_connection=true"
+    ],
+    "mitre": "T1059.001",
+    "severity": "medium"
+  },
+  {
+    "id": "EDR-003",
+    "name": "Failed Windows Authentication",
+    "conditions": [
+      "windows_event_id=4625"
+    ],
+    "mitre": "T1110",
+    "severity": "medium"
+  },
+  {
+    "id": "EDR-004",
+    "name": "PowerShell Child Process",
+    "conditions": [
+      "parent_process=powershell.exe"
+    ],
+    "mitre": "T1059.001",
+    "severity": "medium"
+  }
+]

@@ -1,0 +1,7 @@
+normann  tty7         :0               Thu Sep 24 06:32    gone - no logout
+reboot   system boot  7.0.0-31-generic Thu Sep 24 06:32   still running
+normann  tty7         :0               Wed Sep 23 21:50 - crash  (08:41)
+reboot   system boot  7.0.0-31-generic Wed Sep 23 21:49   still running
+reboot   system boot  7.0.0-31-generic Wed Sep 23 20:52   still running
+
+wtmp begins Mon Jul 20 18:02:07 2026

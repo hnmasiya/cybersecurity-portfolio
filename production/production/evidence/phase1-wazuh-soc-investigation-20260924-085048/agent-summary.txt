@@ -1,0 +1,4 @@
+Agent ID | Agent Name | Alert Count
+-----------------------------------
+000 | wazuh.manager | 3
+002 | normann-ThinkPad-X260 | 122

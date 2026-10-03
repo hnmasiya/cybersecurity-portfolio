@@ -1,0 +1,29 @@
+State  Recv-Q Send-Q               Local Address:Port  Peer Address:PortProcess
+LISTEN 0      32                   <LOCAL-LISTENER>         <ANY-ADDRESS>:*
+LISTEN 0      4096                     <LOCAL-LISTENER>      <ANY-ADDRESS>:*
+LISTEN 0      4096                    <LOCAL-LISTENER>         <ANY-ADDRESS>:*
+LISTEN 0      4096                       <LOCAL-LISTENER>       <ANY-ADDRESS>:*
+LISTEN 0      4096                       <LOCAL-LISTENER>       <ANY-ADDRESS>:*
+LISTEN 0      4096                     <LOCAL-LISTENER>        <ANY-ADDRESS>:*
+LISTEN 0      4096                <LOCAL-LISTENER>      <ANY-ADDRESS>:*
+LISTEN 0      4096                       <LOCAL-LISTENER>      <ANY-ADDRESS>:*
+LISTEN 0      80                       <LOCAL-LISTENER>       <ANY-ADDRESS>:*
+LISTEN 0      4096                       <LOCAL-LISTENER>       <ANY-ADDRESS>:*
+LISTEN 0      4096                       <LOCAL-LISTENER>       <ANY-ADDRESS>:*
+LISTEN 0      4096                       <LOCAL-LISTENER>       <ANY-ADDRESS>:*
+LISTEN 0      5                        <LOCAL-LISTENER>      <ANY-ADDRESS>:*    users:(("python3",pid=179582,fd=3))
+LISTEN 0      4096                       <LOCAL-LISTENER>       <ANY-ADDRESS>:*
+LISTEN 0      4096                 127.0.0.53%lo:53         <ANY-ADDRESS>:*
+LISTEN 0      4096                       <LOCAL-LISTENER>        <ANY-ADDRESS>:*
+LISTEN 0      4096                          [::]:3001          [::]:*
+LISTEN 0      4096                          [::]:3000          [::]:*
+LISTEN 0      4096   [fd7a:115c:a1e0::743a:773b]:48961         [::]:*
+LISTEN 0      4096                          [::]:55000         [::]:*
+LISTEN 0      10                               *:1716             *:*    users:(("gjs",pid=6119,fd=15))
+LISTEN 0      4096                          [::]:9443          [::]:*
+LISTEN 0      4096                          [::]:1515          [::]:*
+LISTEN 0      4096                          [::]:1514          [::]:*
+LISTEN 0      4096                         [::1]:631           [::]:*
+LISTEN 0      4096                          [::]:9200          [::]:*
+LISTEN 0      511                              *:80               *:*
+LISTEN 0      4096                          [::]:443           [::]:*
