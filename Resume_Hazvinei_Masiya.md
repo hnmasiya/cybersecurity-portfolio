@@ -21,7 +21,7 @@
 
 <div class="header">
   <h1>HAZVINEI NOMATTER MASIYA</h1>
-  <div class="subtitle">Cybersecurity Professional | Security Operations | Detection Engineering | Incident Response | Automation</div>
+  <div class="subtitle">Cybersecurity Professional | Security Operations | Detection Engineering | Incident Response</div>
   <div class="contact">
     Harare, Zimbabwe &nbsp;|&nbsp; norman.masiya@gmail.com &nbsp;|&nbsp; +263 77 521 6823 / +263 71 866 2162<br>
     <b>GitHub:</b> https://github.com/hnmasiya &nbsp;|&nbsp; <b>Portfolio:</b> https://masiya-hub.org &nbsp;|&nbsp; <b>LinkedIn:</b> https://www.linkedin.com/in/hazvinei-masiya/
