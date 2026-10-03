@@ -179,7 +179,7 @@ for region, regional in REGIONS.items():
     base_profile.update(regional)
     base_profile["include_languages"] = True if region != "international" else False
     base_profile["include_references"] = region == "africa"
-    base_profile.setdefault("title_term", "IT Professional | Cybersecurity Professional | Founder")
+    base_profile.setdefault("title_term", "Cybersecurity Professional | Security Operations | Detection Engineering | Incident Response | Automation")
     (OUT / f"{region}.md").write_text(
         regionally_adapt(source, base_profile),
         encoding="utf-8",
