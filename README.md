@@ -2,7 +2,7 @@
 
 # HAZVINEI NOMATTER MASIYA
 
-### Cybersecurity Analyst · Security Operations · Detection Engineering · DFIR
+### Cybersecurity Professional · Security Operations · Detection Engineering · DFIR · Automation
 
 **12+ Years Enterprise IT · CompTIA Security+ Certified · BSc Computer Science — In Progress**
 
@@ -18,9 +18,9 @@
 
 ## 👋 Profile
 
-CompTIA Security+ certified enterprise IT professional with **12+ years of experience**, deliberately applying an infrastructure and systems background to cybersecurity.
+CompTIA Security+ certified enterprise IT professional with **12+ years of experience**, deliberately transitioning an infrastructure and systems background into cybersecurity and security operations.
 
-This repository is an **evidence-first technical portfolio** covering SOC operations, detection engineering, DFIR, Windows/Active Directory security, network security, cloud security, application security and automation.
+This repository is an **evidence-first technical portfolio** demonstrating SIEM monitoring, detection engineering, incident investigation, DFIR, Windows/Active Directory security, network security, cloud security, application security and security automation.
 
 Professional experience, independent authorized labs, coursework and virtual job simulations are kept distinct so reviewers can understand the scope of each claim.
 
@@ -179,6 +179,8 @@ Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage auto
 
 My cybersecurity work builds on **12+ years of enterprise IT operations** across Windows environments, Active Directory, access control, endpoint protection, system hardening, patch management, infrastructure troubleshooting and business-critical support.
 
+That professional foundation is kept distinct from the independent security portfolio. The portfolio demonstrates how that operational background is being applied to **SOC operations, detection engineering, incident response/DFIR, cloud security and automation**.
+
 That foundation informs the security workflow used throughout this portfolio:
 
 **Environment → Risk → Telemetry → Detection → Investigation → Remediation → Validation**
@@ -190,6 +192,8 @@ That foundation informs the security workflow used throughout this portfolio:
 **Primary:** SOC Analyst · Security Operations Analyst · Cybersecurity Analyst
 
 **Secondary:** Detection Engineering · Incident Response · Threat Hunting · Security Automation · Junior Security Engineering
+
+**Professional positioning:** Experienced enterprise IT/infrastructure professional transitioning into cybersecurity, with hands-on security evidence supporting the transition.
 
 **Open to international opportunities and relocation.**
 
