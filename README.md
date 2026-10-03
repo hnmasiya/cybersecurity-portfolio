@@ -18,7 +18,7 @@
 
 ## 👋 Profile
 
-CompTIA Security+ certified enterprise IT professional with **12+ years of experience** across enterprise infrastructure, systems administration, networking, access control, endpoint security and business-critical technical operations, deliberately transitioning that foundation into cybersecurity and security operations.
+CompTIA Security+ Certified (SY0-701) enterprise IT professional with **12+ years of experience** across enterprise infrastructure, systems administration, networking, access control, endpoint security and business-critical technical operations, deliberately transitioning that foundation into cybersecurity and security operations.
 
 This repository is an **evidence-first technical portfolio** demonstrating SIEM monitoring, detection engineering, incident investigation, DFIR, Windows/Active Directory security, network security, cloud security, application security and security automation.
 
