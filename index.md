@@ -271,7 +271,7 @@ The repository contains supporting screenshots and structured security reports.
 
 ## 📜 Professional Credentials
 
-* **CompTIA Security+**
+* **CompTIA Security+ Certified (SY0-701)**
 * **Google Cybersecurity Certificate**
 * **Google IT Support Certificate**
 
