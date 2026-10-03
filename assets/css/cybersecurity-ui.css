@@ -1,0 +1,294 @@
+/*
+ * Masiya Hub — Cybersecurity UI/UX layer
+ * Visual-only enhancement. Existing HTML, JS, CSP, theme switching,
+ * resume routing, GitHub sync, filters and modal behavior remain unchanged.
+ */
+
+:root {
+  --cyber-grid: rgba(16,185,129,.055);
+  --cyber-line: rgba(6,182,212,.12);
+  --cyber-panel: rgba(10,16,28,.72);
+  --cyber-glow: 0 0 0 1px rgba(16,185,129,.08), 0 18px 50px rgba(0,0,0,.22);
+}
+
+html[data-theme="light"] {
+  --cyber-grid: rgba(5,150,105,.055);
+  --cyber-line: rgba(8,145,178,.10);
+  --cyber-panel: rgba(255,255,255,.82);
+  --cyber-glow: 0 0 0 1px rgba(5,150,105,.08), 0 18px 50px rgba(15,23,42,.08);
+}
+
+body {
+  background-image:
+    linear-gradient(var(--cyber-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cyber-grid) 1px, transparent 1px),
+    radial-gradient(circle at 50% -10%, rgba(6,182,212,.10), transparent 36%);
+  background-size: 44px 44px, 44px 44px, 100% 100%;
+  background-attachment: fixed;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: .035;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(255,255,255,.7) 4px
+  );
+}
+
+header {
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  border-bottom-color: rgba(16,185,129,.22);
+}
+
+.nav-container {
+  min-height: 68px;
+}
+
+.logo {
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+
+.logo::before {
+  content: "SEC // ";
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero {
+  position: relative;
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--cyber-line);
+}
+
+.hero::before {
+  content: "SECURITY OPERATIONS // PORTFOLIO";
+  display: inline-flex;
+  margin-bottom: 1.15rem;
+  padding: .38rem .7rem;
+  border: 1px solid rgba(16,185,129,.28);
+  border-radius: 4px;
+  background: rgba(16,185,129,.06);
+  color: var(--accent-green);
+  font: 600 .68rem/1 'IBM Plex Mono', monospace;
+  letter-spacing: .14em;
+}
+
+.hero::after {
+  content: "01";
+  position: absolute;
+  right: 0;
+  top: 3.2rem;
+  color: rgba(100,116,139,.16);
+  font: 800 7rem/1 'IBM Plex Mono', monospace;
+  pointer-events: none;
+}
+
+.hero-title {
+  max-width: 900px;
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  line-height: 1.02;
+}
+
+.hero-subtitle {
+  display: inline-block;
+  padding: .35rem .7rem;
+  border-left: 3px solid var(--accent-cyan);
+  background: rgba(6,182,212,.05);
+}
+
+.hero-desc {
+  max-width: 760px;
+}
+
+.section-header {
+  position: relative;
+  padding-bottom: .85rem;
+  border-bottom: 1px solid var(--cyber-line);
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 72px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+}
+
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: .025em;
+}
+
+.section-title::before {
+  content: "[";
+}
+
+.section-title::after {
+  content: "]";
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--accent-green);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--cyber-panel);
+  border-radius: 8px;
+  box-shadow: var(--cyber-glow);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(var(--accent-green), var(--accent-cyan));
+  transition: height .3s ease;
+}
+
+.card:hover::before {
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(16,185,129,.34);
+  box-shadow: 0 0 0 1px rgba(16,185,129,.10), 0 20px 55px rgba(0,0,0,.28);
+}
+
+.snapshot-card h4,
+.project-title {
+  letter-spacing: .01em;
+}
+
+.project-badge {
+  border-radius: 4px;
+  letter-spacing: .05em;
+}
+
+.metric-badge {
+  position: relative;
+  border-style: solid;
+  letter-spacing: .025em;
+}
+
+.metric-badge::before {
+  content: "▣ ";
+}
+
+.terminal-preview,
+#terminal-box {
+  border-color: rgba(6,182,212,.22);
+  box-shadow: inset 0 0 30px rgba(6,182,212,.035);
+}
+
+.terminal-preview::after {
+  content: "●  ●  ●";
+  position: absolute;
+  top: .55rem;
+  right: .75rem;
+  color: var(--text-muted);
+  font-size: .45rem;
+  letter-spacing: .18rem;
+  opacity: .7;
+}
+
+.tag {
+  border-radius: 3px;
+  background: rgba(6,182,212,.035);
+}
+
+.btn-primary {
+  position: relative;
+  box-shadow: 0 0 24px rgba(16,185,129,.15);
+}
+
+.btn-primary::before {
+  content: ">";
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.btn-outline {
+  border-color: rgba(6,182,212,.32);
+}
+
+.filter-btn {
+  border-radius: 4px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  box-shadow: 0 0 16px rgba(16,185,129,.10);
+}
+
+.modal-content {
+  box-shadow: 0 0 0 1px rgba(16,185,129,.10), 0 30px 80px rgba(0,0,0,.5);
+}
+
+footer {
+  position: relative;
+  background: rgba(2,6,12,.35);
+}
+
+footer::before {
+  content: "END OF SECURE SESSION";
+  display: block;
+  margin-bottom: .65rem;
+  color: var(--accent-green);
+  font: 600 .65rem/1 'IBM Plex Mono', monospace;
+  letter-spacing: .18em;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero::after {
+    font-size: 4rem;
+    top: 2.8rem;
+  }
+
+  .nav-container {
+    padding-inline: 1rem;
+  }
+
+  .container {
+    padding-inline: 1rem;
+  }
+
+  nav ul {
+    gap: .8rem;
+  }
+
+  nav a {
+    font-size: .72rem;
+  }
+
+  .hero::before {
+    font-size: .58rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "EVT-001",
+    "base_sid": "5710",
+    "message": "Failed password for invalid user testadmin from 192.0.2.10 port 55221 ssh2",
+    "srcip": "192.0.2.10",
+    "user": "testadmin",
+    "expected": [
+      "100001",
+      "100002"
+    ]
+  },
+  {
+    "id": "EVT-002",
+    "base_sid": "5710",
+    "message": "Failed password for invalid user analyst from 192.0.2.11 port 55222 ssh2",
+    "srcip": "192.0.2.11",
+    "user": "analyst",
+    "expected": [
+      "100001",
+      "100002"
+    ]
+  },
+  {
+    "id": "EVT-003",
+    "base_sid": "5000",
+    "message": "Accepted password for labuser from 192.0.2.20 port 55223 ssh2",
+    "srcip": "192.0.2.20",
+    "user": "labuser",
+    "expected": []
+  }
+]

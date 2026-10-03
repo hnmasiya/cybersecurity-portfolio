@@ -1,0 +1,13 @@
+# Copy this file to terraform.tfvars and fill in real values.
+# terraform.tfvars is gitignored — never commit it.
+
+org_id                     = "REPLACE-WITH-YOUR-ORG-ID"            # numeric, from `gcloud organizations list`
+billing_account            = "REPLACE-WITH-YOUR-BILLING-ACCOUNT-ID" # e.g. "012345-6789AB-CDEF01"
+domain                     = "REPLACE-WITH-YOUR-DOMAIN.com"          # Cloud Identity / Workspace domain
+shared_vpc_host_project_id = "REPLACE-WITH-A-GLOBALLY-UNIQUE-ID"     # e.g. "acme-shared-vpc-host"
+logging_project_id         = "REPLACE-WITH-A-GLOBALLY-UNIQUE-ID"     # e.g. "acme-central-logging"
+
+# Optional overrides (defaults live in variables.tf)
+# default_region     = "us-central1"
+# network_name       = "vpc-shared-prod"
+# log_retention_days = 400

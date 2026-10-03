@@ -1,0 +1,6 @@
+2026-09-24T11:00:00Z INFO  web01 normal request volume
+2026-09-24T11:05:00Z WARN  web01 repeated authentication failures
+2026-09-24T11:07:00Z WARN  web01 account lockout threshold reached
+2026-09-24T11:12:00Z INFO  analyst alert triage started
+2026-09-24T11:20:00Z INFO  analyst source isolated in synthetic scenario
+2026-09-24T11:35:00Z INFO  analyst remediation completed in synthetic scenario

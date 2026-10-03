@@ -1,0 +1,5 @@
+index=splunk_lab_monitoring sourcetype="splunk:lab:socmetrics"
+| timechart span=5m sum(events) as events sum(alerts) as alerts sum(critical) as critical
+
+index=splunk_lab_monitoring sourcetype="splunk:lab:socmetrics"
+| stats sum(events) as total_events sum(alerts) as total_alerts sum(critical) as critical_alerts sum(failed_auth) as failed_auth sum(process_events) as process_events by host

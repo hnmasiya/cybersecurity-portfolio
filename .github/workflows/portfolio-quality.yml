@@ -1,0 +1,55 @@
+name: Portfolio Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Python syntax validation
+        run: |
+          python -m compileall -q             Active-Directory             DFIR             Docker-Labs             Endpoint-Security             Linux-Security             Network-Security             Security-Automation             SIEM             Threat-Hunting             Scripts
+
+      - name: Install test dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Run unit tests
+        run: python -m pytest tests/ -v
+
+      - name: Remove Python runtime artifacts
+        run: |
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f \( -name '*.pyc' -o -name '*.pyo' \) -delete
+
+      - name: Portfolio quality
+        run: python Scripts/portfolio_quality_check.py
+
+      - name: Windows Sysmon offline validation
+        run: python Endpoint-Security/Windows-Sysmon-Detection-Lab/Scripts/offline_endpoint_validator.py
+
+      - name: Threat hunting offline validation
+        run: python Threat-Hunting/Detection-Validation-Lab/Scripts/offline_hunt_validator.py
+
+      - name: Public secret assignment scan
+        run: |
+          if git grep -nEI             'INDEXER_PASSWORD=|API_PASSWORD=|DASHBOARD_PASSWORD='             --             ':!.github/workflows/portfolio-quality.yml'             ':!Scripts/portfolio_quality_check.py'             ':!tests/*'; then
+            echo "Potential credential assignment found"
+            exit 1
+          fi
