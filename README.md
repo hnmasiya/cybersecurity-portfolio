@@ -2,7 +2,7 @@
 
 # HAZVINEI NOMATTER MASIYA
 
-### Cybersecurity Professional · Security Operations · Detection Engineering · DFIR · Automation
+### Cybersecurity Professional · Security Operations · Detection Engineering · Incident Response · DFIR · Automation
 
 **12+ Years Enterprise IT · CompTIA Security+ Certified · BSc Computer Science — In Progress**
 
@@ -18,9 +18,11 @@
 
 ## 👋 Profile
 
-CompTIA Security+ certified enterprise IT professional with **12+ years of experience**, deliberately transitioning an infrastructure and systems background into cybersecurity and security operations.
+CompTIA Security+ certified enterprise IT professional with **12+ years of experience** across enterprise infrastructure, systems administration, networking, access control, endpoint security and business-critical technical operations, deliberately transitioning that foundation into cybersecurity and security operations.
 
 This repository is an **evidence-first technical portfolio** demonstrating SIEM monitoring, detection engineering, incident investigation, DFIR, Windows/Active Directory security, network security, cloud security, application security and security automation.
+
+The professional story is intentionally structured as: **Enterprise IT / Infrastructure → Windows / Active Directory / Networking → Security Administration → Cybersecurity → SOC / Detection / Incident Response → Cloud Security → Automation**.
 
 Professional experience, independent authorized labs, coursework and virtual job simulations are kept distinct so reviewers can understand the scope of each claim.
 
@@ -55,7 +57,7 @@ Use the [Cybersecurity Lab Catalog](CYBERSECURITY-LAB-CATALOG.md) and [Master La
 
 | Area | Demonstrated focus | Key technologies |
 |---|---|---|
-| **SOC / SIEM** | Monitoring, alert triage, log analysis, investigation | Wazuh · Splunk · Windows Security · Sysmon |
+| **SOC / SIEM** | Monitoring, alert triage, log analysis, investigation | Wazuh · Splunk/SPL · Windows Security · Sysmon |
 | **Detection Engineering** | Rule development, validation, attack simulation | Wazuh · Sigma · MITRE ATT&CK |
 | **DFIR / IR** | Evidence handling, forensics, IOC extraction | Volatility · AVML · Linux/Windows |
 | **Windows / AD** | Authentication, privilege monitoring, hardening | Windows Server · AD · PowerShell |
@@ -193,7 +195,7 @@ That foundation informs the security workflow used throughout this portfolio:
 
 **Secondary:** Detection Engineering · Incident Response · Threat Hunting · Security Automation · Junior Security Engineering
 
-**Professional positioning:** Experienced enterprise IT/infrastructure professional transitioning into cybersecurity, with hands-on security evidence supporting the transition.
+**Professional positioning:** Experienced enterprise IT/infrastructure professional transitioning into cybersecurity, combining real-world Windows, Active Directory, networking and endpoint-security operations with hands-on security evidence across SIEM, detection, investigation, DFIR, cloud security and automation.
 
 **Open to international opportunities and relocation.**
 
