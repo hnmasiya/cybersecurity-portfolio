@@ -4,7 +4,7 @@
 
 ### Cybersecurity Professional · Security Operations · Detection Engineering · Incident Response · DFIR · Automation
 
-**12+ Years Enterprise IT · CompTIA Security+ Certified · BSc Computer Science — In Progress**
+**12+ Years Enterprise IT · CompTIA Security+ Certified (SY0-701) · BSc Computer Science — In Progress**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-masiya--hub.org-10b981?style=for-the-badge&logo=googlechrome&logoColor=white)](https://masiya-hub.org/)
 [![GitHub](https://img.shields.io/badge/GitHub-hnmasiya-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hnmasiya)
