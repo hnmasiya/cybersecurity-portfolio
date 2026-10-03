@@ -1,0 +1,7 @@
+timestamp,host,user,source,event_type,severity,indicator,stage
+2026-09-25T08:00:00Z,win-soc-02,CONTOSO\alice,email,phishing_link,medium,https://example.invalid/login,initial-access
+2026-09-25T08:03:00Z,win-soc-02,CONTOSO\alice,process,powershell_encoded,high,SYNTHETIC_PAYLOAD_A,execution
+2026-09-25T08:06:00Z,win-soc-02,CONTOSO\alice,process,mshta_execution,high,example.invalid/update.hta,execution
+2026-09-25T08:09:00Z,win-soc-02,CONTOSO\alice,network,outbound_connection,high,198.51.100.25:443,command-and-control
+2026-09-25T08:12:00Z,win-soc-02,CONTOSO\alice,auth,new_admin_group_member,critical,SYNTHETIC_ACCOUNT,persistence
+2026-09-25T08:15:00Z,win-soc-02,CONTOSO\alice,response,account_disabled,info,CASE-0006,containment

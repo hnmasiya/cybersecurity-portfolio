@@ -1,0 +1,15 @@
+LAB ID: LAB7-20260924-131215
+Controlled process PID: 179582
+Controlled listener: 127.0.0.1:18765
+Negative test: 127.0.0.1:18766
+Marker: LAB7-PROCESS-INVESTIGATION
+
+Process lineage:
+PID 179582 -> PPID 179534
+
+Assessment:
+The observed process, executable, parent relationship, localhost listener,
+and HTTP transaction were generated intentionally as a controlled lab activity.
+The evidence establishes process-to-socket correlation for the test process.
+
+No malicious activity or compromise is inferred from this controlled test.

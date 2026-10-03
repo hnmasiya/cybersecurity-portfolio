@@ -1,0 +1,42 @@
+// Microsoft Sentinel / KQL
+// Purpose: investigate unusual parent/child process relationships.
+//
+// Status: ARCHITECTURE / METHODOLOGY
+
+// Parent/child process relationships
+DeviceProcessEvents
+| where Timestamp >= ago(24h)
+| project
+    Timestamp,
+    DeviceName,
+    AccountName,
+    FileName,
+    ProcessCommandLine,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine
+| order by Timestamp desc
+
+// Identify scripting interpreters launched by unexpected parents
+DeviceProcessEvents
+| where Timestamp >= ago(24h)
+| where FileName in~ (
+    "powershell.exe",
+    "pwsh.exe",
+    "cmd.exe",
+    "wscript.exe",
+    "cscript.exe",
+    "mshta.exe"
+)
+| where InitiatingProcessFileName !in~ (
+    "explorer.exe",
+    "services.exe",
+    "svchost.exe"
+)
+| project
+    Timestamp,
+    DeviceName,
+    AccountName,
+    FileName,
+    ProcessCommandLine,
+    InitiatingProcessFileName
+| order by Timestamp desc

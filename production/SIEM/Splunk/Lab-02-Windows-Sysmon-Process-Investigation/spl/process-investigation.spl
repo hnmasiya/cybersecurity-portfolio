@@ -1,0 +1,40 @@
+# 1. Baseline process creation volume
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| stats count as process_events
+
+# 2. Top processes
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| stats count as events by image
+| sort - events
+
+# 3. Parent-child relationships
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| stats count as events by parent_image image
+| sort - events
+
+# 4. PowerShell activity
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| search image="*powershell.exe"
+| table timestamp host user parent_image image command_line parent_command_line
+| sort 0 timestamp
+
+# 5. Suspicious command-line indicators
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| eval suspicious=if(
+    match(lower(command_line),"encodedcommand|executionpolicy\s+bypass|downloadstring|invoke-expression|iex\s|frombase64string")
+    OR match(lower(image),"mshta\.exe|rundll32\.exe|regsvr32\.exe|wscript\.exe|cscript\.exe"),
+    1, 0)
+| where suspicious=1
+| table timestamp host user parent_image image command_line
+| sort 0 timestamp
+
+# 6. High-integrity suspicious processes
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon" event_id=1
+| search integrity_level=High
+| stats count as events values(command_line) as command_lines by host user image parent_image
+| sort - events
+
+# 7. Process investigation timeline
+index=splunk_lab_sysmon sourcetype="splunk:lab:sysmon"
+| sort 0 timestamp
+| table timestamp host user image parent_image command_line process_id parent_process_id
