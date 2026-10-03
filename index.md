@@ -22,7 +22,7 @@ If you are reviewing this portfolio for a cybersecurity role, start with the **[
 
 ## 👤 About Me
 
-I am a **CompTIA Security+ Certified (SY0-701) enterprise IT professional with 12+ years of experience** (since March 2014), deliberately transitioning that foundation into cybersecurity. My paid professional experience is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated in this portfolio come from independent, authorized hands-on labs, technical projects, and coursework across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.
+CompTIA Security+ Certified (SY0-701) cybersecurity professional with 12+ years of enterprise IT experience across infrastructure, systems administration, Windows/Linux environments, Active Directory, networking, access control, endpoint security, system hardening, and business-critical operations. Transitioning this enterprise foundation into security operations, with hands-on capability demonstrated through completed and authorized labs covering Wazuh SIEM, Splunk, detection engineering, incident investigation, DFIR, Windows/Sysmon telemetry, network security, vulnerability assessment, cloud security, threat hunting, and security automation. Professional experience is clearly separated from independent security work.
 
 My professional background includes supporting **enterprise sites and business-critical IT infrastructure**, with experience across Windows Server, Active Directory, endpoint security, networking, access control, system hardening, patch management, troubleshooting, and infrastructure operations.
 
