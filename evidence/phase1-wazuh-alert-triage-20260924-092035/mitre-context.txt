@@ -1,0 +1,17 @@
+MITRE ATT&CK CONTEXT
+
+Rule 5402:
+Potential ATT&CK mapping: T1548.003 — Abuse Elevation Control Mechanism:
+Sudo and Sudo Caching.
+
+This mapping is contextual only. In the controlled Lab 2.1 scenario,
+the sudo activity was intentionally generated for telemetry validation.
+It is not evidence of malicious privilege escalation by itself.
+
+Rules 5501 and 5502:
+PAM session-open/session-close alerts provide authentication/session
+context. No ATT&CK technique is asserted solely from these alerts.
+
+Rule 80710:
+No ATT&CK technique is asserted solely from the promiscuous-mode alert.
+Additional process, network-interface and Auditd evidence is required.

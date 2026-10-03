@@ -1,0 +1,6 @@
+2026-08-19T09:14:02Z ssh authentication failure source=10.10.20.45 user=admin
+2026-08-19T09:14:05Z ssh authentication failure source=10.10.20.45 user=admin
+2026-08-19T09:14:08Z ssh authentication failure source=10.10.20.45 user=admin
+2026-08-19T09:18:41Z privileged command user=analyst command="cat /etc/passwd"
+2026-08-19T09:21:17Z ssh authentication failure source=10.10.20.45 user=root
+2026-08-19T09:21:20Z ssh authentication failure source=10.10.20.45 user=root

@@ -1,0 +1,6 @@
+2026/09/24 06:32:16 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache2/error.log'.
+2026/09/24 06:32:16 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache2/access.log'.
+2026/09/24 06:32:17 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/audit/audit.log'.
+2026/09/24 06:32:17 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/09/24 06:32:17 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/dpkg.log'.
+2026/09/24 06:32:24 wazuh-logcollector: WARNING: Target 'agent' message queue is full (1024). Log lines may be lost.

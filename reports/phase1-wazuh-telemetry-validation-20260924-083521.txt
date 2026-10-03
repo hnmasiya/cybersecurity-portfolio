@@ -1,0 +1,362 @@
+============================================================
+WAZUH TELEMETRY & DETECTION VALIDATION
+============================================================
+
+Script:       phase1-wazuh-telemetry-validation
+Timestamp:    2026-09-24 08:35:21 CAT
+Host:         normann-ThinkPad-X260
+Test Tag:     WAZUH_LAB_20260924-083521
+
+PURPOSE
+-------
+Generate controlled security telemetry and validate the
+Wazuh collection -> analysis -> alert pipeline.
+
+NO WAZUH CONFIGURATION CHANGES ARE PERFORMED.
+
+============================================================
+
+[PASS] Docker CLI available.
+[PASS] Wazuh agent installation detected.
+[PASS] Wazuh manager container is running.
+[WARN] Wazuh alerts.json not found.
+[WARN] Unable to establish alerts.json baseline.
+Creating controlled test file:
+/tmp/WAZUH_LAB_20260924-083521.txt
+[PASS] Controlled test file created.
+Modifying controlled test file.
+Calculating test file hash:
+d785790bdc01fa4968084355d6fd9f3389e513b613bc3ba6ac1a0352abd6cf2a  /tmp/WAZUH_LAB_20260924-083521.txt
+[PASS] File creation/modification telemetry generated.
+[PASS] Temporary test file removed.
+Generating a harmless sudo authentication event.
+Existing sudo authorization succeeded without prompting.
+[PASS] Controlled sudo event executed.
+Current user:
+uid=0(root) gid=0(root) groups=0(root)
+
+Current session:
+normann  tty7         2026-09-24 06:32 (:0)
+normann  pts/2        2026-09-24 08:35
+
+Recent login records:
+normann  tty7         :0               Thu Sep 24 06:32    gone - no logout
+reboot   system boot  7.0.0-31-generic Thu Sep 24 06:32   still running
+normann  tty7         :0               Wed Sep 23 21:50 - crash  (08:41)
+reboot   system boot  7.0.0-31-generic Wed Sep 23 21:49   still running
+reboot   system boot  7.0.0-31-generic Wed Sep 23 20:52   still running
+
+wtmp begins Mon Jul 20 18:02:07 2026
+[PASS] Authentication/session telemetry queried.
+Current process snapshot:
+USER         PID    PPID COMMAND         %CPU %MEM
+normann     3180    2877 java             9.5 16.6
+normann     5537    5144 gnome-software   2.8  7.6
+normann    11511   11179 chrome          51.6  6.7
+normann    11026   11019 chrome           4.5  4.1
+normann     5177    4752 gnome-shell      9.9  3.0
+normann     4728    4727 wireshark        0.5  2.4
+normann     4850    3140 node             1.1  2.1
+normann    11254   11095 chrome          23.7  2.0
+normann     5945    4752 xdg-desktop-por  0.3  1.9
+normann    11344   11179 chrome           0.0  1.7
+65532       3050    2830 MainThread       1.8  1.6
+normann    11259   11026 chrome           1.1  1.5
+dnsmasq     6367    3057 python3          0.8  1.3
+normann     9012    4752 gnome-calendar   0.0  1.3
+root        1455    1422 Xorg             7.9  1.1
+root        1681       1 dockerd          1.0  1.1
+root        7104    3057 wazuh-modulesd   0.8  1.0
+mysql       1603       1 mariadbd         0.0  0.9
+normann     5269    5177 mutter-x11-fram  0.0  0.9
+
+Current network listeners:
+Netid State  Recv-Q Send-Q                      Local Address:Port  Peer Address:PortProcess                                                                                                                                                             
+udp   UNCONN 0      0                                 0.0.0.0:52484      0.0.0.0:*    users:(("avahi-daemon",pid=846,fd=14))                                                                                                                             
+udp   UNCONN 0      0                           192.168.122.1:53         0.0.0.0:*    users:(("dnsmasq",pid=1744,fd=5))                                                                                                                                  
+udp   UNCONN 0      0                              127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=598,fd=16))                                                                                                                          
+udp   UNCONN 0      0                           127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=598,fd=14))                                                                                                                          
+udp   UNCONN 0      0                          0.0.0.0%virbr0:67         0.0.0.0:*    users:(("dnsmasq",pid=1744,fd=3))                                                                                                                                  
+udp   UNCONN 0      0                                 0.0.0.0:514        0.0.0.0:*    users:(("docker-proxy",pid=3386,fd=7))                                                                                                                             
+udp   UNCONN 0      0                                 0.0.0.0:41641      0.0.0.0:*    users:(("tailscaled",pid=1349,fd=19))                                                                                                                              
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=111))                                                                                                                                
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=102))                                                                                                                                
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=101))                                                                                                                                
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=99))                                                                                                                                 
+udp   UNCONN 0      0                             224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=11259,fd=35))                                                                                                                                 
+udp   UNCONN 0      0                                 0.0.0.0:5353       0.0.0.0:*    users:(("avahi-daemon",pid=846,fd=12))                                                                                                                             
+udp   UNCONN 0      0                                    [::]:514           [::]:*    users:(("docker-proxy",pid=3393,fd=7))                                                                                                                             
+udp   UNCONN 0      0      [fe80::7b3e:91e0:2854:1f68]%wlp4s0:546           [::]:*    users:(("NetworkManager",pid=966,fd=28))                                                                                                                           
+udp   UNCONN 0      0                                    [::]:41641         [::]:*    users:(("tailscaled",pid=1349,fd=18))                                                                                                                              
+udp   UNCONN 0      0                                    [::]:5353          [::]:*    users:(("avahi-daemon",pid=846,fd=13))                                                                                                                             
+udp   UNCONN 0      0                                    [::]:54907         [::]:*    users:(("avahi-daemon",pid=846,fd=15))                                                                                                                             
+udp   UNCONN 0      0                                       *:1716             *:*    users:(("gjs",pid=6119,fd=16))                                                                                                                                     
+tcp   LISTEN 0      32                          192.168.122.1:53         0.0.0.0:*    users:(("dnsmasq",pid=1744,fd=6))                                                                                                                                  
+tcp   LISTEN 0      4096                            127.0.0.1:34737      0.0.0.0:*    users:(("containerd",pid=1377,fd=14))                                                                                                                              
+tcp   LISTEN 0      4096                           127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=598,fd=17))                                                                                                                          
+tcp   LISTEN 0      4096                              0.0.0.0:3001       0.0.0.0:*    users:(("docker-proxy",pid=3675,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                              0.0.0.0:3000       0.0.0.0:*    users:(("docker-proxy",pid=3206,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                            127.0.0.1:631        0.0.0.0:*    users:(("cupsd",pid=1342,fd=7))                                                                                                                                    
+tcp   LISTEN 0      4096                       100.104.119.57:42163      0.0.0.0:*    users:(("tailscaled",pid=1349,fd=26))                                                                                                                              
+tcp   LISTEN 0      4096                              0.0.0.0:55000      0.0.0.0:*    users:(("docker-proxy",pid=3465,fd=7))                                                                                                                             
+tcp   LISTEN 0      80                              127.0.0.1:3306       0.0.0.0:*    users:(("mariadbd",pid=1603,fd=28))                                                                                                                                
+tcp   LISTEN 0      4096                              0.0.0.0:9443       0.0.0.0:*    users:(("docker-proxy",pid=3571,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                              0.0.0.0:1515       0.0.0.0:*    users:(("docker-proxy",pid=3441,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                              0.0.0.0:1514       0.0.0.0:*    users:(("docker-proxy",pid=3419,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                              0.0.0.0:9200       0.0.0.0:*    users:(("docker-proxy",pid=3811,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                        127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=598,fd=15))                                                                                                                          
+tcp   LISTEN 0      4096                              0.0.0.0:443        0.0.0.0:*    users:(("docker-proxy",pid=3503,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                 [::]:3001          [::]:*    users:(("docker-proxy",pid=3683,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                 [::]:3000          [::]:*    users:(("docker-proxy",pid=3213,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096          [fd7a:115c:a1e0::743a:773b]:48961         [::]:*    users:(("tailscaled",pid=1349,fd=27))                                                                                                                              
+tcp   LISTEN 0      4096                                 [::]:55000         [::]:*    users:(("docker-proxy",pid=3472,fd=7))                                                                                                                             
+tcp   LISTEN 0      10                                      *:1716             *:*    users:(("gjs",pid=6119,fd=15))                                                                                                                                     
+tcp   LISTEN 0      4096                                 [::]:9443          [::]:*    users:(("docker-proxy",pid=3584,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                 [::]:1515          [::]:*    users:(("docker-proxy",pid=3448,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                 [::]:1514          [::]:*    users:(("docker-proxy",pid=3426,fd=7))                                                                                                                             
+tcp   LISTEN 0      4096                                [::1]:631           [::]:*    users:(("cupsd",pid=1342,fd=6))                                                                                                                                    
+tcp   LISTEN 0      4096                                 [::]:9200          [::]:*    users:(("docker-proxy",pid=3825,fd=7))                                                                                                                             
+tcp   LISTEN 0      511                                     *:80               *:*    users:(("apache2",pid=1582,fd=4),("apache2",pid=1573,fd=4),("apache2",pid=1560,fd=4),("apache2",pid=1557,fd=4),("apache2",pid=1555,fd=4),("apache2",pid=1469,fd=4))
+tcp   LISTEN 0      4096                                 [::]:443           [::]:*    users:(("docker-proxy",pid=3509,fd=7))                                                                                                                             
+[PASS] Process and network telemetry captured.
+Requesting local Apache endpoint:
+http://127.0.0.1/
+HTTP_STATUS=200
+TIME_TOTAL=0.023504
+[PASS] Local Apache request generated successfully.
+Sep 24 08:26:02 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:40002 => 146.190.225.48:80); no associated peer node
+Sep 24 08:26:06 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=145186 PROTO=UDP SPT=43893 DPT=10001 LEN=181 
+Sep 24 08:26:08 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:40002 => 146.190.225.48:80); no associated peer node
+Sep 24 08:26:16 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:40002 => 146.190.225.48:80); no associated peer node
+Sep 24 08:26:21 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=61919 PROTO=TCP SPT=57108 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:26:26 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=628770 PROTO=UDP SPT=50968 DPT=10001 LEN=181 
+Sep 24 08:26:51 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=290 TOS=0x00 PREC=0x00 TTL=64 ID=60511 DF PROTO=UDP SPT=37445 DPT=5514 LEN=270 
+Sep 24 08:27:01 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=62008 PROTO=TCP SPT=57110 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:27:01 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=292587 PROTO=UDP SPT=36271 DPT=10001 LEN=181 
+Sep 24 08:27:21 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=814022 PROTO=UDP SPT=53415 DPT=10001 LEN=181 
+Sep 24 08:27:31 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=1406 PROTO=UDP SPT=46965 DPT=10001 LEN=181 
+Sep 24 08:27:31 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=63985 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 
+Sep 24 08:27:55 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=641095 PROTO=UDP SPT=59535 DPT=10001 LEN=181 
+Sep 24 08:27:55 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=64712 PROTO=TCP SPT=57112 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:27:58 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=64899 PROTO=TCP SPT=57112 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:28:05 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=1007794 PROTO=UDP SPT=49425 DPT=10001 LEN=181 
+Sep 24 08:28:25 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=1673 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 
+Sep 24 08:28:25 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=3082 PROTO=UDP SPT=54552 DPT=10001 LEN=181 
+Sep 24 08:28:50 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=864545 PROTO=UDP SPT=38823 DPT=10001 LEN=181 
+Sep 24 08:28:50 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=722 PROTO=TCP SPT=57114 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:28:57 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=1139 PROTO=TCP SPT=57114 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:29:10 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=790125 PROTO=UDP SPT=45430 DPT=10001 LEN=181 
+Sep 24 08:29:20 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=4011 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 
+Sep 24 08:29:29 normann-ThinkPad-X260 sudo[50687]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-baseline.sh
+Sep 24 08:29:29 normann-ThinkPad-X260 sudo[50687]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:29:30 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=902146 PROTO=UDP SPT=51621 DPT=10001 LEN=181 
+Sep 24 08:29:39 normann-ThinkPad-X260 sudo[50687]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:29:44 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=4496 PROTO=TCP SPT=57116 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:29:54 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=991951 PROTO=UDP SPT=59289 DPT=10001 LEN=181 
+Sep 24 08:29:59 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=5090 PROTO=TCP SPT=57116 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:30:01 normann-ThinkPad-X260 CRON[51495]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:30:01 normann-ThinkPad-X260 CRON[51496]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Sep 24 08:30:01 normann-ThinkPad-X260 CRON[51495]: pam_unix(cron:session): session closed for user root
+Sep 24 08:30:02 normann-ThinkPad-X260 systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+Sep 24 08:30:02 normann-ThinkPad-X260 systemd[1]: sysstat-collect.service: Deactivated successfully.
+Sep 24 08:30:02 normann-ThinkPad-X260 systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+Sep 24 08:30:04 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=679073 PROTO=UDP SPT=58302 DPT=10001 LEN=181 
+Sep 24 08:30:39 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=721623 PROTO=UDP SPT=34938 DPT=10001 LEN=181 
+Sep 24 08:30:39 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=7805 PROTO=TCP SPT=57118 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:30:39 normann-ThinkPad-X260 systemd[1]: Started anacron.service - Run anacron jobs.
+Sep 24 08:30:39 normann-ThinkPad-X260 anacron[51672]: Anacron 2.3 started on 2026-09-24
+Sep 24 08:30:39 normann-ThinkPad-X260 anacron[51672]: Normal exit (0 jobs run)
+Sep 24 08:30:39 normann-ThinkPad-X260 systemd[1]: anacron.service: Deactivated successfully.
+Sep 24 08:30:40 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=7831 PROTO=TCP SPT=57118 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:30:56 normann-ThinkPad-X260 systemd[1]: Starting man-db.service - Daily man-db regeneration...
+Sep 24 08:30:57 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:60350 => 146.190.225.48:80); no associated peer node
+Sep 24 08:30:57 normann-ThinkPad-X260 systemd[1]: man-db.service: Deactivated successfully.
+Sep 24 08:30:57 normann-ThinkPad-X260 systemd[1]: Finished man-db.service - Daily man-db regeneration.
+Sep 24 08:30:57 normann-ThinkPad-X260 systemd[1]: man-db.service: Consumed 1.650s CPU time.
+Sep 24 08:30:59 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=934923 PROTO=UDP SPT=55869 DPT=10001 LEN=181 
+Sep 24 08:31:02 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:60350 => 146.190.225.48:80); no associated peer node
+Sep 24 08:31:08 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:60350 => 146.190.225.48:80); no associated peer node
+Sep 24 08:31:09 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=213968 PROTO=UDP SPT=57079 DPT=10001 LEN=181 
+Sep 24 08:31:09 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=9700 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 
+Sep 24 08:31:16 normann-ThinkPad-X260 tailscaled[1349]: open-conn-track: timeout opening (TCP 100.104.119.57:60350 => 146.190.225.48:80); no associated peer node
+Sep 24 08:31:33 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=760248 PROTO=UDP SPT=39904 DPT=10001 LEN=181 
+Sep 24 08:31:33 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=10109 PROTO=TCP SPT=57120 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:31:40 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=10582 PROTO=TCP SPT=57120 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:32:03 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=170622 PROTO=UDP SPT=46895 DPT=10001 LEN=181 
+Sep 24 08:32:03 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=10819 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 
+Sep 24 08:32:10 normann-ThinkPad-X260 auditd[626]: Audit daemon rotating log files
+Sep 24 08:32:13 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=578766 PROTO=UDP SPT=35624 DPT=10001 LEN=181 
+Sep 24 08:32:16 normann-ThinkPad-X260 NetworkManager[966]: <info>  [1790231536.8514] dhcp4 (wlp4s0): state changed new lease, address=192.168.2.208
+Sep 24 08:32:16 normann-ThinkPad-X260 dbus-daemon[850]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.13' (uid=0 pid=966 comm="/usr/sbin/NetworkManager --no-daemon" label="unconfined")
+Sep 24 08:32:16 normann-ThinkPad-X260 systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+Sep 24 08:32:16 normann-ThinkPad-X260 dbus-daemon[850]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Sep 24 08:32:16 normann-ThinkPad-X260 systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+Sep 24 08:32:26 normann-ThinkPad-X260 systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+Sep 24 08:32:28 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=750993 PROTO=UDP SPT=57905 DPT=10001 LEN=181 
+Sep 24 08:32:28 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=12669 PROTO=TCP SPT=57122 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:32:43 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=13396 PROTO=TCP SPT=57122 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:32:58 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=13683 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 
+Sep 24 08:33:08 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=808925 PROTO=UDP SPT=57651 DPT=10001 LEN=181 
+Sep 24 08:33:23 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=525722 PROTO=UDP SPT=57323 DPT=10001 LEN=181 
+Sep 24 08:33:23 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=17349 PROTO=TCP SPT=57124 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:33:38 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=18089 PROTO=TCP SPT=57124 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:33:43 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=498765 PROTO=UDP SPT=57715 DPT=10001 LEN=181 
+Sep 24 08:33:53 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=1024088 PROTO=UDP SPT=51054 DPT=10001 LEN=181 
+Sep 24 08:33:53 normann-ThinkPad-X260 systemd[4752]: Started vte-spawn-aa814fb9-247e-40ee-90c8-4178e8c06fba.scope - VTE child process 52970 launched by gnome-terminal-server process 9229.
+Sep 24 08:34:03 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=393463 PROTO=UDP SPT=60047 DPT=10001 LEN=181 
+Sep 24 08:34:17 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=21751 PROTO=TCP SPT=57126 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:34:18 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=21803 PROTO=TCP SPT=57126 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:34:19 normann-ThinkPad-X260 avahi-daemon[846]: Withdrawing address record for 2605:59c1:36f8:a010:7dcd:40f2:669:29a3 on wlp4s0.
+Sep 24 08:34:19 normann-ThinkPad-X260 avahi-daemon[846]: Withdrawing address record for 2605:59c1:36f8:a010:b876:f579:5651:982d on wlp4s0.
+Sep 24 08:34:27 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=366551 PROTO=UDP SPT=46482 DPT=10001 LEN=181 
+Sep 24 08:34:46 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=218 TOS=0x00 PREC=0x00 TTL=64 ID=21724 DF PROTO=UDP SPT=37445 DPT=5514 LEN=198 
+Sep 24 08:34:47 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=396003 PROTO=UDP SPT=49137 DPT=10001 LEN=181 
+Sep 24 08:34:55 normann-ThinkPad-X260 avahi-daemon[846]: Registering new address record for 2605:59c1:36f8:a010:b876:f579:5651:982d on wlp4s0.*.
+Sep 24 08:34:55 normann-ThinkPad-X260 avahi-daemon[846]: Registering new address record for 2605:59c1:36f8:a010:7dcd:40f2:669:29a3 on wlp4s0.*.
+Sep 24 08:35:01 normann-ThinkPad-X260 CRON[53299]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:35:01 normann-ThinkPad-X260 CRON[53300]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Sep 24 08:35:01 normann-ThinkPad-X260 CRON[53299]: pam_unix(cron:session): session closed for user root
+Sep 24 08:35:10 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=01:00:5e:00:00:01:cc:2d:21:a2:69:40:08:00 SRC=192.168.2.238 DST=224.0.0.1 LEN=28 TOS=0x00 PREC=0x00 TTL=1 ID=0 DF PROTO=2 
+Sep 24 08:35:13 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=33:33:00:00:00:01:80:2a:a8:a0:ff:8c:86:dd SRC=fe80:0000:0000:0000:822a:a8ff:fea0:ff8c DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=221 TC=0 HOPLIMIT=1 FLOWLBL=852048 PROTO=UDP SPT=48091 DPT=10001 LEN=181 
+Sep 24 08:35:20 normann-ThinkPad-X260 kernel: [UFW BLOCK] IN=wlp4s0 OUT= MAC=44:85:00:69:16:bc:80:2a:a8:a0:ff:8c:08:00 SRC=192.168.2.247 DST=192.168.2.208 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=26267 PROTO=TCP SPT=57128 DPT=8080 WINDOW=29200 RES=0x00 SYN URGP=0 
+Sep 24 08:35:21 normann-ThinkPad-X260 sudo[53375]:  normann : TTY=pts/1 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-telemetry-validation.sh
+Sep 24 08:35:21 normann-ThinkPad-X260 sudo[53375]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]:     root : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=0)
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]: pam_unix(sudo:session): session closed for user root
+[PASS] Recent journald telemetry captured.
+type=PATH msg=audit(1790231726.232:110756): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.232:110756): proctitle=746565002D61002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F7265706F7274732F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312E747874
+type=SYSCALL msg=audit(1790231726.239:110757): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781d4b80 a1=5c22781e22f0 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53516 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tee" exe="/usr/bin/tee" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.239:110757): argc=3 a0="tee" a1="-a" a2="/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-telemetry-validation-20260924-083521.txt"
+type=CWD msg=audit(1790231726.239:110757): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.239:110757): item=0 name="/usr/bin/tee" inode=19541950 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.239:110757): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.239:110757): proctitle=746565002D61002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F7265706F7274732F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312E747874
+type=SYSCALL msg=audit(1790231726.246:110758): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781d4e90 a1=5c22781db6e0 a2=5c22781d2e30 a3=5c22781d5620 items=2 ppid=53517 pid=53518 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="curl" exe="/usr/bin/curl" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.246:110758): argc=9 a0="curl" a1="-sS" a2="--max-time" a3="10" a4="-o" a5="/home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-telemetry-validation-20260924-083521/apache-response-body.txt" a6="-w" a7="HTTP_STATUS=%{http_code}\nTIME_TOTAL=%{time_total}\n" a8="http://127.0.0.1/"
+type=CWD msg=audit(1790231726.246:110758): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.246:110758): item=0 name="/usr/bin/curl" inode=19530593 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.246:110758): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.246:110758): proctitle=6375726C002D7353002D2D6D61782D74696D65003130002D6F002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F65766964656E63652F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312F6170616368
+type=SYSCALL msg=audit(1790231726.302:110759): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781e39d0 a1=5c22781e2d80 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53520 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tee" exe="/usr/bin/tee" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.302:110759): argc=2 a0="tee" a1="/home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-telemetry-validation-20260924-083521/apache-request-result.txt"
+type=CWD msg=audit(1790231726.302:110759): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.302:110759): item=0 name="/usr/bin/tee" inode=19541950 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.302:110759): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.302:110759): proctitle=746565002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F65766964656E63652F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312F6170616368652D726571756573742D726573756C742E747874
+type=SYSCALL msg=audit(1790231726.303:110760): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781e3c10 a1=5c22781e2aa0 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53521 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tee" exe="/usr/bin/tee" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.303:110760): argc=3 a0="tee" a1="-a" a2="/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-telemetry-validation-20260924-083521.txt"
+type=CWD msg=audit(1790231726.303:110760): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.303:110760): item=0 name="/usr/bin/tee" inode=19541950 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.303:110760): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.303:110760): proctitle=746565002D61002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F7265706F7274732F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312E747874
+type=SYSCALL msg=audit(1790231726.309:110761): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781e3c10 a1=5c22781e2aa0 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53523 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="grep" exe="/usr/bin/grep" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.309:110761): argc=3 a0="grep" a1="-q" a2="HTTP_STATUS=2"
+type=CWD msg=audit(1790231726.309:110761): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.309:110761): item=0 name="/usr/bin/grep" inode=19530236 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.309:110761): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.309:110761): proctitle=67726570002D7100485454505F5354415455533D32
+type=SYSCALL msg=audit(1790231726.318:110762): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781d4d50 a1=5c22781d4e10 a2=5c22781d2e30 a3=1 items=2 ppid=53404 pid=53525 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tee" exe="/usr/bin/tee" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.318:110762): argc=3 a0="tee" a1="-a" a2="/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-telemetry-validation-20260924-083521.txt"
+type=CWD msg=audit(1790231726.318:110762): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.318:110762): item=0 name="/usr/bin/tee" inode=19541950 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.318:110762): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.318:110762): proctitle=746565002D61002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F7265706F7274732F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312E747874
+type=SYSCALL msg=audit(1790231726.327:110763): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781e36f0 a1=5c22781e2d80 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53527 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tail" exe="/usr/bin/tail" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.327:110763): argc=2 a0="tail" a1="-100"
+type=CWD msg=audit(1790231726.327:110763): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.327:110763): item=0 name="/usr/bin/tail" inode=19541949 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.327:110763): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.327:110763): proctitle=7461696C002D313030
+type=SYSCALL msg=audit(1790231726.328:110764): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781df520 a1=5c22781e2d80 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53528 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tee" exe="/usr/bin/tee" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.328:110764): argc=2 a0="tee" a1="/home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-telemetry-validation-20260924-083521/recent-journal.txt"
+type=CWD msg=audit(1790231726.328:110764): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.328:110764): item=0 name="/usr/bin/tee" inode=19541950 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.328:110764): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.328:110764): proctitle=746565002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F65766964656E63652F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312F726563656E742D6A6F75726E616C2E747874
+type=SYSCALL msg=audit(1790231726.328:110765): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781e37f0 a1=5c22781e3500 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53529 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tee" exe="/usr/bin/tee" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.328:110765): argc=3 a0="tee" a1="-a" a2="/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-telemetry-validation-20260924-083521.txt"
+type=CWD msg=audit(1790231726.328:110765): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.328:110765): item=0 name="/usr/bin/tee" inode=19541950 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.328:110765): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.328:110765): proctitle=746565002D61002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F7265706F7274732F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312E747874
+type=SYSCALL msg=audit(1790231726.326:110766): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781e37f0 a1=5c22781e06c0 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53526 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="journalctl" exe="/usr/bin/journalctl" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.326:110766): argc=4 a0="journalctl" a1="--since" a2=3130206D696E757465732061676F a3="--no-pager"
+type=CWD msg=audit(1790231726.326:110766): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.326:110766): item=0 name="/usr/bin/journalctl" inode=19529909 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.326:110766): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.326:110766): proctitle=6A6F75726E616C63746C002D2D73696E6365003130206D696E757465732061676F002D2D6E6F2D7061676572
+type=SYSCALL msg=audit(1790231726.339:110767): arch=c000003e syscall=59 success=no exit=-2 a0=75de5ec65a30 a1=75de5e6a6f30 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=53530 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="unset" UID="normann" GID="normann" EUID="normann" SUID="normann" FSUID="normann" EGID="normann" SGID="normann" FSGID="normann"
+type=CWD msg=audit(1790231726.339:110767): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=PATH msg=audit(1790231726.339:110767): item=0 name="/command/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PROCTITLE msg=audit(1790231726.339:110767): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=SYSCALL msg=audit(1790231726.339:110768): arch=c000003e syscall=59 success=no exit=-2 a0=75de5e6a6a50 a1=75de5e6a6f30 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=53530 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="unset" UID="normann" GID="normann" EUID="normann" SUID="normann" FSUID="normann" EGID="normann" SGID="normann" FSGID="normann"
+type=CWD msg=audit(1790231726.339:110768): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=PATH msg=audit(1790231726.339:110768): item=0 name="/lsiopy/bin/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PROCTITLE msg=audit(1790231726.339:110768): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=SYSCALL msg=audit(1790231726.340:110769): arch=c000003e syscall=59 success=no exit=-2 a0=75de5e6a6f10 a1=75de5e6a6f30 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=53530 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="unset" UID="normann" GID="normann" EUID="normann" SUID="normann" FSUID="normann" EGID="normann" SGID="normann" FSGID="normann"
+type=CWD msg=audit(1790231726.340:110769): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=PATH msg=audit(1790231726.340:110769): item=0 name="/usr/local/sbin/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PROCTITLE msg=audit(1790231726.340:110769): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=SYSCALL msg=audit(1790231726.340:110770): arch=c000003e syscall=59 success=no exit=-2 a0=75de5e6a6cb0 a1=75de5e6a6f30 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=53530 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="unset" UID="normann" GID="normann" EUID="normann" SUID="normann" FSUID="normann" EGID="normann" SGID="normann" FSGID="normann"
+type=CWD msg=audit(1790231726.340:110770): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=PATH msg=audit(1790231726.340:110770): item=0 name="/usr/local/bin/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PROCTITLE msg=audit(1790231726.340:110770): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=SYSCALL msg=audit(1790231726.340:110771): arch=c000003e syscall=59 success=no exit=-2 a0=75de5e6a6c90 a1=75de5e6a6f30 a2=75de5e6ac030 a3=0 items=1 ppid=4387 pid=53530 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="selkies" exe="/usr/bin/python3.14" subj=docker-default key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="unset" UID="normann" GID="normann" EUID="normann" SUID="normann" FSUID="normann" EGID="normann" SGID="normann" FSGID="normann"
+type=CWD msg=audit(1790231726.340:110771): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=PATH msg=audit(1790231726.340:110771): item=0 name="/usr/sbin/wl-paste" nametype=UNKNOWN cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=PROCTITLE msg=audit(1790231726.340:110771): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=SYSCALL msg=audit(1790231726.340:110772): arch=c000003e syscall=59 success=yes exit=0 a0=75de5e6a6cf0 a1=75de5e6a6f30 a2=75de5e6ac030 a3=0 items=2 ppid=4387 pid=53530 auid=4294967295 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=(none) ses=4294967295 comm="wl-paste" exe="/usr/bin/wl-paste" subj=docker-default key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="unset" UID="normann" GID="normann" EUID="normann" SUID="normann" FSUID="normann" EGID="normann" SGID="normann" FSGID="normann"
+type=EXECVE msg=audit(1790231726.340:110772): argc=2 a0="wl-paste" a1="--list-types"
+type=CWD msg=audit(1790231726.340:110772): cwd="/run/s6-rc:s6-rc-init:gmgppp/servicedirs/svc-selkies"
+type=PATH msg=audit(1790231726.340:110772): item=0 name="/usr/bin/wl-paste" inode=2001855 dev=00:4f mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.340:110772): item=1 name="/lib/ld-musl-x86_64.so.1" inode=1990166 dev=00:4f mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.340:110772): proctitle=2F6C73696F70792F62696E2F707974686F6E33002F6C73696F70792F62696E2F73656C6B696573002D2D616464723D6C6F63616C686F7374002D2D6D6F64653D776562736F636B657473
+type=SYSCALL msg=audit(1790231726.779:110773): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781e2f20 a1=5c22781d7d60 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53532 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tee" exe="/usr/bin/tee" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.779:110773): argc=3 a0="tee" a1="-a" a2="/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-telemetry-validation-20260924-083521.txt"
+type=CWD msg=audit(1790231726.779:110773): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.779:110773): item=0 name="/usr/bin/tee" inode=19541950 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.779:110773): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.779:110773): proctitle=746565002D61002F686F6D652F6E6F726D616E6E2F637962657273656375726974792D706F7274666F6C696F2F7265706F7274732F7068617365312D77617A75682D74656C656D657472792D76616C69646174696F6E2D32303236303932342D3038333532312E747874
+type=SYSCALL msg=audit(1790231726.787:110774): arch=c000003e syscall=59 success=yes exit=0 a0=5c22781e4290 a1=5c22781e25c0 a2=5c22781d2e30 a3=8 items=2 ppid=53404 pid=53533 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts2 ses=2 comm="tail" exe="/usr/bin/tail" subj=unconfined key="exec_cmd"ARCH=x86_64 SYSCALL=execve AUID="normann" UID="root" GID="root" EUID="root" SUID="root" FSUID="root" EGID="root" SGID="root" FSGID="root"
+type=EXECVE msg=audit(1790231726.787:110774): argc=3 a0="tail" a1="-100" a2="/var/log/audit/audit.log"
+type=CWD msg=audit(1790231726.787:110774): cwd="/home/normann/cybersecurity-portfolio"
+type=PATH msg=audit(1790231726.787:110774): item=0 name="/usr/bin/tail" inode=19541949 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PATH msg=audit(1790231726.787:110774): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=19530154 dev=08:07 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0OUID="root" OGID="root"
+type=PROCTITLE msg=audit(1790231726.787:110774): proctitle=7461696C002D313030002F7661722F6C6F672F61756469742F61756469742E6C6F67
+[PASS] Auditd telemetry available.
+Waiting for Wazuh to process generated telemetry...
+Processing window completed.
+[FAIL] alerts.json unavailable after telemetry generation.
+Searching Wazuh agent logs for telemetry-validation events.
+2026/09/24 06:32:16 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache2/error.log'.
+2026/09/24 06:32:16 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache2/access.log'.
+2026/09/24 06:32:17 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/audit/audit.log'.
+2026/09/24 06:32:17 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/09/24 06:32:17 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/dpkg.log'.
+2026/09/24 06:32:24 wazuh-logcollector: WARNING: Target 'agent' message queue is full (1024). Log lines may be lost.
+[PASS] Relevant telemetry-processing evidence found in agent logs.
+[WARN] No new alerts available for severity/rule analysis.
+[PASS] Temporary telemetry artifact successfully removed.
+Checks passed : 14
+Warnings      : 3
+Failures      : 1
+
+Validation objectives:
+- Controlled telemetry generated
+- Wazuh collection pipeline evaluated
+- Wazuh alert pipeline evaluated
+- Alert evidence captured where available
+- Temporary artifacts cleaned up
+- No Wazuh configuration changes performed
+
+Evidence directory:
+/home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-telemetry-validation-20260924-083521
+
+Report:
+/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-telemetry-validation-20260924-083521.txt
+
+============================================================
+END OF TELEMETRY VALIDATION
+============================================================

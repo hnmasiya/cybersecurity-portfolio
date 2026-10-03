@@ -1,0 +1,3 @@
+HIGH|frame=16|host=malicious.example.test|uri=/download/payload.bin?cmd=%2Fbin%2Fsh%20-c%20id|ua=SOC-Lab-SuspiciousScanner/1.0|score=8|reasons=suspicious-host;command-execution-pattern;scanner-user-agent;
+HIGH|frame=29|host=malicious.example.test|uri=/search?id=1%27%20OR%20%271%27%3D%271|ua=python-requests/2.x SOC-Lab|score=6|reasons=suspicious-host;sqli-pattern;
+HIGH|frame=42|host=malicious.example.test|uri=/etc/passwd|ua=SOC-Lab-Scanner/1.0|score=8|reasons=suspicious-host;sensitive-file-pattern;scanner-user-agent;
