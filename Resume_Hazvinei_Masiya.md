@@ -78,4 +78,4 @@ CompTIA Security+ certified enterprise IT professional with 12+ years of experie
 <blockquote>Forage virtual job simulations; not employment with Mastercard or Datacom.</blockquote>
 
 <h2>Certifications & Education</h2>
-<ul><li><b>CompTIA Security+ (SY0-701)</b> — CompTIA</li><li><b>Google Cybersecurity Professional Certificate</b> — Google</li><li><b>Google IT Support Professional Certificate</b> — Google</li><li><b>BSc in Computer Science</b> — Unicaf University (In Progress)</li><li><b>Diploma in Information Technology</b> — Macmaine School of Computing</li><li><b>Diploma in PC Maintenance and Networking</b> — Macmaine School of Computing</li></ul>
+<ul><li><b>CompTIA Security+ Certified (SY0-701)</b> — CompTIA</li><li><b>Google Cybersecurity Professional Certificate</b> — Google</li><li><b>Google IT Support Professional Certificate</b> — Google</li><li><b>BSc in Computer Science</b> — Unicaf University (In Progress)</li><li><b>Diploma in Information Technology</b> — Macmaine School of Computing</li><li><b>Diploma in PC Maintenance and Networking</b> — Macmaine School of Computing</li></ul>

@@ -4,7 +4,7 @@
 
 ### Cybersecurity Professional · Security Operations · Detection Engineering · Incident Response · DFIR · Automation
 
-**12+ Years Enterprise IT · CompTIA Security+ Certified · BSc Computer Science — In Progress**
+**12+ Years Enterprise IT · CompTIA Security+ Certified (SY0-701) · BSc Computer Science — In Progress**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-masiya--hub.org-10b981?style=for-the-badge&logo=googlechrome&logoColor=white)](https://masiya-hub.org/)
 [![GitHub](https://img.shields.io/badge/GitHub-hnmasiya-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hnmasiya)
@@ -18,7 +18,7 @@
 
 ## 👋 Profile
 
-CompTIA Security+ certified enterprise IT professional with **12+ years of experience** across enterprise infrastructure, systems administration, networking, access control, endpoint security and business-critical technical operations, deliberately transitioning that foundation into cybersecurity and security operations.
+CompTIA Security+ Certified (SY0-701) enterprise IT professional with **12+ years of experience** across enterprise infrastructure, systems administration, networking, access control, endpoint security and business-critical technical operations, deliberately transitioning that foundation into cybersecurity and security operations.
 
 This repository is an **evidence-first technical portfolio** demonstrating SIEM monitoring, detection engineering, incident investigation, DFIR, Windows/Active Directory security, network security, cloud security, application security and security automation.
 
@@ -145,7 +145,7 @@ Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage auto
 ## 🎓 Certifications & Professional Credentials
 
 ### Cybersecurity & Security
-- **CompTIA Security+ (SY0-701)** — Certified
+- **CompTIA Security+ Certified (SY0-701)**
 - **Introduction to AI Security** — AI Security University
 - **GRC Fundamentals** — CyberExam
 - **ICSI | CNS Certified Network Security Specialist**

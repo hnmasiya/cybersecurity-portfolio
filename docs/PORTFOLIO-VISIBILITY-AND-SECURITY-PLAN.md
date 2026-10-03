@@ -6,7 +6,7 @@ Increase qualified discovery of `hnmasiya/cybersecurity-portfolio` among cyberse
 
 ## Positioning
 
-**Primary message:** A Security+ certified cybersecurity practitioner with 12+ years of enterprise IT/infrastructure experience, demonstrating SOC analysis, detection engineering, incident response/DFIR, Windows/AD security, network security, cloud security and security automation through documented authorized labs and technical projects.
+**Primary message:** A CompTIA Security+ Certified (SY0-701) cybersecurity practitioner with 12+ years of enterprise IT/infrastructure experience, demonstrating SOC analysis, detection engineering, incident response/DFIR, Windows/AD security, network security, cloud security and security automation through documented authorized labs and technical projects.
 
 **Proof pattern:** scenario → environment → telemetry/evidence → analysis → detection/findings → remediation → validation.
 

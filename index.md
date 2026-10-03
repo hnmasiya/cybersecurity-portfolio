@@ -22,7 +22,7 @@ If you are reviewing this portfolio for a cybersecurity role, start with the **[
 
 ## 👤 About Me
 
-I am a **CompTIA Security+ certified enterprise IT professional with 12+ years of experience** (since March 2014), deliberately transitioning that foundation into cybersecurity. My paid professional experience is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated in this portfolio come from independent, authorized hands-on labs, technical projects, and coursework across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.
+I am a **CompTIA Security+ Certified (SY0-701) enterprise IT professional with 12+ years of experience** (since March 2014), deliberately transitioning that foundation into cybersecurity. My paid professional experience is in enterprise IT/infrastructure; the cybersecurity capabilities demonstrated in this portfolio come from independent, authorized hands-on labs, technical projects, and coursework across Security Operations, SIEM, incident investigation, network security, digital forensics, threat hunting, and security automation.
 
 My professional background includes supporting **enterprise sites and business-critical IT infrastructure**, with experience across Windows Server, Active Directory, endpoint security, networking, access control, system hardening, patch management, troubleshooting, and infrastructure operations.
 
@@ -271,7 +271,7 @@ The repository contains supporting screenshots and structured security reports.
 
 ## 📜 Professional Credentials
 
-* **CompTIA Security+**
+* **CompTIA Security+ Certified (SY0-701)**
 * **Google Cybersecurity Certificate**
 * **Google IT Support Certificate**
 
