@@ -116,6 +116,36 @@
             z-index: 0;
         }
 
+        /* Top Reading Progress Bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Keyboard Hints Banner */
+        .kb-hint-banner {
+            background: rgba(16, 185, 129, 0.08);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            padding: 0.35rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-green);
+        }
+        .kbd-key {
+            background: var(--bg-terminal);
+            border: 1px solid var(--border-highlight);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            color: var(--text-primary);
+        }
+
         /* Header Navigation */
         header {
             position: sticky;
@@ -497,9 +527,9 @@
         }
 
         /* Back To Top Button */
-        
-        
-        
+        #backToTop { position:fixed; bottom:2rem; right:2rem; background:var(--bg-card); border:1px solid var(--border-highlight); color:var(--accent-green); padding:.6rem .9rem; border-radius:8px; font-family:'IBM Plex Mono',monospace; font-size:.85rem; cursor:pointer; opacity:0; pointer-events:none; transition:all .3s ease; z-index:999; }
+        #backToTop.show { opacity:1; pointer-events:auto; }
+        #backToTop:hover { border-color:var(--accent-green); background:rgba(16,185,129,.1); }
 
         footer {
             border-top: 1px solid var(--border);
@@ -574,6 +604,12 @@
 
 </head>
 <body>
+    <div id="progress-bar"></div>
+
+    <div class="kb-hint-banner">
+        💡 Quick Navigation: Press <span class="kbd-key">1</span> Work | <span class="kbd-key">2</span> Skills | <span class="kbd-key">3</span> Certs | <span class="kbd-key">4</span> Contact | <span class="kbd-key">T</span> Theme
+    </div>
+
     <header>
         <div class="nav-container">
             <a href="./" class="logo">
@@ -589,6 +625,7 @@
                     <li><a href="#certs">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="btn-nav-action" onclick="openTerminalModal()">💻 CLI Terminal</button>
                 <button class="btn-nav-action" onclick="toggleTheme()">🌓 Theme</button>
             </nav>
         </div>
@@ -1282,6 +1319,32 @@ Caller User: 'bad_actor_admin'</code>
         </div>
     </div>
 
+    <!-- Interactive Terminal CLI Modal -->
+    <div id="terminalModal" class="modal-overlay" onclick="closeTerminalModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="hideTerminalModal()">&times;</button>
+            <h3 style="color: var(--accent-green); font-family:'IBM Plex Mono', monospace;">Interactive SOC Shell</h3>
+            <p style="color: var(--text-muted); font-size: 0.8rem; font-family:'IBM Plex Mono', monospace; margin-top:0.25rem;">
+                Type 'help' to see list of supported commands.
+            </p>
+            
+            <div id="terminal-box">
+                <div>Hazvinei Masiya Portfolio Shell v1.0 [SOC-OS]</div>
+                <div>Type 'help' for available commands.</div>
+                <div id="terminal-history"></div>
+                <div class="terminal-input-line">
+                    <span>user@masiya-hub:~$</span>
+                    <input type="text" id="terminal-input" onkeydown="handleTerminalCommand(event)" autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
+
+    <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
+
     <footer>
         <div class="container">
             <p>© 2026 Hazvinei Nomatter Masiya • Harare, Zimbabwe</p>
@@ -1290,6 +1353,25 @@ Caller User: 'bad_actor_admin'</code>
     </footer>
 
     <script>
+        // Reading Progress Indicator & Scroll-to-Top
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+
+            let topBtn = document.getElementById("backToTop");
+            if (winScroll > 300) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         // Copy Terminal Snippets
         function copyTerminal(btn) {
             let snippet = btn.closest('.terminal-preview').querySelector('.code-snippet').innerText;
@@ -1327,6 +1409,63 @@ Caller User: 'bad_actor_admin'</code>
                 }
             });
         }
+
+        // Reliable keyboard navigation
+        function navigateToSection(id) {
+            const target = document.getElementById(id);
+            if (!target) return false;
+
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+            if (history.replaceState) {
+                history.replaceState(null, '', '#' + id);
+            } else {
+                window.location.hash = '#' + id;
+            }
+
+            return true;
+        }
+
+        document.addEventListener('keydown', function(e) {
+            const tag = e.target && e.target.tagName
+                ? e.target.tagName.toUpperCase()
+                : '';
+
+            if (
+                tag === 'INPUT' ||
+                tag === 'TEXTAREA' ||
+                (e.target && e.target.isContentEditable)
+            ) {
+                return;
+            }
+
+            switch (e.key) {
+                case '1':
+                    e.preventDefault();
+                    navigateToSection('work');
+                    break;
+                case '2':
+                    e.preventDefault();
+                    navigateToSection('snapshot');
+                    break;
+                case '3':
+                    e.preventDefault();
+                    navigateToSection('certs');
+                    break;
+                case '4':
+                    e.preventDefault();
+                    navigateToSection('contact');
+                    break;
+                case 't':
+                case 'T':
+                    e.preventDefault();
+                    toggleTheme();
+                    break;
+            }
+        });
 
         // Overview Modal
         function showModal(title, desc) {
