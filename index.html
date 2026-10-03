@@ -1400,10 +1400,10 @@ Caller User: 'bad_actor_admin'</code>
   }
   function applyResumeLink(variant){
     link.href=`resume-variants/pdf/${variant}.pdf`;
-    link.setAttribute("download","HN Masiya Resume.pdf");
+    link.setAttribute("download","Hazvinei_Masiya_Resume.pdf");
     link.removeAttribute("target");
     link.setAttribute("rel","noopener");
-    link.setAttribute("aria-label","Download HN Masiya Resume.pdf");
+    link.setAttribute("aria-label","Download Hazvinei_Masiya_Resume.pdf");
     link.dataset.variant=variant;
   }
   async function downloadResume(event){
@@ -1415,7 +1415,7 @@ Caller User: 'bad_actor_admin'</code>
       const objectUrl=URL.createObjectURL(blob);
       const anchor=document.createElement("a");
       anchor.href=objectUrl;
-      anchor.download="HN Masiya Resume.pdf";
+      anchor.download="Hazvinei_Masiya_Resume.pdf";
       document.body.appendChild(anchor);
       anchor.click();
       anchor.remove();
