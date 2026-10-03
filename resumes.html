@@ -16,7 +16,7 @@
 <section class="card">
 <h2>HN Masiya Resume</h2>
 <div class="download">
-<a id="download" class="btn" href="resume-variants/pdf/global.pdf" rel="noopener" download="HN Masiya Resume.pdf">📄 View / Download HN Masiya Resume</a>
+<a id="download" class="btn" href="resume-variants/pdf/global.pdf" rel="noopener" download="Hazvinei_Masiya_Resume.pdf">📄 View / Download Hazvinei Masiya Resume</a>
 </div>
 </section>
 </main>
@@ -47,10 +47,10 @@ function variantFor(code){
 function applyResumeLink(variant){
  const link=document.getElementById("download");
  link.href="resume-variants/pdf/"+variant+".pdf";
- link.setAttribute("download","HN Masiya Resume.pdf");
+ link.setAttribute("download","Hazvinei_Masiya_Resume.pdf");
  link.removeAttribute("target");
  link.setAttribute("rel","noopener");
- link.setAttribute("aria-label","Download HN Masiya Resume.pdf");
+ link.setAttribute("aria-label","Download Hazvinei_Masiya_Resume.pdf");
  link.dataset.variant=variant;
 }
 async function downloadResume(event){
@@ -64,7 +64,7 @@ async function downloadResume(event){
    const objectUrl=URL.createObjectURL(blob);
    const anchor=document.createElement("a");
    anchor.href=objectUrl;
-   anchor.download="HN Masiya Resume.pdf";
+   anchor.download="Hazvinei_Masiya_Resume.pdf";
    document.body.appendChild(anchor);
    anchor.click();
    anchor.remove();
