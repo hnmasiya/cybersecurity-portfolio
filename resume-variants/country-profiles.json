@@ -1,6 +1,7 @@
 {
   "default": {
     "label": "International Resume",
+    "credential_standard": "CompTIA Security+ Certified (SY0-701)",
     "page_size": "A4",
     "margin": "0.30in 0.42in",
     "document_term": "Resume",
