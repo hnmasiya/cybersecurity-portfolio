@@ -145,7 +145,7 @@ Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage auto
 ## 🎓 Certifications & Professional Credentials
 
 ### Cybersecurity & Security
-- **CompTIA Security+ (SY0-701)** — Certified
+- **CompTIA Security+ Certified (SY0-701)**
 - **Introduction to AI Security** — AI Security University
 - **GRC Fundamentals** — CyberExam
 - **ICSI | CNS Certified Network Security Specialist**
