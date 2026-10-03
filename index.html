@@ -1372,6 +1372,102 @@ Caller User: 'bad_actor_admin'</code>
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Interactive CLI Terminal
+        function openTerminalModal() {
+            const modal = document.getElementById('terminalModal');
+            const input = document.getElementById('terminal-input');
+            if (!modal) return;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            if (input) {
+                input.value = '';
+                setTimeout(() => input.focus(), 50);
+            }
+        }
+
+        function hideTerminalModal() {
+            const modal = document.getElementById('terminalModal');
+            if (!modal) return;
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function closeTerminalModal(e) {
+            if (e && e.target && e.target.id === 'terminalModal') hideTerminalModal();
+        }
+
+        function appendTerminalLine(text, className) {
+            const history = document.getElementById('terminal-history');
+            if (!history) return;
+            const line = document.createElement('div');
+            if (className) line.className = className;
+            line.textContent = text;
+            history.appendChild(line);
+            const box = document.getElementById('terminal-box');
+            if (box) box.scrollTop = box.scrollHeight;
+        }
+
+        function handleTerminalCommand(event) {
+            if (event.key !== 'Enter') return;
+            const input = event.target;
+            const command = input.value.trim().toLowerCase();
+            if (!command) return;
+
+            appendTerminalLine('user@masiya-hub:~$ ' + input.value);
+            input.value = '';
+
+            const commands = {
+                help: [
+                    'Available commands:',
+                    '  help     Show available commands',
+                    '  whoami   Show professional profile',
+                    '  skills   Show core security skills',
+                    '  certs    Show certifications',
+                    '  contact  Show contact options',
+                    '  clear    Clear terminal output'
+                ],
+                whoami: [
+                    'Hazvinei Nomatter Masiya',
+                    'Cybersecurity Professional | Security Operations | Detection Engineering | Incident Response | Automation',
+                    '12+ years enterprise IT experience; transitioning that foundation into cybersecurity.'
+                ],
+                skills: [
+                    'Wazuh SIEM | Splunk | Detection Engineering | DFIR',
+                    'Windows/Sysmon | Active Directory | Network Security | Cloud Security',
+                    'Python | Bash | PowerShell | Terraform | Threat Hunting'
+                ],
+                certs: [
+                    'CompTIA Security+ Certified (SY0-701)',
+                    'Google Cybersecurity Professional Certificate',
+                    'Google IT Support Professional Certificate'
+                ],
+                contact: [
+                    'LinkedIn: linkedin.com/in/hazvinei-masiya',
+                    'Portfolio: masiya-hub.org',
+                    'GitHub: github.com/hnmasiya'
+                ]
+            };
+
+            if (command === 'clear') {
+                const history = document.getElementById('terminal-history');
+                if (history) history.innerHTML = '';
+                return;
+            }
+
+            if (commands[command]) {
+                commands[command].forEach(line => appendTerminalLine(line));
+            } else {
+                appendTerminalLine('Command not found: ' + command + '. Type \'help\' for available commands.');
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('terminalModal');
+                if (modal && modal.style.display === 'flex') hideTerminalModal();
+            }
+        });
+
         // Copy Terminal Snippets
         function copyTerminal(btn) {
             let snippet = btn.closest('.terminal-preview').querySelector('.code-snippet').innerText;
