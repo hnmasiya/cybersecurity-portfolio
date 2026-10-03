@@ -1,0 +1,189 @@
+{
+  "summary": {
+    "containers_analyzed": 8,
+    "findings": 14,
+    "critical": 1,
+    "high": 10,
+    "medium": 3
+  },
+  "results": [
+    {
+      "name": "single-node-wazuh.dashboard-1",
+      "findings": [
+        {
+          "check": "CTR-003",
+          "finding": "Hardcoded secret in environment variable",
+          "severity": "HIGH",
+          "detail": "env.INDEXER_PASSWORD",
+          "mitre_attack": {
+            "technique": "T1552.001",
+            "name": "Credentials In Files",
+            "tactic": "Credential Access"
+          }
+        },
+        {
+          "check": "CTR-003",
+          "finding": "Hardcoded secret in environment variable",
+          "severity": "HIGH",
+          "detail": "env.DASHBOARD_PASSWORD",
+          "mitre_attack": {
+            "technique": "T1552.001",
+            "name": "Credentials In Files",
+            "tactic": "Credential Access"
+          }
+        },
+        {
+          "check": "CTR-003",
+          "finding": "Hardcoded secret in environment variable",
+          "severity": "HIGH",
+          "detail": "env.API_PASSWORD",
+          "mitre_attack": {
+            "technique": "T1552.001",
+            "name": "Credentials In Files",
+            "tactic": "Credential Access"
+          }
+        }
+      ]
+    },
+    {
+      "name": "single-node-wazuh.manager-1",
+      "findings": [
+        {
+          "check": "CTR-001",
+          "finding": "Container runs as root",
+          "severity": "HIGH",
+          "detail": "user=''",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        },
+        {
+          "check": "CTR-003",
+          "finding": "Hardcoded secret in environment variable",
+          "severity": "HIGH",
+          "detail": "env.INDEXER_PASSWORD",
+          "mitre_attack": {
+            "technique": "T1552.001",
+            "name": "Credentials In Files",
+            "tactic": "Credential Access"
+          }
+        },
+        {
+          "check": "CTR-003",
+          "finding": "Hardcoded secret in environment variable",
+          "severity": "HIGH",
+          "detail": "env.API_PASSWORD",
+          "mitre_attack": {
+            "technique": "T1552.001",
+            "name": "Credentials In Files",
+            "tactic": "Credential Access"
+          }
+        }
+      ]
+    },
+    {
+      "name": "single-node-wazuh.indexer-1",
+      "findings": []
+    },
+    {
+      "name": "hbbs",
+      "findings": [
+        {
+          "check": "CTR-001",
+          "finding": "Container runs as root",
+          "severity": "HIGH",
+          "detail": "user=''",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        }
+      ]
+    },
+    {
+      "name": "hbbr",
+      "findings": [
+        {
+          "check": "CTR-001",
+          "finding": "Container runs as root",
+          "severity": "HIGH",
+          "detail": "user=''",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        }
+      ]
+    },
+    {
+      "name": "portainer",
+      "findings": [
+        {
+          "check": "CTR-001",
+          "finding": "Container runs as root",
+          "severity": "HIGH",
+          "detail": "user=''",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        },
+        {
+          "check": "CTR-002",
+          "finding": "Unpinned base image tag",
+          "severity": "MEDIUM",
+          "detail": "image='portainer/portainer-ce:latest'"
+        },
+        {
+          "check": "CTR-005",
+          "finding": "Docker socket mounted into container",
+          "severity": "CRITICAL",
+          "detail": "/var/run/docker.sock:/var/run/docker.sock:rw",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        }
+      ]
+    },
+    {
+      "name": "juice-shop",
+      "findings": [
+        {
+          "check": "CTR-002",
+          "finding": "Unpinned base image tag",
+          "severity": "MEDIUM",
+          "detail": "image='bkimminich/juice-shop:latest'"
+        }
+      ]
+    },
+    {
+      "name": "wireshark",
+      "findings": [
+        {
+          "check": "CTR-001",
+          "finding": "Container runs as root",
+          "severity": "HIGH",
+          "detail": "user=''",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        },
+        {
+          "check": "CTR-002",
+          "finding": "Unpinned base image tag",
+          "severity": "MEDIUM",
+          "detail": "image='lscr.io/linuxserver/wireshark:latest'"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "containers_analyzed": 3,
+    "findings": 7,
+    "critical": 2,
+    "high": 2,
+    "medium": 3
+  },
+  "results": [
+    {
+      "name": "legacy-web-app",
+      "findings": [
+        {
+          "check": "CTR-001",
+          "finding": "Container runs as root",
+          "severity": "HIGH",
+          "detail": "user='root'",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        },
+        {
+          "check": "CTR-002",
+          "finding": "Unpinned base image tag",
+          "severity": "MEDIUM",
+          "detail": "image='myapp:latest'"
+        },
+        {
+          "check": "CTR-003",
+          "finding": "Hardcoded secret in environment variable",
+          "severity": "HIGH",
+          "detail": "env.API_KEY",
+          "mitre_attack": {
+            "technique": "T1552.001",
+            "name": "Credentials In Files",
+            "tactic": "Credential Access"
+          }
+        },
+        {
+          "check": "CTR-004",
+          "finding": "Container running in privileged mode",
+          "severity": "CRITICAL",
+          "detail": "privileged=true",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        },
+        {
+          "check": "CTR-005",
+          "finding": "Docker socket mounted into container",
+          "severity": "CRITICAL",
+          "detail": "/var/run/docker.sock:/var/run/docker.sock",
+          "mitre_attack": {
+            "technique": "T1611",
+            "name": "Escape to Host",
+            "tactic": "Privilege Escalation"
+          }
+        }
+      ]
+    },
+    {
+      "name": "legacy-monitoring-agent",
+      "findings": [
+        {
+          "check": "CTR-002",
+          "finding": "Unpinned base image tag",
+          "severity": "MEDIUM",
+          "detail": "image='monitoring-agent'"
+        },
+        {
+          "check": "CTR-006",
+          "finding": "Container using host network mode",
+          "severity": "MEDIUM",
+          "detail": "network_mode=host"
+        }
+      ]
+    },
+    {
+      "name": "hardened-api",
+      "findings": []
+    }
+  ]
+}

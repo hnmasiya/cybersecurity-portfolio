@@ -1,0 +1,55 @@
+Sep 24 08:20:53 normann-ThinkPad-X260 sudo[48506]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/var/ossec/bin/wazuh-control status
+Sep 24 08:20:53 normann-ThinkPad-X260 sudo[48506]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:20:54 normann-ThinkPad-X260 sudo[48506]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:21:11 normann-ThinkPad-X260 sudo[48609]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/grep -nE <server>|<address>|<port>|<protocol>|<log_format>|<localfile> /var/ossec/etc/ossec.conf
+Sep 24 08:21:11 normann-ThinkPad-X260 sudo[48609]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:21:11 normann-ThinkPad-X260 sudo[48609]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:21:23 normann-ThinkPad-X260 sudo[48650]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/tail -50 /var/ossec/logs/ossec.log
+Sep 24 08:21:23 normann-ThinkPad-X260 sudo[48650]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:21:23 normann-ThinkPad-X260 sudo[48650]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:21:39 normann-ThinkPad-X260 sudo[48715]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/grep -n <localfile> /var/ossec/etc/ossec.conf
+Sep 24 08:21:39 normann-ThinkPad-X260 sudo[48715]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:21:39 normann-ThinkPad-X260 sudo[48715]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:21:51 normann-ThinkPad-X260 sudo[48751]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/grep -nE auth.log|syslog|secure|audit|apache|nginx|docker /var/ossec/etc/ossec.conf
+Sep 24 08:21:51 normann-ThinkPad-X260 sudo[48751]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:21:51 normann-ThinkPad-X260 sudo[48751]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:24:11 normann-ThinkPad-X260 sudo[49451]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/var/ossec/bin/wazuh-control info
+Sep 24 08:24:11 normann-ThinkPad-X260 sudo[49451]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:24:11 normann-ThinkPad-X260 sudo[49451]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:24:20 normann-ThinkPad-X260 sudo[49495]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/var/ossec/bin/wazuh-agentd -V
+Sep 24 08:24:20 normann-ThinkPad-X260 sudo[49495]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:24:20 normann-ThinkPad-X260 sudo[49495]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:25:02 normann-ThinkPad-X260 CRON[49657]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:25:02 normann-ThinkPad-X260 CRON[49657]: pam_unix(cron:session): session closed for user root
+Sep 24 08:29:29 normann-ThinkPad-X260 sudo[50687]:  normann : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-baseline.sh
+Sep 24 08:29:29 normann-ThinkPad-X260 sudo[50687]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:29:39 normann-ThinkPad-X260 sudo[50687]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:30:01 normann-ThinkPad-X260 CRON[51495]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:30:01 normann-ThinkPad-X260 CRON[51495]: pam_unix(cron:session): session closed for user root
+Sep 24 08:35:01 normann-ThinkPad-X260 CRON[53299]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:35:01 normann-ThinkPad-X260 CRON[53299]: pam_unix(cron:session): session closed for user root
+Sep 24 08:35:21 normann-ThinkPad-X260 sudo[53375]:  normann : TTY=pts/1 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-telemetry-validation.sh
+Sep 24 08:35:21 normann-ThinkPad-X260 sudo[53375]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]:     root : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=0)
+Sep 24 08:35:25 normann-ThinkPad-X260 sudo[53469]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:35:42 normann-ThinkPad-X260 sudo[53375]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:39:01 normann-ThinkPad-X260 CRON[54450]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:39:01 normann-ThinkPad-X260 CRON[54450]: pam_unix(cron:session): session closed for user root
+Sep 24 08:40:56 normann-ThinkPad-X260 sudo[54945]:  normann : TTY=pts/1 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-manager-alert-validation.sh
+Sep 24 08:40:56 normann-ThinkPad-X260 sudo[54945]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:40:59 normann-ThinkPad-X260 sudo[55329]:     root : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 08:40:59 normann-ThinkPad-X260 sudo[55329]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=0)
+Sep 24 08:40:59 normann-ThinkPad-X260 sudo[55329]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:41:31 normann-ThinkPad-X260 sudo[54945]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:45:01 normann-ThinkPad-X260 CRON[57240]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Sep 24 08:45:01 normann-ThinkPad-X260 CRON[57240]: pam_unix(cron:session): session closed for user root
+Sep 24 08:46:19 normann-ThinkPad-X260 pkexec[57624]: pam_unix(polkit-1:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:47:07 normann-ThinkPad-X260 sudo[57775]:  normann : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-manager-alert-validation.sh
+Sep 24 08:47:07 normann-ThinkPad-X260 sudo[57775]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]:     root : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=0)
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:47:41 normann-ThinkPad-X260 sudo[57775]: pam_unix(sudo:session): session closed for user root
+Sep 24 08:50:48 normann-ThinkPad-X260 sudo[58989]:  normann : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-soc-investigation.sh
+Sep 24 08:50:48 normann-ThinkPad-X260 sudo[58989]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)

@@ -1,0 +1,6 @@
+{"timestamp_utc": "2026-09-24T13:55:03.248695+00:00", "event_type": "raw_log", "message": "2026-09-24T11:00:00Z INFO  web01 normal request volume", "source": "local_training_input"}
+{"timestamp_utc": "2026-09-24T13:55:03.248883+00:00", "event_type": "raw_log", "message": "2026-09-24T11:05:00Z WARN  web01 repeated authentication failures", "source": "local_training_input"}
+{"timestamp_utc": "2026-09-24T13:55:03.248983+00:00", "event_type": "raw_log", "message": "2026-09-24T11:07:00Z WARN  web01 account lockout threshold reached", "source": "local_training_input"}
+{"timestamp_utc": "2026-09-24T13:55:03.249055+00:00", "event_type": "raw_log", "message": "2026-09-24T11:12:00Z INFO  analyst alert triage started", "source": "local_training_input"}
+{"timestamp_utc": "2026-09-24T13:55:03.249150+00:00", "event_type": "raw_log", "message": "2026-09-24T11:20:00Z INFO  analyst source isolated in synthetic scenario", "source": "local_training_input"}
+{"timestamp_utc": "2026-09-24T13:55:03.249223+00:00", "event_type": "raw_log", "message": "2026-09-24T11:35:00Z INFO  analyst remediation completed in synthetic scenario", "source": "local_training_input"}

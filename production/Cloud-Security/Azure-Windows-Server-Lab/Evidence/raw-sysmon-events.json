@@ -1,0 +1,108 @@
+[
+    {
+        "windows_event_id":  1,
+        "image":  "dsregcmd.exe",
+        "command_line":  "\"C:\\Windows\\System32\\dsregcmd.exe\" $(Arg0) $(Arg1) $(Arg2)",
+        "parent_process":  "svchost.exe",
+        "timestamp":  "2026-08-26T15:37:23.5745160+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "bfetoolwin8.exe",
+        "command_line":  "\"C:\\WindowsAzure\\Packages\\BfeToolWin8.exe\"",
+        "parent_process":  "windowsazureguestagent.exe",
+        "timestamp":  "2026-08-26T15:37:17.0374327+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "svchost.exe",
+        "command_line":  "C:\\Windows\\System32\\svchost.exe -k netsvcs -p -s NetSetupSvc",
+        "parent_process":  "services.exe",
+        "timestamp":  "2026-08-26T15:34:29.4460895+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "microsoftedgeupdate.exe",
+        "command_line":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\" /ua /installsource core",
+        "parent_process":  "microsoftedgeupdate.exe",
+        "timestamp":  "2026-08-26T15:30:27.5391272+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "svchost.exe",
+        "command_line":  "C:\\Windows\\System32\\svchost.exe -k netsvcs -p -s NetSetupSvc",
+        "parent_process":  "services.exe",
+        "timestamp":  "2026-08-26T15:30:06.4230803+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "microsoftedgeupdate.exe",
+        "command_line":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\" /ua /installsource scheduler",
+        "parent_process":  "svchost.exe",
+        "timestamp":  "2026-08-26T15:27:01.7602350+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "mousocoreworker.exe",
+        "command_line":  "C:\\Windows\\System32\\mousocoreworker.exe -Embedding",
+        "parent_process":  "svchost.exe",
+        "timestamp":  "2026-08-26T15:26:55.6700765+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "usoclient.exe",
+        "command_line":  "\"C:\\Windows\\system32\\usoclient.exe\" StartScan",
+        "parent_process":  "svchost.exe",
+        "timestamp":  "2026-08-26T15:26:55.6383562+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "notepad.exe",
+        "command_line":  "\"C:\\Windows\\system32\\notepad.exe\"",
+        "parent_process":  "powershell.exe",
+        "timestamp":  "2026-08-26T15:26:10.2752370+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "svchost.exe",
+        "command_line":  "C:\\Windows\\System32\\svchost.exe -k netsvcs -p -s NetSetupSvc",
+        "parent_process":  "services.exe",
+        "timestamp":  "2026-08-26T15:24:05.8868768+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "unsecapp.exe",
+        "command_line":  "C:\\Windows\\system32\\wbem\\unsecapp.exe -Embedding",
+        "parent_process":  "svchost.exe",
+        "timestamp":  "2026-08-26T15:23:40.9808241+00:00"
+    },
+    {
+        "windows_event_id":  1,
+        "image":  "sysmon64.exe",
+        "command_line":  "C:\\Windows\\Sysmon64.exe",
+        "parent_process":  "services.exe",
+        "timestamp":  "2026-08-26T15:23:40.9796108+00:00"
+    },
+    {
+        "windows_event_id":  3,
+        "image":  "powershell.exe",
+        "destination_port":  443,
+        "timestamp":  "2026-08-26T15:38:09.7968565+00:00"
+    },
+    {
+        "windows_event_id":  3,
+        "image":  "powershell.exe",
+        "destination_port":  443,
+        "timestamp":  "2026-08-26T15:30:06.2310411+00:00"
+    },
+    {
+        "windows_event_id":  3,
+        "image":  "powershell.exe",
+        "destination_port":  443,
+        "timestamp":  "2026-08-26T15:26:14.2746185+00:00"
+    },
+    {
+        "windows_event_id":  4625,
+        "timestamp":  "2026-08-26T13:22:21.9224169+00:00"
+    }
+]

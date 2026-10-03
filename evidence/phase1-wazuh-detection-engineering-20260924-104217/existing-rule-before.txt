@@ -1,0 +1,6 @@
+<group name="lab5,detection_engineering,">
+  <rule id="100500" level="7">
+    <match>LAB5-DETECTION-ENGINEERING</match>
+    <description>LAB5: Controlled detection engineering test marker detected.</description>
+  </rule>
+</group>

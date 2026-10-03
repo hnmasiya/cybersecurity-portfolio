@@ -1,0 +1,37 @@
+[
+  {
+    "alert_id": "ALT-1001",
+    "timestamp": "2026-08-18T02:14:00Z",
+    "source": "EDR",
+    "severity": "HIGH",
+    "description": "Repeated failed login attempts consistent with brute force from source IP 203.0.113.55 against the admin account."
+  },
+  {
+    "alert_id": "ALT-1002",
+    "timestamp": "2026-08-18T02:31:00Z",
+    "source": "SIEM",
+    "severity": "CRITICAL",
+    "description": "Suspicious PowerShell execution launched a process that reached out to malicious-c2-domain.net and downloaded a payload with hash e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855."
+  },
+  {
+    "alert_id": "ALT-1003",
+    "timestamp": "2026-08-18T03:02:00Z",
+    "source": "Firewall",
+    "severity": "LOW",
+    "description": "Port scan detected from internal host 10.0.0.14 against subnet 10.0.0.0/24."
+  },
+  {
+    "alert_id": "ALT-1004",
+    "timestamp": "2026-08-18T03:20:00Z",
+    "source": "DLP",
+    "severity": "MEDIUM",
+    "description": "Possible data exfiltration attempt: large outbound transfer to exfil-storage.example.com flagged for review."
+  },
+  {
+    "alert_id": "ALT-1005",
+    "timestamp": "2026-08-18T03:45:00Z",
+    "source": "WAF",
+    "severity": "HIGH",
+    "description": "SQL injection payload detected in a request targeting the web application at 198.51.100.23."
+  }
+]

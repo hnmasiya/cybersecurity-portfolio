@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-08-27T19:44:39.970+0000",
+  "rule": {
+    "level": 12,
+    "description": "Persistence: registry Run key value added",
+    "id": "100211",
+    "mitre": {
+      "id": ["T1547.001"],
+      "tactic": ["Persistence", "Privilege Escalation"],
+      "technique": ["Registry Run Keys / Startup Folder"]
+    },
+    "firedtimes": 1,
+    "groups": ["attack_sim", "persistence", "t1053", "t1547"]
+  },
+  "agent": {
+    "id": "003",
+    "name": "dc01-lab",
+    "ip": "100.79.229.99"
+  },
+  "manager": {
+    "name": "wazuh.manager"
+  },
+  "id": "1787859879.41225115",
+  "decoder": {
+    "name": "windows_eventchannel"
+  },
+  "data": {
+    "win": {
+      "system": {
+        "providerName": "Microsoft-Windows-Sysmon",
+        "eventID": "13",
+        "channel": "Microsoft-Windows-Sysmon/Operational",
+        "computer": "dc01-lab.lab.local"
+      },
+      "eventdata": {
+        "ruleName": "T1060,RunKey",
+        "eventType": "SetValue",
+        "image": "C:\\Windows\\system32\\reg.exe",
+        "targetObject": "HKU\\S-1-5-21-1142096151-3477814874-2866926305-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WazuhLabTest",
+        "details": "C:\\Windows\\Temp\\update.exe",
+        "user": "LAB\\hazvinei"
+      }
+    }
+  },
+  "_note": "Real, live-fired alert for Rules/persistence-run-key-cron.xml's Windows rule (100211), run against dc01-lab via `reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" /v WazuhLabTest /t REG_SZ /d \"C:\\Windows\\Temp\\update.exe\" /f`. This closes out the investigation documented in Rules/persistence-run-key-cron.xml and Evidence/t1053-windows-validation.json: the if_sid=92302 chaining fix (merged in #59) never actually reached the manager on the first deployment attempt - the container's /var/ossec/etc/rules/persistence-run-key-cron.xml was still the pre-chaining revision (confirmed via a `docker exec ... cat` of the on-disk file, which showed the older if_group=sysmon_event_13 version despite the merged fix), so every post-merge live test kept resolving to the community rule 92302, not 100211. A fresh `docker cp` of the actual merged file, verified on-disk before restarting, resolved it: rule 100211 fired at level 12 (firedtimes: 1) and correctly superseded both 92302 (image=reg.exe match) and 92041 (Base64-like pattern heuristic) on the same underlying Sysmon Event ID 13. Captured verbatim via `docker exec single-node-wazuh.manager-1 sh -c 'grep -F \"WazuhLabTest\" /var/ossec/logs/alerts/alerts.json'`, no content altered. This is the last of the 6 combos (3 MITRE techniques x 2 platforms) to get a genuine live-fired alert."
+}
