@@ -18,9 +18,9 @@
 
 ## 👋 Profile
 
-CompTIA Security+ Certified (SY0-701) enterprise IT professional with **12+ years of experience** across enterprise infrastructure, systems administration, networking, access control, endpoint security and business-critical technical operations, deliberately transitioning that foundation into cybersecurity and security operations.
+**CompTIA Security+ Certified (SY0-701) cybersecurity professional with 12+ years of enterprise IT experience across infrastructure, systems administration, Windows/Linux environments, Active Directory, networking, access control, endpoint security, system hardening, and business-critical operations. Transitioning this enterprise foundation into security operations, with hands-on capability demonstrated through completed and authorized labs covering Wazuh SIEM, Splunk, detection engineering, incident investigation, DFIR, Windows/Sysmon telemetry, network security, vulnerability assessment, cloud security, threat hunting, and security automation. Professional experience is clearly separated from independent security work.**
 
-This repository is an **evidence-first technical portfolio** demonstrating SIEM monitoring, detection engineering, incident investigation, DFIR, Windows/Active Directory security, network security, cloud security, application security and security automation.
+This repository is an **evidence-first technical portfolio** demonstrating completed and authorized cybersecurity labs, SIEM monitoring, detection engineering, incident investigation, DFIR, Windows/Active Directory security, network security, cloud security, application security and security automation.
 
 The professional story is intentionally structured as: **Enterprise IT / Infrastructure → Windows / Active Directory / Networking → Security Administration → Cybersecurity → SOC / Detection / Incident Response → Cloud Security → Automation**.
 
