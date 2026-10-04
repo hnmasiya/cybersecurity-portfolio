@@ -113,10 +113,10 @@ A lab is publicly labelled COMPLETE only when all applicable gates below are sat
 | Threat Hunting & Detection Validation | COMPLETED — OFFLINE VALIDATION | HUNT-001/002/003 validator plus JSON/CSV output. |
 | Azure Windows Server Security Lab | COMPLETED — LIVE / REAL LAB | Windows Server 2022 DC deployed/hardened with Security, Sysmon and Wazuh evidence. |
 | GCP Secure Landing Zone | ARCHITECTURE / PREPARED | Terraform/design ready; real GCP organization deployment not evidenced. |
-| Cloud Detection | PENDING VALIDATION | Candidate scenarios documented; live detection execution remains. |
-| IOC Investigation | PENDING VALIDATION | Workflow documented; executed enrichment case not established. |
-| Controlled Phishing / Email Investigation | PENDING VALIDATION | 16-section workflow exists; executed case evidence remains. |
-| SOC Automation | COMPLETED framework; item-level evidence varies | Each automation needs inputs, processing, outputs, errors, tests and limits. |
+| Cloud Detection | OFFLINE VALIDATION | Synthetic GCP Audit Log dataset processed; live GCP validation remains outside scope. |
+| IOC Investigation | CONTROLLED / SYNTHETIC | Synthetic IOC case normalized and format-validated offline; external enrichment not performed. |
+| Controlled Phishing / Email Investigation | CONTROLLED / SYNTHETIC | Synthetic email headers analyzed offline; no live mailbox or external URL/attachment used. |
+| SOC Automation | CONTROLLED / SYNTHETIC | Synthetic alert set processed through the SOC triage workflow with retained output. |
 | AppSec/SAST — Bandit | COMPLETED — LIVE / REAL LAB | High issue remediated; final 0 High, 3 Medium, 10 Low documented. |
 | Active Directory Security Log Parser | COMPLETED supporting project | Event 4728 parser, syntax validation and sanitized test data. |
 | Wazuh SIEM Detection Lab | COMPLETED supporting project | Wazuh/AD detection concept and ATT&CK mapping. |
@@ -628,7 +628,7 @@ Complete only when:
 - [ ] Verification performed.
 - [ ] Evidence retained.
 
-**Status: PENDING VALIDATION.**
+**Status: CONTROLLED / SYNTHETIC.**
 
 ## 20. IOC Investigation
 
@@ -796,7 +796,7 @@ Warnings:
 - [ ] Deploy GCP Landing Zone against a real organization.
 - [ ] Execute cloud-detection scenarios.
 - [ ] Complete IOC enrichment case.
-- [ ] Complete controlled phishing/email case.
+- [x] Complete controlled phishing/email case using retained synthetic headers and offline analysis.
 - [ ] Add broader benign-vs-suspicious detection tests.
 
 ## 28. Recruiter evidence path
