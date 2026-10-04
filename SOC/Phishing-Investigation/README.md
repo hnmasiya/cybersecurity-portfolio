@@ -29,7 +29,7 @@ No real users are targeted.
 15. Detection opportunities
 16. User-awareness recommendations
 
-Unexecuted analysis is **PENDING VALIDATION**.
+The retained synthetic email exercise is **CONTROLLED / SYNTHETIC**. Live mailbox investigation remains outside scope.
 Synthetic material must be explicitly labelled.
 
 
@@ -39,7 +39,7 @@ Synthetic material must be explicitly labelled.
 
 > **Standard:** Permanent portfolio case-study standard. This mapping preserves the existing content and makes the evidence state explicit without inventing missing execution evidence.
 
-**Evidence state:** PENDING VALIDATION
+**Evidence state:** CONTROLLED / SYNTHETIC
 
 ## 1. Scenario
 Use only the scenario already documented above; no new incident or attacker activity is inferred.
@@ -78,7 +78,7 @@ Skills are limited to those supported by actual retained work and evidence.
 ## 18. Portfolio / SOC Relevance
 The case study is framed as evidence of the corresponding security workflow without overstating professional experience.
 ## 19. Evidence & Limitations
-**PENDING VALIDATION.** Evidence-state limitations, dataset constraints, unperformed steps, and environmental restrictions remain explicit.
+**CONTROLLED / SYNTHETIC.** The retained email, parser and validation report are reproducible training evidence; no live mailbox, user, external URL or production telemetry was used.
 ## 20. References / Source Material
 The existing linked artifacts, reports, scripts, datasets, standards, and source material remain authoritative.
 

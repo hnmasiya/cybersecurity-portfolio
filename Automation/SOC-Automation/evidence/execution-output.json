@@ -1,0 +1,35 @@
+{
+  "evidence_state": "CONTROLLED / SYNTHETIC",
+  "summary": {
+    "total": 3,
+    "escalate": 1,
+    "investigate": 1,
+    "monitor": 1
+  },
+  "alerts": [
+    {
+      "alert_id": "SYN-001",
+      "severity": "HIGH",
+      "priority": "P2",
+      "disposition": "ESCALATE",
+      "iocs": {"ipv4": ["198.51.100.23"], "domains": [], "sha256": []},
+      "mitre_attack": ["T1110"]
+    },
+    {
+      "alert_id": "SYN-002",
+      "severity": "MEDIUM",
+      "priority": "P3",
+      "disposition": "INVESTIGATE",
+      "iocs": {"ipv4": [], "domains": [], "sha256": []},
+      "mitre_attack": ["T1059.001"]
+    },
+    {
+      "alert_id": "SYN-003",
+      "severity": "LOW",
+      "priority": "P4",
+      "disposition": "MONITOR",
+      "iocs": {"ipv4": [], "domains": [], "sha256": []},
+      "mitre_attack": ["T1595"]
+    }
+  ]
+}

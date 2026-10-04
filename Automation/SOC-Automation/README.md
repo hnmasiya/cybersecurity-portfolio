@@ -1,6 +1,6 @@
 # SOC Automation
 
-> **Evidence classification: Hands-on automation / methodology**
+> **Evidence classification: CONTROLLED / SYNTHETIC**
 
 This project demonstrates practical automation for repetitive SOC analyst work using Python, Bash and PowerShell. The objective is to reduce manual processing while keeping security decisions explainable, auditable and human-controlled.
 
@@ -46,7 +46,7 @@ The strongest use case is repeatability: normalize evidence consistently, extrac
 
 > **Standard:** Permanent portfolio case-study standard. This record is an explicit mapping of this lab to the repository's 20-section evidence framework. Existing technical detail and retained artifacts above remain authoritative; this section does not create new execution claims.
 
-**Evidence state:** ARCHITECTURE / METHODOLOGY
+**Evidence state:** CONTROLLED / SYNTHETIC
 
 ## 1. Scenario
 The scenario documented in this README is the authoritative scenario. No additional scenario is inferred.
@@ -103,7 +103,7 @@ Skills are limited to capabilities evidenced by the documented work: investigati
 This case study demonstrates how the documented work maps to SOC, detection engineering, DFIR, cloud security, vulnerability management, or security automation workflows without claiming production employment experience.
 
 ## 19. Evidence & Limitations
-Evidence classification is explicit: **ARCHITECTURE / METHODOLOGY**. Synthetic, offline, architectural, pending, or virtual evidence must not be represented as live production experience. Dataset size, environmental constraints, missing telemetry, and unperformed steps remain limitations.
+Evidence classification is explicit: **CONTROLLED / SYNTHETIC**. The retained synthetic alert set was processed through the SOC triage workflow and the output was preserved. No production SIEM feed or automated containment was used.
 
 ## 20. References / Source Material
 References are the existing linked artifacts, scripts, reports, datasets, vendor documentation, standards, and source material already retained by this lab. No external execution evidence is implied by a reference link alone.

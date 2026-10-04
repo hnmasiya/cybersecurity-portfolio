@@ -33,7 +33,7 @@ Do not call an IOC malicious merely because a tool or source was not checked. Re
 
 > Permanent case-study standard mapping. Existing content and artifacts remain authoritative; this section introduces no new execution claims.
 
-**Evidence state:** PENDING VALIDATION
+**Evidence state:** CONTROLLED / SYNTHETIC
 
 ## 1. Scenario
 Use only the documented scenario above.
@@ -72,7 +72,7 @@ Claim only skills evidenced by retained work.
 ## 18. Portfolio / SOC Relevance
 Map the evidence to the relevant security workflow without overstating professional experience.
 ## 19. Evidence & Limitations
-**PENDING VALIDATION.** Preserve dataset, environment, telemetry, and unperformed-step limitations.
+**CONTROLLED / SYNTHETIC.** The retained IOC case uses documentation-only and non-routable training indicators; no external reputation or production telemetry was used.
 ## 20. References / Source Material
 Existing linked artifacts, reports, scripts, datasets, standards, and source material remain authoritative.
 
