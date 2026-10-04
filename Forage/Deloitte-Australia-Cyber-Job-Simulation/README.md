@@ -3,48 +3,130 @@
 **Completed:** October 4, 2026  
 **Platform:** Forage  
 **Provider:** Deloitte Australia  
-**Simulation:** Cyber
+**Program:** Cyber
 
-## Overview
+## Scenario
 
-Completed the Deloitte Australia Cyber Job Simulation on Forage, working through a simulated cybersecurity breach investigation focused on web activity logs and suspicious user activity.
+A simulated cybersecurity breach investigation focused on web activity logs, suspicious user behaviour, networking, authentication and web security.
 
-The official Forage simulation describes the experience as a self-paced virtual job simulation covering **Computer Networking, Log Analysis, and Web Security**. The task involved helping a client determine the source of a data breach and identifying suspicious user activity from web activity logs.
+## Business Context
 
-## Work Completed
+The exercise placed the learner in a simulated client investigation where a status dashboard was suspected of being involved in a breach. The objective was to determine whether the activity could represent unauthorized access and identify suspicious requests in the supplied web activity logs.
 
-- Completed a job simulation involving **reading and analysing web activity logs**.
-- Supported a simulated client investigation into a **cybersecurity breach**.
-- Analysed dashboard request sequences to distinguish normal human browsing from suspicious automated activity.
-- Identified indicators associated with automated API requests, including regular once-per-hour status queries without the normal dashboard resource-loading sequence.
-- Applied networking and web-security concepts to assess whether the dashboard could have been accessed directly from the public internet.
-- Answered the simulation questions used to identify suspicious user activity.
+> **Evidence boundary:** This was a controlled Forage virtual job simulation. It was not employment with Deloitte Australia and does not represent a real Deloitte client incident or production engagement.
 
-## Skills Practised
+## Investigation
+
+### Task — Web Activity Log Investigation
+
+The investigation involved:
+
+- Reading and analysing web activity logs.
+- Establishing the normal dashboard access sequence.
+- Assessing authentication and session behaviour.
+- Comparing normal human browsing with anomalous automated requests.
+- Identifying suspicious user activity.
+- Applying networking and web-security concepts to the simulated breach scenario.
+
+[View Investigation Details](task-1/web-log-investigation.md)
+
+## Evidence / Indicators
+
+The supplied activity showed suspicious behaviour associated with:
+
+- **Internal IP:** `192.168.0.101`
+- **User ID:** `mdB7yD2dp1BFZPontHBQ1Z`
+- Requests to the factory status APIs for:
+  - `meiyo`
+  - `seiko`
+  - `shenzhen`
+  - `berlin`
+- Requests occurring at highly regular hourly intervals, including the observed `HH:00:48` timing pattern.
+- API requests occurring without the normal dashboard page/resource-loading sequence.
+
+These indicators were evaluated within the controlled simulation evidence.
+
+## Findings
+
+The normal dashboard workflow included authentication followed by loading the dashboard and its supporting resources before factory-status API requests.
+
+The suspicious sequence differed because the observed activity:
+
+- Repeated at precise hourly intervals.
+- Queried all four factory status APIs.
+- Did not show the expected dashboard resource-loading behaviour.
+- Was therefore consistent with automated polling rather than ordinary interactive browsing.
+
+## Indicators of Suspicion
+
+The strongest indicators were:
+
+1. **Exact periodicity** — repeated requests at the same point each hour.
+2. **API-only behaviour** — status API requests without the surrounding browser resource sequence.
+3. **Multi-factory enumeration** — requests covering all four factory endpoints.
+4. **Session anomaly** — the activity did not follow the normal login/dashboard interaction pattern expected for a new date/session.
+
+These are indicators for investigation, not proof of a real-world compromise.
+
+## Analysis
+
+The exercise demonstrated how web logs can be used to reconstruct user behaviour and distinguish expected application traffic from anomalous automation.
+
+The analysis combined:
+
+- HTTP request sequencing.
+- Authentication/session reasoning.
+- API behaviour analysis.
+- Timing analysis.
+- Network-access considerations.
+- Web-security interpretation.
+
+## Recommended Actions
+
+For a real-world investigation based on similar evidence, appropriate next steps would include:
+
+- Preserve the relevant web and authentication logs.
+- Correlate the suspicious IP and user identity with VPN, endpoint and identity-provider records.
+- Review authentication events around the anomalous activity.
+- Determine whether the account or session was legitimately authorized.
+- Investigate the source process or host generating the periodic API requests.
+- Review API access controls and monitoring.
+- Establish whether any sensitive data or operational functions were accessed or changed.
+- Contain confirmed unauthorized access according to the organization's incident-response process.
+
+These are investigation recommendations derived from the simulated indicators, not actions performed against a real Deloitte environment.
+
+## Skills Demonstrated
 
 - Log Analysis
 - Computer Networking
 - Web Security
-- Suspicious Activity Analysis
 - Incident Investigation
 - Authentication and Session Analysis
 - API Request Analysis
+- Anomalous Activity Detection
 - Security Event Interpretation
+- Analytical Reasoning
+- Technical Documentation
 
-## Evidence / Scope
+## Lessons Learned
 
-This is a **Forage virtual job simulation**, not employment with Deloitte Australia and not a real-world client engagement. The work demonstrates practical application of cybersecurity investigation concepts in a controlled simulation environment.
+- Request sequences can reveal the difference between human browsing and automation.
+- Timing regularity can be a useful anomaly indicator.
+- API activity should be analysed in the context of the application's expected user workflow.
+- Authentication events and application logs should be correlated during investigations.
+- Suspicious indicators should be treated as evidence requiring validation rather than automatically labelled as a confirmed compromise.
+
+## Portfolio Relevance
+
+This simulation strengthens the portfolio's SOC narrative by demonstrating log analysis, suspicious-activity detection, web-security investigation and structured incident reasoning.
+
+It complements the portfolio's Wazuh, network-analysis, offensive-security, incident-response and detection-engineering work.
 
 ## Official Simulation
 
 [View Deloitte Australia Cyber Job Simulation on Forage](https://www.theforage.com/simulations/deloitte-au/cyber-c1e3)
 
-## Portfolio Relevance
+## Evidence Scope
 
-This simulation complements the portfolio's SOC-focused work in:
-
-- Security monitoring and log analysis
-- Incident investigation
-- Network security
-- Web security
-- Detection of anomalous and automated activity
+This repository documents simulated learning activities completed through Forage. It does not claim employment, production access, or a real-world Deloitte Australia engagement.
