@@ -269,7 +269,6 @@ The repository contains supporting screenshots and structured security reports.
 
 ---
 
-
 ## 💼 Forage Job Simulations
 
 ### Deloitte Australia Cyber Job Simulation — October 4, 2026

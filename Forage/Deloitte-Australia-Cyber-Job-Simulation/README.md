@@ -48,4 +48,3 @@ This simulation complements the portfolio's SOC-focused work in:
 - Network security
 - Web security
 - Detection of anomalous and automated activity
-
