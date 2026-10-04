@@ -1,5 +1,5 @@
 <!-- Single cybersecurity-first resume source. Country-aware variants are generated automatically. -->
-<!-- Resume source reviewed with portfolio automation cleanup: 2026-09-27 -->
+<!-- Resume source reviewed with portfolio automation cleanup: 2026-10-04 -->
 
 <style>
   @page { size: A4; margin: 0.30in 0.42in; }
@@ -76,6 +76,11 @@ CompTIA Security+ Certified (SY0-701) cybersecurity professional with 12+ years 
 <div class="project-title">Datacom Cyber Security Operations Job Simulation — Forage | Completed September 20, 2026</div>
 <ul><li>Investigated a simulated cyberattack and documented findings, indicators, response priorities and security recommendations.</li><li>Conducted a comprehensive cybersecurity risk assessment using a 5×5 likelihood/consequence approach across phishing, ransomware, third-party exposure, e-commerce/AWS and remote-access risks.</li><li><b>Skills:</b> information security, OSINT, research, risk assessment, risk management, security analysis, analytical skills and communication.</li></ul>
 <blockquote>Forage virtual job simulations; not employment with Mastercard or Datacom.</blockquote>
+<div class="project-title">Deloitte Australia Cyber Job Simulation — Forage | Completed October 4, 2026</div>
+<ul><li>Analysed simulated web activity logs to investigate suspicious automated API activity and identify abnormal request patterns.</li><li>Applied networking and web-security concepts to assess authentication/session behaviour and potential public-internet exposure.</li><li><b>Skills:</b> log analysis, web security, networking, incident investigation and suspicious-activity analysis.</li></ul>
+<div class="project-title">AIG Shields Up: Cybersecurity Job Simulation — Forage | Completed October 4, 2026</div>
+<ul><li>Researched CISA advisories and reported vulnerabilities, identified affected infrastructure and assessed security risk in a simulated environment.</li><li>Drafted a remediation advisory and completed a controlled ransomware-recovery exercise using Python against provided training material.</li><li><b>Skills:</b> threat analysis, vulnerability research, incident response, security communication and Python.</li></ul>
+<blockquote>Forage virtual job simulations; not employment with Mastercard, Datacom, Deloitte Australia or AIG.</blockquote>
 
 <h2>Certifications & Education</h2>
 <ul><li><b>CompTIA Security+ Certified (SY0-701)</b> — CompTIA</li><li><b>Google Cybersecurity Professional Certificate</b> — Google</li><li><b>Google IT Support Professional Certificate</b> — Google</li><li><b>BSc in Computer Science</b> — Unicaf University (In Progress)</li><li><b>Diploma in Information Technology</b> — Macmaine School of Computing</li><li><b>Diploma in PC Maintenance and Networking</b> — Macmaine School of Computing</li></ul>
