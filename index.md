@@ -20,6 +20,21 @@ If you are reviewing this portfolio for a cybersecurity role, start with the **[
 
 **Evidence standard:** live observations, controlled laboratory validation, synthetic/offline testing and architecture/methodology are explicitly separated. Portfolio work is not represented as production incident experience unless the evidence supports that claim.
 
+## ⚡ 30-Second Recruiter View
+
+**Who I am:** Enterprise IT professional transitioning into cybersecurity with evidence-backed SOC, detection, DFIR, Windows/AD, network, cloud and security-automation work.
+
+**Start with these five signals:**
+1. **SOC investigation** — Flagship LSASS investigation with real Sysmon → Wazuh evidence.
+2. **Detection engineering** — Wazuh and Windows/Sysmon detection validation.
+3. **SIEM operations** — Wazuh plus a six-lab Splunk progression from hunting to incident investigation.
+4. **Infrastructure security** — Azure Windows/AD deployment and GCP/Terraform security architecture.
+5. **Network/Web security** — real PCAP/Nmap evidence plus controlled DVWA/Juice Shop assessments.
+
+**Evidence rule:** Every project is explicitly classified as live/real, controlled/synthetic, offline validation, architecture/methodology, pending validation, or virtual experience.
+
+**Fastest evidence path:** [SOC Evidence Map](./SOC-ANALYST-EVIDENCE-MAP.md) → flagship investigation → detection engineering → Azure/AD → network security → automation.
+
 ## 👤 About Me
 
 CompTIA Security+ Certified (SY0-701) cybersecurity professional with 12+ years of enterprise IT experience across infrastructure, systems administration, Windows/Linux environments, Active Directory, networking, access control, endpoint security, system hardening, and business-critical operations. Transitioning this enterprise foundation into security operations, with hands-on capability demonstrated through completed and authorized labs covering Wazuh SIEM, Splunk, detection engineering, incident investigation, DFIR, Windows/Sysmon telemetry, network security, vulnerability assessment, cloud security, threat hunting, and security automation. Professional experience is clearly separated from independent security work.
