@@ -269,6 +269,22 @@ The repository contains supporting screenshots and structured security reports.
 
 ---
 
+
+## 💼 Forage Job Simulations
+
+### Deloitte Australia Cyber Job Simulation — October 4, 2026
+
+Completed a Deloitte Australia Cyber Job Simulation through Forage focused on a simulated cybersecurity breach investigation.
+
+* Read and analysed web activity logs
+* Supported a simulated client cyber-breach investigation
+* Identified suspicious user activity and automated API request patterns
+* Applied computer networking and web-security concepts to assess access paths
+
+**Skills practised:** Log Analysis · Computer Networking · Web Security · Incident Investigation · Suspicious Activity Analysis
+
+[View Deloitte Australia Cyber Simulation Evidence](./Forage/Deloitte-Australia-Cyber-Job-Simulation/README.md) · [View Forage Simulation](https://www.theforage.com/simulations/deloitte-au/cyber-c1e3)
+
 ## 📜 Professional Credentials
 
 * **CompTIA Security+ Certified (SY0-701)**
