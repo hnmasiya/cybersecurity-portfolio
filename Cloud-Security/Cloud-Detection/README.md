@@ -17,7 +17,7 @@ This extends the existing cloud-security work toward SOC operations rather than 
 
 Use existing Azure/GCP evidence where available.
 
-Unexecuted scenarios must be labelled **PENDING LIVE VALIDATION**.
+The retained GCP detection exercise is **OFFLINE VALIDATION** against a synthetic Cloud Audit Log dataset. Live GCP validation remains outside scope.
 
 
 ---
@@ -26,7 +26,7 @@ Unexecuted scenarios must be labelled **PENDING LIVE VALIDATION**.
 
 > **Standard:** Permanent portfolio case-study standard. This record is an explicit mapping of this lab to the repository's 20-section evidence framework. Existing technical detail and retained artifacts above remain authoritative; this section does not create new execution claims.
 
-**Evidence state:** PENDING VALIDATION
+**Evidence state:** OFFLINE VALIDATION
 
 ## 1. Scenario
 The scenario documented in this README is the authoritative scenario. No additional scenario is inferred.
@@ -83,7 +83,7 @@ Skills are limited to capabilities evidenced by the documented work: investigati
 This case study demonstrates how the documented work maps to SOC, detection engineering, DFIR, cloud security, vulnerability management, or security automation workflows without claiming production employment experience.
 
 ## 19. Evidence & Limitations
-Evidence classification is explicit: **PENDING VALIDATION**. Synthetic, offline, architectural, pending, or virtual evidence must not be represented as live production experience. Dataset size, environmental constraints, missing telemetry, and unperformed steps remain limitations.
+Evidence classification is explicit: **OFFLINE VALIDATION**. The detector was validated against retained synthetic audit events. No live GCP project, Cloud Logging sink or production telemetry was used.
 
 ## 20. References / Source Material
 References are the existing linked artifacts, scripts, reports, datasets, vendor documentation, standards, and source material already retained by this lab. No external execution evidence is implied by a reference link alone.
