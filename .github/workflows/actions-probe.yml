@@ -1,0 +1,12 @@
+name: Actions Startup Probe
+
+on:
+  pull_request:
+
+jobs:
+  probe:
+    name: actions-probe
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe
+        run: echo "GitHub Actions startup probe passed."
