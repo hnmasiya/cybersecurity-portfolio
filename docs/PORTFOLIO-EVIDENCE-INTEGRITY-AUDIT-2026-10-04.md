@@ -21,10 +21,10 @@ This audit reconciles the portfolio's published project claims against the exist
 | Azure Windows Server | Live / real lab | Retain deployment, AD, Security, Sysmon and Wazuh evidence |
 | GCP Project Security | IaC validated, not applied | Keep plan/apply gap explicit |
 | GCP Landing Zone | Architecture / prepared | Do not imply organization-level deployment |
-| Cloud Detection | Pending validation | Keep pending until execution evidence exists |
-| IOC Investigation | Pending validation | Keep pending until executed case evidence exists |
-| Phishing / Email Investigation | Pending validation | Keep pending until executed case evidence exists |
-| SOC Automation | Framework / mixed item evidence | Document each automation's input, processing, output, tests and limits |
+| Cloud Detection | Offline validation | Synthetic audit-log detection validated; keep live deployment boundary explicit |
+| IOC Investigation | Controlled / synthetic | Synthetic indicators normalized and format-validated; no maliciousness verdict or external enrichment claimed |
+| Phishing / Email Investigation | Controlled / synthetic | Synthetic headers analyzed offline; no live mailbox activity claimed |
+| SOC Automation | Controlled / synthetic | Core triage workflow executed against retained synthetic alerts; item-level evidence remains bounded |
 | Bandit / SAST | Live / real lab | Retain final scan/remediation evidence |
 | AD Security Log Parser | Supporting project | Keep parser/test-data boundary explicit |
 | Mastercard / Datacom | Virtual experience | Present separately from employment and independent labs |
