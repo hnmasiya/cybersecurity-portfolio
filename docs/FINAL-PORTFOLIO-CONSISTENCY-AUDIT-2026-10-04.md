@@ -36,10 +36,10 @@ These are execution items, not audit failures.
 
 | Area | Current state | Required before upgrading |
 |---|---|---|
-| Cloud Detection | PENDING VALIDATION | Execute authorized cloud detection scenarios and retain telemetry/results |
-| IOC Investigation | PENDING VALIDATION | Execute a documented IOC case and retain enrichment/analysis evidence |
-| Phishing / Email Investigation | PENDING VALIDATION | Execute a controlled email investigation and retain headers/artifacts/analysis |
-| SOC Automation | ARCHITECTURE / METHODOLOGY | Execute/test automation workflows and retain inputs, outputs, tests and limits |
+| Cloud Detection | OFFLINE VALIDATION | Synthetic audit-log detection validated; live GCP validation remains optional future work |
+| IOC Investigation | CONTROLLED / SYNTHETIC | Synthetic IOC case validated offline; external enrichment remains outside scope |
+| Phishing / Email Investigation | CONTROLLED / SYNTHETIC | Synthetic email headers and parser output retained; live mailbox work remains outside scope |
+| SOC Automation | CONTROLLED / SYNTHETIC | Synthetic alert set processed through the existing triage workflow with retained output |
 | GCP Landing Zone | ARCHITECTURE / METHODOLOGY | Deploy only in an authorized GCP organization/environment |
 | GCP Project Security | IaC/controlled validation boundary | Preserve the plan/apply boundary unless authorized deployment occurs |
 
@@ -62,10 +62,10 @@ No fabricated screenshots, commands, outputs, metrics, incidents, certifications
 
 ## 9. Next evidence-generation order
 
-1. Controlled phishing/email investigation.
-2. IOC investigation and enrichment.
-3. SOC automation execution and testing.
-4. Cloud detection validation.
+1. Optional live/authorized phishing-email validation.
+2. Optional external IOC enrichment validation.
+3. Expand automation tests and additional synthetic datasets.
+4. Optional authorized live cloud validation.
 5. Authorized GCP deployment validation, if an appropriate organization-level environment becomes available.
 
 Every new result should follow the permanent 20-section case-study standard and the protected-main PR workflow.
