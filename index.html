@@ -636,7 +636,7 @@
         <section class="hero">
             <h1 class="hero-title">Hazvinei Nomatter Masiya</h1>
             <div class="hero-subtitle">Cybersecurity Professional · Security Operations · Detection Engineering · Incident Response · Automation</div>
-            <div class="hero-subtitle-secondary">12+ Years Enterprise IT | CompTIA Security+ Certified (SY0-701) | Wazuh SIEM | Detection Engineering</div>
+            <div class="hero-subtitle-secondary">12+ Years Enterprise IT | CompTIA Security+ Certified (SY0-701) | Evidence-First Security Operations</div>
 
             <div class="hero-meta">
                 <span>📍 Harare, Zimbabwe</span>
@@ -646,15 +646,15 @@
 
             <div style="margin: 1.5rem 0; padding: 1.5rem; background: var(--bg-card); border-left: 4px solid var(--accent-green); border-radius: 4px;">
                 <p class="hero-desc" style="margin: 0; font-size: 1.05em; font-weight: 500;">
-                    CompTIA Security+ Certified (SY0-701) cybersecurity professional with 12+ years of enterprise IT experience across infrastructure, systems administration, Windows/Linux environments, Active Directory, networking, access control, endpoint security, system hardening, and business-critical operations. Transitioning this enterprise foundation into security operations, with hands-on capability demonstrated through completed and authorized labs covering Wazuh SIEM, Splunk, detection engineering, incident investigation, DFIR, Windows/Sysmon telemetry, network security, vulnerability assessment, cloud security, threat hunting, and security automation. Professional experience is clearly separated from independent security work.
+                    CompTIA Security+ Certified (SY0-701) cybersecurity professional with 12+ years of enterprise IT experience across infrastructure, systems administration, Windows/Linux, Active Directory, networking, access control and endpoint security. I apply that operational foundation to security operations, detection engineering, incident response and DFIR through evidence-backed, authorized technical work.
                 </p>
             </div>
 
             <div class="btn-cta-group">
-                <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" rel="noopener" class="btn-cta btn-primary">Contact on LinkedIn</a>
+                <a href="#evidence-hubs" class="btn-cta btn-primary">View Security Evidence</a>
+                <a id="resume-download" href="resume-variants/pdf/global.pdf" class="btn-cta btn-outline" download>📄 Download Resume</a>
                 <a href="#work" class="btn-cta btn-outline">Explore Work</a>
-                <a id="resume-download" href="resume-variants/pdf/global.pdf" class="btn-cta btn-outline" download>📄 Resume</a>
-                <a href="https://github.com/hnmasiya" target="_blank" class="btn-cta btn-outline">GitHub</a>
+                <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" rel="noopener" class="btn-cta btn-outline">LinkedIn</a>
             </div>
 
                     </section>
@@ -702,209 +702,8 @@
             </div>
 
             <div class="grid-2">
-                <!-- PCAP Analysis -->
-                <div class="card project-item" data-category="synthetic">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">PCAP Traffic & Triage Automation</h3>
-                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
-                        </div>
-                        <div class="metric-badge">⚡ Automated PCAP Traffic Analysis</div>
-                        <p class="project-desc">Captured packet traffic using tshark to analyze automated web scans, SQL injection payloads, and command execution attempts. Engineered custom Python scripts for automated triage.</p>
-                        
-                        <div class="terminal-preview">
-                            <div class="terminal-header">
-                                <span>ARTIFACT // PCAP_PARSER.PY</span>
-                                <div>
-                                    <span style="margin-right:10px;">MITRE T1190</span>
-                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
-                                </div>
-                            </div>
-<code class="code-snippet">$ python3 pcap_triage.py --file capture.pcap
-[+] Extracting HTTP POST payloads...
-[!] ALERT: SQLi Payload Detected: ' OR 1=1 -- 
-[!] Source IP: 192.168.1.105 -> Targeted Port: 8080</code>
-                        </div>
-
-                        <div class="tag-group">
-                            <span class="tag">Wireshark/Tshark</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Network Forensics</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('PCAP Network Security', 'Captured traffic using tshark to identify automated web scanning and command execution patterns. Uses Python scripts for PCAP triage and IOC extraction.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Network-Security/PCAP-Analysis" target="_blank" class="btn-link">View Artifacts →</a>
-                    </div>
-                </div>
-
-                <!-- Linux Forensics -->
-                <div class="card project-item" data-category="live">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">Linux Incident Response & DFIR</h3>
-                            <span class="project-badge badge-live">Observed Evidence</span>
-                        </div>
-                        <div class="metric-badge">🎯 Reconstructed Attack Timeline from Linux System Logs</div>
-                        <p class="project-desc">Executed deep forensic triage on compromised Linux system logs. Verified SHA-256 evidence hashes, mapped actor techniques to MITRE ATT&CK, and produced post-incident timelines.</p>
-
-                        <div class="terminal-preview">
-                            <div class="terminal-header">
-                                <span>ARTIFACT // AUTH.LOG_ANALYSIS</span>
-                                <div>
-                                    <span style="margin-right:10px;">MITRE T1078</span>
-                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
-                                </div>
-                            </div>
-<code class="code-snippet"># sha256sum /var/log/auth.log
-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-[+] Root session established via SSH key from 10.0.4.12</code>
-                        </div>
-
-                        <div class="tag-group">
-                            <span class="tag">Linux DFIR</span>
-                            <span class="tag">Syslog Audit</span>
-                            <span class="tag">MITRE ATT&CK</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('Linux DFIR Investigation', 'Verified SHA-256 evidence hashes and mapped intruder activities to MITRE ATT&CK to reconstruct a detailed forensic incident timeline.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/DFIR/Linux-Forensics" target="_blank" class="btn-link">View Artifacts →</a>
-                    </div>
-                </div>
-
-                <!-- Wazuh SIEM -->
-                <div class="card project-item" data-category="synthetic">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">Wazuh SIEM Rules & FIM Lab</h3>
-                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
-                        </div>
-                        <div class="metric-badge">🛡️ Custom Wazuh Rules Validated Against Test Events</div>
-                        <p class="project-desc">Deployed Wazuh agents across lab nodes. Authored custom XML detection rules to flag privilege escalation and established File Integrity Monitoring (FIM) for system directories.</p>
-
-                        <div class="terminal-preview">
-                            <div class="terminal-header">
-                                <span>ARTIFACT // WAZUH_LOCAL_RULES.XML</span>
-                                <div>
-                                    <span style="margin-right:10px;">MITRE T1548</span>
-                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
-                                </div>
-                            </div>
-<code class="code-snippet">&lt;rule id="100002" level="10"&gt;
-  &lt;if_sid&gt;5715&lt;/if_sid&gt;
-  &lt;match&gt;sudo: privilege escalation&lt;/match&gt;
-  &lt;description&gt;Possible privilege escalation alert&lt;/description&gt;
-&lt;/rule&gt;</code>
-                        </div>
-
-                        <div class="tag-group">
-                            <span class="tag">Wazuh SIEM</span>
-                            <span class="tag">XML Rules</span>
-                            <span class="tag">FIM</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('Wazuh SIEM Lab', 'Built custom XML detection rules for privilege escalation and configured File Integrity Monitoring on critical system configurations.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Wazuh/Detection-Engineering-Lab" target="_blank" class="btn-link">View Artifacts →</a>
-                    </div>
-                </div>
-
-                <!-- Splunk SOC Lab Track -->
-                <div class="card project-item" data-category="synthetic">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">Splunk SOC Lab Track</h3>
-                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
-                        </div>
-                        <div class="metric-badge">📊 Six Connected SOC Labs · SPL Detection & Investigation</div>
-                        <p class="project-desc">Completed a six-lab Splunk SOC track covering SSH authentication hunting, Windows/Sysmon process investigation, web-attack investigation, SPL detection engineering, SOC monitoring/dashboarding, and end-to-end incident investigation using controlled synthetic telemetry.</p>
-                        <div class="tag-group">
-                            <span class="tag">Splunk</span>
-                            <span class="tag">SPL</span>
-                            <span class="tag">SOC Investigation</span>
-                            <span class="tag">Detection Engineering</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('Splunk SOC Lab Track', 'Six connected, controlled training labs covering authentication hunting, Windows/Sysmon investigation, web attacks, SPL detection logic, SOC monitoring and end-to-end incident investigation. Evidence is synthetic/local training, not production employment experience.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk" target="_blank" rel="noopener noreferrer" class="btn-link">View Splunk Labs →</a>
-                    </div>
-                </div>
-
-                <!-- Active Directory Automation -->
-                <div class="card project-item" data-category="live">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">AD Security Event Automation</h3>
-                            <span class="project-badge badge-live">Observed Evidence</span>
-                        </div>
-                        <div class="metric-badge">🔍 Automated Parsing of Event 4728 & 4625 XML Security Logs</div>
-                        <p class="project-desc">Automated parsing of Windows Security XML event logs (4624, 4625, 4728) using Python to highlight lateral movement, brute force attempts, and unauthorized group escalation.</p>
-
-                        <div class="terminal-preview">
-                            <div class="terminal-header">
-                                <span>ARTIFACT // AD_PARSER.PY</span>
-                                <div>
-                                    <span style="margin-right:10px;">MITRE T1098</span>
-                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
-                                </div>
-                            </div>
-<code class="code-snippet">$ python3 ad_triage.py --event 4728
-[!] PRIVILEGE ESCALATION DETECTED
-User 'jdoe' added target 'Domain Admins' 
-Caller User: 'bad_actor_admin'</code>
-                        </div>
-
-                        <div class="tag-group">
-                            <span class="tag">Active Directory</span>
-                            <span class="tag">Python Automation</span>
-                            <span class="tag">Windows Security</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('AD Log Parser', 'Automated Python script that processes Windows Security XML logs to isolate Event 4728 and detect unauthorized domain admin group changes.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Security-Automation" target="_blank" class="btn-link">View Artifacts →</a>
-                    </div>
-                </div>
-
-                <!-- GCP Landing Zone -->
-                <div class="card project-item" data-category="methodology">
-                    <div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">GCP Secure Landing Zone</h3>
-                            <span class="project-badge badge-methodology">IaC / DESIGN</span>
-                        </div>
-                        <div class="metric-badge">🔒 Org-Wide External-IP Deny + Deny-All-Ingress VPC — IaC</div>
-                        <p class="project-desc">Real Terraform for a GCP organization landing zone: org-level policy guardrails (no external IPs, no SA key files, domain-restricted IAM), an environment folder structure, a Shared VPC host project with deny-all-ingress firewall rules and Cloud NAT, and a centralized org-wide logging sink. Formatting-checked with terraform fmt; full validate/apply pending a real org (this build environment can't reach the Terraform registry).</p>
-
-                        <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
-                            <svg width="100%" height="70" viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="10" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-                                <text x="45" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Org Policy</text>
-                                <path d="M80 35 H110" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
-                                <rect x="110" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
-                                <text x="150" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Shared VPC</text>
-                                <path d="M190 35 H220" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
-                                <rect x="220" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-                                <text x="255" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Org Logging</text>
-                            </svg>
-                        </div>
-
-                        <div class="tag-group">
-                            <span class="tag">GCP</span>
-                            <span class="tag">Terraform</span>
-                            <span class="tag">Landing Zone</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('GCP Secure Landing Zone', 'Real Terraform for a GCP organization landing zone: org policy guardrails (deny external IPs, disable SA key creation, domain-restricted IAM, uniform bucket access), a bootstrap/common/production/nonprod/development folder structure, a Shared VPC host project with deny-all-ingress firewall rules and per-region Cloud NAT, and an organization-wide aggregated logging sink. Formatting-checked with terraform fmt -check; full terraform validate/plan/apply needs a real GCP org and registry access this build environment does not have.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security/GCP-Landing-Zone-Lab" target="_blank" class="btn-link">View Artifacts →</a>
-                    </div>
-                </div>
-
                 <!-- Attack Simulation & Detection Engineering Lab -->
-                <div class="card project-item" data-category="methodology">
+                <div class="card project-item" data-category="live">
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
                             <h3 class="project-title">Attack Simulation &amp; Detection Engineering Lab</h3>
@@ -961,38 +760,72 @@ Caller User: 'bad_actor_admin'</code>
                     </div>
                 </div>
 
-                <!-- Linux Host Hardening -->
+                <!-- Sysmon Detection -->
                 <div class="card project-item" data-category="live">
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">Linux Host Hardening Audit</h3>
+                            <h3 class="project-title">Windows Sysmon Telemetry Engineering</h3>
                             <span class="project-badge badge-live">Observed Evidence</span>
                         </div>
-                        <div class="metric-badge">🐧 0 Findings — All 26 SUID Binaries Individually Verified</div>
-                        <p class="project-desc">CIS-benchmark-style Python audit engine (SSH config, sudoers NOPASSWD scope, SUID binaries, world-writable files, legacy services, firewall state), validated first against synthetic fixtures, then run for real against a live personal Linux host via a purpose-built collector script.</p>
+                        <div class="metric-badge">👁️ Real Sysmon Telemetry: 16 Events, 5 Findings</div>
+                        <p class="project-desc">Installed Sysmon (SwiftOnSecurity config) on a live, deployed Azure Domain Controller and captured real process-create (Event ID 1) and network-connect (Event ID 3) telemetry, validated against the same detection logic used on synthetic data.</p>
 
-                        <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
-                            <svg width="100%" height="70" viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="10" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-                                <text x="50" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Real Host</text>
-                                <path d="M90 35 H130" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
-                                <rect x="130" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-                                <text x="170" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">CIS Checks</text>
-                                <path d="M210 35 H250" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
-                                <rect x="250" y="15" width="40" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
-                                <text x="270" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">0</text>
-                            </svg>
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // SYSMON_CONFIG.XML</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1055</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet">&lt;ProcessAccess onmatch="include"&gt;
+  &lt;TargetImage condition="is"&gt;C:\Windows\System32\lsass.exe&lt;/TargetImage&gt;
+&lt;/ProcessAccess&gt;</code>
                         </div>
 
                         <div class="tag-group">
-                            <span class="tag">Linux Hardening</span>
-                            <span class="tag">CIS Benchmark</span>
-                            <span class="tag">Python</span>
+                            <span class="tag">Sysmon</span>
+                            <span class="tag">Threat Hunting</span>
+                            <span class="tag">Endpoint Defense</span>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('Linux Host Hardening Audit', 'CIS-benchmark-style audit run against a real, live personal Linux host: 0 findings, but only after verifying all 26 SUID binaries against their owning packages and fixing two real methodology issues (an unprivileged scan that looked falsely clean, and Docker/containerd image-layer false positives).')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Linux-Security/Hardening-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                        <button class="btn-quicklook" onclick="showModal('Sysmon Detection Engineering', 'SwiftOnSecurity Sysmon config deployed to a live Azure Domain Controller. Real process-create and network-connect telemetry captured and analyzed: 16 events, 5 findings, all explainable session activity. See the Evidence folder for the raw export and analysis.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Endpoint-Security/Windows-Sysmon-Detection-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+                <!-- Linux Forensics -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Linux Incident Response & DFIR</h3>
+                            <span class="project-badge badge-live">Observed Evidence</span>
+                        </div>
+                        <div class="metric-badge">🎯 Reconstructed Attack Timeline from Linux System Logs</div>
+                        <p class="project-desc">Executed deep forensic triage on compromised Linux system logs. Verified SHA-256 evidence hashes, mapped actor techniques to MITRE ATT&CK, and produced post-incident timelines.</p>
+
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // AUTH.LOG_ANALYSIS</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1078</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet"># sha256sum /var/log/auth.log
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[+] Root session established via SSH key from 10.0.4.12</code>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Linux DFIR</span>
+                            <span class="tag">Syslog Audit</span>
+                            <span class="tag">MITRE ATT&CK</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Linux DFIR Investigation', 'Verified SHA-256 evidence hashes and mapped intruder activities to MITRE ATT&CK to reconstruct a detailed forensic incident timeline.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/DFIR/Linux-Forensics" target="_blank" class="btn-link">View Artifacts →</a>
                     </div>
                 </div>
 
@@ -1123,48 +956,212 @@ Caller User: 'bad_actor_admin'</code>
                     </div>
                 </div>
 
-                <!-- Sysmon Detection -->
-                <div class="card project-item" data-category="live">
+                <!-- PCAP Analysis -->
+                <div class="card project-item" data-category="synthetic">
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                            <h3 class="project-title">Windows Sysmon Telemetry Engineering</h3>
-                            <span class="project-badge badge-live">Observed Evidence</span>
+                            <h3 class="project-title">PCAP Traffic & Triage Automation</h3>
+                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
                         </div>
-                        <div class="metric-badge">👁️ Real Sysmon Telemetry: 16 Events, 5 Findings</div>
-                        <p class="project-desc">Installed Sysmon (SwiftOnSecurity config) on a live, deployed Azure Domain Controller and captured real process-create (Event ID 1) and network-connect (Event ID 3) telemetry, validated against the same detection logic used on synthetic data.</p>
-
+                        <div class="metric-badge">⚡ Automated PCAP Traffic Analysis</div>
+                        <p class="project-desc">Captured packet traffic using tshark to analyze automated web scans, SQL injection payloads, and command execution attempts. Engineered custom Python scripts for automated triage.</p>
+                        
                         <div class="terminal-preview">
                             <div class="terminal-header">
-                                <span>ARTIFACT // SYSMON_CONFIG.XML</span>
+                                <span>ARTIFACT // PCAP_PARSER.PY</span>
                                 <div>
-                                    <span style="margin-right:10px;">MITRE T1055</span>
+                                    <span style="margin-right:10px;">MITRE T1190</span>
                                     <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
                                 </div>
                             </div>
-<code class="code-snippet">&lt;ProcessAccess onmatch="include"&gt;
-  &lt;TargetImage condition="is"&gt;C:\Windows\System32\lsass.exe&lt;/TargetImage&gt;
-&lt;/ProcessAccess&gt;</code>
+<code class="code-snippet">$ python3 pcap_triage.py --file capture.pcap
+[+] Extracting HTTP POST payloads...
+[!] ALERT: SQLi Payload Detected: ' OR 1=1 -- 
+[!] Source IP: 192.168.1.105 -> Targeted Port: 8080</code>
                         </div>
 
                         <div class="tag-group">
-                            <span class="tag">Sysmon</span>
-                            <span class="tag">Threat Hunting</span>
-                            <span class="tag">Endpoint Defense</span>
+                            <span class="tag">Wireshark/Tshark</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Network Forensics</span>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn-quicklook" onclick="showModal('Sysmon Detection Engineering', 'SwiftOnSecurity Sysmon config deployed to a live Azure Domain Controller. Real process-create and network-connect telemetry captured and analyzed: 16 events, 5 findings, all explainable session activity. See the Evidence folder for the raw export and analysis.')">Overview</button>
-                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Endpoint-Security/Windows-Sysmon-Detection-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                        <button class="btn-quicklook" onclick="showModal('PCAP Network Security', 'Captured traffic using tshark to identify automated web scanning and command execution patterns. Uses Python scripts for PCAP triage and IOC extraction.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Network-Security/PCAP-Analysis" target="_blank" class="btn-link">View Artifacts →</a>
                     </div>
                 </div>
-            </div>
-        </section>
 
+                <!-- Linux Forensics -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Linux Incident Response ab</h3>
+                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
+                        </div>
+                        <div class="metric-badge">🛡️ Custom Wazuh Rules Validated Against Test Events</div>
+                        <p class="project-desc">Deployed Wazuh agents across lab nodes. Authored custom XML detection rules to flag privilege escalation and established File Integrity Monitoring (FIM) for system directories.</p>
 
-        <!-- Forage Virtual Job Simulations -->
-        <section id="forage">
-            <div class="section-header"><h2 class="section-title">Virtual Job Simulations</h2></div>
-            <p style="color:var(--text-secondary); max-width:900px; margin:-1rem 0 1.75rem;">Practical cybersecurity simulations completed through Forage. These are virtual work experiences, not employment, and are presented as evidence of applied learning and professional skills.</p>
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // WAZUH_LOCAL_RULES.XML</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1548</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet">&lt;rule id="100002" level="10"&gt;
+  &lt;if_sid&gt;5715&lt;/if_sid&gt;
+  &lt;match&gt;sudo: privilege escalation&lt;/match&gt;
+  &lt;description&gt;Possible privilege escalation alert&lt;/description&gt;
+&lt;/rule&gt;</code>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Wazuh SIEM</span>
+                            <span class="tag">XML Rules</span>
+                            <span class="tag">FIM</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Wazuh SIEM Lab', 'Built custom XML detection rules for privilege escalation and configured File Integrity Monitoring on critical system configurations.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Wazuh/Detection-Engineering-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- Splunk SOC Lab Track -->
+                <div class="card project-item" data-category="synthetic">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Splunk SOC Lab Track</h3>
+                            <span class="project-badge badge-synthetic">Synthetic Lab</span>
+                        </div>
+                        <div class="metric-badge">📊 Six Connected SOC Labs · SPL Detection & Investigation</div>
+                        <p class="project-desc">Completed a six-lab Splunk SOC track covering SSH authentication hunting, Windows/Sysmon process investigation, web-attack investigation, SPL detection engineering, SOC monitoring/dashboarding, and end-to-end incident investigation using controlled synthetic telemetry.</p>
+                        <div class="tag-group">
+                            <span class="tag">Splunk</span>
+                            <span class="tag">SPL</span>
+                            <span class="tag">SOC Investigation</span>
+                            <span class="tag">Detection Engineering</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Splunk SOC Lab Track', 'Six connected, controlled training labs covering authentication hunting, Windows/Sysmon investigation, web attacks, SPL detection logic, SOC monitoring and end-to-end incident investigation. Evidence is synthetic/local training, not production employment experience.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/SIEM/Splunk" target="_blank" rel="noopener noreferrer" class="btn-link">View Splunk Labs →</a>
+                    </div>
+                </div>
+
+                <!-- Active Directory Automation -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">AD Security Event Automation</h3>
+                            <span class="project-badge badge-live">Observed Evidence</span>
+                        </div>
+                        <div class="metric-badge">🔍 Automated Parsing of Event 4728 & 4625 XML Security Logs</div>
+                        <p class="project-desc">Automated parsing of Windows Security XML event logs (4624, 4625, 4728) using Python to highlight lateral movement, brute force attempts, and unauthorized group escalation.</p>
+
+                        <div class="terminal-preview">
+                            <div class="terminal-header">
+                                <span>ARTIFACT // AD_PARSER.PY</span>
+                                <div>
+                                    <span style="margin-right:10px;">MITRE T1098</span>
+                                    <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
+                                </div>
+                            </div>
+<code class="code-snippet">$ python3 ad_triage.py --event 4728
+[!] PRIVILEGE ESCALATION DETECTED
+User 'jdoe' added target 'Domain Admins' 
+Caller User: 'bad_actor_admin'</code>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Active Directory</span>
+                            <span class="tag">Python Automation</span>
+                            <span class="tag">Windows Security</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('AD Log Parser', 'Automated Python script that processes Windows Security XML logs to isolate Event 4728 and detect unauthorized domain admin group changes.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Security-Automation" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- GCP Landing Zone -->
+                <div class="card project-item" data-category="methodology">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">GCP Secure Landing Zone</h3>
+                            <span class="project-badge badge-methodology">IaC / DESIGN</span>
+                        </div>
+                        <div class="metric-badge">🔒 Org-Wide External-IP Deny + Deny-All-Ingress VPC — IaC</div>
+                        <p class="project-desc">Real Terraform for a GCP organization landing zone: org-level policy guardrails (no external IPs, no SA key files, domain-restricted IAM), an environment folder structure, a Shared VPC host project with deny-all-ingress firewall rules and Cloud NAT, and a centralized org-wide logging sink. Formatting-checked with terraform fmt; full validate/apply pending a real org (this build environment can't reach the Terraform registry).</p>
+
+                        <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
+                            <svg width="100%" height="70" viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="45" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Org Policy</text>
+                                <path d="M80 35 H110" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="110" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="150" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Shared VPC</text>
+                                <path d="M190 35 H220" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="220" y="15" width="70" height="40" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+                                <text x="255" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Org Logging</text>
+                            </svg>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">GCP</span>
+                            <span class="tag">Terraform</span>
+                            <span class="tag">Landing Zone</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('GCP Secure Landing Zone', 'Real Terraform for a GCP organization landing zone: org policy guardrails (deny external IPs, disable SA key creation, domain-restricted IAM, uniform bucket access), a bootstrap/common/production/nonprod/development folder structure, a Shared VPC host project with deny-all-ingress firewall rules and per-region Cloud NAT, and an organization-wide aggregated logging sink. Formatting-checked with terraform fmt -check; full terraform validate/plan/apply needs a real GCP org and registry access this build environment does not have.')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Cloud-Security/GCP-Landing-Zone-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- Attack Simulation & Detection Engineering Lab -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-t</h3>
+                            <span class="project-badge badge-live">Observed Evidence</span>
+                        </div>
+                        <div class="metric-badge">🐧 0 Findings — All 26 SUID Binaries Individually Verified</div>
+                        <p class="project-desc">CIS-benchmark-style Python audit engine (SSH config, sudoers NOPASSWD scope, SUID binaries, world-writable files, legacy services, firewall state), validated first against synthetic fixtures, then run for real against a live personal Linux host via a purpose-built collector script.</p>
+
+                        <div style="background: var(--bg-terminal); border:1px solid var(--border); border-radius:6px; padding: 0.75rem; text-align:center; margin-bottom:1.25rem;">
+                            <svg width="100%" height="70" viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="50" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">Real Host</text>
+                                <path d="M90 35 H130" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="130" y="15" width="80" height="40" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+                                <text x="170" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">CIS Checks</text>
+                                <path d="M210 35 H250" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"/>
+                                <rect x="250" y="15" width="40" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="270" y="40" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="monospace">0</text>
+                            </svg>
+                        </div>
+
+                        <div class="tag-group">
+                            <span class="tag">Linux Hardening</span>
+                            <span class="tag">CIS Benchmark</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-quicklook" onclick="showModal('Linux Host Hardening Audit', 'CIS-benchmark-style audit run against a real, live personal Linux host: 0 findings, but only after verifying all 26 SUID binaries against their owning packages and fixing two real methodology issues (an unprivileged scan that looked falsely clean, and Docker/containerd image-layer false positives).')">Overview</button>
+                        <a href="https://github.com/hnmasiya/cybersecurity-portfolio/tree/main/Linux-Security/Hardening-Lab" target="_blank" class="btn-link">View Artifacts →</a>
+                    </div>
+                </div>
+
+                <!-- Container Configuration Audit -->
+                <div class="card project-item" data-category="live">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                            <h3 class="project-title">Container Configumpleted through Forage. These are virtual work experiences, not employment, and are presented as evidence of applied learning and professional skills.</p>
             <div class="grid-2">
                 <article class="card"><div><span class="project-badge badge-synthetic">Forage • Virtual Experience</span><h3 class="project-title">Mastercard — Cybersecurity</h3><p class="project-desc">Security-awareness simulation covering phishing simulation design, campaign analysis and targeted security-awareness training.</p><div class="tag-group"><span class="tag">Phishing Analysis</span><span class="tag">Security Awareness</span><span class="tag">Data Analysis</span><span class="tag">Security Training</span></div></div><div class="card-footer"><a href="https://www.theforage.com/simulations/mastercard/cybersecurity-t8ye" target="_blank" rel="noopener noreferrer" class="btn-link">Forage Simulation →</a><a href="https://github.com/hnmasiya/mastercard-cybersecurity-job-simulation" target="_blank" rel="noopener noreferrer" class="btn-link">Case Study →</a></div></article>
                 <article class="card"><div><span class="project-badge badge-methodology">Forage • Virtual Experience</span><h3 class="project-title">Datacom — Cyber Security Operations</h3><p class="project-desc">Cyberattack investigation and cybersecurity risk assessment covering ransomware response, OSINT, risk prioritization and security recommendations.</p><div class="tag-group"><span class="tag">Incident Response</span><span class="tag">Risk Assessment</span><span class="tag">OSINT</span><span class="tag">MITRE ATT&amp;CK</span></div></div><div class="card-footer"><a href="https://www.theforage.com/simulations/datacom/cybersecurity-zm6d" target="_blank" rel="noopener noreferrer" class="btn-link">Forage Simulation →</a><a href="https://github.com/hnmasiya/Datacom-Cyber-Security-Operations-Job-Simulation" target="_blank" rel="noopener noreferrer" class="btn-link">Case Study →</a></div></article>
