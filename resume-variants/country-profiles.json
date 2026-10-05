@@ -67,7 +67,7 @@
   "CA": {
     "label": "Canadian Resume",
     "target_pages": 1,
-    "max_pages": 2,
+    "max_pages": 1,
     "one_page": true,
     "page_size": "LETTER",
     "margin": "0.30in 0.42in",
