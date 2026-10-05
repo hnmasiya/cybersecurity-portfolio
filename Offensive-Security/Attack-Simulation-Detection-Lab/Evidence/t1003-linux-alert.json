@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-08-27T14:07:15.948+0000",
+  "rule": {
+    "level": 13,
+    "description": "Credential Access: unprivileged read attempt on /etc/shadow (denied)",
+    "id": "100220",
+    "mitre": {
+      "id": ["T1003.008"],
+      "tactic": ["Credential Access"],
+      "technique": ["/etc/passwd and /etc/shadow"]
+    },
+    "groups": ["attack_sim", "credential_access", "t1003"]
+  },
+  "agent": {
+    "id": "002",
+    "name": "normann-ThinkPad-X260",
+    "ip": "127.0.0.1"
+  },
+  "manager": {
+    "name": "wazuh.manager"
+  },
+  "id": "1787839635.19310219",
+  "full_log": "type=SYSCALL msg=audit(1787839633.189:156668): arch=c000003e syscall=257 success=no exit=-13 comm=\"cat\" exe=\"/usr/bin/cat\" subj=unconfined key=\"shadow_access\" AUID=\"normann\" UID=\"normann\" EUID=\"normann\" type=CWD msg=audit(1787839633.189:156668): cwd=\"/home/normann/portfolio-checkout\" type=PATH msg=audit(1787839633.189:156668): item=0 name=\"/etc/shadow\" inode=10227249 dev=08:07 mode=0100640 ouid=0 ogid=42 OUID=\"root\" OGID=\"shadow\"",
+  "decoder": {
+    "parent": "auditd",
+    "name": "auditd"
+  },
+  "data": {
+    "audit": {
+      "type": "SYSCALL",
+      "id": "156668",
+      "syscall": "257",
+      "success": "no",
+      "exit": "-13",
+      "auid": "1000",
+      "uid": "1000",
+      "euid": "1000",
+      "command": "cat",
+      "exe": "/usr/bin/cat",
+      "key": "shadow_access",
+      "cwd": "/home/normann/portfolio-checkout",
+      "file": { "name": "/etc/shadow", "inode": "10227249", "mode": "0100640" }
+    }
+  },
+  "location": "/var/log/audit/audit.log",
+  "_note": "Real auditd alert for Scripts/linux-simulations.sh credential-access, run on 2026-08-27 as the unprivileged user normann. cat: /etc/shadow: Permission denied on the terminal confirms the read was genuinely denied (exit=-13 = EACCES), which is exactly the T1003.008 signal - the attempt being denied, not whether it succeeded. Building this rule surfaced a real false-positive source: sudo itself reads /etc/shadow internally on every authentication (PAM's pam_unix module checking the password hash), tripping the same auditd watch key with audit.success=yes and audit.command=sudo - requiring audit.success=no in the rule excludes that legitimate case. Captured verbatim via `docker exec single-node-wazuh.manager-1 grep \"100220\" /var/ossec/logs/alerts/alerts.json`, no content altered."
+}

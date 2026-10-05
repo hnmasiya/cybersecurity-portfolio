@@ -1,0 +1,128 @@
+{
+  "summary": {
+    "total": 5,
+    "escalate": 3,
+    "investigate": 1,
+    "monitor": 1
+  },
+  "alerts": [
+    {
+      "alert_id": "ALT-1001",
+      "timestamp": "2026-08-18T02:14:00Z",
+      "source": "EDR",
+      "severity": "HIGH",
+      "priority": "P2",
+      "disposition": "ESCALATE",
+      "iocs": {
+        "ipv4": [
+          "203.0.113.55"
+        ],
+        "domains": [],
+        "sha256": []
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1110",
+          "name": "Brute Force",
+          "tactic": "Credential Access"
+        }
+      ],
+      "description": "Repeated failed login attempts consistent with brute force from source IP 203.0.113.55 against the admin account."
+    },
+    {
+      "alert_id": "ALT-1002",
+      "timestamp": "2026-08-18T02:31:00Z",
+      "source": "SIEM",
+      "severity": "CRITICAL",
+      "priority": "P1",
+      "disposition": "ESCALATE",
+      "iocs": {
+        "ipv4": [],
+        "domains": [
+          "malicious-c2-domain.net"
+        ],
+        "sha256": [
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ]
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1059.001",
+          "name": "PowerShell",
+          "tactic": "Execution"
+        }
+      ],
+      "description": "Suspicious PowerShell execution launched a process that reached out to malicious-c2-domain.net and downloaded a payload with hash e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855."
+    },
+    {
+      "alert_id": "ALT-1003",
+      "timestamp": "2026-08-18T03:02:00Z",
+      "source": "Firewall",
+      "severity": "LOW",
+      "priority": "P4",
+      "disposition": "MONITOR",
+      "iocs": {
+        "ipv4": [
+          "10.0.0.0",
+          "10.0.0.14"
+        ],
+        "domains": [],
+        "sha256": []
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1595",
+          "name": "Active Scanning",
+          "tactic": "Reconnaissance"
+        }
+      ],
+      "description": "Port scan detected from internal host 10.0.0.14 against subnet 10.0.0.0/24."
+    },
+    {
+      "alert_id": "ALT-1004",
+      "timestamp": "2026-08-18T03:20:00Z",
+      "source": "DLP",
+      "severity": "MEDIUM",
+      "priority": "P3",
+      "disposition": "INVESTIGATE",
+      "iocs": {
+        "ipv4": [],
+        "domains": [
+          "exfil-storage.example.com"
+        ],
+        "sha256": []
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1041",
+          "name": "Exfiltration Over C2 Channel",
+          "tactic": "Exfiltration"
+        }
+      ],
+      "description": "Possible data exfiltration attempt: large outbound transfer to exfil-storage.example.com flagged for review."
+    },
+    {
+      "alert_id": "ALT-1005",
+      "timestamp": "2026-08-18T03:45:00Z",
+      "source": "WAF",
+      "severity": "HIGH",
+      "priority": "P2",
+      "disposition": "ESCALATE",
+      "iocs": {
+        "ipv4": [
+          "198.51.100.23"
+        ],
+        "domains": [],
+        "sha256": []
+      },
+      "mitre_attack": [
+        {
+          "technique": "T1190",
+          "name": "Exploit Public-Facing Application",
+          "tactic": "Initial Access"
+        }
+      ],
+      "description": "SQL injection payload detected in a request targeting the web application at 198.51.100.23."
+    }
+  ]
+}

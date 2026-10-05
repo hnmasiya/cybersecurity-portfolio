@@ -1,0 +1,9 @@
+tcpdump:
+
+dumpcap:
+6319 /usr/bin/dumpcap --log-level MESSAGE --application-flavor wireshark -S -Z 22
+
+tshark:
+
+wireshark:
+4728 wireshark

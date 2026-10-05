@@ -1,0 +1,24 @@
+{
+  "case_id": "IOC-SYN-2026-10-04-001",
+  "evidence_state": "CONTROLLED / SYNTHETIC",
+  "indicators": [
+    {
+      "type": "ipv4",
+      "value": "198.51.100.23",
+      "source": "synthetic SOC alert",
+      "confidence": "medium"
+    },
+    {
+      "type": "domain",
+      "value": "cdn-update.example.invalid",
+      "source": "synthetic email",
+      "confidence": "medium"
+    },
+    {
+      "type": "sha256",
+      "value": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "source": "synthetic attachment record",
+      "confidence": "low"
+    }
+  ]
+}

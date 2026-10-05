@@ -1,0 +1,35 @@
+MITRE ATT&CK MAPPING
+=====================
+
+Important:
+Mappings below are investigative hypotheses based on observed telemetry.
+They are not asserted as confirmed adversary behavior.
+
+Observed alert: Wazuh rule 5402
+Description: Successful sudo to ROOT executed.
+
+Potential ATT&CK relevance:
+- T1548.003 - Abuse Elevation Control Mechanism: Sudo and Sudo Caching
+
+Assessment:
+The telemetry demonstrates successful sudo elevation to root.
+This is consistent with the ATT&CK technique above, but the observed
+activity was intentionally generated as part of a controlled lab test.
+It must therefore NOT be presented as malicious activity.
+
+Observed alerts: Wazuh rules 5501 / 5502
+Descriptions:
+- PAM: Login session opened.
+- PAM: Login session closed.
+
+Potential ATT&CK relevance:
+- Account/session activity provides authentication and session context.
+- No ATT&CK technique is asserted solely from these two alerts.
+
+Assessment:
+The alerts demonstrate session lifecycle telemetry and can be used
+to correlate privilege activity with a user session.
+
+Conclusion:
+The evidence demonstrates detection and investigation capability.
+It does not demonstrate an actual compromise or adversary intrusion.

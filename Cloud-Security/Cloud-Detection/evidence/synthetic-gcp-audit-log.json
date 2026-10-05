@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-10-04T09:00:00Z",
+    "severity": "NOTICE",
+    "protoPayload": {
+      "serviceName": "iam.googleapis.com",
+      "methodName": "google.iam.admin.v1.SetIAMPolicy",
+      "authenticationInfo": {"principalEmail": "admin@example.invalid"},
+      "resourceName": "projects/demo-synthetic"
+    }
+  },
+  {
+    "timestamp": "2026-10-04T09:05:00Z",
+    "severity": "NOTICE",
+    "protoPayload": {
+      "serviceName": "compute.googleapis.com",
+      "methodName": "v1.compute.instances.insert",
+      "authenticationInfo": {"principalEmail": "ops@example.invalid"},
+      "resourceName": "projects/demo-synthetic/zones/africa-south1-a/instances/lab-vm"
+    }
+  },
+  {
+    "timestamp": "2026-10-04T09:10:00Z",
+    "severity": "NOTICE",
+    "protoPayload": {
+      "serviceName": "iam.googleapis.com",
+      "methodName": "google.iam.admin.v1.SetIAMPolicy",
+      "authenticationInfo": {"principalEmail": "svc@example.invalid"},
+      "resourceName": "projects/demo-synthetic"
+    }
+  }
+]

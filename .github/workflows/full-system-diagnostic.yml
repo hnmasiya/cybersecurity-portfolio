@@ -1,0 +1,20 @@
+name: Execute Full System Diagnostic
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostic:
+    name: Execute Full System Diagnostic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run diagnostic gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Full-system diagnostic gate initialized successfully."

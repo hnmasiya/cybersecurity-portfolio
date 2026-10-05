@@ -1,0 +1,4 @@
+CONTAINMENT_TIMESTAMP=2026-09-24T10:14:24+02:00
+ACTION=chmod 000 on temporary lab artifact
+TARGET=/tmp/LAB4-20260924-101415/incident-marker.txt
+EXIT_CODE=0
