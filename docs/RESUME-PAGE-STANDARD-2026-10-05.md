@@ -39,3 +39,37 @@ Generated validation on 2026-10-05:
 - US: 1 page
 - Canada: 1 page
 - Mexico: 1 page
+
+
+## Country-aware delivery architecture
+
+The public resume selector uses the visitor's IP-derived ISO country code to choose a **country-specific published PDF first**, then a regional profile, then the two-page international fallback. North America is never the generic fallback.
+
+The browser selects an already-reviewed published PDF; it does not invent or rewrite factual resume content. The authoritative content remains `Resume_Hazvinei_Masiya.md`, while country profiles control presentation, terminology, emphasis and page geometry.
+
+Every published PDF downloads as:
+
+`Hazvinei_Masiya_Resume.pdf`
+
+## Current-format research gate
+
+Country profiles are based on current 2026 resume/CV guidance and are reviewed before publication. The research for this release confirms that:
+
+- Canadian guidance favours clear headings, reverse-chronological experience, readable formatting and concise resumes. Canada Job Bank recommends limiting a resume to two pages; this portfolio deliberately enforces the stricter one-page North American policy.
+- Current UK guidance supports two pages for experienced candidates and recommends clear, professional, readable, ATS-friendly presentation.
+- Current ATS/CV guidance favours simple structure, standard headings, readable fonts and job-relevant tailoring rather than decorative layouts.
+
+Research sources reviewed: Indeed Canada resume guidance (2026), Canada Job Bank resume guidance, Indeed UK CV guidance (2026), and current Indeed ATS/CV formatting guidance.
+
+The research gate is intentionally separated from visitor delivery: internet research may update a country profile, but a profile change cannot invent facts and must pass the PDF page validator before publication.
+
+## Release acceptance criteria
+
+1. IP country detection selects the explicit country profile when one exists.
+2. Countries without a dedicated profile use the appropriate regional profile.
+3. Unknown/unavailable country detection falls back to the two-page International Resume.
+4. US, Canada and Mexico are exactly **1 page**.
+5. All other country and regional variants are exactly **2 pages**.
+6. Every published PDF downloads as `Hazvinei_Masiya_Resume.pdf`.
+7. All four Forage simulations remain present in every published variant.
+8. No country profile may introduce unsupported employment, qualifications, metrics, work authorisation, nationality, clearance or client claims.
