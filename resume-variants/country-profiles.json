@@ -33,8 +33,8 @@
   },
   "US": {
     "label": "US Resume",
-    "target_pages": 2,
-    "max_pages": 2,
+    "target_pages": 1,
+    "max_pages": 1,
     "page_size": "LETTER",
     "margin": "0.30in 0.42in",
     "document_term": "Resume",
@@ -61,7 +61,8 @@
       "Active Directory Security Log Parser",
       "Linux Incident Response / DFIR"
     ],
-    "locale": "intl"
+    "locale": "intl",
+    "one_page": true
   },
   "CA": {
     "label": "Canadian Resume",
@@ -712,6 +713,9 @@
       "Active Directory Security Log Parser",
       "GCP Secure Multi-Tier VPC"
     ],
-    "locale": "intl"
+    "locale": "intl",
+    "target_pages": 1,
+    "max_pages": 1,
+    "one_page": true
   }
 }

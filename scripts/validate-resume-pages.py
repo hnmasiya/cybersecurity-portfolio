@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Validate every generated resume PDF against a hard two-page maximum.
 
-The page limit is fail-closed: a PDF is publishable only when it has 1 or 2
-pages. Country targets are retained as guidance, but the hard requirement is
-never more than two pages.
+The page policy is fail-closed: each country profile has an exact target page count
+and a hard maximum of two pages. North American profiles are one page; all
+other country profiles and regional fallbacks are two pages.
 """
 import argparse
 import json
@@ -87,7 +87,7 @@ def main():
     for pdf in pdfs:
         count = pages(pdf)
         target, maximum = policy.get(pdf.name.lower(), (a.expected, 2))
-        ok = 1 <= count <= maximum <= 2
+        ok = count == target and count <= maximum <= 2
         status = "PASS" if ok else "FAIL"
         target_note = f"target {target}, max {maximum}"
         print(f"[{status}] {pdf.name}: {count} page(s) ({target_note})")
@@ -95,7 +95,7 @@ def main():
             failed.append((pdf.name, count, target, maximum))
 
     if failed:
-        print("\n[FAIL] Resume publication blocked: every CV must be between 1 and 2 pages.")
+        print("\n[FAIL] Resume publication blocked: every country/regional CV must meet its exact target page count and never exceed two pages.")
         return 2
 
     print(f"\n[PASS] {len(pdfs)} resume PDFs validated. No CV exceeds the hard two-page maximum.")
