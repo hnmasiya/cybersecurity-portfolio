@@ -1,5 +1,7 @@
 <!-- Single cybersecurity-first resume source. Country-aware variants are generated automatically. -->
-<!-- Resume source reviewed with portfolio automation cleanup: 2026-10-04 -->
+<!-- Resume source reviewed with portfolio automation cleanup: 2026-10-05 -->
+<!-- Page standard: 2-page master for global/rest-of-world variants; 1-page condensed ATS version for North America (US/Canada/Mexico). -->
+<!-- Virtual experience includes Mastercard, Datacom, Deloitte Australia and AIG Shields Up; these are Forage simulations, not employment. -->
 
 <style>
   @page { size: A4; margin: 0.30in 0.42in; }
