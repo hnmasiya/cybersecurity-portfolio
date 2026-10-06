@@ -42,10 +42,26 @@ jobs:
             exit 1
           fi
 
-          if grep -RniE '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b|\+263[[:space:]-]?[0-9]{2}[[:space:]-]?[0-9]{3}[[:space:]-]?[0-9]{4}' . \
-            --exclude-dir=.git \
-            --exclude='*.pdf' \
+          private_contact=0
+
+          # Real email addresses are forbidden. Synthetic lab addresses using .invalid are allowed.
+          if grep -RniE '\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b' . \\
+            --exclude-dir=.git \\
+            --exclude='*.pdf' \\
+            --exclude='quality.yml' \\
+            | grep -vE '@[^[:space:]]*\\.invalid([[:space:][:punct:]]|$)'; then
+            private_contact=1
+          fi
+
+          # Zimbabwe phone numbers are private unless deliberately removed from the public site.
+          if grep -RniE '\\+263[[:space:]-]?[0-9]{2}[[:space:]-]?[0-9]{3}[[:space:]-]?[0-9]{4}' . \\
+            --exclude-dir=.git \\
+            --exclude='*.pdf' \\
             --exclude='quality.yml'; then
+            private_contact=1
+          fi
+
+          if [ "$private_contact" -ne 0 ]; then
             echo "[FAIL] Private contact information detected in public text."
             exit 1
           fi
