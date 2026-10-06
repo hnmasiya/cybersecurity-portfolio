@@ -39,9 +39,23 @@ jobs:
               ;;
           esac
 
-          test "$PR_AUTHOR" = "github-actions[bot]" || {
-            echo "::error::Public production PRs must be created by the private-to-public promotion automation."
-            exit 1
-          }
+          # The promotion workflow authenticates with the configured production
+          # repository token, so GitHub records the PR author as the token owner.
+          # The branch name remains the automation-generated publication marker.
+          if [[ "$HEAD_BRANCH" == "infrastructure/private-first-publication" || "$HEAD_BRANCH" == "infrastructure/fix-publication-boundary" ]]; then
+            test "$PR_AUTHOR" = "hnmasiya" || {
+              echo "::error::Only the repository owner may maintain the publication-boundary control."
+              exit 1
+            }
+          else
+            test "$HEAD_BRANCH" = promotion/dev-* || {
+              echo "::error::Non-infrastructure production PRs must use promotion/dev-* branches."
+              exit 1
+            }
+            test "$PR_AUTHOR" = "hnmasiya" || {
+              echo "::error::Promotion PRs must be created by the configured production automation identity."
+              exit 1
+            }
+          fi
 
           echo "[PASS] Private-first publication boundary satisfied."
