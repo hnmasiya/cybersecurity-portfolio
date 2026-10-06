@@ -47,7 +47,7 @@ Professional experience, independent authorized labs, coursework and virtual job
 
 ### Repository Indexes
 
-**[SOC Evidence Map](SOC-ANALYST-EVIDENCE-MAP.md)** · **[Security Tools Inventory](SECURITY-TOOLS-INVENTORY.md)** · **[Resume](Resume_Hazvinei_Masiya.md)** · **[Live Portfolio](https://masiya-hub.org/)**
+**[SOC Evidence Map](SOC-ANALYST-EVIDENCE-MAP.md)** · **[Security Tools Inventory](SECURITY-TOOLS-INVENTORY.md)** · **[Resume](resumes.html)** · **[Live Portfolio](https://masiya-hub.org/)**
 
 ---
 
