@@ -641,7 +641,6 @@
             <div class="hero-meta">
                 <span>📍 Harare, Zimbabwe</span>
                 <span>📧 Contact via LinkedIn</span>
-                <span>📞 +263 77 521 6823 / +263 71 866 2162</span>
             </div>
 
             <div style="margin: 1.5rem 0; padding: 1.5rem; background: var(--bg-card); border-left: 4px solid var(--accent-green); border-radius: 4px;">
@@ -1770,13 +1769,13 @@ Caller User: 'bad_actor_admin'</code>
   const link=document.getElementById("resume-download");
   if(!link) return;
   const countryToVariant={
-    US:"us-resume",CA:"canadian-resume",MX:"mexico-resume",GB:"uk-cv",IE:"irish-cv",
-    AU:"australian-resume",NZ:"new-zealand-resume",
-    DE:"german-cv",FR:"french-cv",NL:"dutch-cv",CH:"swiss-cv",
-    AE:"uae-resume",QA:"qatar-resume",SA:"saudi-arabia-resume",
-    ZA:"south-african-cv",ZW:"zimbabwe-cv",NG:"nigerian-cv",KE:"kenyan-cv",
-    IN:"indian-resume",SG:"singapore-resume",JP:"japan-resume",KR:"south-korea-resume",
-    BR:"brazil-resume"
+    CA:"canada",US:"united-states",GB:"uk",
+    AU:"australia-new-zealand",NZ:"australia-new-zealand",
+    DE:"europe",FR:"europe",NL:"europe",IE:"europe",CH:"europe",
+    AE:"middle-east",QA:"middle-east",SA:"middle-east",
+    ZA:"africa",ZW:"africa",NG:"africa",KE:"africa",
+    IN:"asia-pacific",SG:"asia-pacific",JP:"asia-pacific",KR:"asia-pacific",
+    BR:"global",MX:"united-states"
   };
   const regionCountries={
     europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
@@ -1790,7 +1789,7 @@ Caller User: 'bad_actor_admin'</code>
     if(regionCountries.africa.has(code)) return "africa";
     if(regionCountries.middleEast.has(code)) return "middle-east";
     if(regionCountries.asiaPacific.has(code)) return "asia-pacific";
-    return "international";
+    return "global";
   }
   function applyResumeLink(variant){
     link.href=`resume-variants/pdf/${variant}.pdf`;
@@ -1824,7 +1823,7 @@ Caller User: 'bad_actor_admin'</code>
     const code=(await response.text()).trim().toUpperCase();
     applyResumeLink(variantFor(code));
   }catch(_){
-    applyResumeLink("international");
+    applyResumeLink("global");
   }
 })();</script>
 </body>

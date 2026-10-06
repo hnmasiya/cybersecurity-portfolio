@@ -42,11 +42,23 @@ jobs:
             exit 1
           fi
 
-          if grep -RniE '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b|\+263[[:space:]-]?[0-9]{2}[[:space:]-]?[0-9]{3}[[:space:]-]?[0-9]{4}' . \
-            --exclude-dir=.git \
-            --exclude='*.pdf' \
-            --exclude='quality.yml'; then
-            echo "[FAIL] Private contact information detected in public text."
+          private_contact=0
+
+          # Only recruiter-facing/public landing pages are scanned for personal
+          # contact data. Cybersecurity evidence and lab reports can contain
+          # controlled/synthetic/third-party identities and are not contact surfaces.
+          public_pages="index.html resumes.html README.md"
+          for page in $public_pages; do
+            if [ -f "$page" ] && grep -niE '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b' "$page"; then
+              private_contact=1
+            fi
+            if [ -f "$page" ] && grep -niE '\+263[[:space:]-]?[0-9]{2}[[:space:]-]?[0-9]{3}[[:space:]-]?[0-9]{4}' "$page"; then
+              private_contact=1
+            fi
+          done
+
+          if [ "$private_contact" -ne 0 ]; then
+            echo "[FAIL] Private contact information detected in public-facing pages."
             exit 1
           fi
 
