@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,9 +13,56 @@ jobs:
   diagnostic:
     name: Execute Full System Diagnostic
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Run diagnostic gate
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 1
+
+      - name: Validate production site structure
         shell: bash
         run: |
           set -euo pipefail
-          echo "Full-system diagnostic gate initialized successfully."
+
+          required_files=(
+            "index.html"
+            "CNAME"
+            ".nojekyll"
+            "robots.txt"
+            "sitemap.xml"
+            "Resume_Hazvinei_Masiya.md"
+            "Resume_Hazvinei_Masiya.pdf"
+            "Resume_Cybersecurity_SOC.pdf"
+            "resumes.html"
+            "resume.html"
+            "soc-analyst.html"
+            "detection-engineering.html"
+            "dfir-incident-response.html"
+            "network-security.html"
+          )
+
+          for file in "${required_files[@]}"; do
+            test -f "$file" || { echo "[FAIL] Missing required file: $file"; exit 1; }
+          done
+
+          domain="$(tr -d '[:space:]' < CNAME)"
+          test "$domain" = "masiya-hub.org" || {
+            echo "[FAIL] Unexpected CNAME: $domain"
+            exit 1
+          }
+
+          test -d "resume-variants/pdf" || {
+            echo "[FAIL] Missing resume-variants/pdf directory"
+            exit 1
+          }
+
+          pdf_count="$(find resume-variants/pdf -maxdepth 1 -type f -name '*.pdf' | wc -l)"
+          test "$pdf_count" -ge 20 || {
+            echo "[FAIL] Expected at least 20 country/regional PDFs; found $pdf_count"
+            exit 1
+          }
+
+          echo "[PASS] Production site structure validated."
+          echo "[PASS] CNAME validated: $domain"
+          echo "[PASS] Resume PDF count: $pdf_count"
