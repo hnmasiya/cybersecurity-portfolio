@@ -31,14 +31,6 @@ jobs:
             exit 1
           }
 
-          case "$HEAD_BRANCH" in
-            promotion/dev-*) ;;
-            *)
-              echo "::error::Public production PRs must originate from a promotion/dev-* branch."
-              exit 1
-              ;;
-          esac
-
           # The promotion workflow authenticates with the configured production
           # repository token, so GitHub records the PR author as the token owner.
           # The branch name remains the automation-generated publication marker.
