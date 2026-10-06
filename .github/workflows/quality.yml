@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,9 +13,15 @@ jobs:
   repository-quality:
     name: quality
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Run repository-quality gate
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 1
+
+      - name: Run repository quality checker
         shell: bash
         run: |
           set -euo pipefail
-          echo "Repository-quality gate initialized successfully."
+          python3 Scripts/portfolio_quality_check.py
