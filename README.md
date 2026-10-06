@@ -18,7 +18,7 @@
 
 This private repository is the **development source of truth**. Changes are validated here with automated security and quality checks before controlled promotion to the public `hnmasiya/cybersecurity-portfolio` repository.
 
-The public repository is maintained as a controlled production release artifact. Development-only tooling, private resume sources and development history remain in the private repository. See [PUBLIC-SOURCE-OF-TRUTH.md](PUBLIC-SOURCE-OF-TRUTH.md) and [PRODUCTION-PUBLISH-POLICY.md](PRODUCTION-PUBLISH-POLICY.md) for the release-control model.
+The public repository is maintained as a controlled production release artifact. Development-only tooling, private resume sources and development history remain in the private repository. Country-specific resume PDFs are generated and validated in the private development repository before any controlled public promotion. See [PUBLIC-SOURCE-OF-TRUTH.md](PUBLIC-SOURCE-OF-TRUTH.md) and [PRODUCTION-PUBLISH-POLICY.md](PRODUCTION-PUBLISH-POLICY.md) for the release-control model.
 
 ## 👋 Profile
 
