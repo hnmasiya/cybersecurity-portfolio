@@ -152,7 +152,6 @@ Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage auto
 - **CompTIA Security+ Certified (SY0-701)**
 - **Introduction to AI Security** — AI Security University
 - **GRC Fundamentals** — CyberExam
-- **ICSI | CNS Certified Network Security Specialist**
 - **Junior Cybersecurity Analyst Career Path** — Cisco
 - **Introduction to Cybersecurity** — Cisco
 
