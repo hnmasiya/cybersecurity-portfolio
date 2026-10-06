@@ -1,0 +1,65 @@
+name: quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-quality:
+    name: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 1
+
+      - name: Validate public repository contract
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f README.md
+          test -f index.html
+          test -f CNAME
+          test -f resume-variants/pdf/international.pdf
+          test -f resumes.html
+
+          domain="$(tr -d '[:space:]' < CNAME)"
+          test "$domain" = "masiya-hub.org"
+
+          if grep -RniE 'Co-Authored-By:[[:space:]]*Claude|claude\.ai/|noreply@anthropic\.com' . \
+            --exclude-dir=.git \
+            --exclude='*.pdf' \
+            --exclude='quality.yml'; then
+            echo "[FAIL] AI/development metadata detected in public text."
+            exit 1
+          fi
+
+          private_contact=0
+
+          # Only recruiter-facing/public landing pages are scanned for personal
+          # contact data. Cybersecurity evidence and lab reports can contain
+          # controlled/synthetic/third-party identities and are not contact surfaces.
+          public_pages="index.html resumes.html README.md"
+          for page in $public_pages; do
+            if [ -f "$page" ] && grep -niE '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b' "$page"; then
+              private_contact=1
+            fi
+            if [ -f "$page" ] && grep -niE '\+263[[:space:]-]?[0-9]{2}[[:space:]-]?[0-9]{3}[[:space:]-]?[0-9]{4}' "$page"; then
+              private_contact=1
+            fi
+          done
+
+          if [ "$private_contact" -ne 0 ]; then
+            echo "[FAIL] Private contact information detected in public-facing pages."
+            exit 1
+          fi
+
+          echo "[PASS] Public repository contract validated."

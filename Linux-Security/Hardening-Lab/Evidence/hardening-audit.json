@@ -1,0 +1,66 @@
+{
+  "summary": {
+    "checks_run": 5,
+    "findings": 8,
+    "high": 4,
+    "medium": 4
+  },
+  "findings": [
+    {
+      "check": "SSH-001",
+      "finding": "SSH root login permitted",
+      "severity": "HIGH",
+      "detail": "PermitRootLogin=yes",
+      "recommendation": "Set PermitRootLogin no"
+    },
+    {
+      "check": "SSH-002",
+      "finding": "SSH password authentication enabled",
+      "severity": "MEDIUM",
+      "detail": "PasswordAuthentication=yes",
+      "recommendation": "Disable password auth; enforce key-based authentication"
+    },
+    {
+      "check": "SUDO-001",
+      "finding": "Unrestricted passwordless sudo",
+      "severity": "HIGH",
+      "detail": "user=deploy commands=ALL NOPASSWD",
+      "recommendation": "Scope sudoers entries to specific commands; require a password"
+    },
+    {
+      "check": "PERM-001",
+      "finding": "World-writable file outside /tmp",
+      "severity": "MEDIUM",
+      "detail": "/var/www/html/uploads",
+      "recommendation": "Remove world-write permission (chmod o-w)"
+    },
+    {
+      "check": "PERM-001",
+      "finding": "World-writable file outside /tmp",
+      "severity": "MEDIUM",
+      "detail": "/etc/cron.d/legacy-job",
+      "recommendation": "Remove world-write permission (chmod o-w)"
+    },
+    {
+      "check": "PERM-002",
+      "finding": "Unexpected SUID binary",
+      "severity": "HIGH",
+      "detail": "/opt/legacy-app/bin/setuid-helper",
+      "recommendation": "Verify necessity; remove SUID bit if unused (chmod u-s)"
+    },
+    {
+      "check": "SVC-001",
+      "finding": "Legacy/insecure service running",
+      "severity": "HIGH",
+      "detail": "telnet",
+      "recommendation": "Disable and remove the service; use SSH/SFTP instead"
+    },
+    {
+      "check": "FW-001",
+      "finding": "Host firewall inactive",
+      "severity": "MEDIUM",
+      "detail": "firewall_active=false",
+      "recommendation": "Enable and configure a default-deny host firewall (ufw/firewalld/nftables)"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+name: Code Quality & Static Analysis
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Code Quality & Static Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 1
+
+      - name: Validate Python syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -type f -name '*.py' -not -path './.git/*' -exec python3 -m py_compile {} +
+          echo "[PASS] Python syntax validation completed."
+
+      - name: Validate shell scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            bash -n "$file"
+          done < <(find . -type f -name '*.sh' -not -path './.git/*' -print0)
+          echo "[PASS] Shell syntax validation completed."

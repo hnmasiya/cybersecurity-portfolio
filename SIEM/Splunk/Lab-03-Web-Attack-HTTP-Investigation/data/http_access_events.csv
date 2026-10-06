@@ -1,0 +1,16 @@
+timestamp,client_ip,method,uri,status,attack_type,host
+2026-09-25T08:00:00Z,10.10.20.25,GET,/index.php?id=1,200,-,web01
+2026-09-25T08:00:23Z,10.10.20.25,GET,/index.php?id=1%27%20OR%201%3D1--,500,SQLi,web01
+2026-09-25T08:00:46Z,10.10.20.25,GET,/search?q=%3Cscript%3Ealert(1)%3C/script%3E,403,XSS,web01
+2026-09-25T08:01:09Z,10.10.20.25,GET,/../../etc/passwd,400,Traversal,web01
+2026-09-25T08:01:32Z,10.10.20.25,POST,/login,401,AuthFailure,web01
+2026-09-25T08:01:55Z,10.10.20.25,POST,/login,401,AuthFailure,web01
+2026-09-25T08:02:18Z,10.10.20.25,POST,/login,200,AuthSuccess,web01
+2026-09-25T08:02:41Z,10.10.20.31,GET,/products?id=4,200,-,web01
+2026-09-25T08:03:04Z,10.10.20.31,GET,/products?id=5,200,-,web01
+2026-09-25T08:03:27Z,10.10.20.44,GET,/admin,404,Recon,web01
+2026-09-25T08:03:50Z,10.10.20.44,GET,/api/users,401,Recon,web01
+2026-09-25T08:04:13Z,10.10.20.44,GET,/api/users/1,200,-,web01
+2026-09-25T08:04:36Z,10.10.20.52,POST,/upload,413,UploadLimit,web01
+2026-09-25T08:04:59Z,10.10.20.52,GET,/../../windows/win.ini,400,Traversal,web01
+2026-09-25T08:05:22Z,10.10.20.52,GET,/cmd?exec=whoami,403,CommandInjection,web01

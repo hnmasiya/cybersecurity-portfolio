@@ -1,0 +1,4 @@
+hunt,event_or_ip,count,threshold,status
+HUNT-001,192.0.2.50,3,3,PASS
+HUNT-002,HUNT-005,,,PASS
+HUNT-003,HUNT-006,,,PASS

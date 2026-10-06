@@ -1,0 +1,118 @@
+
+================================================================
+PRE-FLIGHT
+================================================================
+
+[13:54:43] Portfolio root: /home/normann/cybersecurity-portfolio
+[13:54:43] Run ID: 20260924T135443Z
+PASS: Git repository detected
+PASS: Bash available
+PASS: Git available
+PASS: SHA-256 hashing available
+PASS: python3 available
+PASS: curl available
+PASS: awk available
+PASS: sed available
+PASS: grep available
+PASS: find available
+PASS: Nmap available
+PASS: TShark available
+PASS: tcpdump available
+PASS: curl available
+PASS: OpenSSL available
+PASS: Terraform available
+
+================================================================
+PHASE 2 — NETWORK INVESTIGATION
+================================================================
+
+[13:54:43] Starting controlled HTTP service on 127.0.0.1:8765
+PASS: Local HTTP service verified on 127.0.0.1:8765
+PASS: Controlled HTTP request generated
+PASS: Nmap localhost service discovery completed
+[13:54:51] Starting TShark loopback capture
+PASS: Packet capture and protocol evidence generated
+PASS: Phase 2 network investigation evidence completed
+
+================================================================
+PHASE 3 — WEB SECURITY
+================================================================
+
+PASS: Detected local web service: http://127.0.0.1:3000/
+PASS: Phase 3 local web-security evidence framework completed
+
+================================================================
+PHASE 4 — DETECTION ENGINEERING
+================================================================
+
+PASS: Detection rule test executed
+PASS: Phase 4 detection engineering evidence completed
+
+================================================================
+PHASE 5 — INCIDENT RESPONSE / DFIR
+================================================================
+
+PASS: Synthetic DFIR artifact hashed
+PASS: Phase 5 IR/DFIR evidence framework completed
+
+================================================================
+PHASE 6 — CLOUD SECURITY
+================================================================
+
+PASS: Terraform formatting normalized
+PASS: Terraform configuration validated
+PASS: Phase 6 cloud-security evidence framework completed
+
+================================================================
+PHASE 7 — SECURITY AUTOMATION
+================================================================
+
+PASS: Security automation utility executed and syntax-validated
+PASS: Phase 7 security automation evidence completed
+
+================================================================
+PHASE 8 — PORTFOLIO HARDENING / RECRUITER READINESS
+================================================================
+
+PASS: Portfolio security checks executed
+PASS: .github directory present
+PASS: SECURITY.md present
+PASS: README.md present
+PASS: Phase 8 hardening/recruiter-readiness evidence completed
+
+================================================================
+EVIDENCE MANIFEST
+================================================================
+
+PASS: Evidence manifest generated: evidence/master-remaining-phases/manifests/manifest-20260924T135443Z.txt
+
+================================================================
+MASTER VALIDATION
+================================================================
+
+PASS: Required artifact present: evidence/master-remaining-phases/labs/phase2-network-investigation/README.md
+PASS: Required artifact present: evidence/master-remaining-phases/labs/phase3-web-security/README.md
+PASS: Required artifact present: evidence/master-remaining-phases/labs/phase4-detection-engineering/detection-engineering.md
+PASS: Required artifact present: evidence/master-remaining-phases/labs/phase5-incident-response/incident-response-plan.md
+PASS: Required artifact present: evidence/master-remaining-phases/labs/phase6-cloud-security/cloud-security-checklist.md
+PASS: Required artifact present: evidence/master-remaining-phases/labs/phase7-security-automation/security_automation.md
+PASS: Required artifact present: evidence/master-remaining-phases/labs/phase8-portfolio-hardening/recruiter-readiness-checklist.md
+PASS: Required artifact present: evidence/master-remaining-phases/reports/external-training-status.md
+PASS: Latest SHA-256 manifest present
+PASS: Git whitespace check passed
+
+================================================================
+MASTER REPORT
+================================================================
+
+PASS: Master report written: evidence/master-remaining-phases/reports/master-report-20260924T135443Z.md
+
+================================================================
+FINAL STATUS
+================================================================
+
+PASS=49 WARN=0 FAIL=0 SKIP=0
+Evidence: /home/normann/cybersecurity-portfolio/evidence/master-remaining-phases
+Log:      /home/normann/cybersecurity-portfolio/evidence/master-remaining-phases/logs/master-20260924T135443Z.log
+
+Master run completed without recorded failures.

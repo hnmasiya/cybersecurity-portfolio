@@ -1,0 +1,14 @@
+From: Accounts Payable <billing@payroll-example.invalid>
+To: finance@example.invalid
+Subject: Urgent payroll verification required
+Date: Sat, 04 Oct 2026 08:14:22 +0000
+Message-ID: <synthetic-20261004-081422@example.invalid>
+Authentication-Results: mx.example.invalid;
+ spf=fail smtp.mailfrom=payroll-example.invalid;
+ dkim=none;
+ dmarc=fail header.from=payroll-example.invalid
+Return-Path: <billing@payroll-example.invalid>
+Reply-To: verify@payroll-example.invalid
+X-Synthetic-Training: true
+
+Please review the attached payroll verification document immediately.

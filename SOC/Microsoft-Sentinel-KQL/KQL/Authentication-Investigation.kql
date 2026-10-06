@@ -1,0 +1,32 @@
+// Microsoft Sentinel / KQL
+// Purpose: investigate unusual authentication activity.
+//
+// Status: ARCHITECTURE / METHODOLOGY
+// This query has not been represented as executed against a live Sentinel
+// workspace unless a corresponding execution artifact is retained.
+
+// Recent successful and failed authentication activity
+SigninLogs
+| where TimeGenerated >= ago(24h)
+| project
+    TimeGenerated,
+    UserPrincipalName,
+    IPAddress,
+    Location,
+    AppDisplayName,
+    ResultType,
+    ResultDescription,
+    AuthenticationRequirement
+| order by TimeGenerated desc
+
+// Identify users with repeated failed authentication attempts
+SigninLogs
+| where TimeGenerated >= ago(24h)
+| where ResultType != "0"
+| summarize
+    FailedAttempts = count(),
+    SourceIPs = make_set(IPAddress, 20),
+    Applications = make_set(AppDisplayName, 20)
+    by UserPrincipalName
+| where FailedAttempts >= 5
+| order by FailedAttempts desc

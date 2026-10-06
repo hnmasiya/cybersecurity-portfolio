@@ -1,0 +1,7 @@
+Aug 19 09:14:02 labhost sshd[1201]: Failed password for invalid user admin from 10.10.20.45 port 50122 ssh2
+Aug 19 09:14:05 labhost sshd[1203]: Failed password for invalid user admin from 10.10.20.45 port 50124 ssh2
+Aug 19 09:14:08 labhost sshd[1205]: Failed password for invalid user admin from 10.10.20.45 port 50126 ssh2
+Aug 19 09:14:12 labhost sshd[1207]: Accepted password for analyst from 10.10.20.10 port 50200 ssh2
+Aug 19 09:18:41 labhost sudo[1311]: analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/cat /etc/passwd
+Aug 19 09:21:17 labhost sshd[1412]: Failed password for root from 10.10.20.45 port 50311 ssh2
+Aug 19 09:21:20 labhost sshd[1414]: Failed password for root from 10.10.20.45 port 50313 ssh2

@@ -1,0 +1,82 @@
+<!--
+  Attack Simulation & Detection Engineering Lab - T1059 (Execution)
+  Catches base64-obfuscated command execution on Linux (via auditd execve
+  logs) and PowerShell -EncodedCommand usage on Windows (via Sysmon Event
+  ID 1), as two rules in the same group since they detect the same
+  technique on different platforms.
+
+  The Linux rule chains off rule 80700 ("Audit: Messages grouped", group
+  "audit") - confirmed via `wazuh-logtest` against a real synthetic
+  EXECVE line on this exact manager (v4.14.7), after an initial guess at
+  <if_group>audit_command</if_group> turned out not to exist in this
+  ruleset. 80700 is real and verified, not another guess.
+
+  A second live wazuh-logtest pass against this same manager caught a
+  further bug: <field name="full_log"> only matches decoder-extracted
+  named fields (like audit.execve.a0), not the raw log text - full_log
+  needs <match>, the same construct this repo's own earlier rules
+  (custom_sudo_escalation.xml, suspicious-login-rule.xml) already use
+  correctly.
+
+  A third live test - against the REAL raw audit.log line this
+  manager's own agent actually produced for `bash -c "echo ... |
+  base64 -d | bash"` - found real auditd hex-encodes any argument
+  containing shell metacharacters like |, so a2 shows up as
+  "a2=6563686F..." rather than readable quoted text. Confirmed via
+  wazuh-logtest that Wazuh's auditd decoder doesn't extract a2 as a
+  field at all in this ruleset version, hex or not, so content-matching
+  the payload (whether via <field> or <match>) was never going to work.
+
+  Detects the pattern instead: a bash/sh -c invocation whose argument
+  is unquoted hex rather than quoted plain text IS the signal - real
+  auditd only hex-encodes when the argument contains shell
+  metacharacters, so this is actually more robust than content-matching
+  would have been, since it survives the attacker changing the payload
+  entirely.
+
+  Running the real simulation live against this manager surfaced a
+  genuine false positive: Wazuh's own internal health checks (e.g.
+  `sh -c "/bin/ps -p ... > /dev/null 2>&1"`) also get hex-encoded, since
+  `>` and `&` are shell metacharacters too, and fired this rule 258
+  times before the real simulation's single genuine alert ever showed
+  up. Those FP events all carry audit.auid=4294967295 ("unset" - no
+  real login session, the marker for a system/container-originated
+  process), while the real simulation's alert carried audit.auid=1000
+  (an actual logged-in user). Excluding the unset marker is a real,
+  decoded-field-based fix confirmed against both the genuine alert and
+  the FP alerts captured live, not a guess.
+-->
+<group name="attack_sim,execution,t1059,">
+
+  <!-- Linux: bash/sh -c invocation with a hex-encoded (i.e. contains
+       shell metacharacters) argument, from a real login session - real
+       auditd only hex-encodes when it has to, so that's the obfuscation
+       signal; excluding audit.auid=4294967295 (no login session) cuts
+       the false positives from Wazuh's own internal health checks,
+       confirmed against real captured alerts from both cases. -->
+  <rule id="100200" level="12">
+    <if_sid>80700</if_sid>
+    <match type="pcre2">a0="(ba)?sh"\s+a1="-c"\s+a2=[0-9A-Fa-f]{16,}</match>
+    <field name="audit.auid" negate="yes" type="pcre2">^4294967295$</field>
+    <description>Execution: shell -c invocation with a hex-encoded (obfuscated) argument</description>
+    <mitre>
+      <id>T1059</id>
+      <id>T1140</id>
+    </mitre>
+  </rule>
+
+  <!-- Windows: PowerShell -EncodedCommand / -enc. sysmon_event1 and
+       win.eventdata.commandLine are Wazuh's standard Sysmon-integration
+       field names for Event ID 1, but confirm against this DC's actual
+       decoded event structure the first time this rule is tested. -->
+  <rule id="100201" level="12">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)-enc(odedcommand)?\s+[A-Za-z0-9+/=]{20,}</field>
+    <description>Execution: PowerShell -EncodedCommand with base64 payload</description>
+    <mitre>
+      <id>T1059.001</id>
+      <id>T1027</id>
+    </mitre>
+  </rule>
+
+</group>

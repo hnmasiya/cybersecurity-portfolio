@@ -1,0 +1,65 @@
+{
+  "summary": {
+    "events_analyzed": 16,
+    "findings": 5,
+    "high": 0,
+    "medium": 5
+  },
+  "findings": [
+    {
+      "rule_id": "EDR-004",
+      "mitre_technique": "T1059.001",
+      "severity": "medium",
+      "windows_event_id": 1,
+      "image": "notepad.exe",
+      "command_line": "\"C:\\Windows\\system32\\notepad.exe\"",
+      "parent_process": "powershell.exe",
+      "destination_port": null,
+      "timestamp": "2026-08-26T15:26:10.2752370+00:00"
+    },
+    {
+      "rule_id": "EDR-002",
+      "mitre_technique": "T1059.001",
+      "severity": "medium",
+      "windows_event_id": 3,
+      "image": "powershell.exe",
+      "command_line": null,
+      "parent_process": null,
+      "destination_port": 443,
+      "timestamp": "2026-08-26T15:38:09.7968565+00:00"
+    },
+    {
+      "rule_id": "EDR-002",
+      "mitre_technique": "T1059.001",
+      "severity": "medium",
+      "windows_event_id": 3,
+      "image": "powershell.exe",
+      "command_line": null,
+      "parent_process": null,
+      "destination_port": 443,
+      "timestamp": "2026-08-26T15:30:06.2310411+00:00"
+    },
+    {
+      "rule_id": "EDR-002",
+      "mitre_technique": "T1059.001",
+      "severity": "medium",
+      "windows_event_id": 3,
+      "image": "powershell.exe",
+      "command_line": null,
+      "parent_process": null,
+      "destination_port": 443,
+      "timestamp": "2026-08-26T15:26:14.2746185+00:00"
+    },
+    {
+      "rule_id": "EDR-003",
+      "mitre_technique": "T1110",
+      "severity": "medium",
+      "windows_event_id": 4625,
+      "image": null,
+      "command_line": null,
+      "parent_process": null,
+      "destination_port": null,
+      "timestamp": "2026-08-26T13:22:21.9224169+00:00"
+    }
+  ]
+}
