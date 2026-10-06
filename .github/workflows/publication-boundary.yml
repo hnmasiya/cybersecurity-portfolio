@@ -39,8 +39,8 @@ jobs:
               ;;
           esac
 
-          test "$PR_AUTHOR" = "github-actions[bot]" || {
-            echo "::error::Public production PRs must be created by the private-to-public promotion automation."
+          test "$PR_AUTHOR" = "hnmasiya" || {
+            echo "::error::Public production PRs must be created by the trusted promotion identity."
             exit 1
           }
 
