@@ -20,8 +20,23 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Run repository quality checker
+      - name: Validate public repository contract
         shell: bash
         run: |
           set -euo pipefail
-          python3 Scripts/portfolio_quality_check.py
+
+          test -f README.md
+          test -f index.html
+          test -f CNAME
+          test -f Resume_Hazvinei_Masiya.md
+          test -f resumes.html
+
+          domain="$(tr -d '[:space:]' < CNAME)"
+          test "$domain" = "masiya-hub.org"
+
+          if grep -RniE 'Claude-Session:|noreply@anthropic\.com|career-operations-private|AUTOMATION_SIGNING_KEY|PRODUCTION_REPO_TOKEN' .             --exclude-dir=.git             --exclude='*.pdf'; then
+            echo "[FAIL] Private development metadata detected in public text."
+            exit 1
+          fi
+
+          echo "[PASS] Public repository contract validated."
