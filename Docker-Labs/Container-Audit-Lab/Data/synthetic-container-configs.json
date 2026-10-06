@@ -5,7 +5,7 @@
     "user": "root",
     "env": {
       "APP_ENV": "production",
-      "API_KEY": "SYNTHETIC-API-KEY-REDACTED"
+      "API_KEY": "sk-live-9f8a7b6c5d4e3f2a1b0c"
     },
     "privileged": true,
     "network_mode": "bridge",
