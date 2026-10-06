@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Hazvinei Nomatter Masiya — automatic country-aware cybersecurity resume delivery.">
+<title>Hazvinei Nomatter Masiya | Resume</title>
+<style>
+:root{color-scheme:dark;--bg:#080b11;--card:#111827;--border:#263247;--text:#f8fafc;--muted:#94a3b8;--green:#10b981}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,rgba(16,185,129,.08),transparent 42%),var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;padding:32px 18px}main{width:min(720px,100%)}h1{margin:0 0 10px;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.04em}.card{background:rgba(17,24,39,.78);border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:0 16px 40px rgba(0,0,0,.18)}.card h2{margin:0 0 10px;font-size:1.45rem}.card p{color:var(--muted);line-height:1.65;margin:0}.download{margin-top:20px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:9px;background:var(--green);color:#03140e;border:1px solid var(--green);font-weight:700;font-size:.95rem;text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+<h1>Cybersecurity-first profile</h1>
+<section class="card">
+<h2>HN Masiya Resume</h2>
+<div class="download">
+<a id="download" class="btn" href="resume-variants/pdf/international.pdf" rel="noopener" download="Hazvinei_Masiya_Resume.pdf">📄 View / Download Hazvinei Masiya Resume</a>
+</div>
+</section>
+</main>
+<script>
+const countryToVariant={
+US:"us-resume",CA:"canadian-resume",GB:"uk-cv",IE:"irish-cv",
+AU:"australian-resume",NZ:"new-zealand-resume",
+DE:"german-cv",FR:"french-cv",NL:"dutch-cv",CH:"swiss-cv",
+AE:"uae-resume",QA:"qatar-resume",SA:"saudi-arabia-resume",
+ZA:"south-african-cv",ZW:"zimbabwe-cv",NG:"nigerian-cv",KE:"kenyan-cv",
+IN:"indian-resume",SG:"singapore-resume",JP:"japan-resume",KR:"south-korea-resume",
+BR:"brazil-resume",MX:"mexico-resume"
+};
+const regionCountries={
+europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
+africa:new Set("DZ AO BW CM EG ET GH KE MW MZ NA RW SN TZ UG ZM ZW ZA NG".split(" ")),
+middleEast:new Set("BH IL JO KW LB OM QA SA AE".split(" ")),
+asiaPacific:new Set("BD CN HK ID JP KH LK MY MM NP PH PK SG TH TW VN AU NZ".split(" "))
+};
+function variantFor(code){
+ if(countryToVariant[code]) return countryToVariant[code];
+ if(regionCountries.europe.has(code)) return "europe";
+ if(regionCountries.africa.has(code)) return "africa";
+ if(regionCountries.middleEast.has(code)) return "middle-east";
+ if(regionCountries.asiaPacific.has(code)) return "asia-pacific";
+ return "international";
+}
+function applyResumeLink(variant){
+ const link=document.getElementById("download");
+ link.href="resume-variants/pdf/"+variant+".pdf";
+ link.setAttribute("download","Hazvinei_Masiya_Resume.pdf");
+ link.removeAttribute("target");
+ link.setAttribute("rel","noopener");
+ link.setAttribute("aria-label","Download Hazvinei_Masiya_Resume.pdf");
+ link.dataset.variant=variant;
+}
+async function downloadResume(event){
+ event.preventDefault();
+ const link=document.getElementById("download");
+ const variant=link.dataset.variant||"global";
+ try{
+   const response=await fetch(link.href,{cache:"no-store"});
+   if(!response.ok) throw new Error("resume download failed");
+   const blob=await response.blob();
+   const objectUrl=URL.createObjectURL(blob);
+   const anchor=document.createElement("a");
+   anchor.href=objectUrl;
+   anchor.download="Hazvinei_Masiya_Resume.pdf";
+   document.body.appendChild(anchor);
+   anchor.click();
+   anchor.remove();
+   setTimeout(()=>URL.revokeObjectURL(objectUrl),1000);
+ }catch(error){
+   window.location.href=link.href;
+ }
+}
+document.getElementById("download").addEventListener("click",downloadResume);
+fetch("https://ipapi.co/country/",{cache:"no-store"})
+ .then(r=>r.ok?r.text():Promise.reject(new Error("country lookup failed")))
+ .then(code=>applyResumeLink(variantFor(code.trim().toUpperCase())))
+ .catch(()=>applyResumeLink("international"));
+</script>
+</body>
+</html>

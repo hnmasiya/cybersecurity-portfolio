@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "lines_parsed": 12,
+    "anomalies_detected": 4,
+    "high": 1,
+    "medium": 1,
+    "low": 2
+  },
+  "anomalies": [
+    {
+      "anomaly": "Brute Force Login Attempt",
+      "severity": "HIGH",
+      "source_ip": "203.0.113.55",
+      "failed_attempts": 6,
+      "mitre_attack": {
+        "technique": "T1110",
+        "name": "Brute Force",
+        "tactic": "Credential Access"
+      }
+    },
+    {
+      "anomaly": "Off-Hours Successful Login",
+      "severity": "MEDIUM",
+      "source_ip": "198.51.100.9",
+      "user": "svc-backup",
+      "timestamp": "Aug 18 03:02:44",
+      "mitre_attack": {
+        "technique": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Defense Evasion"
+      }
+    },
+    {
+      "anomaly": "Privileged Command Execution",
+      "severity": "LOW",
+      "user": "norman",
+      "command": "/usr/bin/systemctl restart nginx",
+      "timestamp": "Aug 18 09:16:02",
+      "mitre_attack": {
+        "technique": "T1548",
+        "name": "Abuse Elevation Control Mechanism",
+        "tactic": "Privilege Escalation"
+      }
+    },
+    {
+      "anomaly": "Privileged Command Execution",
+      "severity": "LOW",
+      "user": "norman",
+      "command": "/bin/bash",
+      "timestamp": "Aug 18 14:06:12",
+      "mitre_attack": {
+        "technique": "T1548",
+        "name": "Abuse Elevation Control Mechanism",
+        "tactic": "Privilege Escalation"
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+timestamp	agent_id	agent_name	rule_id	level	description	decoder	location
+2026-09-24T04:34:26.649+0000	002	normann-ThinkPad-X260	503	3	Wazuh agent started.	ossec	wazuh-agent
+2026-09-24T04:34:26.899+0000	000	wazuh.manager	502	3	Wazuh server started.	ossec	wazuh-monitord
+2026-09-24T04:34:27.319+0000	002	normann-ThinkPad-X260	533	7	Listened ports status (netstat) changed (new port opened or closed).	ossec	netstat listening ports
+2026-09-24T04:34:28.091+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.108+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.182+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.186+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.188+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:28.242+0000	002	normann-ThinkPad-X260	80710	10	Auditd: Device enables promiscuous mode.	auditd	/var/log/audit/audit.log
+2026-09-24T04:34:30.273+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T04:34:55.212+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T04:35:41.637+0000	000	wazuh.manager	19015	3	CIS Benchmark for Amazon Linux 2023 Benchmark v1.0.0.: Ensure sudo is installed.: Status changed from 'not applicable' to passed	sca	sca
+2026-09-24T04:35:48.985+0000	000	wazuh.manager	19003	5	SCA summary: CIS Benchmark for Amazon Linux 2023 Benchmark v1.0.0.: Score less than 80% (53)	sca	sca
+2026-09-24T04:37:39.031+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T04:38:20.014+0000	002	normann-ThinkPad-X260	533	7	Listened ports status (netstat) changed (new port opened or closed).	ossec	netstat listening ports
+2026-09-24T04:39:50.172+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T04:43:19.486+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:19.489+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:19.541+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:21.569+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:21.581+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:21.950+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T04:43:23.559+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:24.133+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:25.548+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:25.551+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:27.741+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:27.743+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:27.742+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:31.447+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:31.457+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.701+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.702+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.702+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.706+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.707+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.707+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.709+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.710+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.710+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.721+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.722+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:33.731+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:51.460+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:51.464+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:59.455+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:59.499+0000	002	normann-ThinkPad-X260	2904	7	Dpkg (Debian Package) half configured.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:43:59.499+0000	002	normann-ThinkPad-X260	2902	7	New dpkg (Debian Package) installed.	dpkg-decoder	/var/log/dpkg.log
+2026-09-24T04:44:06.594+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T04:44:07.791+0000	002	normann-ThinkPad-X260	80730	3	Auditd: SELinux permission check.	auditd	/var/log/audit/audit.log
+2026-09-24T04:44:07.845+0000	002	normann-ThinkPad-X260	80730	3	Auditd: SELinux permission check.	auditd	/var/log/audit/audit.log
+2026-09-24T04:44:07.845+0000	002	normann-ThinkPad-X260	80730	3	Auditd: SELinux permission check.	auditd	/var/log/audit/audit.log
+2026-09-24T04:46:22.456+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T04:51:35.055+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T05:02:15.705+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T05:11:52.296+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T05:13:19.353+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T05:21:28.884+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T05:32:09.526+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T05:42:50.239+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T05:46:19.600+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T05:52:26.834+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T06:03:07.465+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T06:12:44.106+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T06:13:19.352+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:15:01.288+0000	002	normann-ThinkPad-X260	92604	6	Processes running for all users were queried with ps command.	auditd	/var/log/audit/audit.log
+2026-09-24T06:15:01.465+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:15:01.467+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:15:01.467+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:15:17.340+0000	002	normann-ThinkPad-X260	92604	6	Processes running for all users were queried with ps command.	auditd	/var/log/audit/audit.log
+2026-09-24T06:15:37.493+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:15:37.494+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:15:37.495+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:19:33.719+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:19:33.721+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:19:33.722+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:19:45.733+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:19:45.735+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:19:45.737+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:20:53.812+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:20:53.813+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:20:55.815+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:21:13.842+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:21:13.843+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:21:13.851+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:21:23.847+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:21:23.850+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:21:23.851+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:21:39.867+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:21:39.868+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:21:39.870+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:21:51.888+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:21:51.890+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:21:51.892+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:22:20.741+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T06:24:12.031+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:24:12.035+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:24:12.035+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:24:22.047+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:24:22.049+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:24:22.050+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:29:30.527+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:29:30.527+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:29:40.338+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:33:01.473+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T06:35:22.716+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:35:22.718+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:35:26.820+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:35:26.820+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:35:26.820+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:35:42.745+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:40:57.077+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:40:57.081+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:41:01.088+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:41:01.088+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:41:01.088+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:41:33.108+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:42:37.975+0000	002	normann-ThinkPad-X260	591	3	Log file rotated.	ossec	logcollector
+2026-09-24T06:46:19.423+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:47:07.465+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:47:07.466+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:47:09.509+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:47:09.509+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:47:09.510+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+2026-09-24T06:47:43.506+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald

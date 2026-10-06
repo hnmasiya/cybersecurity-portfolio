@@ -1,0 +1,36 @@
+[
+  {"timestamp": "2026-08-20T09:00:01Z", "event_id": 4625, "target_user": "svc-backup", "workstation": "WIN-LAB-01"},
+  {"timestamp": "2026-08-20T09:00:04Z", "event_id": 4625, "target_user": "svc-backup", "workstation": "WIN-LAB-01"},
+  {"timestamp": "2026-08-20T09:00:07Z", "event_id": 4625, "target_user": "svc-backup", "workstation": "WIN-LAB-01"},
+  {"timestamp": "2026-08-20T09:00:10Z", "event_id": 4625, "target_user": "svc-backup", "workstation": "WIN-LAB-01"},
+  {"timestamp": "2026-08-20T09:00:13Z", "event_id": 4625, "target_user": "svc-backup", "workstation": "WIN-LAB-01"},
+  {"timestamp": "2026-08-20T09:00:16Z", "event_id": 4625, "target_user": "svc-backup", "workstation": "WIN-LAB-01"},
+
+  {"timestamp": "2026-08-20T09:05:00Z", "event_id": 4625, "target_user": "jdoe", "workstation": "WIN-LAB-02"},
+  {"timestamp": "2026-08-20T09:05:32Z", "event_id": 4624, "target_user": "jdoe", "workstation": "WIN-LAB-02"},
+
+  {"timestamp": "2026-08-20T09:10:00Z", "event_id": 4771, "target_user": "svc-sql", "workstation": "DC01"},
+  {"timestamp": "2026-08-20T09:10:02Z", "event_id": 4771, "target_user": "svc-sql", "workstation": "DC01"},
+  {"timestamp": "2026-08-20T09:10:04Z", "event_id": 4771, "target_user": "svc-sql", "workstation": "DC01"},
+  {"timestamp": "2026-08-20T09:10:06Z", "event_id": 4771, "target_user": "svc-sql", "workstation": "DC01"},
+  {"timestamp": "2026-08-20T09:10:08Z", "event_id": 4771, "target_user": "svc-sql", "workstation": "DC01"},
+
+  {"timestamp": "2026-08-20T09:15:00Z", "event_id": 4769, "target_user": "asmith", "service_name": "MSSQLSvc/db01.corp.local", "encryption_type": "0x17"},
+  {"timestamp": "2026-08-20T09:15:05Z", "event_id": 4769, "target_user": "asmith", "service_name": "HTTP/web01.corp.local", "encryption_type": "0x17"},
+  {"timestamp": "2026-08-20T09:15:10Z", "event_id": 4769, "target_user": "asmith", "service_name": "CIFS/fs01.corp.local", "encryption_type": "0x17"},
+
+  {"timestamp": "2026-08-20T09:20:00Z", "event_id": 4769, "target_user": "svc-web", "service_name": "HTTP/web01.corp.local", "encryption_type": "0x12"},
+  {"timestamp": "2026-08-20T09:25:00Z", "event_id": 4769, "target_user": "svc-web", "service_name": "HTTP/web02.corp.local", "encryption_type": "0x12"},
+
+  {"timestamp": "2026-08-20T09:30:00Z", "event_id": 4728, "target_user": "tcontractor", "group_name": "Domain Admins", "subject_user": "helpdesk1"},
+  {"timestamp": "2026-08-20T09:31:00Z", "event_id": 4732, "target_user": "tcontractor", "group_name": "Local Administrators", "subject_user": "helpdesk1"},
+
+  {"timestamp": "2026-08-20T09:35:00Z", "event_id": 4720, "target_user": "svc-newapp", "subject_user": "admin.corp"},
+  {"timestamp": "2026-08-20T09:36:00Z", "event_id": 4672, "target_user": "svc-newapp"},
+
+  {"timestamp": "2026-08-20T09:40:00Z", "event_id": 1102, "subject_user": "admin.corp"},
+
+  {"timestamp": "2026-08-20T09:45:00Z", "event_id": 4624, "target_user": "msmith", "workstation": "WIN-LAB-03"},
+  {"timestamp": "2026-08-20T09:46:00Z", "event_id": 4624, "target_user": "rjones", "workstation": "WIN-LAB-04"},
+  {"timestamp": "2026-08-20T09:47:00Z", "event_id": 4769, "target_user": "svc-print", "service_name": "spoolsv/print01.corp.local", "encryption_type": "0x12"}
+]

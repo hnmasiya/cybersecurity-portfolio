@@ -1,0 +1,39 @@
+// Microsoft Sentinel / KQL
+// Purpose: identify potentially suspicious PowerShell execution.
+//
+// Status: ARCHITECTURE / METHODOLOGY
+// Execution against a live workspace must be evidenced separately.
+
+// Microsoft Defender for Endpoint process telemetry
+DeviceProcessEvents
+| where Timestamp >= ago(24h)
+| where FileName =~ "powershell.exe"
+    or FileName =~ "pwsh.exe"
+| project
+    Timestamp,
+    DeviceName,
+    AccountName,
+    FileName,
+    ProcessCommandLine,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine
+| order by Timestamp desc
+
+// Investigate common high-risk PowerShell indicators
+DeviceProcessEvents
+| where Timestamp >= ago(24h)
+| where FileName =~ "powershell.exe"
+| where ProcessCommandLine has_any (
+    "-EncodedCommand",
+    "FromBase64String",
+    "DownloadString",
+    "Invoke-WebRequest",
+    "IEX",
+    "Invoke-Expression"
+)
+| project
+    Timestamp,
+    DeviceName,
+    AccountName,
+    ProcessCommandLine,
+    InitiatingProcessFileName

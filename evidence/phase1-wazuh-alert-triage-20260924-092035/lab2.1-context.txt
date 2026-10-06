@@ -1,0 +1,41 @@
+Lab 2.1 report:
+/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-manager-alert-validation-20260924-084707.txt
+
+Relevant timestamps discovered from report:
+[PASS] Manager-side alerts.json detected.
+3. ALERT BASELINE
+Manager alerts.json baseline lines: 121
+[PASS] Manager-side alert baseline established.
+[PASS] Controlled sudo activity executed.
+Recent sudo-related journal entries:
+Sep 24 08:47:07 normann-ThinkPad-X260 sudo[57775]:  normann : TTY=pts/2 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=./scripts/phase1-wazuh-manager-alert-validation.sh
+Sep 24 08:47:07 normann-ThinkPad-X260 sudo[57775]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=1000)
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]:     root : TTY=pts/0 ; PWD=/home/normann/cybersecurity-portfolio ; USER=root ; COMMAND=/usr/bin/true
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]: pam_unix(sudo:session): session opened for user root(uid=0) by normann(uid=0)
+Sep 24 08:47:09 normann-ThinkPad-X260 sudo[57999]: pam_unix(sudo:session): session closed for user root
+type=EXECVE msg=audit(1790232429.662:120661): argc=2 a0="tee" a1="/home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-manager-alert-validation-20260924-084707/audit-execution-events.txt"
+9. POST-TEST ALERT COUNT
+Baseline alert lines : 121
+Post-test alert lines: 124
+[PASS] New manager-side Wazuh alerts were generated.
+10. CAPTURE NEW MANAGER ALERTS
+New alert lines captured: 3
+[PASS] New manager alerts captured as evidence.
+11. EXTRACT ALERT METADATA
+2026-09-24T06:47:09.509+0000	002	normann-ThinkPad-X260	5402	3	Successful sudo to ROOT executed.	sudo	journald
+2026-09-24T06:47:09.509+0000	002	normann-ThinkPad-X260	5502	3	PAM: Login session closed.	pam	journald
+2026-09-24T06:47:09.510+0000	002	normann-ThinkPad-X260	5501	3	PAM: Login session opened.	pam	journald
+timestamp | agent.id | agent.name | rule.id | level | description | decoder | location
+      1 5402
+      1 5501
+      1 5502
+  Sudo activity      : executed
+Wazuh alert pipeline:
+  alerts.json        : available
+  Baseline lines     : 121
+  Post-test lines    : 124
+  New alert lines    : 3
+[PASS] END-TO-END ALERT PIPELINE VALIDATED.
+/home/normann/cybersecurity-portfolio/evidence/phase1-wazuh-manager-alert-validation-20260924-084707
+/home/normann/cybersecurity-portfolio/reports/phase1-wazuh-manager-alert-validation-20260924-084707.txt
+END OF WAZUH MANAGER ALERT PIPELINE VALIDATION

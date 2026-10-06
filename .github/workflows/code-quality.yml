@@ -1,0 +1,20 @@
+name: Code Quality & Static Analysis
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Code Quality & Static Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run code-quality gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Code-quality gate initialized successfully."

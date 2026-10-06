@@ -1,0 +1,17 @@
+LAB4 MITRE ATT&CK CONTEXT
+
+Incident: LAB4-20260924-101415
+
+Potential technique:
+T1548.003 - Abuse Elevation Control Mechanism: Sudo and Sudo Caching
+
+Use:
+The technique is documented as investigative context because the controlled
+lab activity intentionally used sudo.
+
+Important limitation:
+This mapping does NOT indicate malicious activity. The activity was generated
+by the analyst as part of a controlled SOC simulation.
+
+PAM session events are supporting authentication/session telemetry and are not
+independently treated as an ATT&CK technique.
