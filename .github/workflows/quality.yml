@@ -34,7 +34,10 @@ jobs:
           domain="$(tr -d '[:space:]' < CNAME)"
           test "$domain" = "masiya-hub.org"
 
-          if grep -RniE 'Claude-Session:|noreply@anthropic\.com|career-operations-private|AUTOMATION_SIGNING_KEY|PRODUCTION_REPO_TOKEN' .             --exclude-dir=.git             --exclude='*.pdf' --exclude='quality.yml'; then
+          if grep -RniE 'claude-session|anthropic|career-operations-private|automation_signing_key|production_repo_token' . \
+            --exclude-dir=.git \
+            --exclude='*.pdf' \
+            --exclude='quality.yml'; then
             echo "[FAIL] Private development metadata detected in public text."
             exit 1
           fi
