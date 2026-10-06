@@ -28,17 +28,25 @@ jobs:
           test -f README.md
           test -f index.html
           test -f CNAME
-          test -f Resume_Hazvinei_Masiya.md
+          test -f resume-variants/pdf/international.pdf
           test -f resumes.html
 
           domain="$(tr -d '[:space:]' < CNAME)"
           test "$domain" = "masiya-hub.org"
 
-          if grep -RniE 'claude-session|anthropic|career-operations-private|automation_signing_key|production_repo_token' . \
+          if grep -RniE 'Co-Authored-By:[[:space:]]*Claude|claude\\.ai/|noreply@anthropic\\.com' . \
             --exclude-dir=.git \
             --exclude='*.pdf' \
             --exclude='quality.yml'; then
-            echo "[FAIL] Private development metadata detected in public text."
+            echo "[FAIL] AI/development metadata detected in public text."
+            exit 1
+          fi
+
+          if grep -RniE '\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b|\\+263[[:space:]-]?[0-9]{2}[[:space:]-]?[0-9]{3}[[:space:]-]?[0-9]{4}' . \
+            --exclude-dir=.git \
+            --exclude='*.pdf' \
+            --exclude='quality.yml'; then
+            echo "[FAIL] Private contact information detected in public text."
             exit 1
           fi
 
