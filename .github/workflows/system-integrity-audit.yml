@@ -12,10 +12,6 @@ on:
     - cron: "37 * * * *"
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pull-requests: read
-
 concurrency:
   group: system-integrity-audit
   cancel-in-progress: true
@@ -30,8 +26,6 @@ jobs:
           fetch-depth: 1
 
       - name: Validate public repository boundary
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           test "$(gh api repos/$GITHUB_REPOSITORY --jq '.visibility')" = "public"
