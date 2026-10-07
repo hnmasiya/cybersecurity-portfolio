@@ -1,0 +1,1 @@
+{"host":"WS-SYNTH-01","process_chain":["SyntheticUpdater.exe","SyntheticWorker.exe"],"telemetry":{"file_operations":1842,"extensions_changed":[".docx",".xlsx",".pdf"],"process_creation_burst":31},"iocs":{"sha256":["SIMULATED_PROCESS_HASH"],"source_ip":"192.0.2.77"},"severity":"critical","note":"Simulation only; no destructive execution."}

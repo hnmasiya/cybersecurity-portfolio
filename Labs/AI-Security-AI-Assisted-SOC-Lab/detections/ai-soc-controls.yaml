@@ -1,0 +1,18 @@
+title: AI-Assisted SOC Safety Controls
+controls:
+  input:
+    - prompt_injection_screening
+    - sensitive_data_detection
+  model:
+    - least_privilege_tool_access
+    - system_prompt_integrity
+  output:
+    - analyst_validation
+    - confidence_scoring
+    - high_impact_action_approval
+  logging:
+    - tool_invocations
+    - analyst_decision
+framework:
+  - MITRE_ATLAS
+safety: human-in-the-loop
