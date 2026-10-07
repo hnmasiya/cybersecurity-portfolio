@@ -1,0 +1,11 @@
+title: Synthetic BEC Detection
+conditions:
+  dmarc: fail
+  reply_to_domain: differs_from_sender_domain
+  subject: urgent_payment_language
+response:
+  - preserve_message
+  - search_mailbox_for_iocs
+  - review_sign_in_activity
+  - revoke_sessions_if_compromise_confirmed
+safety: synthetic-only

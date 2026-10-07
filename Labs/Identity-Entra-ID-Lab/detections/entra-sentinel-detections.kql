@@ -1,0 +1,12 @@
+SigninLogs
+| where ResultType != 0
+| summarize FailedAttempts=count(), Users=dcount(UserPrincipalName) by IPAddress
+| where FailedAttempts >= 20 and Users >= 5
+
+SigninLogs
+| where RiskLevelDuringSignIn in ("medium", "high")
+| project TimeGenerated, UserPrincipalName, IPAddress, AppDisplayName, RiskLevelDuringSignIn
+
+AuditLogs
+| where OperationName has_any ("Consent", "Add member", "Add owner")
+| project TimeGenerated, InitiatedBy, OperationName, TargetResources

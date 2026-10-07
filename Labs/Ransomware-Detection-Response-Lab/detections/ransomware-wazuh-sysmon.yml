@@ -1,0 +1,12 @@
+title: Synthetic Ransomware Behavior Detection
+conditions:
+  process_creation_burst: ">= 20 in 60s"
+  file_operations: ">= 1000 in 5m"
+  suspicious_parent_child_chain: true
+severity: critical
+actions:
+  - isolate_endpoint
+  - preserve_evidence
+  - identify_scope
+  - initiate_incident_response
+safety: synthetic-only
