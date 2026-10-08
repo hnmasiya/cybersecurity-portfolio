@@ -16,7 +16,7 @@
 <section class="card">
 <h2>HN Masiya Resume</h2>
 <div class="download">
-<a id="download" class="btn" href="resume-variants/pdf/global.pdf" rel="noopener" download="Hazvinei_Masiya_Resume.pdf">📄 View / Download Hazvinei Masiya Resume</a>
+<a id="download" class="btn" href="resume-variants/pdf/international.pdf" rel="noopener" download="Hazvinei_Masiya_Resume.pdf">📄 View / Download Hazvinei Masiya Resume</a>
 </div>
 </section>
 </main>
@@ -56,7 +56,7 @@ function applyResumeLink(variant){
 async function downloadResume(event){
  event.preventDefault();
  const link=document.getElementById("download");
- const variant=link.dataset.variant||"global";
+ const variant=link.dataset.variant||"international";
  try{
    const response=await fetch(link.href,{cache:"no-store"});
    if(!response.ok) throw new Error("resume download failed");
@@ -77,7 +77,7 @@ document.getElementById("download").addEventListener("click",downloadResume);
 fetch("https://ipapi.co/country/",{cache:"no-store"})
  .then(r=>r.ok?r.text():Promise.reject(new Error("country lookup failed")))
  .then(code=>applyResumeLink(variantFor(code.trim().toUpperCase())))
- .catch(()=>applyResumeLink("global"));
+ .catch(()=>applyResumeLink("international"));
 </script>
 </body>
 </html>
