@@ -4,7 +4,7 @@
 
 ### Cybersecurity Professional · Security Operations · Detection Engineering · Incident Response · DFIR · Automation
 
-**12+ Years Enterprise IT · CompTIA Security+ (SY0-701) Certified · BSc Computer Science — In Progress**
+**12+ Years Enterprise IT · CompTIA Security+ Certified (SY0-701) · BSc Computer Science — In Progress**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-masiya--hub.org-10b981?style=for-the-badge&logo=googlechrome&logoColor=white)](https://masiya-hub.org/)
 [![GitHub](https://img.shields.io/badge/GitHub-hnmasiya-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hnmasiya)
@@ -149,7 +149,7 @@ Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage auto
 ## 🎓 Certifications & Professional Credentials
 
 ### Cybersecurity & Security
-- **CompTIA Security+ Certified (SY0-701)** — Issued July 2026 · Valid through July 2029
+- **CompTIA Security+ Certified (SY0-701)**
 - **Introduction to AI Security** — AI Security University
 - **GRC Fundamentals** — CyberExam
 - **Junior Cybersecurity Analyst Career Path** — Cisco
@@ -177,8 +177,6 @@ Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage auto
 - **BSc in Computer Science** — Unicaf University · In Progress
 - **Diploma in Information Technology** — Macmaine School of Computing
 - **Diploma in PC Maintenance and Networking** — Macmaine School of Computing
-
-> **Qualification accuracy:** National Diploma in ICT — Harare Polytechnic is intentionally not listed.
 
 ---
 
