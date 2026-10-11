@@ -37,6 +37,14 @@ The repository retains the investigation SPL and supporting artifacts. No unreta
 ## 8. Evidence
 Track-level validation records 6 validated synthetic case events, retained SPL and an incident report.
 
+### Reproducible artifact map
+- Dataset: [`data/end_to_end_case_events.csv`](data/end_to_end_case_events.csv) — 6 controlled/synthetic case events.
+- Investigation SPL: [`spl/end-to-end-investigation.spl`](spl/end-to-end-investigation.spl).
+- Incident report: [`reports/Incident-Report.md`](reports/Incident-Report.md).
+- Evidence inventory: [`evidence/README.md`](evidence/README.md).
+
+The parent [Splunk SOC Lab Track](../README.md) records the independent index/count, raw-search and required-field validation. This is a controlled investigation exercise, not a real customer or production incident.
+
 ## 9. Indicators / Observations
 The case evidence is synthetic. Conclusions are restricted to observations supported by the retained investigation artifacts.
 
