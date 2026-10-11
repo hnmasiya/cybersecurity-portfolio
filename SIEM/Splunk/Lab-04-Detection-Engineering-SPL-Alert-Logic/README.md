@@ -36,6 +36,14 @@ Detection SPL and supporting validation artifacts are retained in the repository
 ## 8. Evidence
 Track-level validation records 6 validated synthetic events, retained detection rules and a validation report.
 
+### Reproducible artifact map
+- Dataset: [`data/detection_test_events.csv`](data/detection_test_events.csv) — 6 controlled/synthetic events.
+- Detection SPL: [`spl/detection-rules.spl`](spl/detection-rules.spl).
+- Validation report: [`reports/detection-validation.md`](reports/detection-validation.md).
+- Evidence inventory: [`evidence/README.md`](evidence/README.md).
+
+The parent [Splunk SOC Lab Track](../README.md) records the independent index/count, raw-search and required-field validation. This does not establish production alert performance or a dashboard screenshot.
+
 ## 9. Indicators / Observations
 The evidence is controlled synthetic telemetry. Detection observations are limited to what the retained validation artifacts demonstrate.
 
