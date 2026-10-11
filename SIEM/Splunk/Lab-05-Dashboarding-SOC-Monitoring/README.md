@@ -36,6 +36,14 @@ Monitoring SPL and validation artifacts are retained in the repository. No unret
 ## 8. Evidence
 Track-level validation records 24 validated synthetic SOC-metric events and retained monitoring artifacts.
 
+### Reproducible artifact map
+- Dataset: [`data/soc_monitoring_metrics.csv`](data/soc_monitoring_metrics.csv) — 24 controlled/synthetic monitoring events.
+- Monitoring SPL: [`spl/soc-monitoring.spl`](spl/soc-monitoring.spl).
+- Monitoring report: [`reports/SOC-Monitoring-Report.md`](reports/SOC-Monitoring-Report.md).
+- Evidence inventory: [`evidence/README.md`](evidence/README.md).
+
+The parent [Splunk SOC Lab Track](../README.md) records the independent index/count, raw-search and required-field validation. The retained evidence supports dashboard-oriented monitoring analysis; no dashboard visual export or production KPI is claimed.
+
 ## 9. Indicators / Observations
 The telemetry is synthetic and represents controlled monitoring data rather than live operational metrics.
 
