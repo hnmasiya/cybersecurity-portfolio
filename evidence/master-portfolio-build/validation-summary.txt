@@ -1,7 +1,7 @@
 Cybersecurity Portfolio Master Build v1.0.0
-UTC: 2026-09-26T13:21:57Z
-Repository: /home/normann/cybersecurity-portfolio
-PASS=35 WARN=2 FAIL=0
+UTC: 2026-10-11T11:55:34Z
+Repository: hnmasiya/cybersecurity-portfolio-dev (GitHub Actions run 38137339044; commit 2e7521dc4752515e143152cd18ae745da5d53fdf)
+PASS=37 WARN=0 FAIL=0
 PASS|Repository component: index.md
 PASS|Repository component: SIEM README
 PASS|Repository component: Splunk README
@@ -9,7 +9,7 @@ PASS|Repository component: Scripts
 PASS|Repository component: Web Security
 PASS|Repository component: Cloud Security
 PASS|Repository component: SOC
-PASS|Bash syntax validation: 21 scripts
+PASS|Bash syntax validation: 18 scripts
 PASS|Portfolio domain: DVWA
 PASS|Portfolio domain: SIEM
 PASS|Portfolio domain: Wazuh
@@ -33,8 +33,8 @@ PASS|Dashboard Studio structural definitions detected
 PASS|Cross-domain evidence: DVWA
 PASS|Cross-domain evidence: Wazuh
 PASS|Cross-domain evidence: Splunk
-WARN|Cross-domain path absent: Nmap -> Nmap
-WARN|Cross-domain path absent: Wireshark -> Wireshark
+PASS|Cross-domain evidence: Nmap
+PASS|Cross-domain evidence: Wireshark
 PASS|Cross-domain evidence: MITRE ATT&CK
 PASS|Cross-domain evidence: Cloud Security
 PASS|Master catalog generated: CYBERSECURITY-LAB-CATALOG.md

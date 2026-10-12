@@ -108,8 +108,8 @@ A lab is publicly labelled COMPLETE only when all applicable gates below are sat
 | Linux Host Hardening Audit | COMPLETED — LIVE / REAL LAB + SYNTHETIC | Real privileged collection; 0 findings after scoped audit; evidence retained. |
 | Docker Container Configuration Audit | COMPLETED — LIVE / REAL LAB + SYNTHETIC | 14 real findings across 8 containers; secrets sanitized. |
 | DVWA Web Security | COMPLETED evidence track | Multiple vulnerability reports and genuine screenshot/evidence inventory. |
-| Nmap reconnaissance | COMPLETED supporting evidence | Real full-TCP-range self-owned scan; master index had a path warning. |
-| Wireshark / PCAP Analysis | COMPLETED supporting evidence | Real project traffic capture and PCAP analysis; master index had a path warning. |
+| Nmap reconnaissance | COMPLETED supporting evidence | Real full-TCP-range self-owned scan; linked to canonical report and retained `.nmap`, `.xml`, and `.gnmap` outputs below. |
+| Wireshark / PCAP Analysis | COMPLETED supporting evidence | Real project traffic capture and analysis; linked to canonical report, retained PCAP, and analysis CSV below. |
 | Threat Hunting & Detection Validation | COMPLETED — OFFLINE VALIDATION | HUNT-001/002/003 validator plus JSON/CSV output. |
 | Azure Windows Server Security Lab | COMPLETED — LIVE / REAL LAB | Windows Server 2022 DC deployed/hardened with Security, Sysmon and Wazuh evidence. |
 | GCP Secure Landing Zone | ARCHITECTURE / PREPARED | Terraform/design ready; real GCP organization deployment not evidenced. |
@@ -479,6 +479,12 @@ The repository evidence inventory contains genuine screenshots for login, brute 
 - [x] Results interpreted.
 - [x] Evidence retained.
 
+Canonical evidence:
+- [Nmap reconnaissance report](Network-Security/Nmap/Reports/Nmap-Network-Reconnaissance.md)
+- [Human-readable scan output](Network-Security/Nmap/Evidence/home-lab-scan.nmap)
+- [Structured XML output](Network-Security/Nmap/Evidence/home-lab-scan.xml)
+- [Grepable scan output](Network-Security/Nmap/Evidence/home-lab-scan.gnmap)
+
 ### Wireshark / PCAP
 - [x] Authorized project traffic capture.
 - [x] PCAP retained.
@@ -486,9 +492,14 @@ The repository evidence inventory contains genuine screenshots for login, brute 
 - [x] IOC extraction where applicable.
 - [x] Findings documented.
 
-Master audit previously warned that Nmap and Wireshark cross-domain paths were absent. Repair the index/reference mapping and rerun the master audit.
+Canonical evidence:
+- [Wireshark packet-analysis report](Network-Security/Wireshark/Reports/Wireshark-Packet-Analysis.md)
+- [Retained Juice Shop capture](Network-Security/Wireshark/Evidence/juice-shop-capture.pcap)
+- [Analysis CSV](Network-Security/Wireshark/Evidence/juice-shop-analysis.csv)
 
-**Status: COMPLETE supporting evidence; indexing cleanup remains.**
+The canonical repository directories are `Network-Security/Nmap/` and `Network-Security/Wireshark/`. The previous saved master-build snapshot records two indexing warnings; a fresh master build is required to replace that historical result with a current validation result.
+
+**Status: COMPLETE supporting evidence; direct report and artifact links are now indexed.**
 
 ## 14. Threat Hunting & Detection Validation
 
@@ -738,15 +749,13 @@ Do not claim a validation command was run unless its result is retained or other
 
 ## 25. Current portfolio-level validation
 
-The repository's master build recorded:
+The refreshed master build was executed in GitHub Actions on 2026-10-11 (run [38137339044](https://github.com/hnmasiya/cybersecurity-portfolio-dev/actions/runs/38137339044), source commit `2e7521dc4752515e143152cd18ae745da5d53fdf`).
 
-**PASS=35, WARN=2, FAIL=0**
+**PASS=37, WARN=0, FAIL=0**
 
-It validated repository components, 21 Bash scripts, DVWA, SIEM/Wazuh/Splunk, Network Security, Cloud Security, SOC, Security Automation, Coursework, Splunk Labs 01–06, retained builders, Splunk JSON, Dashboard Studio structure, cross-domain evidence, MITRE ATT&CK, master catalog generation and Labs 03–06 artifact validation.
+The run validated repository components, 18 Bash scripts, DVWA, SIEM/Wazuh/Splunk, Network Security, Cloud Security, SOC, Security Automation, Coursework, Splunk Labs 01–06, retained builders, Splunk JSON, Dashboard Studio structure, all cross-domain evidence including Nmap and Wireshark, MITRE ATT&CK, master catalog generation and Labs 03–06 artifact validation. The retained [validation summary](evidence/master-portfolio-build/validation-summary.txt) records the result.
 
-Warnings:
-- Nmap cross-domain path absent.
-- Wireshark cross-domain path absent.
+**Separate privacy note:** the full-system diagnostic's evidence/publication audit emitted one warning that three public email addresses were detected. The master build itself had zero warnings; review the contact-privacy policy before calling the overall repository audit fully clean.
 
 ## 26. Final public COMPLETE gate
 
@@ -784,13 +793,13 @@ Warnings:
 ## 27. Current closure queue
 
 ### Documentation
-- [ ] Reconcile Splunk Labs 03–06 individual README wording with track-level validation.
+- [x] Reconcile Splunk Labs 03–06 READMEs with the retained track-level validation and add direct dataset/SPL/report links.
 - [ ] Keep Lab 02 screenshot unchecked until genuinely captured.
 
 ### Indexing
-- [ ] Repair Nmap cross-domain path.
-- [ ] Repair Wireshark cross-domain path.
-- [ ] Rerun master validation.
+- [x] Add direct Nmap report and scan-output links to the master index.
+- [x] Add direct Wireshark report, PCAP and analysis-CSV links to the master index.
+- [x] Rerun master validation; refreshed result is retained in `evidence/master-portfolio-build/validation-summary.txt`.
 
 ### Optional live expansion
 - [ ] Deploy GCP Landing Zone against a real organization.
