@@ -37,6 +37,14 @@ The lab retains its SPL and supporting validation artifacts. No command or query
 ## 8. Evidence
 Track-level validation records 15 validated synthetic events, retained SPL and an investigation report.
 
+### Reproducible artifact map
+- Dataset: [`data/http_access_events.csv`](data/http_access_events.csv) — 15 controlled/synthetic HTTP events.
+- Investigation SPL: [`spl/http-investigation.spl`](spl/http-investigation.spl).
+- Investigation report: [`reports/SOC-Investigation-Report.md`](reports/SOC-Investigation-Report.md).
+- Evidence inventory: [`evidence/README.md`](evidence/README.md).
+
+The parent [Splunk SOC Lab Track](../README.md) records the independent index/count, raw-search and required-field validation. No dashboard screenshot or live/customer telemetry is claimed.
+
 ## 9. Indicators / Observations
 The evidence is synthetic training telemetry. Specific observations must be taken from the retained SPL/results rather than inferred from the dataset size.
 
