@@ -28,6 +28,13 @@ jobs:
           python3 -m unittest discover -s Tests -v
           python3 -m json.tool fixtures/synthetic-process-events.json > /dev/null
 
+      - name: Validate Sigma rule syntax and quality
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check "sigma-cli==3.1.0" "pySigma-validators-sigmahq"
+          sigma check --fail-on-error --fail-on-issues SOC/Detection-as-Code/detections/windows-suspicious-process.yml
+
       - name: Validate public repository contract
         shell: bash
         run: |
