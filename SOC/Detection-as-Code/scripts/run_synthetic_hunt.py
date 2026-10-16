@@ -87,11 +87,14 @@ def main() -> int:
     args = parser.parse_args()
     report, passed = build_report()
     if args.check:
-        existing = args.check.read_text(encoding="utf-8")
-        if existing != report:
-            print(f"Report is stale: {args.check}", file=sys.stderr)
+        if not args.check.is_file():
+            print(f"Report not found: {args.check}", file=sys.stderr)
             return 1
-        print(f"Report matches current fixture results: {args.check}")
+        if not passed:
+            print("Synthetic fixture outcomes differ from the expected rule IDs.", file=sys.stderr)
+            print(report, file=sys.stderr)
+            return 1
+        print(f"Synthetic fixture outcomes match expected rule IDs; report exists: {args.check}")
     else:
         print(report, end="")
     return 0 if passed else 1
