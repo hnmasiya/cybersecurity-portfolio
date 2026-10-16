@@ -21,7 +21,6 @@ This area documents the portfolio's detection engineering work in a repeatable f
 
 Do not claim Sigma compatibility, conversion or successful testing unless demonstrated by repository evidence.
 
-
 ---
 
 # 20-Section Evidence-First Case Study Record
@@ -72,8 +71,8 @@ The case study is framed as evidence of the corresponding security workflow with
 The existing linked artifacts, reports, scripts, datasets, standards, and source material remain authoritative.
 
 ### Evidence Integrity Statement
-This standardization adds structure, not invented results. No fabricated metrics, certifications, incidents, production claims, or execution evidence are introduced.
 
+This standardization adds structure, not invented results. No fabricated metrics, certifications, incidents, production claims, or execution evidence are introduced.
 
 ## Reproducible Windows process-detection pack
 
@@ -81,32 +80,12 @@ The current starter pack adds testable detection logic and a portable Sigma arti
 
 - [Python detection harness](./detections/detection_engine.py) — evaluates normalized Windows process-creation events.
 - [Sigma rule](./detections/windows-suspicious-process.yml) — encoded PowerShell and remote-URL MSHTA patterns; validate field mapping before deployment.
-- [Synthetic test fixtures](./fixtures/synthetic-process-events.json) — three positive cases and two benign controls.
+- [Synthetic test fixtures](./fixtures/synthetic-process-events.json) — synthetic positive cases and benign controls.
 - [Regression tests](./Tests/test_detection_engine.py) — verifies expected matches and non-matches.
 - [Detection lifecycle and tuning standard](./DETECTION-LIFECYCLE.md) — proposal, testing, review, deployment, monitoring, tuning and retirement.
-- [GitHub Actions tests](../../.github/workflows/detection-as-code-tests.yml) — runs the Python regression suite and validates fixture JSON.
+- [GitHub Actions quality workflow](../../.github/workflows/quality.yml) — runs the Python regression suite and validates fixture JSON.
 
 ### Run locally
-
-From this directory:
-
-```bash
-python -m unittest discover -s Tests -v
-python detections/detection_engine.py fixtures/synthetic-process-events.json
-```
-
-The harness is a training/reference implementation. Test fixtures are synthetic; matching a test event is not proof of malicious activity. The Sigma rule is marked `test` and is not approved for production deployment. Confirm event schema, field mapping, benign baselines and false-positive behaviour in the intended SIEM before operational use.
-
-
-
-## Additional gap-closing evidence
-
-- [Hypothesis-driven PowerShell hunt](./case-studies/hypothesis-driven-powershell-hunt.md) — documented hypothesis, data requirements, ATT&CK context, SPL starter query, test design and explicit pending execution status.
-- [Endpoint-to-SIEM correlation checklist](./case-studies/endpoint-to-siem-correlation.md) — validation steps for endpoint telemetry, SIEM parsing and correlation; no live integration is claimed.
-- [Offline alert enrichment utility](./automation/alert_enrichment.py) — classifies IP fields without external calls and leaves response in analyst-review mode.
-- [Incident response and rule governance playbook](./INCIDENT-RESPONSE-LIFECYCLE.md) — triage, evidence handling, containment decision points, change governance and purple-team exercise template.
-
-### Run the full local regression suite
 
 From this directory:
 
@@ -116,4 +95,15 @@ python3 -m json.tool fixtures/synthetic-process-events.json > /dev/null
 python3 detections/detection_engine.py fixtures/synthetic-process-events.json
 ```
 
-The repository's established `quality` workflow now runs the detection tests. This replaces the separate workflow that was failing to start, so validation runs within the existing quality job. A successful workflow run is still required before describing the suite as CI-validated.
+The harness is a training/reference implementation. Test fixtures are synthetic; matching a test event is not proof of malicious activity. The Sigma rule is marked `test` and is not approved for production deployment. Confirm event schema, field mapping, benign baselines and false-positive behaviour in the intended SIEM before operational use.
+
+## Additional gap-closing evidence
+
+- [Hypothesis-driven PowerShell hunt](./case-studies/hypothesis-driven-powershell-hunt.md) — documented hypothesis, data requirements, ATT&CK context, SPL starter query, test design and explicit pending execution status.
+- [Endpoint-to-SIEM correlation checklist](./case-studies/endpoint-to-siem-correlation.md) — validation steps for endpoint telemetry, SIEM parsing and correlation; no live integration is claimed.
+- [Offline alert enrichment utility](./automation/alert_enrichment.py) — classifies IP fields without external calls and leaves response in analyst-review mode.
+- [Incident response and rule governance playbook](./INCIDENT-RESPONSE-LIFECYCLE.md) — triage, evidence handling, containment decision points, change governance and purple-team exercise template.
+
+### Validation status
+
+The repository's `quality.yml` workflow is configured to run the detection regression tests on pull requests and pushes to `main`. The test suite must be observed passing in that workflow before it is described as CI-validated. The separate Code Quality & Static Analysis and CodeQL runs do not, by themselves, prove that these detection tests ran.
