@@ -4,23 +4,20 @@ status: test
 description: Detects selected command-line patterns that can indicate encoded PowerShell or script/proxy execution. Validate against local telemetry and tune before deployment.
 author: Hazvinei Masiya
 date: 2026/10/16
-references:
-    - https://attack.mitre.org/techniques/T1059/001/
-    - https://attack.mitre.org/techniques/T1218/005/
 logsource:
     product: windows
     category: process_creation
 detection:
     selection_encoded_powershell_image:
         Image|endswith:
-            - '\powershell.exe'
-            - '\pwsh.exe'
+            - '\\powershell.exe'
+            - '\\pwsh.exe'
     selection_encoded_powershell_command:
         CommandLine|contains:
             - ' -enc '
             - ' -encodedcommand '
     selection_mshta_image:
-        Image|endswith: '\mshta.exe'
+        Image|endswith: '\\mshta.exe'
     selection_mshta_remote:
         CommandLine|contains:
             - 'http://'
@@ -33,5 +30,4 @@ level: medium
 tags:
     - attack.execution
     - attack.t1059.001
-    - attack.defense_evasion
     - attack.t1218.005
