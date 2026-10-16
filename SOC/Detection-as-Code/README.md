@@ -73,3 +73,27 @@ The existing linked artifacts, reports, scripts, datasets, standards, and source
 
 ### Evidence Integrity Statement
 This standardization adds structure, not invented results. No fabricated metrics, certifications, incidents, production claims, or execution evidence are introduced.
+
+
+## Reproducible Windows process-detection pack
+
+The current starter pack adds testable detection logic and a portable Sigma artifact:
+
+- [Python detection harness](./detections/detection_engine.py) — evaluates normalized Windows process-creation events.
+- [Sigma rule](./detections/windows-suspicious-process.yml) — encoded PowerShell and remote-URL MSHTA patterns; validate field mapping before deployment.
+- [Synthetic test fixtures](./fixtures/synthetic-process-events.json) — three positive cases and two benign controls.
+- [Regression tests](./Tests/test_detection_engine.py) — verifies expected matches and non-matches.
+- [Detection lifecycle and tuning standard](./DETECTION-LIFECYCLE.md) — proposal, testing, review, deployment, monitoring, tuning and retirement.
+- [GitHub Actions tests](../../.github/workflows/detection-as-code-tests.yml) — runs the Python regression suite and validates fixture JSON.
+
+### Run locally
+
+From this directory:
+
+```bash
+python -m unittest discover -s Tests -v
+python detections/detection_engine.py fixtures/synthetic-process-events.json
+```
+
+The harness is a training/reference implementation. Test fixtures are synthetic; matching a test event is not proof of malicious activity. The Sigma rule is marked `test` and is not approved for production deployment. Confirm event schema, field mapping, benign baselines and false-positive behaviour in the intended SIEM before operational use.
+
