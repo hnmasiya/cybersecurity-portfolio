@@ -28,6 +28,7 @@ jobs:
           python3 -m unittest discover -s Tests -v
           python3 -m json.tool fixtures/synthetic-process-events.json > /dev/null
           python3 scripts/run_synthetic_hunt.py --check case-studies/synthetic-hunt-results.md
+          python3 scripts/run_event_mapping_exercise.py
 
       - name: Validate Sigma rule parsing
         shell: bash
