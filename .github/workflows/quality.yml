@@ -20,6 +20,14 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Run detection-as-code regression tests
+        working-directory: SOC/Detection-as-Code
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s Tests -v
+          python3 -m json.tool fixtures/synthetic-process-events.json > /dev/null
+
       - name: Validate public repository contract
         shell: bash
         run: |
