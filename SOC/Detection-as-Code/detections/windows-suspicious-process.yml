@@ -13,14 +13,14 @@ logsource:
 detection:
     selection_encoded_powershell_image:
         Image|endswith:
-            - '\\powershell.exe'
-            - '\\pwsh.exe'
+            - '\powershell.exe'
+            - '\pwsh.exe'
     selection_encoded_powershell_command:
         CommandLine|contains:
             - ' -enc '
             - ' -encodedcommand '
     selection_mshta_image:
-        Image|endswith: '\\mshta.exe'
+        Image|endswith: '\mshta.exe'
     selection_mshta_remote:
         CommandLine|contains:
             - 'http://'
