@@ -93,13 +93,15 @@ From this directory:
 python3 -m unittest discover -s Tests -v
 python3 -m json.tool fixtures/synthetic-process-events.json > /dev/null
 python3 detections/detection_engine.py fixtures/synthetic-process-events.json
+python3 scripts/run_synthetic_hunt.py --check case-studies/synthetic-hunt-results.md
 ```
 
 The harness is a training/reference implementation. Test fixtures are synthetic; matching a test event is not proof of malicious activity. The Sigma rule is marked `test` and is not approved for production deployment. Confirm event schema, field mapping, benign baselines and false-positive behaviour in the intended SIEM before operational use.
 
 ## Additional gap-closing evidence
 
-- [Hypothesis-driven PowerShell hunt](./case-studies/hypothesis-driven-powershell-hunt.md) — documented hypothesis, data requirements, ATT&CK context, SPL starter query, test design and explicit pending execution status.
+- [Hypothesis-driven PowerShell hunt](./case-studies/hypothesis-driven-powershell-hunt.md) — documented hypothesis, data requirements, ATT&CK context, SPL starter query and test design.
+- [Synthetic hunt results](./case-studies/synthetic-hunt-results.md) — deterministic outcomes for the five repository fixtures, with limitations clearly stated.
 - [Endpoint-to-SIEM correlation checklist](./case-studies/endpoint-to-siem-correlation.md) — validation steps for endpoint telemetry, SIEM parsing and correlation; no live integration is claimed.
 - [Offline alert enrichment utility](./automation/alert_enrichment.py) — classifies IP fields without external calls and leaves response in analyst-review mode.
 - [Incident response and rule governance playbook](./INCIDENT-RESPONSE-LIFECYCLE.md) — triage, evidence handling, containment decision points, change governance and purple-team exercise template.
