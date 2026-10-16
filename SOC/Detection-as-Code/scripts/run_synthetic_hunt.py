@@ -7,9 +7,11 @@ import json
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
 from detections.detection_engine import detect_event
 
-ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "fixtures" / "synthetic-process-events.json"
 EXPECTED = {
     "SYN-001": ["DE-001"],
