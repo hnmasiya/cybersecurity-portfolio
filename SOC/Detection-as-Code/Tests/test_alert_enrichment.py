@@ -11,6 +11,16 @@ class AlertEnrichmentTests(unittest.TestCase):
         self.assertEqual(indicators[1]["classification"], "public_ip_requires_reputation_lookup")
         self.assertFalse(result["enrichment"]["external_lookup_performed"])
 
+    def test_ipv6_public_address_is_classified(self):
+        result = enrich_alert({"remote_ip": "2001:4860:4860::8888"})
+        indicator = result["enrichment"]["indicators"][0]
+        self.assertEqual(indicator["classification"], "public_ip_requires_reputation_lookup")
+        self.assertEqual(indicator["version"], "IPv6")
+
+    def test_blank_ip_field_is_ignored(self):
+        result = enrich_alert({"source_ip": "   ", "destination_ip": None})
+        self.assertEqual(result["enrichment"]["indicators"], [])
+
     def test_invalid_ip_is_reported_not_raised(self):
         result = enrich_alert({"ip": "not-an-ip"})
         self.assertEqual(result["enrichment"]["indicators"][0]["classification"], "invalid_ip")
