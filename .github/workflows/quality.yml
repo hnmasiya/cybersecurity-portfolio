@@ -30,6 +30,7 @@ jobs:
           python3 scripts/run_synthetic_hunt.py --check case-studies/synthetic-hunt-results.md
           python3 -m json.tool fixtures/ir-001-synthetic-timeline.json > /dev/null
           python3 scripts/run_ir001_case.py --check
+          python3 scripts/run_ir001_correlation.py
 
       - name: Validate Sigma rule parsing
         shell: bash
