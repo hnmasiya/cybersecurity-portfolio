@@ -43,6 +43,17 @@ class CorrelationEngineTests(unittest.TestCase):
         self.assertEqual(results[0]["context_event_count"], 1)
         self.assertEqual(results[0]["context_events"][0]["context_type"], "network")
 
+    def test_duplicate_event_ids_do_not_override_individual_timestamps(self):
+        events = [dict(event) for event in self.events]
+        events[1]["event_id"] = events[0]["event_id"]
+        events[1]["timestamp_utc"] = "2026-10-17T10:30:00Z"
+
+        results = correlate_process_alerts(events, window_seconds=300)
+
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["context_event_count"], 1)
+        self.assertEqual(results[0]["context_events"][0]["context_type"], "file")
+
     def test_benign_power_shell_does_not_create_correlation_anchor(self):
         events = [self.events[3]]
         self.assertEqual(correlate_process_alerts(events), [])
