@@ -1,0 +1,56 @@
+[
+  {
+    "event_id": "IR001-E001",
+    "evidence_type": "synthetic",
+    "timestamp_utc": "2026-10-17T09:14:22Z",
+    "source": "Windows Security",
+    "event_code": "4688",
+    "host": "WS-FIN-023",
+    "user": "finance.user",
+    "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "CommandLine": "powershell.exe -EncodedCommand [REDACTED]",
+    "ParentImage": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+    "expected_rule_ids": ["DE-001"],
+    "notes": "Synthetic process-creation event; encoded payload intentionally omitted."
+  },
+  {
+    "event_id": "IR001-E002",
+    "evidence_type": "synthetic",
+    "timestamp_utc": "2026-10-17T09:14:24Z",
+    "source": "Sysmon",
+    "event_code": "3",
+    "host": "WS-FIN-023",
+    "user": "finance.user",
+    "destination_ip": "203.0.113.44",
+    "destination_port": 443,
+    "protocol": "tcp",
+    "expected_rule_ids": [],
+    "notes": "Synthetic outbound connection record; TEST-NET-3 documentation address, not a real IOC."
+  },
+  {
+    "event_id": "IR001-E003",
+    "evidence_type": "synthetic",
+    "timestamp_utc": "2026-10-17T09:14:26Z",
+    "source": "Sysmon",
+    "event_code": "11",
+    "host": "WS-FIN-023",
+    "user": "finance.user",
+    "target_filename": "%TEMP%\\invoice_update.ps1",
+    "expected_rule_ids": [],
+    "notes": "Synthetic file-creation record; file content is not included."
+  },
+  {
+    "event_id": "IR001-E004",
+    "evidence_type": "synthetic-benign-control",
+    "timestamp_utc": "2026-10-17T10:05:00Z",
+    "source": "Windows Security",
+    "event_code": "4688",
+    "host": "WS-ADMIN-002",
+    "user": "LAB\\administrator",
+    "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "CommandLine": "powershell.exe -NoProfile -File inventory.ps1",
+    "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+    "expected_rule_ids": [],
+    "notes": "Synthetic benign control for ordinary script execution."
+  }
+]
