@@ -31,6 +31,8 @@ jobs:
           python3 -m json.tool fixtures/ir-001-synthetic-timeline.json > /dev/null
           python3 scripts/run_ir001_case.py --check
           python3 scripts/run_ir001_correlation.py
+          python3 -m json.tool fixtures/authentication-context-synthetic.json > /dev/null
+          python3 scripts/run_authentication_context.py
 
       - name: Validate Sigma rule parsing
         shell: bash

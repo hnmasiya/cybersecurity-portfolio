@@ -1,0 +1,41 @@
+[
+  {
+    "event_id": "AUTH-001",
+    "evidence_type": "synthetic",
+    "timestamp_utc": "2026-10-17T11:00:00Z",
+    "source": "Windows Security",
+    "event_code": "4625",
+    "host": "WS-FIN-023",
+    "user": "finance.user",
+    "logon_type": 3,
+    "source_ip": "192.0.2.77",
+    "expected_classification": "authentication-failure-context",
+    "notes": "Documentation-only TEST-NET address; not a real IOC."
+  },
+  {
+    "event_id": "AUTH-002",
+    "evidence_type": "synthetic",
+    "timestamp_utc": "2026-10-17T11:00:12Z",
+    "source": "Windows Security",
+    "event_code": "4624",
+    "host": "WS-FIN-023",
+    "user": "finance.user",
+    "logon_type": 3,
+    "source_ip": "192.0.2.77",
+    "expected_classification": "authentication-success-context",
+    "notes": "Synthetic successful-logon context; not evidence of an actual compromise."
+  },
+  {
+    "event_id": "AUTH-003",
+    "evidence_type": "synthetic-benign-control",
+    "timestamp_utc": "2026-10-17T11:02:00Z",
+    "source": "Windows Security",
+    "event_code": "4624",
+    "host": "WS-ADMIN-002",
+    "user": "LAB\\administrator",
+    "logon_type": 2,
+    "source_ip": "",
+    "expected_classification": "benign-control",
+    "notes": "Synthetic local interactive logon control."
+  }
+]
