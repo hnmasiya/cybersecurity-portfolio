@@ -651,7 +651,7 @@
 
             <div class="btn-cta-group">
                 <a href="#evidence-hubs" class="btn-cta btn-primary">View Security Evidence</a>
-                <a id="resume-download" href="resume-variants/pdf/global.pdf" class="btn-cta btn-outline" download>📄 Download Resume</a>
+                <a id="resume-download" href="resume-variants/pdf/international.pdf" class="btn-cta btn-outline" download>📄 Download Resume</a>
                 <a href="#work" class="btn-cta btn-outline">Explore Work</a>
                 <a href="https://linkedin.com/in/hazvinei-masiya" target="_blank" rel="noopener" class="btn-cta btn-outline">LinkedIn</a>
             </div>
@@ -828,9 +828,9 @@
                                     <button class="copy-btn" onclick="copyTerminal(this)">Copy</button>
                                 </div>
                             </div>
-<code class="code-snippet"># sha256sum /var/log/auth.log
-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-[+] Root session established via SSH key from 10.0.4.12</code>
+<code class="code-snippet"># sha256sum DFIR/Linux-Forensics/Evidence/auth.log
+f5d18ad19f1341cef5b2c3dd6c55504df5936e2adcc73f8a6fefbcdfca3caf87
+[+] Successful SSH authentication for analyst from 10.10.20.10 (synthetic lab evidence)</code>
                         </div>
 
                         <div class="tag-group">
@@ -1786,12 +1786,12 @@ Caller User: 'bad_actor_admin'</code>
   const link=document.getElementById("resume-download");
   if(!link) return;
   const countryToVariant={
-    CA:"canadian-resume",US:"us-resume",GB:"uk-cv",
+    US:"us-resume",CA:"canadian-resume",GB:"uk-cv",IE:"irish-cv",
     AU:"australian-resume",NZ:"new-zealand-resume",
-    DE:"europe",FR:"europe",NL:"europe",IE:"europe",CH:"europe",
-    AE:"middle-east",QA:"middle-east",SA:"middle-east",
-    ZA:"africa",ZW:"africa",NG:"africa",KE:"africa",
-    IN:"asia-pacific",SG:"asia-pacific",JP:"asia-pacific",KR:"asia-pacific",
+    DE:"german-cv",FR:"french-cv",NL:"dutch-cv",CH:"swiss-cv",
+    AE:"uae-resume",QA:"qatar-resume",SA:"saudi-arabia-resume",
+    ZA:"south-african-cv",ZW:"zimbabwe-cv",NG:"nigerian-cv",KE:"kenyan-cv",
+    IN:"indian-resume",SG:"singapore-resume",JP:"japan-resume",KR:"south-korea-resume",
     BR:"brazil-resume",MX:"mexico-resume"
   };
   const regionCountries={
@@ -1806,7 +1806,7 @@ Caller User: 'bad_actor_admin'</code>
     if(regionCountries.africa.has(code)) return "africa";
     if(regionCountries.middleEast.has(code)) return "middle-east";
     if(regionCountries.asiaPacific.has(code)) return "asia-pacific";
-    return "global";
+    return "international";
   }
   function applyResumeLink(variant){
     link.href=`resume-variants/pdf/${variant}.pdf`;
@@ -1837,10 +1837,12 @@ Caller User: 'bad_actor_admin'</code>
   link.addEventListener("click",downloadResume);
   try{
     const response=await fetch("https://ipapi.co/country/",{cache:"no-store"});
+    if(!response.ok) throw new Error("country lookup failed");
     const code=(await response.text()).trim().toUpperCase();
+    if(!/^[A-Z]{2}$/.test(code)) throw new Error("invalid country code");
     applyResumeLink(variantFor(code));
   }catch(_){
-    applyResumeLink("global");
+    applyResumeLink("international");
   }
 })();</script>
 </body>
