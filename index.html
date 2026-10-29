@@ -831,6 +831,7 @@
 <code class="code-snippet"># sha256sum DFIR/Linux-Forensics/Evidence/auth.log
 f5d18ad19f1341cef5b2c3dd6c55504df5936e2adcc73f8a6fefbcdfca3caf87
 [+] Successful SSH authentication for analyst from 10.10.20.10 (synthetic lab evidence)</code>
+[+] Synthetic lab evidence: repeated failed SSH attempts from 10.10.20.45; successful analyst login from 10.10.20.10; subsequent sudo activity</code>
                         </div>
 
                         <div class="tag-group">
@@ -1796,9 +1797,9 @@ Caller User: 'bad_actor_admin'</code>
   };
   const regionCountries={
     europe:new Set("AL AD AT BE BG HR CY CZ DK EE FI GR HU IS IT LV LI LT LU MT MC ME NO PL PT RO SM RS SK SI ES SE UA VA".split(" ")),
-    africa:new Set("DZ AO BW CM EG ET GH KE MW MZ NA RW SN TZ UG ZM ZW ZA NG".split(" ")),
-    middleEast:new Set("BH IL JO KW LB OM QA SA AE".split(" ")),
-    asiaPacific:new Set("BD CN HK ID JP KH LK MY MM NP PH PK SG TH TW VN AU NZ".split(" "))
+    africa:new Set("DZ AO BW CM EG ET GH MW MZ NA RW SN TZ UG ZM".split(" ")),
+    middleEast:new Set("BH IL JO KW LB OM".split(" ")),
+    asiaPacific:new Set("BD CN HK ID KH LK MY MM NP PH PK TH TW VN".split(" "))
   };
   function variantFor(code){
     if(countryToVariant[code]) return countryToVariant[code];

@@ -18,7 +18,7 @@ Prerequisites:
 - PowerShell available; administrative access only where needed for event-log access.
 - A local output directory outside the Git working tree.
 
-Run from an elevated PowerShell terminal in the lab. The exercise starts a child PowerShell process with a **benign encoded command**, creates a marker file in the current user's temp directory, and attempts a loopback-only TCP connection. It does not contact an external host. The network event will only be available if Sysmon's configuration and Windows policy collect it.
+From the `SOC/Detection-as-Code` directory, run the command below in an elevated PowerShell terminal on the authorized Windows test endpoint. The script is stored at `scripts/Invoke-IR001LabValidation.ps1`. The exercise starts a child PowerShell process with a **benign encoded command**, creates a marker file in the current user's temp directory, and attempts a loopback-only TCP connection. It does not contact an external host. The network event will only be available if Sysmon's configuration and Windows policy collect it.
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
