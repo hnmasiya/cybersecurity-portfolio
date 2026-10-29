@@ -1,0 +1,33 @@
+title: Suspicious Windows Script or Proxy Execution
+id: 6e9f7d81-40c4-4f2d-9d3f-91d20b8b1041
+status: test
+description: Detects selected command-line patterns that can indicate encoded PowerShell or script/proxy execution. Validate against local telemetry and tune before deployment.
+author: Hazvinei Masiya
+date: 2026/10/16
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_encoded_powershell_image:
+        Image|endswith:
+            - '\\powershell.exe'
+            - '\\pwsh.exe'
+    selection_encoded_powershell_command:
+        CommandLine|contains:
+            - ' -enc '
+            - ' -encodedcommand '
+    selection_mshta_image:
+        Image|endswith: '\\mshta.exe'
+    selection_mshta_remote:
+        CommandLine|contains:
+            - 'http://'
+            - 'https://'
+    condition: (selection_encoded_powershell_image and selection_encoded_powershell_command) or (selection_mshta_image and selection_mshta_remote)
+falsepositives:
+    - Approved administration scripts that use encoded PowerShell
+    - Authorized software deployment or testing activity
+level: medium
+tags:
+    - attack.execution
+    - attack.t1059.001
+    - attack.t1218.005

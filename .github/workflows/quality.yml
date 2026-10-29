@@ -20,6 +20,28 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Run detection-as-code regression tests
+        working-directory: SOC/Detection-as-Code
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s Tests -v
+          python3 -m json.tool fixtures/synthetic-process-events.json > /dev/null
+          python3 scripts/run_synthetic_hunt.py --check case-studies/synthetic-hunt-results.md
+          python3 scripts/run_event_mapping_exercise.py
+          python3 -m json.tool fixtures/ir-001-synthetic-timeline.json > /dev/null
+          python3 scripts/run_ir001_case.py --check
+          python3 scripts/run_ir001_correlation.py
+          python3 -m json.tool fixtures/authentication-context-synthetic.json > /dev/null
+          python3 scripts/run_authentication_context.py
+
+      - name: Validate Sigma rule parsing
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check "sigma-cli==3.1.0" "pySigma-validators-sigmahq"
+          sigma check --fail-on-error SOC/Detection-as-Code/detections/windows-suspicious-process.yml
+
       - name: Validate public repository contract
         shell: bash
         run: |
