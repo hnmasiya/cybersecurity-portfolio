@@ -1,10 +1,86 @@
-import json
 import unittest
+import json
 from pathlib import Path
 
 from detections.correlation_engine import correlate_process_alerts
 
 
+class CorrelationEngineTests(unittest.TestCase):
+    def setUp(self):
+        self.events = [
+            {
+                "event_id": "E001",
+                "timestamp_utc": "2026-10-17T10:00:00Z",
+                "host": "WS-TEST-01",
+                "user": "lab\\analyst",
+                "Image": r"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "CommandLine": "powershell.exe -EncodedCommand SQBFAFgA",
+                "evidence_type": "synthetic",
+            },
+            {
+                "event_id": "E002",
+                "timestamp_utc": "2026-10-17T10:01:00Z",
+                "host": "WS-TEST-01",
+                "user": "lab\\analyst",
+                "event_code": "3",
+                "destination_ip": "127.0.0.1",
+                "evidence_type": "synthetic",
+            },
+            {
+                "event_id": "E003",
+                "timestamp_utc": "2026-10-17T10:02:00Z",
+                "host": "WS-TEST-01",
+                "user": "lab\\analyst",
+                "event_code": "11",
+                "target_filename": "marker.tmp",
+                "evidence_type": "synthetic",
+            },
+            {
+                "event_id": "E004",
+                "timestamp_utc": "2026-10-17T10:03:00Z",
+                "host": "WS-TEST-01",
+                "user": "lab\\analyst",
+                "Image": r"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "CommandLine": "powershell.exe -NoProfile -File inventory.ps1",
+                "evidence_type": "synthetic-benign-control",
+            },
+        ]
+
+    def test_correlates_in_window_network_and_file_context(self):
+        results = correlate_process_alerts(self.events)
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["alert_rule_ids"], ["DE-001"])
+        self.assertEqual(
+            {e["context_type"] for e in results[0]["context_events"]},
+            {"network", "file"},
+        )
+
+    def test_duplicate_event_ids_do_not_override_timestamps(self):
+        events = [dict(event) for event in self.events]
+        events[1]["event_id"] = events[0]["event_id"]
+        events[1]["timestamp_utc"] = "2026-10-17T10:30:00Z"
+        results = correlate_process_alerts(events, window_seconds=300)
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["context_event_count"], 1)
+        self.assertEqual(results[0]["context_events"][0]["context_type"], "file")
+
+    def test_different_host_is_not_correlated(self):
+        events = [dict(event) for event in self.events]
+        events[1]["host"] = "WS-OTHER-02"
+        results = correlate_process_alerts(events)
+        self.assertEqual(results[0]["context_event_count"], 1)
+        self.assertEqual(results[0]["context_events"][0]["context_type"], "file")
+
+    def test_user_mismatch_is_not_correlated_when_both_present(self):
+        events = [dict(event) for event in self.events]
+        events[1]["user"] = "different.user"
+        results = correlate_process_alerts(events)
+        self.assertEqual(results[0]["context_event_count"], 1)
+        self.assertEqual(results[0]["context_events"][0]["context_type"], "file")
+
+    def test_missing_timestamp_is_not_correlated(self):
+        events = [dict(event) for event in self.events]
+        events[1]["timestamp_utc"] = "not-a-time"
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "fixtures" / "ir-001-synthetic-timeline.json"
 
@@ -54,6 +130,9 @@ class CorrelationEngineTests(unittest.TestCase):
         self.assertEqual(results[0]["context_event_count"], 1)
         self.assertEqual(results[0]["context_events"][0]["context_type"], "file")
 
+    def test_naive_timestamp_is_not_correlated(self):
+        events = [dict(event) for event in self.events]
+        events[1]["timestamp_utc"] = "2026-10-17T10:01:00"
     def test_user_mismatch_does_not_correlate_when_both_users_are_present(self):
         events = [dict(event) for event in self.events]
         events[1]["user"] = "different.user"
