@@ -4,6 +4,8 @@ This area documents the portfolio's detection engineering work in a repeatable f
 
 ## Current workflow
 
+The lab validation roadmap is documented in [`lab/README.md`](./lab/README.md). The live Windows/Sysmon exercise must be run on an authorized endpoint; repository CI validates synthetic fixtures only. The local collector is `scripts/Invoke-IR001LabValidation.ps1` and is deliberately not executed by CI.
+
 **Detection concept → detection logic → Wazuh implementation → test event → expected result → actual result → tuning**
 
 ## Each detection should contain
@@ -108,6 +110,11 @@ python3 -m unittest discover -s Tests -v
 python3 -m json.tool fixtures/synthetic-process-events.json > /dev/null
 python3 detections/detection_engine.py fixtures/synthetic-process-events.json
 python3 scripts/run_synthetic_hunt.py --check case-studies/synthetic-hunt-results.md
+python3 -m json.tool fixtures/ir-001-synthetic-timeline.json > /dev/null
+python3 scripts/run_ir001_case.py --check
+python3 scripts/run_ir001_correlation.py
+python3 -m json.tool fixtures/authentication-context-synthetic.json > /dev/null
+python3 scripts/run_authentication_context.py
 ```
 
 The harness is a training/reference implementation. Test fixtures are synthetic; matching a test event is not proof of malicious activity. The Sigma rule is marked `test` and is not approved for production deployment. Confirm event schema, field mapping, benign baselines and false-positive behaviour in the intended SIEM before operational use.
@@ -116,6 +123,12 @@ The harness is a training/reference implementation. Test fixtures are synthetic;
 
 - [Hypothesis-driven PowerShell hunt](./case-studies/hypothesis-driven-powershell-hunt.md) — documented hypothesis, data requirements, ATT&CK context, SPL starter query and test design.
 - [Synthetic hunt results](./case-studies/synthetic-hunt-results.md) — deterministic outcomes for the five repository fixtures, with limitations clearly stated.
+- [IR-001 incident-response tabletop](./case-studies/IR-001-incident-response.md) — synthetic Windows process/network/file timeline, reproducible detection check, response decisions, and evidence limitations.
+- [IR-001 cross-event correlation](./case-studies/IR-001-event-correlation.md) — host/user/time-window correlation of process alerts with network and file context, with regression tests and explicit limitations.
+- [Authentication context exercise](./case-studies/authentication-context.md) — synthetic Windows 4624/4625 context and benign controls.
+- [Lab validation runbook](./lab/README.md) — authorized local Windows/Sysmon collection procedure and phase acceptance gates.
+- [IR-001 lab evidence template](./case-studies/IR-001-lab-evidence-template.md) — records real endpoint evidence without claiming it has already been collected.
+- [SOC operational readiness](./case-studies/SOC-operational-readiness.md) — evidence labels, acceptance gates, and human-approved response boundaries.
 - [Endpoint-to-SIEM correlation checklist](./case-studies/endpoint-to-siem-correlation.md) — validation steps for endpoint telemetry, SIEM parsing and correlation; no live integration is claimed.
 - [Offline alert enrichment utility](./automation/alert_enrichment.py) — classifies IP fields without external calls and leaves response in analyst-review mode.
 - [Incident response and rule governance playbook](./INCIDENT-RESPONSE-LIFECYCLE.md) — triage, evidence handling, containment decision points, change governance and purple-team exercise template.
