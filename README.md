@@ -164,6 +164,11 @@ Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage auto
 - **Google AI Essentials**
 - **Artificial Intelligence Fundamentals** — IBM
 
+### Columbia+
+- **Columbia University — Columbia+ digital badge:** [View badge and verify credential](https://badges.plus.columbia.edu/c291f4f2-a326-4a4f-ba4f-b9fc6d981b85#acc.ZnsXfIRd)
+
+> Refer to the original badge page for the exact course title, award status and credential details.
+
 ### Virtual Experience
 - **Mastercard Cybersecurity Job Simulation** — Forage
 - **Datacom Cyber Security Operations Job Simulation** — Forage
