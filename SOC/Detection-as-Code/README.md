@@ -76,6 +76,20 @@ The existing linked artifacts, reports, scripts, datasets, standards, and source
 
 This standardization adds structure, not invented results. No fabricated metrics, certifications, incidents, production claims, or execution evidence are introduced.
 
+## Offline event mapping exercise
+
+- [Event mapper](./detections/event_mapping.py) — best-effort extraction from common example event envelopes.
+- [Exercise guide](./case-studies/offline-event-mapping-exercise.md) — field map, limitations, and next steps for sanitized real telemetry.
+- [Mapping tests](./Tests/test_event_mapping.py) — flat event, Wazuh-like envelope, and missing-field handling.
+
+Run from this directory:
+
+```bash
+python3 -m unittest discover -s Tests -v
+python3 scripts/run_event_mapping_exercise.py
+```
+
+These are offline synthetic examples only. Field names vary by provider and decoder; validate against a sanitized event from the intended environment before relying on this adapter.
 ## Reproducible Windows process-detection pack
 
 The current starter pack adds testable detection logic and a portable Sigma artifact:
