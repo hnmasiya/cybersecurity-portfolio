@@ -1,0 +1,109 @@
+/*
+ * Masiya Hub — calm, eye-friendly theme (loaded LAST on every page).
+ * Dark  = "Midnight slate": lifted blue-grey, soft off-white text, one muted teal accent.
+ * Light = "Warm paper":     cream background, ink text, deep teal accent.
+ * Visual-only. To roll back, remove the <link> to this file (and theme-init.js) from each page.
+ */
+
+/* ---------- Palette: main page variables ---------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-body: #1b2230;  --bg-nav: rgba(27, 34, 48, .9);
+  --bg-card: #232c3d;  --bg-card-hover: #2a3447;  --bg-terminal: #151b27;
+  --border: #34405a;   --border-highlight: #46536f;
+  --text-primary: #e6e9ee; --text-secondary: #b6bfcc; --text-muted: #95a1b4;
+  --accent-green: #5fc4b8; --accent-cyan: #7bbccb; --accent-blue: #8db3e6; --accent-purple: #b3a8df;
+  --accent-green-glow: transparent;
+  --badge-live: rgba(95, 196, 184, .14); --badge-synthetic: rgba(123, 188, 203, .14); --badge-methodology: rgba(179, 168, 223, .14);
+  --cyber-grid: transparent; --cyber-line: transparent; --cyber-panel: #232c3d;
+  --cyber-glow: 0 1px 2px rgba(0, 0, 0, .25);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-body: #f6f3ee;  --bg-nav: rgba(246, 243, 238, .92);
+  --bg-card: #fffdf9;  --bg-card-hover: #ffffff;  --bg-terminal: #1b2230;
+  --border: #e2dcd1;   --border-highlight: #cfc7b8;
+  --text-primary: #23272e; --text-secondary: #4b5360; --text-muted: #646c78;
+  --accent-green: #0f766e; --accent-cyan: #0e7490; --accent-blue: #2f5fa5; --accent-purple: #6a54b0;
+  --accent-green-glow: transparent;
+  --badge-live: rgba(15, 118, 110, .1); --badge-synthetic: rgba(14, 116, 144, .1); --badge-methodology: rgba(106, 84, 176, .1);
+  --cyber-grid: transparent; --cyber-line: transparent; --cyber-panel: #fffdf9;
+  --cyber-glow: 0 1px 2px rgba(35, 39, 46, .06);
+}
+/* ---------- Palette: sub-page variables (portfolio-pages.css) ---------- */
+:root[data-theme="dark"] {
+  --bg: #1b2230; --nav: rgba(27, 34, 48, .9); --card: #232c3d; --card2: #2a3447; --terminal: #151b27;
+  --border-hi: #46536f; --text: #e6e9ee; --muted: #b6bfcc; --dim: #95a1b4;
+  --green: #5fc4b8; --green2: #7fd0c5; --cyan: #7bbccb; --blue: #8db3e6; --purple: #b3a8df;
+  --glow: transparent; --shadow: 0 1px 2px rgba(0, 0, 0, .25);
+}
+:root[data-theme="light"] {
+  --bg: #f6f3ee; --nav: rgba(246, 243, 238, .92); --card: #fffdf9; --card2: #ffffff; --terminal: #1b2230;
+  --border-hi: #cfc7b8; --text: #23272e; --muted: #4b5360; --dim: #646c78;
+  --green: #0f766e; --green2: #0f766e; --cyan: #0e7490; --blue: #2f5fa5; --purple: #6a54b0;
+  --glow: transparent; --shadow: 0 1px 2px rgba(35, 39, 46, .06);
+}
+
+/* ---------- Quiet the decoration: no grid, glow, gradients, pulsing ---------- */
+html, body { background-color: var(--bg-body, var(--bg)); }
+body, body::before { background-image: none !important; }
+body::before { display: none; }
+.hero-title, .shell h1 {
+  background: none !important; -webkit-background-clip: border-box !important; background-clip: border-box !important;
+  -webkit-text-fill-color: currentColor !important; color: var(--text-primary, var(--text));
+}
+.btn-primary {
+  background: var(--accent-green) !important; box-shadow: none !important;
+  color: #0f1a1c !important; font-weight: 700;
+}
+:root[data-theme="light"] .btn-primary { color: #fff !important; }
+.btn-primary:hover { box-shadow: none !important; opacity: .92; }
+.card, .glass-card, .hero > div[style*="border-left"] { box-shadow: 0 1px 2px rgba(0, 0, 0, .18) !important; }
+.card:hover, .glass-card:hover { box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .35) !important; border-color: var(--accent-green); transform: translateY(-2px); }
+:root[data-theme="light"] .card, :root[data-theme="light"] .glass-card { box-shadow: 0 1px 2px rgba(35, 39, 46, .07) !important; background: var(--bg-card) !important; }
+:root[data-theme="light"] .card:hover, :root[data-theme="light"] .glass-card:hover { box-shadow: 0 8px 20px -10px rgba(35, 39, 46, .22) !important; }
+header { backdrop-filter: none; }
+.progress, .status-dot, [class*="status-dot"] { box-shadow: none !important; animation: none !important; }
+.progress { background: var(--green) !important; }
+.card.flash, .glass-card.flash { animation: none; outline: 2px solid var(--accent-green); outline-offset: 2px; }
+*[style*="pulse"], .pulse, .live-dot, .dot { animation: none !important; box-shadow: none !important; }
+
+/* ---------- Typography: sans for words, mono only for code & IDs ---------- */
+.tag, .metric-badge, .project-badge, .kb-hint-banner, .btn-nav-action, .filter-btn, .chip-label, .hero::before,
+.eyebrow, .kicker, .brand, .logo { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important; }
+.chip-label, .eyebrow, .kicker, .hero::before, .snapshot-card h4, [class*="label"] { text-transform: none !important; letter-spacing: .01em !important; }
+.pal-kind, .pal-group { text-transform: none !important; letter-spacing: .01em !important; }
+.hero-desc, .project-desc, .section-sub, main p, .shell p { max-width: 70ch; }
+.card p, .card li, .project-desc { line-height: 1.75; }
+
+/* ---------- Simple pages (forage, resumes, Forage/*): their inline colours were hard-coded dark ---------- */
+:root[data-theme="dark"]  { --sp-bg:#1b2230; --sp-card:#232c3d; --sp-border:#34405a; --sp-text:#e6e9ee; --sp-soft:#b6bfcc; --sp-link:#8db3e6; --sp-accent:#5fc4b8; --sp-note:#1f2838; --sp-on:#0f1a1c; }
+:root[data-theme="light"] { --sp-bg:#f6f3ee; --sp-card:#fffdf9; --sp-border:#e2dcd1; --sp-text:#23272e; --sp-soft:#4b5360; --sp-link:#2f5fa5; --sp-accent:#0f766e; --sp-note:#efe9dd; --sp-on:#ffffff; }
+html[data-theme] { background: var(--sp-bg); }
+html[data-theme] body { background: var(--sp-bg) !important; color: var(--sp-text); }
+html[data-theme] h1 { background: none !important; -webkit-text-fill-color: var(--sp-text) !important; color: var(--sp-text) !important; }
+html[data-theme] h2, html[data-theme] .card h2 { color: var(--sp-text) !important; }
+html[data-theme] body > p, html[data-theme] main > p { color: var(--sp-soft); }
+html[data-theme] body > p a, html[data-theme] .card a:not(.btn):not(.card-link) { color: var(--sp-link); }
+html[data-theme] body > p a:hover, html[data-theme] .card a:not(.btn):hover { color: var(--sp-accent); }
+html[data-theme] .card { background: var(--sp-card) !important; border-color: var(--sp-border) !important; box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+html[data-theme] .card li, html[data-theme] .card p { color: var(--sp-soft); }
+html[data-theme] .card strong, html[data-theme] .note strong { color: var(--sp-text); }
+html[data-theme] .tag { background: transparent; border-color: var(--sp-border) !important; color: var(--sp-soft) !important; font-family: 'Plus Jakarta Sans', sans-serif; }
+html[data-theme] .note { background: var(--sp-note) !important; border-color: var(--sp-border); border-left: 4px solid var(--sp-accent) !important; color: var(--sp-soft); }
+html[data-theme] .btn { background: var(--sp-accent) !important; color: var(--sp-on) !important; box-shadow: none !important; }
+html[data-theme] .card .btn, html[data-theme] .card a.btn { color: var(--sp-on); }
+/* hero meta lines and keyboard hints on the main page */
+.btn-cta, .btn-link, .btn-quicklook, .section-title, .hero-subtitle, .hero-subtitle-secondary, .hero-meta { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important; }
+.kbd-key { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-highlight); }
+:root[data-theme="light"] header { box-shadow: none; border-bottom: 1px solid var(--border); }
+:root[data-theme="light"] .stat, :root[data-theme="light"] .metric { box-shadow: 0 1px 2px rgba(35,39,46,.07) !important; }
+
+/* ---------- Light-theme code/terminal blocks stay dark slate ---------- */
+:root[data-theme="light"] .terminal-preview, :root[data-theme="light"] #terminal-box { background: #1b2230; color: #e6e9ee; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+.shell .card, .shell .metric { background: var(--card) !important; }
+.shell .card:hover { background: var(--card2) !important; }
