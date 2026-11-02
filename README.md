@@ -100,6 +100,12 @@ Use the [Cybersecurity Lab Catalog](CYBERSECURITY-LAB-CATALOG.md) and [Master La
 - **[Security Automation](Security-Automation/)** — Python, Bash and PowerShell workflows.
 - **[AppSec / DevSecOps](AppSec-DevSecOps/)** — application and pipeline security work.
 
+### AI Security & Governance
+- **[AI Cybersecurity & Governance Lab](https://github.com/hnmasiya/ai-security-lab)** — local prompt-injection testing framework, defensive controls, synthetic-event detection, Shadow AI DNS indicators, threat modelling and AI governance artefacts.
+- **Credential:** [Columbia+ digital badge — verify credential](https://badges.plus.columbia.edu/c291f4f2-a326-4a4f-ba4f-b9fc6d981b85).
+- **CompTIA Security+ alignment:** [Domains 1–5 mapping](https://github.com/hnmasiya/ai-security-lab/blob/main/security-plus-alignment.md) — supplementary project alignment, not a claim of complete exam-objective coverage.
+- **Validation boundary:** nine offline unit tests pass; synthetic detection samples are validated. Live Ollama model testing remains pending.
+
 ---
 
 ## 📐 Evidence Standard
@@ -163,6 +169,11 @@ Python · Bash · PowerShell · JSON/YAML · IOC enrichment · alert-triage auto
 - **Introduction to Generative AI** — Google
 - **Google AI Essentials**
 - **Artificial Intelligence Fundamentals** — IBM
+
+### Columbia+
+- **Columbia University — Columbia+ digital badge:** [View badge and verify credential](https://badges.plus.columbia.edu/c291f4f2-a326-4a4f-ba4f-b9fc6d981b85#acc.ZnsXfIRd)
+
+> Refer to the original badge page for the exact course title, award status and credential details.
 
 ### Virtual Experience
 - **Mastercard Cybersecurity Job Simulation** — Forage

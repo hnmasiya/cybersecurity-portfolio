@@ -42,10 +42,12 @@ def correlate_process_alerts(
         raise ValueError("window_seconds must be non-negative")
 
     valid_events = [event for event in events if isinstance(event, dict)]
-    parsed = {
-        str(event.get("event_id", f"index-{index}")): _parse_timestamp(event.get("timestamp_utc"))
-        for index, event in enumerate(valid_events)
-    }
+    # Keep timestamps aligned to event positions, not event IDs: IDs may be
+    # duplicated or missing in imperfect source data.
+    parsed = [
+        _parse_timestamp(event.get("timestamp_utc"))
+        for event in valid_events
+    ]
     correlations: list[dict[str, Any]] = []
 
     from detections.detection_engine import detect_event
@@ -55,7 +57,7 @@ def correlate_process_alerts(
         if not alerts:
             continue
         anchor_id = str(anchor.get("event_id", f"index-{index}"))
-        anchor_time = parsed.get(anchor_id)
+        anchor_time = parsed[index]
         host = str(anchor.get("host", "")).strip().casefold()
         user = str(anchor.get("user", anchor.get("User", ""))).strip().casefold()
         if not anchor_time or not host:
@@ -66,7 +68,7 @@ def correlate_process_alerts(
             if other_index == index:
                 continue
             other_id = str(other.get("event_id", f"index-{other_index}"))
-            other_time = parsed.get(other_id)
+            other_time = parsed[other_index]
             if not other_time or str(other.get("host", "")).strip().casefold() != host:
                 continue
             other_user_value = str(other.get("user", other.get("User", ""))).strip().casefold()
