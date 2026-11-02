@@ -1,0 +1,152 @@
+/*
+ * Masiya Hub — visual refresh for the sub-pages that use /assets/portfolio-pages.css
+ * (SOC, Detection, DFIR, Network). Loaded AFTER that file. Visual-only.
+ * Matches the home page refresh in site-refresh.css.
+ * To roll back, remove the <link> to this file from each page.
+ */
+
+html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
+
+:root {
+  --muted: #b4c0d4;
+  --dim: #8c9bb3;
+  --border: #263449;
+  --card: rgba(20, 29, 48, 0.72);
+}
+:root[data-theme="light"] {
+  --muted: #475569;
+  --dim: #64748b;
+  --border: #e2e8f0;
+  --card: rgba(255, 255, 255, 0.92);
+}
+
+body {
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background:
+    radial-gradient(ellipse at 50% -8%, rgba(6, 182, 212, 0.14), transparent 45%),
+    radial-gradient(ellipse at 90% 30%, rgba(16, 185, 129, 0.07), transparent 40%),
+    var(--bg);
+}
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(ellipse at 50% -8%, rgba(6, 182, 212, 0.12), transparent 45%),
+    radial-gradient(ellipse at 90% 30%, rgba(16, 185, 129, 0.08), transparent 40%),
+    var(--bg);
+}
+
+.shell { width: min(1240px, calc(100% - 44px)); }
+
+/* header */
+.site-nav { padding: 14px 24px; margin: 0 -22px; gap: 24px; backdrop-filter: blur(16px) saturate(140%); }
+.brand { font-size: 0.95rem; }
+.nav-links { gap: 20px; }
+.nav-links a { font-size: 0.95rem; }
+.theme-btn { font-size: 0.85rem; padding: 8px 14px; border-radius: 10px; }
+
+/* hero */
+.hero { padding: 5rem 0 2.75rem; }
+.eyebrow {
+  display: inline-flex;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.07);
+  color: var(--green);
+  margin-bottom: 1.25rem;
+}
+.eyebrow:before { content: none; }
+h1 {
+  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  background: linear-gradient(120deg, var(--text) 20%, var(--cyan) 62%, var(--green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.1rem;
+}
+.lead { font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.8; }
+
+.metrics { gap: 16px; margin-top: 2.25rem; }
+.metric { padding: 1.25rem 1.4rem; border-radius: 16px; box-shadow: 0 12px 32px -18px rgba(0, 0, 0, 0.5); }
+.metric strong { font-size: 1.35rem; }
+.metric span { font-size: 0.9rem; margin-top: 4px; }
+
+/* sections */
+.section { margin-top: 3.5rem; }
+.section-head { margin-bottom: 1.4rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--border); position: relative; }
+.section-head::after {
+  content: ""; position: absolute; left: 0; bottom: -1px; width: 96px; height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--green), var(--cyan));
+}
+.section h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); }
+.kicker { font-size: 0.8rem; }
+
+/* cards */
+.grid { gap: 1.5rem; }
+.card {
+  min-height: 0;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 12px 32px -16px rgba(0, 0, 0, 0.55);
+}
+.card:hover {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 20px 44px -18px rgba(16, 185, 129, 0.28);
+}
+.index { font-size: 0.85rem; }
+.card h3 { font-size: 1.4rem; line-height: 1.3; margin: 0.9rem 0 0.6rem; }
+.card p { font-size: 1rem; line-height: 1.7; }
+.card-link { font-size: 0.95rem; padding-top: 1.25rem; }
+.tags { gap: 0.6rem; margin-top: 1.1rem; }
+.tag { font-size: 0.8rem; padding: 0.3rem 0.75rem; }
+
+.note { font-size: 1rem; line-height: 1.75; padding: 1.4rem 1.6rem; border-radius: 14px; }
+
+.actions { gap: 0.9rem; margin-top: 2.25rem; padding-top: 1.75rem; }
+.btn { font-size: 0.95rem; padding: 0.8rem 1.3rem; border-radius: 12px; }
+.btn.primary {
+  background: linear-gradient(135deg, var(--green), #14b8a6);
+  border-color: transparent;
+  color: #03140e;
+  box-shadow: 0 10px 28px -10px rgba(16, 185, 129, 0.65);
+}
+.btn.primary:hover { color: #03140e; }
+
+footer { font-size: 0.85rem; margin-top: 4rem; padding-top: 1.5rem; }
+
+a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
+
+/* ---- Light theme fixes: the base sheet ends cards in near-black and fades the title to near-white ---- */
+:root[data-theme="light"] .card {
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 14px 32px -18px rgba(15, 23, 42, 0.25);
+}
+:root[data-theme="light"] h1 {
+  background: linear-gradient(120deg, #0f172a 20%, #0891b2 65%, #059669 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+:root[data-theme="light"] .btn.primary { color: #fff; background: linear-gradient(135deg, #059669, #0d9488); }
+:root[data-theme="light"] .btn.primary:hover { color: #fff; }
+
+/* ---- Phones ---- */
+@media (max-width: 850px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 650px) {
+  html { font-size: 106.25%; }
+  .shell { width: min(100% - 24px, 1240px); }
+  .site-nav { margin: 0 -12px; padding: 12px 14px; position: static; }
+  .hero { padding: 2.5rem 0 1.75rem; }
+  h1 { font-size: clamp(2.3rem, 11vw, 3.2rem); }
+  .card { padding: 1.4rem; }
+  .section { margin-top: 2.5rem; }
+  .metric { padding: 1rem 1.1rem; }
+  .btn { width: 100%; justify-content: center; }
+}
