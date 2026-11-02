@@ -1,0 +1,246 @@
+/*
+ * Masiya Hub — styles for the interactive layer (assets/js/site-interactive.js).
+ * Loaded after site-refresh.css. Visual-only; nothing here changes page content.
+ */
+
+/* ---------- Scroll reveal (only active when JS adds .js-motion) ---------- */
+.js-motion .reveal {
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+              background 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.js-motion .reveal:not(.in) {
+  opacity: 0;
+  transform: translateY(26px);
+}
+@media print {
+  .js-motion .reveal:not(.in) { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---------- Card spotlight that follows the pointer ---------- */
+.card, .glass-card { position: relative; overflow: hidden; }
+.card::after, .glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(16, 185, 129, 0.11), transparent 60%);
+}
+@media (hover: hover) {
+  .card:hover::after, .glass-card:hover::after { opacity: 1; }
+}
+html[data-theme="light"] .card::after,
+html[data-theme="light"] .glass-card::after {
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(5, 150, 105, 0.10), transparent 60%);
+}
+
+/* ---------- Active nav link ---------- */
+header nav a.active { color: var(--accent-green); }
+header nav a.active::after { width: 100%; }
+
+/* ---------- Stats strip ---------- */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.stat {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--cyber-panel, var(--bg-card));
+}
+.stat strong {
+  display: block;
+  font-size: 2.1rem;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(120deg, var(--accent-green), var(--accent-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat span { display: block; margin-top: 0.3rem; font-size: 0.9rem; color: var(--text-secondary); }
+
+/* ---------- Tag filters ---------- */
+.tag-btn { cursor: pointer; transition: border-color 0.2s, color 0.2s, background 0.2s; }
+.tag-btn:hover { border-color: var(--accent-green); color: var(--accent-green); }
+.tag.is-active {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  background: rgba(16, 185, 129, 0.12);
+}
+.project-item.is-filtered-out { display: none !important; }
+
+.filter-chip-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--cyber-panel, var(--bg-card));
+  scroll-margin-top: 150px;
+}
+.filter-chip-bar[hidden] { display: none; }
+.chip-label { font: 600 0.8rem 'IBM Plex Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.chip {
+  font: 600 0.9rem 'IBM Plex Mono', monospace;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent-green);
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-green);
+  cursor: pointer;
+}
+.chip:hover { background: rgba(16, 185, 129, 0.2); }
+.chip-count { color: var(--text-secondary); font-size: 0.95rem; }
+.chip-empty { color: var(--text-muted); font-size: 0.95rem; }
+
+.filter-btn .count {
+  margin-left: 0.45rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(148, 163, 184, 0.16);
+  color: var(--text-secondary);
+}
+.filter-btn.active .count, .filter-btn:hover .count { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+
+/* ---------- Search button + palette ---------- */
+.search-btn { padding-inline: 0.7rem; }
+.pal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 9vh 1rem 1rem;
+  background: rgba(4, 7, 12, 0.72);
+  backdrop-filter: blur(8px);
+}
+.pal-overlay[hidden] { display: none; }
+.pal-panel {
+  width: min(680px, 100%);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-highlight);
+  border-radius: 16px;
+  background: var(--bg-body);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+.pal-input {
+  width: 100%;
+  padding: 1.1rem 1.25rem;
+  font: 500 1.1rem 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-primary);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  outline: none;
+}
+.pal-input::placeholder { color: var(--text-muted); }
+.pal-status { padding: 0.55rem 1.25rem; font-size: 0.85rem; color: var(--text-muted); }
+.pal-list { list-style: none; margin: 0; padding: 0 0.5rem 0.5rem; overflow-y: auto; }
+.pal-item { padding: 0.75rem 0.85rem; border-radius: 10px; cursor: pointer; }
+.pal-item.active { background: rgba(16, 185, 129, 0.12); }
+.pal-top { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; }
+.pal-title { font-weight: 700; font-size: 1rem; color: var(--text-primary); }
+.pal-sec {
+  flex: none;
+  font: 600 0.72rem 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-cyan);
+}
+.pal-snip { margin-top: 0.25rem; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary); }
+.pal-item mark { background: rgba(16, 185, 129, 0.28); color: inherit; border-radius: 3px; padding: 0 1px; }
+.pal-foot { padding: 0.6rem 1.25rem; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+/* ---------- Jump highlight ---------- */
+.card.flash, .glass-card.flash { animation: flashRing 2.2s ease; }
+@keyframes flashRing {
+  0%, 60% { box-shadow: 0 0 0 3px var(--accent-green), 0 0 40px rgba(16, 185, 129, 0.45); }
+  100% { box-shadow: none; }
+}
+
+/* ---------- ATT&CK explorer ---------- */
+#attack-explorer { scroll-margin-top: 120px; }
+.explorer-sub { color: var(--text-secondary); margin: 0.5rem 0 1.5rem; max-width: 820px; }
+.tactic-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; }
+.tactic-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--cyber-panel, var(--bg-card));
+}
+.tactic-name {
+  font: 600 0.8rem 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-green);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.tech {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.tech b { font: 700 0.95rem 'IBM Plex Mono', monospace; color: var(--accent-cyan); }
+.tech-name { font-size: 0.92rem; line-height: 1.35; }
+.tech-count { font-style: normal; font-size: 0.8rem; color: var(--text-muted); }
+.tech:hover { border-color: var(--accent-green); transform: translateY(-2px); }
+.tech.is-active { border-color: var(--accent-green); background: rgba(16, 185, 129, 0.12); }
+
+/* ---------- Read more ---------- */
+.project-desc.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.read-more {
+  align-self: flex-start;
+  margin: -0.4rem 0 1rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: 600 0.9rem 'IBM Plex Mono', monospace;
+  color: var(--accent-green);
+}
+.read-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media print {
+  .project-desc.clamp { display: block; -webkit-line-clamp: unset; overflow: visible; }
+  .read-more, .pal-overlay { display: none !important; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 768px) {
+  .pal-overlay { padding-top: 4vh; }
+  .pal-panel { max-height: 88vh; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat strong { font-size: 1.8rem; }
+}
