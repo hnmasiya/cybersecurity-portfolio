@@ -104,7 +104,7 @@ Use the [Cybersecurity Lab Catalog](CYBERSECURITY-LAB-CATALOG.md) and [Master La
 - **[AI Cybersecurity & Governance Lab](https://github.com/hnmasiya/ai-security-lab)** — local prompt-injection testing framework, defensive controls, synthetic-event detection, Shadow AI DNS indicators, threat modelling and AI governance artefacts.
 - **Credential:** [Columbia+ digital badge — verify credential](https://badges.plus.columbia.edu/c291f4f2-a326-4a4f-ba4f-b9fc6d981b85).
 - **CompTIA Security+ alignment:** [Domains 1–5 mapping](https://github.com/hnmasiya/ai-security-lab/blob/main/security-plus-alignment.md) — supplementary project alignment, not a claim of complete exam-objective coverage.
-- **Validation boundary:** nine offline unit tests pass; synthetic detection samples are validated. Live Ollama model testing remains pending.
+- **Validation boundary:** offline unit tests pass and synthetic detection samples are validated. Live local-model tests have been run (Ollama, synthetic canary, eight scenarios in baseline and defended modes on small models), and the Wazuh detection pipeline is evidenced with screenshots. Results and their limits are in the lab's [`reports/`](https://github.com/hnmasiya/ai-security-lab/tree/main/reports) folder. They are small-scale lab observations on fictional data, not general claims about prompt-injection defences.
 
 ---
 
